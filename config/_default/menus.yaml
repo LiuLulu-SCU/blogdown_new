@@ -4,24 +4,29 @@
 #   The weight parameter defines the order that the links will appear in.
 
 main:
-  - name: Demo
-    url: '#about'
-    weight: 10
-  - name: Posts
+#  - name: Demo
+#    url: '#about'
+#    weight: 10
+  - name: 博客
     url: '#posts'
     weight: 20
-  - name: Projects
+  - name: 项目
     url: '#projects'
     weight: 30
-  - name: Talks
-    url: '#talks'
-    weight: 40
-  - name: Publications
-    url: '#featured'
-    weight: 50
-  - name: Courses
-    url: courses/
-    weight: 60
-  - name: Contact
-    url: '#contact'
-    weight: 70
+#  - name: Talks
+#    url: '#talks'
+#    weight: 40
+  - name:  简历
+    url: "/resume"
+    weight:  50
+#  - name: 出版物
+#    url: '#publications'
+#    weight: 50
+#  - name: Courses
+#    url: courses/
+#    weight: 60
+#  - name: 联系方式
+#    url: '#contact'
+#    weight: 70
+
+
