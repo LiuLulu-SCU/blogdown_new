@@ -56,14 +56,17 @@ superuser: true
 title: 刘卢路
 ---
 
-目前就读于<font color=#000000>**天津大学药学院**</font>，攻读于<font color=#000000>**药物经济学**</font>硕士学位ing。
+目前现在和小笨🐷学妹一起就读于<font color=#000000>**天津大学药学院**</font>，攻读于<font color=#000000>**药物经济学**</font>硕士学位ing。
+我是一个高度自我驱动的人，不喜欢被束缚，喜欢折腾一些奇奇怪怪的事情。宅，嗜辣，偶尔运动（🏊 🏀 🏸）。
 
-正在探索Blogdown😵
+正在探索TidyR、Markdown、Bookdown和Blogdown😵 希望之后把自己的一些想法和学习心得发布在Blog上。
 
-{{< icon name="download" pack="fas" >}} 下载我的 {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}（待修改）.
-
-bookdown书籍  
-- [bookdown教程](content/book/mybook/_book/) （目前来源于李东风老师）
+{{< icon name="download" pack="fas" >}} 下载我的 {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}（待修改）.  
+  
+  
+<font color=#ED7D31 face="黑体" size=5>**我的bookdown书籍**</font>
+- [bookdown教程](https://liululu.netlify.app/book/mybook/_book/) （目前来源于李东风老师）
+- 待补充
 
 
 

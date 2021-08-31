@@ -16,9 +16,9 @@ main:
 #  - name: Talks
 #    url: '#talks'
 #    weight: 40
-  - name:  简历
-    url: "/resume"
-    weight:  50
+#  - name:  简历
+#    url: "/resume"
+#    weight:  50
 #  - name: 出版物
 #    url: '#publications'
 #    weight: 50
