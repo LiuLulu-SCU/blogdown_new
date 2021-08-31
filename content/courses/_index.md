@@ -2,9 +2,9 @@
 header:
   caption: ""
   image: ""
-title: Courses
+title: 教程
 type: page
 view: 2
 ---
 
-I teach the following courses:
+
