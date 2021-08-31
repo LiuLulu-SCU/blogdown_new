@@ -61,3 +61,9 @@ title: 刘卢路
 正在探索Blogdown😵
 
 {{< icon name="download" pack="fas" >}} 下载我的 {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}（待修改）.
+
+bookdown书籍  
+- [bookdown教程](content/book/mybook/_book/) （目前来源于李东风老师）
+
+
+
