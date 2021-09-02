@@ -10,7 +10,7 @@ main:
   - name: 博客
     url: '#posts'
     weight: 20
-  - name: 项目
+  - name: 课题
     url: '#projects'
     weight: 30
 #  - name: Talks
