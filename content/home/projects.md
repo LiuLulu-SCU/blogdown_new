@@ -25,12 +25,14 @@ content:
   # To filter by a specific tag, set `tag` to an existing tag name.
   # To remove the toolbar, delete the entire `filter_button` block.
   filter_button:
-  - name: All
+  - name: 全部
     tag: '*'
-  - name: Deep Learning
-    tag: Deep Learning
-  - name: Other
-    tag: Demo
+  - name: 药物经济学
+    tag: CEA
+  - name: 真实世界
+    tag: RWE
+  - name: 其他
+    tag: other
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
@@ -42,7 +44,6 @@ design:
   #   3 = Card
   #   5 = Showcase
   view: 3
-
   # For Showcase view, flip alternate rows?
   flip_alt_rows: false
 ---

@@ -3,7 +3,7 @@ date: "2021-01-01"
 math: true
 title: Statistics
 type: book
-weight: 40
+weight: 100
 ---
 
 Introduction to statistics for data science.

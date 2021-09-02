@@ -46,3 +46,5 @@ rstudioapi::navigateToFile("config/_default/params.yaml")
 rstudioapi::navigateToFile("config/_default/menus.yaml")
 rstudioapi::navigateToFile("config.yaml", line = 15)
 rstudioapi::navigateToFile("content/authors/admin/_index.md")
+
+?knitr::include_graphics

@@ -3,7 +3,7 @@ date: "2021-01-01"
 highlight: true
 title: Visualization
 type: book
-weight: 30
+weight: 90
 ---
 
 Learn how to visualize data with Plotly.
