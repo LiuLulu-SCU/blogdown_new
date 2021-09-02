@@ -6,6 +6,7 @@ new_site(theme = "wowchemy/starter-academic")
 
 #preview your site.预览你的网站
 blogdown::serve_site()
+#
 
 #新建post
 blogdown::new_post(title = "probability",

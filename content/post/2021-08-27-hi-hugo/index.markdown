@@ -15,6 +15,7 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+math: true
 ---
 
 
@@ -45,3 +46,7 @@ summary(Orange)
 ```
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+
+$$
+R=\frac{1}{2}
+$$

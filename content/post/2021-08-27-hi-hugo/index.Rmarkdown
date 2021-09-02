@@ -15,6 +15,7 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+math: true
 ---
 
 
@@ -34,3 +35,7 @@ oplot <- ggplot(Orange, aes(x = age,
   theme_bw()
 oplot
 ```
+
+$$
+R=\frac{1}{2}
+$$
