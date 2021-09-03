@@ -64,8 +64,15 @@ title: 刘卢路
 {{< icon name="download" pack="fas" >}} 下载我的 {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}（待修改）.  
   
   
-<font color=#ED7D31 face="黑体" size=5>**我的bookdown书籍**</font>
+<font color=#ED7D31 face="黑体" size=5>**我的书籍**</font>
 - [bookdown教程](https://liululu.netlify.app/book/mybook/_book/) （目前来源于李东风老师）
+- [CEA教程](courses/probability/) (未完待续)
+
+
+
+
+
+
 - 待补充
 
 
