@@ -88,6 +88,8 @@
   translation: 摘要
 - id: publication
   translation: 出版物
+- id: Publications
+  translation: 出版物
 - id: publication_type
   translation: 类型
 - id: date
