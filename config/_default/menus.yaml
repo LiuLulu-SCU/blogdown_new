@@ -19,12 +19,16 @@ main:
 #  - name:  简历
 #    url: "/resume"
 #    weight:  50
-#  - name: 出版物
-#    url: '#publications'
-#    weight: 50
+
+  - name: 出版物
+    url: '#publications'
+    weight: 50
+
   - name: 教程
     url: courses/
     weight: 60
+
+
 #  - name: 联系方式
 #    url: '#contact'
 #    weight: 70

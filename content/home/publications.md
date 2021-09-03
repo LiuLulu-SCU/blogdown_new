@@ -38,5 +38,5 @@ design:
 ---
 
 {{% callout note %}}
-Quickly discover relevant content by [filtering publications](./publication/).
+ 通过[筛选出版物](./publication/)快速查找相关文献
 {{% /callout %}}

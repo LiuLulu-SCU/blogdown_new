@@ -1,36 +1,32 @@
 ---
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus
-  ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed
-  ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis
-  sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida
-  egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id
-  dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.
-  Vestibulum sit amet erat at nulla eleifend gravida.
-author_notes:
-- Equal contribution
-- Equal contribution
+abstract: 目的利用真实世界数据挖掘硝苯地平普通片和缓释片的不良反应（ADR）信号,并比较两者的安全性差异。方法采用报告比值比法（ROR）和比例报告比值法（PRR）对FDA不良事件报告系统（FEARS）数据2012年第四季度～2018年第二季度共23个季度的不良事件报告进行数据挖掘。结果使用ROR法共得到硝苯地平信号共54个,其中硝苯地平普通片35个,硝苯地平缓释片19个,两种剂型有5个共同信号,包括药物无效、药物不耐受、变态反应、心动过速和头痛。结论硝苯地平普通片特有的不良反应主要集中在新生儿和胎儿异常等,提示妊娠期妇女应该谨慎使用硝苯地平普通片。而硝苯地平缓释片特有的不良反应主要集中在肌肉和骨骼系统,提示肌肉骨骼疾患的患者在选择此药时应警惕。 
+
+
 authors:
 - admin
-- Robert Ford
-date: "2015-09-01T00:00:00Z"
+- 章琦蕴芮
+- 王志远
+- 陈中翎
+- 陈拂尘
+- 陈力
+- 邱佳钰
+
+date: "2019-07-20T00:00:00Z"
 doi: ""
 featured: false
-image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
-  focal_point: ""
-  preview_only: false
+
 projects: []
-publication: '*Journal of Source Themes, 1*(1)'
+publication: '*中南药学, 17*(07)'
 publication_short: ""
 publication_types:
 - "2"
-publishDate: "2017-01-01T00:00:00Z"
+publishDate: "2019-07-20T00:00:00Z"
 slides: example
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus
   ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
 tags:
 - Source Themes
-title: An example journal article
+title: 基于真实世界数据的硝苯地平不良反应信号挖掘研究
 url_code: ""
 url_dataset: ""
 url_pdf: http://arxiv.org/pdf/1512.04133v1
@@ -41,12 +37,5 @@ url_source: ""
 url_video: ""
 ---
 
-{{% callout note %}}
-Click the *Cite* button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-{{% /callout %}}
 
-{{% callout note %}}
-Create your slides in Markdown - click the *Slides* button to check out the example.
-{{% /callout %}}
 
-Supplementary notes can be added here, including [code, math, and images](https://wowchemy.com/docs/writing-markdown-latex/).
