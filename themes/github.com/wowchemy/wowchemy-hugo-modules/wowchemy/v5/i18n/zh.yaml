@@ -121,7 +121,7 @@
 - id: open_project_site
   translation: 访问项目网站
 - id: posts
-  translation: 文章
+  translation: 博客
 - id: publications
   translation: 出版物
 - id: talks

@@ -29,8 +29,8 @@ main:
     weight: 60
 
 
-#  - name: 联系方式
-#    url: '#contact'
-#    weight: 70
+  - name: 联系方式
+    url: '#contact'
+    weight: 70
 
 

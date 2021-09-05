@@ -3,7 +3,9 @@ title: Markdown常用操作
 author: 刘卢路
 date: '2021-09-04'
 slug: markdown-skill
-categories: []
+categories: 
+ - Markdown
+ - RMarkdown
 tags: []
 subtitle: ''
 summary: ''
@@ -29,7 +31,7 @@ projects: []
 输入
 ````
 ```
-s <- 0
+s = 0
 for(x in 1:5) s = s + x^x
 s
 ```
