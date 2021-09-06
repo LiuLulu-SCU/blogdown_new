@@ -9,14 +9,14 @@ headless: true
 # Order that this section appears on the page.
 weight: 60
 
-title: 帖子
+title: 博客
 subtitle:
 
 content:
   # Page type to display. E.g. post, talk, publication...
   page_type: post
   # Choose how many pages you would like to display (0 = all pages)
-  count: 3
+  count: 5
   # Filter on criteria
   filters:
     author: ""
@@ -37,5 +37,9 @@ design:
   #   2 = Compact
   #   3 = Card
   #   4 = Citation (publication only)
-  view: 2
+  view: 1
+
+  spacing:
+    # Customize the section spacing. Order is top, right, bottom, left.
+    padding: ["30px", "0", "30px", "0"]
 ---
