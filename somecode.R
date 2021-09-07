@@ -9,7 +9,7 @@ blogdown::serve_site()
 #
 
 #新建post
-blogdown::new_post(title = "Life",
+blogdown::new_post(title = "netify",
                    ext = '.Rmarkdown',
                    subdir = "post")
 
