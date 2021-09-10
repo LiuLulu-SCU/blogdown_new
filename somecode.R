@@ -5,11 +5,12 @@ new_site(theme = "wowchemy/starter-academic")
 
 
 #preview your site.预览你的网站
+options(blogdown.server.timeout = 600)
 blogdown::serve_site()
 #
 
 #新建post
-blogdown::new_post(title = "netify",
+blogdown::new_post(title = "table-of-contents",
                    ext = '.Rmarkdown',
                    subdir = "post")
 
