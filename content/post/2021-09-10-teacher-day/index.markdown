@@ -3,7 +3,7 @@ title: 2021年的教师节
 author: 刘卢路
 date: '2021-09-10'
 slug: teacher-day
-categories: []
+categories: [Life]
 tags: []
 subtitle: ''
 summary: ''
@@ -21,7 +21,6 @@ projects: []
 
 下午和小笨🐷路过咖啡吧:coffee:，看到学院组织的教师节手绘帆布包活动，一起手绘了一个“派大星”和“哆啦A梦”的卡通人物包包送给我们的两位老师。
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/1-2.jpg" width="672" />
 <img src="{{< blogdown/postref >}}index_files/figure-html/1-3.jpg" width="672" />
 <img src="{{< blogdown/postref >}}index_files/figure-html/1-4.jpg" width="672" />
 
