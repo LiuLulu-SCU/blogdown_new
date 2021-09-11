@@ -5,15 +5,13 @@ bio: 我的研究兴趣：药物经济学和真实世界研究
 # Education to show in About widget
 education:
   courses:
-  - course: 临床药学学士
-    institution: 四川大学华西药学院
-    year: 2015-2020
   - course: 药物经济学硕士
     institution: 天津大学药学院
     year: 2020-至今
-  - course: 基本已放弃读博
-    institution: 
-    year: 
+  - course: 临床药学学士
+    institution: 四川大学华西药学院
+    year: 2015-2020
+
 email: ""
 highlight_name: false
 
