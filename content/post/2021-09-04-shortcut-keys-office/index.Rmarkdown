@@ -29,10 +29,12 @@ projects: []
 
 
 ## 段落
-居左 `Ctrl+L`
+居左 `Ctrl+L`  
 居中 `Ctrl+E`  
 居右 `Ctrl+R`
 
 
-
+## 页眉页脚
+首页去除页眉横线`Ctrl+Shift+N`
+<img src="{{< blogdown/postref >}}index_files/figure-html/1-1.png"  />
 
