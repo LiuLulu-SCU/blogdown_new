@@ -1,0 +1,37 @@
+---
+title: DIY星空吊坠
+author: Alison Hill
+date: '2021-09-20'
+slug: star-constellation
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-09-20T17:17:23+08:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+今天陪小笨:pig:学妹去北京。刚好去做了两个手工DIY星空吊坠，顺手买了两只:pig2:。
+但是也丢了把:umbrella:，伤心:sob:。
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/3.jpg" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/4.jpg" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/1.jpg" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/2.jpg" width="672" />
+
+
+
+
+
+
+
+
+
+
+
