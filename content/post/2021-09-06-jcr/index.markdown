@@ -1,12 +1,12 @@
 ---
-title: JCR
+title: 影响因子查询
 author: 刘卢路
 date: '2021-09-06'
 slug: jcr
-categories:
- - JCR
+categories: 
+tags: 
+ - JCR 
  - IF
-tags: []
 subtitle: ''
 summary: ''
 authors: []
@@ -18,16 +18,16 @@ image:
   preview_only: no
 projects: []
 ---
+## 一、JCR影响因子查询
 
 1. 登录官网 https://jcr.clarivate.com/jcr/home
 2. 输入查询的杂志名，如Health Polocy
 
-```r
-plot(1:10)
-```
+<img src="{{< blogdown/postref >}}index_files/figure-html/1-1.png" width="672" />
 
-
-
+3. 查看影响因子（Influence Factor, IF）和分区
+<img src="{{< blogdown/postref >}}index_files/figure-html/1-2.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/1-3.png" width="672" />
 
 
 

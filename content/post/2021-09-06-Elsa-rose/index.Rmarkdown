@@ -3,7 +3,8 @@ title: 花卉市场与爱莎玫瑰
 author: 刘卢路
 date: '2021-09-05'
 slug: Elsa-rose
-categories: []
+categories: 
+ - Life
 tags: []
 subtitle: ''
 summary: ''
