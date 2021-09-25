@@ -1,0 +1,15 @@
+人群纳排代码
+acs识别
+住院库中有acs主要诊断
+排除陈旧性心肌梗死
+排除未造成心肌梗死
+statamarkdown
+下载statamarkdown并连接stata
+下载statamarkdown
+加载statamarkdown
+例子
+链接各个代码块
+useful
+num_of_pharmacy
+collectcode代码块选项
+基于stata使用rmarkdown书写动态文档statamarkdown

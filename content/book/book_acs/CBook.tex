@@ -1,0 +1,369 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={ACS课题},
+  pdfauthor={刘卢路},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{ctex}
+
+%\usepackage{xltxtra} % XeLaTeX的一些额外符号
+% 设置中文字体
+%\setCJKmainfont[BoldFont={黑体},ItalicFont={楷体}]{新宋体}
+
+% 设置边距
+\usepackage{geometry}
+\geometry{%
+  left=2.0cm, right=2.0cm, top=3.5cm, bottom=2.5cm} 
+
+\usepackage{amsthm,mathrsfs}
+\usepackage{booktabs}
+\usepackage{longtable}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[style=apa,]{biblatex}
+\addbibresource{mybib.bib}
+
+\title{ACS课题}
+\author{刘卢路}
+\date{2021年9月6日}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{ux7b80ux4ecb}{%
+\chapter*{简介}\label{ux7b80ux4ecb}}
+\addcontentsline{toc}{chapter}{简介}
+
+对ACS课题进行全纪录
+
+\hypertarget{ux4ebaux7fa4ux7eb3ux6392ux4ee3ux7801}{%
+\chapter{人群纳排代码}\label{ux4ebaux7fa4ux7eb3ux6392ux4ee3ux7801}}
+
+\hypertarget{acsux8bc6ux522b}{%
+\section{ACS识别}\label{acsux8bc6ux522b}}
+
+\hypertarget{ux4f4fux9662ux5e93ux4e2dux6709acsux4e3bux8981ux8bcaux65ad}{%
+\subsection{住院库中有ACS主要诊断}\label{ux4f4fux9662ux5e93ux4e2dux6709acsux4e3bux8981ux8bcaux65ad}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{use} \StringTok{"文件路径"}\NormalTok{,}\KeywordTok{clear}
+\KeywordTok{gen}\NormalTok{ ACS=0}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzd,}\StringTok{"*I20.0*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzd,}\StringTok{"*I21"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzd,}\StringTok{"*I21.*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzd,}\StringTok{"*I22"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzd,}\StringTok{"*I22.*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*冠综*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*冠脉综合*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*冠状动脉综合*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*心肌梗死*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*心肌梗塞*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*心梗*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*不稳定心绞痛*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*不稳定性心绞痛*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*不稳定型心绞痛*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*胸痹*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*心痛*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*初发劳力心绞痛*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*初发劳力性心绞痛*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*初发劳力型心绞痛*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*恶化劳力*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*恶化性劳力*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*恶化型劳力*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*初发劳累心绞痛*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*初发劳累性心绞痛*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*初发劳累型心绞痛*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*恶化劳累*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*恶化性劳累*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*恶化型劳累*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*自发心绞痛*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*自发性心绞痛*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=1 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*自发型心绞痛*"}\NormalTok{)}
+\KeywordTok{keep} \KeywordTok{if}\NormalTok{ ACS==1}
+\KeywordTok{destring}\NormalTok{ grbm,}\KeywordTok{replace}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux6392ux9664ux9648ux65e7ux6027ux5fc3ux808cux6897ux6b7b}{%
+\subsection{排除陈旧性心肌梗死}\label{ux6392ux9664ux9648ux65e7ux6027ux5fc3ux808cux6897ux6b7b}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{replace}\NormalTok{ ACS=0 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzd,}\StringTok{"*I25.2*"}\NormalTok{)}
+\KeywordTok{replace}\NormalTok{ ACS=0 }\KeywordTok{if} \FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*陈旧*"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux6392ux9664ux672aux9020ux6210ux5fc3ux808cux6897ux6b7b}{%
+\subsection{排除未造成心肌梗死}\label{ux6392ux9664ux672aux9020ux6210ux5fc3ux808cux6897ux6b7b}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{replace}\NormalTok{ ACS=0 }\FunctionTok{strmatch}\NormalTok{(cyzdmc,}\StringTok{"*未造成心肌梗死*"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{statamarkdown}{%
+\chapter{Statamarkdown}\label{statamarkdown}}
+
+\hypertarget{ux4e0bux8f7dstatamarkdownux5e76ux8fdeux63a5stata}{%
+\section{下载Statamarkdown并连接Stata}\label{ux4e0bux8f7dstatamarkdownux5e76ux8fdeux63a5stata}}
+
+\hypertarget{ux4e0bux8f7dstatamarkdown}{%
+\subsection{下载Statamarkdown}\label{ux4e0bux8f7dstatamarkdown}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(devtools) }\CommentTok{\# you may need to install devtools}
+\FunctionTok{install\_github}\NormalTok{(}\StringTok{"hemken/Statamarkdown"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux52a0ux8f7dstatamarkdown}{%
+\subsection{加载Statamarkdown}\label{ux52a0ux8f7dstatamarkdown}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(Statamarkdown)}
+\NormalTok{stataexe }\OtherTok{\textless{}{-}} \StringTok{"E:/STATA13/安装程序/StataMP{-}64.exe"}
+\NormalTok{knitr}\SpecialCharTok{::}\NormalTok{opts\_chunk}\SpecialCharTok{$}\FunctionTok{set}\NormalTok{(}\AttributeTok{engine.path=}\FunctionTok{list}\NormalTok{(}\AttributeTok{stata=}\NormalTok{stataexe))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux4f8bux5b50}{%
+\subsection{例子}\label{ux4f8bux5b50}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sysuse}\NormalTok{ auto}
+\KeywordTok{summarize}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    Variable |       Obs        Mean    Std. Dev.       Min        Max
+-------------+--------------------------------------------------------
+        make |         0
+       price |        74    6165.257    2949.496       3291      15906
+         mpg |        74     21.2973    5.785503         12         41
+       rep78 |        69    3.405797    .9899323          1          5
+    headroom |        74    2.993243    .8459948        1.5          5
+-------------+--------------------------------------------------------
+       trunk |        74    13.75676    4.277404          5         23
+      weight |        74    3019.459    777.1936       1760       4840
+      length |        74    187.9324    22.26634        142        233
+        turn |        74    39.64865    4.399354         31         51
+displacement |        74    197.2973    91.83722         79        425
+-------------+--------------------------------------------------------
+  gear_ratio |        74    3.014865    .4562871       2.19       3.89
+     foreign |        74    .2972973    .4601885          0          1
+\end{verbatim}
+
+\hypertarget{ux94feux63a5ux5404ux4e2aux4ee3ux7801ux5757}{%
+\section{链接各个代码块}\label{ux94feux63a5ux5404ux4e2aux4ee3ux7801ux5757}}
+
+注意，每个STATA代码块都是作为一个独立的STATA会话来执行，彼此相互独立。即，第一个代码块调用的数据和生成的新变量，第二个代码块并不会自动继承，而需要重新调用和生成。
+\#\#\# collectcode代码块选项
+当Statamarkdown包加载之后，Stata代码块就可以利用collectcode选项作为块钩（chunk hook），把各代码块连接起来。这样前面块调用的数据和生成的新变量，后面的代码直接继承
+
+\begin{verbatim}
+```stata
+sysuse auto
+generate gpm = 1/mpg
+summarize price gpm
+```
+
+```
+    Variable |       Obs        Mean    Std. Dev.       Min  
+>       Max
+-------------+-----------------------------------------------
+> ---------
+       price |        74    6165.257    2949.496       3291  
+>     15906
+         gpm |        74    .0501928    .0127986   .0243902  
+>  .0833333
+```
+
+A second, later code block:
+
+```stata
+regress price gpm
+```
+
+```
+      Source |       SS       df       MS              Number
+>  of obs =      74
+-------------+------------------------------           F(  1,
+>     72) =   35.95
+       Model |   211486574     1   211486574           Prob >
+>  F      =  0.0000
+    Residual |   423578822    72  5883039.19           R-squa
+> red     =  0.3330
+-------------+------------------------------           Adj R-
+> squared =  0.3238
+       Total |   635065396    73  8699525.97           Root M
+> SE      =  2425.5
+
+-------------------------------------------------------------
+> -----------------
+       price |      Coef.   Std. Err.      t    P>|t|     [95
+> % Con                                                      
+>      f. Interval]
+-------------+-----------------------------------------------
+> -----------------
+         gpm |     132990   22180.86     6.00   0.000     887
+> 73.24                                                      
+>          177206.7
+       _cons |  -509.8827   1148.469    -0.44   0.658    -279
+> 9.314                                                      
+>          1779.548
+-------------------------------------------------------------
+> -----------------
+```
+\end{verbatim}
+
+\hypertarget{useful}{%
+\chapter{有用的统计数字}\label{useful}}
+
+\hypertarget{num_of_pharmacy}{%
+\section{医保药店}\label{num_of_pharmacy}}
+
+利用2017城职门诊库，医保数据库中有688家药店，天津有2203家药店，\textbf{医保药店的比例为31.23\%}。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{use} \StringTok{"I:\textbackslash{}cz}\CharTok{\textbackslash{}f}\StringTok{yxx\textbackslash{}2017\textbackslash{}2017\_mzfyxx\_1.dta"}\NormalTok{,}\KeywordTok{clear}
+\KeywordTok{keep} \KeywordTok{if}\NormalTok{ yylb==}\StringTok{"00"}
+\KeywordTok{bysort}\NormalTok{ yymc:}\KeywordTok{keep} \KeywordTok{if} \DataTypeTok{\_n}\NormalTok{==1}
+
+\KeywordTok{set} \KeywordTok{more} \KeywordTok{off}
+\KeywordTok{forvalues}\NormalTok{ i=2/16\{}
+\KeywordTok{append} \KeywordTok{using} \StringTok{"I:\textbackslash{}cz}\CharTok{\textbackslash{}f}\StringTok{yxx\textbackslash{}2017\textbackslash{}2017\_mzfyxx\_\textasciigrave{}i\textquotesingle{}.dta"}\NormalTok{, }\KeywordTok{force}
+\KeywordTok{keep} \KeywordTok{if}\NormalTok{ yylb==}\StringTok{"00"}
+\KeywordTok{bysort}\NormalTok{ yymc:}\KeywordTok{keep} \KeywordTok{if} \DataTypeTok{\_n}\NormalTok{==1}
+\NormalTok{\}}
+
+\KeywordTok{codebook}\NormalTok{ yymc}
+\end{Highlighting}
+\end{Shaded}
+
+
+\printbibliography
+
+\end{document}

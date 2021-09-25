@@ -154,3 +154,11 @@
   translation: 了解更多
 - id: published_with
   translation: 由{wowchemy}支持发布——免费{repo_link}开源{/repo_link}网站，为创作者赋能。
+- id: Categories
+  translation: 分类
+- id: Tags
+  translation: 标签
+- id: categories
+  translation: 分类
+- id: tags
+  translation: 标签
