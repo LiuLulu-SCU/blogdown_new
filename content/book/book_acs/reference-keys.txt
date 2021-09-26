@@ -13,3 +13,4 @@ useful
 num_of_pharmacy
 collectcode代码块选项
 基于stata使用rmarkdown书写动态文档statamarkdown
+num_of_people
