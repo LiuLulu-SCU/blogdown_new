@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="statamarkdown.html"/>
+<link rel="next" href="基于stata使用rmarkdown书写动态文档statamarkdown.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -156,22 +156,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II 其他</b></span></li>
-<li class="chapter" data-level="2" data-path="statamarkdown.html"><a href="statamarkdown.html"><i class="fa fa-check"></i><b>2</b> Statamarkdown</a>
+<li class="chapter" data-level="2" data-path="基于stata使用rmarkdown书写动态文档statamarkdown.html"><a href="基于stata使用rmarkdown书写动态文档statamarkdown.html"><i class="fa fa-check"></i><b>2</b> 基于Stata使用RMarkdown书写动态文档（Statamarkdown）</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="statamarkdown.html"><a href="statamarkdown.html#下载statamarkdown并连接stata"><i class="fa fa-check"></i><b>2.1</b> 下载Statamarkdown并连接Stata</a>
+<li class="chapter" data-level="2.1" data-path="基于stata使用rmarkdown书写动态文档statamarkdown.html"><a href="基于stata使用rmarkdown书写动态文档statamarkdown.html#下载statamarkdown并连接stata"><i class="fa fa-check"></i><b>2.1</b> 下载Statamarkdown并连接Stata</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="statamarkdown.html"><a href="statamarkdown.html#下载statamarkdown"><i class="fa fa-check"></i><b>2.1.1</b> 下载Statamarkdown</a></li>
-<li class="chapter" data-level="2.1.2" data-path="statamarkdown.html"><a href="statamarkdown.html#加载statamarkdown"><i class="fa fa-check"></i><b>2.1.2</b> 加载Statamarkdown</a></li>
-<li class="chapter" data-level="2.1.3" data-path="statamarkdown.html"><a href="statamarkdown.html#例子"><i class="fa fa-check"></i><b>2.1.3</b> 例子</a></li>
+<li class="chapter" data-level="2.1.1" data-path="基于stata使用rmarkdown书写动态文档statamarkdown.html"><a href="基于stata使用rmarkdown书写动态文档statamarkdown.html#下载statamarkdown"><i class="fa fa-check"></i><b>2.1.1</b> 下载Statamarkdown</a></li>
+<li class="chapter" data-level="2.1.2" data-path="基于stata使用rmarkdown书写动态文档statamarkdown.html"><a href="基于stata使用rmarkdown书写动态文档statamarkdown.html#加载statamarkdown"><i class="fa fa-check"></i><b>2.1.2</b> 加载Statamarkdown</a></li>
+<li class="chapter" data-level="2.1.3" data-path="基于stata使用rmarkdown书写动态文档statamarkdown.html"><a href="基于stata使用rmarkdown书写动态文档statamarkdown.html#例子"><i class="fa fa-check"></i><b>2.1.3</b> 例子</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="statamarkdown.html"><a href="statamarkdown.html#链接各个代码块"><i class="fa fa-check"></i><b>2.2</b> 链接各个代码块</a>
+<li class="chapter" data-level="2.2" data-path="基于stata使用rmarkdown书写动态文档statamarkdown.html"><a href="基于stata使用rmarkdown书写动态文档statamarkdown.html#链接各个代码块"><i class="fa fa-check"></i><b>2.2</b> 链接各个代码块</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="statamarkdown.html"><a href="statamarkdown.html#collectcode代码块选项"><i class="fa fa-check"></i><b>2.2.1</b> collectcode代码块选项</a></li>
+<li class="chapter" data-level="2.2.1" data-path="基于stata使用rmarkdown书写动态文档statamarkdown.html"><a href="基于stata使用rmarkdown书写动态文档statamarkdown.html#collectcode代码块选项"><i class="fa fa-check"></i><b>2.2.1</b> collectcode代码块选项</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="useful.html"><a href="useful.html"><i class="fa fa-check"></i><b>3</b> 有用的统计数字</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="useful.html"><a href="useful.html#num_of_pharmacy"><i class="fa fa-check"></i><b>3.1</b> 医保药店</a></li>
+<li class="chapter" data-level="3.1" data-path="useful.html"><a href="useful.html#num_of_people"><i class="fa fa-check"></i><b>3.1</b> 参保人数</a></li>
+<li class="chapter" data-level="3.2" data-path="useful.html"><a href="useful.html#num_of_pharmacy"><i class="fa fa-check"></i><b>3.2</b> 医保药店</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -195,6 +196,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">1</span> 人群纳排代码</h1>
 <div id="acs识别" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> ACS识别</h2>
+<blockquote>
+<p>思路</p>
+</blockquote>
+<ul>
+<li>通过<font color=#eb3434>ICD-10编码</font>（I20.0、I21、I22）辅以
+<font color=#eb3434>中文字段</font>
+，识别有ACS住院主要诊断的记录；<br />
+</li>
+<li>排除“陈旧性心肌梗死”和“未造成心肌梗死”的记录。</li>
+</ul>
 <div id="住院库中有acs主要诊断" class="section level3" number="1.1.1">
 <h3><span class="header-section-number">1.1.1</span> 住院库中有ACS主要诊断</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb1-1"><a href="人群纳排代码.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> <span class="st">&quot;文件路径&quot;</span>,<span class="kw">clear</span></span>
@@ -254,7 +265,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="statamarkdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="基于stata使用rmarkdown书写动态文档statamarkdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
