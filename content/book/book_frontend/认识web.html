@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 认识Web | 前端学习笔记</title>
+  <meta name="description" content="前端学习全纪录" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 认识Web | 前端学习笔记" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="前端学习全纪录" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 认识Web | 前端学习笔记" />
+  
+  <meta name="twitter:description" content="前端学习全纪录" />
+  
+
+<meta name="author" content="刘卢路" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="html初识.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a></li>
+<li class="part"><span><b>I HTML基础</b></span></li>
+<li class="chapter" data-level="1" data-path="认识web.html"><a href="认识web.html"><i class="fa fa-check"></i><b>1</b> 认识Web</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="认识web.html"><a href="认识web.html#网页"><i class="fa fa-check"></i><b>1.1</b> 网页</a></li>
+<li class="chapter" data-level="1.2" data-path="认识web.html"><a href="认识web.html#浏览器"><i class="fa fa-check"></i><b>1.2</b> 浏览器</a></li>
+<li class="chapter" data-level="1.3" data-path="认识web.html"><a href="认识web.html#web标准"><i class="fa fa-check"></i><b>1.3</b> Web标准</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="认识web.html"><a href="认识web.html#为什么需要web标准"><i class="fa fa-check"></i><b>1.3.1</b> 为什么需要Web标准</a></li>
+<li class="chapter" data-level="1.3.2" data-path="认识web.html"><a href="认识web.html#web标准构成"><i class="fa fa-check"></i><b>1.3.2</b> Web标准构成</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="html初识.html"><a href="html初识.html"><i class="fa fa-check"></i><b>2</b> HTML初识</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="html初识.html"><a href="html初识.html#基本语法规范"><i class="fa fa-check"></i><b>2.1</b> 基本语法规范</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="html初识.html"><a href="html初识.html#基本语法概述"><i class="fa fa-check"></i><b>2.1.1</b> 基本语法概述</a></li>
+<li class="chapter" data-level="2.1.2" data-path="html初识.html"><a href="html初识.html#标签关系"><i class="fa fa-check"></i><b>2.1.2</b> 标签关系</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="html初识.html"><a href="html初识.html#基本结构标签"><i class="fa fa-check"></i><b>2.2</b> 基本结构标签</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="网页开发工具.html"><a href="网页开发工具.html"><i class="fa fa-check"></i><b>3</b> 网页开发工具</a></li>
+<li class="chapter" data-level="4" data-path="section.html"><a href="section.html"><i class="fa fa-check"></i><b>4</b> 4</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">前端学习笔记</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="认识web" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> 认识Web</h1>
+<p>本篇文章主要由五个章节构成，从WEB标准到初识HTML，接着学习HTML常用标签，最后学习表格列表和表单。💪💪开始充电之旅啦~~~</p>
+<div id="网页" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> 网页</h2>
+<p><strong>网页</strong>是由文字、图像、音频、视频等元素构成。我们通常看到的网页是以.htm或.html后缀结尾的文件，因此将其俗称为HTML文件，它需要通过浏览器来阅读。</p>
+<p><strong>网站</strong>是网页的集合。</p>
+<p><strong>HTML</strong>是超文标记语言（Hyper Text Makeup Language），它是一种用来描述网页的一种语言。
+HTML不是编程语言，而是一种标记语言（Makeup language），标记语言是一套标签标记（Makeup tag）。
+所谓超文本，有两层含义：</p>
+<ul>
+<li>它可以加入图片、声音、动画、多媒体等内容（超越了文本显著）</li>
+<li>它可以从一个文件跳转到另一个文件，与世界各地主机文件连接（炒鸡连接文本）</li>
+</ul>
+<p><strong>网页的形成</strong>
+网页是由网页元素组成的，这些元素是利用html标签描述出来，然后通过浏览器解析出来显示给用户。
+前端人员开发代码→浏览器显示代码（解析、渲染）→生成Web页面</p>
+</div>
+<div id="浏览器" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> 浏览器</h2>
+<p><strong>浏览器</strong>是显示、运行网页的平台。IE、火狐（Firefox）、谷歌（Chrome）、Safari和欧鹏（Opera）被称为五大浏览器。</p>
+<p><strong>浏览器内核</strong>排版引擎、解释引擎、渲染引擎。负责读取网页内容，整理讯息，计算网页的显示方式并显示页面。</p>
+<table>
+<caption><span id="tab:unnamed-chunk-1">表1.1: </span>浏览器内核</caption>
+<colgroup>
+<col width="4%" />
+<col width="8%" />
+<col width="87%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">浏览器</th>
+<th align="left">内核</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">IE</td>
+<td align="left">Trident</td>
+<td align="left">IE、猎豹安全、360极速浏览器、百度浏览器</td>
+</tr>
+<tr class="even">
+<td align="left">Firefox</td>
+<td align="left">Gecko</td>
+<td align="left">可惜这几年已经没落了，打开速度慢、升级频繁、猪一样的队友flash、神一样的对手chrome。</td>
+</tr>
+<tr class="odd">
+<td align="left">Safari</td>
+<td align="left">Webkit</td>
+<td align="left">现在很多人错误地把 webkit 叫做 chrome内核（即使 chrome内核已经是 blink 了）。苹果感觉像被别人抢了媳妇，都哭晕在厕所里面了。</td>
+</tr>
+<tr class="even">
+<td align="left">Chrome</td>
+<td align="left">Chromium/Blink</td>
+<td align="left">在 Chromium 项目中研发 Blink 渲染引擎（即浏览器核心），内置于 Chrome 浏览器之中。Blink 其实是 WebKit 的分支。大部分国产浏览器最新版都采用Blink内核。二次开发</td>
+</tr>
+<tr class="odd">
+<td align="left">Opera</td>
+<td align="left">Blink</td>
+<td align="left">现在跟随chrome用blink内核。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="web标准" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Web标准</h2>
+<p>Web标准是由W3C组织和其他标准化组织制定的一系列标准的集合。W3C（万维网联盟）是国际最著名的标准化组织。</p>
+<div id="为什么需要web标准" class="section level3" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> 为什么需要Web标准</h3>
+<p>浏览器不同，它们显示页面或者排版就有些许差异。
+遵循Web标准除了可以让不同开发人员写出的页面更标准，更统一外，还有以下优点：👇</p>
+<ul>
+<li>易于维护：只需更改CSS文件，就可以改变整站的样式</li>
+<li>页面响应快：HTML文档体积变小，响应时间短</li>
+<li>可访问性：语义化的HTML（结构和表现相分离的HTML）编写的网页文件，更容易被屏幕阅读器识别</li>
+<li>设备兼容性：不同的样式表可以让网页在不同的设备上呈现不同的样式</li>
+<li>搜索引擎：语义化的HTML能更容易被搜索引擎解析，提升排名</li>
+</ul>
+</div>
+<div id="web标准构成" class="section level3" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Web标准构成</h3>
+<p>主要包括结构标准（Structure），表现标准（Presentation）和行为标准（Behavior）。</p>
+<ul>
+<li>结构标准用于对网页元素进行整理和分类，现阶段主要学的是HTML</li>
+<li>表现标准用于设置网页元素的版式、颜色、大小等外观属性，主要指的是CSS</li>
+<li>行为标准用于对网页模型的定义及交互的编写，现阶段主要学的是JavaScript</li>
+</ul>
+<table>
+<caption><span id="tab:unnamed-chunk-2">表1.2: </span>Web标准</caption>
+<thead>
+<tr class="header">
+<th align="left">标准</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">结构标准</td>
+<td align="left">用于对网页元素进行整理和分类，现阶段主要学的是HTML</td>
+</tr>
+<tr class="even">
+<td align="left">表现标准</td>
+<td align="left">用于设置网页元素的版式、颜色、大小等外观属性，主要指的是CSS</td>
+</tr>
+<tr class="odd">
+<td align="left">行为标准</td>
+<td align="left">用于对网页模型的定义及交互的编写，现阶段主要学的是JavaScript</td>
+</tr>
+</tbody>
+</table>
+<p>Web标准提出的最佳体验方案：<strong>结构、样式、行为相分离</strong>。简单理解：结构写到HTML文件中、表现写到CSS文件中、行为写到JavaScript中。</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="fig/1-1.png" alt="Web标准"  />
+<p class="caption">
+图1.1: Web标准
+</p>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="html初识.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
