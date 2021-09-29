@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 HTML常用标签 | 前端学习笔记</title>
+  <meta name="description" content="前端学习全纪录" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 HTML常用标签 | 前端学习笔记" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="前端学习全纪录" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 HTML常用标签 | 前端学习笔记" />
+  
+  <meta name="twitter:description" content="前端学习全纪录" />
+  
+
+<meta name="author" content="刘卢路" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="网页开发工具.html"/>
+<link rel="next" href="vscode常用操作.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a></li>
+<li class="part"><span><b>I HTML基础</b></span></li>
+<li class="chapter" data-level="1" data-path="认识web.html"><a href="认识web.html"><i class="fa fa-check"></i><b>1</b> 认识Web</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="认识web.html"><a href="认识web.html#网页"><i class="fa fa-check"></i><b>1.1</b> 网页</a></li>
+<li class="chapter" data-level="1.2" data-path="认识web.html"><a href="认识web.html#浏览器"><i class="fa fa-check"></i><b>1.2</b> 浏览器</a></li>
+<li class="chapter" data-level="1.3" data-path="认识web.html"><a href="认识web.html#web标准"><i class="fa fa-check"></i><b>1.3</b> Web标准</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="认识web.html"><a href="认识web.html#为什么需要web标准"><i class="fa fa-check"></i><b>1.3.1</b> 为什么需要Web标准</a></li>
+<li class="chapter" data-level="1.3.2" data-path="认识web.html"><a href="认识web.html#web标准构成"><i class="fa fa-check"></i><b>1.3.2</b> Web标准构成</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="html初识.html"><a href="html初识.html"><i class="fa fa-check"></i><b>2</b> HTML初识</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="html初识.html"><a href="html初识.html#基本语法规范"><i class="fa fa-check"></i><b>2.1</b> 基本语法规范</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="html初识.html"><a href="html初识.html#基本语法概述"><i class="fa fa-check"></i><b>2.1.1</b> 基本语法概述</a></li>
+<li class="chapter" data-level="2.1.2" data-path="html初识.html"><a href="html初识.html#标签关系"><i class="fa fa-check"></i><b>2.1.2</b> 标签关系</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="html初识.html"><a href="html初识.html#基本结构标签"><i class="fa fa-check"></i><b>2.2</b> 基本结构标签</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="网页开发工具.html"><a href="网页开发工具.html"><i class="fa fa-check"></i><b>3</b> 网页开发工具</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="网页开发工具.html"><a href="网页开发工具.html#配置vscode"><i class="fa fa-check"></i><b>3.1</b> 配置VSCode</a></li>
+<li class="chapter" data-level="3.2" data-path="网页开发工具.html"><a href="网页开发工具.html#vscode工具生成骨架标签新增代码"><i class="fa fa-check"></i><b>3.2</b> VSCode工具生成骨架标签新增代码</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="网页开发工具.html"><a href="网页开发工具.html#文档类型doctype"><i class="fa fa-check"></i><b>3.2.1</b> 文档类型<code>&lt;!DOCTYPE&gt;</code></a></li>
+<li class="chapter" data-level="3.2.2" data-path="网页开发工具.html"><a href="网页开发工具.html#页面语言lang"><i class="fa fa-check"></i><b>3.2.2</b> 页面语言<code>lang</code></a></li>
+<li class="chapter" data-level="3.2.3" data-path="网页开发工具.html"><a href="网页开发工具.html#字符集charset"><i class="fa fa-check"></i><b>3.2.3</b> 字符集<code>charset</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="html常用标签.html"><a href="html常用标签.html"><i class="fa fa-check"></i><b>4</b> HTML常用标签</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="html常用标签.html"><a href="html常用标签.html#语义标签"><i class="fa fa-check"></i><b>4.1</b> 语义标签</a></li>
+<li class="chapter" data-level="4.2" data-path="html常用标签.html"><a href="html常用标签.html#标题标签"><i class="fa fa-check"></i><b>4.2</b> 标题标签</a></li>
+<li class="chapter" data-level="4.3" data-path="html常用标签.html"><a href="html常用标签.html#段落标签"><i class="fa fa-check"></i><b>4.3</b> 段落标签</a></li>
+<li class="chapter" data-level="4.4" data-path="html常用标签.html"><a href="html常用标签.html#换行标签"><i class="fa fa-check"></i><b>4.4</b> 换行标签</a></li>
+<li class="chapter" data-level="4.5" data-path="html常用标签.html"><a href="html常用标签.html#文本格式化标签"><i class="fa fa-check"></i><b>4.5</b> 文本格式化标签</a></li>
+<li class="chapter" data-level="4.6" data-path="html常用标签.html"><a href="html常用标签.html#布局标签"><i class="fa fa-check"></i><b>4.6</b> 布局标签</a></li>
+<li class="chapter" data-level="4.7" data-path="html常用标签.html"><a href="html常用标签.html#图像标签和路径"><i class="fa fa-check"></i><b>4.7</b> 图像标签和路径</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="html常用标签.html"><a href="html常用标签.html#图像标签"><i class="fa fa-check"></i><b>4.7.1</b> 图像标签</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="html常用标签.html"><a href="html常用标签.html#案例学习"><i class="fa fa-check"></i><b>4.8</b> 案例学习</a></li>
+</ul></li>
+<li class="part"><span><b>II 附录</b></span></li>
+<li class="chapter" data-level="5" data-path="vscode常用操作.html"><a href="vscode常用操作.html"><i class="fa fa-check"></i><b>5</b> Vscode常用操作</a></li>
+<li class="chapter" data-level="6" data-path="section.html"><a href="section.html"><i class="fa fa-check"></i><b>6</b> 4</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">前端学习笔记</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="html常用标签" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> HTML常用标签</h1>
+<div id="语义标签" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> 语义标签</h2>
+学习标签是有技巧的，重点是记住每个标签的语义。简单理解就是指<strong>标签的含义</strong>，即这个标签是用来干嘛的。<strong>根据标签的语义，在合适的地方给一个最为合理的标签，可以让页面结构更清晰。</strong>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="fig/1-6.png" alt="语义标签"  />
+<p class="caption">
+图4.1: 语义标签
+</p>
+</div>
+</div>
+<div id="标题标签" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> 标题标签</h2>
+<p>为了使网页更具有语义化，我们经常会在页面中用到标题标签。HTML提供了6个等级的网页标题，即<code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>。</p>
+<pre><code>&lt;h1&gt;我是一级标题&lt;/h1&gt;</code></pre>
+<p>h单词head 的缩写，意为头部、标题。
+<strong>标签语义</strong>：作为标题使用，并且依据重要性递减。<br />
+特点：</p>
+<ul>
+<li>加了标题的文字会变的加粗，字号也会依次变大。</li>
+<li>一个标题独占一行。</li>
+</ul>
+<pre><code>&lt;h1&gt;标题一共六级选，&lt;/h1&gt;
+&lt;h2&gt;文字加粗一行显。&lt;/h2&gt;
+&lt;h3&gt;由大到小依次减，&lt;/h3&gt;
+&lt;h4&gt;从重到轻随之变。&lt;/h4&gt;
+&lt;h5&gt;语法规范书写后，&lt;/h5&gt;
+&lt;h6&gt;具体效果刷新见。&lt;/h6&gt;</code></pre>
+</div>
+<div id="段落标签" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> 段落标签</h2>
+<p>在网页中，要把文字有条理地显示出来，就需要将这些文字分段显示。在HTML标签中，<code>&lt;p&gt;</code>标签用于定义段落，它可以将整个网页分为若干个段落。</p>
+<pre><code>&lt;p&gt;我是一个段落标签&lt;/p&gt;</code></pre>
+<p>p是单词paragraph的缩写，意为段落。<strong>标签语义</strong>：可以把HTML文档分割为若干段落。</p>
+<p>特点∶</p>
+<ul>
+<li>文本在一个段落中会根据浏览器窗口的大小自动换行。</li>
+<li>段落和段落之间保有空隙。</li>
+</ul>
+</div>
+<div id="换行标签" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> 换行标签</h2>
+<p>在HTML中，一个段落中的文字会从左到右依次排列，直到浏览器窗口的右端，然后才自动换行。如果希望某段文本强制换行显示，就需要使用换行标签<code>&lt;br /&gt;</code>。</p>
+<pre><code>&lt;br /&gt;</code></pre>
+<p>br是单词break的缩写，意为打断、换行。标签语义∶强制换行。</p>
+<p>特点︰</p>
+<ul>
+<li><code>&lt;br /&gt;</code>是个单标签。</li>
+<li><code>&lt;br /&gt;</code>标签只是简单地开始新的一行，跟段落不一样，段落之间会插入一些垂直的间距。</li>
+</ul>
+</div>
+<div id="文本格式化标签" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> 文本格式化标签</h2>
+<p>在网页中，有时需要为文字设置粗体、斜体或下划线等效果，这时就需要用到HTML中的文本格式化标签，使文字以特殊的方式显示。
+标签语义：突出重要性,比普通文字更重要.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-2">表4.1: </span>文本格式化标签</caption>
+<thead>
+<tr class="header">
+<th align="left">语义</th>
+<th align="left">标签</th>
+<th align="left">单词</th>
+<th align="left">实例</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">加粗</td>
+<td align="left"><code>&lt;strong&gt;&lt;/strong&gt;</code>或者<code>&lt;b&gt;&lt;/b&gt;</code></td>
+<td align="left">strong</td>
+<td align="left"><strong>强调</strong></td>
+<td align="left">更推荐使用<code>&lt;strong&gt;</code>标签加粗语义更强烈</td>
+</tr>
+<tr class="even">
+<td align="left">倾斜</td>
+<td align="left"><code>&lt;em&gt;&lt;/em&gt;</code>或者<code>&lt;i&gt;&lt;/i&gt;</code></td>
+<td align="left">emphasize</td>
+<td align="left"><em>斜体</em></td>
+<td align="left">更推荐使用<code>&lt;em&gt;</code>标签加粗语义更强烈</td>
+</tr>
+<tr class="odd">
+<td align="left">删除线</td>
+<td align="left"><code>&lt;del&gt;&lt;/del&gt;</code>或者<code>&lt;s&gt;&lt;/s&gt;</code></td>
+<td align="left">delete</td>
+<td align="left"><del>删除线</del></td>
+<td align="left">更推荐使用<code>&lt;del&gt;</code>标签加粗语义更强烈</td>
+</tr>
+<tr class="even">
+<td align="left">下划线</td>
+<td align="left"><code>&lt;ins&gt;&lt;/ins&gt;</code>或者<code>&lt;u&gt;&lt;/u&gt;</code></td>
+<td align="left">inserted</td>
+<td align="left"><ins>下划线</ins></td>
+<td align="left">更推荐使用<code>&lt;ins&gt;</code>标签加粗语义更强烈</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="布局标签" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> 布局标签</h2>
+<p><code>&lt;div&gt;</code>和<code>&lt;span&gt;</code>是没有语义的，它们就是一个盒子，用来装内容的。</p>
+<pre><code>&lt;div&gt;这是头部&lt;/div&gt;
+&lt;span&gt;今日价格&lt;/ span&gt;</code></pre>
+<p>div是division的缩写，表示分割、分区。span意为跨度、跨距。</p>
+<p>特点∶</p>
+<ul>
+<li><code>&lt;div&gt;</code>标签用来布局，但是现在一行只能放一个
+<div>
+。大盒子</li>
+<li><code>&lt;span&gt;</code>标签用来布局，一行上可以多个<span>。小盒子</li>
+</ul>
+</div>
+<div id="图像标签和路径" class="section level2" number="4.7">
+<h2><span class="header-section-number">4.7</span> 图像标签和路径</h2>
+<div id="图像标签" class="section level3" number="4.7.1">
+<h3><span class="header-section-number">4.7.1</span> 图像标签</h3>
+<p>在HTML标签中，<code>&lt;img&gt;</code>标签用于定义HTML页面中的图像。</p>
+<pre><code>&lt;img src=&quot;图像URL”/&gt;</code></pre>
+<p>img单词image的缩写，意为图像。
+src是<img>标签的必须属性，是单词source的缩写。它用于指定图像文件的路径和文件名。</p>
+<p>所谓属性︰简单理解就是属于这个图像标签的特性。</p>
+<table>
+<caption><span id="tab:unnamed-chunk-3">表4.2: </span>图像标签常见属性</caption>
+<thead>
+<tr class="header">
+<th align="left">属性</th>
+<th align="left">属性值</th>
+<th align="left">单词</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">src</td>
+<td align="left">图片路径</td>
+<td align="left">source</td>
+<td align="left">必须属性</td>
+</tr>
+<tr class="even">
+<td align="left">alt</td>
+<td align="left">文本</td>
+<td align="left">alternate</td>
+<td align="left">替换文本，图像不能显示的文字</td>
+</tr>
+<tr class="odd">
+<td align="left">title</td>
+<td align="left">文本</td>
+<td align="left">title</td>
+<td align="left">提示文本。鼠标放到图像上，显示的文字</td>
+</tr>
+<tr class="even">
+<td align="left">width</td>
+<td align="left">像素</td>
+<td align="left">width</td>
+<td align="left">设置图像的宽度</td>
+</tr>
+<tr class="odd">
+<td align="left">heigth</td>
+<td align="left">像素</td>
+<td align="left">heigth</td>
+<td align="left">设置图像的高度</td>
+</tr>
+<tr class="even">
+<td align="left">border</td>
+<td align="left">像素</td>
+<td align="left">border</td>
+<td align="left">设置图像的边框粗细</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="案例学习" class="section level2" number="4.8">
+<h2><span class="header-section-number">4.8</span> 案例学习</h2>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="fig/1-7.png" alt="案例学习"  />
+<p class="caption">
+图4.2: 案例学习
+</p>
+</div>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;水花61分伊戈达拉制胜抢断西决勇士再胜开拓者总分2-0&lt;/h1&gt;
+    &lt;h4&gt;数据统计:水花兄弟合砍61分&lt;/h4&gt;
+    &lt;p&gt;
+        库里22投11中，三分14投4中，罚球11罚全中得到37分8篮板8助攻，职业生涯季后赛得分30+次数来到35次
+        超过哈登排名现役第3位，仅次于詹姆斯和杜兰特。
+    &lt;/p&gt;   
+    &lt;p&gt;
+        汤普森22投8中，三分8投4中得到24分3篮板2助攻，德拉蒙德-格林得到16分10篮板7助攻5盖帽，凯文-鲁尼得到14分7篮板2助攻，今天勇士有7名替补出场。
+    &lt;/p&gt;
+    &lt;h4&gt;兄弟对决升级:小库里给哥哥造成压力&lt;/h4&gt;
+    &lt;p&gt;
+        库里兄弟是NBA历史上第一对在分区决赛相遇的兄弟。在西决第1场中，小库里没有给哥哥造成压力，他出场19分钟，7投1中只得到3分3篮板2助攻，在场期间输掉10分。
+    &lt;/p&gt;
+    &lt;p&gt;
+        但在西决第2场中，小库里攻防两端都打出杰出的表现，全场送出4次抢断，包括直接抢断自己的哥哥库里，在防守端给库里造成了极大的困扰。
+    &lt;/p&gt;
+    &lt;p&gt;
+        作者: pink老师&lt;br /&gt;2019-8-8
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="网页开发工具.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vscode常用操作.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

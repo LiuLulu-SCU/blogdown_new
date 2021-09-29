@@ -262,7 +262,7 @@ eg：title标签包含于head标签中。
 \end{verbatim}
 
 并列关系，又被称为兄弟关系。
-eg：title标签包含于head标签中。
+eg：title标签和head标签并列。
 
 \begin{verbatim}
 <head></head>
@@ -280,7 +280,7 @@ eg：title标签包含于head标签中。
         <title>第一个页面</title> 
     </head>
     <body>
-      键盘敲烂，工资过万
+         键盘敲烂，工资过万
     </body>
 </html>
 \end{verbatim}
@@ -315,9 +315,239 @@ HTML文档的后缀名必须是.htm或.html，浏览器的作用是读取HTML文
 \hypertarget{ux7f51ux9875ux5f00ux53d1ux5de5ux5177}{%
 \chapter{网页开发工具}\label{ux7f51ux9875ux5f00ux53d1ux5de5ux5177}}
 
-下载并安装
+\hypertarget{ux914dux7f6evscode}{%
+\section{配置VSCode}\label{ux914dux7f6evscode}}
 
-\href{https://code.visualstudio.com/download}{Visual Studio Code软件}
+下载并安装\href{https://code.visualstudio.com/download}{Visual Studio Code软件}
+
+新建文件（快捷键\texttt{Ctrl}+\texttt{N}），然后保存（快捷键\texttt{Ctrl}+\texttt{S}）后缀名为.html的文件，在第一行代码中输入\texttt{!}，再按\texttt{Tab}键，即可自动生成HTML的骨架文件。安装插件（Open in Browser）后可在浏览器中预览，单击鼠标右键，在弹出窗口中点击\texttt{Open\ in\ Default\ Browser}。\\
+接下来介绍一下如何安装插件。
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{fig/1-4} \includegraphics[width=0.5\linewidth]{fig/1-5} 
+
+}
+
+\caption{安装插件}\label{fig:unnamed-chunk-1}
+\end{figure}
+
+一些常用的插件：
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-2}基本结构标签}
+\centering
+\begin{tabular}[t]{ll}
+\toprule
+插件 & 作用\\
+\midrule
+Chinese (Simplified) Language Pack of VS Code & 中文（简体）语言包\\
+Open in Browser & 右键选择浏览器打开HTML文件\\
+JS-CSS-HTML Formatter & 每次保存，都会自动格式化JS CSS和HTML代码\\
+Auto Rename Tag & 自动重命名配对的HTML/XML标签\\
+CSS peek & 追踪至样式\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\hypertarget{vscodeux5de5ux5177ux751fux6210ux9aa8ux67b6ux6807ux7b7eux65b0ux589eux4ee3ux7801}{%
+\section{VSCode工具生成骨架标签新增代码}\label{vscodeux5de5ux5177ux751fux6210ux9aa8ux67b6ux6807ux7b7eux65b0ux589eux4ee3ux7801}}
+
+\hypertarget{ux6587ux6863ux7c7bux578bdoctype}{%
+\subsection{\texorpdfstring{文档类型\texttt{\textless{}!DOCTYPE\textgreater{}}}{文档类型\textless!DOCTYPE\textgreater{}}}\label{ux6587ux6863ux7c7bux578bdoctype}}
+
+\texttt{\textless{}!DOCTYPE\textgreater{}}是文档类型（Document type）声明，作用是告诉浏览器使用哪种HTML版本来显示网页。
+
+\begin{verbatim}
+<!DOCTYPE html>
+\end{verbatim}
+
+这句代码的意思是：当前页面采取的是HTML5版本来显示网页。注意\texttt{\textless{}!DOCTYPE\textgreater{}}声明位于文档中的首行，处于\texttt{\textless{}html\textgreater{}}标签之前，\texttt{\textless{}!DOCTYPE\textgreater{}}不是一个HTML标签，它就是文档类型声明标签。
+\#\#\# 页面语言\texttt{lang}
+
+\texttt{lang}用来定义当前文档显示的语言（language）。\texttt{en}定义语言为英语，\texttt{zh-CN}定义语言为中文。其实对于文档显示来说，定义成\texttt{en}的文档也可以显示中文，定义成\texttt{zh-CN}的文档也可以显示英文这个属性对浏览器和搜索引擎（百度.谷歌等）还是有作用的。
+
+\hypertarget{ux5b57ux7b26ux96c6charset}{%
+\subsection{\texorpdfstring{字符集\texttt{charset}}{字符集charset}}\label{ux5b57ux7b26ux96c6charset}}
+
+字符集（Character set）是多个字符的集合。以便计算机能够识别和存储各种文字。在\texttt{\textless{}head\textgreater{}}标签内，可以通过\texttt{\textless{}meta\textgreater{}}标签的\texttt{charset}属性来规定HTML文档应该使用哪种字符编码。
+
+\begin{verbatim}
+<meta charset=" UTF-8"/>
+\end{verbatim}
+
+charset常用的值：GB2312、BlG5、GBK和UTF-8，其中\textbf{UTF-}8也被称为\textbf{万国码}，基本包含了全世界所有国家需要用到的字符。\\
+注意∶上面语法是必须要写的代码，否则可能引起乱码的情况。一般情况下，统一使用``UTF-8''编码，尽量统一写成标准的``UTF-8''，不要写成``utf8''或``UTF8''。
+
+\hypertarget{htmlux5e38ux7528ux6807ux7b7e}{%
+\chapter{HTML常用标签}\label{htmlux5e38ux7528ux6807ux7b7e}}
+
+\hypertarget{ux8bedux4e49ux6807ux7b7e}{%
+\section{语义标签}\label{ux8bedux4e49ux6807ux7b7e}}
+
+学习标签是有技巧的，重点是记住每个标签的语义。简单理解就是指\textbf{标签的含义}，即这个标签是用来干嘛的。\textbf{根据标签的语义，在合适的地方给一个最为合理的标签，可以让页面结构更清晰。}
+
+\begin{figure}
+
+{\centering \includegraphics{fig/1-6} 
+
+}
+
+\caption{语义标签}\label{fig:unnamed-chunk-1}
+\end{figure}
+
+\hypertarget{ux6807ux9898ux6807ux7b7e}{%
+\section{标题标签}\label{ux6807ux9898ux6807ux7b7e}}
+
+为了使网页更具有语义化，我们经常会在页面中用到标题标签。HTML提供了6个等级的网页标题，即\texttt{\textless{}h1\textgreater{}} - \texttt{\textless{}h6\textgreater{}}。
+
+\begin{verbatim}
+<h1>我是一级标题</h1>
+\end{verbatim}
+
+h单词head 的缩写，意为头部、标题。
+\textbf{标签语义}：作为标题使用，并且依据重要性递减。\\
+特点：
+
+\begin{itemize}
+\tightlist
+\item
+  加了标题的文字会变的加粗，字号也会依次变大。
+\item
+  一个标题独占一行。
+\end{itemize}
+
+\begin{verbatim}
+<h1>标题一共六级选，</h1>
+<h2>文字加粗一行显。</h2>
+<h3>由大到小依次减，</h3>
+<h4>从重到轻随之变。</h4>
+<h5>语法规范书写后，</h5>
+<h6>具体效果刷新见。</h6>
+\end{verbatim}
+
+\hypertarget{ux6bb5ux843dux6807ux7b7e}{%
+\section{段落标签}\label{ux6bb5ux843dux6807ux7b7e}}
+
+在网页中，要把文字有条理地显示出来，就需要将这些文字分段显示。在HTML标签中，\texttt{\textless{}p\textgreater{}}标签用于定义段落，它可以将整个网页分为若干个段落。
+
+\begin{verbatim}
+<p>我是一个段落标签</p>
+\end{verbatim}
+
+p是单词paragraph的缩写，意为段落。\textbf{标签语义}：可以把HTML文档分割为若干段落。
+
+特点∶
+
+\begin{itemize}
+\tightlist
+\item
+  文本在一个段落中会根据浏览器窗口的大小自动换行。
+\item
+  段落和段落之间保有空隙。
+\end{itemize}
+
+\hypertarget{ux6362ux884cux6807ux7b7e}{%
+\section{换行标签}\label{ux6362ux884cux6807ux7b7e}}
+
+在HTML中，一个段落中的文字会从左到右依次排列，直到浏览器窗口的右端，然后才自动换行。如果希望某段文本强制换行显示，就需要使用换行标签\texttt{\textless{}br\ /\textgreater{}}。
+
+\begin{verbatim}
+<br />
+\end{verbatim}
+
+br是单词break的缩写，意为打断、换行。标签语义∶强制换行。
+
+特点︰
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{\textless{}br\ /\textgreater{}}是个单标签。
+\item
+  \texttt{\textless{}br\ /\textgreater{}}标签只是简单地开始新的一行，跟段落不一样，段落之间会插入一些垂直的间距。
+\end{itemize}
+
+\hypertarget{ux6587ux672cux683cux5f0fux5316ux6807ux7b7e}{%
+\section{文本格式化标签}\label{ux6587ux672cux683cux5f0fux5316ux6807ux7b7e}}
+
+在网页中，有时需要为文字设置粗体、斜体或下划线等效果，这时就需要用到HTML中的文本格式化标签，使文字以特殊的方式显示。
+标签语义：突出重要性,比普通文字更重要.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-2}文本格式化标签}
+\centering
+\begin{tabular}[t]{lllll}
+\toprule
+语义 & 标签 & 单词 & 实例 & 说明\\
+\midrule
+加粗 & `<strong></strong>`或者`<b></b>` & strong & <strong>强调</strong> & 更推荐使用`<strong>`标签加粗语义更强烈\\
+倾斜 & `<em></em>`或者`<i></i>` & emphasize & <em>斜体</em> & 更推荐使用`<em>`标签加粗语义更强烈\\
+删除线 & `<del></del>`或者`<s></s>` & delete & <del>删除线</del> & 更推荐使用`<del>`标签加粗语义更强烈\\
+下划线 & `<ins></ins>`或者`<u></u>` & inserted & <ins>下划线</ins> & 更推荐使用`<ins>`标签加粗语义更强烈\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\hypertarget{ux6848ux4f8bux5b66ux4e60}{%
+\section{案例学习}\label{ux6848ux4f8bux5b66ux4e60}}
+
+\begin{figure}
+
+{\centering \includegraphics{fig/1-7} 
+
+}
+
+\caption{案例学习}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+\begin{verbatim}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>水花61分伊戈达拉制胜抢断西决勇士再胜开拓者总分2-0</h1>
+    <h4>数据统计:水花兄弟合砍61分</h4>
+    <p>
+        库里22投11中，三分14投4中，罚球11罚全中得到37分8篮板8助攻，职业生涯季后赛得分30+次数来到35次
+        超过哈登排名现役第3位，仅次于詹姆斯和杜兰特。
+    </p>   
+    <p>
+        汤普森22投8中，三分8投4中得到24分3篮板2助攻，德拉蒙德-格林得到16分10篮板7助攻5盖帽，凯文-鲁尼得到14分7篮板2助攻，今天勇士有7名替补出场。
+    </p>
+    <h4>兄弟对决升级:小库里给哥哥造成压力</h4>
+    <p>
+        库里兄弟是NBA历史上第一对在分区决赛相遇的兄弟。在西决第1场中，小库里没有给哥哥造成压力，他出场19分钟，7投1中只得到3分3篮板2助攻，在场期间输掉10分。
+    </p>
+    <p>
+        但在西决第2场中，小库里攻防两端都打出杰出的表现，全场送出4次抢断，包括直接抢断自己的哥哥库里，在防守端给库里造成了极大的困扰。
+    </p>
+    <p>
+        作者: pink老师<br />2019-8-8
+    </p>
+</body>
+</html>
+\end{verbatim}
+
+\hypertarget{part-ux9644ux5f55}{%
+\part{附录}\label{part-ux9644ux5f55}}
+
+\hypertarget{vscodeux5e38ux7528ux64cdux4f5c}{%
+\chapter{Vscode常用操作}\label{vscodeux5e38ux7528ux64cdux4f5c}}
+
+快捷键\\
+- 创建文件：\texttt{Ctrl+}N\texttt{-\ 保存文件：}Ctrl+\texttt{S}
+- 放大页面：\texttt{Ctrl}+\texttt{+}
+- 缩小页面：\texttt{Ctrl}+\texttt{-}
+- 预览页面：\texttt{Alt}+\texttt{B}，或单击鼠标右键，在弹出窗口中点击\texttt{Open\ in\ Default\ Browser}
+- 自动换行：\texttt{Alt}+\texttt{Z},或在\texttt{查看}中选择\texttt{自动换行}
 
 \hypertarget{section}{%
 \chapter{4}\label{section}}
