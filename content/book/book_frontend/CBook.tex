@@ -41,6 +41,46 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -255,41 +295,47 @@ HTML标签通常是成对出现的，例如\texttt{\textless{}html\textgreater{}
 包含关系，又被称为父子关系。
 eg：title标签包含于head标签中。
 
-\begin{verbatim}
-<head>
-    <title></title>
-</head>
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}head\textgreater{}}
+    \KeywordTok{\textless{}title\textgreater{}\textless{}/title\textgreater{}}
+\KeywordTok{\textless{}/head\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
 
 并列关系，又被称为兄弟关系。
 eg：title标签和head标签并列。
 
-\begin{verbatim}
-<head></head>
-<body></body>
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}head\textgreater{}\textless{}/head\textgreater{}}
+\KeywordTok{\textless{}body\textgreater{}\textless{}/body\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{ux57faux672cux7ed3ux6784ux6807ux7b7e}{%
 \section{基本结构标签}\label{ux57faux672cux7ed3ux6784ux6807ux7b7e}}
 
 每个网页都会有一个基本的结构标签（也被称为骨架标签），页面内容也是在这些基本标签上书写。HTML页面也称为HTML文档。
 
-\begin{verbatim}
-<html>
-    <head>     
-        <title>第一个页面</title> 
-    </head>
-    <body>
-         键盘敲烂，工资过万
-    </body>
-</html>
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}html\textgreater{}}
+    \KeywordTok{\textless{}head\textgreater{}}     
+        \KeywordTok{\textless{}title\textgreater{}}\NormalTok{第一个页面}\KeywordTok{\textless{}/title\textgreater{}} 
+    \KeywordTok{\textless{}/head\textgreater{}}
+    \KeywordTok{\textless{}body\textgreater{}}
+\NormalTok{         键盘敲烂，工资过万}
+    \KeywordTok{\textless{}/body\textgreater{}}
+\KeywordTok{\textless{}/html\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
 
 HTML文档的后缀名必须是.htm或.html，浏览器的作用是读取HTML文档，并以网页形式显示他们。此时，用浏览器打开这个网页，我们就可以预览我们写的HTML文件了。
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-1}基本结构标签}
+\caption{\label{tab:unnamed-chunk-4}基本结构标签}
 \centering
 \begin{tabular}[t]{lll}
 \toprule
@@ -309,7 +355,7 @@ HTML文档的后缀名必须是.htm或.html，浏览器的作用是读取HTML文
 
 }
 
-\caption{HTML骨架标签}\label{fig:unnamed-chunk-2}
+\caption{HTML骨架标签}\label{fig:unnamed-chunk-5}
 \end{figure}
 
 \hypertarget{ux7f51ux9875ux5f00ux53d1ux5de5ux5177}{%
@@ -354,14 +400,35 @@ CSS peek & 追踪至样式\\
 \hypertarget{vscodeux5de5ux5177ux751fux6210ux9aa8ux67b6ux6807ux7b7eux65b0ux589eux4ee3ux7801}{%
 \section{VSCode工具生成骨架标签新增代码}\label{vscodeux5de5ux5177ux751fux6210ux9aa8ux67b6ux6807ux7b7eux65b0ux589eux4ee3ux7801}}
 
+下面的代码是VSCode生产的骨架代码
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{\textless{}!DOCTYPE }\NormalTok{html}\DataTypeTok{\textgreater{}}
+\KeywordTok{\textless{}html}\OtherTok{ lang=}\StringTok{"en"}\KeywordTok{\textgreater{}}
+\KeywordTok{\textless{}head\textgreater{}}
+    \KeywordTok{\textless{}meta}\OtherTok{ charset=}\StringTok{"UTF{-}8"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}meta}\OtherTok{ http{-}equiv=}\StringTok{"X{-}UA{-}Compatible"}\OtherTok{ content=}\StringTok{"IE=edge"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}meta}\OtherTok{ name=}\StringTok{"viewport"}\OtherTok{ content=}\StringTok{"width=device{-}width, initial{-}scale=1.0"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}title\textgreater{}}\NormalTok{Document}\KeywordTok{\textless{}/title\textgreater{}}
+\KeywordTok{\textless{}/head\textgreater{}}
+\KeywordTok{\textless{}body\textgreater{}}
+    
+\KeywordTok{\textless{}/body\textgreater{}}
+\KeywordTok{\textless{}/html\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
 \hypertarget{ux6587ux6863ux7c7bux578bdoctype}{%
 \subsection{\texorpdfstring{文档类型\texttt{\textless{}!DOCTYPE\textgreater{}}}{文档类型\textless!DOCTYPE\textgreater{}}}\label{ux6587ux6863ux7c7bux578bdoctype}}
 
 \texttt{\textless{}!DOCTYPE\textgreater{}}是文档类型（Document type）声明，作用是告诉浏览器使用哪种HTML版本来显示网页。
 
-\begin{verbatim}
-<!DOCTYPE html>
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{\textless{}!DOCTYPE }\NormalTok{html}\DataTypeTok{\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
 
 这句代码的意思是：当前页面采取的是HTML5版本来显示网页。注意\texttt{\textless{}!DOCTYPE\textgreater{}}声明位于文档中的首行，处于\texttt{\textless{}html\textgreater{}}标签之前，\texttt{\textless{}!DOCTYPE\textgreater{}}不是一个HTML标签，它就是文档类型声明标签。
 \#\#\# 页面语言\texttt{lang}
@@ -373,9 +440,11 @@ CSS peek & 追踪至样式\\
 
 字符集（Character set）是多个字符的集合。以便计算机能够识别和存储各种文字。在\texttt{\textless{}head\textgreater{}}标签内，可以通过\texttt{\textless{}meta\textgreater{}}标签的\texttt{charset}属性来规定HTML文档应该使用哪种字符编码。
 
-\begin{verbatim}
-<meta charset=" UTF-8"/>
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}meta}\OtherTok{ charset=}\StringTok{" UTF{-}8"}\KeywordTok{/\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
 
 charset常用的值：GB2312、BlG5、GBK和UTF-8，其中\textbf{UTF-}8也被称为\textbf{万国码}，基本包含了全世界所有国家需要用到的字符。\\
 注意∶上面语法是必须要写的代码，否则可能引起乱码的情况。一般情况下，统一使用``UTF-8''编码，尽量统一写成标准的``UTF-8''，不要写成``utf8''或``UTF8''。
@@ -402,9 +471,11 @@ charset常用的值：GB2312、BlG5、GBK和UTF-8，其中\textbf{UTF-}8也被�
 
 为了使网页更具有语义化，我们经常会在页面中用到标题标签。HTML提供了6个等级的网页标题，即\texttt{\textless{}h1\textgreater{}} - \texttt{\textless{}h6\textgreater{}}。
 
-\begin{verbatim}
-<h1>我是一级标题</h1>
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}h1\textgreater{}}\NormalTok{我是一级标题}\KeywordTok{\textless{}/h1\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
 
 h单词head 的缩写，意为头部、标题。
 \textbf{标签语义}：作为标题使用，并且依据重要性递减。\\
@@ -418,23 +489,27 @@ h单词head 的缩写，意为头部、标题。
   一个标题独占一行。
 \end{itemize}
 
-\begin{verbatim}
-<h1>标题一共六级选，</h1>
-<h2>文字加粗一行显。</h2>
-<h3>由大到小依次减，</h3>
-<h4>从重到轻随之变。</h4>
-<h5>语法规范书写后，</h5>
-<h6>具体效果刷新见。</h6>
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}h1\textgreater{}}\NormalTok{标题一共六级选，}\KeywordTok{\textless{}/h1\textgreater{}}
+\KeywordTok{\textless{}h2\textgreater{}}\NormalTok{文字加粗一行显。}\KeywordTok{\textless{}/h2\textgreater{}}
+\KeywordTok{\textless{}h3\textgreater{}}\NormalTok{由大到小依次减，}\KeywordTok{\textless{}/h3\textgreater{}}
+\KeywordTok{\textless{}h4\textgreater{}}\NormalTok{从重到轻随之变。}\KeywordTok{\textless{}/h4\textgreater{}}
+\KeywordTok{\textless{}h5\textgreater{}}\NormalTok{语法规范书写后，}\KeywordTok{\textless{}/h5\textgreater{}}
+\KeywordTok{\textless{}h6\textgreater{}}\NormalTok{具体效果刷新见。}\KeywordTok{\textless{}/h6\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{ux6bb5ux843dux6807ux7b7e}{%
 \section{段落标签}\label{ux6bb5ux843dux6807ux7b7e}}
 
 在网页中，要把文字有条理地显示出来，就需要将这些文字分段显示。在HTML标签中，\texttt{\textless{}p\textgreater{}}标签用于定义段落，它可以将整个网页分为若干个段落。
 
-\begin{verbatim}
-<p>我是一个段落标签</p>
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}p\textgreater{}}\NormalTok{我是一个段落标签}\KeywordTok{\textless{}/p\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
 
 p是单词paragraph的缩写，意为段落。\textbf{标签语义}：可以把HTML文档分割为若干段落。
 
@@ -453,9 +528,11 @@ p是单词paragraph的缩写，意为段落。\textbf{标签语义}：可以把H
 
 在HTML中，一个段落中的文字会从左到右依次排列，直到浏览器窗口的右端，然后才自动换行。如果希望某段文本强制换行显示，就需要使用换行标签\texttt{\textless{}br\ /\textgreater{}}。
 
-\begin{verbatim}
-<br />
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}br} \KeywordTok{/\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
 
 br是单词break的缩写，意为打断、换行。标签语义∶强制换行。
 
@@ -477,7 +554,7 @@ br是单词break的缩写，意为打断、换行。标签语义∶强制换行�
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-2}文本格式化标签}
+\caption{\label{tab:unnamed-chunk-6}文本格式化标签}
 \centering
 \begin{tabular}[t]{lllll}
 \toprule
@@ -491,6 +568,70 @@ br是单词break的缩写，意为打断、换行。标签语义∶强制换行�
 \end{tabular}
 \end{table}
 
+\hypertarget{ux5e03ux5c40ux6807ux7b7e}{%
+\section{布局标签}\label{ux5e03ux5c40ux6807ux7b7e}}
+
+\texttt{\textless{}div\textgreater{}}和\texttt{\textless{}span\textgreater{}}是没有语义的，它们就是一个盒子，用来装内容的。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}div\textgreater{}}\NormalTok{这是头部}\KeywordTok{\textless{}/div\textgreater{}}
+\KeywordTok{\textless{}span\textgreater{}}\NormalTok{今日价格}\ErrorTok{\textless{}}\NormalTok{/ span\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+div是division的缩写，表示分割、分区。span意为跨度、跨距。
+
+特点∶
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{\textless{}div\textgreater{}}标签用来布局，但是现在一行只能放一个
+
+  。大盒子
+\item
+  \texttt{\textless{}span\textgreater{}}标签用来布局，一行上可以多个。小盒子
+\end{itemize}
+
+\hypertarget{ux56feux50cfux6807ux7b7eux548cux8defux5f84}{%
+\section{图像标签和路径}\label{ux56feux50cfux6807ux7b7eux548cux8defux5f84}}
+
+\hypertarget{ux56feux50cfux6807ux7b7e}{%
+\subsection{图像标签}\label{ux56feux50cfux6807ux7b7e}}
+
+在HTML标签中，\texttt{\textless{}img\textgreater{}}标签用于定义HTML页面中的图像。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}img}\OtherTok{ src=}\StringTok{"图像URL”/\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+img单词image的缩写，意为图像。
+src是标签的必须属性，是单词source的缩写。它用于指定图像文件的路径和文件名。
+
+所谓属性︰简单理解就是属于这个图像标签的特性。
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-9}图像标签常见属性}
+\centering
+\begin{tabular}[t]{llll}
+\toprule
+属性 & 属性值 & 单词 & 说明\\
+\midrule
+src & 图片路径 & source & 必须属性\\
+alt & 文本 & alternate & 替换文本，图像不能显示的文字\\
+title & 文本 & title & 提示文本。鼠标放到图像上，显示的文字\\
+width & 像素 & width & 设置图像的宽度\\
+heigth & 像素 & heigth & 设置图像的高度\\
+\addlinespace
+border & 像素 & border & 设置图像的边框粗细\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \hypertarget{ux6848ux4f8bux5b66ux4e60}{%
 \section{案例学习}\label{ux6848ux4f8bux5b66ux4e60}}
 
@@ -500,41 +641,43 @@ br是单词break的缩写，意为打断、换行。标签语义∶强制换行�
 
 }
 
-\caption{案例学习}\label{fig:unnamed-chunk-3}
+\caption{案例学习}\label{fig:unnamed-chunk-10}
 \end{figure}
 
-\begin{verbatim}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>水花61分伊戈达拉制胜抢断西决勇士再胜开拓者总分2-0</h1>
-    <h4>数据统计:水花兄弟合砍61分</h4>
-    <p>
-        库里22投11中，三分14投4中，罚球11罚全中得到37分8篮板8助攻，职业生涯季后赛得分30+次数来到35次
-        超过哈登排名现役第3位，仅次于詹姆斯和杜兰特。
-    </p>   
-    <p>
-        汤普森22投8中，三分8投4中得到24分3篮板2助攻，德拉蒙德-格林得到16分10篮板7助攻5盖帽，凯文-鲁尼得到14分7篮板2助攻，今天勇士有7名替补出场。
-    </p>
-    <h4>兄弟对决升级:小库里给哥哥造成压力</h4>
-    <p>
-        库里兄弟是NBA历史上第一对在分区决赛相遇的兄弟。在西决第1场中，小库里没有给哥哥造成压力，他出场19分钟，7投1中只得到3分3篮板2助攻，在场期间输掉10分。
-    </p>
-    <p>
-        但在西决第2场中，小库里攻防两端都打出杰出的表现，全场送出4次抢断，包括直接抢断自己的哥哥库里，在防守端给库里造成了极大的困扰。
-    </p>
-    <p>
-        作者: pink老师<br />2019-8-8
-    </p>
-</body>
-</html>
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{\textless{}!DOCTYPE }\NormalTok{html}\DataTypeTok{\textgreater{}}
+\KeywordTok{\textless{}html}\OtherTok{ lang=}\StringTok{"en"}\KeywordTok{\textgreater{}}
+\KeywordTok{\textless{}head\textgreater{}}
+    \KeywordTok{\textless{}meta}\OtherTok{ charset=}\StringTok{"UTF{-}8"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}meta}\OtherTok{ http{-}equiv=}\StringTok{"X{-}UA{-}Compatible"}\OtherTok{ content=}\StringTok{"IE=edge"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}meta}\OtherTok{ name=}\StringTok{"viewport"}\OtherTok{ content=}\StringTok{"width=device{-}width, initial{-}scale=1.0"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}title\textgreater{}}\NormalTok{Document}\KeywordTok{\textless{}/title\textgreater{}}
+\KeywordTok{\textless{}/head\textgreater{}}
+\KeywordTok{\textless{}body\textgreater{}}
+    \KeywordTok{\textless{}h1\textgreater{}}\NormalTok{水花61分伊戈达拉制胜抢断西决勇士再胜开拓者总分2{-}0}\KeywordTok{\textless{}/h1\textgreater{}}
+    \KeywordTok{\textless{}h4\textgreater{}}\NormalTok{数据统计:水花兄弟合砍61分}\KeywordTok{\textless{}/h4\textgreater{}}
+    \KeywordTok{\textless{}p\textgreater{}}
+\NormalTok{        库里22投11中，三分14投4中，罚球11罚全中得到37分8篮板8助攻，职业生涯季后赛得分30+次数来到35次}
+\NormalTok{        超过哈登排名现役第3位，仅次于詹姆斯和杜兰特。}
+    \KeywordTok{\textless{}/p\textgreater{}}   
+    \KeywordTok{\textless{}p\textgreater{}}
+\NormalTok{        汤普森22投8中，三分8投4中得到24分3篮板2助攻，德拉蒙德{-}格林得到16分10篮板7助攻5盖帽，凯文{-}鲁尼得到14分7篮板2助攻，今天勇士有7名替补出场。}
+    \KeywordTok{\textless{}/p\textgreater{}}
+    \KeywordTok{\textless{}h4\textgreater{}}\NormalTok{兄弟对决升级:小库里给哥哥造成压力}\KeywordTok{\textless{}/h4\textgreater{}}
+    \KeywordTok{\textless{}p\textgreater{}}
+\NormalTok{        库里兄弟是NBA历史上第一对在分区决赛相遇的兄弟。在西决第1场中，小库里没有给哥哥造成压力，他出场19分钟，7投1中只得到3分3篮板2助攻，在场期间输掉10分。}
+    \KeywordTok{\textless{}/p\textgreater{}}
+    \KeywordTok{\textless{}p\textgreater{}}
+\NormalTok{        但在西决第2场中，小库里攻防两端都打出杰出的表现，全场送出4次抢断，包括直接抢断自己的哥哥库里，在防守端给库里造成了极大的困扰。}
+    \KeywordTok{\textless{}/p\textgreater{}}
+    \KeywordTok{\textless{}p\textgreater{}}
+\NormalTok{        作者: pink老师}\KeywordTok{\textless{}br} \KeywordTok{/\textgreater{}}\NormalTok{2019{-}8{-}8}
+    \KeywordTok{\textless{}/p\textgreater{}}
+\KeywordTok{\textless{}/body\textgreater{}}
+\KeywordTok{\textless{}/html\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{part-ux9644ux5f55}{%
 \part{附录}\label{part-ux9644ux5f55}}
@@ -542,12 +685,23 @@ br是单词break的缩写，意为打断、换行。标签语义∶强制换行�
 \hypertarget{vscodeux5e38ux7528ux64cdux4f5c}{%
 \chapter{Vscode常用操作}\label{vscodeux5e38ux7528ux64cdux4f5c}}
 
-快捷键\\
-- 创建文件：\texttt{Ctrl+}N\texttt{-\ 保存文件：}Ctrl+\texttt{S}
-- 放大页面：\texttt{Ctrl}+\texttt{+}
-- 缩小页面：\texttt{Ctrl}+\texttt{-}
-- 预览页面：\texttt{Alt}+\texttt{B}，或单击鼠标右键，在弹出窗口中点击\texttt{Open\ in\ Default\ Browser}
-- 自动换行：\texttt{Alt}+\texttt{Z},或在\texttt{查看}中选择\texttt{自动换行}
+快捷键
+
+\begin{itemize}
+\tightlist
+\item
+  创建文件：\texttt{Ctrl+}N`
+\item
+  保存文件：\texttt{Ctrl+}S`
+\item
+  放大页面：\texttt{Ctrl}+\texttt{+}
+\item
+  缩小页面：\texttt{Ctrl}+\texttt{-}
+\item
+  预览页面：\texttt{Alt}+\texttt{B}，或单击鼠标右键，在弹出窗口中点击\texttt{Open\ in\ Default\ Browser}
+\item
+  自动换行：\texttt{Alt}+\texttt{Z},或在\texttt{查看}中选择\texttt{自动换行}
+\end{itemize}
 
 \hypertarget{section}{%
 \chapter{4}\label{section}}

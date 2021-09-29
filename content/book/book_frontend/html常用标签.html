@@ -66,6 +66,70 @@ MathJax.Hub.Config({
 </script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 </head>
@@ -107,8 +171,7 @@ MathJax.Hub.Config({
 <li class="chapter" data-level="3.2" data-path="网页开发工具.html"><a href="网页开发工具.html#vscode工具生成骨架标签新增代码"><i class="fa fa-check"></i><b>3.2</b> VSCode工具生成骨架标签新增代码</a>
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="网页开发工具.html"><a href="网页开发工具.html#文档类型doctype"><i class="fa fa-check"></i><b>3.2.1</b> 文档类型<code>&lt;!DOCTYPE&gt;</code></a></li>
-<li class="chapter" data-level="3.2.2" data-path="网页开发工具.html"><a href="网页开发工具.html#页面语言lang"><i class="fa fa-check"></i><b>3.2.2</b> 页面语言<code>lang</code></a></li>
-<li class="chapter" data-level="3.2.3" data-path="网页开发工具.html"><a href="网页开发工具.html#字符集charset"><i class="fa fa-check"></i><b>3.2.3</b> 字符集<code>charset</code></a></li>
+<li class="chapter" data-level="3.2.2" data-path="网页开发工具.html"><a href="网页开发工具.html#字符集charset"><i class="fa fa-check"></i><b>3.2.2</b> 字符集<code>charset</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="html常用标签.html"><a href="html常用标签.html"><i class="fa fa-check"></i><b>4</b> HTML常用标签</a>
@@ -154,14 +217,14 @@ MathJax.Hub.Config({
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
 <img src="fig/1-6.png" alt="语义标签"  />
 <p class="caption">
-图4.1: 语义标签
+图3.1: 语义标签
 </p>
 </div>
 </div>
 <div id="标题标签" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> 标题标签</h2>
 <p>为了使网页更具有语义化，我们经常会在页面中用到标题标签。HTML提供了6个等级的网页标题，即<code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>。</p>
-<pre><code>&lt;h1&gt;我是一级标题&lt;/h1&gt;</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="html常用标签.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h1&gt;</span>我是一级标题<span class="kw">&lt;/h1&gt;</span></span></code></pre></div>
 <p>h单词head 的缩写，意为头部、标题。
 <strong>标签语义</strong>：作为标题使用，并且依据重要性递减。<br />
 特点：</p>
@@ -169,17 +232,17 @@ MathJax.Hub.Config({
 <li>加了标题的文字会变的加粗，字号也会依次变大。</li>
 <li>一个标题独占一行。</li>
 </ul>
-<pre><code>&lt;h1&gt;标题一共六级选，&lt;/h1&gt;
-&lt;h2&gt;文字加粗一行显。&lt;/h2&gt;
-&lt;h3&gt;由大到小依次减，&lt;/h3&gt;
-&lt;h4&gt;从重到轻随之变。&lt;/h4&gt;
-&lt;h5&gt;语法规范书写后，&lt;/h5&gt;
-&lt;h6&gt;具体效果刷新见。&lt;/h6&gt;</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="html常用标签.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h1&gt;</span>标题一共六级选，<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb8-2"><a href="html常用标签.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h2&gt;</span>文字加粗一行显。<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb8-3"><a href="html常用标签.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h3&gt;</span>由大到小依次减，<span class="kw">&lt;/h3&gt;</span></span>
+<span id="cb8-4"><a href="html常用标签.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h4&gt;</span>从重到轻随之变。<span class="kw">&lt;/h4&gt;</span></span>
+<span id="cb8-5"><a href="html常用标签.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h5&gt;</span>语法规范书写后，<span class="kw">&lt;/h5&gt;</span></span>
+<span id="cb8-6"><a href="html常用标签.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h6&gt;</span>具体效果刷新见。<span class="kw">&lt;/h6&gt;</span></span></code></pre></div>
 </div>
 <div id="段落标签" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> 段落标签</h2>
 <p>在网页中，要把文字有条理地显示出来，就需要将这些文字分段显示。在HTML标签中，<code>&lt;p&gt;</code>标签用于定义段落，它可以将整个网页分为若干个段落。</p>
-<pre><code>&lt;p&gt;我是一个段落标签&lt;/p&gt;</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="html常用标签.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;</span>我是一个段落标签<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
 <p>p是单词paragraph的缩写，意为段落。<strong>标签语义</strong>：可以把HTML文档分割为若干段落。</p>
 <p>特点∶</p>
 <ul>
@@ -190,7 +253,7 @@ MathJax.Hub.Config({
 <div id="换行标签" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> 换行标签</h2>
 <p>在HTML中，一个段落中的文字会从左到右依次排列，直到浏览器窗口的右端，然后才自动换行。如果希望某段文本强制换行显示，就需要使用换行标签<code>&lt;br /&gt;</code>。</p>
-<pre><code>&lt;br /&gt;</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="html常用标签.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span></code></pre></div>
 <p>br是单词break的缩写，意为打断、换行。标签语义∶强制换行。</p>
 <p>特点︰</p>
 <ul>
@@ -203,7 +266,7 @@ MathJax.Hub.Config({
 <p>在网页中，有时需要为文字设置粗体、斜体或下划线等效果，这时就需要用到HTML中的文本格式化标签，使文字以特殊的方式显示。
 标签语义：突出重要性,比普通文字更重要.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-2">表4.1: </span>文本格式化标签</caption>
+<caption><span id="tab:unnamed-chunk-6">表4.1: </span>文本格式化标签</caption>
 <thead>
 <tr class="header">
 <th align="left">语义</th>
@@ -248,8 +311,8 @@ MathJax.Hub.Config({
 <div id="布局标签" class="section level2" number="4.6">
 <h2><span class="header-section-number">4.6</span> 布局标签</h2>
 <p><code>&lt;div&gt;</code>和<code>&lt;span&gt;</code>是没有语义的，它们就是一个盒子，用来装内容的。</p>
-<pre><code>&lt;div&gt;这是头部&lt;/div&gt;
-&lt;span&gt;今日价格&lt;/ span&gt;</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb11-1"><a href="html常用标签.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div&gt;</span>这是头部<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb11-2"><a href="html常用标签.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;span&gt;</span>今日价格<span class="er">&lt;</span>/ span&gt;</span></code></pre></div>
 <p>div是division的缩写，表示分割、分区。span意为跨度、跨距。</p>
 <p>特点∶</p>
 <ul>
@@ -264,12 +327,12 @@ MathJax.Hub.Config({
 <div id="图像标签" class="section level3" number="4.7.1">
 <h3><span class="header-section-number">4.7.1</span> 图像标签</h3>
 <p>在HTML标签中，<code>&lt;img&gt;</code>标签用于定义HTML页面中的图像。</p>
-<pre><code>&lt;img src=&quot;图像URL”/&gt;</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb12-1"><a href="html常用标签.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;图像URL”/&gt;</span></span></code></pre></div>
 <p>img单词image的缩写，意为图像。
 src是<img>标签的必须属性，是单词source的缩写。它用于指定图像文件的路径和文件名。</p>
 <p>所谓属性︰简单理解就是属于这个图像标签的特性。</p>
 <table>
-<caption><span id="tab:unnamed-chunk-3">表4.2: </span>图像标签常见属性</caption>
+<caption><span id="tab:unnamed-chunk-9">表4.2: </span>图像标签常见属性</caption>
 <thead>
 <tr class="header">
 <th align="left">属性</th>
@@ -321,42 +384,42 @@ src是<img>标签的必须属性，是单词source的缩写。它用于指定图
 </div>
 <div id="案例学习" class="section level2" number="4.8">
 <h2><span class="header-section-number">4.8</span> 案例学习</h2>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
 <img src="fig/1-7.png" alt="案例学习"  />
 <p class="caption">
-图4.2: 案例学习
+图4.1: 案例学习
 </p>
 </div>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;水花61分伊戈达拉制胜抢断西决勇士再胜开拓者总分2-0&lt;/h1&gt;
-    &lt;h4&gt;数据统计:水花兄弟合砍61分&lt;/h4&gt;
-    &lt;p&gt;
-        库里22投11中，三分14投4中，罚球11罚全中得到37分8篮板8助攻，职业生涯季后赛得分30+次数来到35次
-        超过哈登排名现役第3位，仅次于詹姆斯和杜兰特。
-    &lt;/p&gt;   
-    &lt;p&gt;
-        汤普森22投8中，三分8投4中得到24分3篮板2助攻，德拉蒙德-格林得到16分10篮板7助攻5盖帽，凯文-鲁尼得到14分7篮板2助攻，今天勇士有7名替补出场。
-    &lt;/p&gt;
-    &lt;h4&gt;兄弟对决升级:小库里给哥哥造成压力&lt;/h4&gt;
-    &lt;p&gt;
-        库里兄弟是NBA历史上第一对在分区决赛相遇的兄弟。在西决第1场中，小库里没有给哥哥造成压力，他出场19分钟，7投1中只得到3分3篮板2助攻，在场期间输掉10分。
-    &lt;/p&gt;
-    &lt;p&gt;
-        但在西决第2场中，小库里攻防两端都打出杰出的表现，全场送出4次抢断，包括直接抢断自己的哥哥库里，在防守端给库里造成了极大的困扰。
-    &lt;/p&gt;
-    &lt;p&gt;
-        作者: pink老师&lt;br /&gt;2019-8-8
-    &lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb13-1"><a href="html常用标签.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb13-2"><a href="html常用标签.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb13-3"><a href="html常用标签.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb13-4"><a href="html常用标签.html#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb13-5"><a href="html常用标签.html#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;X-UA-Compatible&quot;</span><span class="ot"> content=</span><span class="st">&quot;IE=edge&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb13-6"><a href="html常用标签.html#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb13-7"><a href="html常用标签.html#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Document<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb13-8"><a href="html常用标签.html#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb13-9"><a href="html常用标签.html#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb13-10"><a href="html常用标签.html#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h1&gt;</span>水花61分伊戈达拉制胜抢断西决勇士再胜开拓者总分2-0<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb13-11"><a href="html常用标签.html#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h4&gt;</span>数据统计:水花兄弟合砍61分<span class="kw">&lt;/h4&gt;</span></span>
+<span id="cb13-12"><a href="html常用标签.html#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb13-13"><a href="html常用标签.html#cb13-13" aria-hidden="true" tabindex="-1"></a>        库里22投11中，三分14投4中，罚球11罚全中得到37分8篮板8助攻，职业生涯季后赛得分30+次数来到35次</span>
+<span id="cb13-14"><a href="html常用标签.html#cb13-14" aria-hidden="true" tabindex="-1"></a>        超过哈登排名现役第3位，仅次于詹姆斯和杜兰特。</span>
+<span id="cb13-15"><a href="html常用标签.html#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span>   </span>
+<span id="cb13-16"><a href="html常用标签.html#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb13-17"><a href="html常用标签.html#cb13-17" aria-hidden="true" tabindex="-1"></a>        汤普森22投8中，三分8投4中得到24分3篮板2助攻，德拉蒙德-格林得到16分10篮板7助攻5盖帽，凯文-鲁尼得到14分7篮板2助攻，今天勇士有7名替补出场。</span>
+<span id="cb13-18"><a href="html常用标签.html#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb13-19"><a href="html常用标签.html#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h4&gt;</span>兄弟对决升级:小库里给哥哥造成压力<span class="kw">&lt;/h4&gt;</span></span>
+<span id="cb13-20"><a href="html常用标签.html#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb13-21"><a href="html常用标签.html#cb13-21" aria-hidden="true" tabindex="-1"></a>        库里兄弟是NBA历史上第一对在分区决赛相遇的兄弟。在西决第1场中，小库里没有给哥哥造成压力，他出场19分钟，7投1中只得到3分3篮板2助攻，在场期间输掉10分。</span>
+<span id="cb13-22"><a href="html常用标签.html#cb13-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb13-23"><a href="html常用标签.html#cb13-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb13-24"><a href="html常用标签.html#cb13-24" aria-hidden="true" tabindex="-1"></a>        但在西决第2场中，小库里攻防两端都打出杰出的表现，全场送出4次抢断，包括直接抢断自己的哥哥库里，在防守端给库里造成了极大的困扰。</span>
+<span id="cb13-25"><a href="html常用标签.html#cb13-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb13-26"><a href="html常用标签.html#cb13-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb13-27"><a href="html常用标签.html#cb13-27" aria-hidden="true" tabindex="-1"></a>        作者: pink老师<span class="kw">&lt;br</span> <span class="kw">/&gt;</span>2019-8-8</span>
+<span id="cb13-28"><a href="html常用标签.html#cb13-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb13-29"><a href="html常用标签.html#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb13-30"><a href="html常用标签.html#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 
 </div>
 </div>
