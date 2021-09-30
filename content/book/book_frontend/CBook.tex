@@ -560,7 +560,7 @@ br是单词break的缩写，意为打断、换行。标签语义∶强制换行�
 \toprule
 语义 & 标签 & 单词 & 实例 & 说明\\
 \midrule
-加粗 & `<strong></strong>`或者`<b></b>` & strong & <strong>强调</strong> & 更推荐使用`<strong>`标签加粗语义更强烈\\
+加粗 & `<strong></strong>`或者`<b></b>` & strong & <strong>加粗</strong> & 更推荐使用`<strong>`标签加粗语义更强烈\\
 倾斜 & `<em></em>`或者`<i></i>` & emphasize & <em>斜体</em> & 更推荐使用`<em>`标签加粗语义更强烈\\
 删除线 & `<del></del>`或者`<s></s>` & delete & <del>删除线</del> & 更推荐使用`<del>`标签加粗语义更强烈\\
 下划线 & `<ins></ins>`或者`<u></u>` & inserted & <ins>下划线</ins> & 更推荐使用`<ins>`标签加粗语义更强烈\\
@@ -631,6 +631,39 @@ border & 像素 & border & 设置图像的边框粗细\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+图像标签属性注意点∶
+
+\begin{itemize}
+\tightlist
+\item
+  图像标签可以拥有多个属性，必须写在标签名的后面。
+\item
+  属性之间不分先后顺序，标签名与属性、属性与属性之间均以空格分
+\item
+  属性采取键值对的格式，即key= ``value''的格式，属性=``属性值''
+\end{itemize}
+
+重点掌握点:
+
+\begin{itemize}
+\tightlist
+\item
+  请说出图像标签哪个属性是必须要写的?
+\item
+  请说出图像标签中alt和title属性区别?
+\end{itemize}
+
+\hypertarget{ux8defux5f84}{%
+\subsection{路径}\label{ux8defux5f84}}
+
+实际工作中，我们的文件不能随便乱放，否则用起来很难快速的找到他们，因此我们需要一个文件夹来管理他们。
+
+\textbf{目录文件夹}：就是普通文件夹，里面只不过存放了我们做页面所需要的相关素材，比如html文件、图片等。
+
+\textbf{根目录}：打开目录文件夹的第一层就是根目录.
+
+VSCode打开目录文件夹：文件→打开文件→选择目录文件夹，后期方便管理文件
 
 \hypertarget{ux6848ux4f8bux5b66ux4e60}{%
 \section{案例学习}\label{ux6848ux4f8bux5b66ux4e60}}
