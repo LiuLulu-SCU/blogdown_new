@@ -171,8 +171,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="网页开发工具.html"><a href="网页开发工具.html#vscode工具生成骨架标签新增代码"><i class="fa fa-check"></i><b>3.2</b> VSCode工具生成骨架标签新增代码</a>
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="网页开发工具.html"><a href="网页开发工具.html#文档类型doctype"><i class="fa fa-check"></i><b>3.2.1</b> 文档类型<code>&lt;!DOCTYPE&gt;</code></a></li>
-<li class="chapter" data-level="3.2.2" data-path="网页开发工具.html"><a href="网页开发工具.html#页面语言lang"><i class="fa fa-check"></i><b>3.2.2</b> 页面语言<code>lang</code></a></li>
-<li class="chapter" data-level="3.2.3" data-path="网页开发工具.html"><a href="网页开发工具.html#字符集charset"><i class="fa fa-check"></i><b>3.2.3</b> 字符集<code>charset</code></a></li>
+<li class="chapter" data-level="3.2.2" data-path="网页开发工具.html"><a href="网页开发工具.html#字符集charset"><i class="fa fa-check"></i><b>3.2.2</b> 字符集<code>charset</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="html常用标签.html"><a href="html常用标签.html"><i class="fa fa-check"></i><b>4</b> HTML常用标签</a>
@@ -188,7 +187,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.7.1" data-path="html常用标签.html"><a href="html常用标签.html#图像标签"><i class="fa fa-check"></i><b>4.7.1</b> 图像标签</a></li>
 <li class="chapter" data-level="4.7.2" data-path="html常用标签.html"><a href="html常用标签.html#路径"><i class="fa fa-check"></i><b>4.7.2</b> 路径</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="html常用标签.html"><a href="html常用标签.html#案例学习"><i class="fa fa-check"></i><b>4.8</b> 案例学习</a></li>
+<li class="chapter" data-level="4.8" data-path="html常用标签.html"><a href="html常用标签.html#超链接"><i class="fa fa-check"></i><b>4.8</b> 超链接</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="html常用标签.html"><a href="html常用标签.html#链接的语法格式"><i class="fa fa-check"></i><b>4.8.1</b> 链接的语法格式</a></li>
+<li class="chapter" data-level="4.8.2" data-path="html常用标签.html"><a href="html常用标签.html#链接的分类"><i class="fa fa-check"></i><b>4.8.2</b> 链接的分类</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="html常用标签.html"><a href="html常用标签.html#注释"><i class="fa fa-check"></i><b>4.9</b> 注释</a></li>
+<li class="chapter" data-level="4.10" data-path="html常用标签.html"><a href="html常用标签.html#特殊字符"><i class="fa fa-check"></i><b>4.10</b> 特殊字符</a></li>
+<li class="chapter" data-level="4.11" data-path="html常用标签.html"><a href="html常用标签.html#案例学习"><i class="fa fa-check"></i><b>4.11</b> 案例学习</a></li>
 </ul></li>
 <li class="part"><span><b>II 附录</b></span></li>
 <li class="chapter" data-level="5" data-path="vscode常用操作.html"><a href="vscode常用操作.html"><i class="fa fa-check"></i><b>5</b> Vscode常用操作</a></li>
@@ -219,14 +225,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
 <img src="fig/1-6.png" alt="语义标签"  />
 <p class="caption">
-图4.1: 语义标签
+图3.1: 语义标签
 </p>
 </div>
 </div>
 <div id="标题标签" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> 标题标签</h2>
 <p>为了使网页更具有语义化，我们经常会在页面中用到标题标签。HTML提供了6个等级的网页标题，即<code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>。</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="html常用标签.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h1&gt;</span>我是一级标题<span class="kw">&lt;/h1&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="html常用标签.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h1&gt;</span>我是一级标题<span class="kw">&lt;/h1&gt;</span></span></code></pre></div>
 <p>h单词head 的缩写，意为头部、标题。
 <strong>标签语义</strong>：作为标题使用，并且依据重要性递减。<br />
 特点：</p>
@@ -234,17 +240,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>加了标题的文字会变的加粗，字号也会依次变大。</li>
 <li>一个标题独占一行。</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="html常用标签.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h1&gt;</span>标题一共六级选，<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb2-2"><a href="html常用标签.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h2&gt;</span>文字加粗一行显。<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb2-3"><a href="html常用标签.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h3&gt;</span>由大到小依次减，<span class="kw">&lt;/h3&gt;</span></span>
-<span id="cb2-4"><a href="html常用标签.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h4&gt;</span>从重到轻随之变。<span class="kw">&lt;/h4&gt;</span></span>
-<span id="cb2-5"><a href="html常用标签.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h5&gt;</span>语法规范书写后，<span class="kw">&lt;/h5&gt;</span></span>
-<span id="cb2-6"><a href="html常用标签.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h6&gt;</span>具体效果刷新见。<span class="kw">&lt;/h6&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="html常用标签.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h1&gt;</span>标题一共六级选，<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb8-2"><a href="html常用标签.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h2&gt;</span>文字加粗一行显。<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb8-3"><a href="html常用标签.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h3&gt;</span>由大到小依次减，<span class="kw">&lt;/h3&gt;</span></span>
+<span id="cb8-4"><a href="html常用标签.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h4&gt;</span>从重到轻随之变。<span class="kw">&lt;/h4&gt;</span></span>
+<span id="cb8-5"><a href="html常用标签.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h5&gt;</span>语法规范书写后，<span class="kw">&lt;/h5&gt;</span></span>
+<span id="cb8-6"><a href="html常用标签.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h6&gt;</span>具体效果刷新见。<span class="kw">&lt;/h6&gt;</span></span></code></pre></div>
 </div>
 <div id="段落标签" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> 段落标签</h2>
 <p>在网页中，要把文字有条理地显示出来，就需要将这些文字分段显示。在HTML标签中，<code>&lt;p&gt;</code>标签用于定义段落，它可以将整个网页分为若干个段落。</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="html常用标签.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;</span>我是一个段落标签<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="html常用标签.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;</span>我是一个段落标签<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
 <p>p是单词paragraph的缩写，意为段落。<strong>标签语义</strong>：可以把HTML文档分割为若干段落。</p>
 <p>特点∶</p>
 <ul>
@@ -255,7 +261,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="换行标签" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> 换行标签</h2>
 <p>在HTML中，一个段落中的文字会从左到右依次排列，直到浏览器窗口的右端，然后才自动换行。如果希望某段文本强制换行显示，就需要使用换行标签<code>&lt;br /&gt;</code>。</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="html常用标签.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="html常用标签.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span></code></pre></div>
 <p>br是单词break的缩写，意为打断、换行。标签语义∶强制换行。</p>
 <p>特点︰</p>
 <ul>
@@ -313,8 +319,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="布局标签" class="section level2" number="4.6">
 <h2><span class="header-section-number">4.6</span> 布局标签</h2>
 <p><code>&lt;div&gt;</code>和<code>&lt;span&gt;</code>是没有语义的，它们就是一个盒子，用来装内容的。</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="html常用标签.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div&gt;</span>这是头部<span class="kw">&lt;/div&gt;</span></span>
-<span id="cb5-2"><a href="html常用标签.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;span&gt;</span>今日价格<span class="er">&lt;</span>/ span&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb11-1"><a href="html常用标签.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div&gt;</span>这是头部<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb11-2"><a href="html常用标签.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;span&gt;</span>今日价格<span class="er">&lt;</span>/ span&gt;</span></code></pre></div>
 <p>div是division的缩写，表示分割、分区。span意为跨度、跨距。</p>
 <p>特点∶</p>
 <ul>
@@ -329,7 +335,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="图像标签" class="section level3" number="4.7.1">
 <h3><span class="header-section-number">4.7.1</span> 图像标签</h3>
 <p>在HTML标签中，<code>&lt;img&gt;</code>标签用于定义HTML页面中的图像。</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="html常用标签.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;图像URL”/&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb12-1"><a href="html常用标签.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;图像URL”/&gt;</span></span></code></pre></div>
 <p>img单词image的缩写，意为图像。
 src是<img>标签的必须属性，是单词source的缩写。它用于指定图像文件的路径和文件名。</p>
 <p>所谓属性︰简单理解就是属于这个图像标签的特性。</p>
@@ -400,51 +406,195 @@ src是<img>标签的必须属性，是单词source的缩写。它用于指定图
 <p><strong>目录文件夹</strong>：就是普通文件夹，里面只不过存放了我们做页面所需要的相关素材，比如html文件、图片等。</p>
 <p><strong>根目录</strong>：打开目录文件夹的第一层就是根目录.</p>
 <p>VSCode打开目录文件夹：文件→打开文件→选择目录文件夹，后期方便管理文件</p>
-<p>页面中的图片会非常多，通常我们会新建一个文件夹来存放这些图像文件( images )，这时再查找图像，就需要采用“路径”的方式来指定图像文件的位置。
-路径可以分为︰
-心
-1．相对路径
-2．绝对路径</p>
+<p>页面中的图片会非常多，通常我们会新建一个文件夹来存放这些图像文件( images )，这时再查找图像，就需要采用“路径”的方式来指定图像文件的位置。</p>
+<p>路径可以分为︰</p>
+<ul>
+<li>相对路径</li>
+<li>绝对路径</li>
+</ul>
+<p><strong>相对路径</strong>：以引用文件所在位置为参考基础，而建立出的目录路径。这里简单来说，图片相对于HTML页面的位置。</p>
+<table>
+<caption><span id="tab:unnamed-chunk-10">表4.3: </span>相对路径</caption>
+<thead>
+<tr class="header">
+<th align="left">相对路径分类</th>
+<th align="left">符号</th>
+<th align="left">说明</th>
+<th align="left">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">同一级路径</td>
+<td align="left"></td>
+<td align="left">图像文件位于HTML文件同一级</td>
+<td align="left"><code>&lt;img src="baidu.gif" /&gt;</code></td>
+</tr>
+<tr class="even">
+<td align="left">下一级路劲</td>
+<td align="left">/</td>
+<td align="left">图像文件位于HTML文件下一级</td>
+<td align="left"><code>&lt;img src="images/baidu.gif" /&gt;</code></td>
+</tr>
+<tr class="odd">
+<td align="left">上一级路径</td>
+<td align="left">../</td>
+<td align="left">图像文件位于HTML文件上一级如</td>
+<td align="left"><code>&lt;img src="../baidu.gif" /&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>以此类推，上上一级路径就是 <code>&lt;img src="../../baidu.gif" /&gt;</code></p>
+<p>相对路径是从代码所在的这个文件出发，去寻找目标文件的，而我们这里所说的上一级、下一级和同一级就是图片相对于HTML页面的位置。</p>
+<p><strong>绝对路径</strong>︰是指目录下的绝对位置，直接到达目标位置，通常是从盘符开始的路径。
+例如，<code>“D:\web\imglogo.gif”</code>或完整的网络地址<code>“http://www.itcast.cn/images/logo.gif”</code>。</p>
 </div>
 </div>
-<div id="案例学习" class="section level2" number="4.8">
-<h2><span class="header-section-number">4.8</span> 案例学习</h2>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<div id="超链接" class="section level2" number="4.8">
+<h2><span class="header-section-number">4.8</span> 超链接</h2>
+<p>在HTML标签中，<code>&lt;a&gt;</code>标签用于定义超链接，作用是从一个页面连接到另一个页面。</p>
+<div id="链接的语法格式" class="section level3" number="4.8.1">
+<h3><span class="header-section-number">4.8.1</span> 链接的语法格式</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb13-1"><a href="html常用标签.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;跳转目标&quot;</span><span class="ot"> target=</span><span class="st">&quot;目标窗口的弹出方式&quot;</span><span class="kw">&gt;</span>文本或图像<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
+<p>a是单词anchor的缩写，意为∶锚。</p>
+<p>两个属性的作用如下:</p>
+<table>
+<caption><span id="tab:unnamed-chunk-12">表4.4: </span>超链接标签</caption>
+<thead>
+<tr class="header">
+<th align="left">属性</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">href</td>
+<td align="left">用于指定链接目标的url地址，是必须属性,当为标签应用href属性时，它就具有了超链接的功能</td>
+</tr>
+<tr class="even">
+<td align="left">target</td>
+<td align="left">用于指定链接页面的打开方式，其中_self为默认值，__blank为在新窗口中打开方式。</td>
+</tr>
+</tbody>
+</table>
+<p>注：href是Hypertext REFerence，超文本参考的缩写</p>
+</div>
+<div id="链接的分类" class="section level3" number="4.8.2">
+<h3><span class="header-section-number">4.8.2</span> 链接的分类</h3>
+<ul>
+<li>外部链接：例如<code>&lt;a href="http://www.qq.com" target="_blank"&gt;腾讯&lt;/a&gt;</code></li>
+<li>内部链接：例如<code>&lt;a href="index.html" target="_self"&gt;首页&lt;/a&gt;</code></li>
+<li>空链接：如果当时没有确定链接目标时，如<code>&lt;a href="#"&gt;首页&lt;/a &gt;</code></li>
+<li>下载链接：如果href里面地址是一个文件或者压缩包，会下载这个文件。</li>
+<li>网页元素链接：在网页中的各种网页元素，如文本、图像、表格、音频、视频等都可以添加超链接.</li>
+<li>锚点链接:点我们点击链接,可以快速定位到页面中的某个位置.
+<ul>
+<li>在链接文本的href属性中，设置属性值为#名字的形式，如<code>&lt;a href="#two"&gt;第2集&lt;/a&gt;</code></li>
+<li>找到目标位置标签，里面添加一个id属性=刚才的名字，如:<code>&lt;h3 id="two"&gt;第2集介绍&lt;/h3&gt;</code></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="注释" class="section level2" number="4.9">
+<h2><span class="header-section-number">4.9</span> 注释</h2>
+<p>如果需要在HTML文档中添加一些便于阅读和理解但又不需要显示在页面中的注释文字，就需要使用注释标签。HTML中的注释以<code>&lt;!--</code>开头，以<code>--&gt;</code>结束。</p>
+<pre><code>&lt;!--注释语句--&gt;</code></pre>
+<p>快捷键:Ctrl + /</p>
+<p>一句话:注释标签里面的内容是给程序猿看的,这个代码是不执行不显示到页面中的.
+添加注释是为了更好地解释代码的功能，便于相关开发人员理解和阅读代码，程序是不会执行注释内容的。</p>
+<p><strong>团队约定</strong>：注释内容前后各一个空格字符，注释位于要注释代码的上面，单独占一行</p>
+</div>
+<div id="特殊字符" class="section level2" number="4.10">
+<h2><span class="header-section-number">4.10</span> 特殊字符</h2>
+<p>HTML页面中，一些特殊符号很难或者不方便直接使用，此时我们就可以使用下面的字符来代替。</p>
+<table>
+<caption><span id="tab:unnamed-chunk-13">表4.5: </span>HTML特殊字符</caption>
+<thead>
+<tr class="header">
+<th align="left">特殊字符</th>
+<th align="left">描述</th>
+<th align="left">字符的代码</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">&lt;</td>
+<td align="left">小于号</td>
+<td align="left"><code>&amp;lt;</code></td>
+</tr>
+<tr class="even">
+<td align="left">&gt;</td>
+<td align="left">大于号</td>
+<td align="left"><code>&amp;gt;</code></td>
+</tr>
+<tr class="odd">
+<td align="left">空格</td>
+<td align="left">空格</td>
+<td align="left"><code>&amp;nbsp;</code></td>
+</tr>
+<tr class="even">
+<td align="left">&amp;</td>
+<td align="left">和号</td>
+<td align="left"><code>&amp;amp;</code></td>
+</tr>
+<tr class="odd">
+<td align="left">±</td>
+<td align="left">正负号</td>
+<td align="left"><code>&amp;plusmn;</code></td>
+</tr>
+<tr class="even">
+<td align="left">©</td>
+<td align="left">版权</td>
+<td align="left"><code>&amp;copy;</code></td>
+</tr>
+<tr class="odd">
+<td align="left">®</td>
+<td align="left">商标</td>
+<td align="left"><code>&amp;reg;</code></td>
+</tr>
+</tbody>
+</table>
+<p>注：重点掌握小于号、大于号和空格，其余可查询
+<a href="http://www.fhdq.net/ts/177.html" target="_blank">HTML特殊字符对照表</a>。</p>
+</div>
+<div id="案例学习" class="section level2" number="4.11">
+<h2><span class="header-section-number">4.11</span> 案例学习</h2>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-14"></span>
 <img src="fig/1-7.png" alt="案例学习"  />
 <p class="caption">
-图4.2: 案例学习
+图4.1: 案例学习
 </p>
 </div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="html常用标签.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
-<span id="cb7-2"><a href="html常用标签.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb7-3"><a href="html常用标签.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb7-4"><a href="html常用标签.html#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb7-5"><a href="html常用标签.html#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;X-UA-Compatible&quot;</span><span class="ot"> content=</span><span class="st">&quot;IE=edge&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb7-6"><a href="html常用标签.html#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb7-7"><a href="html常用标签.html#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Document<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb7-8"><a href="html常用标签.html#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb7-9"><a href="html常用标签.html#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb7-10"><a href="html常用标签.html#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h1&gt;</span>水花61分伊戈达拉制胜抢断西决勇士再胜开拓者总分2-0<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb7-11"><a href="html常用标签.html#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h4&gt;</span>数据统计:水花兄弟合砍61分<span class="kw">&lt;/h4&gt;</span></span>
-<span id="cb7-12"><a href="html常用标签.html#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
-<span id="cb7-13"><a href="html常用标签.html#cb7-13" aria-hidden="true" tabindex="-1"></a>        库里22投11中，三分14投4中，罚球11罚全中得到37分8篮板8助攻，职业生涯季后赛得分30+次数来到35次</span>
-<span id="cb7-14"><a href="html常用标签.html#cb7-14" aria-hidden="true" tabindex="-1"></a>        超过哈登排名现役第3位，仅次于詹姆斯和杜兰特。</span>
-<span id="cb7-15"><a href="html常用标签.html#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span>   </span>
-<span id="cb7-16"><a href="html常用标签.html#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
-<span id="cb7-17"><a href="html常用标签.html#cb7-17" aria-hidden="true" tabindex="-1"></a>        汤普森22投8中，三分8投4中得到24分3篮板2助攻，德拉蒙德-格林得到16分10篮板7助攻5盖帽，凯文-鲁尼得到14分7篮板2助攻，今天勇士有7名替补出场。</span>
-<span id="cb7-18"><a href="html常用标签.html#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
-<span id="cb7-19"><a href="html常用标签.html#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h4&gt;</span>兄弟对决升级:小库里给哥哥造成压力<span class="kw">&lt;/h4&gt;</span></span>
-<span id="cb7-20"><a href="html常用标签.html#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
-<span id="cb7-21"><a href="html常用标签.html#cb7-21" aria-hidden="true" tabindex="-1"></a>        库里兄弟是NBA历史上第一对在分区决赛相遇的兄弟。在西决第1场中，小库里没有给哥哥造成压力，他出场19分钟，7投1中只得到3分3篮板2助攻，在场期间输掉10分。</span>
-<span id="cb7-22"><a href="html常用标签.html#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
-<span id="cb7-23"><a href="html常用标签.html#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
-<span id="cb7-24"><a href="html常用标签.html#cb7-24" aria-hidden="true" tabindex="-1"></a>        但在西决第2场中，小库里攻防两端都打出杰出的表现，全场送出4次抢断，包括直接抢断自己的哥哥库里，在防守端给库里造成了极大的困扰。</span>
-<span id="cb7-25"><a href="html常用标签.html#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
-<span id="cb7-26"><a href="html常用标签.html#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
-<span id="cb7-27"><a href="html常用标签.html#cb7-27" aria-hidden="true" tabindex="-1"></a>        作者: pink老师<span class="kw">&lt;br</span> <span class="kw">/&gt;</span>2019-8-8</span>
-<span id="cb7-28"><a href="html常用标签.html#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
-<span id="cb7-29"><a href="html常用标签.html#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
-<span id="cb7-30"><a href="html常用标签.html#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="html常用标签.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb15-2"><a href="html常用标签.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb15-3"><a href="html常用标签.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb15-4"><a href="html常用标签.html#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb15-5"><a href="html常用标签.html#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;X-UA-Compatible&quot;</span><span class="ot"> content=</span><span class="st">&quot;IE=edge&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb15-6"><a href="html常用标签.html#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb15-7"><a href="html常用标签.html#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Document<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb15-8"><a href="html常用标签.html#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb15-9"><a href="html常用标签.html#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb15-10"><a href="html常用标签.html#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h1&gt;</span>水花61分伊戈达拉制胜抢断西决勇士再胜开拓者总分2-0<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb15-11"><a href="html常用标签.html#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h4&gt;</span>数据统计:水花兄弟合砍61分<span class="kw">&lt;/h4&gt;</span></span>
+<span id="cb15-12"><a href="html常用标签.html#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb15-13"><a href="html常用标签.html#cb15-13" aria-hidden="true" tabindex="-1"></a>        库里22投11中，三分14投4中，罚球11罚全中得到37分8篮板8助攻，职业生涯季后赛得分30+次数来到35次</span>
+<span id="cb15-14"><a href="html常用标签.html#cb15-14" aria-hidden="true" tabindex="-1"></a>        超过哈登排名现役第3位，仅次于詹姆斯和杜兰特。</span>
+<span id="cb15-15"><a href="html常用标签.html#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span>   </span>
+<span id="cb15-16"><a href="html常用标签.html#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb15-17"><a href="html常用标签.html#cb15-17" aria-hidden="true" tabindex="-1"></a>        汤普森22投8中，三分8投4中得到24分3篮板2助攻，德拉蒙德-格林得到16分10篮板7助攻5盖帽，凯文-鲁尼得到14分7篮板2助攻，今天勇士有7名替补出场。</span>
+<span id="cb15-18"><a href="html常用标签.html#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb15-19"><a href="html常用标签.html#cb15-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h4&gt;</span>兄弟对决升级:小库里给哥哥造成压力<span class="kw">&lt;/h4&gt;</span></span>
+<span id="cb15-20"><a href="html常用标签.html#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb15-21"><a href="html常用标签.html#cb15-21" aria-hidden="true" tabindex="-1"></a>        库里兄弟是NBA历史上第一对在分区决赛相遇的兄弟。在西决第1场中，小库里没有给哥哥造成压力，他出场19分钟，7投1中只得到3分3篮板2助攻，在场期间输掉10分。</span>
+<span id="cb15-22"><a href="html常用标签.html#cb15-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb15-23"><a href="html常用标签.html#cb15-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb15-24"><a href="html常用标签.html#cb15-24" aria-hidden="true" tabindex="-1"></a>        但在西决第2场中，小库里攻防两端都打出杰出的表现，全场送出4次抢断，包括直接抢断自己的哥哥库里，在防守端给库里造成了极大的困扰。</span>
+<span id="cb15-25"><a href="html常用标签.html#cb15-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb15-26"><a href="html常用标签.html#cb15-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb15-27"><a href="html常用标签.html#cb15-27" aria-hidden="true" tabindex="-1"></a>        作者: pink老师<span class="kw">&lt;br</span> <span class="kw">/&gt;</span>2019-8-8</span>
+<span id="cb15-28"><a href="html常用标签.html#cb15-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb15-29"><a href="html常用标签.html#cb15-29" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb15-30"><a href="html常用标签.html#cb15-30" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 
 </div>
 </div>

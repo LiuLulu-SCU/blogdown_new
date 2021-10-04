@@ -6,7 +6,10 @@ fig:unnamed-chunk-5
 fig:unnamed-chunk-1
 tab:unnamed-chunk-6
 tab:unnamed-chunk-9
-fig:unnamed-chunk-10
+tab:unnamed-chunk-10
+tab:unnamed-chunk-12
+tab:unnamed-chunk-13
+fig:unnamed-chunk-14
 认识web
 网页
 浏览器
@@ -33,7 +36,11 @@ html常用标签
 图像标签和路径
 图像标签
 路径
+超链接
+链接的语法格式
+链接的分类
+注释
+特殊字符
 案例学习
 vscode常用操作
 section
-页面语言lang
