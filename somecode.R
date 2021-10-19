@@ -10,7 +10,7 @@ blogdown::serve_site()
 #
 
 #新建post
-blogdown::new_post(title = "Star_constellation",
+blogdown::new_post(title = "events",
                    ext = '.Rmarkdown',
                    subdir = "post")
 
