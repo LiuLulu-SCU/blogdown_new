@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 有用的统计数字 | ACS课题</title>
+  <title>3 第二章 | ACS课题</title>
   <meta name="description" content="这是用R的bookdown制作的课题过程记录" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 有用的统计数字 | ACS课题" />
+  <meta property="og:title" content="3 第二章 | ACS课题" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 有用的统计数字 | ACS课题" />
+  <meta name="twitter:title" content="3 第二章 | ACS课题" />
   
   <meta name="twitter:description" content="这是用R的bookdown制作的课题过程记录" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="基于stata使用rmarkdown书写动态文档statamarkdown.html"/>
-<link rel="next" href="数据库常用操作.html"/>
+<link rel="prev" href="section.html"/>
+<link rel="next" href="基于stata使用rmarkdown书写动态文档statamarkdown.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -236,37 +236,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="useful" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> 有用的统计数字</h1>
-<div id="num_of_people" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> 参保人数</h2>
-<p>天津市城镇职工基本医疗保险数据库覆盖了天津市所有用人单位的职工及退休人员，截至2020年，天津市城职库参保人数为674.9万人，约占天津市2020年末总人口数（1386.6万人）的50.3% 。</p>
-</div>
-<div id="num_of_pharmacy" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> 医保药店</h2>
-<p>利用2017城职门诊库，医保数据库中有688家药店，天津有2203家药店，<strong>医保药店的比例为31.23%</strong>。</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb11-1"><a href="useful.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> <span class="st">&quot;I:\cz</span><span class="ch">\f</span><span class="st">yxx\2017\2017_mzfyxx_1.dta&quot;</span>,<span class="kw">clear</span></span>
-<span id="cb11-2"><a href="useful.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">keep</span> <span class="kw">if</span> yylb==<span class="st">&quot;00&quot;</span></span>
-<span id="cb11-3"><a href="useful.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">bysort</span> yymc:<span class="kw">keep</span> <span class="kw">if</span> <span class="dt">_n</span>==1</span>
-<span id="cb11-4"><a href="useful.html#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="useful.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span> <span class="kw">more</span> <span class="kw">off</span></span>
-<span id="cb11-6"><a href="useful.html#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="kw">forvalues</span> i=2/16{</span>
-<span id="cb11-7"><a href="useful.html#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="kw">append</span> <span class="kw">using</span> <span class="st">&quot;I:\cz</span><span class="ch">\f</span><span class="st">yxx\2017\2017_mzfyxx_`i&#39;.dta&quot;</span>, <span class="kw">force</span></span>
-<span id="cb11-8"><a href="useful.html#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="kw">keep</span> <span class="kw">if</span> yylb==<span class="st">&quot;00&quot;</span></span>
-<span id="cb11-9"><a href="useful.html#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="kw">bysort</span> yymc:<span class="kw">keep</span> <span class="kw">if</span> <span class="dt">_n</span>==1</span>
-<span id="cb11-10"><a href="useful.html#cb11-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb11-11"><a href="useful.html#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-12"><a href="useful.html#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="kw">codebook</span> yymc</span></code></pre></div>
+<div id="第二章" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> 第二章</h1>
 
 </div>
-</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="基于stata使用rmarkdown书写动态文档statamarkdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="数据库常用操作.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="section.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="基于stata使用rmarkdown书写动态文档statamarkdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
