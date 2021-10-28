@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Vscode常用操作 | 前端学习笔记</title>
+  <title>5 CSS基础 | 前端学习笔记</title>
   <meta name="description" content="前端学习全纪录" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Vscode常用操作 | 前端学习笔记" />
+  <meta property="og:title" content="5 CSS基础 | 前端学习笔记" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Vscode常用操作 | 前端学习笔记" />
+  <meta name="twitter:title" content="5 CSS基础 | 前端学习笔记" />
   
   <meta name="twitter:description" content="前端学习全纪录" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="css基础.html"/>
-<link rel="next" href="section.html"/>
+<link rel="prev" href="html常用标签.html"/>
+<link rel="next" href="vscode常用操作.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -252,27 +252,84 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="vscode常用操作" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Vscode常用操作</h1>
-<p>快捷键</p>
+<div id="css基础" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> CSS基础</h1>
+<div id="css简介" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> CSS简介</h2>
+<p>CSS的主要使用场景就是美化网页,布局页面的。</p>
+<ol style="list-style-type: decimal">
+<li>HTML的局限性</li>
+<li>CSS-网页的美容师</li>
+</ol>
+<div id="html的局限性" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> HTML的局限性</h3>
+<p>说起HTML，这其实是个非常单纯的家伙，他只关注<strong>内容的语义</strong>。比如<code>&lt;h1&gt;</code>表明这是一个大标题，<code>&lt;p&gt;</code>表明这是一个段落，<code>&lt;img&gt;</code>表明这儿有一个图片，<code>&lt;a&gt;</code>表示此处有链接。</p>
+<p>很早的时候，世界上的网站虽然很多，但是他们都有一个共同的特点∶<strong>丑</strong>。虽然HTML可以做简单的样式，但是带来的是无尽的臃肿和繁琐…….</p>
+</div>
+<div id="css-网页的美容师" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> CSS-网页的美容师</h3>
+<p>CSS是层叠样式表(Cascading Style Sheets )的简称.有时我们也会称之为CSS样式表或级联样式表。PS：Cascade是瀑布的意思，瀑布看起来是一层一层的水流。</p>
+<p>CSS是也是一种标记语言。</p>
+<p>CSS主要用于设置HTML页面中的<strong>文本内容</strong>(字体、大小、对齐方式等)、<strong>图片的外形</strong>(宽高、边框样式、边距等）以及<strong>版面的布局和外观显示样式</strong>。</p>
+<p>CSS让我们的网页更加丰富多彩，布局更加灵活自如。简单理解:<strong>CSS可以美化HTML,让HTML更漂亮，让页面布局更简单</strong>。</p>
+<p>总结:</p>
+<ol style="list-style-type: decimal">
+<li><p>HTML主要做结构,显示元素内容.</p></li>
+<li><p>CSS美化 HTML,布局网页.</p></li>
+<li><p><strong>CSS最大价值:由HTML专注去做结构呈现，样式交给CSS，即结构(HTML）与样式(CSS）相分离。</strong></p></li>
+</ol>
+</div>
+<div id="css语法规范" class="section level3" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> CSS语法规范</h3>
+<p>使用HTML时，需要遵从一定的规范，CSS也是如此。要想熟练地使用CSS对网页进行修饰，首先需要了解CSS样式规则。</p>
+<strong>CSS规则由两个主要的部分构成:选择器以及一条或多条声明</strong>。选择器：给谁改样式。 声明：改成什么样式（文字颜色、文字大小等）。
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="fig/CSS/1-01.jpg" alt="CSS组成" width="301" />
+<p class="caption">
+图3.1: CSS组成
+</p>
+</div>
 <ul>
-<li>创建文件：<code>Ctrl+</code>N`</li>
-<li>保存文件：<code>Ctrl+</code>S`</li>
-<li>放大页面：<code>Ctrl</code>+<code>+</code></li>
-<li>缩小页面：<code>Ctrl</code>+<code>-</code></li>
-<li>预览页面：<code>Alt</code>+<code>B</code>，或单击鼠标右键，在弹出窗口中点击<code>Open in Default Browser</code></li>
-<li>自动换行：<code>Alt</code>+<code>Z</code>,或在<code>查看</code>中选择<code>自动换行</code></li>
-<li>自动注释：<code>ctrl</code>+<code>/</code></li>
+<li>CSS常写在<code>&lt;head&gt;</code>标签之内。</li>
+<li>选择器是用于指定CSS样式的HTML标签，花括号内是对该对象设置的具体样式</li>
+<li>属性和属性值以“键值对”的形式出现</li>
+<li>属性是对指定的对象设置的样式属性，例如字体大小、文本颜色等</li>
+<li>属性和属性值之间用英文“:”分开</li>
+<li>多个“键值对”（属性-属性值 被称为键值对）之间用英文“;”进行区分</li>
 </ul>
+<p>例子：</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb36-1"><a href="css基础.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb36-2"><a href="css基础.html#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb36-3"><a href="css基础.html#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">http-equiv</span><span class="ot">=</span><span class="st">&quot;X-UA-Compatible&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;IE=edge&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb36-4"><a href="css基础.html#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;viewport&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb36-5"><a href="css基础.html#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>体验CSS语法规范<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb36-6"><a href="css基础.html#cb36-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb36-7"><a href="css基础.html#cb36-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 选择器 {样式} */</span></span>
+<span id="cb36-8"><a href="css基础.html#cb36-8" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 给谁改样式 {改成什么样式} */</span></span>
+<span id="cb36-9"><a href="css基础.html#cb36-9" aria-hidden="true" tabindex="-1"></a>        p {</span>
+<span id="cb36-10"><a href="css基础.html#cb36-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb36-11"><a href="css基础.html#cb36-11" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 修改文字大小为12像素 */</span></span>
+<span id="cb36-12"><a href="css基础.html#cb36-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">12</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb36-13"><a href="css基础.html#cb36-13" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb36-14"><a href="css基础.html#cb36-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb36-15"><a href="css基础.html#cb36-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb36-16"><a href="css基础.html#cb36-16" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb36-17"><a href="css基础.html#cb36-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>有点意思<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb36-18"><a href="css基础.html#cb36-18" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 
 </div>
+</div>
+</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="css基础.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="section.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="html常用标签.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vscode常用操作.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
