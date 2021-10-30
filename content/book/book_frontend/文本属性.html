@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 HTML初识 | 前端学习笔记</title>
+  <title>8 文本属性 | 前端学习笔记</title>
   <meta name="description" content="前端学习全纪录" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 HTML初识 | 前端学习笔记" />
+  <meta property="og:title" content="8 文本属性 | 前端学习笔记" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 HTML初识 | 前端学习笔记" />
+  <meta name="twitter:title" content="8 文本属性 | 前端学习笔记" />
   
   <meta name="twitter:description" content="前端学习全纪录" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="认识web.html"/>
-<link rel="next" href="网页开发工具.html"/>
+<link rel="prev" href="字体属性.html"/>
+<link rel="next" href="css引入方式.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -316,80 +316,247 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="html初识" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> HTML初识</h1>
-<div id="基本语法规范" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> 基本语法规范</h2>
-<div id="基本语法概述" class="section level3" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> 基本语法概述</h3>
-<p>HTML标签是由尖括号包围的关键词，例如<code>&lt;html&gt;</code>。</p>
-<p>HTML标签通常是成对出现的，例如<code>&lt;html&gt;</code>和<code>&lt;/html&gt;</code>，我们称为双标签。标签对中的第一个标签是开始标签，第二个标签是结束标签。</p>
-<p>有些特殊标签必须是单个标签（极少情况），例如<code>&lt;br /&gt;</code>，我们称为单标签。</p>
-</div>
-<div id="标签关系" class="section level3" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> 标签关系</h3>
-<p>双标签关系可以分为两类：包含关系和并列关系。</p>
-<p>包含关系，又被称为父子关系。
-eg：title标签包含于head标签中。</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="html初识.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb1-2"><a href="html初识.html#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;&lt;/title&gt;</span></span>
-<span id="cb1-3"><a href="html初识.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span></code></pre></div>
-<p>并列关系，又被称为兄弟关系。
-eg：title标签和head标签并列。</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="html初识.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;&lt;/head&gt;</span></span>
-<span id="cb2-2"><a href="html初识.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;&lt;/body&gt;</span></span></code></pre></div>
-</div>
-</div>
-<div id="基本结构标签" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> 基本结构标签</h2>
-<p>每个网页都会有一个基本的结构标签（也被称为骨架标签），页面内容也是在这些基本标签上书写。HTML页面也称为HTML文档。</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="html初识.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
-<span id="cb3-2"><a href="html初识.html#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;head&gt;</span>     </span>
-<span id="cb3-3"><a href="html初识.html#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;title&gt;</span>第一个页面<span class="kw">&lt;/title&gt;</span> </span>
-<span id="cb3-4"><a href="html初识.html#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/head&gt;</span></span>
-<span id="cb3-5"><a href="html初识.html#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;body&gt;</span></span>
-<span id="cb3-6"><a href="html初识.html#cb3-6" aria-hidden="true" tabindex="-1"></a>         键盘敲烂，工资过万</span>
-<span id="cb3-7"><a href="html初识.html#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb3-8"><a href="html初识.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
-<p>HTML文档的后缀名必须是.htm或.html，浏览器的作用是读取HTML文档，并以网页形式显示他们。此时，用浏览器打开这个网页，我们就可以预览我们写的HTML文件了。</p>
+<div id="文本属性" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> 文本属性</h1>
+<p>CSS使用text（文本）属性用于定义文本的<strong>外观</strong>，比如文本颜色、文本对齐、装饰文本（下划线）、文本缩进、堕落行间距。</p>
+<div id="文本颜色" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> 文本颜色</h2>
+<p>coclor属性用于定义文本的颜色。</p>
+<p><strong>语法</strong></p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb66-1"><a href="文本属性.html#cb66-1" aria-hidden="true" tabindex="-1"></a>  div {</span>
+<span id="cb66-2"><a href="文本属性.html#cb66-2" aria-hidden="true" tabindex="-1"></a>   color: red; </span>
+<span id="cb66-3"><a href="文本属性.html#cb66-3" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div>
 <table>
-<caption><span id="tab:unnamed-chunk-4">表2.1: </span>基本结构标签</caption>
+<caption><span id="tab:unnamed-chunk-2">表1.2: </span>文本颜色</caption>
 <thead>
 <tr class="header">
-<th align="left">标题名</th>
-<th align="left">定义</th>
-<th align="left">说明</th>
+<th align="left">颜色属性</th>
+<th align="left">属性值</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><code>&lt;html&gt;&lt;/html&gt;</code></td>
-<td align="left">HTML标签</td>
-<td align="left">页面中最大的标签,我们称为根标签</td>
+<td align="left">预定义颜色值</td>
+<td align="left">red、green，blue，pink</td>
 </tr>
 <tr class="even">
-<td align="left"><code>&lt;head&gt;&lt;/head&gt;</code></td>
-<td align="left">文档头部</td>
-<td align="left">注意head标签中我们必须要设置的标签是tittle</td>
+<td align="left">十六进制</td>
+<td align="left">#FF0000、#FF6600</td>
 </tr>
 <tr class="odd">
-<td align="left"><code>&lt;title&gt;&lt;/title&gt;</code></td>
-<td align="left">文档标题</td>
-<td align="left">让页面拥有一个属于自己的网页标题</td>
-</tr>
-<tr class="even">
-<td align="left"><code>&lt;body&gt;&lt;/body&gt;</code></td>
-<td align="left">文档主体</td>
-<td align="left">元素包含文档的所有内容，页面内容基本都是放到body里面</td>
+<td align="left">RGB代码</td>
+<td align="left">rgb(255,0,0)，rgb(100%,0%,0%)</td>
 </tr>
 </tbody>
 </table>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
-<img src="fig/1-2.png" alt="HTML骨架标签" width="878" />
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb67-1"><a href="文本属性.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb67-2"><a href="文本属性.html#cb67-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb67-3"><a href="文本属性.html#cb67-3" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb67-4"><a href="文本属性.html#cb67-4" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* color: pink; */</span></span>
+<span id="cb67-5"><a href="文本属性.html#cb67-5" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* color: #ff00c8; */</span></span>
+<span id="cb67-6"><a href="文本属性.html#cb67-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="fu">rgb(</span><span class="dv">255</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb67-7"><a href="文本属性.html#cb67-7" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb67-8"><a href="文本属性.html#cb67-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb67-9"><a href="文本属性.html#cb67-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb67-10"><a href="文本属性.html#cb67-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb67-11"><a href="文本属性.html#cb67-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>喜欢pink色的男生<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb67-12"><a href="文本属性.html#cb67-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<p><strong>注意</strong></p>
+<p><strong>开发中最常使用的十六进制的颜色。</strong></p>
+</div>
+<div id="对齐文本" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> 对齐文本</h2>
+<p>text-align属性用于设置元素内文本内容的水平对齐方式（左、右、居中对其），无法实现垂直对齐。</p>
+<p><strong>语法</strong></p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb68-1"><a href="文本属性.html#cb68-1" aria-hidden="true" tabindex="-1"></a>div {</span>
+<span id="cb68-2"><a href="文本属性.html#cb68-2" aria-hidden="true" tabindex="-1"></a>  text-align: center;</span>
+<span id="cb68-3"><a href="文本属性.html#cb68-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-5">表8.1: </span>文本对齐</caption>
+<thead>
+<tr class="header">
+<th align="left">属性值</th>
+<th align="left">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">left</td>
+<td align="left">左对齐（默认值）</td>
+</tr>
+<tr class="even">
+<td align="left">right</td>
+<td align="left">#右对齐</td>
+</tr>
+<tr class="odd">
+<td align="left">center</td>
+<td align="left">居中对其</td>
+</tr>
+</tbody>
+</table>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb69-1"><a href="文本属性.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb69-2"><a href="文本属性.html#cb69-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb69-3"><a href="文本属性.html#cb69-3" aria-hidden="true" tabindex="-1"></a>        h1 {</span>
+<span id="cb69-4"><a href="文本属性.html#cb69-4" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 本质是让h1盒子里面的文字水平居中对齐 */</span></span>
+<span id="cb69-5"><a href="文本属性.html#cb69-5" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* text-align: right; */</span></span>
+<span id="cb69-6"><a href="文本属性.html#cb69-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-align</span>: <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb69-7"><a href="文本属性.html#cb69-7" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb69-8"><a href="文本属性.html#cb69-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb69-9"><a href="文本属性.html#cb69-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb69-10"><a href="文本属性.html#cb69-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb69-11"><a href="文本属性.html#cb69-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h1&gt;</span>居中对其的标题<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb69-12"><a href="文本属性.html#cb69-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="装饰文本" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> 装饰文本</h2>
+<p><strong>text-decoration</strong>属性规定添加到文本的修饰，可以给文本添加下划线、删除线、上划线等。</p>
+<table>
+<caption><span id="tab:unnamed-chunk-7">表8.2: </span>装饰文本</caption>
+<thead>
+<tr class="header">
+<th align="left">属性值</th>
+<th align="left">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">none</td>
+<td align="left">默认，没有装饰线（最常用）</td>
+</tr>
+<tr class="even">
+<td align="left">underline</td>
+<td align="left">下划线。链接a自带下划线（常用）</td>
+</tr>
+<tr class="odd">
+<td align="left">overline</td>
+<td align="left">上划线（几乎不用）</td>
+</tr>
+<tr class="even">
+<td align="left">line-trrough</td>
+<td align="left">删除线（不常用）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>例子</strong></p>
+<p>添加下划线，以及链接取消下划线。</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb70-1"><a href="文本属性.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb70-2"><a href="文本属性.html#cb70-2" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb70-3"><a href="文本属性.html#cb70-3" aria-hidden="true" tabindex="-1"></a>            /* text-decoration: underline; */</span>
+<span id="cb70-4"><a href="文本属性.html#cb70-4" aria-hidden="true" tabindex="-1"></a>            /* text-decoration: line-through; */</span>
+<span id="cb70-5"><a href="文本属性.html#cb70-5" aria-hidden="true" tabindex="-1"></a>            text-decoration: overline;</span>
+<span id="cb70-6"><a href="文本属性.html#cb70-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb70-7"><a href="文本属性.html#cb70-7" aria-hidden="true" tabindex="-1"></a>        a {</span>
+<span id="cb70-8"><a href="文本属性.html#cb70-8" aria-hidden="true" tabindex="-1"></a>           text-decoration: none; </span>
+<span id="cb70-9"><a href="文本属性.html#cb70-9" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb70-10"><a href="文本属性.html#cb70-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb70-11"><a href="文本属性.html#cb70-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb70-12"><a href="文本属性.html#cb70-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb70-13"><a href="文本属性.html#cb70-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>粉红色的回忆<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb70-14"><a href="文本属性.html#cb70-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>粉红色的回忆<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb70-15"><a href="文本属性.html#cb70-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="文本缩进" class="section level2" number="8.4">
+<h2><span class="header-section-number">8.4</span> 文本缩进</h2>
+<p><strong>text-indent</strong>属性用来指定文本第一行的缩进，通常是将<strong>段落首行缩进</strong>。</p>
+<p><strong>语法</strong></p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb71-1"><a href="文本属性.html#cb71-1" aria-hidden="true" tabindex="-1"></a>div {</span>
+<span id="cb71-2"><a href="文本属性.html#cb71-2" aria-hidden="true" tabindex="-1"></a>  text-indent: 10px;</span>
+<span id="cb71-3"><a href="文本属性.html#cb71-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>通过设置该属性，所有元素的第一行都可以缩进一个给定的长度，这个长度甚至可以是负的。</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb72-1"><a href="文本属性.html#cb72-1" aria-hidden="true" tabindex="-1"></a>div {</span>
+<span id="cb72-2"><a href="文本属性.html#cb72-2" aria-hidden="true" tabindex="-1"></a>  text-indent: 2em;</span>
+<span id="cb72-3"><a href="文本属性.html#cb72-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>em</strong>是一个相对单位，就是当前元素(font-size)1个文字的大小，如果当前元素没有设置大小，则会按照父元素的1个文字大小。</p>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb73-1"><a href="文本属性.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb73-2"><a href="文本属性.html#cb73-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb73-3"><a href="文本属性.html#cb73-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 文本第一行缩进2字符 */</span></span>
+<span id="cb73-4"><a href="文本属性.html#cb73-4" aria-hidden="true" tabindex="-1"></a>        p {</span>
+<span id="cb73-5"><a href="文本属性.html#cb73-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-indent</span>: <span class="dv">2</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb73-6"><a href="文本属性.html#cb73-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb73-7"><a href="文本属性.html#cb73-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb73-8"><a href="文本属性.html#cb73-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb73-9"><a href="文本属性.html#cb73-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb73-10"><a href="文本属性.html#cb73-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>打开北京、上海与广州的地铁地图，你会看见三张纵横交错的线路网络，这代表了中国最成熟的三套城市轨道交通系统。<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb73-11"><a href="文本属性.html#cb73-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-12"><a href="文本属性.html#cb73-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span> 可即使这样，在北上广生活的人依然少不了对地铁的抱怨，其中谈及最多的问题便是拥挤——对很多人而言，每次挤地铁的过程，都像是一场硬仗。更何况，还都是败仗居多。<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb73-13"><a href="文本属性.html#cb73-13" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb73-14"><a href="文本属性.html#cb73-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span> 那么，当越来越多的二线甚至三线城市迎接来了自己的地铁，中国哪里的地铁是最拥挤的呢？<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb73-15"><a href="文本属性.html#cb73-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-16"><a href="文本属性.html#cb73-16" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="行间距" class="section level2" number="8.5">
+<h2><span class="header-section-number">8.5</span> 行间距</h2>
+<p><strong>line-height</strong>属性用于设置行间的距离（行高），可以控制文字行与行之间的距离。</p>
+<p><strong>语法</strong></p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb74-1"><a href="文本属性.html#cb74-1" aria-hidden="true" tabindex="-1"></a>p {</span>
+<span id="cb74-2"><a href="文本属性.html#cb74-2" aria-hidden="true" tabindex="-1"></a>  line-height: 26px;</span>
+<span id="cb74-3"><a href="文本属性.html#cb74-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<blockquote>
+<p>文字的行高等于盒子的高度。行高 = 上距离 + 内容高度 + 下距离
+上距离和下距离总是相等的，因此文字看上去是垂直居中的。</p>
+</blockquote>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-13"></span>
+<img src="fig/CSS/6-01.jpg" alt="行间距示意图" width="333" />
 <p class="caption">
-图2.1: HTML骨架标签
+图8.1: 行间距示意图
 </p>
 </div>
+<p><strong>例子</strong></p>
+<p>设置行高为26像素，因为文字高度默认是16像素，所以上下间距均为5像素。</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb75-1"><a href="文本属性.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb75-2"><a href="文本属性.html#cb75-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb75-3"><a href="文本属性.html#cb75-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 文本第一行缩进2字符 */</span></span>
+<span id="cb75-4"><a href="文本属性.html#cb75-4" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb75-5"><a href="文本属性.html#cb75-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">26</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb75-6"><a href="文本属性.html#cb75-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb75-7"><a href="文本属性.html#cb75-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb75-8"><a href="文本属性.html#cb75-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb75-9"><a href="文本属性.html#cb75-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb75-10"><a href="文本属性.html#cb75-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>中国人<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb75-11"><a href="文本属性.html#cb75-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="文本属性总结" class="section level2" number="8.6">
+<h2><span class="header-section-number">8.6</span> 文本属性总结</h2>
+<table>
+<caption><span id="tab:unnamed-chunk-15">表8.3: </span>文本属性总结</caption>
+<thead>
+<tr class="header">
+<th align="left">属性</th>
+<th align="left">表示</th>
+<th align="left">注意点</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">color</td>
+<td align="left">文本颜色</td>
+<td align="left">我们通常用十六进制比如而且是简写形式#fff</td>
+</tr>
+<tr class="even">
+<td align="left">text-align</td>
+<td align="left">文本对齐</td>
+<td align="left">可以设定文字水平的对齐方式</td>
+</tr>
+<tr class="odd">
+<td align="left">text-indent</td>
+<td align="left">文本缩进</td>
+<td align="left">通常我们用于段落首行缩进2个字的距离text-indent: 2em;</td>
+</tr>
+<tr class="even">
+<td align="left">text-decoration</td>
+<td align="left">文本装饰</td>
+<td align="left">记住添加下划线underline取消下划线none</td>
+</tr>
+<tr class="odd">
+<td align="left">text-height</td>
+<td align="left">行高</td>
+<td align="left">控制行与行之间的距离</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
@@ -398,8 +565,8 @@ eg：title标签和head标签并列。</p>
           </div>
         </div>
       </div>
-<a href="认识web.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="网页开发工具.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="字体属性.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="css引入方式.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

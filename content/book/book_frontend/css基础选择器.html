@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 CSS基础选择器 | 前端学习笔记</title>
+  <meta name="description" content="前端学习全纪录" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 CSS基础选择器 | 前端学习笔记" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="前端学习全纪录" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 CSS基础选择器 | 前端学习笔记" />
+  
+  <meta name="twitter:description" content="前端学习全纪录" />
+  
+
+<meta name="author" content="刘卢路" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="css基础.html"/>
+<link rel="next" href="字体属性.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a></li>
+<li class="part"><span><b>I HTML</b></span></li>
+<li class="chapter" data-level="1" data-path="认识web.html"><a href="认识web.html"><i class="fa fa-check"></i><b>1</b> 认识Web</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="认识web.html"><a href="认识web.html#网页"><i class="fa fa-check"></i><b>1.1</b> 网页</a></li>
+<li class="chapter" data-level="1.2" data-path="认识web.html"><a href="认识web.html#浏览器"><i class="fa fa-check"></i><b>1.2</b> 浏览器</a></li>
+<li class="chapter" data-level="1.3" data-path="认识web.html"><a href="认识web.html#web标准"><i class="fa fa-check"></i><b>1.3</b> Web标准</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="认识web.html"><a href="认识web.html#为什么需要web标准"><i class="fa fa-check"></i><b>1.3.1</b> 为什么需要Web标准</a></li>
+<li class="chapter" data-level="1.3.2" data-path="认识web.html"><a href="认识web.html#web标准构成"><i class="fa fa-check"></i><b>1.3.2</b> Web标准构成</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="html初识.html"><a href="html初识.html"><i class="fa fa-check"></i><b>2</b> HTML初识</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="html初识.html"><a href="html初识.html#基本语法规范"><i class="fa fa-check"></i><b>2.1</b> 基本语法规范</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="html初识.html"><a href="html初识.html#基本语法概述"><i class="fa fa-check"></i><b>2.1.1</b> 基本语法概述</a></li>
+<li class="chapter" data-level="2.1.2" data-path="html初识.html"><a href="html初识.html#标签关系"><i class="fa fa-check"></i><b>2.1.2</b> 标签关系</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="html初识.html"><a href="html初识.html#基本结构标签"><i class="fa fa-check"></i><b>2.2</b> 基本结构标签</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="网页开发工具.html"><a href="网页开发工具.html"><i class="fa fa-check"></i><b>3</b> 网页开发工具</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="网页开发工具.html"><a href="网页开发工具.html#配置vscode"><i class="fa fa-check"></i><b>3.1</b> 配置VSCode</a></li>
+<li class="chapter" data-level="3.2" data-path="网页开发工具.html"><a href="网页开发工具.html#vscode工具生成骨架标签新增代码"><i class="fa fa-check"></i><b>3.2</b> VSCode工具生成骨架标签新增代码</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="网页开发工具.html"><a href="网页开发工具.html#文档类型doctype"><i class="fa fa-check"></i><b>3.2.1</b> 文档类型<code>&lt;!DOCTYPE&gt;</code></a></li>
+<li class="chapter" data-level="3.2.2" data-path="网页开发工具.html"><a href="网页开发工具.html#字符集charset"><i class="fa fa-check"></i><b>3.2.2</b> 字符集<code>charset</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="html常用标签.html"><a href="html常用标签.html"><i class="fa fa-check"></i><b>4</b> HTML常用标签</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="html常用标签.html"><a href="html常用标签.html#语义标签"><i class="fa fa-check"></i><b>4.1</b> 语义标签</a></li>
+<li class="chapter" data-level="4.2" data-path="html常用标签.html"><a href="html常用标签.html#标题标签"><i class="fa fa-check"></i><b>4.2</b> 标题标签</a></li>
+<li class="chapter" data-level="4.3" data-path="html常用标签.html"><a href="html常用标签.html#段落标签"><i class="fa fa-check"></i><b>4.3</b> 段落标签</a></li>
+<li class="chapter" data-level="4.4" data-path="html常用标签.html"><a href="html常用标签.html#换行标签"><i class="fa fa-check"></i><b>4.4</b> 换行标签</a></li>
+<li class="chapter" data-level="4.5" data-path="html常用标签.html"><a href="html常用标签.html#文本格式化标签"><i class="fa fa-check"></i><b>4.5</b> 文本格式化标签</a></li>
+<li class="chapter" data-level="4.6" data-path="html常用标签.html"><a href="html常用标签.html#布局标签"><i class="fa fa-check"></i><b>4.6</b> 布局标签</a></li>
+<li class="chapter" data-level="4.7" data-path="html常用标签.html"><a href="html常用标签.html#图像标签和路径"><i class="fa fa-check"></i><b>4.7</b> 图像标签和路径</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="html常用标签.html"><a href="html常用标签.html#图像标签"><i class="fa fa-check"></i><b>4.7.1</b> 图像标签</a></li>
+<li class="chapter" data-level="4.7.2" data-path="html常用标签.html"><a href="html常用标签.html#路径"><i class="fa fa-check"></i><b>4.7.2</b> 路径</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="html常用标签.html"><a href="html常用标签.html#超链接"><i class="fa fa-check"></i><b>4.8</b> 超链接</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="html常用标签.html"><a href="html常用标签.html#链接的语法格式"><i class="fa fa-check"></i><b>4.8.1</b> 链接的语法格式</a></li>
+<li class="chapter" data-level="4.8.2" data-path="html常用标签.html"><a href="html常用标签.html#链接的分类"><i class="fa fa-check"></i><b>4.8.2</b> 链接的分类</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="html常用标签.html"><a href="html常用标签.html#注释"><i class="fa fa-check"></i><b>4.9</b> 注释</a></li>
+<li class="chapter" data-level="4.10" data-path="html常用标签.html"><a href="html常用标签.html#特殊字符"><i class="fa fa-check"></i><b>4.10</b> 特殊字符</a></li>
+<li class="chapter" data-level="4.11" data-path="html常用标签.html"><a href="html常用标签.html#表格标签"><i class="fa fa-check"></i><b>4.11</b> 表格标签</a>
+<ul>
+<li class="chapter" data-level="4.11.1" data-path="html常用标签.html"><a href="html常用标签.html#表格的基本语法"><i class="fa fa-check"></i><b>4.11.1</b> 表格的基本语法</a></li>
+<li class="chapter" data-level="4.11.2" data-path="html常用标签.html"><a href="html常用标签.html#表头单元格标签"><i class="fa fa-check"></i><b>4.11.2</b> 表头单元格标签</a></li>
+<li class="chapter" data-level="4.11.3" data-path="html常用标签.html"><a href="html常用标签.html#表格属性"><i class="fa fa-check"></i><b>4.11.3</b> 表格属性</a></li>
+<li class="chapter" data-level="4.11.4" data-path="html常用标签.html"><a href="html常用标签.html#表格结构标签"><i class="fa fa-check"></i><b>4.11.4</b> 表格结构标签</a></li>
+<li class="chapter" data-level="4.11.5" data-path="html常用标签.html"><a href="html常用标签.html#合并单元格"><i class="fa fa-check"></i><b>4.11.5</b> 合并单元格</a></li>
+</ul></li>
+<li class="chapter" data-level="4.12" data-path="html常用标签.html"><a href="html常用标签.html#列表标签"><i class="fa fa-check"></i><b>4.12</b> 列表标签</a>
+<ul>
+<li class="chapter" data-level="4.12.1" data-path="html常用标签.html"><a href="html常用标签.html#无序列表-unordered"><i class="fa fa-check"></i><b>4.12.1</b> 无序列表 Unordered</a></li>
+<li class="chapter" data-level="4.12.2" data-path="html常用标签.html"><a href="html常用标签.html#有序列表-ordered"><i class="fa fa-check"></i><b>4.12.2</b> 有序列表 Ordered</a></li>
+<li class="chapter" data-level="4.12.3" data-path="html常用标签.html"><a href="html常用标签.html#自定义列表"><i class="fa fa-check"></i><b>4.12.3</b> 自定义列表</a></li>
+<li class="chapter" data-level="4.12.4" data-path="html常用标签.html"><a href="html常用标签.html#列表总结"><i class="fa fa-check"></i><b>4.12.4</b> 列表总结</a></li>
+</ul></li>
+<li class="chapter" data-level="4.13" data-path="html常用标签.html"><a href="html常用标签.html#表单标签"><i class="fa fa-check"></i><b>4.13</b> 表单标签</a>
+<ul>
+<li class="chapter" data-level="4.13.1" data-path="html常用标签.html"><a href="html常用标签.html#为什么需要表单"><i class="fa fa-check"></i><b>4.13.1</b> 为什么需要表单</a></li>
+<li class="chapter" data-level="4.13.2" data-path="html常用标签.html"><a href="html常用标签.html#表单的组成"><i class="fa fa-check"></i><b>4.13.2</b> 表单的组成</a></li>
+</ul></li>
+<li class="chapter" data-level="4.14" data-path="html常用标签.html"><a href="html常用标签.html#文档查阅"><i class="fa fa-check"></i><b>4.14</b> 文档查阅</a></li>
+<li class="chapter" data-level="4.15" data-path="html常用标签.html"><a href="html常用标签.html#案例学习"><i class="fa fa-check"></i><b>4.15</b> 案例学习</a>
+<ul>
+<li class="chapter" data-level="4.15.1" data-path="html常用标签.html"><a href="html常用标签.html#案例1"><i class="fa fa-check"></i><b>4.15.1</b> 案例1</a></li>
+<li class="chapter" data-level="4.15.2" data-path="html常用标签.html"><a href="html常用标签.html#案例2表单"><i class="fa fa-check"></i><b>4.15.2</b> 案例2：表单</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II CSS</b></span></li>
+<li class="chapter" data-level="5" data-path="css基础.html"><a href="css基础.html"><i class="fa fa-check"></i><b>5</b> CSS基础</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="css基础.html"><a href="css基础.html#css简介"><i class="fa fa-check"></i><b>5.1</b> CSS简介</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="css基础.html"><a href="css基础.html#html的局限性"><i class="fa fa-check"></i><b>5.1.1</b> HTML的局限性</a></li>
+<li class="chapter" data-level="5.1.2" data-path="css基础.html"><a href="css基础.html#css-网页的美容师"><i class="fa fa-check"></i><b>5.1.2</b> CSS-网页的美容师</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="css基础.html"><a href="css基础.html#css语法规范"><i class="fa fa-check"></i><b>5.2</b> CSS语法规范</a></li>
+<li class="chapter" data-level="5.3" data-path="css基础.html"><a href="css基础.html#代码风格"><i class="fa fa-check"></i><b>5.3</b> 代码风格</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="css基础.html"><a href="css基础.html#样式格式书写"><i class="fa fa-check"></i><b>5.3.1</b> 样式格式书写</a></li>
+<li class="chapter" data-level="5.3.2" data-path="css基础.html"><a href="css基础.html#样式大小写"><i class="fa fa-check"></i><b>5.3.2</b> 样式大小写</a></li>
+<li class="chapter" data-level="5.3.3" data-path="css基础.html"><a href="css基础.html#空格规范"><i class="fa fa-check"></i><b>5.3.3</b> 空格规范</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="css基础选择器.html"><a href="css基础选择器.html"><i class="fa fa-check"></i><b>6</b> CSS基础选择器</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="css基础选择器.html"><a href="css基础选择器.html#css选择器的作用"><i class="fa fa-check"></i><b>6.1</b> CSS选择器的作用</a></li>
+<li class="chapter" data-level="6.2" data-path="css基础选择器.html"><a href="css基础选择器.html#选择器的分类"><i class="fa fa-check"></i><b>6.2</b> 选择器的分类</a></li>
+<li class="chapter" data-level="6.3" data-path="css基础选择器.html"><a href="css基础选择器.html#标签选择器"><i class="fa fa-check"></i><b>6.3</b> 标签选择器</a></li>
+<li class="chapter" data-level="6.4" data-path="css基础选择器.html"><a href="css基础选择器.html#类选择器"><i class="fa fa-check"></i><b>6.4</b> 类选择器</a></li>
+<li class="chapter" data-level="6.5" data-path="css基础选择器.html"><a href="css基础选择器.html#id选择器"><i class="fa fa-check"></i><b>6.5</b> id选择器</a></li>
+<li class="chapter" data-level="6.6" data-path="css基础选择器.html"><a href="css基础选择器.html#通配符选择器"><i class="fa fa-check"></i><b>6.6</b> 通配符选择器</a></li>
+<li class="chapter" data-level="6.7" data-path="css基础选择器.html"><a href="css基础选择器.html#基础选择器总结"><i class="fa fa-check"></i><b>6.7</b> 基础选择器总结</a></li>
+<li class="chapter" data-level="6.8" data-path="css基础选择器.html"><a href="css基础选择器.html#综合案例"><i class="fa fa-check"></i><b>6.8</b> 综合案例</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="css基础选择器.html"><a href="css基础选择器.html#用类选择器话盒子"><i class="fa fa-check"></i><b>6.8.1</b> 用类选择器话盒子</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="字体属性.html"><a href="字体属性.html"><i class="fa fa-check"></i><b>7</b> 字体属性</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="字体属性.html"><a href="字体属性.html#字体系列"><i class="fa fa-check"></i><b>7.1</b> 字体系列</a></li>
+<li class="chapter" data-level="7.2" data-path="字体属性.html"><a href="字体属性.html#字体大小"><i class="fa fa-check"></i><b>7.2</b> 字体大小</a></li>
+<li class="chapter" data-level="7.3" data-path="字体属性.html"><a href="字体属性.html#字体粗细"><i class="fa fa-check"></i><b>7.3</b> 字体粗细</a></li>
+<li class="chapter" data-level="7.4" data-path="字体属性.html"><a href="字体属性.html#文字样式"><i class="fa fa-check"></i><b>7.4</b> 文字样式</a></li>
+<li class="chapter" data-level="7.5" data-path="字体属性.html"><a href="字体属性.html#字体复合属性"><i class="fa fa-check"></i><b>7.5</b> 字体复合属性</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="文本属性.html"><a href="文本属性.html"><i class="fa fa-check"></i><b>8</b> 文本属性</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="文本属性.html"><a href="文本属性.html#文本颜色"><i class="fa fa-check"></i><b>8.1</b> 文本颜色</a></li>
+<li class="chapter" data-level="8.2" data-path="文本属性.html"><a href="文本属性.html#对齐文本"><i class="fa fa-check"></i><b>8.2</b> 对齐文本</a></li>
+<li class="chapter" data-level="8.3" data-path="文本属性.html"><a href="文本属性.html#装饰文本"><i class="fa fa-check"></i><b>8.3</b> 装饰文本</a></li>
+<li class="chapter" data-level="8.4" data-path="文本属性.html"><a href="文本属性.html#文本缩进"><i class="fa fa-check"></i><b>8.4</b> 文本缩进</a></li>
+<li class="chapter" data-level="8.5" data-path="文本属性.html"><a href="文本属性.html#行间距"><i class="fa fa-check"></i><b>8.5</b> 行间距</a></li>
+<li class="chapter" data-level="8.6" data-path="文本属性.html"><a href="文本属性.html#文本属性总结"><i class="fa fa-check"></i><b>8.6</b> 文本属性总结</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="css引入方式.html"><a href="css引入方式.html"><i class="fa fa-check"></i><b>9</b> CSS引入方式</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="css引入方式.html"><a href="css引入方式.html#css的三种样式表"><i class="fa fa-check"></i><b>9.1</b> CSS的三种样式表</a></li>
+<li class="chapter" data-level="9.2" data-path="css引入方式.html"><a href="css引入方式.html#行内样式表"><i class="fa fa-check"></i><b>9.2</b> 行内样式表</a></li>
+<li class="chapter" data-level="9.3" data-path="css引入方式.html"><a href="css引入方式.html#外部样式"><i class="fa fa-check"></i><b>9.3</b> 外部样式</a></li>
+<li class="chapter" data-level="9.4" data-path="css引入方式.html"><a href="css引入方式.html#css引入方式总结"><i class="fa fa-check"></i><b>9.4</b> CSS引入方式总结</a></li>
+<li class="chapter" data-level="9.5" data-path="css引入方式.html"><a href="css引入方式.html#综合案例-1"><i class="fa fa-check"></i><b>9.5</b> 综合案例</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="emmet语法.html"><a href="emmet语法.html"><i class="fa fa-check"></i><b>10</b> Emmet语法</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="emmet语法.html"><a href="emmet语法.html#section"><i class="fa fa-check"></i><b>10.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="文本.html"><a href="文本.html"><i class="fa fa-check"></i><b>11</b> 文本</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="文本.html"><a href="文本.html#section-1"><i class="fa fa-check"></i><b>11.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="section-2.html"><a href="section-2.html"><i class="fa fa-check"></i><b>12</b> </a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="section-2.html"><a href="section-2.html#section-3"><i class="fa fa-check"></i><b>12.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="文.html"><a href="文.html"><i class="fa fa-check"></i><b>13</b> 文</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="文.html"><a href="文.html#section-4"><i class="fa fa-check"></i><b>13.1</b> </a></li>
+</ul></li>
+<li class="part"><span><b>III 附录</b></span></li>
+<li class="chapter" data-level="14" data-path="vscode常用操作.html"><a href="vscode常用操作.html"><i class="fa fa-check"></i><b>14</b> Vscode常用操作</a></li>
+<li class="chapter" data-level="15" data-path="chrome调试工具.html"><a href="chrome调试工具.html"><i class="fa fa-check"></i><b>15</b> Chrome调试工具</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="chrome调试工具.html"><a href="chrome调试工具.html#打开调试工具"><i class="fa fa-check"></i><b>15.1</b> 打开调试工具</a></li>
+<li class="chapter" data-level="15.2" data-path="chrome调试工具.html"><a href="chrome调试工具.html#使用调试工具"><i class="fa fa-check"></i><b>15.2</b> 使用调试工具</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">前端学习笔记</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="css基础选择器" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> CSS基础选择器</h1>
+<div id="css选择器的作用" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> CSS选择器的作用</h2>
+<div class="sourceCode" id="cb42"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb42-1"><a href="css基础选择器.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div&gt;</span>我是div<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb42-2"><a href="css基础选择器.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div&gt;</span>我是div<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb42-3"><a href="css基础选择器.html#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;</span>我是段落<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb42-4"><a href="css基础选择器.html#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;ul&gt;</span></span>
+<span id="cb42-5"><a href="css基础选择器.html#cb42-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;li&gt;</span>我是ul里面小li哦<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb42-6"><a href="css基础选择器.html#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/u&gt;</span></span>
+<span id="cb42-7"><a href="css基础选择器.html#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;ol&gt;</span></span>
+<span id="cb42-8"><a href="css基础选择器.html#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;li&gt;</span>我是ol里面小li哦<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb42-9"><a href="css基础选择器.html#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/ol&gt;</span></span></code></pre></div>
+<p>1．我想把div里面的文字改为红色?</p>
+<p>2．我想把第一个div里面的文字改为红色?</p>
+<p>3．我想把ul里面的li文字改为红色?</p>
+选择器(选择符)就是根据不同需求把不同的标签选出来这就是选择器的作用。简单来说，就是<strong>选择标签</strong>用的。
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="fig/CSS/1-01.jpg" alt="选择器" width="301" />
+<p class="caption">
+图6.1: 选择器
+</p>
+</div>
+<p>以上CSS做了两件事:
+1.找到所有的h1标签。选择器（选对人)。
+2.设置这些标签的样式，比如颜色为红色（做对事)。</p>
+</div>
+<div id="选择器的分类" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> 选择器的分类</h2>
+<p>选择器分为<strong>基础选择器</strong>和<strong>复合选择器</strong>两个大类，我们这里先讲解一下基础选择器。</p>
+<ul>
+<li><p>基础选择器是由<strong>单个选择器</strong>组成的。</p></li>
+<li><p>基础选择器又包括︰<strong>标签选择器、类选择器、id选择器和通配符选择器</strong></p></li>
+</ul>
+</div>
+<div id="标签选择器" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> 标签选择器</h2>
+<p><strong>标签选择器（元素选择器）</strong>是指用HTML标签名称作为选择器，按标签名称分类，为页面中某一大类标签指定统一的CSS样式。</p>
+<p>语法</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb43-1"><a href="css基础选择器.html#cb43-1" aria-hidden="true" tabindex="-1"></a>标签名{</span>
+<span id="cb43-2"><a href="css基础选择器.html#cb43-2" aria-hidden="true" tabindex="-1"></a>    属性1: 属性值1;</span>
+<span id="cb43-3"><a href="css基础选择器.html#cb43-3" aria-hidden="true" tabindex="-1"></a>    属性2: 属性值2;</span>
+<span id="cb43-4"><a href="css基础选择器.html#cb43-4" aria-hidden="true" tabindex="-1"></a>    属性3: 属性值3;</span>
+<span id="cb43-5"><a href="css基础选择器.html#cb43-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb44-1"><a href="css基础选择器.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb44-2"><a href="css基础选择器.html#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb44-3"><a href="css基础选择器.html#cb44-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 标签选择器：写上标签名 */</span></span>
+<span id="cb44-4"><a href="css基础选择器.html#cb44-4" aria-hidden="true" tabindex="-1"></a>        p{</span>
+<span id="cb44-5"><a href="css基础选择器.html#cb44-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">green</span><span class="op">;</span></span>
+<span id="cb44-6"><a href="css基础选择器.html#cb44-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb44-7"><a href="css基础选择器.html#cb44-7" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb44-8"><a href="css基础选择器.html#cb44-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb44-9"><a href="css基础选择器.html#cb44-9" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb44-10"><a href="css基础选择器.html#cb44-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb44-11"><a href="css基础选择器.html#cb44-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb44-12"><a href="css基础选择器.html#cb44-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb44-13"><a href="css基础选择器.html#cb44-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>男生<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb44-14"><a href="css基础选择器.html#cb44-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>男生<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb44-15"><a href="css基础选择器.html#cb44-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>男生<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb44-16"><a href="css基础选择器.html#cb44-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>女生<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb44-17"><a href="css基础选择器.html#cb44-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>女生<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb44-18"><a href="css基础选择器.html#cb44-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>女生<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb44-19"><a href="css基础选择器.html#cb44-19" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<img src="fig/CSS/1-03.jpg" alt="效果" width="37" />
+<p class="caption">
+图2.1: 效果
+</p>
+</div>
+<p><strong>作用</strong></p>
+<p>标签选择器可以把某一类标签全部选择出来，比如所有的<code>&lt;div&gt;</code>标签和所有的<code>&lt;span&gt;</code>标签。</p>
+<p><strong>优点</strong></p>
+<p>能快速为页面中同类型的标签统一设置样式。</p>
+<p><strong>缺点</strong></p>
+<p>不能设计差异化样式，只能选择全部的当前标签。</p>
+</div>
+<div id="类选择器" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> 类选择器</h2>
+<p>如果想要差异化选择不同的标签，单独选一个或者某几个标签，可以使用类选择器.</p>
+<p><strong>语法</strong></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb45-1"><a href="css基础选择器.html#cb45-1" aria-hidden="true" tabindex="-1"></a>.类名 {</span>
+<span id="cb45-2"><a href="css基础选择器.html#cb45-2" aria-hidden="true" tabindex="-1"></a>    属性1: 属性值1;</span>
+<span id="cb45-3"><a href="css基础选择器.html#cb45-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>例子</strong></p>
+<p>将所有拥有red类的HTML元素均为红色。</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb46-1"><a href="css基础选择器.html#cb46-1" aria-hidden="true" tabindex="-1"></a>.red {</span>
+<span id="cb46-2"><a href="css基础选择器.html#cb46-2" aria-hidden="true" tabindex="-1"></a>    color: red;</span>
+<span id="cb46-3"><a href="css基础选择器.html#cb46-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>结构需要用class属性来调用class类的意思</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb47-1"><a href="css基础选择器.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span> <span class="st">&#39;red&#39;</span><span class="kw">&gt;</span>变红色<span class="kw">&lt;/div&gt;</span></span></code></pre></div>
+<p><strong>口诀</strong></p>
+<p>类选择器口诀：样式点定义 结构类调用 一个或多个 开发最常用</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb48-1"><a href="css基础选择器.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb48-2"><a href="css基础选择器.html#cb48-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb48-3"><a href="css基础选择器.html#cb48-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 类选择器口诀：样式点定义 结构类调用 一个或多个 开发最常用 */</span></span>
+<span id="cb48-4"><a href="css基础选择器.html#cb48-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.red</span> {</span>
+<span id="cb48-5"><a href="css基础选择器.html#cb48-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb48-6"><a href="css基础选择器.html#cb48-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb48-7"><a href="css基础选择器.html#cb48-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb48-8"><a href="css基础选择器.html#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb48-9"><a href="css基础选择器.html#cb48-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb48-10"><a href="css基础选择器.html#cb48-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;ul&gt;</span></span>
+<span id="cb48-11"><a href="css基础选择器.html#cb48-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;li</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;red&quot;</span><span class="kw">&gt;</span>冰雨<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb48-12"><a href="css基础选择器.html#cb48-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;li</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;red&quot;</span><span class="kw">&gt;</span>来生缘<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb48-13"><a href="css基础选择器.html#cb48-13" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;li&gt;</span>李香兰<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb48-14"><a href="css基础选择器.html#cb48-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;li&gt;</span>生僻字<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb48-15"><a href="css基础选择器.html#cb48-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb48-16"><a href="css基础选择器.html#cb48-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;red&quot;</span><span class="kw">&gt;</span>我也想变红色<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb48-17"><a href="css基础选择器.html#cb48-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+上面代码效果如下
+<head>
+<style>
+        /* 类选择器口诀：样式点定义 结构类调用 一个或多个 开发最常用 */
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<ul>
+<li class="red">
+冰雨
+</li>
+<li class="red">
+来生缘
+</li>
+<li>
+李香兰
+</li>
+<li>
+生僻字
+</li>
+</ul>
+<div class="red">
+我也想变红色
+</div>
+</body>
+<p><strong>注意</strong></p>
+<p>1.类选择器使用“”（英文点号)进行标识，后面紧跟类名(自定义，我们自己命名的)。</p>
+<p>2.可以理解为给这个标签起了一个名字，来表示。</p>
+<p>3.长名称或词组可以使用中横线来为选择器命名。</p>
+<p>4.不要使用纯数字、中文等命名，尽量使用英文字母来表示。</p>
+<p>5.命名要有意义，尽量使别人一眼就知道这个类名的目的。</p>
+<p>6.命名规范:见附件( Web前端开发规范手册.doc )</p>
+</div>
+<div id="id选择器" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> id选择器</h2>
+<p>id选择器可以为标有特定id的HTML元素指定特定的样式。</p>
+<p>HTML元素以<strong>id属性</strong>来设置id选择器，CSS中 id选择器以<strong>“#”</strong>来定义。语法</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb49-1"><a href="css基础选择器.html#cb49-1" aria-hidden="true" tabindex="-1"></a>#id名{</span>
+<span id="cb49-2"><a href="css基础选择器.html#cb49-2" aria-hidden="true" tabindex="-1"></a>    属性1:属性值1;</span>
+<span id="cb49-3"><a href="css基础选择器.html#cb49-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>例如，将id为nav元素中的内容设置为红色。</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb50-1"><a href="css基础选择器.html#cb50-1" aria-hidden="true" tabindex="-1"></a>#nav {</span>
+<span id="cb50-2"><a href="css基础选择器.html#cb50-2" aria-hidden="true" tabindex="-1"></a>    color :red;</span>
+<span id="cb50-3"><a href="css基础选择器.html#cb50-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>口诀</strong></p>
+<p>样式#定义，结构id调用，只能调用依从，别人切勿使用</p>
+<p>id选择器和类选择器的区别</p>
+<p>1.类选择器( class )好比人的名字，一个人可以有多个名字，同时一个名字也可以被多个人使用。</p>
+<p>2.id选择器好比人的身份证号码，全中国是唯一的，不得重复。</p>
+<p>3.id选择器和类选择器最大的不同在于使用次数上。</p>
+<p>4.类选择器在修改样式中用的最多，id选择器一般用于页面唯一性的元素上，经常和JavaScript 搭配使用。</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb51-1"><a href="css基础选择器.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb51-2"><a href="css基础选择器.html#cb51-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb51-3"><a href="css基础选择器.html#cb51-3" aria-hidden="true" tabindex="-1"></a>        <span class="pp">#pink</span> {</span>
+<span id="cb51-4"><a href="css基础选择器.html#cb51-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb51-5"><a href="css基础选择器.html#cb51-5" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb51-6"><a href="css基础选择器.html#cb51-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb51-7"><a href="css基础选择器.html#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb51-8"><a href="css基础选择器.html#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb51-9"><a href="css基础选择器.html#cb51-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;pink&quot;</span><span class="kw">&gt;</span>迈克尔.杰克逊<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb51-10"><a href="css基础选择器.html#cb51-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<head>
+<style>
+        #pink {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="pink">
+迈克尔.杰克逊
+</div>
+</body>
+</div>
+<div id="通配符选择器" class="section level2" number="6.6">
+<h2><span class="header-section-number">6.6</span> 通配符选择器</h2>
+<p>在CSS中，通配符选择器使用“*”定义，它表示选取页面中所有元素(标签)。</p>
+<p><strong>语法</strong></p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb52-1"><a href="css基础选择器.html#cb52-1" aria-hidden="true" tabindex="-1"></a>* {</span>
+<span id="cb52-2"><a href="css基础选择器.html#cb52-2" aria-hidden="true" tabindex="-1"></a>    属性1: 属性值1;</span>
+<span id="cb52-3"><a href="css基础选择器.html#cb52-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>注意</strong></p>
+<ul>
+<li>通配符选择器不需要调用，自动就给所有的元素使用样式</li>
+<li>特殊情况才使用，后面讲解使用场景（以下是清除所有的元素标签的内外边距后期讲）</li>
+</ul>
+<div class="sourceCode" id="cb53"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb53-1"><a href="css基础选择器.html#cb53-1" aria-hidden="true" tabindex="-1"></a>* {</span>
+<span id="cb53-2"><a href="css基础选择器.html#cb53-2" aria-hidden="true" tabindex="-1"></a>    margin: 0;</span>
+<span id="cb53-3"><a href="css基础选择器.html#cb53-3" aria-hidden="true" tabindex="-1"></a>    padding: 0;</span>
+<span id="cb53-4"><a href="css基础选择器.html#cb53-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb54-1"><a href="css基础选择器.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb54-2"><a href="css基础选择器.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html</span> <span class="er">lang</span><span class="ot">=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb54-3"><a href="css基础选择器.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb54-4"><a href="css基础选择器.html#cb54-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb54-5"><a href="css基础选择器.html#cb54-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">http-equiv</span><span class="ot">=</span><span class="st">&quot;X-UA-Compatible&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;IE=edge&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb54-6"><a href="css基础选择器.html#cb54-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;viewport&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb54-7"><a href="css基础选择器.html#cb54-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Document<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb54-8"><a href="css基础选择器.html#cb54-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb54-9"><a href="css基础选择器.html#cb54-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">*</span> {</span>
+<span id="cb54-10"><a href="css基础选择器.html#cb54-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb54-11"><a href="css基础选择器.html#cb54-11" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb54-12"><a href="css基础选择器.html#cb54-12" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* *把 html body div span li标签都改成了红色 */</span></span>
+<span id="cb54-13"><a href="css基础选择器.html#cb54-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb54-14"><a href="css基础选择器.html#cb54-14" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb54-15"><a href="css基础选择器.html#cb54-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb54-16"><a href="css基础选择器.html#cb54-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>我的<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb54-17"><a href="css基础选择器.html#cb54-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>我的<span class="kw">&lt;/span&gt;</span></span>
+<span id="cb54-18"><a href="css基础选择器.html#cb54-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;ul&gt;</span></span>
+<span id="cb54-19"><a href="css基础选择器.html#cb54-19" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;li&gt;</span>还是我的<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb54-20"><a href="css基础选择器.html#cb54-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb54-21"><a href="css基础选择器.html#cb54-21" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb54-22"><a href="css基础选择器.html#cb54-22" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span> </span></code></pre></div>
+</div>
+<div id="基础选择器总结" class="section level2" number="6.7">
+<h2><span class="header-section-number">6.7</span> 基础选择器总结</h2>
+<table>
+<caption><span id="tab:unnamed-chunk-16">表6.1: </span>文本格式化标签</caption>
+<thead>
+<tr class="header">
+<th align="left">基础选择器</th>
+<th align="left">作用</th>
+<th align="left">特点</th>
+<th align="left">使用情况</th>
+<th align="left">用法</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">标签选择权</td>
+<td align="left">可以选出所有相同的标签，比如p</td>
+<td align="left">不能差异化选择</td>
+<td align="left">较多</td>
+<td align="left"><code>p {color: red;}</code></td>
+</tr>
+<tr class="even">
+<td align="left">类选择器</td>
+<td align="left">可以选出1个或多个标签</td>
+<td align="left">可以根据需求选择</td>
+<td align="left">非常多</td>
+<td align="left"><code>.nav {color: red;}</code></td>
+</tr>
+<tr class="odd">
+<td align="left">id选择器</td>
+<td align="left">一次只能选择1个标签</td>
+<td align="left">ID属性只能在每个HTML文档中出现一次</td>
+<td align="left">一般和js搭配</td>
+<td align="left"><code>#nav {color: red;}</code></td>
+</tr>
+<tr class="even">
+<td align="left">通配符选择器</td>
+<td align="left">选择所有标签</td>
+<td align="left">选择的太多，有部分不需要</td>
+<td align="left">特殊情况使用</td>
+<td align="left"><code>* {color: red;}</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="综合案例" class="section level2" number="6.8">
+<h2><span class="header-section-number">6.8</span> 综合案例</h2>
+<div id="用类选择器话盒子" class="section level3" number="6.8.1">
+<h3><span class="header-section-number">6.8.1</span> 用类选择器话盒子</h3>
+<p>通过这个案例练习两个地方:</p>
+<p>1．类选择器的使用
+2．div就是一个盒子,用来装网页内容的。</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb55-1"><a href="css基础选择器.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb55-2"><a href="css基础选择器.html#cb55-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb55-3"><a href="css基础选择器.html#cb55-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.red</span>{</span>
+<span id="cb55-4"><a href="css基础选择器.html#cb55-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span> </span>
+<span id="cb55-5"><a href="css基础选择器.html#cb55-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb55-6"><a href="css基础选择器.html#cb55-6" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 背景颜色 */</span></span>
+<span id="cb55-7"><a href="css基础选择器.html#cb55-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">red</span> <span class="op">;</span></span>
+<span id="cb55-8"><a href="css基础选择器.html#cb55-8" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb55-9"><a href="css基础选择器.html#cb55-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.green</span>{</span>
+<span id="cb55-10"><a href="css基础选择器.html#cb55-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span> </span>
+<span id="cb55-11"><a href="css基础选择器.html#cb55-11" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb55-12"><a href="css基础选择器.html#cb55-12" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 背景颜色 */</span></span>
+<span id="cb55-13"><a href="css基础选择器.html#cb55-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">green</span> <span class="op">;</span>          </span>
+<span id="cb55-14"><a href="css基础选择器.html#cb55-14" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb55-15"><a href="css基础选择器.html#cb55-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb55-16"><a href="css基础选择器.html#cb55-16" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb55-17"><a href="css基础选择器.html#cb55-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb55-18"><a href="css基础选择器.html#cb55-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;red&quot;</span><span class="kw">&gt;</span>红色<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb55-19"><a href="css基础选择器.html#cb55-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;green&quot;</span><span class="kw">&gt;</span>绿色<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb55-20"><a href="css基础选择器.html#cb55-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;red&quot;</span><span class="kw">&gt;</span>绿色<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb55-21"><a href="css基础选择器.html#cb55-21" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+上述代码效果如下
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-18"></span>
+<img src="fig/CSS/5-01.jpg" alt="效果" width="84" />
+<p class="caption">
+图4.2: 效果
+</p>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="css基础.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="字体属性.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

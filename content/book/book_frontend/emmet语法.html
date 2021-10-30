@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 HTML初识 | 前端学习笔记</title>
+  <title>10 Emmet语法 | 前端学习笔记</title>
   <meta name="description" content="前端学习全纪录" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 HTML初识 | 前端学习笔记" />
+  <meta property="og:title" content="10 Emmet语法 | 前端学习笔记" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 HTML初识 | 前端学习笔记" />
+  <meta name="twitter:title" content="10 Emmet语法 | 前端学习笔记" />
   
   <meta name="twitter:description" content="前端学习全纪录" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="认识web.html"/>
-<link rel="next" href="网页开发工具.html"/>
+<link rel="prev" href="css引入方式.html"/>
+<link rel="next" href="文本.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -66,70 +66,6 @@ MathJax.Hub.Config({
 </script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 
 </head>
@@ -171,7 +107,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="网页开发工具.html"><a href="网页开发工具.html#vscode工具生成骨架标签新增代码"><i class="fa fa-check"></i><b>3.2</b> VSCode工具生成骨架标签新增代码</a>
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="网页开发工具.html"><a href="网页开发工具.html#文档类型doctype"><i class="fa fa-check"></i><b>3.2.1</b> 文档类型<code>&lt;!DOCTYPE&gt;</code></a></li>
-<li class="chapter" data-level="3.2.2" data-path="网页开发工具.html"><a href="网页开发工具.html#字符集charset"><i class="fa fa-check"></i><b>3.2.2</b> 字符集<code>charset</code></a></li>
+<li class="chapter" data-level="3.2.2" data-path="网页开发工具.html"><a href="网页开发工具.html#页面语言lang"><i class="fa fa-check"></i><b>3.2.2</b> 页面语言<code>lang</code></a></li>
+<li class="chapter" data-level="3.2.3" data-path="网页开发工具.html"><a href="网页开发工具.html#字符集charset"><i class="fa fa-check"></i><b>3.2.3</b> 字符集<code>charset</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="html常用标签.html"><a href="html常用标签.html"><i class="fa fa-check"></i><b>4</b> HTML常用标签</a>
@@ -278,19 +215,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10" data-path="emmet语法.html"><a href="emmet语法.html"><i class="fa fa-check"></i><b>10</b> Emmet语法</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="emmet语法.html"><a href="emmet语法.html#section"><i class="fa fa-check"></i><b>10.1</b> </a></li>
+<li class="chapter" data-level="10.1" data-path="emmet语法.html"><a href="emmet语法.html#快速生成html结构语法"><i class="fa fa-check"></i><b>10.1</b> 快速生成HTML结构语法</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="文本.html"><a href="文本.html"><i class="fa fa-check"></i><b>11</b> 文本</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="文本.html"><a href="文本.html#section-1"><i class="fa fa-check"></i><b>11.1</b> </a></li>
+<li class="chapter" data-level="11.1" data-path="文本.html"><a href="文本.html#section"><i class="fa fa-check"></i><b>11.1</b> </a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="section-2.html"><a href="section-2.html"><i class="fa fa-check"></i><b>12</b> </a>
+<li class="chapter" data-level="12" data-path="section-1.html"><a href="section-1.html"><i class="fa fa-check"></i><b>12</b> </a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="section-2.html"><a href="section-2.html#section-3"><i class="fa fa-check"></i><b>12.1</b> </a></li>
+<li class="chapter" data-level="12.1" data-path="section-1.html"><a href="section-1.html#section-2"><i class="fa fa-check"></i><b>12.1</b> </a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="文.html"><a href="文.html"><i class="fa fa-check"></i><b>13</b> 文</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="文.html"><a href="文.html#section-4"><i class="fa fa-check"></i><b>13.1</b> </a></li>
+<li class="chapter" data-level="13.1" data-path="文.html"><a href="文.html#section-3"><i class="fa fa-check"></i><b>13.1</b> </a></li>
 </ul></li>
 <li class="part"><span><b>III 附录</b></span></li>
 <li class="chapter" data-level="14" data-path="vscode常用操作.html"><a href="vscode常用操作.html"><i class="fa fa-check"></i><b>14</b> Vscode常用操作</a></li>
@@ -316,80 +253,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="html初识" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> HTML初识</h1>
-<div id="基本语法规范" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> 基本语法规范</h2>
-<div id="基本语法概述" class="section level3" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> 基本语法概述</h3>
-<p>HTML标签是由尖括号包围的关键词，例如<code>&lt;html&gt;</code>。</p>
-<p>HTML标签通常是成对出现的，例如<code>&lt;html&gt;</code>和<code>&lt;/html&gt;</code>，我们称为双标签。标签对中的第一个标签是开始标签，第二个标签是结束标签。</p>
-<p>有些特殊标签必须是单个标签（极少情况），例如<code>&lt;br /&gt;</code>，我们称为单标签。</p>
-</div>
-<div id="标签关系" class="section level3" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> 标签关系</h3>
-<p>双标签关系可以分为两类：包含关系和并列关系。</p>
-<p>包含关系，又被称为父子关系。
-eg：title标签包含于head标签中。</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="html初识.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb1-2"><a href="html初识.html#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;&lt;/title&gt;</span></span>
-<span id="cb1-3"><a href="html初识.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span></code></pre></div>
-<p>并列关系，又被称为兄弟关系。
-eg：title标签和head标签并列。</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="html初识.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;&lt;/head&gt;</span></span>
-<span id="cb2-2"><a href="html初识.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;&lt;/body&gt;</span></span></code></pre></div>
-</div>
-</div>
-<div id="基本结构标签" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> 基本结构标签</h2>
-<p>每个网页都会有一个基本的结构标签（也被称为骨架标签），页面内容也是在这些基本标签上书写。HTML页面也称为HTML文档。</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="html初识.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
-<span id="cb3-2"><a href="html初识.html#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;head&gt;</span>     </span>
-<span id="cb3-3"><a href="html初识.html#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;title&gt;</span>第一个页面<span class="kw">&lt;/title&gt;</span> </span>
-<span id="cb3-4"><a href="html初识.html#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/head&gt;</span></span>
-<span id="cb3-5"><a href="html初识.html#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;body&gt;</span></span>
-<span id="cb3-6"><a href="html初识.html#cb3-6" aria-hidden="true" tabindex="-1"></a>         键盘敲烂，工资过万</span>
-<span id="cb3-7"><a href="html初识.html#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb3-8"><a href="html初识.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
-<p>HTML文档的后缀名必须是.htm或.html，浏览器的作用是读取HTML文档，并以网页形式显示他们。此时，用浏览器打开这个网页，我们就可以预览我们写的HTML文件了。</p>
-<table>
-<caption><span id="tab:unnamed-chunk-4">表2.1: </span>基本结构标签</caption>
-<thead>
-<tr class="header">
-<th align="left">标题名</th>
-<th align="left">定义</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code>&lt;html&gt;&lt;/html&gt;</code></td>
-<td align="left">HTML标签</td>
-<td align="left">页面中最大的标签,我们称为根标签</td>
-</tr>
-<tr class="even">
-<td align="left"><code>&lt;head&gt;&lt;/head&gt;</code></td>
-<td align="left">文档头部</td>
-<td align="left">注意head标签中我们必须要设置的标签是tittle</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>&lt;title&gt;&lt;/title&gt;</code></td>
-<td align="left">文档标题</td>
-<td align="left">让页面拥有一个属于自己的网页标题</td>
-</tr>
-<tr class="even">
-<td align="left"><code>&lt;body&gt;&lt;/body&gt;</code></td>
-<td align="left">文档主体</td>
-<td align="left">元素包含文档的所有内容，页面内容基本都是放到body里面</td>
-</tr>
-</tbody>
-</table>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
-<img src="fig/1-2.png" alt="HTML骨架标签" width="878" />
-<p class="caption">
-图2.1: HTML骨架标签
-</p>
-</div>
+<div id="emmet语法" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Emmet语法</h1>
+<p>Emmet语法的前身是Zen coding,它使用缩写,来提高html/css的编写速度, Vscode内部已经集成该语法.</p>
+<ol style="list-style-type: decimal">
+<li>快速生成HTML结构语法</li>
+<li>快速生成CSS样式语法</li>
+</ol>
+<div id="快速生成html结构语法" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> 快速生成HTML结构语法</h2>
+<p>1．生成标签直接输入标签名按tab键即可比如div然后tab键，就可以生成<code>&lt;div&gt;&lt;/div&gt;</code></p>
+<p>2．如果想要生成多个相同标签加上*就可以了比如div*3就可以快速生成3个div</p>
+<p>3．如果有父子级关系的标签，可以用&gt;比如ul &gt; li就可以了</p>
+<p>4．如果有兄弟关系的标签，用＋就可以了比如div+p</p>
+<p>5．如果生成带有类名或者id名字的，直接写.demo或者#two tab键就可以了</p>
+<p>6．如果生成的div类名是有顺序的，可以用自增符号$</p>
+<p>7．如果想要在生成的标签内部写内容可以用{}表示</p>
 
 </div>
 </div>
@@ -398,8 +277,8 @@ eg：title标签和head标签并列。</p>
           </div>
         </div>
       </div>
-<a href="认识web.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="网页开发工具.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="css引入方式.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="文本.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

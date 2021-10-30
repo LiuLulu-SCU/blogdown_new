@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 HTML初识 | 前端学习笔记</title>
+  <title>11 文本 | 前端学习笔记</title>
   <meta name="description" content="前端学习全纪录" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 HTML初识 | 前端学习笔记" />
+  <meta property="og:title" content="11 文本 | 前端学习笔记" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 HTML初识 | 前端学习笔记" />
+  <meta name="twitter:title" content="11 文本 | 前端学习笔记" />
   
   <meta name="twitter:description" content="前端学习全纪录" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="认识web.html"/>
-<link rel="next" href="网页开发工具.html"/>
+<link rel="prev" href="emmet语法.html"/>
+<link rel="next" href="section-2.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -316,80 +316,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="html初识" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> HTML初识</h1>
-<div id="基本语法规范" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> 基本语法规范</h2>
-<div id="基本语法概述" class="section level3" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> 基本语法概述</h3>
-<p>HTML标签是由尖括号包围的关键词，例如<code>&lt;html&gt;</code>。</p>
-<p>HTML标签通常是成对出现的，例如<code>&lt;html&gt;</code>和<code>&lt;/html&gt;</code>，我们称为双标签。标签对中的第一个标签是开始标签，第二个标签是结束标签。</p>
-<p>有些特殊标签必须是单个标签（极少情况），例如<code>&lt;br /&gt;</code>，我们称为单标签。</p>
-</div>
-<div id="标签关系" class="section level3" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> 标签关系</h3>
-<p>双标签关系可以分为两类：包含关系和并列关系。</p>
-<p>包含关系，又被称为父子关系。
-eg：title标签包含于head标签中。</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="html初识.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb1-2"><a href="html初识.html#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;&lt;/title&gt;</span></span>
-<span id="cb1-3"><a href="html初识.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span></code></pre></div>
-<p>并列关系，又被称为兄弟关系。
-eg：title标签和head标签并列。</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="html初识.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;&lt;/head&gt;</span></span>
-<span id="cb2-2"><a href="html初识.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;&lt;/body&gt;</span></span></code></pre></div>
-</div>
-</div>
-<div id="基本结构标签" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> 基本结构标签</h2>
-<p>每个网页都会有一个基本的结构标签（也被称为骨架标签），页面内容也是在这些基本标签上书写。HTML页面也称为HTML文档。</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="html初识.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
-<span id="cb3-2"><a href="html初识.html#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;head&gt;</span>     </span>
-<span id="cb3-3"><a href="html初识.html#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;title&gt;</span>第一个页面<span class="kw">&lt;/title&gt;</span> </span>
-<span id="cb3-4"><a href="html初识.html#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/head&gt;</span></span>
-<span id="cb3-5"><a href="html初识.html#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;body&gt;</span></span>
-<span id="cb3-6"><a href="html初识.html#cb3-6" aria-hidden="true" tabindex="-1"></a>         键盘敲烂，工资过万</span>
-<span id="cb3-7"><a href="html初识.html#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb3-8"><a href="html初识.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
-<p>HTML文档的后缀名必须是.htm或.html，浏览器的作用是读取HTML文档，并以网页形式显示他们。此时，用浏览器打开这个网页，我们就可以预览我们写的HTML文件了。</p>
-<table>
-<caption><span id="tab:unnamed-chunk-4">表2.1: </span>基本结构标签</caption>
-<thead>
-<tr class="header">
-<th align="left">标题名</th>
-<th align="left">定义</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code>&lt;html&gt;&lt;/html&gt;</code></td>
-<td align="left">HTML标签</td>
-<td align="left">页面中最大的标签,我们称为根标签</td>
-</tr>
-<tr class="even">
-<td align="left"><code>&lt;head&gt;&lt;/head&gt;</code></td>
-<td align="left">文档头部</td>
-<td align="left">注意head标签中我们必须要设置的标签是tittle</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>&lt;title&gt;&lt;/title&gt;</code></td>
-<td align="left">文档标题</td>
-<td align="left">让页面拥有一个属于自己的网页标题</td>
-</tr>
-<tr class="even">
-<td align="left"><code>&lt;body&gt;&lt;/body&gt;</code></td>
-<td align="left">文档主体</td>
-<td align="left">元素包含文档的所有内容，页面内容基本都是放到body里面</td>
-</tr>
-</tbody>
-</table>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
-<img src="fig/1-2.png" alt="HTML骨架标签" width="878" />
-<p class="caption">
-图2.1: HTML骨架标签
-</p>
-</div>
+<div id="文本" class="section level1" number="11">
+<h1><span class="header-section-number">11</span> 文本</h1>
+<div id="section-1" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> </h2>
 
 </div>
 </div>
@@ -398,8 +328,8 @@ eg：title标签和head标签并列。</p>
           </div>
         </div>
       </div>
-<a href="认识web.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="网页开发工具.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="emmet语法.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -8,7 +8,7 @@ math: true
 
 title: 刘卢路 # Website name
 baseurl: https://liululu.net/ # Website URL
-copyright: '© {year} 刘卢路' # Footer text, e.g. '© {year} Me'
+copyright: '© 2021-{year} 刘卢路' # Footer text, e.g. '© {year} Me'
 
 ############################
 ## LANGUAGE
