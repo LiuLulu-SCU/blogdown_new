@@ -22,6 +22,11 @@ image:
   preview_only: no
 projects: []
 ---
+
+## 表情
+选择表情`win`+`;`
+
+
 ## 字体
 减小字号 `Ctrl+Shift+<`  
 增大字号 `Ctrl+Shift+>`  
@@ -44,7 +49,7 @@ projects: []
 
 - 全文设置页眉页脚到底端的距离
 选择菜单“布局”→“页面设置”→“布局”→设置页眉和页脚距边界的距离数值，然后选择“页面设置”弹出框下面的应用于“整篇文档”（这是最关键一步），然后确定，就可以了。
-![](index_files/figure-html/1-2.png)<!-- -->
+<img src="{{< blogdown/postref >}}index_files/figure-html/1-2.png" width="528" />
 
 ## 删除文件作者信息
 - 右键选中office文档（word、excel或PPT），点击`属性`。选择`详细信息`，修改`作者`为"作者"

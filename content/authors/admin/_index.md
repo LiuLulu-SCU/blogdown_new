@@ -63,7 +63,7 @@ title: 刘卢路
   
   
 <font color=#ED7D31 face="黑体" size=5>**我的书籍**</font>
-- <a href="/book/book_frontend/" target="_blank">前端教程</a>
+- <a href="/book/book_frontend/" target="_blank">Web开发教程</a>
 - <a href="/courses/probability/" target="_blank">CEA教程</a>
 - <a href="/book/bookdown_tutorial/" target="_blank">Bookdown教程</a>
 

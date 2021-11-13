@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7 字体属性 | Web开发学习笔记</title>
+  <title>11 元素的显示模式 | Web开发学习笔记</title>
   <meta name="description" content="Web前端学习全纪录" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7 字体属性 | Web开发学习笔记" />
+  <meta property="og:title" content="11 元素的显示模式 | Web开发学习笔记" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 字体属性 | Web开发学习笔记" />
+  <meta name="twitter:title" content="11 元素的显示模式 | Web开发学习笔记" />
   
   <meta name="twitter:description" content="Web前端学习全纪录" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="css基础选择器.html"/>
-<link rel="next" href="文本属性.html"/>
+<link rel="prev" href="复合选择器.html"/>
+<link rel="next" href="css背景.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -346,249 +346,237 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="字体属性" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> 字体属性</h1>
-<p>CSS使用font（字体）属性用于定义字体系列、大小、粗细和文字样式（如斜体）。</p>
-<div id="字体系列" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> 字体系列</h2>
-<p>CSS使用<strong>font-family</strong>属性定义文本的字体系列。</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb56-1"><a href="字体属性.html#cb56-1" aria-hidden="true" tabindex="-1"></a>p { font-family: &quot;微软雅黑&quot; }</span>
-<span id="cb56-2"><a href="字体属性.html#cb56-2" aria-hidden="true" tabindex="-1"></a>div {fent-family: Arial, &quot;Microsoft Yahei&quot;, &quot;微软雅黑&quot;}</span></code></pre></div>
-<p><strong>例子</strong></p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb57-1"><a href="字体属性.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb57-2"><a href="字体属性.html#cb57-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb57-3"><a href="字体属性.html#cb57-3" aria-hidden="true" tabindex="-1"></a>     h2 {</span>
-<span id="cb57-4"><a href="字体属性.html#cb57-4" aria-hidden="true" tabindex="-1"></a>         <span class="kw">font-family</span>: <span class="st">&#39;微软雅黑&#39;</span><span class="op">;</span></span>
-<span id="cb57-5"><a href="字体属性.html#cb57-5" aria-hidden="true" tabindex="-1"></a>     }</span>
-<span id="cb57-6"><a href="字体属性.html#cb57-6" aria-hidden="true" tabindex="-1"></a>     p {</span>
-<span id="cb57-7"><a href="字体属性.html#cb57-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* font-family: &#39;Microsoft YaHei&#39;, Arial, Helvetica, sans-serif; */</span></span>
-<span id="cb57-8"><a href="字体属性.html#cb57-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">font-family</span>: <span class="st">&#39;Times New Roman&#39;</span><span class="op">,</span> Times<span class="op">,</span> <span class="dv">serif</span><span class="op">;</span></span>
-<span id="cb57-9"><a href="字体属性.html#cb57-9" aria-hidden="true" tabindex="-1"></a>     }</span>
-<span id="cb57-10"><a href="字体属性.html#cb57-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb57-11"><a href="字体属性.html#cb57-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb57-12"><a href="字体属性.html#cb57-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb57-13"><a href="字体属性.html#cb57-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h2&gt;</span>pink的秘密<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb57-14"><a href="字体属性.html#cb57-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>那一抹众人中最漂亮的颜色,<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb57-15"><a href="字体属性.html#cb57-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>优雅,淡然,又那么心中清澈.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb57-16"><a href="字体属性.html#cb57-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>前端总是伴随着困难和犯错,<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb57-17"><a href="字体属性.html#cb57-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>静心,坦然,攻克一个又一个.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb57-18"><a href="字体属性.html#cb57-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>拼死也要克服它,<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb57-19"><a href="字体属性.html#cb57-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>这是pink的秘密也是老师最终的嘱托.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb57-20"><a href="字体属性.html#cb57-20" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div id="元素的显示模式" class="section level1" number="11">
+<h1><span class="header-section-number">11</span> 元素的显示模式</h1>
+<p>了解元素的显示模式可以更好的让我们布局页面</p>
+<div id="什么是元素的显示模式" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> 什么是元素的显示模式</h2>
+<p>元素显示模式就是<strong>元素(标签)以什么方式进行显示</strong>，比如<code>&lt;div&gt;</code>自己占一行，比如一行可以放多个<code>&lt;span&gt;</code>。</p>
+<p>HTML元素一般分为<strong>块元素</strong>和<strong>行内元素</strong>两种类型</p>
+</div>
+<div id="块元素" class="section level2" number="11.2">
+<h2><span class="header-section-number">11.2</span> 块元素</h2>
+<p>常见的块元素有<code>&lt;h1&gt;~&lt;h6&gt;</code>、<code>&lt;p&gt;</code>、<code>&lt;div&gt;</code>、<code>&lt;ul&gt;</code>、<code>&lt;ol&gt;</code>、<code>&lt;li&gt;</code>等，其中<code>&lt;div&gt;</code>标签是<strong>最典型的块元素</strong>。</p>
+<p><strong>特点</strong></p>
+<ul>
+<li><p>比较霸道，自己独占一行。</p></li>
+<li><p>高度，宽度、外边距以及内边距都可以控制。</p></li>
+<li><p>宽度默认是容器（父级宽度)的100%。高度用的是自己的高度。</p></li>
+<li><p>是一个容器及盒子，里面可以放行内或者块级元素。</p></li>
+</ul>
 <p><strong>注意</strong></p>
 <ul>
-<li>各种字体之间必须使用英文状态下的逗号隔开</li>
-<li>一般情况下,如果有空格隔开的多个单词组成的字体,加引号.</li>
-<li>尽量使用系统默认自带字体，保证在任何用户的浏览器中都能正确显示</li>
-<li>最常见的几个字体: <code>body {font-family. 'Microsoft YaHei, tahoma,arial,Hiragino Sans GB'; }</code></li>
-<li><strong>把字体放在body标签里面，会统一body中所有字体。多放几中字体，如果第一个渲染不出来，会依次渲染后面几种字体。</strong></li>
-<li>Chrome浏览器默认显示微软雅黑（Microsoft YaHei）字体。</li>
-</ul>
-</div>
-<div id="字体大小" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> 字体大小</h2>
-<p>css使用<strong>font-size</strong>属性定义字体大小。</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb58-1"><a href="字体属性.html#cb58-1" aria-hidden="true" tabindex="-1"></a>p {</span>
-<span id="cb58-2"><a href="字体属性.html#cb58-2" aria-hidden="true" tabindex="-1"></a>  font-size: 20px;</span>
-<span id="cb58-3"><a href="字体属性.html#cb58-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<ul>
-<li><p>px(像素)大小是我们网页的最常用的单位</p></li>
-<li><p>谷歌浏览器默认的文字大小为16px</p></li>
-<li><p>不同浏览器可能默认显示的字号大小不一致，我们尽量给一个明确值大小，不要默认大小</p></li>
-</ul>
-<p>-可以给body指定整个页面文字的大小</p>
-<p><strong>例子</strong></p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb59-1"><a href="字体属性.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb59-2"><a href="字体属性.html#cb59-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb59-3"><a href="字体属性.html#cb59-3" aria-hidden="true" tabindex="-1"></a>        body {</span>
-<span id="cb59-4"><a href="字体属性.html#cb59-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">16</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb59-5"><a href="字体属性.html#cb59-5" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb59-6"><a href="字体属性.html#cb59-6" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 标题标签需要单独指定文字大小 */</span></span>
-<span id="cb59-7"><a href="字体属性.html#cb59-7" aria-hidden="true" tabindex="-1"></a>        h2 {</span>
-<span id="cb59-8"><a href="字体属性.html#cb59-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">16</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb59-9"><a href="字体属性.html#cb59-9" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb59-10"><a href="字体属性.html#cb59-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb59-11"><a href="字体属性.html#cb59-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb59-12"><a href="字体属性.html#cb59-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb59-13"><a href="字体属性.html#cb59-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h2&gt;</span>pink的秘密<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb59-14"><a href="字体属性.html#cb59-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>那一抹众人中最漂亮的颜色,<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb59-15"><a href="字体属性.html#cb59-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>优雅,淡然,又那么心中清澈.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb59-16"><a href="字体属性.html#cb59-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>前端总是伴随着困难和犯错,<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb59-17"><a href="字体属性.html#cb59-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>静心,坦然,攻克一个又一个.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb59-18"><a href="字体属性.html#cb59-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>拼死也要克服它,<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb59-19"><a href="字体属性.html#cb59-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>这是pink的秘密也是老师最终的嘱托.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb59-20"><a href="字体属性.html#cb59-20" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
-</div>
-<div id="字体粗细" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> 字体粗细</h2>
-<p>CSS使用<strong>font-weight</strong>属性设置文字字体的粗细</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb60-1"><a href="字体属性.html#cb60-1" aria-hidden="true" tabindex="-1"></a>p {</span>
-<span id="cb60-2"><a href="字体属性.html#cb60-2" aria-hidden="true" tabindex="-1"></a>  font-weigth: bold;</span>
-<span id="cb60-3"><a href="字体属性.html#cb60-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<table>
-<caption><span id="tab:unnamed-chunk-6">表4.1: </span>字体粗细</caption>
-<thead>
-<tr class="header">
-<th align="left">属性值</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">nomal</td>
-<td align="left">默认值（不加粗）</td>
-</tr>
-<tr class="even">
-<td align="left">blod</td>
-<td align="left">粗体</td>
-</tr>
-<tr class="odd">
-<td align="left">100-900</td>
-<td align="left">400=normal，700=bold</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p>学会让加粗标签（比如h和strong等)不加粗，或者其他标签加粗</p></li>
-<li><p>实际开发时，我们更喜欢用数字表示粗细</p></li>
+<li><p>文字类的元素（<code>&lt;p&gt;</code>，<code>&lt;h&gt;</code>）内不能使用块级元素</p></li>
+<li><p><code>&lt;p&gt;</code>标签主要用于存放文字，因此</p>
+<p>
+<p>里面不能放块级元素，特别是不能放<code>&lt;div&gt;</code></p></li>
+<li><p>同理，<code>&lt;h1&gt;~&lt;h6&gt;</code>等都是文字类块级标签，里面也不能放其他块级元素</p></li>
 </ul>
 <p><strong>例子</strong></p>
-<p>设置h2（标题2）不加粗，最后一段加粗。</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb61-1"><a href="字体属性.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb61-2"><a href="字体属性.html#cb61-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb61-3"><a href="字体属性.html#cb61-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">.bold</span> {</span>
-<span id="cb61-4"><a href="字体属性.html#cb61-4" aria-hidden="true" tabindex="-1"></a>           <span class="co">/* font-weight: bold; */</span></span>
-<span id="cb61-5"><a href="字体属性.html#cb61-5" aria-hidden="true" tabindex="-1"></a>           <span class="co">/* 这个700 的后面不要跟单位  等价于 bold 都是加粗的效果 */</span></span>
-<span id="cb61-6"><a href="字体属性.html#cb61-6" aria-hidden="true" tabindex="-1"></a>           <span class="co">/* 实际开发中,我们跟提倡使用数字 表示加粗或者变细 */</span></span>
-<span id="cb61-7"><a href="字体属性.html#cb61-7" aria-hidden="true" tabindex="-1"></a>           <span class="kw">font-weight</span>: <span class="dv">700</span><span class="op">;</span>    </span>
-<span id="cb61-8"><a href="字体属性.html#cb61-8" aria-hidden="true" tabindex="-1"></a>       }</span>
-<span id="cb61-9"><a href="字体属性.html#cb61-9" aria-hidden="true" tabindex="-1"></a>       h2 {</span>
-<span id="cb61-10"><a href="字体属性.html#cb61-10" aria-hidden="true" tabindex="-1"></a>           <span class="kw">font-weight</span>: <span class="dv">400</span><span class="op">;</span>   </span>
-<span id="cb61-11"><a href="字体属性.html#cb61-11" aria-hidden="true" tabindex="-1"></a>           <span class="co">/* font-weight: normal;    */</span></span>
-<span id="cb61-12"><a href="字体属性.html#cb61-12" aria-hidden="true" tabindex="-1"></a>       }</span>
-<span id="cb61-13"><a href="字体属性.html#cb61-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb61-14"><a href="字体属性.html#cb61-14" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb61-15"><a href="字体属性.html#cb61-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb61-16"><a href="字体属性.html#cb61-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h2&gt;</span>pink的秘密<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb61-17"><a href="字体属性.html#cb61-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>那一抹众人中最漂亮的颜色,<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb61-18"><a href="字体属性.html#cb61-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>优雅,淡然,又那么心中清澈.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb61-19"><a href="字体属性.html#cb61-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>前端总是伴随着困难和犯错,<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb61-20"><a href="字体属性.html#cb61-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>静心,坦然,攻克一个又一个.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb61-21"><a href="字体属性.html#cb61-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;bold&quot;</span><span class="kw">&gt;</span>拼死也要克服它,<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb61-22"><a href="字体属性.html#cb61-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>这是pink的秘密也是老师最终的嘱托.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb61-23"><a href="字体属性.html#cb61-23" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb101-1"><a href="元素的显示模式.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb101-2"><a href="元素的显示模式.html#cb101-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb101-3"><a href="元素的显示模式.html#cb101-3" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb101-4"><a href="元素的显示模式.html#cb101-4" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* width: 200px; */</span></span>
+<span id="cb101-5"><a href="元素的显示模式.html#cb101-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb101-6"><a href="元素的显示模式.html#cb101-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb101-7"><a href="元素的显示模式.html#cb101-7" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb101-8"><a href="元素的显示模式.html#cb101-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb101-9"><a href="元素的显示模式.html#cb101-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb101-10"><a href="元素的显示模式.html#cb101-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-11"><a href="元素的显示模式.html#cb101-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb101-12"><a href="元素的显示模式.html#cb101-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>比较霸道，自己独占一行<span class="kw">&lt;/div&gt;</span> 瑟瑟发抖</span>
+<span id="cb101-13"><a href="元素的显示模式.html#cb101-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb101-14"><a href="元素的显示模式.html#cb101-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>这里有问题<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb101-15"><a href="元素的显示模式.html#cb101-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb101-16"><a href="元素的显示模式.html#cb101-16" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 </div>
-<div id="文字样式" class="section level2" number="7.4">
-<h2><span class="header-section-number">7.4</span> 文字样式</h2>
-<p>CSS使用<strong>font-style</strong>属性设置文本风格</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb62-1"><a href="字体属性.html#cb62-1" aria-hidden="true" tabindex="-1"></a>p {</span>
-<span id="cb62-2"><a href="字体属性.html#cb62-2" aria-hidden="true" tabindex="-1"></a>  font-style: normal;</span>
-<span id="cb62-3"><a href="字体属性.html#cb62-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<table>
-<caption><span id="tab:unnamed-chunk-9">表4.2: </span>文字样式</caption>
-<thead>
-<tr class="header">
-<th align="left">属性值</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">nomal</td>
-<td align="left">默认值</td>
-</tr>
-<tr class="even">
-<td align="left">italic</td>
-<td align="left">意大利斜体</td>
-</tr>
-</tbody>
-</table>
+<div id="行内元素内联元素" class="section level2" number="11.3">
+<h2><span class="header-section-number">11.3</span> 行内元素（内联元素）</h2>
+<p>行内元素又称为<strong>内联元素</strong>，常见的行内元素有<code>&lt;a&gt;</code>、<code>&lt;strong&gt;</code>、<code>&lt;b&gt;</code>、<code>&lt;em&gt;</code>、<code>&lt;i&gt;</code>、<code>&lt;del&gt;</code>，<code>&lt;s&gt;</code>、<code>&lt;ins&gt;</code>、<code>&lt;u&gt;</code>、<code>&lt;span&gt;</code>等，其中<code>&lt;span&gt;</code>是最典型的行内元素。</p>
+<p><strong>特点</strong></p>
+<ul>
+<li><p>相邻行内元素在一行上，一行可以显示多个。</p></li>
+<li><p>高、宽直接设置是无效的。</p></li>
+<li><p>默认宽度就是它本身内容的宽度。</p></li>
+<li><p>行内元素<strong>只能容纳文本或其他行内元素，不能放块元素</strong>。</p></li>
+</ul>
 <p><strong>注意</strong></p>
-<p><strong>平时我们很少给文字加斜体，反而要给斜体标签( em , i)改为不倾斜字体。</strong></p>
-<p><strong>例子</strong></p>
-<p>让段落变斜体， 斜体的文字不倾斜。</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb63-1"><a href="字体属性.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb63-2"><a href="字体属性.html#cb63-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb63-3"><a href="字体属性.html#cb63-3" aria-hidden="true" tabindex="-1"></a>      p {</span>
-<span id="cb63-4"><a href="字体属性.html#cb63-4" aria-hidden="true" tabindex="-1"></a>          <span class="kw">font-style</span>: <span class="dv">italic</span><span class="op">;</span></span>
-<span id="cb63-5"><a href="字体属性.html#cb63-5" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb63-6"><a href="字体属性.html#cb63-6" aria-hidden="true" tabindex="-1"></a>      em {</span>
-<span id="cb63-7"><a href="字体属性.html#cb63-7" aria-hidden="true" tabindex="-1"></a>          <span class="co">/* 让倾斜的字体不倾斜   就是赶紧脉动回来 */</span></span>
-<span id="cb63-8"><a href="字体属性.html#cb63-8" aria-hidden="true" tabindex="-1"></a>          <span class="kw">font-style</span>: <span class="dv">normal</span><span class="op">;</span></span>
-<span id="cb63-9"><a href="字体属性.html#cb63-9" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb63-10"><a href="字体属性.html#cb63-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb63-11"><a href="字体属性.html#cb63-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb63-12"><a href="字体属性.html#cb63-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb63-13"><a href="字体属性.html#cb63-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>同学,上课时候的你<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb63-14"><a href="字体属性.html#cb63-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;em&gt;</span>下课时候的你<span class="kw">&lt;/em&gt;</span></span>
-<span id="cb63-15"><a href="字体属性.html#cb63-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
-<span id="cb63-16"><a href="字体属性.html#cb63-16" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
-</div>
-<div id="字体复合属性" class="section level2" number="7.5">
-<h2><span class="header-section-number">7.5</span> 字体复合属性</h2>
-<p>字体属性可以把以上文字样式综合来写,这样可以更节约代码:</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb64-1"><a href="字体属性.html#cb64-1" aria-hidden="true" tabindex="-1"></a>body {</span>
-<span id="cb64-2"><a href="字体属性.html#cb64-2" aria-hidden="true" tabindex="-1"></a>  font: font-style font-weight font-size/line-height font-family;</span>
-<span id="cb64-3"><a href="字体属性.html#cb64-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <ul>
-<li><p>使用font属性时，必须按上面语法格式中的顺序书写，<strong>不能更换顺序</strong>，并且各个属性间以<strong>空格</strong>隔开</p></li>
-<li><p>不需要设置的属性可以省略（取默认值），但<strong>必须保留font-size和font-family属性</strong>，否则font 属性将不起作用</p></li>
+<li><p>链接里面不能再放链接</p></li>
+<li><p>特殊情况<strong>链接<code>&lt;a&gt;</code>里面可以放块级元素</strong>，但是需要给<code>&lt;a&gt;</code>转换一下模式最安全。</p></li>
 </ul>
-<div class="sourceCode" id="cb65"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb65-1"><a href="字体属性.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb65-2"><a href="字体属性.html#cb65-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb65-3"><a href="字体属性.html#cb65-3" aria-hidden="true" tabindex="-1"></a>       <span class="co">/* 想要div文字变倾斜 加粗 字号设置为16像素 并且 是微软雅黑 */</span></span>
-<span id="cb65-4"><a href="字体属性.html#cb65-4" aria-hidden="true" tabindex="-1"></a>       div {</span>
-<span id="cb65-5"><a href="字体属性.html#cb65-5" aria-hidden="true" tabindex="-1"></a>           <span class="co">/* font-style: italic;</span></span>
-<span id="cb65-6"><a href="字体属性.html#cb65-6" aria-hidden="true" tabindex="-1"></a><span class="co">           font-weight: 700;</span></span>
-<span id="cb65-7"><a href="字体属性.html#cb65-7" aria-hidden="true" tabindex="-1"></a><span class="co">           font-size: 16px;</span></span>
-<span id="cb65-8"><a href="字体属性.html#cb65-8" aria-hidden="true" tabindex="-1"></a><span class="co">           font-family: &#39;Microsoft yahei&#39;; */</span></span>
-<span id="cb65-9"><a href="字体属性.html#cb65-9" aria-hidden="true" tabindex="-1"></a>           <span class="co">/* 复合属性: 简写的方式  节约代码 */</span></span>
-<span id="cb65-10"><a href="字体属性.html#cb65-10" aria-hidden="true" tabindex="-1"></a>           <span class="co">/* font: font-style  font-weight  font-size/line-height  font-family; */</span></span>
-<span id="cb65-11"><a href="字体属性.html#cb65-11" aria-hidden="true" tabindex="-1"></a>           <span class="co">/* font: italic 700 16px &#39;Microsoft yahei&#39;; */</span></span>
-<span id="cb65-12"><a href="字体属性.html#cb65-12" aria-hidden="true" tabindex="-1"></a>           <span class="kw">font</span>: <span class="dv">20</span><span class="dt">px</span> <span class="st">&#39;黑体&#39;</span><span class="op">;</span></span>
-<span id="cb65-13"><a href="字体属性.html#cb65-13" aria-hidden="true" tabindex="-1"></a>       }</span>
-<span id="cb65-14"><a href="字体属性.html#cb65-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb65-15"><a href="字体属性.html#cb65-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb65-16"><a href="字体属性.html#cb65-16" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb65-17"><a href="字体属性.html#cb65-17" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;div&gt;</span>三生三世十里桃花,一心一意百行代码<span class="kw">&lt;/div&gt;</span></span>
-<span id="cb65-18"><a href="字体属性.html#cb65-18" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb102-1"><a href="元素的显示模式.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb102-2"><a href="元素的显示模式.html#cb102-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb102-3"><a href="元素的显示模式.html#cb102-3" aria-hidden="true" tabindex="-1"></a>        span {</span>
+<span id="cb102-4"><a href="元素的显示模式.html#cb102-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb102-5"><a href="元素的显示模式.html#cb102-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb102-6"><a href="元素的显示模式.html#cb102-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb102-7"><a href="元素的显示模式.html#cb102-7" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb102-8"><a href="元素的显示模式.html#cb102-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb102-9"><a href="元素的显示模式.html#cb102-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb102-10"><a href="元素的显示模式.html#cb102-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-11"><a href="元素的显示模式.html#cb102-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb102-12"><a href="元素的显示模式.html#cb102-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>pink老师你怎么这么宽<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;strong&gt;</span>喜欢粉色<span class="kw">&lt;/strong&gt;</span></span>
+<span id="cb102-13"><a href="元素的显示模式.html#cb102-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>pink老师<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;strong&gt;</span>喜欢粉色<span class="kw">&lt;/strong&gt;</span></span>
+<span id="cb102-14"><a href="元素的显示模式.html#cb102-14" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="行内块元素" class="section level2" number="11.4">
+<h2><span class="header-section-number">11.4</span> 行内块元素</h2>
+<p>在行内元素中有几个特殊的标签——<code>&lt;img /&gt;</code>、<code>&lt;input /&gt;</code>、<code>&lt;td&gt;</code>，它们同时具有块元素和行内元素的特点。有些资料称它们为<strong>行内块元素</strong>。
+心
+行内块元素的特点∶</p>
+<ul>
+<li><p>和相邻行内元素(行内块)在一行上，但是他们之间会有空白缝隙。一行可以显示多个(行内元素特点)。</p></li>
+<li><p>默认宽度就是它本身内容的宽度(行内元素特点)。</p></li>
+<li><p>高度，行高、外边距以及内边距都可以控制(块级元素特点)。</p></li>
+</ul>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb103-1"><a href="元素的显示模式.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb103-2"><a href="元素的显示模式.html#cb103-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb103-3"><a href="元素的显示模式.html#cb103-3" aria-hidden="true" tabindex="-1"></a>        input {</span>
+<span id="cb103-4"><a href="元素的显示模式.html#cb103-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">249</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb103-5"><a href="元素的显示模式.html#cb103-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">35</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb103-6"><a href="元素的显示模式.html#cb103-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb103-7"><a href="元素的显示模式.html#cb103-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb103-8"><a href="元素的显示模式.html#cb103-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb103-9"><a href="元素的显示模式.html#cb103-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb103-10"><a href="元素的显示模式.html#cb103-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb103-11"><a href="元素的显示模式.html#cb103-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb103-12"><a href="元素的显示模式.html#cb103-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="元素显示模式总结" class="section level2" number="11.5">
+<h2><span class="header-section-number">11.5</span> 元素显示模式总结</h2>
 <table>
-<caption><span id="tab:unnamed-chunk-13">表4.5: </span>字体小结</caption>
+<caption><span id="tab:unnamed-chunk-4">表2.1: </span>元素显示模式总结</caption>
 <thead>
 <tr class="header">
-<th align="left">属性值</th>
-<th align="left">表示</th>
-<th align="left">注意点</th>
+<th align="left">元素模式</th>
+<th align="left">元素排列</th>
+<th align="left">设置样式</th>
+<th align="left">默认宽度</th>
+<th align="left">包含</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">font-size</td>
-<td align="left">字号</td>
-<td align="left">我们通常用的单位是px像素，一定要跟上单位</td>
+<td align="left">块级元素</td>
+<td align="left">一行只能放一个块级元素</td>
+<td align="left">可以设置宽度高度</td>
+<td align="left">等于父级的宽度</td>
+<td align="left">容器级可以包含任何标签</td>
 </tr>
 <tr class="even">
-<td align="left">font-family</td>
-<td align="left">字体</td>
-<td align="left">实际工作中按照团队约定来写字体</td>
+<td align="left">行内元素</td>
+<td align="left">一行可以放多个行内元素</td>
+<td align="left">不可以设置宽度</td>
+<td align="left">它本身内容的宽度</td>
+<td align="left">容纳文本或其他行内元素</td>
 </tr>
 <tr class="odd">
-<td align="left">font-weight</td>
-<td align="left">字体粗细</td>
-<td align="left">记住加粗是700或者bold 不加粗是normal或者400记住数字不要跟单位</td>
-</tr>
-<tr class="even">
-<td align="left">font-style</td>
-<td align="left">字体样式</td>
-<td align="left">记住倾斜是italic不倾斜是normal 工作中我们最常用normal</td>
-</tr>
-<tr class="odd">
-<td align="left">font</td>
-<td align="left">字体连写</td>
-<td align="left">字体连写是有顺序的不能随意换位置。其中字号和字体必须同时出现</td>
+<td align="left">行内块元素</td>
+<td align="left">一行放多个行内块元素</td>
+<td align="left">可以设置宽度和高度</td>
+<td align="left">它本身内容的宽度</td>
+<td align="left">-</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div id="元素显示模式转换" class="section level2" number="11.6">
+<h2><span class="header-section-number">11.6</span> 元素显示模式转换</h2>
+<p>特殊情况下，我们需要元素模式的转换，简单理解一个模式的元素需要另外一种模式的特性。</p>
+<p>比如想要增加链接<code>&lt;a&gt;</code>的触发范围。</p>
+<ul>
+<li><p>转换为块元素：<strong>display:block;</strong></p></li>
+<li><p>转换为行内元素：<strong>display:inline;</strong></p></li>
+<li><p>转换为行内块元素：<strong>display:inline-block;</strong></p></li>
+</ul>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb104-1"><a href="元素的显示模式.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb104-2"><a href="元素的显示模式.html#cb104-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb104-3"><a href="元素的显示模式.html#cb104-3" aria-hidden="true" tabindex="-1"></a>        a {</span>
+<span id="cb104-4"><a href="元素的显示模式.html#cb104-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb104-5"><a href="元素的显示模式.html#cb104-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">50</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb104-6"><a href="元素的显示模式.html#cb104-6" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 行高等于盒子高度时，垂直居中 */</span></span>
+<span id="cb104-7"><a href="元素的显示模式.html#cb104-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb104-8"><a href="元素的显示模式.html#cb104-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb104-9"><a href="元素的显示模式.html#cb104-9" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 把行内元素a转换为块元素 */</span></span>
+<span id="cb104-10"><a href="元素的显示模式.html#cb104-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">block</span><span class="op">;</span></span>
+<span id="cb104-11"><a href="元素的显示模式.html#cb104-11" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb104-12"><a href="元素的显示模式.html#cb104-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-13"><a href="元素的显示模式.html#cb104-13" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb104-14"><a href="元素的显示模式.html#cb104-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb104-15"><a href="元素的显示模式.html#cb104-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb104-16"><a href="元素的显示模式.html#cb104-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">purple</span><span class="op">;</span></span>
+<span id="cb104-17"><a href="元素的显示模式.html#cb104-17" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 把div块级元素转换为行内元素 */</span></span>
+<span id="cb104-18"><a href="元素的显示模式.html#cb104-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">inline</span><span class="op">;</span></span>
+<span id="cb104-19"><a href="元素的显示模式.html#cb104-19" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb104-20"><a href="元素的显示模式.html#cb104-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-21"><a href="元素的显示模式.html#cb104-21" aria-hidden="true" tabindex="-1"></a>        span {</span>
+<span id="cb104-22"><a href="元素的显示模式.html#cb104-22" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb104-23"><a href="元素的显示模式.html#cb104-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb104-24"><a href="元素的显示模式.html#cb104-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">skyblue</span><span class="op">;</span></span>
+<span id="cb104-25"><a href="元素的显示模式.html#cb104-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">inline-block</span><span class="op">;</span></span>
+<span id="cb104-26"><a href="元素的显示模式.html#cb104-26" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb104-27"><a href="元素的显示模式.html#cb104-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb104-28"><a href="元素的显示模式.html#cb104-28" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb104-29"><a href="元素的显示模式.html#cb104-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-30"><a href="元素的显示模式.html#cb104-30" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb104-31"><a href="元素的显示模式.html#cb104-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>行内a元素转为块元素<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb104-32"><a href="元素的显示模式.html#cb104-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>行内a元素转为块元素<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb104-33"><a href="元素的显示模式.html#cb104-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>我是块元素<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb104-34"><a href="元素的显示模式.html#cb104-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>我是块元素<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb104-35"><a href="元素的显示模式.html#cb104-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>行内元素转换为行内块元素<span class="kw">&lt;/span&gt;</span></span>
+<span id="cb104-36"><a href="元素的显示模式.html#cb104-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>行内元素转换为行内块元素<span class="kw">&lt;/span&gt;</span></span>
+<span id="cb104-37"><a href="元素的显示模式.html#cb104-37" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="案例" class="section level2" number="11.7">
+<h2><span class="header-section-number">11.7</span> 案例</h2>
+<p>简洁版小米侧边栏</p>
+<p>小技巧，单行文字垂直居中：让文字的行高等于盒子的高度。</p>
+<p>简单理解:行高的上空隙和下空隙把文字挤到中间了.是如果行高小于盒子高度,文字会偏上如果行高大于盒子高度,则文字偏下</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb105-1"><a href="元素的显示模式.html#cb105-1" aria-hidden="true" tabindex="-1"></a>height: 40px;</span>
+<span id="cb105-2"><a href="元素的显示模式.html#cb105-2" aria-hidden="true" tabindex="-1"></a>/* 行高等于盒子高度时，垂直居中 */</span>
+<span id="cb105-3"><a href="元素的显示模式.html#cb105-3" aria-hidden="true" tabindex="-1"></a>line-height: 40px;</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb106-1"><a href="元素的显示模式.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb106-2"><a href="元素的显示模式.html#cb106-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb106-3"><a href="元素的显示模式.html#cb106-3" aria-hidden="true" tabindex="-1"></a>        a {</span>
+<span id="cb106-4"><a href="元素的显示模式.html#cb106-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-5"><a href="元素的显示模式.html#cb106-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">230</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb106-6"><a href="元素的显示模式.html#cb106-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb106-7"><a href="元素的显示模式.html#cb106-7" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 行高等于盒子高度时，垂直居中 */</span></span>
+<span id="cb106-8"><a href="元素的显示模式.html#cb106-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb106-9"><a href="元素的显示模式.html#cb106-9" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 块级元素 */</span></span>
+<span id="cb106-10"><a href="元素的显示模式.html#cb106-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">block</span><span class="op">;</span></span>
+<span id="cb106-11"><a href="元素的显示模式.html#cb106-11" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 文字颜色为白色 */</span></span>
+<span id="cb106-12"><a href="元素的显示模式.html#cb106-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">#fff</span><span class="op">;</span></span>
+<span id="cb106-13"><a href="元素的显示模式.html#cb106-13" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 背景颜色变灰色 */</span></span>
+<span id="cb106-14"><a href="元素的显示模式.html#cb106-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">#535758</span><span class="op">;</span></span>
+<span id="cb106-15"><a href="元素的显示模式.html#cb106-15" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 文字大小14px */</span></span>
+<span id="cb106-16"><a href="元素的显示模式.html#cb106-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb106-17"><a href="元素的显示模式.html#cb106-17" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 去除连接下划线 */</span></span>
+<span id="cb106-18"><a href="元素的显示模式.html#cb106-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb106-19"><a href="元素的显示模式.html#cb106-19" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 首行缩进 */</span></span>
+<span id="cb106-20"><a href="元素的显示模式.html#cb106-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-indent</span>: <span class="dv">2</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb106-21"><a href="元素的显示模式.html#cb106-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-22"><a href="元素的显示模式.html#cb106-22" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb106-23"><a href="元素的显示模式.html#cb106-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-24"><a href="元素的显示模式.html#cb106-24" aria-hidden="true" tabindex="-1"></a>        a<span class="in">:hover</span> {</span>
+<span id="cb106-25"><a href="元素的显示模式.html#cb106-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">#FE6700</span><span class="op">;</span></span>
+<span id="cb106-26"><a href="元素的显示模式.html#cb106-26" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb106-27"><a href="元素的显示模式.html#cb106-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb106-28"><a href="元素的显示模式.html#cb106-28" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb106-29"><a href="元素的显示模式.html#cb106-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-30"><a href="元素的显示模式.html#cb106-30" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb106-31"><a href="元素的显示模式.html#cb106-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>手机 电话卡<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb106-32"><a href="元素的显示模式.html#cb106-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>电视 盒子<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb106-33"><a href="元素的显示模式.html#cb106-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>笔记本 平板<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb106-34"><a href="元素的显示模式.html#cb106-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>出行 穿戴<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb106-35"><a href="元素的显示模式.html#cb106-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>智能 路由器<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb106-36"><a href="元素的显示模式.html#cb106-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>健康 儿童<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb106-37"><a href="元素的显示模式.html#cb106-37" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>耳机 音响<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb106-38"><a href="元素的显示模式.html#cb106-38" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 
 </div>
 </div>
@@ -597,8 +585,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="css基础选择器.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="文本属性.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="复合选择器.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="css背景.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

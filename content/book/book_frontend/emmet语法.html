@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 Emmet语法 | 前端学习笔记</title>
-  <meta name="description" content="前端学习全纪录" />
+  <title>16 Emmet语法 | Web开发学习笔记</title>
+  <meta name="description" content="Web前端学习全纪录" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10 Emmet语法 | 前端学习笔记" />
+  <meta property="og:title" content="16 Emmet语法 | Web开发学习笔记" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="前端学习全纪录" />
+  <meta property="og:description" content="Web前端学习全纪录" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 Emmet语法 | 前端学习笔记" />
+  <meta name="twitter:title" content="16 Emmet语法 | Web开发学习笔记" />
   
-  <meta name="twitter:description" content="前端学习全纪录" />
+  <meta name="twitter:description" content="Web前端学习全纪录" />
   
 
 <meta name="author" content="刘卢路" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="css引入方式.html"/>
-<link rel="next" href="文本.html"/>
+<link rel="prev" href="chrome调试工具.html"/>
+
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -66,6 +66,70 @@ MathJax.Hub.Config({
 </script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 </head>
@@ -213,21 +277,44 @@ MathJax.Hub.Config({
 <li class="chapter" data-level="9.4" data-path="css引入方式.html"><a href="css引入方式.html#css引入方式总结"><i class="fa fa-check"></i><b>9.4</b> CSS引入方式总结</a></li>
 <li class="chapter" data-level="9.5" data-path="css引入方式.html"><a href="css引入方式.html#综合案例-1"><i class="fa fa-check"></i><b>9.5</b> 综合案例</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="emmet语法.html"><a href="emmet语法.html"><i class="fa fa-check"></i><b>10</b> Emmet语法</a>
+<li class="chapter" data-level="10" data-path="复合选择器.html"><a href="复合选择器.html"><i class="fa fa-check"></i><b>10</b> 复合选择器</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="emmet语法.html"><a href="emmet语法.html#快速生成html结构语法"><i class="fa fa-check"></i><b>10.1</b> 快速生成HTML结构语法</a></li>
+<li class="chapter" data-level="10.1" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器的定义"><i class="fa fa-check"></i><b>10.1</b> 复合选择器的定义</a></li>
+<li class="chapter" data-level="10.2" data-path="复合选择器.html"><a href="复合选择器.html#后代选择器"><i class="fa fa-check"></i><b>10.2</b> 后代选择器</a></li>
+<li class="chapter" data-level="10.3" data-path="复合选择器.html"><a href="复合选择器.html#子选择器"><i class="fa fa-check"></i><b>10.3</b> 子选择器</a></li>
+<li class="chapter" data-level="10.4" data-path="复合选择器.html"><a href="复合选择器.html#并集选择器"><i class="fa fa-check"></i><b>10.4</b> 并集选择器</a></li>
+<li class="chapter" data-level="10.5" data-path="复合选择器.html"><a href="复合选择器.html#伪类选择器"><i class="fa fa-check"></i><b>10.5</b> 伪类选择器</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="复合选择器.html"><a href="复合选择器.html#链接伪类"><i class="fa fa-check"></i><b>10.5.1</b> 链接伪类</a></li>
+<li class="chapter" data-level="10.5.2" data-path="复合选择器.html"><a href="复合选择器.html#focus伪类选择器"><i class="fa fa-check"></i><b>10.5.2</b> :focus伪类选择器</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="文本.html"><a href="文本.html"><i class="fa fa-check"></i><b>11</b> 文本</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="文本.html"><a href="文本.html#section"><i class="fa fa-check"></i><b>11.1</b> </a></li>
+<li class="chapter" data-level="10.6" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器总结"><i class="fa fa-check"></i><b>10.6</b> 复合选择器总结</a></li>
+<li class="chapter" data-level="10.7" data-path="复合选择器.html"><a href="复合选择器.html#课堂练习"><i class="fa fa-check"></i><b>10.7</b> 课堂练习</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="section-1.html"><a href="section-1.html"><i class="fa fa-check"></i><b>12</b> </a>
+<li class="chapter" data-level="11" data-path="元素的显示模式.html"><a href="元素的显示模式.html"><i class="fa fa-check"></i><b>11</b> 元素的显示模式</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="section-1.html"><a href="section-1.html#section-2"><i class="fa fa-check"></i><b>12.1</b> </a></li>
+<li class="chapter" data-level="11.1" data-path="元素的显示模式.html"><a href="元素的显示模式.html#什么是元素的显示模式"><i class="fa fa-check"></i><b>11.1</b> 什么是元素的显示模式</a></li>
+<li class="chapter" data-level="11.2" data-path="元素的显示模式.html"><a href="元素的显示模式.html#块元素"><i class="fa fa-check"></i><b>11.2</b> 块元素</a></li>
+<li class="chapter" data-level="11.3" data-path="元素的显示模式.html"><a href="元素的显示模式.html#行内元素内联元素"><i class="fa fa-check"></i><b>11.3</b> 行内元素（内联元素）</a></li>
+<li class="chapter" data-level="11.4" data-path="元素的显示模式.html"><a href="元素的显示模式.html#行内块元素"><i class="fa fa-check"></i><b>11.4</b> 行内块元素</a></li>
+<li class="chapter" data-level="11.5" data-path="元素的显示模式.html"><a href="元素的显示模式.html#元素显示模式总结"><i class="fa fa-check"></i><b>11.5</b> 元素显示模式总结</a></li>
+<li class="chapter" data-level="11.6" data-path="元素的显示模式.html"><a href="元素的显示模式.html#元素显示模式转换"><i class="fa fa-check"></i><b>11.6</b> 元素显示模式转换</a></li>
+<li class="chapter" data-level="11.7" data-path="元素的显示模式.html"><a href="元素的显示模式.html#案例"><i class="fa fa-check"></i><b>11.7</b> 案例</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="css背景.html"><a href="css背景.html"><i class="fa fa-check"></i><b>12</b> CSS背景</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="css背景.html"><a href="css背景.html#背景颜色"><i class="fa fa-check"></i><b>12.1</b> 背景颜色</a></li>
+<li class="chapter" data-level="12.2" data-path="css背景.html"><a href="css背景.html#背景图片"><i class="fa fa-check"></i><b>12.2</b> 背景图片</a></li>
+<li class="chapter" data-level="12.3" data-path="css背景.html"><a href="css背景.html#背景平铺"><i class="fa fa-check"></i><b>12.3</b> 背景平铺</a></li>
+<li class="chapter" data-level="12.4" data-path="css背景.html"><a href="css背景.html#背景图片的位置"><i class="fa fa-check"></i><b>12.4</b> 背景图片的位置</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="css背景.html"><a href="css背景.html#参数是方位名词"><i class="fa fa-check"></i><b>12.4.1</b> 参数是方位名词</a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="css背景.html"><a href="css背景.html#参数是"><i class="fa fa-check"></i><b>12.5</b> 参数是</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="文.html"><a href="文.html"><i class="fa fa-check"></i><b>13</b> 文</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="文.html"><a href="文.html#section-3"><i class="fa fa-check"></i><b>13.1</b> </a></li>
+<li class="chapter" data-level="13.1" data-path="文.html"><a href="文.html#section"><i class="fa fa-check"></i><b>13.1</b> </a></li>
 </ul></li>
 <li class="part"><span><b>III 附录</b></span></li>
 <li class="chapter" data-level="14" data-path="vscode常用操作.html"><a href="vscode常用操作.html"><i class="fa fa-check"></i><b>14</b> Vscode常用操作</a></li>
@@ -235,6 +322,12 @@ MathJax.Hub.Config({
 <ul>
 <li class="chapter" data-level="15.1" data-path="chrome调试工具.html"><a href="chrome调试工具.html#打开调试工具"><i class="fa fa-check"></i><b>15.1</b> 打开调试工具</a></li>
 <li class="chapter" data-level="15.2" data-path="chrome调试工具.html"><a href="chrome调试工具.html#使用调试工具"><i class="fa fa-check"></i><b>15.2</b> 使用调试工具</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="emmet语法.html"><a href="emmet语法.html"><i class="fa fa-check"></i><b>16</b> Emmet语法</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="emmet语法.html"><a href="emmet语法.html#快速生成html结构语法"><i class="fa fa-check"></i><b>16.1</b> 快速生成HTML结构语法</a></li>
+<li class="chapter" data-level="16.2" data-path="emmet语法.html"><a href="emmet语法.html#快速生成css样式语法"><i class="fa fa-check"></i><b>16.2</b> 快速生成CSS样式语法</a></li>
+<li class="chapter" data-level="16.3" data-path="emmet语法.html"><a href="emmet语法.html#快速格式化代码"><i class="fa fa-check"></i><b>16.3</b> 快速格式化代码</a></li>
 </ul></li>
 </ul>
 
@@ -245,7 +338,7 @@ MathJax.Hub.Config({
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">前端学习笔记</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Web开发学习笔记</a>
           </h1>
         </div>
 
@@ -253,15 +346,15 @@ MathJax.Hub.Config({
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="emmet语法" class="section level1" number="10">
-<h1><span class="header-section-number">10</span> Emmet语法</h1>
+<div id="emmet语法" class="section level1" number="16">
+<h1><span class="header-section-number">16</span> Emmet语法</h1>
 <p>Emmet语法的前身是Zen coding,它使用缩写,来提高html/css的编写速度, Vscode内部已经集成该语法.</p>
 <ol style="list-style-type: decimal">
 <li>快速生成HTML结构语法</li>
 <li>快速生成CSS样式语法</li>
 </ol>
-<div id="快速生成html结构语法" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> 快速生成HTML结构语法</h2>
+<div id="快速生成html结构语法" class="section level2" number="16.1">
+<h2><span class="header-section-number">16.1</span> 快速生成HTML结构语法</h2>
 <p>1．生成标签直接输入标签名按tab键即可比如div然后tab键，就可以生成<code>&lt;div&gt;&lt;/div&gt;</code></p>
 <p>2．如果想要生成多个相同标签加上*就可以了比如div*3就可以快速生成3个div</p>
 <p>3．如果有父子级关系的标签，可以用&gt;比如ul &gt; li就可以了</p>
@@ -269,6 +362,21 @@ MathJax.Hub.Config({
 <p>5．如果生成带有类名或者id名字的，直接写.demo或者#two tab键就可以了</p>
 <p>6．如果生成的div类名是有顺序的，可以用自增符号$</p>
 <p>7．如果想要在生成的标签内部写内容可以用{}表示</p>
+</div>
+<div id="快速生成css样式语法" class="section level2" number="16.2">
+<h2><span class="header-section-number">16.2</span> 快速生成CSS样式语法</h2>
+<p>CSS基本采取简写形式即可</p>
+<ol style="list-style-type: decimal">
+<li><p>比如w200 按tab 可以生成 width: 200px;</p></li>
+<li><p>比如lh26 按tab 可以生成 line-height: 25px;</p></li>
+</ol>
+</div>
+<div id="快速格式化代码" class="section level2" number="16.3">
+<h2><span class="header-section-number">16.3</span> 快速格式化代码</h2>
+<p>第一步：VSCode中按：<code>Shift</code>+<code>Alt</code>+<code>F</code></p>
+<p>第二步：
+文件→首选项→设置搜索→“format on save”，勾选。即可</p>
+<p>只需要设置一次即可，以后都可以自动保存格式化代码。</p>
 
 </div>
 </div>
@@ -277,8 +385,8 @@ MathJax.Hub.Config({
           </div>
         </div>
       </div>
-<a href="css引入方式.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="文本.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="chrome调试工具.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
