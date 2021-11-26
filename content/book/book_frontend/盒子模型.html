@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>14 盒子模型 | Web开发学习笔记</title>
+  <meta name="description" content="Web前端学习全纪录" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="14 盒子模型 | Web开发学习笔记" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Web前端学习全纪录" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="14 盒子模型 | Web开发学习笔记" />
+  
+  <meta name="twitter:description" content="Web前端学习全纪录" />
+  
+
+<meta name="author" content="刘卢路" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="css的三大特性.html"/>
+<link rel="next" href="浮动.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a></li>
+<li class="part"><span><b>I HTML</b></span></li>
+<li class="chapter" data-level="1" data-path="认识web.html"><a href="认识web.html"><i class="fa fa-check"></i><b>1</b> 认识Web</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="认识web.html"><a href="认识web.html#网页"><i class="fa fa-check"></i><b>1.1</b> 网页</a></li>
+<li class="chapter" data-level="1.2" data-path="认识web.html"><a href="认识web.html#浏览器"><i class="fa fa-check"></i><b>1.2</b> 浏览器</a></li>
+<li class="chapter" data-level="1.3" data-path="认识web.html"><a href="认识web.html#web标准"><i class="fa fa-check"></i><b>1.3</b> Web标准</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="认识web.html"><a href="认识web.html#为什么需要web标准"><i class="fa fa-check"></i><b>1.3.1</b> 为什么需要Web标准</a></li>
+<li class="chapter" data-level="1.3.2" data-path="认识web.html"><a href="认识web.html#web标准构成"><i class="fa fa-check"></i><b>1.3.2</b> Web标准构成</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="html初识.html"><a href="html初识.html"><i class="fa fa-check"></i><b>2</b> HTML初识</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="html初识.html"><a href="html初识.html#基本语法规范"><i class="fa fa-check"></i><b>2.1</b> 基本语法规范</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="html初识.html"><a href="html初识.html#基本语法概述"><i class="fa fa-check"></i><b>2.1.1</b> 基本语法概述</a></li>
+<li class="chapter" data-level="2.1.2" data-path="html初识.html"><a href="html初识.html#标签关系"><i class="fa fa-check"></i><b>2.1.2</b> 标签关系</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="html初识.html"><a href="html初识.html#基本结构标签"><i class="fa fa-check"></i><b>2.2</b> 基本结构标签</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="网页开发工具.html"><a href="网页开发工具.html"><i class="fa fa-check"></i><b>3</b> 网页开发工具</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="网页开发工具.html"><a href="网页开发工具.html#配置vscode"><i class="fa fa-check"></i><b>3.1</b> 配置VSCode</a></li>
+<li class="chapter" data-level="3.2" data-path="网页开发工具.html"><a href="网页开发工具.html#vscode工具生成骨架标签新增代码"><i class="fa fa-check"></i><b>3.2</b> VSCode工具生成骨架标签新增代码</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="网页开发工具.html"><a href="网页开发工具.html#文档类型doctype"><i class="fa fa-check"></i><b>3.2.1</b> 文档类型<code>&lt;!DOCTYPE&gt;</code></a></li>
+<li class="chapter" data-level="3.2.2" data-path="网页开发工具.html"><a href="网页开发工具.html#页面语言lang"><i class="fa fa-check"></i><b>3.2.2</b> 页面语言<code>lang</code></a></li>
+<li class="chapter" data-level="3.2.3" data-path="网页开发工具.html"><a href="网页开发工具.html#字符集charset"><i class="fa fa-check"></i><b>3.2.3</b> 字符集<code>charset</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="html常用标签.html"><a href="html常用标签.html"><i class="fa fa-check"></i><b>4</b> HTML常用标签</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="html常用标签.html"><a href="html常用标签.html#语义标签"><i class="fa fa-check"></i><b>4.1</b> 语义标签</a></li>
+<li class="chapter" data-level="4.2" data-path="html常用标签.html"><a href="html常用标签.html#标题标签"><i class="fa fa-check"></i><b>4.2</b> 标题标签</a></li>
+<li class="chapter" data-level="4.3" data-path="html常用标签.html"><a href="html常用标签.html#段落标签"><i class="fa fa-check"></i><b>4.3</b> 段落标签</a></li>
+<li class="chapter" data-level="4.4" data-path="html常用标签.html"><a href="html常用标签.html#换行标签"><i class="fa fa-check"></i><b>4.4</b> 换行标签</a></li>
+<li class="chapter" data-level="4.5" data-path="html常用标签.html"><a href="html常用标签.html#文本格式化标签"><i class="fa fa-check"></i><b>4.5</b> 文本格式化标签</a></li>
+<li class="chapter" data-level="4.6" data-path="html常用标签.html"><a href="html常用标签.html#布局标签"><i class="fa fa-check"></i><b>4.6</b> 布局标签</a></li>
+<li class="chapter" data-level="4.7" data-path="html常用标签.html"><a href="html常用标签.html#图像标签和路径"><i class="fa fa-check"></i><b>4.7</b> 图像标签和路径</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="html常用标签.html"><a href="html常用标签.html#图像标签"><i class="fa fa-check"></i><b>4.7.1</b> 图像标签</a></li>
+<li class="chapter" data-level="4.7.2" data-path="html常用标签.html"><a href="html常用标签.html#路径"><i class="fa fa-check"></i><b>4.7.2</b> 路径</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="html常用标签.html"><a href="html常用标签.html#超链接"><i class="fa fa-check"></i><b>4.8</b> 超链接</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="html常用标签.html"><a href="html常用标签.html#链接的语法格式"><i class="fa fa-check"></i><b>4.8.1</b> 链接的语法格式</a></li>
+<li class="chapter" data-level="4.8.2" data-path="html常用标签.html"><a href="html常用标签.html#链接的分类"><i class="fa fa-check"></i><b>4.8.2</b> 链接的分类</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="html常用标签.html"><a href="html常用标签.html#注释"><i class="fa fa-check"></i><b>4.9</b> 注释</a></li>
+<li class="chapter" data-level="4.10" data-path="html常用标签.html"><a href="html常用标签.html#特殊字符"><i class="fa fa-check"></i><b>4.10</b> 特殊字符</a></li>
+<li class="chapter" data-level="4.11" data-path="html常用标签.html"><a href="html常用标签.html#表格标签"><i class="fa fa-check"></i><b>4.11</b> 表格标签</a>
+<ul>
+<li class="chapter" data-level="4.11.1" data-path="html常用标签.html"><a href="html常用标签.html#表格的基本语法"><i class="fa fa-check"></i><b>4.11.1</b> 表格的基本语法</a></li>
+<li class="chapter" data-level="4.11.2" data-path="html常用标签.html"><a href="html常用标签.html#表头单元格标签"><i class="fa fa-check"></i><b>4.11.2</b> 表头单元格标签</a></li>
+<li class="chapter" data-level="4.11.3" data-path="html常用标签.html"><a href="html常用标签.html#表格属性"><i class="fa fa-check"></i><b>4.11.3</b> 表格属性</a></li>
+<li class="chapter" data-level="4.11.4" data-path="html常用标签.html"><a href="html常用标签.html#表格结构标签"><i class="fa fa-check"></i><b>4.11.4</b> 表格结构标签</a></li>
+<li class="chapter" data-level="4.11.5" data-path="html常用标签.html"><a href="html常用标签.html#合并单元格"><i class="fa fa-check"></i><b>4.11.5</b> 合并单元格</a></li>
+</ul></li>
+<li class="chapter" data-level="4.12" data-path="html常用标签.html"><a href="html常用标签.html#列表标签"><i class="fa fa-check"></i><b>4.12</b> 列表标签</a>
+<ul>
+<li class="chapter" data-level="4.12.1" data-path="html常用标签.html"><a href="html常用标签.html#无序列表-unordered"><i class="fa fa-check"></i><b>4.12.1</b> 无序列表 Unordered</a></li>
+<li class="chapter" data-level="4.12.2" data-path="html常用标签.html"><a href="html常用标签.html#有序列表-ordered"><i class="fa fa-check"></i><b>4.12.2</b> 有序列表 Ordered</a></li>
+<li class="chapter" data-level="4.12.3" data-path="html常用标签.html"><a href="html常用标签.html#自定义列表"><i class="fa fa-check"></i><b>4.12.3</b> 自定义列表</a></li>
+<li class="chapter" data-level="4.12.4" data-path="html常用标签.html"><a href="html常用标签.html#列表总结"><i class="fa fa-check"></i><b>4.12.4</b> 列表总结</a></li>
+</ul></li>
+<li class="chapter" data-level="4.13" data-path="html常用标签.html"><a href="html常用标签.html#表单标签"><i class="fa fa-check"></i><b>4.13</b> 表单标签</a>
+<ul>
+<li class="chapter" data-level="4.13.1" data-path="html常用标签.html"><a href="html常用标签.html#为什么需要表单"><i class="fa fa-check"></i><b>4.13.1</b> 为什么需要表单</a></li>
+<li class="chapter" data-level="4.13.2" data-path="html常用标签.html"><a href="html常用标签.html#表单的组成"><i class="fa fa-check"></i><b>4.13.2</b> 表单的组成</a></li>
+</ul></li>
+<li class="chapter" data-level="4.14" data-path="html常用标签.html"><a href="html常用标签.html#文档查阅"><i class="fa fa-check"></i><b>4.14</b> 文档查阅</a></li>
+<li class="chapter" data-level="4.15" data-path="html常用标签.html"><a href="html常用标签.html#案例学习"><i class="fa fa-check"></i><b>4.15</b> 案例学习</a>
+<ul>
+<li class="chapter" data-level="4.15.1" data-path="html常用标签.html"><a href="html常用标签.html#案例1"><i class="fa fa-check"></i><b>4.15.1</b> 案例1</a></li>
+<li class="chapter" data-level="4.15.2" data-path="html常用标签.html"><a href="html常用标签.html#案例2表单"><i class="fa fa-check"></i><b>4.15.2</b> 案例2：表单</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II CSS</b></span></li>
+<li class="chapter" data-level="5" data-path="css基础.html"><a href="css基础.html"><i class="fa fa-check"></i><b>5</b> CSS基础</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="css基础.html"><a href="css基础.html#css简介"><i class="fa fa-check"></i><b>5.1</b> CSS简介</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="css基础.html"><a href="css基础.html#html的局限性"><i class="fa fa-check"></i><b>5.1.1</b> HTML的局限性</a></li>
+<li class="chapter" data-level="5.1.2" data-path="css基础.html"><a href="css基础.html#css-网页的美容师"><i class="fa fa-check"></i><b>5.1.2</b> CSS-网页的美容师</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="css基础.html"><a href="css基础.html#css语法规范"><i class="fa fa-check"></i><b>5.2</b> CSS语法规范</a></li>
+<li class="chapter" data-level="5.3" data-path="css基础.html"><a href="css基础.html#代码风格"><i class="fa fa-check"></i><b>5.3</b> 代码风格</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="css基础.html"><a href="css基础.html#样式格式书写"><i class="fa fa-check"></i><b>5.3.1</b> 样式格式书写</a></li>
+<li class="chapter" data-level="5.3.2" data-path="css基础.html"><a href="css基础.html#样式大小写"><i class="fa fa-check"></i><b>5.3.2</b> 样式大小写</a></li>
+<li class="chapter" data-level="5.3.3" data-path="css基础.html"><a href="css基础.html#空格规范"><i class="fa fa-check"></i><b>5.3.3</b> 空格规范</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="css基础选择器.html"><a href="css基础选择器.html"><i class="fa fa-check"></i><b>6</b> CSS基础选择器</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="css基础选择器.html"><a href="css基础选择器.html#css选择器的作用"><i class="fa fa-check"></i><b>6.1</b> CSS选择器的作用</a></li>
+<li class="chapter" data-level="6.2" data-path="css基础选择器.html"><a href="css基础选择器.html#选择器的分类"><i class="fa fa-check"></i><b>6.2</b> 选择器的分类</a></li>
+<li class="chapter" data-level="6.3" data-path="css基础选择器.html"><a href="css基础选择器.html#标签选择器"><i class="fa fa-check"></i><b>6.3</b> 标签选择器</a></li>
+<li class="chapter" data-level="6.4" data-path="css基础选择器.html"><a href="css基础选择器.html#类选择器"><i class="fa fa-check"></i><b>6.4</b> 类选择器</a></li>
+<li class="chapter" data-level="6.5" data-path="css基础选择器.html"><a href="css基础选择器.html#id选择器"><i class="fa fa-check"></i><b>6.5</b> id选择器</a></li>
+<li class="chapter" data-level="6.6" data-path="css基础选择器.html"><a href="css基础选择器.html#通配符选择器"><i class="fa fa-check"></i><b>6.6</b> 通配符选择器</a></li>
+<li class="chapter" data-level="6.7" data-path="css基础选择器.html"><a href="css基础选择器.html#基础选择器总结"><i class="fa fa-check"></i><b>6.7</b> 基础选择器总结</a></li>
+<li class="chapter" data-level="6.8" data-path="css基础选择器.html"><a href="css基础选择器.html#综合案例"><i class="fa fa-check"></i><b>6.8</b> 综合案例</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="css基础选择器.html"><a href="css基础选择器.html#用类选择器话盒子"><i class="fa fa-check"></i><b>6.8.1</b> 用类选择器话盒子</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="字体属性.html"><a href="字体属性.html"><i class="fa fa-check"></i><b>7</b> 字体属性</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="字体属性.html"><a href="字体属性.html#字体系列"><i class="fa fa-check"></i><b>7.1</b> 字体系列</a></li>
+<li class="chapter" data-level="7.2" data-path="字体属性.html"><a href="字体属性.html#字体大小"><i class="fa fa-check"></i><b>7.2</b> 字体大小</a></li>
+<li class="chapter" data-level="7.3" data-path="字体属性.html"><a href="字体属性.html#字体粗细"><i class="fa fa-check"></i><b>7.3</b> 字体粗细</a></li>
+<li class="chapter" data-level="7.4" data-path="字体属性.html"><a href="字体属性.html#文字样式"><i class="fa fa-check"></i><b>7.4</b> 文字样式</a></li>
+<li class="chapter" data-level="7.5" data-path="字体属性.html"><a href="字体属性.html#字体复合属性"><i class="fa fa-check"></i><b>7.5</b> 字体复合属性</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="文本属性.html"><a href="文本属性.html"><i class="fa fa-check"></i><b>8</b> 文本属性</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="文本属性.html"><a href="文本属性.html#文本颜色"><i class="fa fa-check"></i><b>8.1</b> 文本颜色</a></li>
+<li class="chapter" data-level="8.2" data-path="文本属性.html"><a href="文本属性.html#对齐文本"><i class="fa fa-check"></i><b>8.2</b> 对齐文本</a></li>
+<li class="chapter" data-level="8.3" data-path="文本属性.html"><a href="文本属性.html#装饰文本"><i class="fa fa-check"></i><b>8.3</b> 装饰文本</a></li>
+<li class="chapter" data-level="8.4" data-path="文本属性.html"><a href="文本属性.html#文本缩进"><i class="fa fa-check"></i><b>8.4</b> 文本缩进</a></li>
+<li class="chapter" data-level="8.5" data-path="文本属性.html"><a href="文本属性.html#行间距"><i class="fa fa-check"></i><b>8.5</b> 行间距</a></li>
+<li class="chapter" data-level="8.6" data-path="文本属性.html"><a href="文本属性.html#文本属性总结"><i class="fa fa-check"></i><b>8.6</b> 文本属性总结</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="css引入方式.html"><a href="css引入方式.html"><i class="fa fa-check"></i><b>9</b> CSS引入方式</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="css引入方式.html"><a href="css引入方式.html#css的三种样式表"><i class="fa fa-check"></i><b>9.1</b> CSS的三种样式表</a></li>
+<li class="chapter" data-level="9.2" data-path="css引入方式.html"><a href="css引入方式.html#行内样式表"><i class="fa fa-check"></i><b>9.2</b> 行内样式表</a></li>
+<li class="chapter" data-level="9.3" data-path="css引入方式.html"><a href="css引入方式.html#外部样式"><i class="fa fa-check"></i><b>9.3</b> 外部样式</a></li>
+<li class="chapter" data-level="9.4" data-path="css引入方式.html"><a href="css引入方式.html#css引入方式总结"><i class="fa fa-check"></i><b>9.4</b> CSS引入方式总结</a></li>
+<li class="chapter" data-level="9.5" data-path="css引入方式.html"><a href="css引入方式.html#综合案例-1"><i class="fa fa-check"></i><b>9.5</b> 综合案例</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="复合选择器.html"><a href="复合选择器.html"><i class="fa fa-check"></i><b>10</b> 复合选择器</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器的定义"><i class="fa fa-check"></i><b>10.1</b> 复合选择器的定义</a></li>
+<li class="chapter" data-level="10.2" data-path="复合选择器.html"><a href="复合选择器.html#后代选择器"><i class="fa fa-check"></i><b>10.2</b> 后代选择器</a></li>
+<li class="chapter" data-level="10.3" data-path="复合选择器.html"><a href="复合选择器.html#子选择器"><i class="fa fa-check"></i><b>10.3</b> 子选择器</a></li>
+<li class="chapter" data-level="10.4" data-path="复合选择器.html"><a href="复合选择器.html#并集选择器"><i class="fa fa-check"></i><b>10.4</b> 并集选择器</a></li>
+<li class="chapter" data-level="10.5" data-path="复合选择器.html"><a href="复合选择器.html#伪类选择器"><i class="fa fa-check"></i><b>10.5</b> 伪类选择器</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="复合选择器.html"><a href="复合选择器.html#链接伪类"><i class="fa fa-check"></i><b>10.5.1</b> 链接伪类</a></li>
+<li class="chapter" data-level="10.5.2" data-path="复合选择器.html"><a href="复合选择器.html#focus伪类选择器"><i class="fa fa-check"></i><b>10.5.2</b> :focus伪类选择器</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器总结"><i class="fa fa-check"></i><b>10.6</b> 复合选择器总结</a></li>
+<li class="chapter" data-level="10.7" data-path="复合选择器.html"><a href="复合选择器.html#课堂练习"><i class="fa fa-check"></i><b>10.7</b> 课堂练习</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="元素的显示模式.html"><a href="元素的显示模式.html"><i class="fa fa-check"></i><b>11</b> 元素的显示模式</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="元素的显示模式.html"><a href="元素的显示模式.html#什么是元素的显示模式"><i class="fa fa-check"></i><b>11.1</b> 什么是元素的显示模式</a></li>
+<li class="chapter" data-level="11.2" data-path="元素的显示模式.html"><a href="元素的显示模式.html#块元素"><i class="fa fa-check"></i><b>11.2</b> 块元素</a></li>
+<li class="chapter" data-level="11.3" data-path="元素的显示模式.html"><a href="元素的显示模式.html#行内元素内联元素"><i class="fa fa-check"></i><b>11.3</b> 行内元素（内联元素）</a></li>
+<li class="chapter" data-level="11.4" data-path="元素的显示模式.html"><a href="元素的显示模式.html#行内块元素"><i class="fa fa-check"></i><b>11.4</b> 行内块元素</a></li>
+<li class="chapter" data-level="11.5" data-path="元素的显示模式.html"><a href="元素的显示模式.html#元素显示模式总结"><i class="fa fa-check"></i><b>11.5</b> 元素显示模式总结</a></li>
+<li class="chapter" data-level="11.6" data-path="元素的显示模式.html"><a href="元素的显示模式.html#元素显示模式转换"><i class="fa fa-check"></i><b>11.6</b> 元素显示模式转换</a></li>
+<li class="chapter" data-level="11.7" data-path="元素的显示模式.html"><a href="元素的显示模式.html#案例"><i class="fa fa-check"></i><b>11.7</b> 案例</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="css背景.html"><a href="css背景.html"><i class="fa fa-check"></i><b>12</b> CSS背景</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="css背景.html"><a href="css背景.html#背景颜色"><i class="fa fa-check"></i><b>12.1</b> 背景颜色</a></li>
+<li class="chapter" data-level="12.2" data-path="css背景.html"><a href="css背景.html#背景图片"><i class="fa fa-check"></i><b>12.2</b> 背景图片</a></li>
+<li class="chapter" data-level="12.3" data-path="css背景.html"><a href="css背景.html#背景平铺"><i class="fa fa-check"></i><b>12.3</b> 背景平铺</a></li>
+<li class="chapter" data-level="12.4" data-path="css背景.html"><a href="css背景.html#背景图片的位置"><i class="fa fa-check"></i><b>12.4</b> 背景图片的位置</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="css背景.html"><a href="css背景.html#参数是方位名词"><i class="fa fa-check"></i><b>12.4.1</b> 参数是方位名词</a></li>
+<li class="chapter" data-level="12.4.2" data-path="css背景.html"><a href="css背景.html#参数是精确单位"><i class="fa fa-check"></i><b>12.4.2</b> 参数是精确单位</a></li>
+<li class="chapter" data-level="12.4.3" data-path="css背景.html"><a href="css背景.html#参数是混合单位"><i class="fa fa-check"></i><b>12.4.3</b> 参数是混合单位</a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="css背景.html"><a href="css背景.html#背景图像固定背景附着"><i class="fa fa-check"></i><b>12.5</b> 背景图像固定（背景附着）</a></li>
+<li class="chapter" data-level="12.6" data-path="css背景.html"><a href="css背景.html#背景属性复合写法"><i class="fa fa-check"></i><b>12.6</b> 背景属性复合写法</a></li>
+<li class="chapter" data-level="12.7" data-path="css背景.html"><a href="css背景.html#背景色半透明"><i class="fa fa-check"></i><b>12.7</b> 背景色半透明</a></li>
+<li class="chapter" data-level="12.8" data-path="css背景.html"><a href="css背景.html#背景总结"><i class="fa fa-check"></i><b>12.8</b> 背景总结</a></li>
+<li class="chapter" data-level="12.9" data-path="css背景.html"><a href="css背景.html#案例-1"><i class="fa fa-check"></i><b>12.9</b> 案例</a>
+<ul>
+<li class="chapter" data-level="12.9.1" data-path="css背景.html"><a href="css背景.html#背景图片案例方位名词"><i class="fa fa-check"></i><b>12.9.1</b> 背景图片案例：方位名词</a></li>
+</ul></li>
+<li class="chapter" data-level="12.10" data-path="css背景.html"><a href="css背景.html#五彩导航栏"><i class="fa fa-check"></i><b>12.10</b> 五彩导航栏</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="css的三大特性.html"><a href="css的三大特性.html"><i class="fa fa-check"></i><b>13</b> CSS的三大特性</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="css的三大特性.html"><a href="css的三大特性.html#层叠性"><i class="fa fa-check"></i><b>13.1</b> 层叠性</a></li>
+<li class="chapter" data-level="13.2" data-path="css的三大特性.html"><a href="css的三大特性.html#继承性"><i class="fa fa-check"></i><b>13.2</b> 继承性</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="css的三大特性.html"><a href="css的三大特性.html#行高的继承"><i class="fa fa-check"></i><b>13.2.1</b> 行高的继承</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="css的三大特性.html"><a href="css的三大特性.html#优先级"><i class="fa fa-check"></i><b>13.3</b> 优先级</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="css的三大特性.html"><a href="css的三大特性.html#优先级注意"><i class="fa fa-check"></i><b>13.3.1</b> 优先级注意</a></li>
+<li class="chapter" data-level="13.3.2" data-path="css的三大特性.html"><a href="css的三大特性.html#权重叠加"><i class="fa fa-check"></i><b>13.3.2</b> 权重叠加</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="css的三大特性.html"><a href="css的三大特性.html#综合练习"><i class="fa fa-check"></i><b>13.4</b> 综合练习</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="盒子模型.html"><a href="盒子模型.html"><i class="fa fa-check"></i><b>14</b> 盒子模型</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="盒子模型.html"><a href="盒子模型.html#看透网页布局的本质"><i class="fa fa-check"></i><b>14.1</b> 看透网页布局的本质</a></li>
+<li class="chapter" data-level="14.2" data-path="盒子模型.html"><a href="盒子模型.html#盒子模型box-model"><i class="fa fa-check"></i><b>14.2</b> 盒子模型（Box Model）</a></li>
+<li class="chapter" data-level="14.3" data-path="盒子模型.html"><a href="盒子模型.html#盒子边框border"><i class="fa fa-check"></i><b>14.3</b> 盒子边框（border）</a></li>
+<li class="chapter" data-level="14.4" data-path="盒子模型.html"><a href="盒子模型.html#边框的复合写法简写"><i class="fa fa-check"></i><b>14.4</b> 边框的复合写法（简写）</a></li>
+<li class="chapter" data-level="14.5" data-path="盒子模型.html"><a href="盒子模型.html#表格细线边框"><i class="fa fa-check"></i><b>14.5</b> 表格细线边框</a></li>
+<li class="chapter" data-level="14.6" data-path="盒子模型.html"><a href="盒子模型.html#边框会影响盒子的实际大小"><i class="fa fa-check"></i><b>14.6</b> 边框会影响盒子的实际大小</a></li>
+<li class="chapter" data-level="14.7" data-path="盒子模型.html"><a href="盒子模型.html#内边距padding"><i class="fa fa-check"></i><b>14.7</b> 内边距（padding）</a></li>
+<li class="chapter" data-level="14.8" data-path="盒子模型.html"><a href="盒子模型.html#内边距复合写法简写"><i class="fa fa-check"></i><b>14.8</b> 内边距复合写法（简写）</a></li>
+<li class="chapter" data-level="14.9" data-path="盒子模型.html"><a href="盒子模型.html#padding会影响盒子实际大小"><i class="fa fa-check"></i><b>14.9</b> padding会影响盒子实际大小</a></li>
+<li class="chapter" data-level="14.10" data-path="盒子模型.html"><a href="盒子模型.html#padding不撑开盒子的情况"><i class="fa fa-check"></i><b>14.10</b> padding不撑开盒子的情况</a></li>
+<li class="chapter" data-level="14.11" data-path="盒子模型.html"><a href="盒子模型.html#盒子模型外边距margin"><i class="fa fa-check"></i><b>14.11</b> 盒子模型外边距margin</a></li>
+<li class="chapter" data-level="14.12" data-path="盒子模型.html"><a href="盒子模型.html#外边距典型应用块级盒子水平居中"><i class="fa fa-check"></i><b>14.12</b> 外边距典型应用（块级盒子水平居中）</a></li>
+<li class="chapter" data-level="14.13" data-path="盒子模型.html"><a href="盒子模型.html#嵌套块元素垂直外边距的塌陷"><i class="fa fa-check"></i><b>14.13</b> 嵌套块元素垂直外边距的塌陷</a></li>
+<li class="chapter" data-level="14.14" data-path="盒子模型.html"><a href="盒子模型.html#清除内外边距"><i class="fa fa-check"></i><b>14.14</b> 清除内外边距</a></li>
+<li class="chapter" data-level="14.15" data-path="盒子模型.html"><a href="盒子模型.html#圆角边框"><i class="fa fa-check"></i><b>14.15</b> 圆角边框</a></li>
+<li class="chapter" data-level="14.16" data-path="盒子模型.html"><a href="盒子模型.html#盒子阴影"><i class="fa fa-check"></i><b>14.16</b> 盒子阴影</a></li>
+<li class="chapter" data-level="14.17" data-path="盒子模型.html"><a href="盒子模型.html#文字阴影"><i class="fa fa-check"></i><b>14.17</b> 文字阴影</a></li>
+<li class="chapter" data-level="14.18" data-path="盒子模型.html"><a href="盒子模型.html#综合案例-2"><i class="fa fa-check"></i><b>14.18</b> 综合案例</a>
+<ul>
+<li class="chapter" data-level="14.18.1" data-path="盒子模型.html"><a href="盒子模型.html#新浪导航栏"><i class="fa fa-check"></i><b>14.18.1</b> 新浪导航栏</a></li>
+<li class="chapter" data-level="14.18.2" data-path="盒子模型.html"><a href="盒子模型.html#小米侧边栏修改"><i class="fa fa-check"></i><b>14.18.2</b> 小米侧边栏修改</a></li>
+<li class="chapter" data-level="14.18.3" data-path="盒子模型.html"><a href="盒子模型.html#产品布局"><i class="fa fa-check"></i><b>14.18.3</b> 产品布局</a></li>
+<li class="chapter" data-level="14.18.4" data-path="盒子模型.html"><a href="盒子模型.html#快报模块"><i class="fa fa-check"></i><b>14.18.4</b> 快报模块</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="浮动.html"><a href="浮动.html"><i class="fa fa-check"></i><b>15</b> 浮动</a></li>
+<li class="part"><span><b>III 附录</b></span></li>
+<li class="chapter" data-level="16" data-path="其他软件.html"><a href="其他软件.html"><i class="fa fa-check"></i><b>16</b> 其他软件</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="其他软件.html"><a href="其他软件.html#vscode常用操作"><i class="fa fa-check"></i><b>16.1</b> Vscode常用操作</a></li>
+<li class="chapter" data-level="16.2" data-path="其他软件.html"><a href="其他软件.html#ps"><i class="fa fa-check"></i><b>16.2</b> PS</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="chrome调试工具.html"><a href="chrome调试工具.html"><i class="fa fa-check"></i><b>17</b> Chrome调试工具</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="chrome调试工具.html"><a href="chrome调试工具.html#打开调试工具"><i class="fa fa-check"></i><b>17.1</b> 打开调试工具</a></li>
+<li class="chapter" data-level="17.2" data-path="chrome调试工具.html"><a href="chrome调试工具.html#使用调试工具"><i class="fa fa-check"></i><b>17.2</b> 使用调试工具</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="emmet语法.html"><a href="emmet语法.html"><i class="fa fa-check"></i><b>18</b> Emmet语法</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="emmet语法.html"><a href="emmet语法.html#快速生成html结构语法"><i class="fa fa-check"></i><b>18.1</b> 快速生成HTML结构语法</a></li>
+<li class="chapter" data-level="18.2" data-path="emmet语法.html"><a href="emmet语法.html#快速生成css样式语法"><i class="fa fa-check"></i><b>18.2</b> 快速生成CSS样式语法</a></li>
+<li class="chapter" data-level="18.3" data-path="emmet语法.html"><a href="emmet语法.html#快速格式化代码"><i class="fa fa-check"></i><b>18.3</b> 快速格式化代码</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Web开发学习笔记</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="盒子模型" class="section level1" number="14">
+<h1><span class="header-section-number">14</span> 盒子模型</h1>
+<p>页面布局要学习三大核心，盒子模型,浮动和定位.学习好盒子模型能非常好的帮助我们布局页面。</p>
+<div id="看透网页布局的本质" class="section level2" number="14.1">
+<h2><span class="header-section-number">14.1</span> 看透网页布局的本质</h2>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="fig/CSS/19-01.jpg" alt="网页是有盒子组成的" width="724" />
+<p class="caption">
+图3.1: 网页是有盒子组成的
+</p>
+</div>
+<p>网页布局过程:</p>
+<p>1.先准备好相关的网页元素，网页元素基本都是盒子Box。</p>
+<p>2.利用CSS设置好盒子样式，然后摆放到相应位置。（最核心）</p>
+<p>3.往盒子里面装内容.</p>
+<p>网页布局核心：利用CSS摆盒子。</p>
+</div>
+<div id="盒子模型box-model" class="section level2" number="14.2">
+<h2><span class="header-section-number">14.2</span> 盒子模型（Box Model）</h2>
+<p>所谓盒子模型∶就是把HTML页面中的布局元素看作是一个短形的盒子，也就是一个盛装内容的容器。CSS盒子模型本质上是一个盒子，封装周围的HTML元素，它包括:边框、外边距、内边距、和实际内容。</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2-1"></span>
+<img src="fig/CSS/19-02.jpg" alt="盒子的四个组成部分" width="740" />
+<p class="caption">
+图14.1: 盒子的四个组成部分
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2-2"></span>
+<img src="fig/CSS/19-03.jpg" alt="盒子的四个组成部分" width="447" />
+<p class="caption">
+图14.2: 盒子的四个组成部分
+</p>
+</div>
+</div>
+<div id="盒子边框border" class="section level2" number="14.3">
+<h2><span class="header-section-number">14.3</span> 盒子边框（border）</h2>
+<p>border可以设置元素的边框。边框有三部分组成:边框宽度(粗细)边框样式边框颜色</p>
+<p><strong>语法</strong></p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb134-1"><a href="盒子模型.html#cb134-1" aria-hidden="true" tabindex="-1"></a>border : border-width || border-style || border-color</span></code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-4">表2.1: </span>盒子边框</caption>
+<thead>
+<tr class="header">
+<th align="center">属性</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">border-width</td>
+<td align="center">定义边框粗细，单位是px</td>
+</tr>
+<tr class="even">
+<td align="center">border-style</td>
+<td align="center">边框样式，实线虚线</td>
+</tr>
+<tr class="odd">
+<td align="center">border-color</td>
+<td align="center">边框颜色</td>
+</tr>
+</tbody>
+</table>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb135-1"><a href="盒子模型.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb135-2"><a href="盒子模型.html#cb135-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb135-3"><a href="盒子模型.html#cb135-3" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb135-4"><a href="盒子模型.html#cb135-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb135-5"><a href="盒子模型.html#cb135-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb135-6"><a href="盒子模型.html#cb135-6" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* border-width 边框粗细，一般都用px */</span></span>
+<span id="cb135-7"><a href="盒子模型.html#cb135-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">border-width</span>: <span class="dv">5</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb135-8"><a href="盒子模型.html#cb135-8" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* border-style 边框样式 solid实线边框 dashed虚线 dotted点线*/</span></span>
+<span id="cb135-9"><a href="盒子模型.html#cb135-9" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* border-style: solid; */</span></span>
+<span id="cb135-10"><a href="盒子模型.html#cb135-10" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* border-style: dashed; */</span></span>
+<span id="cb135-11"><a href="盒子模型.html#cb135-11" aria-hidden="true" tabindex="-1"></a>            <span class="kw">border-style</span>: <span class="dv">dotted</span><span class="op">;</span></span>
+<span id="cb135-12"><a href="盒子模型.html#cb135-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">border-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb135-13"><a href="盒子模型.html#cb135-13" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb135-14"><a href="盒子模型.html#cb135-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb135-15"><a href="盒子模型.html#cb135-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb135-16"><a href="盒子模型.html#cb135-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb135-17"><a href="盒子模型.html#cb135-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb135-18"><a href="盒子模型.html#cb135-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;&lt;/div&gt;</span></span>
+<span id="cb135-19"><a href="盒子模型.html#cb135-19" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="边框的复合写法简写" class="section level2" number="14.4">
+<h2><span class="header-section-number">14.4</span> 边框的复合写法（简写）</h2>
+<p><strong>语法</strong></p>
+<p>边框简写：</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb136-1"><a href="盒子模型.html#cb136-1" aria-hidden="true" tabindex="-1"></a>border: 1px solid red; 没有顺序</span></code></pre></div>
+<p>边框分开写：</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb137-1"><a href="盒子模型.html#cb137-1" aria-hidden="true" tabindex="-1"></a>border-top: 1px solid red; 没有顺序</span></code></pre></div>
+<p><strong>例子</strong></p>
+<p>请给一个200*200的盒子，设置上边框为红色，其余边框为蓝色(提示︰一定注意边框的层叠性)</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb138-1"><a href="盒子模型.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb138-2"><a href="盒子模型.html#cb138-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb138-3"><a href="盒子模型.html#cb138-3" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb138-4"><a href="盒子模型.html#cb138-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb138-5"><a href="盒子模型.html#cb138-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb138-6"><a href="盒子模型.html#cb138-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">border</span>: <span class="dv">5</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb138-7"><a href="盒子模型.html#cb138-7" aria-hidden="true" tabindex="-1"></a>            <span class="co">/*  利用层叠性 */</span></span>
+<span id="cb138-8"><a href="盒子模型.html#cb138-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">border-top</span>: <span class="dv">5</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb138-9"><a href="盒子模型.html#cb138-9" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb138-10"><a href="盒子模型.html#cb138-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb138-11"><a href="盒子模型.html#cb138-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb138-12"><a href="盒子模型.html#cb138-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb138-13"><a href="盒子模型.html#cb138-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb138-14"><a href="盒子模型.html#cb138-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;&lt;/div&gt;</span></span>
+<span id="cb138-15"><a href="盒子模型.html#cb138-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="表格细线边框" class="section level2" number="14.5">
+<h2><span class="header-section-number">14.5</span> 表格细线边框</h2>
+<p>border-collapse属性控制浏览器绘制表格边框的方式。它控制相邻单元格的边框。</p>
+<p><strong>语法</strong></p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb139-1"><a href="盒子模型.html#cb139-1" aria-hidden="true" tabindex="-1"></a>border-collapse:collapse;</span></code></pre></div>
+<p>collapse单词是合并的意思</p>
+<p>border-collapse:collapse;表示相邻边框合并在一起</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb140-1"><a href="盒子模型.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb140-2"><a href="盒子模型.html#cb140-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb140-3"><a href="盒子模型.html#cb140-3" aria-hidden="true" tabindex="-1"></a>        table {</span>
+<span id="cb140-4"><a href="盒子模型.html#cb140-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">500</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb140-5"><a href="盒子模型.html#cb140-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">250</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb140-6"><a href="盒子模型.html#cb140-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb140-7"><a href="盒子模型.html#cb140-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb140-8"><a href="盒子模型.html#cb140-8" aria-hidden="true" tabindex="-1"></a>        table<span class="op">,</span></span>
+<span id="cb140-9"><a href="盒子模型.html#cb140-9" aria-hidden="true" tabindex="-1"></a>        td<span class="op">,</span></span>
+<span id="cb140-10"><a href="盒子模型.html#cb140-10" aria-hidden="true" tabindex="-1"></a>        th {</span>
+<span id="cb140-11"><a href="盒子模型.html#cb140-11" aria-hidden="true" tabindex="-1"></a>            <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb140-12"><a href="盒子模型.html#cb140-12" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 合并相邻的边框 */</span></span>
+<span id="cb140-13"><a href="盒子模型.html#cb140-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">border-collapse</span>: <span class="dv">collapse</span><span class="op">;</span></span>
+<span id="cb140-14"><a href="盒子模型.html#cb140-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-align</span>: <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb140-15"><a href="盒子模型.html#cb140-15" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb140-16"><a href="盒子模型.html#cb140-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb140-17"><a href="盒子模型.html#cb140-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb140-18"><a href="盒子模型.html#cb140-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb140-19"><a href="盒子模型.html#cb140-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb140-20"><a href="盒子模型.html#cb140-20" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb140-21"><a href="盒子模型.html#cb140-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;table</span> <span class="er">align</span><span class="ot">=</span><span class="st">&quot;center&quot;</span> <span class="er">width</span><span class="ot">=</span><span class="st">&quot;500&quot;</span> <span class="er">height</span><span class="ot">=</span><span class="st">&quot;249&quot;</span> <span class="er">border</span><span class="ot">=</span><span class="st">&quot;1&quot;</span> <span class="er">cellspacing</span><span class="ot">=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb140-22"><a href="盒子模型.html#cb140-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;thead&gt;</span></span>
+<span id="cb140-23"><a href="盒子模型.html#cb140-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb140-24"><a href="盒子模型.html#cb140-24" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;th&gt;</span>排名<span class="kw">&lt;/th&gt;</span></span>
+<span id="cb140-25"><a href="盒子模型.html#cb140-25" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;th&gt;</span>关键词<span class="kw">&lt;/th&gt;</span></span>
+<span id="cb140-26"><a href="盒子模型.html#cb140-26" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;th&gt;</span>趋势<span class="kw">&lt;/th&gt;</span></span>
+<span id="cb140-27"><a href="盒子模型.html#cb140-27" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;th&gt;</span>进入搜索<span class="kw">&lt;/th&gt;</span></span>
+<span id="cb140-28"><a href="盒子模型.html#cb140-28" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;th&gt;</span>最近七日<span class="kw">&lt;/th&gt;</span></span>
+<span id="cb140-29"><a href="盒子模型.html#cb140-29" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;th&gt;</span>相关链接<span class="kw">&lt;/th&gt;</span></span>
+<span id="cb140-30"><a href="盒子模型.html#cb140-30" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb140-31"><a href="盒子模型.html#cb140-31" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/thead&gt;</span></span>
+<span id="cb140-32"><a href="盒子模型.html#cb140-32" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;tbody&gt;</span></span>
+<span id="cb140-33"><a href="盒子模型.html#cb140-33" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb140-34"><a href="盒子模型.html#cb140-34" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>1<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-35"><a href="盒子模型.html#cb140-35" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>鬼吹灯<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-36"><a href="盒子模型.html#cb140-36" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;down.jpg&quot;</span><span class="kw">&gt;&lt;/td&gt;</span></span>
+<span id="cb140-37"><a href="盒子模型.html#cb140-37" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>456<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-38"><a href="盒子模型.html#cb140-38" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>123<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-39"><a href="盒子模型.html#cb140-39" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>贴吧<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>图片<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>百科<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-40"><a href="盒子模型.html#cb140-40" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb140-41"><a href="盒子模型.html#cb140-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb140-42"><a href="盒子模型.html#cb140-42" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb140-43"><a href="盒子模型.html#cb140-43" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>1<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-44"><a href="盒子模型.html#cb140-44" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>鬼吹灯<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-45"><a href="盒子模型.html#cb140-45" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;down.jpg&quot;</span><span class="kw">&gt;&lt;/td&gt;</span></span>
+<span id="cb140-46"><a href="盒子模型.html#cb140-46" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>456<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-47"><a href="盒子模型.html#cb140-47" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>123<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-48"><a href="盒子模型.html#cb140-48" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>贴吧<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>图片<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>百科<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-49"><a href="盒子模型.html#cb140-49" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb140-50"><a href="盒子模型.html#cb140-50" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb140-51"><a href="盒子模型.html#cb140-51" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>3<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-52"><a href="盒子模型.html#cb140-52" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>西游记<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-53"><a href="盒子模型.html#cb140-53" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;up.jpg&quot;</span><span class="kw">&gt;&lt;/td&gt;</span></span>
+<span id="cb140-54"><a href="盒子模型.html#cb140-54" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>456<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-55"><a href="盒子模型.html#cb140-55" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>123<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-56"><a href="盒子模型.html#cb140-56" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>贴吧<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>图片<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>百科<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-57"><a href="盒子模型.html#cb140-57" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb140-58"><a href="盒子模型.html#cb140-58" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb140-59"><a href="盒子模型.html#cb140-59" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>1<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-60"><a href="盒子模型.html#cb140-60" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>鬼吹灯<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-61"><a href="盒子模型.html#cb140-61" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;down.jpg&quot;</span><span class="kw">&gt;&lt;/td&gt;</span></span>
+<span id="cb140-62"><a href="盒子模型.html#cb140-62" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>456<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-63"><a href="盒子模型.html#cb140-63" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>123<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-64"><a href="盒子模型.html#cb140-64" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>贴吧<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>图片<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>百科<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-65"><a href="盒子模型.html#cb140-65" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb140-66"><a href="盒子模型.html#cb140-66" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb140-67"><a href="盒子模型.html#cb140-67" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>1<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-68"><a href="盒子模型.html#cb140-68" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>鬼吹灯<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-69"><a href="盒子模型.html#cb140-69" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;down.jpg&quot;</span><span class="kw">&gt;&lt;/td&gt;</span></span>
+<span id="cb140-70"><a href="盒子模型.html#cb140-70" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>456<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-71"><a href="盒子模型.html#cb140-71" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>123<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-72"><a href="盒子模型.html#cb140-72" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>贴吧<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>图片<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>百科<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-73"><a href="盒子模型.html#cb140-73" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb140-74"><a href="盒子模型.html#cb140-74" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb140-75"><a href="盒子模型.html#cb140-75" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>1<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-76"><a href="盒子模型.html#cb140-76" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>鬼吹灯<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-77"><a href="盒子模型.html#cb140-77" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;down.jpg&quot;</span><span class="kw">&gt;&lt;/td&gt;</span></span>
+<span id="cb140-78"><a href="盒子模型.html#cb140-78" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>456<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-79"><a href="盒子模型.html#cb140-79" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span>123<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-80"><a href="盒子模型.html#cb140-80" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;td&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>贴吧<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>图片<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>百科<span class="kw">&lt;/a&gt;</span> <span class="kw">&lt;/td&gt;</span></span>
+<span id="cb140-81"><a href="盒子模型.html#cb140-81" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb140-82"><a href="盒子模型.html#cb140-82" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/tbody&gt;</span></span>
+<span id="cb140-83"><a href="盒子模型.html#cb140-83" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/table&gt;</span></span>
+<span id="cb140-84"><a href="盒子模型.html#cb140-84" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="边框会影响盒子的实际大小" class="section level2" number="14.6">
+<h2><span class="header-section-number">14.6</span> 边框会影响盒子的实际大小</h2>
+<p>边框会额外增加盒子的实际大小。比如一个盒子长宽都是100px，四个边框是10px，那么宽和高就变成了100+20px。
+因此我们有两种方案解决:</p>
+<p>1．测量盒子大小的时候,不量边框。</p>
+<p>2．如果测量的时候包含了边框,则需要width/height 减去边框宽度</p>
+</div>
+<div id="内边距padding" class="section level2" number="14.7">
+<h2><span class="header-section-number">14.7</span> 内边距（padding）</h2>
+<p>padding属性用于设置内边距，即边框与内容之间的距离。</p>
+<table>
+<caption><span id="tab:unnamed-chunk-11">表14.1: </span>内边距</caption>
+<thead>
+<tr class="header">
+<th align="center">属性</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">padding-left</td>
+<td align="center">左内边距</td>
+</tr>
+<tr class="even">
+<td align="center">padding-right</td>
+<td align="center">右内边距</td>
+</tr>
+<tr class="odd">
+<td align="center">padding-top</td>
+<td align="center">上内边距</td>
+</tr>
+<tr class="even">
+<td align="center">padding-bottom</td>
+<td align="center">下内边距</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="内边距复合写法简写" class="section level2" number="14.8">
+<h2><span class="header-section-number">14.8</span> 内边距复合写法（简写）</h2>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="盒子模型.html#cb141-1" aria-hidden="true" tabindex="-1"></a>bg3 <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb141-2"><a href="盒子模型.html#cb141-2" aria-hidden="true" tabindex="-1"></a>  值的个数<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;padding:5px;&quot;</span>,</span>
+<span id="cb141-3"><a href="盒子模型.html#cb141-3" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;padding:5px 10px;&quot;</span>,</span>
+<span id="cb141-4"><a href="盒子模型.html#cb141-4" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;padding:5px 10px 20px;&quot;</span>,</span>
+<span id="cb141-5"><a href="盒子模型.html#cb141-5" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;padding:5px 10px 20px 30px;&quot;</span>),</span>
+<span id="cb141-6"><a href="盒子模型.html#cb141-6" aria-hidden="true" tabindex="-1"></a>  表达意思<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;1个值，代表上下左右都是2像素内边距&quot;</span>,</span>
+<span id="cb141-7"><a href="盒子模型.html#cb141-7" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;2个值，代表上下内边距5像素，左右10像素&quot;</span>,</span>
+<span id="cb141-8"><a href="盒子模型.html#cb141-8" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;3个值，代表上5像素，左右10像素，下20像素&quot;</span>,</span>
+<span id="cb141-9"><a href="盒子模型.html#cb141-9" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;4个值，顺时针，上右下左&quot;</span>)</span>
+<span id="cb141-10"><a href="盒子模型.html#cb141-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb141-11"><a href="盒子模型.html#cb141-11" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(bg3,<span class="at">align=</span><span class="st">&quot;c&quot;</span>,<span class="at">caption =</span> <span class="st">&quot;内边距的复合写法&quot;</span>,<span class="at">booktabs=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-12">表4.4: </span>内边距的复合写法</caption>
+<thead>
+<tr class="header">
+<th align="center">值的个数</th>
+<th align="center">表达意思</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">padding:5px;</td>
+<td align="center">1个值，代表上下左右都是2像素内边距</td>
+</tr>
+<tr class="even">
+<td align="center">padding:5px 10px;</td>
+<td align="center">2个值，代表上下内边距5像素，左右10像素</td>
+</tr>
+<tr class="odd">
+<td align="center">padding:5px 10px 20px;</td>
+<td align="center">3个值，代表上5像素，左右10像素，下20像素</td>
+</tr>
+<tr class="even">
+<td align="center">padding:5px 10px 20px 30px;</td>
+<td align="center">4个值，顺时针，上右下左</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="padding会影响盒子实际大小" class="section level2" number="14.9">
+<h2><span class="header-section-number">14.9</span> padding会影响盒子实际大小</h2>
+<p>当我们给盒子指定padding值之后，发生了2件事情。</p>
+<p>1.内容和边框有了距离，添加了内边距。</p>
+<p>2.padding影响了盒子实际大小。</p>
+<p>也就是说，如果盒子已经有了宽度和高度，此时再指定内边框，会撑大盒子。</p>
+<p><strong>解决方案</strong>:
+如果保证盒子跟效果图大小保持一致，则让width/height减去多出来的内边距大小即可。（同外边距解决方案）</p>
+<p><strong>例子</strong></p>
+<p>建立一个内边距为20，盒子宽度和高度为20px的盒子。</p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb142-1"><a href="盒子模型.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb142-2"><a href="盒子模型.html#cb142-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb142-3"><a href="盒子模型.html#cb142-3" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb142-4"><a href="盒子模型.html#cb142-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">160</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb142-5"><a href="盒子模型.html#cb142-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">160</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb142-6"><a href="盒子模型.html#cb142-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb142-7"><a href="盒子模型.html#cb142-7" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 加上内边距，盒子宽度和高度还是200px */</span></span>
+<span id="cb142-8"><a href="盒子模型.html#cb142-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">padding</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb142-9"><a href="盒子模型.html#cb142-9" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb142-10"><a href="盒子模型.html#cb142-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb142-11"><a href="盒子模型.html#cb142-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb142-12"><a href="盒子模型.html#cb142-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-13"><a href="盒子模型.html#cb142-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb142-14"><a href="盒子模型.html#cb142-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span></span>
+<span id="cb142-15"><a href="盒子模型.html#cb142-15" aria-hidden="true" tabindex="-1"></a>        padding会影响盒子实际大小padding会影响盒子实际大小padding会影响盒子实际大小padding会影响盒子实际大小</span>
+<span id="cb142-16"><a href="盒子模型.html#cb142-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb142-17"><a href="盒子模型.html#cb142-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="padding不撑开盒子的情况" class="section level2" number="14.10">
+<h2><span class="header-section-number">14.10</span> padding不撑开盒子的情况</h2>
+<p>如何盒子本身没有指定width/height属性,则此时padding不会撑开盒子大小.</p>
+<p>例如：子标签的宽度未指定时同父标签宽度，且给子标签指定padding也不会撑开盒子。</p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb143-1"><a href="盒子模型.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb143-2"><a href="盒子模型.html#cb143-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb143-3"><a href="盒子模型.html#cb143-3" aria-hidden="true" tabindex="-1"></a>        h1 {</span>
+<span id="cb143-4"><a href="盒子模型.html#cb143-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb143-5"><a href="盒子模型.html#cb143-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb143-6"><a href="盒子模型.html#cb143-6" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 仅仅高度增加60px，因为没有指定宽度，宽度同父亲body标签，宽度不会增加 */</span></span>
+<span id="cb143-7"><a href="盒子模型.html#cb143-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">padding</span>: <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb143-8"><a href="盒子模型.html#cb143-8" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb143-9"><a href="盒子模型.html#cb143-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-10"><a href="盒子模型.html#cb143-10" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb143-11"><a href="盒子模型.html#cb143-11" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb143-12"><a href="盒子模型.html#cb143-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb143-13"><a href="盒子模型.html#cb143-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">purple</span><span class="op">;</span></span>
+<span id="cb143-14"><a href="盒子模型.html#cb143-14" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb143-15"><a href="盒子模型.html#cb143-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-16"><a href="盒子模型.html#cb143-16" aria-hidden="true" tabindex="-1"></a>        div p {</span>
+<span id="cb143-17"><a href="盒子模型.html#cb143-17" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 和父亲 div的宽度一样宽 300px */</span></span>
+<span id="cb143-18"><a href="盒子模型.html#cb143-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">padding</span>: <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb143-19"><a href="盒子模型.html#cb143-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">skyblue</span><span class="op">;</span></span>
+<span id="cb143-20"><a href="盒子模型.html#cb143-20" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb143-21"><a href="盒子模型.html#cb143-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb143-22"><a href="盒子模型.html#cb143-22" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb143-23"><a href="盒子模型.html#cb143-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-24"><a href="盒子模型.html#cb143-24" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb143-25"><a href="盒子模型.html#cb143-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h1&gt;&lt;/h1&gt;</span></span>
+<span id="cb143-26"><a href="盒子模型.html#cb143-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span></span>
+<span id="cb143-27"><a href="盒子模型.html#cb143-27" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;p&gt;&lt;/p&gt;</span></span>
+<span id="cb143-28"><a href="盒子模型.html#cb143-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb143-29"><a href="盒子模型.html#cb143-29" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="盒子模型外边距margin" class="section level2" number="14.11">
+<h2><span class="header-section-number">14.11</span> 盒子模型外边距margin</h2>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
+<img src="fig/CSS/19-04.jpg" alt="盒子外边框效果效果" width="486" />
+<p class="caption">
+图14.3: 盒子外边框效果效果
+</p>
+</div>
+<p><strong>margin</strong>属性用于设置外边距，即控制盒子和盒子之间的距离。</p>
+<table>
+<caption><span id="tab:unnamed-chunk-16">表6.1: </span>盒子外边距margin属性</caption>
+<thead>
+<tr class="header">
+<th align="center">属性</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">margin-left</td>
+<td align="center">左外边距</td>
+</tr>
+<tr class="even">
+<td align="center">margin-right</td>
+<td align="center">右外边距</td>
+</tr>
+<tr class="odd">
+<td align="center">margin-top</td>
+<td align="center">上外边距</td>
+</tr>
+<tr class="even">
+<td align="center">margin-bottom</td>
+<td align="center">下外边距</td>
+</tr>
+</tbody>
+</table>
+<p><strong>marigin的简写方式与padding完全一致</strong></p>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb144-1"><a href="盒子模型.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb144-2"><a href="盒子模型.html#cb144-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb144-3"><a href="盒子模型.html#cb144-3" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb144-4"><a href="盒子模型.html#cb144-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb144-5"><a href="盒子模型.html#cb144-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb144-6"><a href="盒子模型.html#cb144-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb144-7"><a href="盒子模型.html#cb144-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb144-8"><a href="盒子模型.html#cb144-8" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb144-9"><a href="盒子模型.html#cb144-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb144-10"><a href="盒子模型.html#cb144-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* .one { */</span></span>
+<span id="cb144-11"><a href="盒子模型.html#cb144-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* margin-bottom: 20px; */</span></span>
+<span id="cb144-12"><a href="盒子模型.html#cb144-12" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* } */</span></span>
+<span id="cb144-13"><a href="盒子模型.html#cb144-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.two</span> {</span>
+<span id="cb144-14"><a href="盒子模型.html#cb144-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb144-15"><a href="盒子模型.html#cb144-15" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb144-16"><a href="盒子模型.html#cb144-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb144-17"><a href="盒子模型.html#cb144-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb144-18"><a href="盒子模型.html#cb144-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb144-19"><a href="盒子模型.html#cb144-19" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb144-20"><a href="盒子模型.html#cb144-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;one&quot;</span><span class="kw">&gt;</span>1<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb144-21"><a href="盒子模型.html#cb144-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;two&quot;</span><span class="kw">&gt;</span>2<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb144-22"><a href="盒子模型.html#cb144-22" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="外边距典型应用块级盒子水平居中" class="section level2" number="14.12">
+<h2><span class="header-section-number">14.12</span> 外边距典型应用（块级盒子水平居中）</h2>
+<p>外边框可以让块级盒子<strong>水平</strong>居中，但必须满足两个条件。</p>
+<ol style="list-style-type: decimal">
+<li><p>盒子必须指定宽度（width）</p></li>
+<li><p>盒子<strong>左右外边距</strong>都这设置为auto</p></li>
+</ol>
+<p><strong>语法</strong></p>
+<p>以下三种写法都可以：</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb145-1"><a href="盒子模型.html#cb145-1" aria-hidden="true" tabindex="-1"></a>.header {width:960px; margin:0 auto;}</span>
+<span id="cb145-2"><a href="盒子模型.html#cb145-2" aria-hidden="true" tabindex="-1"></a>.header {width:960px; margin-left:auto; margin-right: auto;}</span>
+<span id="cb145-3"><a href="盒子模型.html#cb145-3" aria-hidden="true" tabindex="-1"></a>.header {width:960px; margin:auto;}</span></code></pre></div>
+<p>注意:以上方法是让<strong>块级元素</strong>水平居中，行内元素或者行内块元素水平居中给其父元素添加 <strong>text-aligncenter</strong>即可。</p>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb146-1"><a href="盒子模型.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb146-2"><a href="盒子模型.html#cb146-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb146-3"><a href="盒子模型.html#cb146-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.header</span> {</span>
+<span id="cb146-4"><a href="盒子模型.html#cb146-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">900</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb146-5"><a href="盒子模型.html#cb146-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb146-6"><a href="盒子模型.html#cb146-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb146-7"><a href="盒子模型.html#cb146-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">100</span><span class="dt">px</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb146-8"><a href="盒子模型.html#cb146-8" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 行内元素或者行内块元素水平居中给其父元素添加 text-aligncenter即可。 */</span></span>
+<span id="cb146-9"><a href="盒子模型.html#cb146-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-align</span>: <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb146-10"><a href="盒子模型.html#cb146-10" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb146-11"><a href="盒子模型.html#cb146-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb146-12"><a href="盒子模型.html#cb146-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb146-13"><a href="盒子模型.html#cb146-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb146-14"><a href="盒子模型.html#cb146-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb146-15"><a href="盒子模型.html#cb146-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb146-16"><a href="盒子模型.html#cb146-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb146-17"><a href="盒子模型.html#cb146-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;span&gt;</span>里面的文字<span class="kw">&lt;/span&gt;</span></span>
+<span id="cb146-18"><a href="盒子模型.html#cb146-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb146-19"><a href="盒子模型.html#cb146-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb146-20"><a href="盒子模型.html#cb146-20" aria-hidden="true" tabindex="-1"></a>        <span class="co">&lt;!-- 图片文字也是水平居中 --&gt;</span></span>
+<span id="cb146-21"><a href="盒子模型.html#cb146-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;../../html_css_material-master/第五天/down.jpg&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb146-22"><a href="盒子模型.html#cb146-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb146-23"><a href="盒子模型.html#cb146-23" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="嵌套块元素垂直外边距的塌陷" class="section level2" number="14.13">
+<h2><span class="header-section-number">14.13</span> 嵌套块元素垂直外边距的塌陷</h2>
+<p>对于两个嵌套关系(父子关系)的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距值。</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-20"></span>
+<img src="fig/CSS/19-05.jpg" alt="父元素塌陷示意图" width="432" />
+<p class="caption">
+图14.4: 父元素塌陷示意图
+</p>
+</div>
+<p><strong>解决方案</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><p>可以为父元素定义上边框。</p></li>
+<li><p>可以为父元素定义上内边距。</p></li>
+<li><p>可以为父元素添加overflow:hidden。</p></li>
+</ol>
+<p>还有其他底法，比如浮动、固定，绝对定位的盒子不会有塌陷问题，后面咱们再总结。</p>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb147-1"><a href="盒子模型.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb147-2"><a href="盒子模型.html#cb147-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb147-3"><a href="盒子模型.html#cb147-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.father</span> {</span>
+<span id="cb147-4"><a href="盒子模型.html#cb147-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">400</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb147-5"><a href="盒子模型.html#cb147-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">400</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb147-6"><a href="盒子模型.html#cb147-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">purple</span><span class="op">;</span></span>
+<span id="cb147-7"><a href="盒子模型.html#cb147-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin-top</span>: <span class="dv">50</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb147-8"><a href="盒子模型.html#cb147-8" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 法一：border: 1px solid transparent; */</span></span>
+<span id="cb147-9"><a href="盒子模型.html#cb147-9" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 法二：padding: 1px; */</span></span>
+<span id="cb147-10"><a href="盒子模型.html#cb147-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">overflow</span>: <span class="dv">hidden</span><span class="op">;</span></span>
+<span id="cb147-11"><a href="盒子模型.html#cb147-11" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb147-12"><a href="盒子模型.html#cb147-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-13"><a href="盒子模型.html#cb147-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.son</span> {</span>
+<span id="cb147-14"><a href="盒子模型.html#cb147-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb147-15"><a href="盒子模型.html#cb147-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb147-16"><a href="盒子模型.html#cb147-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb147-17"><a href="盒子模型.html#cb147-17" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin-top</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb147-18"><a href="盒子模型.html#cb147-18" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb147-19"><a href="盒子模型.html#cb147-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb147-20"><a href="盒子模型.html#cb147-20" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb147-21"><a href="盒子模型.html#cb147-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-22"><a href="盒子模型.html#cb147-22" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb147-23"><a href="盒子模型.html#cb147-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;father&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb147-24"><a href="盒子模型.html#cb147-24" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;son&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb147-25"><a href="盒子模型.html#cb147-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb147-26"><a href="盒子模型.html#cb147-26" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="清除内外边距" class="section level2" number="14.14">
+<h2><span class="header-section-number">14.14</span> 清除内外边距</h2>
+<p>网页元素很多都带有默认的内外边距，而且不同浏览器默认的也不一致。因此我们在布局前，首先要清除下网页元素的内外边距。</p>
+<p><strong>语法</strong></p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb148-1"><a href="盒子模型.html#cb148-1" aria-hidden="true" tabindex="-1"></a>* {</span>
+<span id="cb148-2"><a href="盒子模型.html#cb148-2" aria-hidden="true" tabindex="-1"></a>  padding :0; /*清除内边距*/</span>
+<span id="cb148-3"><a href="盒子模型.html#cb148-3" aria-hidden="true" tabindex="-1"></a>  margin: 0; /*大清除外边距*/</span>
+<span id="cb148-4"><a href="盒子模型.html#cb148-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>注意∶行内元素为了照顾兼容性，尽量只设置左右内外边距，不要设置上下内外边距。但是转换为块级和行内块元素就可以了.</strong></p>
+<p>**例子</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb149-1"><a href="盒子模型.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb149-2"><a href="盒子模型.html#cb149-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb149-3"><a href="盒子模型.html#cb149-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 这句话也是CSS的第一行代码 */</span></span>
+<span id="cb149-4"><a href="盒子模型.html#cb149-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">*</span> {</span>
+<span id="cb149-5"><a href="盒子模型.html#cb149-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb149-6"><a href="盒子模型.html#cb149-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">padding</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb149-7"><a href="盒子模型.html#cb149-7" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb149-8"><a href="盒子模型.html#cb149-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb149-9"><a href="盒子模型.html#cb149-9" aria-hidden="true" tabindex="-1"></a>        span {</span>
+<span id="cb149-10"><a href="盒子模型.html#cb149-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb149-11"><a href="盒子模型.html#cb149-11" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 行内元素最好只应该设置左右内外边距 */</span></span>
+<span id="cb149-12"><a href="盒子模型.html#cb149-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">0</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb149-13"><a href="盒子模型.html#cb149-13" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb149-14"><a href="盒子模型.html#cb149-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb149-15"><a href="盒子模型.html#cb149-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb149-16"><a href="盒子模型.html#cb149-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb149-17"><a href="盒子模型.html#cb149-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb149-18"><a href="盒子模型.html#cb149-18" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb149-19"><a href="盒子模型.html#cb149-19" aria-hidden="true" tabindex="-1"></a>    123</span>
+<span id="cb149-20"><a href="盒子模型.html#cb149-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;ul&gt;</span></span>
+<span id="cb149-21"><a href="盒子模型.html#cb149-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;li&gt;</span>abcd<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb149-22"><a href="盒子模型.html#cb149-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb149-23"><a href="盒子模型.html#cb149-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>我是行内元素尽量只设置左右内外边距<span class="kw">&lt;/span&gt;</span></span>
+<span id="cb149-24"><a href="盒子模型.html#cb149-24" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="圆角边框" class="section level2" number="14.15">
+<h2><span class="header-section-number">14.15</span> 圆角边框</h2>
+<p>在CSS3中，新增了圆角边框样式，这样我们的盒子就可以变圆角了。border-radius属性用于设置元素的外边框圆角。</p>
+<p><strong>语法</strong></p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb150-1"><a href="盒子模型.html#cb150-1" aria-hidden="true" tabindex="-1"></a>border-radius : length;</span></code></pre></div>
+<p>radius半径(圆的半径)原理:(椭)圆与边框的交集形成圆角效果</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-25"></span>
+<img src="fig/CSS/19-06.jpg" alt="圆角边框示意图" width="372" />
+<p class="caption">
+图14.5: 圆角边框示意图
+</p>
+</div>
+<ul>
+<li><p>参数值可以为数值或百分比的形式</p></li>
+<li><p>如果是正方形，想要设置为一个圆，把数值修改为高度或者宽度的一半即可，或者直接写为50%</p></li>
+<li><p>如果是个矩形,设置为高度的一半就可以做</p></li>
+<li><p>该属性是一个简写属性，可以跟四个值，分别代表左上角、右上角、右下角、左下角</p></li>
+<li><p>分开写: border-top-left-radius、border-top-right-radius、border-bottom-right-radius和border-bottom-left-radius。顺序不能颠倒。</p></li>
+</ul>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb151-1"><a href="盒子模型.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb151-2"><a href="盒子模型.html#cb151-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb151-3"><a href="盒子模型.html#cb151-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.yuanxing</span> {</span>
+<span id="cb151-4"><a href="盒子模型.html#cb151-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb151-5"><a href="盒子模型.html#cb151-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb151-6"><a href="盒子模型.html#cb151-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb151-7"><a href="盒子模型.html#cb151-7" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* border-radius: 100px; */</span></span>
+<span id="cb151-8"><a href="盒子模型.html#cb151-8" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 50% 就是宽度是高度的一半 值设定为正方形的一半 */</span></span>
+<span id="cb151-9"><a href="盒子模型.html#cb151-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">border-radius</span>: <span class="dv">50</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb151-10"><a href="盒子模型.html#cb151-10" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb151-11"><a href="盒子模型.html#cb151-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb151-12"><a href="盒子模型.html#cb151-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.juxing</span> {</span>
+<span id="cb151-13"><a href="盒子模型.html#cb151-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb151-14"><a href="盒子模型.html#cb151-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb151-15"><a href="盒子模型.html#cb151-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb151-16"><a href="盒子模型.html#cb151-16" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 圆角矩形  设置为高度的一半 */</span></span>
+<span id="cb151-17"><a href="盒子模型.html#cb151-17" aria-hidden="true" tabindex="-1"></a>            <span class="kw">border-radius</span>: <span class="dv">50</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb151-18"><a href="盒子模型.html#cb151-18" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb151-19"><a href="盒子模型.html#cb151-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb151-20"><a href="盒子模型.html#cb151-20" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.radi</span> {</span>
+<span id="cb151-21"><a href="盒子模型.html#cb151-21" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb151-22"><a href="盒子模型.html#cb151-22" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb151-23"><a href="盒子模型.html#cb151-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb151-24"><a href="盒子模型.html#cb151-24" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* border-radius: 10px 20px 30px 40px; */</span></span>
+<span id="cb151-25"><a href="盒子模型.html#cb151-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">border-radius</span>: <span class="dv">10</span><span class="dt">px</span> <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb151-26"><a href="盒子模型.html#cb151-26" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb151-27"><a href="盒子模型.html#cb151-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb151-28"><a href="盒子模型.html#cb151-28" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb151-29"><a href="盒子模型.html#cb151-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb151-30"><a href="盒子模型.html#cb151-30" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb151-31"><a href="盒子模型.html#cb151-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb151-32"><a href="盒子模型.html#cb151-32" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb151-33"><a href="盒子模型.html#cb151-33" aria-hidden="true" tabindex="-1"></a>1. 圆形的做法</span>
+<span id="cb151-34"><a href="盒子模型.html#cb151-34" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;yuanxing&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb151-35"><a href="盒子模型.html#cb151-35" aria-hidden="true" tabindex="-1"></a>2. 圆角矩形的做法</span>
+<span id="cb151-36"><a href="盒子模型.html#cb151-36" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;juxing&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb151-37"><a href="盒子模型.html#cb151-37" aria-hidden="true" tabindex="-1"></a>3. 可以设置不同的圆角</span>
+<span id="cb151-38"><a href="盒子模型.html#cb151-38" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;radi&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span></code></pre></div>
+</div>
+<div id="盒子阴影" class="section level2" number="14.16">
+<h2><span class="header-section-number">14.16</span> 盒子阴影</h2>
+<p>CSS3中新增了盒子阴影，我们可以使用box-shadow属性为盒子添加阴影。</p>
+<p><strong>语法</strong></p>
+<div class="sourceCode" id="cb152"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb152-1"><a href="盒子模型.html#cb152-1" aria-hidden="true" tabindex="-1"></a>box-shadow: h-shadow v-shadow blur spread color inset;</span></code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-28">表14.2: </span>盒子阴影</caption>
+<thead>
+<tr class="header">
+<th align="center">值</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">h-shadow</td>
+<td align="center">必需。水平阴影的位置，允许负值</td>
+</tr>
+<tr class="even">
+<td align="center">v-shadow</td>
+<td align="center">必需。垂直阴影的位置，允许负值</td>
+</tr>
+<tr class="odd">
+<td align="center">blur</td>
+<td align="center">可选，模糊距离（模糊程度，值越大越模糊）</td>
+</tr>
+<tr class="even">
+<td align="center">spread</td>
+<td align="center">可选。阴影尺寸（影子大小）</td>
+</tr>
+<tr class="odd">
+<td align="center">color</td>
+<td align="center">可选。阴影的颜色。</td>
+</tr>
+<tr class="even">
+<td align="center">inset</td>
+<td align="center">可选。将外部阴影（outset）改为内部阴影</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意</strong></p>
+<p>1.默认的是外阴影(outset),但是不可以写这个单词,否则导致阴影无效
+2.盒子阴影不占用空间，不会影响其他盒子排列。</p>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb153-1"><a href="盒子模型.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb153-2"><a href="盒子模型.html#cb153-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb153-3"><a href="盒子模型.html#cb153-3" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb153-4"><a href="盒子模型.html#cb153-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb153-5"><a href="盒子模型.html#cb153-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb153-6"><a href="盒子模型.html#cb153-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb153-7"><a href="盒子模型.html#cb153-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">100</span><span class="dt">px</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb153-8"><a href="盒子模型.html#cb153-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb153-9"><a href="盒子模型.html#cb153-9" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb153-10"><a href="盒子模型.html#cb153-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb153-11"><a href="盒子模型.html#cb153-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 原先盒子没有影子，鼠标经过是有阴影 */</span></span>
+<span id="cb153-12"><a href="盒子模型.html#cb153-12" aria-hidden="true" tabindex="-1"></a>        div<span class="in">:hover</span> {</span>
+<span id="cb153-13"><a href="盒子模型.html#cb153-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">box-shadow</span>: <span class="dv">10</span><span class="dt">px</span> <span class="dv">10</span><span class="dt">px</span> <span class="dv">10</span><span class="dt">px</span> <span class="dv">-4</span><span class="dt">px</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">.3</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb153-14"><a href="盒子模型.html#cb153-14" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb153-15"><a href="盒子模型.html#cb153-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb153-16"><a href="盒子模型.html#cb153-16" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb153-17"><a href="盒子模型.html#cb153-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb153-18"><a href="盒子模型.html#cb153-18" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb153-19"><a href="盒子模型.html#cb153-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;&lt;/div&gt;</span></span></code></pre></div>
+</div>
+<div id="文字阴影" class="section level2" number="14.17">
+<h2><span class="header-section-number">14.17</span> 文字阴影</h2>
+<p>CSS3中新增了盒子阴影，我们可以使用text-shadow属性为文字添加阴影。</p>
+<p><strong>语法</strong></p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb154-1"><a href="盒子模型.html#cb154-1" aria-hidden="true" tabindex="-1"></a>text-shadow : h-shadow v-shadow blur color;</span></code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-31">表14.3: </span>文字阴影</caption>
+<thead>
+<tr class="header">
+<th align="center">值</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">h-shadow</td>
+<td align="center">必需。水平阴影的位置，允许负值</td>
+</tr>
+<tr class="even">
+<td align="center">v-shadow</td>
+<td align="center">必需。垂直阴影的位置，允许负值</td>
+</tr>
+<tr class="odd">
+<td align="center">blur</td>
+<td align="center">可选，模糊距离（模糊程度，值越大越模糊）</td>
+</tr>
+<tr class="even">
+<td align="center">color</td>
+<td align="center">可选。阴影的颜色。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb155-1"><a href="盒子模型.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb155-2"><a href="盒子模型.html#cb155-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb155-3"><a href="盒子模型.html#cb155-3" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb155-4"><a href="盒子模型.html#cb155-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">50</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb155-5"><a href="盒子模型.html#cb155-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">orangered</span><span class="op">;</span></span>
+<span id="cb155-6"><a href="盒子模型.html#cb155-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-weight</span>: <span class="dv">700</span><span class="op">;</span></span>
+<span id="cb155-7"><a href="盒子模型.html#cb155-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-shadow</span>: <span class="dv">5</span><span class="dt">px</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">6</span><span class="dt">px</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">.3</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb155-8"><a href="盒子模型.html#cb155-8" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb155-9"><a href="盒子模型.html#cb155-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb155-10"><a href="盒子模型.html#cb155-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb155-11"><a href="盒子模型.html#cb155-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb155-12"><a href="盒子模型.html#cb155-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb155-13"><a href="盒子模型.html#cb155-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span></span>
+<span id="cb155-14"><a href="盒子模型.html#cb155-14" aria-hidden="true" tabindex="-1"></a>        你是阴影，我是火影</span>
+<span id="cb155-15"><a href="盒子模型.html#cb155-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb155-16"><a href="盒子模型.html#cb155-16" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="综合案例-2" class="section level2" number="14.18">
+<h2><span class="header-section-number">14.18</span> 综合案例</h2>
+<div id="新浪导航栏" class="section level3" number="14.18.1">
+<h3><span class="header-section-number">14.18.1</span> 新浪导航栏</h3>
+<p>如果盒子中文字数不同时，最好利用padding而不是给盒子固定宽度。</p>
+<p>相关取值:</p>
+<p>1.上边框为3像素,颜色为#ff8500</p>
+<p>2.下边框为1像素颜色为#edeef0</p>
+<p>3.盒子高度为41像素,背景颜色为#fcfcfc</p>
+<p>4.文字颜色为#4c4c4c</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-33"></span>
+<img src="fig/CSS/19-20.jpg" alt="新浪导航栏效果" width="358" />
+<p class="caption">
+图14.6: 新浪导航栏效果
+</p>
+</div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb156-1"><a href="盒子模型.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb156-2"><a href="盒子模型.html#cb156-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb156-3"><a href="盒子模型.html#cb156-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.nav</span> {</span>
+<span id="cb156-4"><a href="盒子模型.html#cb156-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">41</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb156-5"><a href="盒子模型.html#cb156-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">border-top</span>: <span class="dv">3</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#ff8500</span><span class="op">;</span></span>
+<span id="cb156-6"><a href="盒子模型.html#cb156-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">border-bottom</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#edeef0</span><span class="op">;</span></span>
+<span id="cb156-7"><a href="盒子模型.html#cb156-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">#fcfcfc</span><span class="op">;</span></span>
+<span id="cb156-8"><a href="盒子模型.html#cb156-8" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 垂直居中 */</span></span>
+<span id="cb156-9"><a href="盒子模型.html#cb156-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">41</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb156-10"><a href="盒子模型.html#cb156-10" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb156-11"><a href="盒子模型.html#cb156-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb156-12"><a href="盒子模型.html#cb156-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.nav</span> a {</span>
+<span id="cb156-13"><a href="盒子模型.html#cb156-13" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 行内元素没有高，需要转换为行内块元素 */</span></span>
+<span id="cb156-14"><a href="盒子模型.html#cb156-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">inline-block</span><span class="op">;</span></span>
+<span id="cb156-15"><a href="盒子模型.html#cb156-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">41</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb156-16"><a href="盒子模型.html#cb156-16" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 内边距上下是0 左右是20px */</span></span>
+<span id="cb156-17"><a href="盒子模型.html#cb156-17" aria-hidden="true" tabindex="-1"></a>            <span class="kw">padding</span>: <span class="dv">0</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb156-18"><a href="盒子模型.html#cb156-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">12</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb156-19"><a href="盒子模型.html#cb156-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">#4c4c4c</span><span class="op">;</span></span>
+<span id="cb156-20"><a href="盒子模型.html#cb156-20" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 取消下划线  */</span></span>
+<span id="cb156-21"><a href="盒子模型.html#cb156-21" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb156-22"><a href="盒子模型.html#cb156-22" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb156-23"><a href="盒子模型.html#cb156-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb156-24"><a href="盒子模型.html#cb156-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.nav</span> a<span class="in">:hover</span> {</span>
+<span id="cb156-25"><a href="盒子模型.html#cb156-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">#eee</span><span class="op">;</span></span>
+<span id="cb156-26"><a href="盒子模型.html#cb156-26" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">#ff8500</span><span class="op">;</span></span>
+<span id="cb156-27"><a href="盒子模型.html#cb156-27" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb156-28"><a href="盒子模型.html#cb156-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb156-29"><a href="盒子模型.html#cb156-29" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb156-30"><a href="盒子模型.html#cb156-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb156-31"><a href="盒子模型.html#cb156-31" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb156-32"><a href="盒子模型.html#cb156-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;nav&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb156-33"><a href="盒子模型.html#cb156-33" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>设为首页<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb156-34"><a href="盒子模型.html#cb156-34" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>手机新浪网<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb156-35"><a href="盒子模型.html#cb156-35" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>移动客户端<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb156-36"><a href="盒子模型.html#cb156-36" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>微博<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb156-37"><a href="盒子模型.html#cb156-37" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>关注我<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb156-38"><a href="盒子模型.html#cb156-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb156-39"><a href="盒子模型.html#cb156-39" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="小米侧边栏修改" class="section level3" number="14.18.2">
+<h3><span class="header-section-number">14.18.2</span> 小米侧边栏修改</h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-35"></span>
+<img src="fig/CSS/19-21.jpg" alt="小米侧边栏效果" width="180" />
+<p class="caption">
+图4.10: 小米侧边栏效果
+</p>
+</div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb157-1"><a href="盒子模型.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb157-2"><a href="盒子模型.html#cb157-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb157-3"><a href="盒子模型.html#cb157-3" aria-hidden="true" tabindex="-1"></a>        a {</span>
+<span id="cb157-4"><a href="盒子模型.html#cb157-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb157-5"><a href="盒子模型.html#cb157-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb157-6"><a href="盒子模型.html#cb157-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb157-7"><a href="盒子模型.html#cb157-7" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 行高等于盒子高度时，垂直居中 */</span></span>
+<span id="cb157-8"><a href="盒子模型.html#cb157-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb157-9"><a href="盒子模型.html#cb157-9" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 块级元素 */</span></span>
+<span id="cb157-10"><a href="盒子模型.html#cb157-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">block</span><span class="op">;</span></span>
+<span id="cb157-11"><a href="盒子模型.html#cb157-11" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 文字颜色为白色 */</span></span>
+<span id="cb157-12"><a href="盒子模型.html#cb157-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">#fff</span><span class="op">;</span></span>
+<span id="cb157-13"><a href="盒子模型.html#cb157-13" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 背景颜色变灰色 */</span></span>
+<span id="cb157-14"><a href="盒子模型.html#cb157-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">#535758</span><span class="op">;</span></span>
+<span id="cb157-15"><a href="盒子模型.html#cb157-15" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 文字大小14px */</span></span>
+<span id="cb157-16"><a href="盒子模型.html#cb157-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb157-17"><a href="盒子模型.html#cb157-17" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 去除连接下划线 */</span></span>
+<span id="cb157-18"><a href="盒子模型.html#cb157-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb157-19"><a href="盒子模型.html#cb157-19" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 首行缩进 */</span></span>
+<span id="cb157-20"><a href="盒子模型.html#cb157-20" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* text-indent: 2em; */</span></span>
+<span id="cb157-21"><a href="盒子模型.html#cb157-21" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 左侧内边距为30px */</span></span>
+<span id="cb157-22"><a href="盒子模型.html#cb157-22" aria-hidden="true" tabindex="-1"></a>            <span class="kw">padding-left</span>: <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb157-23"><a href="盒子模型.html#cb157-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb157-24"><a href="盒子模型.html#cb157-24" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb157-25"><a href="盒子模型.html#cb157-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb157-26"><a href="盒子模型.html#cb157-26" aria-hidden="true" tabindex="-1"></a>        a<span class="in">:hover</span> {</span>
+<span id="cb157-27"><a href="盒子模型.html#cb157-27" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">#FE6700</span><span class="op">;</span></span>
+<span id="cb157-28"><a href="盒子模型.html#cb157-28" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb157-29"><a href="盒子模型.html#cb157-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb157-30"><a href="盒子模型.html#cb157-30" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb157-31"><a href="盒子模型.html#cb157-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb157-32"><a href="盒子模型.html#cb157-32" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb157-33"><a href="盒子模型.html#cb157-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>手机 电话卡<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb157-34"><a href="盒子模型.html#cb157-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>电视 盒子<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb157-35"><a href="盒子模型.html#cb157-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>笔记本 平板<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb157-36"><a href="盒子模型.html#cb157-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>出行 穿戴<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb157-37"><a href="盒子模型.html#cb157-37" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>智能 路由器<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb157-38"><a href="盒子模型.html#cb157-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>健康 儿童<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb157-39"><a href="盒子模型.html#cb157-39" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>耳机 音响<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb157-40"><a href="盒子模型.html#cb157-40" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="产品布局" class="section level3" number="14.18.3">
+<h3><span class="header-section-number">14.18.3</span> 产品布局</h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-37"></span>
+<img src="fig/CSS/19-22.jpg" alt="产品布局的布局分析" width="532" />
+<p class="caption">
+图14.7: 产品布局的布局分析
+</p>
+</div>
+<p>PS选取工具测出：宽度298 高度415像素</p>
+<p>PS吸管工具测出：大背景的颜色为#f5f5f5</p>
+<p>p.review高度：70</p>
+<p>代码</p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb158-1"><a href="盒子模型.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb158-2"><a href="盒子模型.html#cb158-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb158-3"><a href="盒子模型.html#cb158-3" aria-hidden="true" tabindex="-1"></a>        <span class="op">*</span> {</span>
+<span id="cb158-4"><a href="盒子模型.html#cb158-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">0</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb158-5"><a href="盒子模型.html#cb158-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">padding</span>: <span class="dv">0</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb158-6"><a href="盒子模型.html#cb158-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb158-7"><a href="盒子模型.html#cb158-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-8"><a href="盒子模型.html#cb158-8" aria-hidden="true" tabindex="-1"></a>        body {</span>
+<span id="cb158-9"><a href="盒子模型.html#cb158-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">#f5f5f5</span><span class="op">;</span></span>
+<span id="cb158-10"><a href="盒子模型.html#cb158-10" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb158-11"><a href="盒子模型.html#cb158-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-12"><a href="盒子模型.html#cb158-12" aria-hidden="true" tabindex="-1"></a>        a {</span>
+<span id="cb158-13"><a href="盒子模型.html#cb158-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">#333</span><span class="op">;</span></span>
+<span id="cb158-14"><a href="盒子模型.html#cb158-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb158-15"><a href="盒子模型.html#cb158-15" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb158-16"><a href="盒子模型.html#cb158-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-17"><a href="盒子模型.html#cb158-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> {</span>
+<span id="cb158-18"><a href="盒子模型.html#cb158-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">298</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb158-19"><a href="盒子模型.html#cb158-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">415</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb158-20"><a href="盒子模型.html#cb158-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">#fff</span><span class="op">;</span></span>
+<span id="cb158-21"><a href="盒子模型.html#cb158-21" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 让块级盒子水平居中对齐 */</span></span>
+<span id="cb158-22"><a href="盒子模型.html#cb158-22" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">100</span><span class="dt">px</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb158-23"><a href="盒子模型.html#cb158-23" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb158-24"><a href="盒子模型.html#cb158-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-25"><a href="盒子模型.html#cb158-25" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> img {</span>
+<span id="cb158-26"><a href="盒子模型.html#cb158-26" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 和父亲的宽度一样宽 */</span></span>
+<span id="cb158-27"><a href="盒子模型.html#cb158-27" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb158-28"><a href="盒子模型.html#cb158-28" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb158-29"><a href="盒子模型.html#cb158-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-30"><a href="盒子模型.html#cb158-30" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.review</span> {</span>
+<span id="cb158-31"><a href="盒子模型.html#cb158-31" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">70</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb158-32"><a href="盒子模型.html#cb158-32" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb158-33"><a href="盒子模型.html#cb158-33" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 因为段落没有width属性，所以padding不会撑开盒子 */</span></span>
+<span id="cb158-34"><a href="盒子模型.html#cb158-34" aria-hidden="true" tabindex="-1"></a>            <span class="kw">padding</span>: <span class="dv">0</span> <span class="dv">28</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb158-35"><a href="盒子模型.html#cb158-35" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin-top</span>: <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb158-36"><a href="盒子模型.html#cb158-36" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb158-37"><a href="盒子模型.html#cb158-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-38"><a href="盒子模型.html#cb158-38" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.appraise</span> {</span>
+<span id="cb158-39"><a href="盒子模型.html#cb158-39" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">12</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb158-40"><a href="盒子模型.html#cb158-40" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">#b0b0b0</span><span class="op">;</span></span>
+<span id="cb158-41"><a href="盒子模型.html#cb158-41" aria-hidden="true" tabindex="-1"></a>            <span class="kw">padding</span>: <span class="dv">0</span> <span class="dv">28</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb158-42"><a href="盒子模型.html#cb158-42" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin-top</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb158-43"><a href="盒子模型.html#cb158-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-44"><a href="盒子模型.html#cb158-44" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb158-45"><a href="盒子模型.html#cb158-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-46"><a href="盒子模型.html#cb158-46" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.info</span> {</span>
+<span id="cb158-47"><a href="盒子模型.html#cb158-47" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb158-48"><a href="盒子模型.html#cb158-48" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin-top</span>: <span class="dv">15</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb158-49"><a href="盒子模型.html#cb158-49" aria-hidden="true" tabindex="-1"></a>            <span class="kw">padding</span>: <span class="dv">0</span> <span class="dv">28</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb158-50"><a href="盒子模型.html#cb158-50" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb158-51"><a href="盒子模型.html#cb158-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-52"><a href="盒子模型.html#cb158-52" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.info</span> h4 {</span>
+<span id="cb158-53"><a href="盒子模型.html#cb158-53" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">inline-block</span><span class="op">;</span></span>
+<span id="cb158-54"><a href="盒子模型.html#cb158-54" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 文字不加粗 */</span></span>
+<span id="cb158-55"><a href="盒子模型.html#cb158-55" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-weight</span>: <span class="dv">400</span><span class="op">;</span></span>
+<span id="cb158-56"><a href="盒子模型.html#cb158-56" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb158-57"><a href="盒子模型.html#cb158-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-58"><a href="盒子模型.html#cb158-58" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.info</span> span {</span>
+<span id="cb158-59"><a href="盒子模型.html#cb158-59" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">#ff6700</span><span class="op">;</span></span>
+<span id="cb158-60"><a href="盒子模型.html#cb158-60" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb158-61"><a href="盒子模型.html#cb158-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-62"><a href="盒子模型.html#cb158-62" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.info</span> em {</span>
+<span id="cb158-63"><a href="盒子模型.html#cb158-63" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-style</span>: <span class="dv">normal</span><span class="op">;</span></span>
+<span id="cb158-64"><a href="盒子模型.html#cb158-64" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">#ebe4e0</span><span class="op">;</span></span>
+<span id="cb158-65"><a href="盒子模型.html#cb158-65" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">0</span> <span class="dv">6</span><span class="dt">px</span> <span class="dv">0</span> <span class="dv">15</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb158-66"><a href="盒子模型.html#cb158-66" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb158-67"><a href="盒子模型.html#cb158-67" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb158-68"><a href="盒子模型.html#cb158-68" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb158-69"><a href="盒子模型.html#cb158-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-70"><a href="盒子模型.html#cb158-70" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb158-71"><a href="盒子模型.html#cb158-71" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;box&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb158-72"><a href="盒子模型.html#cb158-72" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;../../html_css_material-master/第五天/images/img.jpg&quot;</span><span class="kw">&gt;&lt;/a&gt;</span></span>
+<span id="cb158-73"><a href="盒子模型.html#cb158-73" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;p</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;review&quot;</span><span class="kw">&gt;</span>快递牛，整体不错蓝牙可以说秒连。红米给力<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb158-74"><a href="盒子模型.html#cb158-74" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;appraise&quot;</span><span class="kw">&gt;</span>来自于117384232的评价<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb158-75"><a href="盒子模型.html#cb158-75" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;info&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb158-76"><a href="盒子模型.html#cb158-76" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;h4&gt;&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Redmi AirDots真无线...<span class="kw">&lt;/a&gt;&lt;/h4&gt;</span></span>
+<span id="cb158-77"><a href="盒子模型.html#cb158-77" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;em&gt;</span>|<span class="kw">&lt;/em&gt;</span></span>
+<span id="cb158-78"><a href="盒子模型.html#cb158-78" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;span&gt;</span>99.9元<span class="kw">&lt;/span&gt;</span></span>
+<span id="cb158-79"><a href="盒子模型.html#cb158-79" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb158-80"><a href="盒子模型.html#cb158-80" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb158-81"><a href="盒子模型.html#cb158-81" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<p>本案例总结：</p>
+<p>1.布局为啥用不同盒子,我只想用div ?</p>
+<p>标签都是有语义的,合理的地方用合理的标签。比如产品标题就用h，大量文字段落就用p</p>
+<p>2.为啥用辣么多类名?</p>
+<p>类名就是给每个盒子起了一个名字,可以更好的找到这个盒子,选取盒子更容易,后期维护也方便。</p>
+<p>3.到底用margin还是padding ?</p>
+<p>大部分情况两个可以混用，两者各有优缺点，但是根据实际情况，总是有更简单的方法实现。（上用margin-top 左右用padding）</p>
+<p>4.自己做没有思路?</p>
+<p>布局有很多种实现方式，同学们可以开始先模仿我的写法，然后再做出自己的风格。最后同学们一定多运用辅助工具,比如屏幕画笔,ps等等</p>
+</div>
+<div id="快报模块" class="section level3" number="14.18.4">
+<h3><span class="header-section-number">14.18.4</span> 快报模块</h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-39"></span>
+<img src="fig/CSS/19-23.jpg" alt="快报模块效果" width="418" />
+<p class="caption">
+图14.8: 快报模块效果
+</p>
+</div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb159-1"><a href="盒子模型.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb159-2"><a href="盒子模型.html#cb159-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb159-3"><a href="盒子模型.html#cb159-3" aria-hidden="true" tabindex="-1"></a>        <span class="op">*</span> {</span>
+<span id="cb159-4"><a href="盒子模型.html#cb159-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb159-5"><a href="盒子模型.html#cb159-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">padding</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb159-6"><a href="盒子模型.html#cb159-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb159-7"><a href="盒子模型.html#cb159-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb159-8"><a href="盒子模型.html#cb159-8" aria-hidden="true" tabindex="-1"></a>        li {</span>
+<span id="cb159-9"><a href="盒子模型.html#cb159-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">list-style</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb159-10"><a href="盒子模型.html#cb159-10" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb159-11"><a href="盒子模型.html#cb159-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb159-12"><a href="盒子模型.html#cb159-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> {</span>
+<span id="cb159-13"><a href="盒子模型.html#cb159-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">248</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb159-14"><a href="盒子模型.html#cb159-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">163</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb159-15"><a href="盒子模型.html#cb159-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#ccc</span><span class="op">;</span></span>
+<span id="cb159-16"><a href="盒子模型.html#cb159-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">100</span><span class="dt">px</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb159-17"><a href="盒子模型.html#cb159-17" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb159-18"><a href="盒子模型.html#cb159-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb159-19"><a href="盒子模型.html#cb159-19" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> h3 {</span>
+<span id="cb159-20"><a href="盒子模型.html#cb159-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">32</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb159-21"><a href="盒子模型.html#cb159-21" aria-hidden="true" tabindex="-1"></a>            <span class="kw">border-bottom</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">dotted</span> <span class="cn">#ccc</span><span class="op">;</span></span>
+<span id="cb159-22"><a href="盒子模型.html#cb159-22" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb159-23"><a href="盒子模型.html#cb159-23" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 文字不加粗 */</span></span>
+<span id="cb159-24"><a href="盒子模型.html#cb159-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-weight</span>: <span class="dv">400</span><span class="op">;</span></span>
+<span id="cb159-25"><a href="盒子模型.html#cb159-25" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 文字垂直居中 */</span></span>
+<span id="cb159-26"><a href="盒子模型.html#cb159-26" aria-hidden="true" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">32</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb159-27"><a href="盒子模型.html#cb159-27" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 用margin回撑开盒子，这里没有指定宽度，yongpadding不会撑开盒子 */</span></span>
+<span id="cb159-28"><a href="盒子模型.html#cb159-28" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 可以使用margin试试效果 */</span></span>
+<span id="cb159-29"><a href="盒子模型.html#cb159-29" aria-hidden="true" tabindex="-1"></a>            <span class="kw">padding-left</span>: <span class="dv">15</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb159-30"><a href="盒子模型.html#cb159-30" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb159-31"><a href="盒子模型.html#cb159-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb159-32"><a href="盒子模型.html#cb159-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> ul li a {</span>
+<span id="cb159-33"><a href="盒子模型.html#cb159-33" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">12</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb159-34"><a href="盒子模型.html#cb159-34" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">#ccc</span><span class="op">;</span></span>
+<span id="cb159-35"><a href="盒子模型.html#cb159-35" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb159-36"><a href="盒子模型.html#cb159-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb159-37"><a href="盒子模型.html#cb159-37" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb159-38"><a href="盒子模型.html#cb159-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb159-39"><a href="盒子模型.html#cb159-39" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> ul li a<span class="in">:hover</span> {</span>
+<span id="cb159-40"><a href="盒子模型.html#cb159-40" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-decoration</span>: <span class="dv">underline</span><span class="op">;</span></span>
+<span id="cb159-41"><a href="盒子模型.html#cb159-41" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb159-42"><a href="盒子模型.html#cb159-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb159-43"><a href="盒子模型.html#cb159-43" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> ul li {</span>
+<span id="cb159-44"><a href="盒子模型.html#cb159-44" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">23</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb159-45"><a href="盒子模型.html#cb159-45" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 垂直居中 */</span></span>
+<span id="cb159-46"><a href="盒子模型.html#cb159-46" aria-hidden="true" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">23</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb159-47"><a href="盒子模型.html#cb159-47" aria-hidden="true" tabindex="-1"></a>            <span class="kw">padding-left</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb159-48"><a href="盒子模型.html#cb159-48" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb159-49"><a href="盒子模型.html#cb159-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb159-50"><a href="盒子模型.html#cb159-50" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> ul {</span>
+<span id="cb159-51"><a href="盒子模型.html#cb159-51" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin-top</span>: <span class="dv">7</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb159-52"><a href="盒子模型.html#cb159-52" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb159-53"><a href="盒子模型.html#cb159-53" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb159-54"><a href="盒子模型.html#cb159-54" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb159-55"><a href="盒子模型.html#cb159-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb159-56"><a href="盒子模型.html#cb159-56" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb159-57"><a href="盒子模型.html#cb159-57" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;box&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb159-58"><a href="盒子模型.html#cb159-58" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;h3&gt;</span>品优购快报<span class="kw">&lt;/h3&gt;</span></span>
+<span id="cb159-59"><a href="盒子模型.html#cb159-59" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;ul&gt;</span></span>
+<span id="cb159-60"><a href="盒子模型.html#cb159-60" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;li&gt;&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>【特惠】<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb159-61"><a href="盒子模型.html#cb159-61" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;li&gt;&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>【特惠】<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb159-62"><a href="盒子模型.html#cb159-62" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;li&gt;&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>【特惠】<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb159-63"><a href="盒子模型.html#cb159-63" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;li&gt;&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>【特惠】<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb159-64"><a href="盒子模型.html#cb159-64" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;li&gt;&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>【特惠】<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb159-65"><a href="盒子模型.html#cb159-65" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb159-66"><a href="盒子模型.html#cb159-66" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb159-67"><a href="盒子模型.html#cb159-67" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="css的三大特性.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="浮动.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
