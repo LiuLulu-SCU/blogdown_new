@@ -16,7 +16,7 @@ image:
   focal_point: ""
   preview_only: false
 links:
-- name: 摘要信息
+- name: ISPOR收录页面
   url: https://www.ispor.org/heor-resources/presentations-database/presentation/euro2021-3409/113801
   
   
