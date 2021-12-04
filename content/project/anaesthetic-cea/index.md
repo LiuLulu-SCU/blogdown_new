@@ -10,7 +10,7 @@ links:
   name: Follow
   url: https://twitter.com/georgecushen
 slides: example
-summary: An example of using the in-built project page.
+summary:
 tags:
 - CEA
 title: 麻醉药的成本-效益分析和预算影响分析

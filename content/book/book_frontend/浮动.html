@@ -363,7 +363,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.18.4" data-path="盒子模型.html"><a href="盒子模型.html#快报模块"><i class="fa fa-check"></i><b>14.18.4</b> 快报模块</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="浮动.html"><a href="浮动.html"><i class="fa fa-check"></i><b>15</b> 浮动</a></li>
+<li class="chapter" data-level="15" data-path="浮动.html"><a href="浮动.html"><i class="fa fa-check"></i><b>15</b> 浮动</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="浮动.html"><a href="浮动.html#传统网页布局的三种方式"><i class="fa fa-check"></i><b>15.1</b> 传统网页布局的三种方式</a></li>
+<li class="chapter" data-level="15.2" data-path="浮动.html"><a href="浮动.html#标准流普通流文档流"><i class="fa fa-check"></i><b>15.2</b> 标准流（普通流/文档流）</a></li>
+<li class="chapter" data-level="15.3" data-path="浮动.html"><a href="浮动.html#为什么需要浮动"><i class="fa fa-check"></i><b>15.3</b> 为什么需要浮动</a></li>
+<li class="chapter" data-level="15.4" data-path="浮动.html"><a href="浮动.html#什么是浮动"><i class="fa fa-check"></i><b>15.4</b> 什么是浮动</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="浮动.html"><a href="浮动.html#脱标"><i class="fa fa-check"></i><b>15.4.1</b> 脱标</a></li>
+<li class="chapter" data-level="15.4.2" data-path="浮动.html"><a href="浮动.html#浮动盒子一行显示"><i class="fa fa-check"></i><b>15.4.2</b> 浮动盒子一行显示</a></li>
+<li class="chapter" data-level="15.4.3" data-path="浮动.html"><a href="浮动.html#浮动元素具有行内块特性"><i class="fa fa-check"></i><b>15.4.3</b> 浮动元素具有行内块特性</a></li>
+</ul></li>
+<li class="chapter" data-level="15.5" data-path="浮动.html"><a href="浮动.html#浮动元素标准流经常和标准流父亲搭配使用"><i class="fa fa-check"></i><b>15.5</b> 浮动元素标准流经常和标准流父亲搭配使用</a></li>
+<li class="chapter" data-level="15.6" data-path="浮动.html"><a href="浮动.html#常见的网页布局"><i class="fa fa-check"></i><b>15.6</b> 常见的网页布局</a></li>
+<li class="chapter" data-level="15.7" data-path="浮动.html"><a href="浮动.html#浮动布局注意点"><i class="fa fa-check"></i><b>15.7</b> 浮动布局注意点</a></li>
+<li class="chapter" data-level="15.8" data-path="浮动.html"><a href="浮动.html#清除浮动"><i class="fa fa-check"></i><b>15.8</b> 清除浮动</a>
+<ul>
+<li class="chapter" data-level="15.8.1" data-path="浮动.html"><a href="浮动.html#为什么要清除浮动"><i class="fa fa-check"></i><b>15.8.1</b> 为什么要清除浮动</a></li>
+<li class="chapter" data-level="15.8.2" data-path="浮动.html"><a href="浮动.html#清除浮动的本质"><i class="fa fa-check"></i><b>15.8.2</b> 清除浮动的本质</a></li>
+</ul></li>
+</ul></li>
 <li class="part"><span><b>III 附录</b></span></li>
 <li class="chapter" data-level="16" data-path="其他软件.html"><a href="其他软件.html"><i class="fa fa-check"></i><b>16</b> 其他软件</a>
 <ul>
@@ -400,7 +419,477 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="浮动" class="section level1" number="15">
 <h1><span class="header-section-number">15</span> 浮动</h1>
+<div id="传统网页布局的三种方式" class="section level2" number="15.1">
+<h2><span class="header-section-number">15.1</span> 传统网页布局的三种方式</h2>
+<p>网页布局的本质-用CSS来摆放盒子，把盒子摆放到相应的位置。</p>
+<p>CSS提供了三种传统的布局方式（如何对盒子进行排列顺序）</p>
+<ul>
+<li><p>普通流（标准流）</p></li>
+<li><p>浮动</p></li>
+<li><p>定位</p></li>
+</ul>
+</div>
+<div id="标准流普通流文档流" class="section level2" number="15.2">
+<h2><span class="header-section-number">15.2</span> 标准流（普通流/文档流）</h2>
+<p>所谓的标准流:就是块级元素或行内元素按照规定好默认方式排列.</p>
+<ol style="list-style-type: decimal">
+<li>块级元素会独占一行，从上向下顺序排列。</li>
+</ol>
+<p>常用元素:div、hr、p、h1~h6、ul、ol、dl、form、table</p>
+<ol start="2" style="list-style-type: decimal">
+<li>行内元素会按照顺序，从左到右顺序排列，碰到父元素边缘则自动换行。</li>
+</ol>
+<p>常用元素: span、a、 i、em等</p>
+<p>以上都是标准流布局，我们前面学习的就是标准流，<strong>标准流是最基本的布局方式。</strong></p>
+<p>这三种布局方式都是用来摆放盒子的，盒子摆放到合适位置，布局自然就完成了。</p>
+<p>注意︰<strong>实际开发中，一个页面基本都包含了这三种布局方式</strong>。</p>
+</div>
+<div id="为什么需要浮动" class="section level2" number="15.3">
+<h2><span class="header-section-number">15.3</span> 为什么需要浮动</h2>
+<p>提问：我们用标准流能实现以下效果吗？</p>
+<ol style="list-style-type: decimal">
+<li>如何让多个块级盒子（div）水平排列成一行？</li>
+</ol>
+<p><img src="fig/CSS/20-01.jpg" width="410" style="display: block; margin: auto;" /></p>
+<p>比较难，虽然转换为行内块元素可以实现一行显示，但是他们之间会有大的空白缝隙，很难控制。</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="浮动.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb1-2"><a href="浮动.html#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb1-3"><a href="浮动.html#cb1-3" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb1-4"><a href="浮动.html#cb1-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">150</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb1-5"><a href="浮动.html#cb1-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb1-6"><a href="浮动.html#cb1-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb1-7"><a href="浮动.html#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 转化为行内块元素，就可以把多个div放在一行上面 */</span></span>
+<span id="cb1-8"><a href="浮动.html#cb1-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">inline-block</span><span class="op">;</span></span>
+<span id="cb1-9"><a href="浮动.html#cb1-9" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb1-10"><a href="浮动.html#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb1-11"><a href="浮动.html#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb1-12"><a href="浮动.html#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="浮动.html#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb1-14"><a href="浮动.html#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>1<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb1-15"><a href="浮动.html#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>2<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb1-16"><a href="浮动.html#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>3<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb1-17"><a href="浮动.html#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<p>提问：我们用标准流能很方便的实现如下效果吗？</p>
+<ol start="2" style="list-style-type: decimal">
+<li>如何实现两个盒子左右对齐。</li>
+</ol>
+<p><img src="fig/CSS/20-02.jpg" width="364" style="display: block; margin: auto;" /></p>
+<p>总结︰有很多的布局效果，标准流没有办法完成，此时就可以利用浮动完成布局。因为浮动可以改变元素标签默认的排列方式.</p>
+<p>浮动最典型的应用:可以让多个块级元素一行内排列显示。</p>
+<p>网页布局第一准则∶<strong>多个块级元素纵向排列找标准流，多个块级元素横向排列找浮动。</strong></p>
+</div>
+<div id="什么是浮动" class="section level2" number="15.4">
+<h2><span class="header-section-number">15.4</span> 什么是浮动</h2>
+<p>float属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块或另一个浮动框的边缘。</p>
+<p><strong>语法</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="浮动.html#cb2-1" aria-hidden="true" tabindex="-1"></a>选择器{ float:属性值;}</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="center">属性值</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">none</td>
+<td align="center">元素不浮动</td>
+</tr>
+<tr class="even">
+<td align="center">left</td>
+<td align="center">元素左浮动</td>
+</tr>
+<tr class="odd">
+<td align="center">right</td>
+<td align="center">元素右浮动</td>
+</tr>
+</tbody>
+</table>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="浮动.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb3-2"><a href="浮动.html#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb3-3"><a href="浮动.html#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.left</span><span class="op">,</span></span>
+<span id="cb3-4"><a href="浮动.html#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.right</span> {</span>
+<span id="cb3-5"><a href="浮动.html#cb3-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb3-6"><a href="浮动.html#cb3-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb3-7"><a href="浮动.html#cb3-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb3-8"><a href="浮动.html#cb3-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">float</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb3-9"><a href="浮动.html#cb3-9" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb3-10"><a href="浮动.html#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="浮动.html#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.right</span> {</span>
+<span id="cb3-12"><a href="浮动.html#cb3-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">float</span>: <span class="dv">right</span><span class="op">;</span></span>
+<span id="cb3-13"><a href="浮动.html#cb3-13" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb3-14"><a href="浮动.html#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb3-15"><a href="浮动.html#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb3-16"><a href="浮动.html#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="浮动.html#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb3-18"><a href="浮动.html#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;left&quot;</span><span class="kw">&gt;</span>左青龙<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb3-19"><a href="浮动.html#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;right&quot;</span><span class="kw">&gt;</span>右白虎<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb3-20"><a href="浮动.html#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<p>##浮动特性</p>
+<p>加了浮动之后的元素,会具有很多特性,需要我们掌握的。</p>
+<p>1．浮动元素会<strong>脱离标准流(脱标)</strong></p>
+<p>2．浮动的元素会一行内显示并且元素顶部对齐</p>
+<p>3．浮动的元素会具有行内块元素的特性</p>
+<div id="脱标" class="section level3" number="15.4.1">
+<h3><span class="header-section-number">15.4.1</span> 脱标</h3>
+<p>设置浮动（float）的元素最重要的的特性：</p>
+<ol style="list-style-type: decimal">
+<li><p>脱离标准普通流的控制（浮）移动到指定位置（动），俗称脱标。</p></li>
+<li><p>浮动的盒子<strong>不再保留原先的位置</strong>。</p></li>
+</ol>
+<p><strong>例子</strong></p>
+<p><img src="fig/CSS/20-10.jpg" width="367" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="浮动.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb4-2"><a href="浮动.html#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb4-3"><a href="浮动.html#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 设置了浮动（float）的元素会： */</span></span>
+<span id="cb4-4"><a href="浮动.html#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 1.脱离标准普通流的控制（浮）移动到指定位置（动）。 */</span></span>
+<span id="cb4-5"><a href="浮动.html#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 2.浮动的盒子不在保留在原先位置 */</span></span>
+<span id="cb4-6"><a href="浮动.html#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box1</span> {</span>
+<span id="cb4-7"><a href="浮动.html#cb4-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-8"><a href="浮动.html#cb4-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-9"><a href="浮动.html#cb4-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb4-10"><a href="浮动.html#cb4-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">float</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb4-11"><a href="浮动.html#cb4-11" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb4-12"><a href="浮动.html#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="浮动.html#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box2</span> {</span>
+<span id="cb4-14"><a href="浮动.html#cb4-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-15"><a href="浮动.html#cb4-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-16"><a href="浮动.html#cb4-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="fu">rgb(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">153</span><span class="op">,</span> <span class="dv">255</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-17"><a href="浮动.html#cb4-17" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb4-18"><a href="浮动.html#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb4-19"><a href="浮动.html#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb4-20"><a href="浮动.html#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="浮动.html#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb4-22"><a href="浮动.html#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;box1&quot;</span><span class="kw">&gt;</span>浮动的盒子<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb4-23"><a href="浮动.html#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;box2&quot;</span><span class="kw">&gt;</span>标准流的盒子<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb4-24"><a href="浮动.html#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="浮动盒子一行显示" class="section level3" number="15.4.2">
+<h3><span class="header-section-number">15.4.2</span> 浮动盒子一行显示</h3>
+<p>如果多个盒子都设置了浮动，则它们会按照属性值一行内显示并且顶端对齐排列。</p>
+<p>注意∶浮动的元素是互相贴靠在一起的(不会有缝隙），如果父级宽度装不下这些浮动的盒子，多出的盒子会另起一行对齐。</p>
+<p><strong>例子</strong></p>
+<p><img src="fig/CSS/20-11.jpg" width="612" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="浮动.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb5-2"><a href="浮动.html#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb5-3"><a href="浮动.html#cb5-3" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb5-4"><a href="浮动.html#cb5-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">float</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb5-5"><a href="浮动.html#cb5-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb5-6"><a href="浮动.html#cb5-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb5-7"><a href="浮动.html#cb5-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb5-8"><a href="浮动.html#cb5-8" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb5-9"><a href="浮动.html#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="浮动.html#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.two</span> {</span>
+<span id="cb5-11"><a href="浮动.html#cb5-11" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">purple</span><span class="op">;</span></span>
+<span id="cb5-12"><a href="浮动.html#cb5-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">250</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb5-13"><a href="浮动.html#cb5-13" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb5-14"><a href="浮动.html#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="浮动.html#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.four</span> {</span>
+<span id="cb5-16"><a href="浮动.html#cb5-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">skyblue</span><span class="op">;</span></span>
+<span id="cb5-17"><a href="浮动.html#cb5-17" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb5-18"><a href="浮动.html#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb5-19"><a href="浮动.html#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb5-20"><a href="浮动.html#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="浮动.html#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb5-22"><a href="浮动.html#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>1<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb5-23"><a href="浮动.html#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;two&quot;</span><span class="kw">&gt;</span>2<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb5-24"><a href="浮动.html#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>3<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb5-25"><a href="浮动.html#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;four&quot;</span><span class="kw">&gt;</span>4<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb5-26"><a href="浮动.html#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="浮动元素具有行内块特性" class="section level3" number="15.4.3">
+<h3><span class="header-section-number">15.4.3</span> 浮动元素具有行内块特性</h3>
+<p>任何元素都可以浮动。不管原先是什么模式的元素（块级元素，行内元素），添加浮动之后具有行内块元素相似的特性。</p>
+<p>如果块级盒子没有设置宽度，默认宽度和父级一样宽，但是添加浮动后，它的大小根据内容来决定</p>
+<p>浮动的盒子中间是没有缝隙的，是紧换着一起的</p>
+<p>行内元素同理，可以设置高度和宽度。</p>
+<p><strong>例子</strong>
+<img src="fig/CSS/20-12.jpg" width="702" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="浮动.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb6-2"><a href="浮动.html#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb6-3"><a href="浮动.html#cb6-3" aria-hidden="true" tabindex="-1"></a>        span<span class="op">,</span></span>
+<span id="cb6-4"><a href="浮动.html#cb6-4" aria-hidden="true" tabindex="-1"></a>        div {</span>
+<span id="cb6-5"><a href="浮动.html#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb6-6"><a href="浮动.html#cb6-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb6-7"><a href="浮动.html#cb6-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb6-8"><a href="浮动.html#cb6-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">float</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb6-9"><a href="浮动.html#cb6-9" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb6-10"><a href="浮动.html#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 行内块元素如果没有指定宽度，其宽度由文字内容多少决定 */</span></span>
+<span id="cb6-11"><a href="浮动.html#cb6-11" aria-hidden="true" tabindex="-1"></a>        p {</span>
+<span id="cb6-12"><a href="浮动.html#cb6-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">float</span>: <span class="dv">right</span><span class="op">;</span></span>
+<span id="cb6-13"><a href="浮动.html#cb6-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb6-14"><a href="浮动.html#cb6-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">purple</span><span class="op">;</span></span>
+<span id="cb6-15"><a href="浮动.html#cb6-15" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb6-16"><a href="浮动.html#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb6-17"><a href="浮动.html#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb6-18"><a href="浮动.html#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="浮动.html#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb6-20"><a href="浮动.html#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>span1<span class="kw">&lt;/span&gt;</span></span>
+<span id="cb6-21"><a href="浮动.html#cb6-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>span2<span class="kw">&lt;/span&gt;</span></span>
+<span id="cb6-22"><a href="浮动.html#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="浮动.html#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>div<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb6-24"><a href="浮动.html#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>p<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb6-25"><a href="浮动.html#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+</div>
+<div id="浮动元素标准流经常和标准流父亲搭配使用" class="section level2" number="15.5">
+<h2><span class="header-section-number">15.5</span> 浮动元素标准流经常和标准流父亲搭配使用</h2>
+<p>为了约束浮动元素位置，网页布局一般采取的策略是：</p>
+<p><strong>先用标准流的父亲元素排列上下位置，之后内部子元素采取浮动排列左右位置，符合网页布局第一准则</strong></p>
+<p><strong>网页布局第二准则：先设置盒子大小，再设置盒子的位置。</strong></p>
+<p><img src="fig/CSS/20-15.jpg" width="572" style="display: block; margin: auto;" /></p>
+<p><strong>例子</strong></p>
+<p><img src="fig/CSS/20-16.jpg" width="756" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="浮动.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb7-2"><a href="浮动.html#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb7-3"><a href="浮动.html#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> {</span>
+<span id="cb7-4"><a href="浮动.html#cb7-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">1200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb7-5"><a href="浮动.html#cb7-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">460</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb7-6"><a href="浮动.html#cb7-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb7-7"><a href="浮动.html#cb7-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">0</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb7-8"><a href="浮动.html#cb7-8" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb7-9"><a href="浮动.html#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="浮动.html#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.left</span> {</span>
+<span id="cb7-11"><a href="浮动.html#cb7-11" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">230</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb7-12"><a href="浮动.html#cb7-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">460</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb7-13"><a href="浮动.html#cb7-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">purple</span><span class="op">;</span></span>
+<span id="cb7-14"><a href="浮动.html#cb7-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">float</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb7-15"><a href="浮动.html#cb7-15" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb7-16"><a href="浮动.html#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="浮动.html#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.right</span> {</span>
+<span id="cb7-18"><a href="浮动.html#cb7-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">970</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb7-19"><a href="浮动.html#cb7-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">460</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb7-20"><a href="浮动.html#cb7-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">skyblue</span><span class="op">;</span></span>
+<span id="cb7-21"><a href="浮动.html#cb7-21" aria-hidden="true" tabindex="-1"></a>            <span class="kw">float</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb7-22"><a href="浮动.html#cb7-22" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb7-23"><a href="浮动.html#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb7-24"><a href="浮动.html#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb7-25"><a href="浮动.html#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-26"><a href="浮动.html#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb7-27"><a href="浮动.html#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;box&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb7-28"><a href="浮动.html#cb7-28" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;left&quot;</span><span class="kw">&gt;</span>左侧<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb7-29"><a href="浮动.html#cb7-29" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;right&quot;</span><span class="kw">&gt;</span>右侧<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb7-30"><a href="浮动.html#cb7-30" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb7-31"><a href="浮动.html#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<p><strong>例子2</strong></p>
+<p><img src="fig/CSS/20-17.jpg" width="846" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="浮动.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb8-2"><a href="浮动.html#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb8-3"><a href="浮动.html#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="op">*</span> {</span>
+<span id="cb8-4"><a href="浮动.html#cb8-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb8-5"><a href="浮动.html#cb8-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">padding</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb8-6"><a href="浮动.html#cb8-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb8-7"><a href="浮动.html#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="浮动.html#cb8-8" aria-hidden="true" tabindex="-1"></a>        li {</span>
+<span id="cb8-9"><a href="浮动.html#cb8-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">list-style</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb8-10"><a href="浮动.html#cb8-10" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb8-11"><a href="浮动.html#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="浮动.html#cb8-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> {</span>
+<span id="cb8-13"><a href="浮动.html#cb8-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">285</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb8-14"><a href="浮动.html#cb8-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">1226</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb8-15"><a href="浮动.html#cb8-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb8-16"><a href="浮动.html#cb8-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">0</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb8-17"><a href="浮动.html#cb8-17" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb8-18"><a href="浮动.html#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="浮动.html#cb8-19" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> li {</span>
+<span id="cb8-20"><a href="浮动.html#cb8-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">296</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb8-21"><a href="浮动.html#cb8-21" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">285</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb8-22"><a href="浮动.html#cb8-22" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">purple</span><span class="op">;</span></span>
+<span id="cb8-23"><a href="浮动.html#cb8-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">float</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb8-24"><a href="浮动.html#cb8-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin-right</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb8-25"><a href="浮动.html#cb8-25" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb8-26"><a href="浮动.html#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-27"><a href="浮动.html#cb8-27" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 这里必须写 .box .last 要注意权重的问题 */</span></span>
+<span id="cb8-28"><a href="浮动.html#cb8-28" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> <span class="fu">.last</span> {</span>
+<span id="cb8-29"><a href="浮动.html#cb8-29" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin-right</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb8-30"><a href="浮动.html#cb8-30" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb8-31"><a href="浮动.html#cb8-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb8-32"><a href="浮动.html#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb8-33"><a href="浮动.html#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-34"><a href="浮动.html#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb8-35"><a href="浮动.html#cb8-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;ul</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;box&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb8-36"><a href="浮动.html#cb8-36" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;li&gt;</span>1<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb8-37"><a href="浮动.html#cb8-37" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;li&gt;</span>2<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb8-38"><a href="浮动.html#cb8-38" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;li&gt;</span>3<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb8-39"><a href="浮动.html#cb8-39" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;li</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;last&quot;</span><span class="kw">&gt;</span>4<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb8-40"><a href="浮动.html#cb8-40" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb8-41"><a href="浮动.html#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<p><strong>例子3</strong></p>
+<p><img src="fig/CSS/20-18.jpg" width="714" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="浮动.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb9-2"><a href="浮动.html#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb9-3"><a href="浮动.html#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> {</span>
+<span id="cb9-4"><a href="浮动.html#cb9-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">1226</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb9-5"><a href="浮动.html#cb9-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">615</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb9-6"><a href="浮动.html#cb9-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb9-7"><a href="浮动.html#cb9-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">0</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb9-8"><a href="浮动.html#cb9-8" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb9-9"><a href="浮动.html#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="浮动.html#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.left</span> {</span>
+<span id="cb9-11"><a href="浮动.html#cb9-11" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">234</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb9-12"><a href="浮动.html#cb9-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">615</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb9-13"><a href="浮动.html#cb9-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">purple</span><span class="op">;</span></span>
+<span id="cb9-14"><a href="浮动.html#cb9-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">float</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb9-15"><a href="浮动.html#cb9-15" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb9-16"><a href="浮动.html#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="浮动.html#cb9-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.right</span> {</span>
+<span id="cb9-18"><a href="浮动.html#cb9-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">992</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb9-19"><a href="浮动.html#cb9-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">615</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb9-20"><a href="浮动.html#cb9-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">skyblue</span><span class="op">;</span></span>
+<span id="cb9-21"><a href="浮动.html#cb9-21" aria-hidden="true" tabindex="-1"></a>            <span class="kw">float</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb9-22"><a href="浮动.html#cb9-22" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb9-23"><a href="浮动.html#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="浮动.html#cb9-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.right&gt;div</span> {</span>
+<span id="cb9-25"><a href="浮动.html#cb9-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">234</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb9-26"><a href="浮动.html#cb9-26" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb9-27"><a href="浮动.html#cb9-27" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb9-28"><a href="浮动.html#cb9-28" aria-hidden="true" tabindex="-1"></a>            <span class="kw">float</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb9-29"><a href="浮动.html#cb9-29" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin-left</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb9-30"><a href="浮动.html#cb9-30" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin-bottom</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb9-31"><a href="浮动.html#cb9-31" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb9-32"><a href="浮动.html#cb9-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb9-33"><a href="浮动.html#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb9-34"><a href="浮动.html#cb9-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-35"><a href="浮动.html#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb9-36"><a href="浮动.html#cb9-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;box&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb9-37"><a href="浮动.html#cb9-37" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;left&quot;</span><span class="kw">&gt;</span>左青龙<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb9-38"><a href="浮动.html#cb9-38" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;right&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb9-39"><a href="浮动.html#cb9-39" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div&gt;</span>1<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb9-40"><a href="浮动.html#cb9-40" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div&gt;</span>2<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb9-41"><a href="浮动.html#cb9-41" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div&gt;</span>3<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb9-42"><a href="浮动.html#cb9-42" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div&gt;</span>4<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb9-43"><a href="浮动.html#cb9-43" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div&gt;</span>5<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb9-44"><a href="浮动.html#cb9-44" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div&gt;</span>6<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb9-45"><a href="浮动.html#cb9-45" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div&gt;</span>7<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb9-46"><a href="浮动.html#cb9-46" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div&gt;</span>8<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb9-47"><a href="浮动.html#cb9-47" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb9-48"><a href="浮动.html#cb9-48" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb9-49"><a href="浮动.html#cb9-49" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="常见的网页布局" class="section level2" number="15.6">
+<h2><span class="header-section-number">15.6</span> 常见的网页布局</h2>
+<p><img src="fig/CSS/20-20.jpg" width="448" style="display: block; margin: auto;" /></p>
+<p><img src="fig/CSS/20-21.jpg" width="308" style="display: block; margin: auto;" /></p>
+<p><strong>例子</strong></p>
+<p><img src="fig/CSS/20-22.jpg" width="1080" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="浮动.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb10-2"><a href="浮动.html#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb10-3"><a href="浮动.html#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="op">*</span> {</span>
+<span id="cb10-4"><a href="浮动.html#cb10-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-5"><a href="浮动.html#cb10-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">padding</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-6"><a href="浮动.html#cb10-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb10-7"><a href="浮动.html#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="浮动.html#cb10-8" aria-hidden="true" tabindex="-1"></a>        li {</span>
+<span id="cb10-9"><a href="浮动.html#cb10-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">list-style</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb10-10"><a href="浮动.html#cb10-10" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb10-11"><a href="浮动.html#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="浮动.html#cb10-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.top</span> {</span>
+<span id="cb10-13"><a href="浮动.html#cb10-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">50</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb10-14"><a href="浮动.html#cb10-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">gray</span><span class="op">;</span></span>
+<span id="cb10-15"><a href="浮动.html#cb10-15" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb10-16"><a href="浮动.html#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="浮动.html#cb10-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.banner</span> {</span>
+<span id="cb10-18"><a href="浮动.html#cb10-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">980</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb10-19"><a href="浮动.html#cb10-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">150</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb10-20"><a href="浮动.html#cb10-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">gray</span><span class="op">;</span></span>
+<span id="cb10-21"><a href="浮动.html#cb10-21" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">10</span><span class="dt">px</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb10-22"><a href="浮动.html#cb10-22" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb10-23"><a href="浮动.html#cb10-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-24"><a href="浮动.html#cb10-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> {</span>
+<span id="cb10-25"><a href="浮动.html#cb10-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">980</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb10-26"><a href="浮动.html#cb10-26" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin</span>: <span class="dv">0</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb10-27"><a href="浮动.html#cb10-27" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb10-28"><a href="浮动.html#cb10-28" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb10-29"><a href="浮动.html#cb10-29" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb10-30"><a href="浮动.html#cb10-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-31"><a href="浮动.html#cb10-31" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> li {</span>
+<span id="cb10-32"><a href="浮动.html#cb10-32" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">237</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb10-33"><a href="浮动.html#cb10-33" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb10-34"><a href="浮动.html#cb10-34" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">gray</span><span class="op">;</span></span>
+<span id="cb10-35"><a href="浮动.html#cb10-35" aria-hidden="true" tabindex="-1"></a>            <span class="kw">float</span>: <span class="dv">left</span><span class="op">;</span></span>
+<span id="cb10-36"><a href="浮动.html#cb10-36" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin-right</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb10-37"><a href="浮动.html#cb10-37" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb10-38"><a href="浮动.html#cb10-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-39"><a href="浮动.html#cb10-39" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.box</span> <span class="fu">.last</span> {</span>
+<span id="cb10-40"><a href="浮动.html#cb10-40" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin-right</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-41"><a href="浮动.html#cb10-41" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb10-42"><a href="浮动.html#cb10-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-43"><a href="浮动.html#cb10-43" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.footer</span> {</span>
+<span id="cb10-44"><a href="浮动.html#cb10-44" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb10-45"><a href="浮动.html#cb10-45" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">gray</span><span class="op">;</span></span>
+<span id="cb10-46"><a href="浮动.html#cb10-46" aria-hidden="true" tabindex="-1"></a>            <span class="kw">margin-top</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb10-47"><a href="浮动.html#cb10-47" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb10-48"><a href="浮动.html#cb10-48" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb10-49"><a href="浮动.html#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb10-50"><a href="浮动.html#cb10-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-51"><a href="浮动.html#cb10-51" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb10-52"><a href="浮动.html#cb10-52" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;top&quot;</span><span class="kw">&gt;</span>top<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb10-53"><a href="浮动.html#cb10-53" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;banner&quot;</span><span class="kw">&gt;</span>banner<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb10-54"><a href="浮动.html#cb10-54" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;box&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb10-55"><a href="浮动.html#cb10-55" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;ul&gt;</span></span>
+<span id="cb10-56"><a href="浮动.html#cb10-56" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;li&gt;</span>1<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb10-57"><a href="浮动.html#cb10-57" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;li&gt;</span>2<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb10-58"><a href="浮动.html#cb10-58" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;li&gt;</span>3<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb10-59"><a href="浮动.html#cb10-59" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;li</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;last&quot;</span><span class="kw">&gt;</span>4<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb10-60"><a href="浮动.html#cb10-60" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb10-61"><a href="浮动.html#cb10-61" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb10-62"><a href="浮动.html#cb10-62" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;footer&quot;</span><span class="kw">&gt;</span>footer<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb10-63"><a href="浮动.html#cb10-63" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+</div>
+<div id="浮动布局注意点" class="section level2" number="15.7">
+<h2><span class="header-section-number">15.7</span> 浮动布局注意点</h2>
+<p>1.浮动和标准流的父盒子搭配。</p>
+<p>先用标准流的父元素排列上下位置,之后内部子元素采取浮动排列左右位置</p>
+<p>2.一个元素浮动了，理论上其余的兄弟元素也要浮动。</p>
+<p>一个盒子里面有多个子盒子，如果其中一个盒子浮动了，那么其他兄弟也应该浮动，以防止引起问题。浮动的盒子只会影响浮动盒子后面的标准流不会影响前面的标准流.</p>
+</div>
+<div id="清除浮动" class="section level2" number="15.8">
+<h2><span class="header-section-number">15.8</span> 清除浮动</h2>
+<div id="为什么要清除浮动" class="section level3" number="15.8.1">
+<h3><span class="header-section-number">15.8.1</span> 为什么要清除浮动</h3>
+<p>我们前面浮动元素有一个标准流的父元素,他们有一个共同的特点,都是有高度的。但是,所有的父盒子都必须有高度吗?</p>
+<p>理想中的状态,<strong>让子盒子撑开父亲.有多少孩子,我父盒子就有多高</strong>.</p>
+<p>由于父级盒子很多情况下，不方便给高度，但是子盒子浮动又不占有位置，最后父级盒子高度为0时，就会影响下面的标准流盒子。</p>
+<p>由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响。</p>
+<p><img src="fig/CSS/20-25.jpg" width="250" style="display: block; margin: auto;" /></p>
+</div>
+<div id="清除浮动的本质" class="section level3" number="15.8.2">
+<h3><span class="header-section-number">15.8.2</span> 清除浮动的本质</h3>
+<ul>
+<li>清除浮动的本质是清除浮动元素造成的影响</li>
+<li>如果父盒子本身有高度，则不需要清除浮动</li>
+<li>清除浮动之后，父级就会根据浮动的子盒子自动检测高度。父级有了高度，就不会影响下面的标准流了</li>
+</ul>
+<p><strong>语法</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb11-1"><a href="浮动.html#cb11-1" aria-hidden="true" tabindex="-1"></a>选择器 {clear;属性值;}</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="center">属性值</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">left</td>
+<td align="center">不允许左侧有浮动元素（清除左侧浮动的影响）</td>
+</tr>
+<tr class="even">
+<td align="center">right</td>
+<td align="center">不允许右侧有浮动（清除右侧浮动的影响）</td>
+</tr>
+<tr class="odd">
+<td align="center">both</td>
+<td align="center">同时清除左右两侧浮动的影响</td>
+</tr>
+</tbody>
+</table>
+<p>在实际工作中，几乎只用<strong>clear:both;</strong></p>
+<p>清除浮动的策略是：闭合浮动</p>
 
+</div>
+</div>
 </div>
 
 
