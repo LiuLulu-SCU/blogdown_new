@@ -10,7 +10,7 @@ blogdown::serve_site()
 #
 
 #新建post
-blogdown::new_post(title = "disk_name",
+blogdown::new_post(title = "ipad",
                    ext = '.Rmarkdown',
                    subdir = "post")
 
