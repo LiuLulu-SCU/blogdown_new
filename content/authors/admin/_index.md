@@ -61,7 +61,7 @@ title: 刘卢路
 
 
 
-{{< icon name="download" pack="fas" >}} {{% staticref "uploads/resume_liululu.pdf" %}}查看我的简历{{% /staticref %}}
+{{< icon name="download" pack="fas" >}} <a href="/uploads/resume_liululu.pdf" target="_blank">查看我的简历</a>
   
   
 <font color=#ED7D31 face="黑体" size=5>**我的书籍**</font>
