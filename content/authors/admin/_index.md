@@ -59,7 +59,9 @@ title: 刘卢路
 
 正在学习钢琴🎹和Web开发😵 希望之后把自己的一些想法和学习心得发布在Blog上。
 
-{{< icon name="download" pack="fas" >}} 下载我的 {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}（待修改）.  
+
+
+{{< icon name="download" pack="fas" >}} {{% staticref "uploads/resume_liululu.pdf" %}}下载我的简历{{% /staticref %}}
   
   
 <font color=#ED7D31 face="黑体" size=5>**我的书籍**</font>
