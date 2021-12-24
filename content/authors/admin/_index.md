@@ -68,7 +68,7 @@ title: 刘卢路
 
 - <a href="/book/book_frontend/" target="_blank">Web开发教程</a>
 - <a href="/courses/probability/" target="_blank">CEA教程</a>
-- <a href="/book/bookdown_tutorial/" target="_blank">Bookdown教程</a>
+- <a href="/book/r-programming/" target="_blank">R语言教程（未完稿）</a>
 
 
 
