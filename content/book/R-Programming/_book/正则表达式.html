@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>12 正则表达式 | R语言编程</title>
+  <meta name="description" content="张敬信老师的R语言学习笔记" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="12 正则表达式 | R语言编程" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="张敬信老师的R语言学习笔记" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="12 正则表达式 | R语言编程" />
+  
+  <meta name="twitter:description" content="张敬信老师的R语言学习笔记" />
+  
+
+<meta name="author" content="刘卢路" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="附录-1.html"/>
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>简介</a></li>
+<li class="chapter" data-level="1" data-path="前言.html"><a href="前言.html"><i class="fa fa-check"></i><b>1</b> 前言</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="前言.html"><a href="前言.html#section"><i class="fa fa-check"></i><b>1.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="基础语法.html"><a href="基础语法.html"><i class="fa fa-check"></i><b>2</b> 基础语法</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="基础语法.html"><a href="基础语法.html#数据结构"><i class="fa fa-check"></i><b>2.1</b> 数据结构</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="基础语法.html"><a href="基础语法.html#向量一维数据"><i class="fa fa-check"></i><b>2.1.1</b> 向量（一维数据）</a></li>
+<li class="chapter" data-level="2.1.2" data-path="基础语法.html"><a href="基础语法.html#时间日期"><i class="fa fa-check"></i><b>2.1.2</b> 时间日期</a></li>
+<li class="chapter" data-level="2.1.3" data-path="基础语法.html"><a href="基础语法.html#识别日期时间"><i class="fa fa-check"></i><b>2.1.3</b> 识别日期时间</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="基础语法.html"><a href="基础语法.html#控制结构"><i class="fa fa-check"></i><b>2.2</b> 控制结构</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="基础语法.html"><a href="基础语法.html#分支结构"><i class="fa fa-check"></i><b>2.2.1</b> 分支结构</a></li>
+<li class="chapter" data-level="2.2.2" data-path="基础语法.html"><a href="基础语法.html#循环结构"><i class="fa fa-check"></i><b>2.2.2</b> 循环结构</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="基础语法.html"><a href="基础语法.html#apply函数组"><i class="fa fa-check"></i><b>2.3</b> apply函数组</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="基础语法.html"><a href="基础语法.html#apply"><i class="fa fa-check"></i><b>2.3.1</b> apply</a></li>
+<li class="chapter" data-level="2.3.2" data-path="基础语法.html"><a href="基础语法.html#lapply"><i class="fa fa-check"></i><b>2.3.2</b> lapply</a></li>
+<li class="chapter" data-level="2.3.3" data-path="基础语法.html"><a href="基础语法.html#sapply"><i class="fa fa-check"></i><b>2.3.3</b> sapply</a></li>
+<li class="chapter" data-level="2.3.4" data-path="基础语法.html"><a href="基础语法.html#vapply"><i class="fa fa-check"></i><b>2.3.4</b> vapply</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="基础语法.html"><a href="基础语法.html#customized-function"><i class="fa fa-check"></i><b>2.4</b> 自定义函数</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="基础语法.html"><a href="基础语法.html#函数设置"><i class="fa fa-check"></i><b>2.4.1</b> 函数设置</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="数据操作.html"><a href="数据操作.html"><i class="fa fa-check"></i><b>3</b> 数据操作</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="数据操作.html"><a href="数据操作.html#数据连接"><i class="fa fa-check"></i><b>3.1</b> 数据连接</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="数据操作.html"><a href="数据操作.html#合并行与和并列"><i class="fa fa-check"></i><b>3.1.1</b> 合并行与和并列</a></li>
+<li class="chapter" data-level="3.1.2" data-path="数据操作.html"><a href="数据操作.html#根据值匹配合并数据框"><i class="fa fa-check"></i><b>3.1.2</b> 根据值匹配合并数据框</a></li>
+<li class="chapter" data-level="3.1.3" data-path="数据操作.html"><a href="数据操作.html#实现r中实现stata的merge命令"><i class="fa fa-check"></i><b>3.1.3</b> 实现R中实现stata的merge命令</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="数据操作.html"><a href="数据操作.html#数据操作-1"><i class="fa fa-check"></i><b>3.2</b> 数据操作</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="数据操作.html"><a href="数据操作.html#选择列select"><i class="fa fa-check"></i><b>3.2.1</b> 选择列（select）</a></li>
+<li class="chapter" data-level="3.2.2" data-path="数据操作.html"><a href="数据操作.html#选择列语法"><i class="fa fa-check"></i><b>3.2.2</b> 选择列语法</a></li>
+<li class="chapter" data-level="3.2.3" data-path="数据操作.html"><a href="数据操作.html#选择列的例子"><i class="fa fa-check"></i><b>3.2.3</b> 选择列的例子</a></li>
+<li class="chapter" data-level="3.2.4" data-path="数据操作.html"><a href="数据操作.html#用--删除列"><i class="fa fa-check"></i><b>3.2.4</b> 用“-” 删除列</a></li>
+<li class="chapter" data-level="3.2.5" data-path="数据操作.html"><a href="数据操作.html#调整列的顺序"><i class="fa fa-check"></i><b>3.2.5</b> 调整列的顺序</a></li>
+<li class="chapter" data-level="3.2.6" data-path="数据操作.html"><a href="数据操作.html#重命名列"><i class="fa fa-check"></i><b>3.2.6</b> 重命名列</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="数据操作.html"><a href="数据操作.html#分组汇总"><i class="fa fa-check"></i><b>3.3</b> 分组汇总</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="数据操作.html"><a href="数据操作.html#创建分组"><i class="fa fa-check"></i><b>3.3.1</b> 创建分组</a></li>
+<li class="chapter" data-level="3.3.2" data-path="数据操作.html"><a href="数据操作.html#分组汇总-1"><i class="fa fa-check"></i><b>3.3.2</b> 分组汇总</a></li>
+<li class="chapter" data-level="3.3.3" data-path="数据操作.html"><a href="数据操作.html#自己的例子"><i class="fa fa-check"></i><b>3.3.3</b> 自己的例子</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="数据操作.html"><a href="数据操作.html#其他数据操作"><i class="fa fa-check"></i><b>3.4</b> 其他数据操作</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="数据操作.html"><a href="数据操作.html#按行汇总"><i class="fa fa-check"></i><b>3.4.1</b> 按行汇总</a></li>
+<li class="chapter" data-level="3.4.2" data-path="数据操作.html"><a href="数据操作.html#窗口函数"><i class="fa fa-check"></i><b>3.4.2</b> 窗口函数</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="数据操作.html"><a href="数据操作.html#整洁计算"><i class="fa fa-check"></i><b>3.5</b> 整洁计算</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="数据操作.html"><a href="数据操作.html#数据屏蔽与整洁选择"><i class="fa fa-check"></i><b>3.5.1</b> 数据屏蔽与整洁选择</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="可视化与建模.html"><a href="可视化与建模.html"><i class="fa fa-check"></i><b>4</b> 可视化与建模</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="可视化与建模.html"><a href="可视化与建模.html#ggplot2基础语法"><i class="fa fa-check"></i><b>4.1</b> ggplot2基础语法</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="可视化与建模.html"><a href="可视化与建模.html#ggplot2概述"><i class="fa fa-check"></i><b>4.1.1</b> ggplot2概述</a></li>
+<li class="chapter" data-level="4.1.2" data-path="可视化与建模.html"><a href="可视化与建模.html#数据映射几何对象"><i class="fa fa-check"></i><b>4.1.2</b> 数据、映射、几何对象</a></li>
+<li class="chapter" data-level="4.1.3" data-path="可视化与建模.html"><a href="可视化与建模.html#标度"><i class="fa fa-check"></i><b>4.1.3</b> 标度</a></li>
+<li class="chapter" data-level="4.1.4" data-path="可视化与建模.html"><a href="可视化与建模.html#统计变换statistics"><i class="fa fa-check"></i><b>4.1.4</b> 统计变换(Statistics)</a></li>
+<li class="chapter" data-level="4.1.5" data-path="可视化与建模.html"><a href="可视化与建模.html#坐标系coordinante"><i class="fa fa-check"></i><b>4.1.5</b> 坐标系(Coordinante)</a></li>
+<li class="chapter" data-level="4.1.6" data-path="可视化与建模.html"><a href="可视化与建模.html#位置调整position-adjustments"><i class="fa fa-check"></i><b>4.1.6</b> 位置调整(Position adjustments)</a></li>
+<li class="chapter" data-level="4.1.7" data-path="可视化与建模.html"><a href="可视化与建模.html#分面facet"><i class="fa fa-check"></i><b>4.1.7</b> 分面(Facet)</a></li>
+<li class="chapter" data-level="4.1.8" data-path="可视化与建模.html"><a href="可视化与建模.html#主题theme"><i class="fa fa-check"></i><b>4.1.8</b> 主题(theme)</a></li>
+<li class="chapter" data-level="4.1.9" data-path="可视化与建模.html"><a href="可视化与建模.html#输出output"><i class="fa fa-check"></i><b>4.1.9</b> 输出(output)</a></li>
+<li class="chapter" data-level="4.1.10" data-path="可视化与建模.html"><a href="可视化与建模.html#export包将ggplot或latice输出为ppt"><i class="fa fa-check"></i><b>4.1.10</b> export包(将ggplot或latice输出为PPT)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="可视化与建模.html"><a href="可视化与建模.html#自定义ggplot2函数"><i class="fa fa-check"></i><b>4.2</b> 自定义ggplot2函数</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="可视化与建模.html"><a href="可视化与建模.html#为什么要自定义ggplot函数"><i class="fa fa-check"></i><b>4.2.1</b> 为什么要自定义ggplot函数</a></li>
+<li class="chapter" data-level="4.2.2" data-path="可视化与建模.html"><a href="可视化与建模.html#单个组件"><i class="fa fa-check"></i><b>4.2.2</b> 单个组件</a></li>
+<li class="chapter" data-level="4.2.3" data-path="可视化与建模.html"><a href="可视化与建模.html#多个组件"><i class="fa fa-check"></i><b>4.2.3</b> 多个组件</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="可视化与建模.html"><a href="可视化与建模.html#散点图"><i class="fa fa-check"></i><b>4.3</b> 散点图</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="可视化与建模.html"><a href="可视化与建模.html#密度散点图"><i class="fa fa-check"></i><b>4.3.1</b> 密度散点图</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="可视化与建模.html"><a href="可视化与建模.html#生存分析"><i class="fa fa-check"></i><b>4.4</b> 生存分析</a></li>
+<li class="chapter" data-level="4.5" data-path="可视化与建模.html"><a href="可视化与建模.html#plotly"><i class="fa fa-check"></i><b>4.5</b> Plotly</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="可视化与建模.html"><a href="可视化与建模.html#将ggplot对象转化为plotly对象"><i class="fa fa-check"></i><b>4.5.1</b> 将ggplot对象转化为plotly对象</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I 文档沟通</b></span></li>
+<li class="chapter" data-level="5" data-path="markdown.html"><a href="markdown.html"><i class="fa fa-check"></i><b>5</b> Markdown</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="markdown.html"><a href="markdown.html#markdown-intro"><i class="fa fa-check"></i><b>5.1</b> 简介</a></li>
+<li class="chapter" data-level="5.2" data-path="markdown.html"><a href="markdown.html#行内格式"><i class="fa fa-check"></i><b>5.2</b> 行内格式</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="markdown.html"><a href="markdown.html#强调上下标和行内代码"><i class="fa fa-check"></i><b>5.2.1</b> 强调、上下标和行内代码</a></li>
+<li class="chapter" data-level="5.2.2" data-path="markdown.html"><a href="markdown.html#超链接"><i class="fa fa-check"></i><b>5.2.2</b> 超链接</a></li>
+<li class="chapter" data-level="5.2.3" data-path="markdown.html"><a href="markdown.html#插入引用citations"><i class="fa fa-check"></i><b>5.2.3</b> 插入引用citations</a></li>
+<li class="chapter" data-level="5.2.4" data-path="markdown.html"><a href="markdown.html#换行空格"><i class="fa fa-check"></i><b>5.2.4</b> 换行空格</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="markdown.html"><a href="markdown.html#块级元素"><i class="fa fa-check"></i><b>5.3</b> 块级元素</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="markdown.html"><a href="markdown.html#代码块"><i class="fa fa-check"></i><b>5.3.1</b> 代码块</a></li>
+<li class="chapter" data-level="5.3.2" data-path="markdown.html"><a href="markdown.html#标题"><i class="fa fa-check"></i><b>5.3.2</b> 标题</a></li>
+<li class="chapter" data-level="5.3.3" data-path="markdown.html"><a href="markdown.html#分割线"><i class="fa fa-check"></i><b>5.3.3</b> 分割线</a></li>
+<li class="chapter" data-level="5.3.4" data-path="markdown.html"><a href="markdown.html#块级元素引用段落引用"><i class="fa fa-check"></i><b>5.3.4</b> 块级元素引用（段落引用）</a></li>
+<li class="chapter" data-level="5.3.5" data-path="markdown.html"><a href="markdown.html#列表"><i class="fa fa-check"></i><b>5.3.5</b> 列表</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="markdown.html"><a href="markdown.html#行内块元素"><i class="fa fa-check"></i><b>5.4</b> 行内块元素</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="markdown.html"><a href="markdown.html#图片"><i class="fa fa-check"></i><b>5.4.1</b> 图片</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="markdown.html"><a href="markdown.html#数学公式"><i class="fa fa-check"></i><b>5.5</b> 数学公式</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="markdown.html"><a href="markdown.html#markdown如何显示数学公式"><i class="fa fa-check"></i><b>5.5.1</b> Markdown如何显示数学公式</a></li>
+<li class="chapter" data-level="5.5.2" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>5.5.2</b> 数学公式的类别</a></li>
+<li class="chapter" data-level="5.5.3" data-path="markdown.html"><a href="markdown.html#具体公式"><i class="fa fa-check"></i><b>5.5.3</b> 具体公式</a></li>
+<li class="chapter" data-level="5.5.4" data-path="markdown.html"><a href="markdown.html#section-1"><i class="fa fa-check"></i><b>5.5.4</b> </a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>6</b> RMarkdown</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="rmarkdown.html"><a href="rmarkdown.html#rmarkdown简介"><i class="fa fa-check"></i><b>6.1</b> RMarkdown简介</a></li>
+<li class="chapter" data-level="6.2" data-path="rmarkdown.html"><a href="rmarkdown.html#安装"><i class="fa fa-check"></i><b>6.2</b> 安装</a></li>
+<li class="chapter" data-level="6.3" data-path="rmarkdown.html"><a href="rmarkdown.html#基础"><i class="fa fa-check"></i><b>6.3</b> 基础</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="rmarkdown.html"><a href="rmarkdown.html#rmarkdown基础"><i class="fa fa-check"></i><b>6.3.1</b> RMarkdown基础</a></li>
+<li class="chapter" data-level="6.3.2" data-path="rmarkdown.html"><a href="rmarkdown.html#compile"><i class="fa fa-check"></i><b>6.3.2</b> 编写R Markdown文档</a></li>
+<li class="chapter" data-level="6.3.3" data-path="rmarkdown.html"><a href="rmarkdown.html#备忘清单cheat-sheet"><i class="fa fa-check"></i><b>6.3.3</b> 备忘清单（Cheat sheet）</a></li>
+<li class="chapter" data-level="6.3.4" data-path="rmarkdown.html"><a href="rmarkdown.html#输出格式"><i class="fa fa-check"></i><b>6.3.4</b> 输出格式</a></li>
+<li class="chapter" data-level="6.3.5" data-path="rmarkdown.html"><a href="rmarkdown.html#r代码块和r行内代码"><i class="fa fa-check"></i><b>6.3.5</b> R代码块和R行内代码</a></li>
+<li class="chapter" data-level="6.3.6" data-path="rmarkdown.html"><a href="rmarkdown.html#插入图片"><i class="fa fa-check"></i><b>6.3.6</b> 插入图片</a></li>
+<li class="chapter" data-level="6.3.7" data-path="rmarkdown.html"><a href="rmarkdown.html#表格"><i class="fa fa-check"></i><b>6.3.7</b> 表格</a></li>
+<li class="chapter" data-level="6.3.8" data-path="rmarkdown.html"><a href="rmarkdown.html#行内代码"><i class="fa fa-check"></i><b>6.3.8</b> 行内代码</a></li>
+<li class="chapter" data-level="6.3.9" data-path="rmarkdown.html"><a href="rmarkdown.html#在rmarkdown使用其他语言"><i class="fa fa-check"></i><b>6.3.9</b> 在RMarkdown使用其他语言</a></li>
+<li class="chapter" data-level="6.3.10" data-path="rmarkdown.html"><a href="rmarkdown.html#交互式文档"><i class="fa fa-check"></i><b>6.3.10</b> 交互式文档</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="rmarkdown.html"><a href="rmarkdown.html#文档格式htmlpdfword"><i class="fa fa-check"></i><b>6.4</b> 文档格式（HTML,PDF,Word…）</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="rmarkdown.html"><a href="rmarkdown.html#html"><i class="fa fa-check"></i><b>6.4.1</b> HTML</a></li>
+<li class="chapter" data-level="6.4.2" data-path="rmarkdown.html"><a href="rmarkdown.html#目录table-of-contents"><i class="fa fa-check"></i><b>6.4.2</b> 目录（Table of contents）</a></li>
+<li class="chapter" data-level="6.4.3" data-path="rmarkdown.html"><a href="rmarkdown.html#小节编号section-numbering"><i class="fa fa-check"></i><b>6.4.3</b> 小节编号Section numbering</a></li>
+<li class="chapter" data-level="6.4.4" data-path="rmarkdown.html"><a href="rmarkdown.html#tabbed-sections"><i class="fa fa-check"></i><b>6.4.4</b> Tabbed sections</a></li>
+<li class="chapter" data-level="6.4.5" data-path="rmarkdown.html"><a href="rmarkdown.html#外观和样式appearance-and-style"><i class="fa fa-check"></i><b>6.4.5</b> 外观和样式（Appearance and style）</a></li>
+<li class="chapter" data-level="6.4.6" data-path="rmarkdown.html"><a href="rmarkdown.html#图片选项figure-options"><i class="fa fa-check"></i><b>6.4.6</b> 图片选项（Figure options）</a></li>
+<li class="chapter" data-level="6.4.7" data-path="rmarkdown.html"><a href="rmarkdown.html#数据框显示data-frame-printing"><i class="fa fa-check"></i><b>6.4.7</b> 数据框显示（Data frame printing）</a></li>
+<li class="chapter" data-level="6.4.8" data-path="rmarkdown.html"><a href="rmarkdown.html#代码折叠code-folding"><i class="fa fa-check"></i><b>6.4.8</b> 代码折叠（Code folding）</a></li>
+<li class="chapter" data-level="6.4.9" data-path="rmarkdown.html"><a href="rmarkdown.html#mathjax数学公式的支持"><i class="fa fa-check"></i><b>6.4.9</b> MathJax数学公式的支持</a></li>
+<li class="chapter" data-level="6.4.10" data-path="rmarkdown.html"><a href="rmarkdown.html#文档依赖关系document-dependencies"><i class="fa fa-check"></i><b>6.4.10</b> 文档依赖关系（Document dependencies）</a></li>
+<li class="chapter" data-level="6.4.11" data-path="rmarkdown.html"><a href="rmarkdown.html#保留md文件"><i class="fa fa-check"></i><b>6.4.11</b> 保留<code>md</code>文件</a></li>
+<li class="chapter" data-level="6.4.12" data-path="rmarkdown.html"><a href="rmarkdown.html#includes"><i class="fa fa-check"></i><b>6.4.12</b> Includes</a></li>
+<li class="chapter" data-level="6.4.13" data-path="rmarkdown.html"><a href="rmarkdown.html#自定义模板"><i class="fa fa-check"></i><b>6.4.13</b> 自定义模板</a></li>
+<li class="chapter" data-level="6.4.14" data-path="rmarkdown.html"><a href="rmarkdown.html#markdown-extensions"><i class="fa fa-check"></i><b>6.4.14</b> Markdown extensions</a></li>
+<li class="chapter" data-level="6.4.15" data-path="rmarkdown.html"><a href="rmarkdown.html#pandoc参数"><i class="fa fa-check"></i><b>6.4.15</b> Pandoc参数</a></li>
+<li class="chapter" data-level="6.4.16" data-path="rmarkdown.html"><a href="rmarkdown.html#共享选项设置shared-options"><i class="fa fa-check"></i><b>6.4.16</b> 共享选项设置（Shared options）</a></li>
+<li class="chapter" data-level="6.4.17" data-path="rmarkdown.html"><a href="rmarkdown.html#html-片段-html-fragments"><i class="fa fa-check"></i><b>6.4.17</b> HTML 片段（ HTML fragments）</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>7</b> Bookdown</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="bookdown.html"><a href="bookdown.html#bookdown-intro"><i class="fa fa-check"></i><b>7.1</b> 简介</a></li>
+<li class="chapter" data-level="7.2" data-path="bookdown.html"><a href="bookdown.html#创建图书"><i class="fa fa-check"></i><b>7.2</b> 创建图书</a></li>
+<li class="chapter" data-level="7.3" data-path="bookdown.html"><a href="bookdown.html#bookdown-edit"><i class="fa fa-check"></i><b>7.3</b> 编辑图书（Editing）</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="bookdown.html"><a href="bookdown.html#构建图书build-the-book"><i class="fa fa-check"></i><b>7.3.1</b> 构建图书（Build the book）</a></li>
+<li class="chapter" data-level="7.3.2" data-path="bookdown.html"><a href="bookdown.html#预览章节preview-a-chapter"><i class="fa fa-check"></i><b>7.3.2</b> 预览章节（Preview a chapter）</a></li>
+<li class="chapter" data-level="7.3.3" data-path="bookdown.html"><a href="bookdown.html#serve-the-book"><i class="fa fa-check"></i><b>7.3.3</b> Serve the book</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="bookdown.html"><a href="bookdown.html#项目结构"><i class="fa fa-check"></i><b>7.4</b> 项目结构</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="bookdown.html"><a href="bookdown.html#首页文件index-file"><i class="fa fa-check"></i><b>7.4.1</b> 首页文件（Index file）</a></li>
+<li class="chapter" data-level="7.4.2" data-path="bookdown.html"><a href="bookdown.html#rmd文件-rmd-files"><i class="fa fa-check"></i><b>7.4.2</b> Rmd文件（ Rmd files）</a></li>
+<li class="chapter" data-level="7.4.3" data-path="bookdown.html"><a href="bookdown.html#bookdown.yml"><i class="fa fa-check"></i><b>7.4.3</b> <code>_bookdown.yml</code></a></li>
+<li class="chapter" data-level="7.4.4" data-path="bookdown.html"><a href="bookdown.html#output.yml"><i class="fa fa-check"></i><b>7.4.4</b> <code>_output.yml</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="bookdown.html"><a href="bookdown.html#bookdown-markdown"><i class="fa fa-check"></i><b>7.5</b> Markdown extensions</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="bookdown.html"><a href="bookdown.html#equations"><i class="fa fa-check"></i><b>7.5.1</b> 公式编号</a></li>
+<li class="chapter" data-level="7.5.2" data-path="bookdown.html"><a href="bookdown.html#theorems"><i class="fa fa-check"></i><b>7.5.2</b> 定理和证明（Theorems and proofs）</a></li>
+<li class="chapter" data-level="7.5.3" data-path="bookdown.html"><a href="bookdown.html#特殊标题special-headers"><i class="fa fa-check"></i><b>7.5.3</b> 特殊标题（Special headers）</a></li>
+<li class="chapter" data-level="7.5.4" data-path="bookdown.html"><a href="bookdown.html#文本引用text-references"><i class="fa fa-check"></i><b>7.5.4</b> 文本引用（Text references）</a></li>
+<li class="chapter" data-level="7.5.5" data-path="bookdown.html"><a href="bookdown.html#交叉引用"><i class="fa fa-check"></i><b>7.5.5</b> 交叉引用</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="bookdown.html"><a href="bookdown.html#bookdown-output"><i class="fa fa-check"></i><b>7.6</b> 输出格式</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="写轮眼.html"><a href="写轮眼.html"><i class="fa fa-check"></i><b>8</b> 写轮眼</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="写轮眼.html"><a href="写轮眼.html#前期配置"><i class="fa fa-check"></i><b>8.1</b> 前期配置</a></li>
+<li class="chapter" data-level="8.2" data-path="写轮眼.html"><a href="写轮眼.html#键盘快捷键"><i class="fa fa-check"></i><b>8.2</b> 键盘快捷键</a></li>
+<li class="chapter" data-level="8.3" data-path="写轮眼.html"><a href="写轮眼.html#幻灯片格式"><i class="fa fa-check"></i><b>8.3</b> 幻灯片格式</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="写轮眼.html"><a href="写轮眼.html#幻灯片的属性"><i class="fa fa-check"></i><b>8.3.1</b> 幻灯片的属性</a></li>
+<li class="chapter" data-level="8.3.2" data-path="写轮眼.html"><a href="写轮眼.html#首页标题幻灯片"><i class="fa fa-check"></i><b>8.3.2</b> 首页标题幻灯片</a></li>
+<li class="chapter" data-level="8.3.3" data-path="写轮眼.html"><a href="写轮眼.html#内容类"><i class="fa fa-check"></i><b>8.3.3</b> 内容类</a></li>
+<li class="chapter" data-level="8.3.4" data-path="写轮眼.html"><a href="写轮眼.html#出现动画"><i class="fa fa-check"></i><b>8.3.4</b> 出现动画</a></li>
+<li class="chapter" data-level="8.3.5" data-path="写轮眼.html"><a href="写轮眼.html#演讲者注释"><i class="fa fa-check"></i><b>8.3.5</b> 演讲者注释</a></li>
+<li class="chapter" data-level="8.3.6" data-path="写轮眼.html"><a href="写轮眼.html#yoloyou-only-live-once"><i class="fa fa-check"></i><b>8.3.6</b> yolo(you only live once)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="写轮眼.html"><a href="写轮眼.html#建立和预览幻灯片"><i class="fa fa-check"></i><b>8.4</b> 建立和预览幻灯片</a></li>
+<li class="chapter" data-level="8.5" data-path="写轮眼.html"><a href="写轮眼.html#独立html输出设置"><i class="fa fa-check"></i><b>8.5</b> 独立HTML输出设置</a></li>
+<li class="chapter" data-level="8.6" data-path="写轮眼.html"><a href="写轮眼.html#css和主题"><i class="fa fa-check"></i><b>8.6</b> CSS和主题</a></li>
+<li class="chapter" data-level="8.7" data-path="写轮眼.html"><a href="写轮眼.html#一些提示和小技巧"><i class="fa fa-check"></i><b>8.7</b> 一些提示和小技巧</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="写轮眼.html"><a href="写轮眼.html#自动放映"><i class="fa fa-check"></i><b>8.7.1</b> 自动放映</a></li>
+<li class="chapter" data-level="8.7.2" data-path="写轮眼.html"><a href="写轮眼.html#倒计时计时器"><i class="fa fa-check"></i><b>8.7.2</b> 倒计时计时器</a></li>
+<li class="chapter" data-level="8.7.3" data-path="写轮眼.html"><a href="写轮眼.html#高亮代码行"><i class="fa fa-check"></i><b>8.7.3</b> 高亮代码行</a></li>
+<li class="chapter" data-level="8.7.4" data-path="写轮眼.html"><a href="写轮眼.html#离线模式"><i class="fa fa-check"></i><b>8.7.4</b> 离线模式</a></li>
+<li class="chapter" data-level="8.7.5" data-path="写轮眼.html"><a href="写轮眼.html#宏指令macros"><i class="fa fa-check"></i><b>8.7.5</b> 宏指令Macros</a></li>
+<li class="chapter" data-level="8.7.6" data-path="写轮眼.html"><a href="写轮眼.html#打印pdf"><i class="fa fa-check"></i><b>8.7.6</b> 打印PDF</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="写轮眼.html"><a href="写轮眼.html#总结术语"><i class="fa fa-check"></i><b>8.8</b> 总结术语</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="数据集介绍.html"><a href="数据集介绍.html"><i class="fa fa-check"></i><b>9</b> 数据集介绍</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="数据集介绍.html"><a href="数据集介绍.html#mpg数据集"><i class="fa fa-check"></i><b>9.1</b> mpg数据集</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="附录.html"><a href="附录.html"><i class="fa fa-check"></i><b>10</b> 附录</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="附录.html"><a href="附录.html#颜色"><i class="fa fa-check"></i><b>10.1</b> 颜色</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="附录-1.html"><a href="附录-1.html"><i class="fa fa-check"></i><b>11</b> 附录</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="附录-1.html"><a href="附录-1.html#颜色-1"><i class="fa fa-check"></i><b>11.1</b> 颜色</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>12</b> 正则表达式</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>12.1</b> grep函数</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>12.1.1</b> 函数参数</a></li>
+<li class="chapter" data-level="12.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>12.1.2</b> 模式（pattern）与匹配（match）</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>12.2</b> 元字符</a></li>
+<li class="chapter" data-level="12.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>12.3</b> 常用文本处理函数</a></li>
+<li class="chapter" data-level="12.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>12.4</b> 案例</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>12.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
+<li class="chapter" data-level="12.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>12.4.2</b> 全宋词</a></li>
+<li class="chapter" data-level="12.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>12.4.3</b> SCI（筛选行）</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R语言编程</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="正则表达式" class="section level1" number="12">
+<h1><span class="header-section-number">12</span> 正则表达式</h1>
+<div id="grep函数" class="section level2" number="12.1">
+<h2><span class="header-section-number">12.1</span> grep函数</h2>
+<ul>
+<li>模式查询函数：查找符合某个条件的字符串/文本</li>
+</ul>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="正则表达式.html#cb335-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1314&quot;</span>,<span class="st">&quot;abc&quot;</span>,<span class="st">&quot;a b c&quot;</span>,<span class="st">&quot;ABC&quot;</span>,<span class="st">&quot;aB12c&quot;</span>,<span class="st">&quot;13ab14c&quot;</span>)</span>
+<span id="cb335-2"><a href="正则表达式.html#cb335-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;ab&quot;</span>,<span class="at">x =</span> ss) <span class="co">#ss向量中包含&quot;ab&quot;的索引</span></span>
+<span id="cb335-3"><a href="正则表达式.html#cb335-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;ab&quot;</span>,<span class="at">x =</span> ss,<span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="co">#忽略大小写</span></span>
+<span id="cb335-4"><a href="正则表达式.html#cb335-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;ab&quot;</span>,<span class="at">x =</span> ss,<span class="at">value =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div id="函数参数" class="section level3" number="12.1.1">
+<h3><span class="header-section-number">12.1.1</span> 函数参数</h3>
+<ul>
+<li>pattern</li>
+<li>x:字符向量</li>
+<li>ignore.case：是否忽略大小写</li>
+<li>value：是否返回值（而非索引）</li>
+</ul>
+</div>
+<div id="模式pattern与匹配match" class="section level3" number="12.1.2">
+<h3><span class="header-section-number">12.1.2</span> 模式（pattern）与匹配（match）</h3>
+<ul>
+<li>模式(pattern)：符合某种条件的“表达式”，如“姓张的同学”、“以数字开头的行”</li>
+<li>匹配：用““模式”去比较/查找/筛选的过程称为“匹配”</li>
+</ul>
+</div>
+</div>
+<div id="元字符" class="section level2" number="12.2">
+<h2><span class="header-section-number">12.2</span> 元字符</h2>
+<ul>
+<li>表示自身的字符：字母、数字</li>
+<li>1个任意字符：.（点号）</li>
+<li>表示位置：<code>^$</code> ^表示以xx开始，$表示以xx结束</li>
+<li>表示数量：<code>*?+</code> 星号代表任意数量，加号代表至少1个，问号代表0个或1个</li>
+<li>括号类
+[] 方括号表示含[]中的字符，注意[]与^联用表示否定，不含xx开头
+{m,n} 花括号内可填一个数字或两个数字（表示范围）
+() 圆括号表示组合</li>
+<li>转义符<code>\?  \*</code>在元字符前加反斜杠（）进行转义。</li>
+<li>其他：
+Tab(制表符) Enter(换行) 软换行 文字间隔符 任意空格符 不是空格键 任意文字字符（字母 汉字）</li>
+</ul>
+<p>例子：任意字符（.点号）与 数量符号（*、+、?）的应用</p>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="正则表达式.html#cb336-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;acb&quot;</span>,<span class="st">&quot;a b&quot;</span>,<span class="st">&quot;A b&quot;</span>,<span class="st">&quot;a#b&quot;</span>,<span class="st">&quot;a##b&quot;</span>,<span class="st">&quot;ab&quot;</span>)</span>
+<span id="cb336-2"><a href="正则表达式.html#cb336-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;ab&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配ab</span></span>
+<span id="cb336-3"><a href="正则表达式.html#cb336-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配ab中间有1个任意字符</span></span>
+<span id="cb336-4"><a href="正则表达式.html#cb336-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a..b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配ab中间有2个任意字符</span></span>
+<span id="cb336-5"><a href="正则表达式.html#cb336-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.*b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配ab中间有任意数量个任意字符，数量可以为0</span></span>
+<span id="cb336-6"><a href="正则表达式.html#cb336-6" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.+b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配ab中间有至少一个数量个任意字符</span></span>
+<span id="cb336-7"><a href="正则表达式.html#cb336-7" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.?b&quot;</span>,<span class="at">x =</span> ss)<span class="co">#匹配ab中间有0个或1个数量个任意字符</span></span></code></pre></div>
+<pre><code>## [1] 6
+## [1] 1 2 4
+## [1] 5
+## [1] 1 2 4 5 6
+## [1] 1 2 4 5
+## [1] 1 2 4 6</code></pre>
+<p>例子：任意字符（.点号）与 数量符号（{}）的应用</p>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="正则表达式.html#cb338-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;acb&quot;</span>,<span class="st">&quot;a b&quot;</span>,<span class="st">&quot;A b&quot;</span>,<span class="st">&quot;a#b&quot;</span>,<span class="st">&quot;a##b&quot;</span>,<span class="st">&quot;ab&quot;</span>)</span>
+<span id="cb338-2"><a href="正则表达式.html#cb338-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.{1,3}b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#{}表示一个数字范围，匹配&quot;ab&quot;之间有1至3个任意字符</span></span>
+<span id="cb338-3"><a href="正则表达式.html#cb338-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.{3}b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#{}匹配&quot;ab&quot;之间有3个任意字符</span></span></code></pre></div>
+<pre><code>## [1] 1 2 4 5
+## integer(0)</code></pre>
+<p>例子：位置字符（^、$）的应用</p>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="正则表达式.html#cb340-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1314&quot;</span>,<span class="st">&quot;abc&quot;</span>,<span class="st">&quot;a b c&quot;</span>,<span class="st">&quot;ABC&quot;</span>,<span class="st">&quot;aB12c&quot;</span>,<span class="st">&quot;13ab14c&quot;</span>)</span>
+<span id="cb340-2"><a href="正则表达式.html#cb340-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;^1&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配以1开始的索引</span></span>
+<span id="cb340-3"><a href="正则表达式.html#cb340-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;4$&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配以4结束的索引</span></span></code></pre></div>
+<pre><code>## [1] 1 6
+## [1] 1</code></pre>
+<p>例子：方括号（[]）的应用，注意方括号与^连用表否定</p>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="正则表达式.html#cb342-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a2b&quot;</span>,<span class="st">&quot;a1cb&quot;</span>,<span class="st">&quot;ab&quot;</span>,<span class="st">&quot;a111b&quot;</span>,<span class="st">&quot;a1b&quot;</span>,<span class="st">&quot;acb&quot;</span>)</span>
+<span id="cb342-2"><a href="正则表达式.html#cb342-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a[2c]b&quot;</span> ,<span class="at">x =</span> ss) <span class="co">#ab中间有括号里面（2或c）的任意1个字符</span></span>
+<span id="cb342-3"><a href="正则表达式.html#cb342-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a[2c]*b&quot;</span> ,<span class="at">x =</span> ss) <span class="co">#ab中间有任意数量的括号里面（2或c）的任意1个字符</span></span>
+<span id="cb342-4"><a href="正则表达式.html#cb342-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a[0-9]b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#&quot;ab&quot;中间有 “0到9”中的任意1个字符</span></span>
+<span id="cb342-5"><a href="正则表达式.html#cb342-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a[a-z]b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#&quot;ab&quot;中间有 “a到z”中的任意1个字符</span></span>
+<span id="cb342-6"><a href="正则表达式.html#cb342-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb342-7"><a href="正则表达式.html#cb342-7" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a[^c]b&quot;</span>,<span class="at">x =</span> ss) <span class="do">##这里的^表示否定，“非”的意思。&quot;ab&quot;中间没有以 “c”开头的字符</span></span></code></pre></div>
+<pre><code>## [1] 1 6
+## [1] 1 3 6
+## [1] 1 5
+## [1] 6
+## [1] 1 5</code></pre>
+<p>例子：圆括号的应用 可结合gsub函数，替换</p>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="正则表达式.html#cb344-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1314&quot;</span>,<span class="st">&quot;abc&quot;</span>,<span class="st">&quot;a b c&quot;</span>,<span class="st">&quot;ABC&quot;</span>,<span class="st">&quot;aB12c&quot;</span>,<span class="st">&quot;13ab14c&quot;</span>)</span>
+<span id="cb344-2"><a href="正则表达式.html#cb344-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb344-3"><a href="正则表达式.html#cb344-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;(13).4&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配有13组合+任意1个字符+4的索引</span></span>
+<span id="cb344-4"><a href="正则表达式.html#cb344-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;(13|13ab).4&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配13或1314的组合+任意1个字符+4的索引</span></span>
+<span id="cb344-5"><a href="正则表达式.html#cb344-5" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">&quot;(13|13ab).4&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot;XXXX&quot;</span>,<span class="at">x =</span> ss) <span class="co">#替换13或1314的组合+任意1个字符+4为“XXXX”</span></span>
+<span id="cb344-6"><a href="正则表达式.html#cb344-6" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">&quot;(13|13ab).4&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">1&quot;</span>,<span class="at">x =</span> ss)<span class="co">#替换13或1314的组合+任意1个字符+4为第一次匹配的内容，\\1代表反向引用</span></span></code></pre></div>
+<pre><code>## [1] 1
+## [1] 1 6
+## [1] &quot;XXXX&quot;  &quot;abc&quot;   &quot;a b c&quot; &quot;ABC&quot;   &quot;aB12c&quot; &quot;XXXXc&quot;
+## [1] &quot;13&quot;    &quot;abc&quot;   &quot;a b c&quot; &quot;ABC&quot;   &quot;aB12c&quot; &quot;13abc&quot;</code></pre>
+<p>转义符的应用</p>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="正则表达式.html#cb346-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;acb&quot;</span>,<span class="st">&quot;a?b&quot;</span>,<span class="st">&quot;a??b&quot;</span>)</span>
+<span id="cb346-2"><a href="正则表达式.html#cb346-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb346-3"><a href="正则表达式.html#cb346-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a</span><span class="sc">\\</span><span class="st">?b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#\\?表示问号本身</span></span>
+<span id="cb346-4"><a href="正则表达式.html#cb346-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a</span><span class="sc">\\</span><span class="st">?+b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#\\?+表示至少一个问号</span></span>
+<span id="cb346-5"><a href="正则表达式.html#cb346-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;^</span><span class="sc">\\</span><span class="st">w+$&quot;</span>,<span class="at">x =</span> ss) <span class="co">#任意个字符开头并结束，及从头到尾全是字符（字母或汉字）</span></span>
+<span id="cb346-6"><a href="正则表达式.html#cb346-6" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">W+&quot;</span>,<span class="at">x =</span> ss) <span class="co">#含有非字符（符合 空格）成分</span></span>
+<span id="cb346-7"><a href="正则表达式.html#cb346-7" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">d+&quot;</span>,<span class="at">x =</span> ss) <span class="co">#含有数字成分</span></span>
+<span id="cb346-8"><a href="正则表达式.html#cb346-8" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">D+&quot;</span>,<span class="at">x =</span> ss) <span class="co">#含有非数字成分</span></span></code></pre></div>
+<pre><code>## [1] 2
+## [1] 2 3
+## [1] 1
+## [1] 2 3
+## integer(0)
+## [1] 1 2 3</code></pre>
+</div>
+<div id="常用文本处理函数" class="section level2" number="12.3">
+<h2><span class="header-section-number">12.3</span> 常用文本处理函数</h2>
+<ul>
+<li>length/nchar （向量元素的个数/每个向量元素字符的长度）</li>
+<li>模式查询：grep/grepl （索引/返回逻辑值）</li>
+<li>模式替换 sub/gsub</li>
+<li>截取/修剪：substr/substring/strtrim</li>
+<li>合并/拆分：paste/strsplit</li>
+<li>转换/翻译：tolwer/toupper/chartr</li>
+</ul>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="正则表达式.html#cb348-1" aria-hidden="true" tabindex="-1"></a>ss1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">12</span>,<span class="dv">123</span>,<span class="st">&quot;abcdef&quot;</span>)</span>
+<span id="cb348-2"><a href="正则表达式.html#cb348-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb348-3"><a href="正则表达式.html#cb348-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(ss1)</span>
+<span id="cb348-4"><a href="正则表达式.html#cb348-4" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(ss1)</span></code></pre></div>
+<pre><code>## [1] 4
+## [1] 1 2 3 6</code></pre>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="正则表达式.html#cb350-1" aria-hidden="true" tabindex="-1"></a>ss1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">12</span>,<span class="dv">123</span>,<span class="st">&quot;abcdef&quot;</span>)</span>
+<span id="cb350-2"><a href="正则表达式.html#cb350-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb350-3"><a href="正则表达式.html#cb350-3" aria-hidden="true" tabindex="-1"></a><span class="fu">substr</span>(<span class="st">&quot;abcdef&quot;</span>, <span class="dv">2</span>, <span class="dv">4</span>) <span class="co">#截取字符第2到4位</span></span>
+<span id="cb350-4"><a href="正则表达式.html#cb350-4" aria-hidden="true" tabindex="-1"></a><span class="fu">substring</span>(<span class="st">&quot;abcdef&quot;</span>, <span class="at">first =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">last =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)  <span class="co">#</span></span>
+<span id="cb350-5"><a href="正则表达式.html#cb350-5" aria-hidden="true" tabindex="-1"></a><span class="fu">strtrim</span>(ss1,<span class="at">width =</span> <span class="dv">2</span>) <span class="co">#修剪得到每个元素字符前两位</span></span></code></pre></div>
+<pre><code>## [1] &quot;bcd&quot;
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot;
+## [1] &quot;1&quot;  &quot;12&quot; &quot;12&quot; &quot;ab&quot;</code></pre>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="正则表达式.html#cb352-1" aria-hidden="true" tabindex="-1"></a>ss1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">12</span>,<span class="dv">123</span>,<span class="st">&quot;abcdef&quot;</span>)</span>
+<span id="cb352-2"><a href="正则表达式.html#cb352-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb352-3"><a href="正则表达式.html#cb352-3" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(ss1,<span class="st">&quot;###&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;1 ###&quot;      &quot;12 ###&quot;     &quot;123 ###&quot;    &quot;abcdef ###&quot;</code></pre>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="正则表达式.html#cb354-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(ss1,<span class="st">&quot;###&quot;</span>,<span class="at">sep =</span> <span class="st">&quot;-&quot;</span>) <span class="co">#sep 两个字符间的分隔符</span></span></code></pre></div>
+<pre><code>## [1] &quot;1-###&quot;      &quot;12-###&quot;     &quot;123-###&quot;    &quot;abcdef-###&quot;</code></pre>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="正则表达式.html#cb356-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(ss1,<span class="st">&quot;###&quot;</span>,<span class="at">sep =</span> <span class="st">&quot;-&quot;</span>,<span class="at">collapse =</span> <span class="st">&quot;;&quot;</span>) <span class="co">#collapse 将多个向量元素融合</span></span></code></pre></div>
+<pre><code>## [1] &quot;1-###;12-###;123-###;abcdef-###&quot;</code></pre>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="正则表达式.html#cb358-1" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(<span class="st">&quot;abc def&quot;</span>,<span class="at">split =</span> <span class="st">&quot;&quot;</span>) <span class="co">#每个字符拆分</span></span>
+<span id="cb358-2"><a href="正则表达式.html#cb358-2" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(<span class="st">&quot;abc def&quot;</span>,<span class="at">split =</span> <span class="st">&quot; &quot;</span>) <span class="co">#空格符拆分</span></span>
+<span id="cb358-3"><a href="正则表达式.html#cb358-3" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(<span class="st">&quot;abc  def&quot;</span>,<span class="at">split =</span> <span class="st">&quot; +&quot;</span>) <span class="co">#split可跟正则表达式，“空格+”表示一个或多个空格拆分空格符拆分</span></span>
+<span id="cb358-4"><a href="正则表达式.html#cb358-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb358-5"><a href="正则表达式.html#cb358-5" aria-hidden="true" tabindex="-1"></a>ss1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">12</span>,<span class="dv">123</span>,<span class="st">&quot;abcdef&quot;</span>)</span>
+<span id="cb358-6"><a href="正则表达式.html#cb358-6" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(ss1,<span class="at">split =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot; &quot; &quot;d&quot; &quot;e&quot; &quot;f&quot;
+## 
+## [[1]]
+## [1] &quot;abc&quot; &quot;def&quot;
+## 
+## [[1]]
+## [1] &quot;abc&quot; &quot;def&quot;
+## 
+## [[1]]
+## [1] &quot;1&quot;
+## 
+## [[2]]
+## [1] &quot;1&quot; &quot;2&quot;
+## 
+## [[3]]
+## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot;
+## 
+## [[4]]
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot;</code></pre>
+</div>
+<div id="案例" class="section level2" number="12.4">
+<h2><span class="header-section-number">12.4</span> 案例</h2>
+<div id="查找指定目录下的jpg图像文件list.files函数" class="section level3" number="12.4.1">
+<h3><span class="header-section-number">12.4.1</span> 查找指定目录下的jpg图像文件（list.files函数）</h3>
+<p>dic</p>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="正则表达式.html#cb360-1" aria-hidden="true" tabindex="-1"></a>dirctory<span class="ot">=</span><span class="st">&quot;../front_end/fig/&quot;</span></span>
+<span id="cb360-2"><a href="正则表达式.html#cb360-2" aria-hidden="true" tabindex="-1"></a>file_name<span class="ot">=</span><span class="fu">list.files</span>(<span class="at">path =</span> dirctory, <span class="co">#文件路径</span></span>
+<span id="cb360-3"><a href="正则表达式.html#cb360-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.jpg$&quot;</span>, <span class="co">#正则表达式</span></span>
+<span id="cb360-4"><a href="正则表达式.html#cb360-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="co">#是否迭代子目录</span></span>
+<span id="cb360-5"><a href="正则表达式.html#cb360-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">full.names =</span> <span class="cn">TRUE</span>, <span class="co">#是否显示文件全部路径</span></span>
+<span id="cb360-6"><a href="正则表达式.html#cb360-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="co">#是否忽略大小写</span></span>
+<span id="cb360-7"><a href="正则表达式.html#cb360-7" aria-hidden="true" tabindex="-1"></a>file_name</span>
+<span id="cb360-8"><a href="正则表达式.html#cb360-8" aria-hidden="true" tabindex="-1"></a><span class="fu">file.size</span>(file_name) <span class="co">#查看文件大小，单位为KB</span></span></code></pre></div>
+<pre><code>##  [1] &quot;../front_end/fig//appendix/100-01.jpg&quot;
+##  [2] &quot;../front_end/fig//appendix/100-02.jpg&quot;
+##  [3] &quot;../front_end/fig//appendix/100-03.jpg&quot;
+##  [4] &quot;../front_end/fig//case/80-01.jpg&quot;     
+##  [5] &quot;../front_end/fig//case/80-02.jpg&quot;     
+##  [6] &quot;../front_end/fig//case/80-03.jpg&quot;     
+##  [7] &quot;../front_end/fig//case/80-04.jpg&quot;     
+##  [8] &quot;../front_end/fig//case/80-05.jpg&quot;     
+##  [9] &quot;../front_end/fig//case/80-06.jpg&quot;     
+## [10] &quot;../front_end/fig//case/80-07.jpg&quot;     
+## [11] &quot;../front_end/fig//CSS/1-01.jpg&quot;       
+## [12] &quot;../front_end/fig//CSS/1-02.jpg&quot;       
+## [13] &quot;../front_end/fig//CSS/1-03.jpg&quot;       
+## [14] &quot;../front_end/fig//CSS/101-01.jpg&quot;     
+## [15] &quot;../front_end/fig//CSS/19-01.jpg&quot;      
+## [16] &quot;../front_end/fig//CSS/19-02.jpg&quot;      
+## [17] &quot;../front_end/fig//CSS/19-03.jpg&quot;      
+## [18] &quot;../front_end/fig//CSS/19-04.jpg&quot;      
+## [19] &quot;../front_end/fig//CSS/19-05.jpg&quot;      
+## [20] &quot;../front_end/fig//CSS/19-06.jpg&quot;      
+## [21] &quot;../front_end/fig//CSS/19-20.jpg&quot;      
+## [22] &quot;../front_end/fig//CSS/19-21.jpg&quot;      
+## [23] &quot;../front_end/fig//CSS/19-22.jpg&quot;      
+## [24] &quot;../front_end/fig//CSS/19-23.jpg&quot;      
+## [25] &quot;../front_end/fig//CSS/20-01.jpg&quot;      
+## [26] &quot;../front_end/fig//CSS/20-02.jpg&quot;      
+## [27] &quot;../front_end/fig//CSS/20-10.jpg&quot;      
+## [28] &quot;../front_end/fig//CSS/20-11.jpg&quot;      
+## [29] &quot;../front_end/fig//CSS/20-12.jpg&quot;      
+## [30] &quot;../front_end/fig//CSS/20-15.jpg&quot;      
+## [31] &quot;../front_end/fig//CSS/20-16.jpg&quot;      
+## [32] &quot;../front_end/fig//CSS/20-17.jpg&quot;      
+## [33] &quot;../front_end/fig//CSS/20-18.jpg&quot;      
+## [34] &quot;../front_end/fig//CSS/20-20.jpg&quot;      
+## [35] &quot;../front_end/fig//CSS/20-21.jpg&quot;      
+## [36] &quot;../front_end/fig//CSS/20-22.jpg&quot;      
+## [37] &quot;../front_end/fig//CSS/20-25.jpg&quot;      
+## [38] &quot;../front_end/fig//CSS/20-26.jpg&quot;      
+## [39] &quot;../front_end/fig//CSS/21-01.jpg&quot;      
+## [40] &quot;../front_end/fig//CSS/21-02.jpg&quot;      
+## [41] &quot;../front_end/fig//CSS/21-03.jpg&quot;      
+## [42] &quot;../front_end/fig//CSS/21-04.jpg&quot;      
+## [43] &quot;../front_end/fig//CSS/21-05.jpg&quot;      
+## [44] &quot;../front_end/fig//CSS/21-06.jpg&quot;      
+## [45] &quot;../front_end/fig//CSS/21-07.jpg&quot;      
+## [46] &quot;../front_end/fig//CSS/21-08.jpg&quot;      
+## [47] &quot;../front_end/fig//CSS/21-09.jpg&quot;      
+## [48] &quot;../front_end/fig//CSS/21-10.jpg&quot;      
+## [49] &quot;../front_end/fig//CSS/5-01.jpg&quot;       
+## [50] &quot;../front_end/fig//CSS/6-01.jpg&quot;       
+## [51] &quot;../front_end/fig/1-1.jpg&quot;             
+## [52] &quot;../front_end/fig/1-10.jpg&quot;            
+## [53] &quot;../front_end/fig/1-11.jpg&quot;            
+## [54] &quot;../front_end/fig/1-12.jpg&quot;            
+## [55] &quot;../front_end/fig/1-2.jpg&quot;             
+## [56] &quot;../front_end/fig/1-20.jpg&quot;            
+## [57] &quot;../front_end/fig/1-21.jpg&quot;            
+## [58] &quot;../front_end/fig/1-22.jpg&quot;            
+## [59] &quot;../front_end/fig/1-23.jpg&quot;            
+## [60] &quot;../front_end/fig/1-3.jpg&quot;             
+## [61] &quot;../front_end/fig/1-30.jpg&quot;            
+## [62] &quot;../front_end/fig/1-31.jpg&quot;            
+## [63] &quot;../front_end/fig/1-32.jpg&quot;            
+## [64] &quot;../front_end/fig/1-33.jpg&quot;            
+## [65] &quot;../front_end/fig/1-4.jpg&quot;             
+## [66] &quot;../front_end/fig/1-41.jpg&quot;            
+## [67] &quot;../front_end/fig/1-5.jpg&quot;             
+## [68] &quot;../front_end/fig/1-51.jpg&quot;            
+## [69] &quot;../front_end/fig/1-6.jpg&quot;             
+## [70] &quot;../front_end/fig/1-7.jpg&quot;             
+## [71] &quot;../front_end/fig/17-02.jpg&quot;           
+## [72] &quot;../front_end/fig/17-11.jpg&quot;           
+## [73] &quot;../front_end/fig/18-01.jpg&quot;           
+##  [1]  13029  11057  49485  58444  19010   7625  28207  13162  87024  23939
+## [11]  13528   9028   3909 147563  98126  61088  35949  24838  22270  14697
+## [21]  10954  13845  37489  20298  10215  11651  22618  17758  14780  25265
+## [31]  22767  28288  36725  18726  15727  69040  11881  59069  17018  43281
+## [41]  11027  14447  40416  30519  53498  21247  36862  19355   6286  17656
+## [51]  92362  14271   6913   7374  58411  45855   7360   8515  13057  56081
+## [61]  14049  13009  22879  26817  50769  71105  99416  51007 144687  58105
+## [71] 936815  10285  23057</code></pre>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="正则表达式.html#cb362-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tolower</span>(<span class="fu">c</span>(<span class="st">&quot;aBc&quot;</span>,<span class="st">&quot;ABCxx&quot;</span>)) <span class="co">#全部小写</span></span>
+<span id="cb362-2"><a href="正则表达式.html#cb362-2" aria-hidden="true" tabindex="-1"></a><span class="fu">toupper</span>(<span class="fu">c</span>(<span class="st">&quot;aBc&quot;</span>,<span class="st">&quot;ABCxx&quot;</span>)) <span class="co">#全部大写</span></span></code></pre></div>
+<pre><code>## [1] &quot;abc&quot;   &quot;abcxx&quot;
+## [1] &quot;ABC&quot;   &quot;ABCXX&quot;</code></pre>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="正则表达式.html#cb364-1" aria-hidden="true" tabindex="-1"></a>xseq <span class="ot">&lt;-</span> <span class="st">&quot;ATCGCCC&quot;</span></span>
+<span id="cb364-2"><a href="正则表达式.html#cb364-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chartr</span>(<span class="at">old =</span> <span class="st">&quot;ATCG&quot;</span>,<span class="at">new =</span> <span class="st">&quot;UAGC&quot;</span>,<span class="at">x =</span> xseq) <span class="co">#旧字符翻译成新字符，如A翻译成U，T翻译成A...</span></span></code></pre></div>
+<pre><code>## [1] &quot;UAGCGGG&quot;</code></pre>
+</div>
+<div id="全宋词" class="section level3" number="12.4.2">
+<h3><span class="header-section-number">12.4.2</span> 全宋词</h3>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="正则表达式.html#cb366-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">&quot;.</span><span class="sc">\\</span><span class="st">s&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot;&quot;</span>,<span class="at">x =</span> songci) <span class="co">#去除文本向量中所有空格符</span></span>
+<span id="cb366-2"><a href="正则表达式.html#cb366-2" aria-hidden="true" tabindex="-1"></a>sentence<span class="ot">=</span><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;|&quot;</span>,<span class="at">x =</span> songci,<span class="at">value =</span> <span class="cn">TRUE</span>) <span class="co">#查找含“杨”或“柳”的句子</span></span>
+<span id="cb366-3"><a href="正则表达式.html#cb366-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(sentence)</span></code></pre></div>
+</div>
+<div id="sci筛选行" class="section level3" number="12.4.3">
+<h3><span class="header-section-number">12.4.3</span> SCI（筛选行）</h3>
+<p>筛选出杂志名包含NATURE，且19年IF&gt;3的行</p>
+<p>grepl函数返回TURE or FALSE，表示向量中每个元素是否满足正则表达式</p>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="正则表达式.html#cb367-1" aria-hidden="true" tabindex="-1"></a>data</span>
+<span id="cb367-2"><a href="正则表达式.html#cb367-2" aria-hidden="true" tabindex="-1"></a>ss1 <span class="ot">&lt;-</span> <span class="fu">grepl</span>(<span class="at">pattern =</span> <span class="st">&quot;nature&quot;</span>,<span class="at">x =</span> data<span class="sc">$</span>tittle,<span class="at">ignore.case =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb367-3"><a href="正则表达式.html#cb367-3" aria-hidden="true" tabindex="-1"></a>ss2 <span class="ot">&lt;-</span> data<span class="sc">$</span>IF <span class="sc">&gt;</span> <span class="dv">3</span></span>
+<span id="cb367-4"><a href="正则表达式.html#cb367-4" aria-hidden="true" tabindex="-1"></a>dt[ss1 <span class="sc">&amp;</span> ss2,]</span></code></pre></div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="附录-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
