@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>数据库Stata常用操作</title>
-  <meta name="description" content="数据库Stata常用操作" />
+  <title>6 假设检验 | 数据库Stata常用操作</title>
+  <meta name="description" content="6 假设检验 | 数据库Stata常用操作" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="数据库Stata常用操作" />
+  <meta property="og:title" content="6 假设检验 | 数据库Stata常用操作" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="数据库Stata常用操作" />
+  <meta name="twitter:title" content="6 假设检验 | 数据库Stata常用操作" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="基于stata使用rmarkdown书写动态文档statamarkdown.html"/>
+<link rel="prev" href="描述统计.html"/>
+<link rel="next" href="结果解释.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -270,26 +270,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">数据库Stata常用操作</h1>
-<p class="author"><em>刘卢路</em></p>
-<p class="date"><em>2021年9月6日</em></p>
+<div id="假设检验" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> 假设检验</h1>
+<div id="t检验" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> t检验</h2>
+<p><strong>两组检验</strong>
+检验reval在的平均年龄否有区别</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb53-1"><a href="假设检验.html#cb53-1" aria-hidden="true" tabindex="-1"></a> <span class="kw">ttest</span> <span class="kw">nl</span>, <span class="kw">by</span>(reval)</span></code></pre></div>
 </div>
-<div id="简介" class="section level1 unnumbered">
-<h1>简介</h1>
-<p>记录一些Stata常用命令</p>
+<div id="方差分析" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> 方差分析</h2>
+<div class="sourceCode" id="cb54"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb54-1"><a href="假设检验.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">bysort</span> ABCD: <span class="kw">sum</span> <span class="kw">nl</span></span>
+<span id="cb54-2"><a href="假设检验.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="kw">oneway</span> 待检验变量 分类变量</span>
+<span id="cb54-3"><a href="假设检验.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="kw">oneway</span> <span class="kw">nl</span> ABCD</span></code></pre></div>
+</div>
+<div id="卡方检验" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> 卡方检验</h2>
+<p><strong>两组检验</strong>
+检验reval在每年的人数比例是否有区别</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb55-1"><a href="假设检验.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="kw">tab</span> <span class="fu">year</span> reval,<span class="fu">chi2</span></span></code></pre></div>
+<p><strong>三组检验</strong></p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb56-1"><a href="假设检验.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">tab</span> ABCD female,<span class="fu">chi2</span></span></code></pre></div>
 
 </div>
-
-
-
+</div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="基于stata使用rmarkdown书写动态文档statamarkdown.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="描述统计.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="结果解释.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>数据库Stata常用操作</title>
-  <meta name="description" content="数据库Stata常用操作" />
+  <title>7 结果解释 | 数据库Stata常用操作</title>
+  <meta name="description" content="7 结果解释 | 数据库Stata常用操作" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="数据库Stata常用操作" />
+  <meta property="og:title" content="7 结果解释 | 数据库Stata常用操作" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="数据库Stata常用操作" />
+  <meta name="twitter:title" content="7 结果解释 | 数据库Stata常用操作" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="基于stata使用rmarkdown书写动态文档statamarkdown.html"/>
+<link rel="prev" href="假设检验.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -270,26 +270,99 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">数据库Stata常用操作</h1>
-<p class="author"><em>刘卢路</em></p>
-<p class="date"><em>2021年9月6日</em></p>
+<div id="结果解释" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> 结果解释</h1>
+<div id="变量取对数时回归系数的解读" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> 变量取对数时回归系数的解读</h2>
+<ol style="list-style-type: decimal">
+<li><p>如果模型是<span class="math inline">\(y=\beta_0+\beta_1x+\epsilon\)</span>，则<span class="math inline">\(x\)</span>变化1个单位，<span class="math inline">\(y\)</span>变动<span class="math inline">\(\beta_1\)</span>个单位。</p></li>
+<li><p>如果模型是<span class="math inline">\(y=\beta_0+\beta_1lnx+\epsilon\)</span>，则<span class="math inline">\(x\)</span>变化1%个单位，<span class="math inline">\(y\)</span>变动<span class="math inline">\(\beta_1\%\)</span>个单位，即0.01<span class="math inline">\(\beta1\)</span>单位。</p></li>
+<li><p>如果模型是<span class="math inline">\(lny=\beta_0+\beta_1lnx+\epsilon\)</span>，则<span class="math inline">\(x\)</span>变化1个单位，<span class="math inline">\(y\)</span>变动<span class="math inline">\(100\beta_1\%\)</span>个单位。</p></li>
+<li><p>如果模型是<span class="math inline">\(lny=\beta_0+\beta_1lnx+\epsilon\)</span>，则<span class="math inline">\(x\)</span>变化1%个单位，<span class="math inline">\(y\)</span>变动<span class="math inline">\(\beta_1\%\)</span>个单位。</p></li>
+</ol>
+<p>推导</p>
+<p>1.linear方程中x变化一单位，对y的影响。</p>
+<p>原方程
+<span class="math display">\[
+y=\alpha+\beta x+\epsilon   
+\tag{1}
+\]</span>
+x增加1单位后
+<span class="math display">\[
+y*=\alpha+\beta *(x+1)+\epsilon   
+\tag{2}
+\]</span>
+<span class="math inline">\((2)\)</span>式-<span class="math inline">\((1)\)</span>式得</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \Delta y=&amp;[\alpha+\beta *(x+1)+\epsilon]   - [\alpha+\beta
+  x+\epsilon]\\
+  =&amp;\alpha-\alpha+\beta *(x+1)-\beta x+\epsilon-\epsilon\\
+  =&amp;\beta
+  \end{aligned}
+  \tag{3}
+\]</span></p>
+<p>3.log-linear方程中x变化一单位，对y的影响。</p>
+<p>原方程
+<span class="math display">\[
+\begin{aligned}
+  ln Y&amp;=\alpha+\beta X+\epsilon   \\
+  两边同时取指数\quad  Y&amp;=e^{\alpha+\beta X+\epsilon}
+  \end{aligned}
+\tag{1}
+\]</span></p>
+<p>x增加1单位后</p>
+<p><span class="math display">\[
+Y^*=e^{\alpha+\beta *(X+1)+\epsilon}   
+\tag{2}
+\]</span></p>
+<p><span class="math inline">\((2)\)</span>式÷<span class="math inline">\((1)\)</span>式得</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{Y^*}{Y}&amp;=\frac{e^{\alpha+\beta *(X+1)+\epsilon} }{e^{\alpha+\beta X+\epsilon}} \\
+&amp;=e^{\alpha+\beta *(X+1)+\epsilon-(\alpha+\beta X+\epsilon)}\\
+&amp;=e^{\alpha-\alpha+\beta *(X+1)-\beta X+\epsilon-\epsilon}\\
+&amp;=e^{\alpha-\alpha+\beta *(X+1)-\beta X+\epsilon-\epsilon}\\
+&amp;=e^{\beta}
+\end{aligned}
+\tag{3}
+\]</span>
+也就是说，X增加1单位，Y会变为原来的<span class="math inline">\(e^\beta\)</span>倍。</p>
+<p>当<span class="math inline">\(\beta\)</span>很小时，<span class="math inline">\(e^\beta \approx 1+\beta\)</span>，此处暂时不证明，但是画一个图像直观感受。等解释完含义后再证明。</p>
+<p>也就是说，X增加1单位，Y会变为原来的<span class="math inline">\(e^\beta\)</span>倍，即Y变为原来的<span class="math inline">\(1+\beta\)</span>倍，即<span class="math inline">\(Y\)</span>增加<span class="math inline">\(100\beta\%\)</span>个单位，例如<span class="math inline">\(\beta\)</span>=0.06时，可以理解为，X增加1单位，Y会变为原来的<span class="math inline">\(106\%\)</span>倍，即Y增加了6%。
+<span class="math display">\[
+\begin{aligned}
+\frac{Y^*}{Y}&amp;=e^{\beta}\\
+&amp;=1+\beta\\
+&amp;=100\%+\beta
+\end{aligned}
+\tag{4}
+\]</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="fig/140-02.jpg" alt="e^x和x+1的图像" width="246" />
+<p class="caption">
+图7.1: e^x和x+1的图像
+</p>
 </div>
-<div id="简介" class="section level1 unnumbered">
-<h1>简介</h1>
-<p>记录一些Stata常用命令</p>
+<p><span class="math display">\[\begin{pmatrix}
+{\sigma_u^2+\sigma_\epsilon^2}&amp;{\sigma_u^2}&amp;{\cdots}&amp;{\sigma_u^2}\\
+{\sigma_u^2}&amp;{\sigma_u^2+\sigma_\epsilon^2}&amp;{\cdots}&amp;{\sigma_u^2}\\
+{\vdots}&amp;{\vdots}&amp;{\ddots}&amp;{\vdots}\\
+{\sigma_u^2}&amp;{\sigma_u^2}&amp;{\cdots}&amp;{\sigma_u^2+\sigma_\epsilon^2}\\
+\end{pmatrix}\]</span></p>
+<p><span class="math display">\[
+E(X)=
+\]</span></p>
 
 </div>
-
-
-
+</div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="基于stata使用rmarkdown书写动态文档statamarkdown.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="假设检验.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
