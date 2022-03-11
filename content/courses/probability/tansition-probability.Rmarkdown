@@ -47,7 +47,7 @@ $$
 假设发生率（incidence rate）在3年内不变，先计算1年的Rate，再计算1年的Probability。
 
 $$
-Rate= \frac{ln(1-p)}{t} =\frac{ln(1-0.6)}{3}=0.3054
+Rate= -\frac{ln(1-p)}{t} =-\frac{ln(1-0.6)}{3}=0.3054
 $$
 $$
 Probability=1-e^{-rt} =1-e^{-0.3054×1}=0.2632
