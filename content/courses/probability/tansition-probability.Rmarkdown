@@ -32,9 +32,11 @@ mathjax: "http://example.com/MathJax.js"
 - 3.1.1 率和概率的区别
 <img src="/courses/probability/tansition-probability_files/figure-html/1-2.jpg" alt="可转化为概率的统计指标">
 
+两幅图中一年内的死亡概率（Probability）都是75%（3/4），但第一个图的死亡率（Rate）是0.3次/人年，第二个图的死亡率是0.5次/人年。
+
 - 3.1.2 率和概率的转换公式
 $$
-Rate=  \frac{ln(1-p)}{t}  
+Rate= - \frac{ln(1-p)}{t}  
 $$
 
 $$
