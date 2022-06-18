@@ -9,6 +9,9 @@ mathjax: "book/MathJax/MathJax.js"
 ## 一、基本概念
 
 ## 二、参数的分布
+
+<img src="/courses/probability/PSA_files/figure-html/2.jpg" width="672" />
+
 <img src="/courses/probability/PSA_files/figure-html/1-1.png" width="672" />
 <img src="/courses/probability/PSA_files/figure-html/1-4.png" width="672" />
 
@@ -18,10 +21,10 @@ mathjax: "book/MathJax/MathJax.js"
 如果，已知事件发生数$=r$，样本量$=n$，则$\alpha=r$，$\beta=n-r$。如果已知发生概率及其标准差，则用以下公式：
 
 $$
-\alpha=mean \times \left (\frac{mean \times(1-mean)}{se^2}-1 \right)
+\alpha=mean \times \left (\frac{mean \times(1-mean)}{SD^2}-1 \right)
 $$
 $$
-\beta= \frac{mean \times(1-mean)}{se^2}-1 -\alpha
+\beta= \frac{mean \times(1-mean)}{SD^2}-1 -\alpha
 $$
 注：已知$\alpha和\beta$求$mean$和$s$的公式
 $$
@@ -96,3 +99,16 @@ $$
 有增量成本和增量效果两列数据，绘制散点图
 - 美化散点大小：双击“散点”，【设置数据系列格式】-【标记】-【标记选项】-【内置】-【大小】选择1或2
 - 美化散点颜色：双击“散点”，【设置数据系列格式】-【标记】-【填充】-【颜色】
+
+
+
+
+
+
+
+
+
+
+
+
+
