@@ -22,4 +22,4 @@ projects: []
 示例图如下：
 
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/1-1.png" width="672" />
+![png](./1-1.png "随机森林算法的分类示例图")
