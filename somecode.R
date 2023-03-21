@@ -10,7 +10,7 @@ blogdown::serve_site()
 #
 
 #新建post
-blogdown::new_post(title = "ipad",
+blogdown::new_post(title = "streamlit_iris",
                    ext = '.Rmarkdown',
                    subdir = "post")
 
