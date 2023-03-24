@@ -54,11 +54,17 @@ projects: []
 ## 删除文件作者信息
 - 右键选中office文档（word、excel或PPT），点击`属性`。选择`详细信息`，修改`作者`为"作者"
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/1-3.png" width="95%" />
+<img src="./index_files/figure-html/1-3.png" width="95%" />
 
 
 - 删除作者和最后一次保存者
 <img src="{{< blogdown/postref >}}index_files/figure-html/1-5.png"  width = "300" height = "200" />  
+
+## 文件打开是只读
+
+有可能是文件默认为只读模式。我们可以先关掉excel文件，右键点击excel文件，选择最下面的【属性】，然后在属性框内将【只读】取消勾选。
+
+<img src="./index_files/figure-html/1-6.png" width="50%" />
 
 
 - 行间距问题
