@@ -7,7 +7,8 @@ new_site(theme = "wowchemy/starter-academic")
 #preview your site.预览你的网站
 options(blogdown.server.timeout = 600)
 blogdown::serve_site()
-#
+#关闭
+blogdown::stop_server()
 
 #新建post
 blogdown::new_post(title = "streamlit_iris",
