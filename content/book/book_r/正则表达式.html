@@ -4,19 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>15 正则表达式 | R语言编程</title>
+  <title>16 正则表达式 | R语言编程</title>
   <meta name="description" content="张敬信老师的R语言学习笔记" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="15 正则表达式 | R语言编程" />
+  <meta property="og:title" content="16 正则表达式 | R语言编程" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="张敬信老师的R语言学习笔记" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="15 正则表达式 | R语言编程" />
+  <meta name="twitter:title" content="16 正则表达式 | R语言编程" />
   
   <meta name="twitter:description" content="张敬信老师的R语言学习笔记" />
   
@@ -30,9 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="infer包.html"/>
+<link rel="prev" href="极大似然估计.html"/>
 <link rel="next" href="一些自定义函数.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,22 +48,23 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/plotly-binding-4.10.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX","output/SVG"],
@@ -118,7 +117,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -131,7 +130,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -299,6 +298,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.2</b> 数学公式的类别</a></li>
 <li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.3</b> 上横线</a></li>
 <li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.4</b> hat</a></li>
+<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.5</b> 换行对齐</a></li>
+<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.6</b> 分段函数</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>7</b> RMarkdown</a>
@@ -420,40 +421,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="infer包.html"><a href="infer包.html#卡方检验"><i class="fa fa-check"></i><b>14.2</b> 卡方检验</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>15</b> 正则表达式</a>
+<li class="chapter" data-level="15" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>15</b> 极大似然估计</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>15.1</b> grep函数</a>
+<li class="chapter" data-level="15.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>15.1</b> 自定义极大似然函数</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>15.1.1</b> 函数参数</a></li>
-<li class="chapter" data-level="15.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>15.1.2</b> 模式（pattern）与匹配（match）</a></li>
-</ul></li>
-<li class="chapter" data-level="15.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>15.2</b> 元字符</a></li>
-<li class="chapter" data-level="15.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>15.3</b> 常用文本处理函数</a></li>
-<li class="chapter" data-level="15.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>15.4</b> 案例</a>
-<ul>
-<li class="chapter" data-level="15.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>15.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
-<li class="chapter" data-level="15.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>15.4.2</b> 全宋词</a></li>
-<li class="chapter" data-level="15.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>15.4.3</b> SCI（筛选行）</a></li>
+<li class="chapter" data-level="15.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>15.1.1</b> 正态分布</a></li>
+<li class="chapter" data-level="15.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>15.1.2</b> 指数分布</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>16</b> 一些自定义函数</a>
+<li class="chapter" data-level="16" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>16</b> 正则表达式</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>16.1</b> 数据处理</a>
+<li class="chapter" data-level="16.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>16.1</b> grep函数</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>16.1.1</b> 分组排序并排名</a></li>
+<li class="chapter" data-level="16.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>16.1.1</b> 函数参数</a></li>
+<li class="chapter" data-level="16.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>16.1.2</b> 模式（pattern）与匹配（match）</a></li>
 </ul></li>
-<li class="chapter" data-level="16.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>16.2</b> 统计相关</a>
+<li class="chapter" data-level="16.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>16.2</b> 元字符</a></li>
+<li class="chapter" data-level="16.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>16.3</b> 常用文本处理函数</a></li>
+<li class="chapter" data-level="16.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>16.4</b> 案例</a>
 <ul>
-<li class="chapter" data-level="16.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>16.2.1</b> 汇总数据t检验</a></li>
+<li class="chapter" data-level="16.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>16.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
+<li class="chapter" data-level="16.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>16.4.2</b> 全宋词</a></li>
+<li class="chapter" data-level="16.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>16.4.3</b> SCI（筛选行）</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="m1-m2-the-sample-means.html"><a href="m1-m2-the-sample-means.html"><i class="fa fa-check"></i><b>17</b> m1, m2: the sample means</a></li>
-<li class="chapter" data-level="18" data-path="s1-s2-the-sample-standard-deviations.html"><a href="s1-s2-the-sample-standard-deviations.html"><i class="fa fa-check"></i><b>18</b> s1, s2: the sample standard deviations</a></li>
-<li class="chapter" data-level="19" data-path="n1-n2-the-same-sizes.html"><a href="n1-n2-the-same-sizes.html"><i class="fa fa-check"></i><b>19</b> n1, n2: the same sizes</a></li>
-<li class="chapter" data-level="20" data-path="m0-the-null-value-for-the-difference-in-means-to-be-tested-for.-default-is-0..html"><a href="m0-the-null-value-for-the-difference-in-means-to-be-tested-for.-default-is-0..html"><i class="fa fa-check"></i><b>20</b> m0: the null value for the difference in means to be tested for. Default is 0.</a></li>
-<li class="chapter" data-level="21" data-path="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html"><i class="fa fa-check"></i><b>21</b> equal.variance: whether or not to assume equal variance. Default is FALSE.</a>
+<li class="chapter" data-level="17" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>17</b> 一些自定义函数</a>
 <ul>
-<li class="chapter" data-level="21.0.1" data-path="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#卡方检验-1"><i class="fa fa-check"></i><b>21.0.1</b> 卡方检验</a></li>
+<li class="chapter" data-level="17.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>17.1</b> 数据处理</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>17.1.1</b> 分组排序并排名</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>17.2</b> 统计相关</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>17.2.1</b> 汇总数据t检验</a></li>
+<li class="chapter" data-level="17.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>17.2.2</b> 卡方检验</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -472,19 +474,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="正则表达式" class="section level1" number="15">
-<h1><span class="header-section-number">15</span> 正则表达式</h1>
-<div id="grep函数" class="section level2" number="15.1">
-<h2><span class="header-section-number">15.1</span> grep函数</h2>
+<div id="正则表达式" class="section level1 hasAnchor" number="16">
+<h1><span class="header-section-number">16</span> 正则表达式<a href="正则表达式.html#正则表达式" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="grep函数" class="section level2 hasAnchor" number="16.1">
+<h2><span class="header-section-number">16.1</span> grep函数<a href="正则表达式.html#grep函数" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>模式查询函数：查找符合某个条件的字符串/文本</li>
 </ul>
-<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="正则表达式.html#cb373-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1314&quot;</span>,<span class="st">&quot;abc&quot;</span>,<span class="st">&quot;a b c&quot;</span>,<span class="st">&quot;ABC&quot;</span>,<span class="st">&quot;aB12c&quot;</span>,<span class="st">&quot;13ab14c&quot;</span>)</span>
-<span id="cb373-2"><a href="正则表达式.html#cb373-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;ab&quot;</span>,<span class="at">x =</span> ss) <span class="co">#ss向量中包含&quot;ab&quot;的索引</span></span>
-<span id="cb373-3"><a href="正则表达式.html#cb373-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;ab&quot;</span>,<span class="at">x =</span> ss,<span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="co">#忽略大小写</span></span>
-<span id="cb373-4"><a href="正则表达式.html#cb373-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;ab&quot;</span>,<span class="at">x =</span> ss,<span class="at">value =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<div id="函数参数" class="section level3" number="15.1.1">
-<h3><span class="header-section-number">15.1.1</span> 函数参数</h3>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="正则表达式.html#cb379-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1314&quot;</span>,<span class="st">&quot;abc&quot;</span>,<span class="st">&quot;a b c&quot;</span>,<span class="st">&quot;ABC&quot;</span>,<span class="st">&quot;aB12c&quot;</span>,<span class="st">&quot;13ab14c&quot;</span>)</span>
+<span id="cb379-2"><a href="正则表达式.html#cb379-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;ab&quot;</span>,<span class="at">x =</span> ss) <span class="co">#ss向量中包含&quot;ab&quot;的索引</span></span>
+<span id="cb379-3"><a href="正则表达式.html#cb379-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;ab&quot;</span>,<span class="at">x =</span> ss,<span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="co">#忽略大小写</span></span>
+<span id="cb379-4"><a href="正则表达式.html#cb379-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;ab&quot;</span>,<span class="at">x =</span> ss,<span class="at">value =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div id="函数参数" class="section level3 hasAnchor" number="16.1.1">
+<h3><span class="header-section-number">16.1.1</span> 函数参数<a href="正则表达式.html#函数参数" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>pattern</li>
 <li>x:字符向量</li>
@@ -492,16 +494,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>value：是否返回值（而非索引）</li>
 </ul>
 </div>
-<div id="模式pattern与匹配match" class="section level3" number="15.1.2">
-<h3><span class="header-section-number">15.1.2</span> 模式（pattern）与匹配（match）</h3>
+<div id="模式pattern与匹配match" class="section level3 hasAnchor" number="16.1.2">
+<h3><span class="header-section-number">16.1.2</span> 模式（pattern）与匹配（match）<a href="正则表达式.html#模式pattern与匹配match" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>模式(pattern)：符合某种条件的“表达式”，如“姓张的同学”、“以数字开头的行”</li>
 <li>匹配：用““模式”去比较/查找/筛选的过程称为“匹配”</li>
 </ul>
 </div>
 </div>
-<div id="元字符" class="section level2" number="15.2">
-<h2><span class="header-section-number">15.2</span> 元字符</h2>
+<div id="元字符" class="section level2 hasAnchor" number="16.2">
+<h2><span class="header-section-number">16.2</span> 元字符<a href="正则表达式.html#元字符" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>表示自身的字符：字母、数字</li>
 <li>1个任意字符：.（点号）</li>
@@ -516,13 +518,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Tab(制表符) Enter(换行) 软换行 文字间隔符 任意空格符 不是空格键 任意文字字符（字母 汉字）</li>
 </ul>
 <p>例子：任意字符（.点号）与 数量符号（*、+、?）的应用</p>
-<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="正则表达式.html#cb374-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;acb&quot;</span>,<span class="st">&quot;a b&quot;</span>,<span class="st">&quot;A b&quot;</span>,<span class="st">&quot;a#b&quot;</span>,<span class="st">&quot;a##b&quot;</span>,<span class="st">&quot;ab&quot;</span>)</span>
-<span id="cb374-2"><a href="正则表达式.html#cb374-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;ab&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配ab</span></span>
-<span id="cb374-3"><a href="正则表达式.html#cb374-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配ab中间有1个任意字符</span></span>
-<span id="cb374-4"><a href="正则表达式.html#cb374-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a..b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配ab中间有2个任意字符</span></span>
-<span id="cb374-5"><a href="正则表达式.html#cb374-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.*b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配ab中间有任意数量个任意字符，数量可以为0</span></span>
-<span id="cb374-6"><a href="正则表达式.html#cb374-6" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.+b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配ab中间有至少一个数量个任意字符</span></span>
-<span id="cb374-7"><a href="正则表达式.html#cb374-7" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.?b&quot;</span>,<span class="at">x =</span> ss)<span class="co">#匹配ab中间有0个或1个数量个任意字符</span></span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="正则表达式.html#cb380-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;acb&quot;</span>,<span class="st">&quot;a b&quot;</span>,<span class="st">&quot;A b&quot;</span>,<span class="st">&quot;a#b&quot;</span>,<span class="st">&quot;a##b&quot;</span>,<span class="st">&quot;ab&quot;</span>)</span>
+<span id="cb380-2"><a href="正则表达式.html#cb380-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;ab&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配ab</span></span>
+<span id="cb380-3"><a href="正则表达式.html#cb380-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配ab中间有1个任意字符</span></span>
+<span id="cb380-4"><a href="正则表达式.html#cb380-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a..b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配ab中间有2个任意字符</span></span>
+<span id="cb380-5"><a href="正则表达式.html#cb380-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.*b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配ab中间有任意数量个任意字符，数量可以为0</span></span>
+<span id="cb380-6"><a href="正则表达式.html#cb380-6" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.+b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配ab中间有至少一个数量个任意字符</span></span>
+<span id="cb380-7"><a href="正则表达式.html#cb380-7" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.?b&quot;</span>,<span class="at">x =</span> ss)<span class="co">#匹配ab中间有0个或1个数量个任意字符</span></span></code></pre></div>
 <pre><code>## [1] 6
 ## [1] 1 2 4
 ## [1] 5
@@ -530,50 +532,50 @@ Tab(制表符) Enter(换行) 软换行 文字间隔符 任意空格符 不是空
 ## [1] 1 2 4 5
 ## [1] 1 2 4 6</code></pre>
 <p>例子：任意字符（.点号）与 数量符号（{}）的应用</p>
-<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="正则表达式.html#cb376-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;acb&quot;</span>,<span class="st">&quot;a b&quot;</span>,<span class="st">&quot;A b&quot;</span>,<span class="st">&quot;a#b&quot;</span>,<span class="st">&quot;a##b&quot;</span>,<span class="st">&quot;ab&quot;</span>)</span>
-<span id="cb376-2"><a href="正则表达式.html#cb376-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.{1,3}b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#{}表示一个数字范围，匹配&quot;ab&quot;之间有1至3个任意字符</span></span>
-<span id="cb376-3"><a href="正则表达式.html#cb376-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.{3}b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#{}匹配&quot;ab&quot;之间有3个任意字符</span></span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="正则表达式.html#cb382-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;acb&quot;</span>,<span class="st">&quot;a b&quot;</span>,<span class="st">&quot;A b&quot;</span>,<span class="st">&quot;a#b&quot;</span>,<span class="st">&quot;a##b&quot;</span>,<span class="st">&quot;ab&quot;</span>)</span>
+<span id="cb382-2"><a href="正则表达式.html#cb382-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.{1,3}b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#{}表示一个数字范围，匹配&quot;ab&quot;之间有1至3个任意字符</span></span>
+<span id="cb382-3"><a href="正则表达式.html#cb382-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a.{3}b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#{}匹配&quot;ab&quot;之间有3个任意字符</span></span></code></pre></div>
 <pre><code>## [1] 1 2 4 5
 ## integer(0)</code></pre>
 <p>例子：位置字符（^、$）的应用</p>
-<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="正则表达式.html#cb378-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1314&quot;</span>,<span class="st">&quot;abc&quot;</span>,<span class="st">&quot;a b c&quot;</span>,<span class="st">&quot;ABC&quot;</span>,<span class="st">&quot;aB12c&quot;</span>,<span class="st">&quot;13ab14c&quot;</span>)</span>
-<span id="cb378-2"><a href="正则表达式.html#cb378-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;^1&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配以1开始的索引</span></span>
-<span id="cb378-3"><a href="正则表达式.html#cb378-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;4$&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配以4结束的索引</span></span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="正则表达式.html#cb384-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1314&quot;</span>,<span class="st">&quot;abc&quot;</span>,<span class="st">&quot;a b c&quot;</span>,<span class="st">&quot;ABC&quot;</span>,<span class="st">&quot;aB12c&quot;</span>,<span class="st">&quot;13ab14c&quot;</span>)</span>
+<span id="cb384-2"><a href="正则表达式.html#cb384-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;^1&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配以1开始的索引</span></span>
+<span id="cb384-3"><a href="正则表达式.html#cb384-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;4$&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配以4结束的索引</span></span></code></pre></div>
 <pre><code>## [1] 1 6
 ## [1] 1</code></pre>
 <p>例子：方括号（[]）的应用，注意方括号与^连用表否定</p>
-<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="正则表达式.html#cb380-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a2b&quot;</span>,<span class="st">&quot;a1cb&quot;</span>,<span class="st">&quot;ab&quot;</span>,<span class="st">&quot;a111b&quot;</span>,<span class="st">&quot;a1b&quot;</span>,<span class="st">&quot;acb&quot;</span>)</span>
-<span id="cb380-2"><a href="正则表达式.html#cb380-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a[2c]b&quot;</span> ,<span class="at">x =</span> ss) <span class="co">#ab中间有括号里面（2或c）的任意1个字符</span></span>
-<span id="cb380-3"><a href="正则表达式.html#cb380-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a[2c]*b&quot;</span> ,<span class="at">x =</span> ss) <span class="co">#ab中间有任意数量的括号里面（2或c）的任意1个字符</span></span>
-<span id="cb380-4"><a href="正则表达式.html#cb380-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a[0-9]b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#&quot;ab&quot;中间有 “0到9”中的任意1个字符</span></span>
-<span id="cb380-5"><a href="正则表达式.html#cb380-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a[a-z]b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#&quot;ab&quot;中间有 “a到z”中的任意1个字符</span></span>
-<span id="cb380-6"><a href="正则表达式.html#cb380-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb380-7"><a href="正则表达式.html#cb380-7" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a[^c]b&quot;</span>,<span class="at">x =</span> ss) <span class="do">##这里的^表示否定，“非”的意思。&quot;ab&quot;中间没有以 “c”开头的字符</span></span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="正则表达式.html#cb386-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a2b&quot;</span>,<span class="st">&quot;a1cb&quot;</span>,<span class="st">&quot;ab&quot;</span>,<span class="st">&quot;a111b&quot;</span>,<span class="st">&quot;a1b&quot;</span>,<span class="st">&quot;acb&quot;</span>)</span>
+<span id="cb386-2"><a href="正则表达式.html#cb386-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a[2c]b&quot;</span> ,<span class="at">x =</span> ss) <span class="co">#ab中间有括号里面（2或c）的任意1个字符</span></span>
+<span id="cb386-3"><a href="正则表达式.html#cb386-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a[2c]*b&quot;</span> ,<span class="at">x =</span> ss) <span class="co">#ab中间有任意数量的括号里面（2或c）的任意1个字符</span></span>
+<span id="cb386-4"><a href="正则表达式.html#cb386-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a[0-9]b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#&quot;ab&quot;中间有 “0到9”中的任意1个字符</span></span>
+<span id="cb386-5"><a href="正则表达式.html#cb386-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a[a-z]b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#&quot;ab&quot;中间有 “a到z”中的任意1个字符</span></span>
+<span id="cb386-6"><a href="正则表达式.html#cb386-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb386-7"><a href="正则表达式.html#cb386-7" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a[^c]b&quot;</span>,<span class="at">x =</span> ss) <span class="do">##这里的^表示否定，“非”的意思。&quot;ab&quot;中间没有以 “c”开头的字符</span></span></code></pre></div>
 <pre><code>## [1] 1 6
 ## [1] 1 3 6
 ## [1] 1 5
 ## [1] 6
 ## [1] 1 5</code></pre>
 <p>例子：圆括号的应用 可结合gsub函数，替换</p>
-<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="正则表达式.html#cb382-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1314&quot;</span>,<span class="st">&quot;abc&quot;</span>,<span class="st">&quot;a b c&quot;</span>,<span class="st">&quot;ABC&quot;</span>,<span class="st">&quot;aB12c&quot;</span>,<span class="st">&quot;13ab14c&quot;</span>)</span>
-<span id="cb382-2"><a href="正则表达式.html#cb382-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb382-3"><a href="正则表达式.html#cb382-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;(13).4&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配有13组合+任意1个字符+4的索引</span></span>
-<span id="cb382-4"><a href="正则表达式.html#cb382-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;(13|13ab).4&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配13或1314的组合+任意1个字符+4的索引</span></span>
-<span id="cb382-5"><a href="正则表达式.html#cb382-5" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">&quot;(13|13ab).4&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot;XXXX&quot;</span>,<span class="at">x =</span> ss) <span class="co">#替换13或1314的组合+任意1个字符+4为“XXXX”</span></span>
-<span id="cb382-6"><a href="正则表达式.html#cb382-6" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">&quot;(13|13ab).4&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">1&quot;</span>,<span class="at">x =</span> ss)<span class="co">#替换13或1314的组合+任意1个字符+4为第一次匹配的内容，\\1代表反向引用</span></span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="正则表达式.html#cb388-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1314&quot;</span>,<span class="st">&quot;abc&quot;</span>,<span class="st">&quot;a b c&quot;</span>,<span class="st">&quot;ABC&quot;</span>,<span class="st">&quot;aB12c&quot;</span>,<span class="st">&quot;13ab14c&quot;</span>)</span>
+<span id="cb388-2"><a href="正则表达式.html#cb388-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb388-3"><a href="正则表达式.html#cb388-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;(13).4&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配有13组合+任意1个字符+4的索引</span></span>
+<span id="cb388-4"><a href="正则表达式.html#cb388-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;(13|13ab).4&quot;</span>,<span class="at">x =</span> ss) <span class="co">#匹配13或1314的组合+任意1个字符+4的索引</span></span>
+<span id="cb388-5"><a href="正则表达式.html#cb388-5" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">&quot;(13|13ab).4&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot;XXXX&quot;</span>,<span class="at">x =</span> ss) <span class="co">#替换13或1314的组合+任意1个字符+4为“XXXX”</span></span>
+<span id="cb388-6"><a href="正则表达式.html#cb388-6" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">&quot;(13|13ab).4&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">1&quot;</span>,<span class="at">x =</span> ss)<span class="co">#替换13或1314的组合+任意1个字符+4为第一次匹配的内容，\\1代表反向引用</span></span></code></pre></div>
 <pre><code>## [1] 1
 ## [1] 1 6
 ## [1] &quot;XXXX&quot;  &quot;abc&quot;   &quot;a b c&quot; &quot;ABC&quot;   &quot;aB12c&quot; &quot;XXXXc&quot;
 ## [1] &quot;13&quot;    &quot;abc&quot;   &quot;a b c&quot; &quot;ABC&quot;   &quot;aB12c&quot; &quot;13abc&quot;</code></pre>
 <p>转义符的应用</p>
-<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="正则表达式.html#cb384-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;acb&quot;</span>,<span class="st">&quot;a?b&quot;</span>,<span class="st">&quot;a??b&quot;</span>)</span>
-<span id="cb384-2"><a href="正则表达式.html#cb384-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb384-3"><a href="正则表达式.html#cb384-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a</span><span class="sc">\\</span><span class="st">?b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#\\?表示问号本身</span></span>
-<span id="cb384-4"><a href="正则表达式.html#cb384-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a</span><span class="sc">\\</span><span class="st">?+b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#\\?+表示至少一个问号</span></span>
-<span id="cb384-5"><a href="正则表达式.html#cb384-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;^</span><span class="sc">\\</span><span class="st">w+$&quot;</span>,<span class="at">x =</span> ss) <span class="co">#任意个字符开头并结束，及从头到尾全是字符（字母或汉字）</span></span>
-<span id="cb384-6"><a href="正则表达式.html#cb384-6" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">W+&quot;</span>,<span class="at">x =</span> ss) <span class="co">#含有非字符（符合 空格）成分</span></span>
-<span id="cb384-7"><a href="正则表达式.html#cb384-7" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">d+&quot;</span>,<span class="at">x =</span> ss) <span class="co">#含有数字成分</span></span>
-<span id="cb384-8"><a href="正则表达式.html#cb384-8" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">D+&quot;</span>,<span class="at">x =</span> ss) <span class="co">#含有非数字成分</span></span></code></pre></div>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="正则表达式.html#cb390-1" aria-hidden="true" tabindex="-1"></a>ss <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;acb&quot;</span>,<span class="st">&quot;a?b&quot;</span>,<span class="st">&quot;a??b&quot;</span>)</span>
+<span id="cb390-2"><a href="正则表达式.html#cb390-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb390-3"><a href="正则表达式.html#cb390-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a</span><span class="sc">\\</span><span class="st">?b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#\\?表示问号本身</span></span>
+<span id="cb390-4"><a href="正则表达式.html#cb390-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;a</span><span class="sc">\\</span><span class="st">?+b&quot;</span>,<span class="at">x =</span> ss) <span class="co">#\\?+表示至少一个问号</span></span>
+<span id="cb390-5"><a href="正则表达式.html#cb390-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;^</span><span class="sc">\\</span><span class="st">w+$&quot;</span>,<span class="at">x =</span> ss) <span class="co">#任意个字符开头并结束，及从头到尾全是字符（字母或汉字）</span></span>
+<span id="cb390-6"><a href="正则表达式.html#cb390-6" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">W+&quot;</span>,<span class="at">x =</span> ss) <span class="co">#含有非字符（符合 空格）成分</span></span>
+<span id="cb390-7"><a href="正则表达式.html#cb390-7" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">d+&quot;</span>,<span class="at">x =</span> ss) <span class="co">#含有数字成分</span></span>
+<span id="cb390-8"><a href="正则表达式.html#cb390-8" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">D+&quot;</span>,<span class="at">x =</span> ss) <span class="co">#含有非数字成分</span></span></code></pre></div>
 <pre><code>## [1] 2
 ## [1] 2 3
 ## [1] 1
@@ -581,8 +583,8 @@ Tab(制表符) Enter(换行) 软换行 文字间隔符 任意空格符 不是空
 ## integer(0)
 ## [1] 1 2 3</code></pre>
 </div>
-<div id="常用文本处理函数" class="section level2" number="15.3">
-<h2><span class="header-section-number">15.3</span> 常用文本处理函数</h2>
+<div id="常用文本处理函数" class="section level2 hasAnchor" number="16.3">
+<h2><span class="header-section-number">16.3</span> 常用文本处理函数<a href="正则表达式.html#常用文本处理函数" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>length/nchar （向量元素的个数/每个向量元素字符的长度）</li>
 <li>模式查询：grep/grepl （索引/返回逻辑值）</li>
@@ -591,34 +593,34 @@ Tab(制表符) Enter(换行) 软换行 文字间隔符 任意空格符 不是空
 <li>合并/拆分：paste/strsplit</li>
 <li>转换/翻译：tolwer/toupper/chartr</li>
 </ul>
-<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="正则表达式.html#cb386-1" aria-hidden="true" tabindex="-1"></a>ss1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">12</span>,<span class="dv">123</span>,<span class="st">&quot;abcdef&quot;</span>)</span>
-<span id="cb386-2"><a href="正则表达式.html#cb386-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb386-3"><a href="正则表达式.html#cb386-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(ss1)</span>
-<span id="cb386-4"><a href="正则表达式.html#cb386-4" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(ss1)</span></code></pre></div>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="正则表达式.html#cb392-1" aria-hidden="true" tabindex="-1"></a>ss1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">12</span>,<span class="dv">123</span>,<span class="st">&quot;abcdef&quot;</span>)</span>
+<span id="cb392-2"><a href="正则表达式.html#cb392-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb392-3"><a href="正则表达式.html#cb392-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(ss1)</span>
+<span id="cb392-4"><a href="正则表达式.html#cb392-4" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(ss1)</span></code></pre></div>
 <pre><code>## [1] 4
 ## [1] 1 2 3 6</code></pre>
-<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="正则表达式.html#cb388-1" aria-hidden="true" tabindex="-1"></a>ss1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">12</span>,<span class="dv">123</span>,<span class="st">&quot;abcdef&quot;</span>)</span>
-<span id="cb388-2"><a href="正则表达式.html#cb388-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb388-3"><a href="正则表达式.html#cb388-3" aria-hidden="true" tabindex="-1"></a><span class="fu">substr</span>(<span class="st">&quot;abcdef&quot;</span>, <span class="dv">2</span>, <span class="dv">4</span>) <span class="co">#截取字符第2到4位</span></span>
-<span id="cb388-4"><a href="正则表达式.html#cb388-4" aria-hidden="true" tabindex="-1"></a><span class="fu">substring</span>(<span class="st">&quot;abcdef&quot;</span>, <span class="at">first =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">last =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)  <span class="co">#</span></span>
-<span id="cb388-5"><a href="正则表达式.html#cb388-5" aria-hidden="true" tabindex="-1"></a><span class="fu">strtrim</span>(ss1,<span class="at">width =</span> <span class="dv">2</span>) <span class="co">#修剪得到每个元素字符前两位</span></span></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="正则表达式.html#cb394-1" aria-hidden="true" tabindex="-1"></a>ss1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">12</span>,<span class="dv">123</span>,<span class="st">&quot;abcdef&quot;</span>)</span>
+<span id="cb394-2"><a href="正则表达式.html#cb394-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb394-3"><a href="正则表达式.html#cb394-3" aria-hidden="true" tabindex="-1"></a><span class="fu">substr</span>(<span class="st">&quot;abcdef&quot;</span>, <span class="dv">2</span>, <span class="dv">4</span>) <span class="co">#截取字符第2到4位</span></span>
+<span id="cb394-4"><a href="正则表达式.html#cb394-4" aria-hidden="true" tabindex="-1"></a><span class="fu">substring</span>(<span class="st">&quot;abcdef&quot;</span>, <span class="at">first =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">last =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)  <span class="co">#</span></span>
+<span id="cb394-5"><a href="正则表达式.html#cb394-5" aria-hidden="true" tabindex="-1"></a><span class="fu">strtrim</span>(ss1,<span class="at">width =</span> <span class="dv">2</span>) <span class="co">#修剪得到每个元素字符前两位</span></span></code></pre></div>
 <pre><code>## [1] &quot;bcd&quot;
 ## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot;
 ## [1] &quot;1&quot;  &quot;12&quot; &quot;12&quot; &quot;ab&quot;</code></pre>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="正则表达式.html#cb390-1" aria-hidden="true" tabindex="-1"></a>ss1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">12</span>,<span class="dv">123</span>,<span class="st">&quot;abcdef&quot;</span>)</span>
-<span id="cb390-2"><a href="正则表达式.html#cb390-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb390-3"><a href="正则表达式.html#cb390-3" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(ss1,<span class="st">&quot;###&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="正则表达式.html#cb396-1" aria-hidden="true" tabindex="-1"></a>ss1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">12</span>,<span class="dv">123</span>,<span class="st">&quot;abcdef&quot;</span>)</span>
+<span id="cb396-2"><a href="正则表达式.html#cb396-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb396-3"><a href="正则表达式.html#cb396-3" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(ss1,<span class="st">&quot;###&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;1 ###&quot;      &quot;12 ###&quot;     &quot;123 ###&quot;    &quot;abcdef ###&quot;</code></pre>
-<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="正则表达式.html#cb392-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(ss1,<span class="st">&quot;###&quot;</span>,<span class="at">sep =</span> <span class="st">&quot;-&quot;</span>) <span class="co">#sep 两个字符间的分隔符</span></span></code></pre></div>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="正则表达式.html#cb398-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(ss1,<span class="st">&quot;###&quot;</span>,<span class="at">sep =</span> <span class="st">&quot;-&quot;</span>) <span class="co">#sep 两个字符间的分隔符</span></span></code></pre></div>
 <pre><code>## [1] &quot;1-###&quot;      &quot;12-###&quot;     &quot;123-###&quot;    &quot;abcdef-###&quot;</code></pre>
-<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="正则表达式.html#cb394-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(ss1,<span class="st">&quot;###&quot;</span>,<span class="at">sep =</span> <span class="st">&quot;-&quot;</span>,<span class="at">collapse =</span> <span class="st">&quot;;&quot;</span>) <span class="co">#collapse 将多个向量元素融合</span></span></code></pre></div>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="正则表达式.html#cb400-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(ss1,<span class="st">&quot;###&quot;</span>,<span class="at">sep =</span> <span class="st">&quot;-&quot;</span>,<span class="at">collapse =</span> <span class="st">&quot;;&quot;</span>) <span class="co">#collapse 将多个向量元素融合</span></span></code></pre></div>
 <pre><code>## [1] &quot;1-###;12-###;123-###;abcdef-###&quot;</code></pre>
-<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="正则表达式.html#cb396-1" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(<span class="st">&quot;abc def&quot;</span>,<span class="at">split =</span> <span class="st">&quot;&quot;</span>) <span class="co">#每个字符拆分</span></span>
-<span id="cb396-2"><a href="正则表达式.html#cb396-2" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(<span class="st">&quot;abc def&quot;</span>,<span class="at">split =</span> <span class="st">&quot; &quot;</span>) <span class="co">#空格符拆分</span></span>
-<span id="cb396-3"><a href="正则表达式.html#cb396-3" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(<span class="st">&quot;abc  def&quot;</span>,<span class="at">split =</span> <span class="st">&quot; +&quot;</span>) <span class="co">#split可跟正则表达式，“空格+”表示一个或多个空格拆分空格符拆分</span></span>
-<span id="cb396-4"><a href="正则表达式.html#cb396-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb396-5"><a href="正则表达式.html#cb396-5" aria-hidden="true" tabindex="-1"></a>ss1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">12</span>,<span class="dv">123</span>,<span class="st">&quot;abcdef&quot;</span>)</span>
-<span id="cb396-6"><a href="正则表达式.html#cb396-6" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(ss1,<span class="at">split =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="正则表达式.html#cb402-1" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(<span class="st">&quot;abc def&quot;</span>,<span class="at">split =</span> <span class="st">&quot;&quot;</span>) <span class="co">#每个字符拆分</span></span>
+<span id="cb402-2"><a href="正则表达式.html#cb402-2" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(<span class="st">&quot;abc def&quot;</span>,<span class="at">split =</span> <span class="st">&quot; &quot;</span>) <span class="co">#空格符拆分</span></span>
+<span id="cb402-3"><a href="正则表达式.html#cb402-3" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(<span class="st">&quot;abc  def&quot;</span>,<span class="at">split =</span> <span class="st">&quot; +&quot;</span>) <span class="co">#split可跟正则表达式，“空格+”表示一个或多个空格拆分空格符拆分</span></span>
+<span id="cb402-4"><a href="正则表达式.html#cb402-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb402-5"><a href="正则表达式.html#cb402-5" aria-hidden="true" tabindex="-1"></a>ss1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">12</span>,<span class="dv">123</span>,<span class="st">&quot;abcdef&quot;</span>)</span>
+<span id="cb402-6"><a href="正则表达式.html#cb402-6" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(ss1,<span class="at">split =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot; &quot; &quot;d&quot; &quot;e&quot; &quot;f&quot;
 ## 
@@ -640,19 +642,19 @@ Tab(制表符) Enter(换行) 软换行 文字间隔符 任意空格符 不是空
 ## [[4]]
 ## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot;</code></pre>
 </div>
-<div id="案例" class="section level2" number="15.4">
-<h2><span class="header-section-number">15.4</span> 案例</h2>
-<div id="查找指定目录下的jpg图像文件list.files函数" class="section level3" number="15.4.1">
-<h3><span class="header-section-number">15.4.1</span> 查找指定目录下的jpg图像文件（list.files函数）</h3>
+<div id="案例" class="section level2 hasAnchor" number="16.4">
+<h2><span class="header-section-number">16.4</span> 案例<a href="正则表达式.html#案例" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="查找指定目录下的jpg图像文件list.files函数" class="section level3 hasAnchor" number="16.4.1">
+<h3><span class="header-section-number">16.4.1</span> 查找指定目录下的jpg图像文件（list.files函数）<a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>dic</p>
-<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="正则表达式.html#cb398-1" aria-hidden="true" tabindex="-1"></a>dirctory<span class="ot">=</span><span class="st">&quot;../front_end/fig/&quot;</span></span>
-<span id="cb398-2"><a href="正则表达式.html#cb398-2" aria-hidden="true" tabindex="-1"></a>file_name<span class="ot">=</span><span class="fu">list.files</span>(<span class="at">path =</span> dirctory, <span class="co">#文件路径</span></span>
-<span id="cb398-3"><a href="正则表达式.html#cb398-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.jpg$&quot;</span>, <span class="co">#正则表达式</span></span>
-<span id="cb398-4"><a href="正则表达式.html#cb398-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="co">#是否迭代子目录</span></span>
-<span id="cb398-5"><a href="正则表达式.html#cb398-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">full.names =</span> <span class="cn">TRUE</span>, <span class="co">#是否显示文件全部路径</span></span>
-<span id="cb398-6"><a href="正则表达式.html#cb398-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="co">#是否忽略大小写</span></span>
-<span id="cb398-7"><a href="正则表达式.html#cb398-7" aria-hidden="true" tabindex="-1"></a>file_name</span>
-<span id="cb398-8"><a href="正则表达式.html#cb398-8" aria-hidden="true" tabindex="-1"></a><span class="fu">file.size</span>(file_name) <span class="co">#查看文件大小，单位为KB</span></span></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="正则表达式.html#cb404-1" aria-hidden="true" tabindex="-1"></a>dirctory<span class="ot">=</span><span class="st">&quot;../front_end/fig/&quot;</span></span>
+<span id="cb404-2"><a href="正则表达式.html#cb404-2" aria-hidden="true" tabindex="-1"></a>file_name<span class="ot">=</span><span class="fu">list.files</span>(<span class="at">path =</span> dirctory, <span class="co">#文件路径</span></span>
+<span id="cb404-3"><a href="正则表达式.html#cb404-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.jpg$&quot;</span>, <span class="co">#正则表达式</span></span>
+<span id="cb404-4"><a href="正则表达式.html#cb404-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="co">#是否迭代子目录</span></span>
+<span id="cb404-5"><a href="正则表达式.html#cb404-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">full.names =</span> <span class="cn">TRUE</span>, <span class="co">#是否显示文件全部路径</span></span>
+<span id="cb404-6"><a href="正则表达式.html#cb404-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">ignore.case =</span> <span class="cn">TRUE</span>) <span class="co">#是否忽略大小写</span></span>
+<span id="cb404-7"><a href="正则表达式.html#cb404-7" aria-hidden="true" tabindex="-1"></a>file_name</span>
+<span id="cb404-8"><a href="正则表达式.html#cb404-8" aria-hidden="true" tabindex="-1"></a><span class="fu">file.size</span>(file_name) <span class="co">#查看文件大小，单位为KB</span></span></code></pre></div>
 <pre><code>##  [1] &quot;../front_end/fig//appendix/100-01.jpg&quot;
 ##  [2] &quot;../front_end/fig//appendix/100-02.jpg&quot;
 ##  [3] &quot;../front_end/fig//appendix/100-03.jpg&quot;
@@ -739,28 +741,28 @@ Tab(制表符) Enter(换行) 软换行 文字间隔符 任意空格符 不是空
 ## [51]   7132  10024   5582   6286  17656  92362  14271   6913   7374  58411
 ## [61]  45855   7360   8515  13057  56081  14049  13009  22879  26817  50769
 ## [71]  71105  99416  51007 144687  58105 936815  10285  23057</code></pre>
-<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="正则表达式.html#cb400-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tolower</span>(<span class="fu">c</span>(<span class="st">&quot;aBc&quot;</span>,<span class="st">&quot;ABCxx&quot;</span>)) <span class="co">#全部小写</span></span>
-<span id="cb400-2"><a href="正则表达式.html#cb400-2" aria-hidden="true" tabindex="-1"></a><span class="fu">toupper</span>(<span class="fu">c</span>(<span class="st">&quot;aBc&quot;</span>,<span class="st">&quot;ABCxx&quot;</span>)) <span class="co">#全部大写</span></span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="正则表达式.html#cb406-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tolower</span>(<span class="fu">c</span>(<span class="st">&quot;aBc&quot;</span>,<span class="st">&quot;ABCxx&quot;</span>)) <span class="co">#全部小写</span></span>
+<span id="cb406-2"><a href="正则表达式.html#cb406-2" aria-hidden="true" tabindex="-1"></a><span class="fu">toupper</span>(<span class="fu">c</span>(<span class="st">&quot;aBc&quot;</span>,<span class="st">&quot;ABCxx&quot;</span>)) <span class="co">#全部大写</span></span></code></pre></div>
 <pre><code>## [1] &quot;abc&quot;   &quot;abcxx&quot;
 ## [1] &quot;ABC&quot;   &quot;ABCXX&quot;</code></pre>
-<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="正则表达式.html#cb402-1" aria-hidden="true" tabindex="-1"></a>xseq <span class="ot">&lt;-</span> <span class="st">&quot;ATCGCCC&quot;</span></span>
-<span id="cb402-2"><a href="正则表达式.html#cb402-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chartr</span>(<span class="at">old =</span> <span class="st">&quot;ATCG&quot;</span>,<span class="at">new =</span> <span class="st">&quot;UAGC&quot;</span>,<span class="at">x =</span> xseq) <span class="co">#旧字符翻译成新字符，如A翻译成U，T翻译成A...</span></span></code></pre></div>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="正则表达式.html#cb408-1" aria-hidden="true" tabindex="-1"></a>xseq <span class="ot">&lt;-</span> <span class="st">&quot;ATCGCCC&quot;</span></span>
+<span id="cb408-2"><a href="正则表达式.html#cb408-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chartr</span>(<span class="at">old =</span> <span class="st">&quot;ATCG&quot;</span>,<span class="at">new =</span> <span class="st">&quot;UAGC&quot;</span>,<span class="at">x =</span> xseq) <span class="co">#旧字符翻译成新字符，如A翻译成U，T翻译成A...</span></span></code></pre></div>
 <pre><code>## [1] &quot;UAGCGGG&quot;</code></pre>
 </div>
-<div id="全宋词" class="section level3" number="15.4.2">
-<h3><span class="header-section-number">15.4.2</span> 全宋词</h3>
-<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="正则表达式.html#cb404-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">&quot;.</span><span class="sc">\\</span><span class="st">s&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot;&quot;</span>,<span class="at">x =</span> songci) <span class="co">#去除文本向量中所有空格符</span></span>
-<span id="cb404-2"><a href="正则表达式.html#cb404-2" aria-hidden="true" tabindex="-1"></a>sentence<span class="ot">=</span><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;|&quot;</span>,<span class="at">x =</span> songci,<span class="at">value =</span> <span class="cn">TRUE</span>) <span class="co">#查找含“杨”或“柳”的句子</span></span>
-<span id="cb404-3"><a href="正则表达式.html#cb404-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(sentence)</span></code></pre></div>
+<div id="全宋词" class="section level3 hasAnchor" number="16.4.2">
+<h3><span class="header-section-number">16.4.2</span> 全宋词<a href="正则表达式.html#全宋词" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="正则表达式.html#cb410-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">&quot;.</span><span class="sc">\\</span><span class="st">s&quot;</span>,<span class="at">replacement =</span> <span class="st">&quot;&quot;</span>,<span class="at">x =</span> songci) <span class="co">#去除文本向量中所有空格符</span></span>
+<span id="cb410-2"><a href="正则表达式.html#cb410-2" aria-hidden="true" tabindex="-1"></a>sentence<span class="ot">=</span><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;|&quot;</span>,<span class="at">x =</span> songci,<span class="at">value =</span> <span class="cn">TRUE</span>) <span class="co">#查找含“杨”或“柳”的句子</span></span>
+<span id="cb410-3"><a href="正则表达式.html#cb410-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(sentence)</span></code></pre></div>
 </div>
-<div id="sci筛选行" class="section level3" number="15.4.3">
-<h3><span class="header-section-number">15.4.3</span> SCI（筛选行）</h3>
+<div id="sci筛选行" class="section level3 hasAnchor" number="16.4.3">
+<h3><span class="header-section-number">16.4.3</span> SCI（筛选行）<a href="正则表达式.html#sci筛选行" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>筛选出杂志名包含NATURE，且19年IF&gt;3的行</p>
 <p>grepl函数返回TURE or FALSE，表示向量中每个元素是否满足正则表达式</p>
-<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="正则表达式.html#cb405-1" aria-hidden="true" tabindex="-1"></a>data</span>
-<span id="cb405-2"><a href="正则表达式.html#cb405-2" aria-hidden="true" tabindex="-1"></a>ss1 <span class="ot">&lt;-</span> <span class="fu">grepl</span>(<span class="at">pattern =</span> <span class="st">&quot;nature&quot;</span>,<span class="at">x =</span> data<span class="sc">$</span>tittle,<span class="at">ignore.case =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb405-3"><a href="正则表达式.html#cb405-3" aria-hidden="true" tabindex="-1"></a>ss2 <span class="ot">&lt;-</span> data<span class="sc">$</span>IF <span class="sc">&gt;</span> <span class="dv">3</span></span>
-<span id="cb405-4"><a href="正则表达式.html#cb405-4" aria-hidden="true" tabindex="-1"></a>dt[ss1 <span class="sc">&amp;</span> ss2,]</span></code></pre></div>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="正则表达式.html#cb411-1" aria-hidden="true" tabindex="-1"></a>data</span>
+<span id="cb411-2"><a href="正则表达式.html#cb411-2" aria-hidden="true" tabindex="-1"></a>ss1 <span class="ot">&lt;-</span> <span class="fu">grepl</span>(<span class="at">pattern =</span> <span class="st">&quot;nature&quot;</span>,<span class="at">x =</span> data<span class="sc">$</span>tittle,<span class="at">ignore.case =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb411-3"><a href="正则表达式.html#cb411-3" aria-hidden="true" tabindex="-1"></a>ss2 <span class="ot">&lt;-</span> data<span class="sc">$</span>IF <span class="sc">&gt;</span> <span class="dv">3</span></span>
+<span id="cb411-4"><a href="正则表达式.html#cb411-4" aria-hidden="true" tabindex="-1"></a>dt[ss1 <span class="sc">&amp;</span> ss2,]</span></code></pre></div>
 
 </div>
 </div>
@@ -770,7 +772,7 @@ Tab(制表符) Enter(换行) 软换行 文字间隔符 任意空格符 不是空
           </div>
         </div>
       </div>
-<a href="infer包.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="极大似然估计.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="一些自定义函数.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -831,7 +833,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

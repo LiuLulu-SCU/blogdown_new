@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 数据操作 | R语言编程</title>
   <meta name="description" content="张敬信老师的R语言学习笔记" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 数据操作 | R语言编程" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="张敬信老师的R语言学习笔记" />
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="基础语法.html"/>
 <link rel="next" href="可视化与建模.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,22 +48,23 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/plotly-binding-4.10.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX","output/SVG"],
@@ -118,7 +117,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -131,7 +130,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -299,6 +298,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.2</b> 数学公式的类别</a></li>
 <li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.3</b> 上横线</a></li>
 <li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.4</b> hat</a></li>
+<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.5</b> 换行对齐</a></li>
+<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.6</b> 分段函数</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>7</b> RMarkdown</a>
@@ -420,40 +421,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="infer包.html"><a href="infer包.html#卡方检验"><i class="fa fa-check"></i><b>14.2</b> 卡方检验</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>15</b> 正则表达式</a>
+<li class="chapter" data-level="15" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>15</b> 极大似然估计</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>15.1</b> grep函数</a>
+<li class="chapter" data-level="15.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>15.1</b> 自定义极大似然函数</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>15.1.1</b> 函数参数</a></li>
-<li class="chapter" data-level="15.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>15.1.2</b> 模式（pattern）与匹配（match）</a></li>
-</ul></li>
-<li class="chapter" data-level="15.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>15.2</b> 元字符</a></li>
-<li class="chapter" data-level="15.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>15.3</b> 常用文本处理函数</a></li>
-<li class="chapter" data-level="15.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>15.4</b> 案例</a>
-<ul>
-<li class="chapter" data-level="15.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>15.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
-<li class="chapter" data-level="15.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>15.4.2</b> 全宋词</a></li>
-<li class="chapter" data-level="15.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>15.4.3</b> SCI（筛选行）</a></li>
+<li class="chapter" data-level="15.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>15.1.1</b> 正态分布</a></li>
+<li class="chapter" data-level="15.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>15.1.2</b> 指数分布</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>16</b> 一些自定义函数</a>
+<li class="chapter" data-level="16" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>16</b> 正则表达式</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>16.1</b> 数据处理</a>
+<li class="chapter" data-level="16.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>16.1</b> grep函数</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>16.1.1</b> 分组排序并排名</a></li>
+<li class="chapter" data-level="16.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>16.1.1</b> 函数参数</a></li>
+<li class="chapter" data-level="16.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>16.1.2</b> 模式（pattern）与匹配（match）</a></li>
 </ul></li>
-<li class="chapter" data-level="16.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>16.2</b> 统计相关</a>
+<li class="chapter" data-level="16.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>16.2</b> 元字符</a></li>
+<li class="chapter" data-level="16.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>16.3</b> 常用文本处理函数</a></li>
+<li class="chapter" data-level="16.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>16.4</b> 案例</a>
 <ul>
-<li class="chapter" data-level="16.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>16.2.1</b> 汇总数据t检验</a></li>
+<li class="chapter" data-level="16.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>16.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
+<li class="chapter" data-level="16.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>16.4.2</b> 全宋词</a></li>
+<li class="chapter" data-level="16.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>16.4.3</b> SCI（筛选行）</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="m1-m2-the-sample-means.html"><a href="m1-m2-the-sample-means.html"><i class="fa fa-check"></i><b>17</b> m1, m2: the sample means</a></li>
-<li class="chapter" data-level="18" data-path="s1-s2-the-sample-standard-deviations.html"><a href="s1-s2-the-sample-standard-deviations.html"><i class="fa fa-check"></i><b>18</b> s1, s2: the sample standard deviations</a></li>
-<li class="chapter" data-level="19" data-path="n1-n2-the-same-sizes.html"><a href="n1-n2-the-same-sizes.html"><i class="fa fa-check"></i><b>19</b> n1, n2: the same sizes</a></li>
-<li class="chapter" data-level="20" data-path="m0-the-null-value-for-the-difference-in-means-to-be-tested-for.-default-is-0..html"><a href="m0-the-null-value-for-the-difference-in-means-to-be-tested-for.-default-is-0..html"><i class="fa fa-check"></i><b>20</b> m0: the null value for the difference in means to be tested for. Default is 0.</a></li>
-<li class="chapter" data-level="21" data-path="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html"><i class="fa fa-check"></i><b>21</b> equal.variance: whether or not to assume equal variance. Default is FALSE.</a>
+<li class="chapter" data-level="17" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>17</b> 一些自定义函数</a>
 <ul>
-<li class="chapter" data-level="21.0.1" data-path="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#卡方检验-1"><i class="fa fa-check"></i><b>21.0.1</b> 卡方检验</a></li>
+<li class="chapter" data-level="17.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>17.1</b> 数据处理</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>17.1.1</b> 分组排序并排名</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>17.2</b> 统计相关</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>17.2.1</b> 汇总数据t检验</a></li>
+<li class="chapter" data-level="17.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>17.2.2</b> 卡方检验</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -472,12 +474,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="数据操作" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> 数据操作</h1>
-<div id="数据连接" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> 数据连接</h2>
-<div id="合并行与和并列" class="section level3" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> 合并行与和并列</h3>
+<div id="数据操作" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> 数据操作<a href="数据操作.html#数据操作" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="数据连接" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> 数据连接<a href="数据操作.html#数据连接" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="合并行与和并列" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> 合并行与和并列<a href="数据操作.html#合并行与和并列" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>合并行和和并列分别用dplyr 包中的bind_rows() 和bind_cols() 实现。</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="数据操作.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(</span>
 <span id="cb64-2"><a href="数据操作.html#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(iris,<span class="at">size =</span> <span class="dv">2</span>),</span>
@@ -485,12 +487,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb64-4"><a href="数据操作.html#cb64-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(iris,<span class="at">size =</span> <span class="dv">2</span>)</span>
 <span id="cb64-5"><a href="数据操作.html#cb64-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-## 1          4.3         3.0          1.1         0.1     setosa
-## 2          6.9         3.1          5.4         2.1  virginica
-## 3          7.2         3.6          6.1         2.5  virginica
-## 4          5.1         3.5          1.4         0.3     setosa
-## 5          5.0         3.5          1.6         0.6     setosa
-## 6          6.7         3.1          4.4         1.4 versicolor</code></pre>
+## 1          6.6         2.9          4.6         1.3 versicolor
+## 2          7.0         3.2          4.7         1.4 versicolor
+## 3          7.7         3.0          6.1         2.3  virginica
+## 4          6.5         2.8          4.6         1.5 versicolor
+## 5          6.2         3.4          5.4         2.3  virginica
+## 6          6.6         3.0          4.4         1.4 versicolor</code></pre>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="数据操作.html#cb66-1" aria-hidden="true" tabindex="-1"></a>one<span class="ot">=</span>mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span>
 <span id="cb66-2"><a href="数据操作.html#cb66-2" aria-hidden="true" tabindex="-1"></a>two<span class="ot">=</span>mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,<span class="dv">4</span><span class="sc">:</span><span class="dv">5</span>]</span>
 <span id="cb66-3"><a href="数据操作.html#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_cols</span>(one,two)</span></code></pre></div>
@@ -500,11 +502,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Datsun 710     22.8   4  108  93 3.85
 ## Hornet 4 Drive 21.4   6  258 110 3.08</code></pre>
 </div>
-<div id="根据值匹配合并数据框" class="section level3" number="3.1.2">
-<h3><span class="header-section-number">3.1.2</span> 根据值匹配合并数据框</h3>
+<div id="根据值匹配合并数据框" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> 根据值匹配合并数据框<a href="数据操作.html#根据值匹配合并数据框" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="实现r中实现stata的merge命令" class="section level3" number="3.1.3">
-<h3><span class="header-section-number">3.1.3</span> 实现R中实现stata的merge命令</h3>
+<div id="实现r中实现stata的merge命令" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> 实现R中实现stata的merge命令<a href="数据操作.html#实现r中实现stata的merge命令" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table class="kable_wrapper">
 <tbody>
 <tr>
@@ -620,8 +622,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5 OPPO    1 只在data2</code></pre>
 </div>
 </div>
-<div id="数据操作-1" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> 数据操作</h2>
+<div id="数据操作-1" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> 数据操作<a href="数据操作.html#数据操作-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>select()—— 选择列</p></li>
 <li><p>filter()/slice()——筛选行</p></li>
@@ -636,12 +638,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>根据列名访问数据框的列，且列名不用加引号</p></li>
 <li><p>返回结果是一个新数据框，不改变原数据框</p></li>
 </ul>
-<div id="选择列select" class="section level3" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> 选择列（select）</h3>
+<div id="选择列select" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> 选择列（select）<a href="数据操作.html#选择列select" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>数据</p>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="数据操作.html#cb70-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">&quot;datas/ExamDatas_NAs.xlsx&quot;</span>)</span>
 <span id="cb70-2"><a href="数据操作.html#cb70-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 8
+<pre><code>## # A tibble: 50 × 8
 ##    class name   sex   chinese  math english moral science
 ##    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
 ##  1 六1班 何娜   女         87    92      79     9      10
@@ -654,14 +656,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 六1班 陈欣越 男         57    80      60     9       9
 ##  9 六1班 黄亦婷 女         77    NA      54     8      10
 ## 10 六1班 陈媚   女         68    55      66     8       9
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 </div>
-<div id="选择列语法" class="section level3" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> 选择列语法</h3>
+<div id="选择列语法" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> 选择列语法<a href="数据操作.html#选择列语法" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>（1）用列名或索引选择列</strong></p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="数据操作.html#cb72-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
 <span id="cb72-2"><a href="数据操作.html#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name,sex,math) <span class="co"># 或者select(2, 3, 5)</span></span></code></pre></div>
-<pre><code>## # A tibble: 50 x 3
+<pre><code>## # A tibble: 50 × 3
 ##    name   sex    math
 ##    &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt;
 ##  1 何娜   女       92
@@ -674,7 +676,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 陈欣越 男       80
 ##  9 黄亦婷 女       NA
 ## 10 陈媚   女       55
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 <p><strong>(2) 借助运算符选择列</strong></p>
 <ul>
 <li><p>用: 选择连续的若干列</p></li>
@@ -703,11 +705,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </div>
-<div id="选择列的例子" class="section level3" number="3.2.3">
-<h3><span class="header-section-number">3.2.3</span> 选择列的例子</h3>
+<div id="选择列的例子" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> 选择列的例子<a href="数据操作.html#选择列的例子" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="数据操作.html#cb74-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb74-2"><a href="数据操作.html#cb74-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;m&quot;</span>))</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 2
+<pre><code>## # A tibble: 50 × 2
 ##     math moral
 ##    &lt;dbl&gt; &lt;dbl&gt;
 ##  1    92     9
@@ -720,10 +722,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8    80     9
 ##  9    NA     8
 ## 10    55     8
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 <div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="数据操作.html#cb76-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
 <span id="cb76-2"><a href="数据操作.html#cb76-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">&quot;e&quot;</span>))</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 3
+<pre><code>## # A tibble: 50 × 3
 ##    name   chinese science
 ##    &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt;
 ##  1 何娜        87      10
@@ -736,10 +738,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 陈欣越      57       9
 ##  9 黄亦婷      77      10
 ## 10 陈媚        68       9
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 <div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="数据操作.html#cb78-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb78-2"><a href="数据操作.html#cb78-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&quot;a&quot;</span>))</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 4
+<pre><code>## # A tibble: 50 × 4
 ##    class name    math moral
 ##    &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;
 ##  1 六1班 何娜      92     9
@@ -752,12 +754,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 六1班 陈欣越    80     9
 ##  9 六1班 黄亦婷    NA     8
 ## 10 六1班 陈媚      55     8
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 <p>根据条件（逻辑判断）选择列，例如选择所有数值型的列：</p>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="数据操作.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyselect)</span>
 <span id="cb80-2"><a href="数据操作.html#cb80-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
 <span id="cb80-3"><a href="数据操作.html#cb80-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric))</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 5
+<pre><code>## # A tibble: 50 × 5
 ##    chinese  math english moral science
 ##      &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
 ##  1      87    92      79     9      10
@@ -770,11 +772,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8      57    80      60     9       9
 ##  9      77    NA      54     8      10
 ## 10      68    55      66     8       9
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 <p>也可以自定义返回TRUE 或FALSE 的判断函数，支持purrr 风格公式写法。例如，选择列和&gt;3000 的列：</p>
 <div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="数据操作.html#cb82-1" aria-hidden="true" tabindex="-1"></a>df[,<span class="dv">4</span><span class="sc">:</span><span class="dv">8</span>]<span class="sc">%&gt;%</span></span>
 <span id="cb82-2"><a href="数据操作.html#cb82-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(<span class="sc">~</span><span class="fu">sum</span>(.x,<span class="at">na.rm =</span> <span class="cn">TRUE</span>)<span class="sc">&gt;</span><span class="dv">3000</span>))</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 2
+<pre><code>## # A tibble: 50 × 2
 ##    chinese  math
 ##      &lt;dbl&gt; &lt;dbl&gt;
 ##  1      87    92
@@ -787,11 +789,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8      57    80
 ##  9      77    NA
 ## 10      68    55
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 <p>结合n_distinct() 选择唯一值数目&lt; 10 的列：</p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="数据操作.html#cb84-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
 <span id="cb84-2"><a href="数据操作.html#cb84-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(<span class="sc">~</span><span class="fu">n_distinct</span>(.x)<span class="sc">&lt;</span><span class="dv">10</span>))</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 4
+<pre><code>## # A tibble: 50 × 4
 ##    class sex   moral science
 ##    &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;   &lt;dbl&gt;
 ##  1 六1班 女        9      10
@@ -804,13 +806,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 六1班 男        9       9
 ##  9 六1班 女        8      10
 ## 10 六1班 女        8       9
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 </div>
-<div id="用--删除列" class="section level3" number="3.2.4">
-<h3><span class="header-section-number">3.2.4</span> 用“-” 删除列</h3>
+<div id="用--删除列" class="section level3 hasAnchor" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> 用“-” 删除列<a href="数据操作.html#用--删除列" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="数据操作.html#cb86-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb86-2"><a href="数据操作.html#cb86-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(name,chinese,science)) <span class="co">#select(-ends_with(&quot;e&quot;))</span></span></code></pre></div>
-<pre><code>## # A tibble: 50 x 5
+<pre><code>## # A tibble: 50 × 5
 ##    class sex    math english moral
 ##    &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
 ##  1 六1班 女       92      79     9
@@ -823,11 +825,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 六1班 男       80      60     9
 ##  9 六1班 女       NA      54     8
 ## 10 六1班 女       55      66     8
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 <p>选择math和除了“e”结尾的其他列</p>
 <div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="数据操作.html#cb88-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb88-2"><a href="数据操作.html#cb88-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(math,<span class="fu">everything</span>(),<span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">&quot;e&quot;</span>))</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 5
+<pre><code>## # A tibble: 50 × 5
 ##     math class sex   english moral
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
 ##  1    92 六1班 女         79     9
@@ -840,15 +842,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8    80 六1班 男         60     9
 ##  9    NA 六1班 女         54     8
 ## 10    55 六1班 女         66     8
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 <p>注意： -ends_with() 要放在everything() 后面，否则删除的列就全回来了。</p>
 </div>
-<div id="调整列的顺序" class="section level3" number="3.2.5">
-<h3><span class="header-section-number">3.2.5</span> 调整列的顺序</h3>
+<div id="调整列的顺序" class="section level3 hasAnchor" number="3.2.5">
+<h3><span class="header-section-number">3.2.5</span> 调整列的顺序<a href="数据操作.html#调整列的顺序" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>（1）列是根据被选择的顺序排列：</p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="数据操作.html#cb90-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
 <span id="cb90-2"><a href="数据操作.html#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">&quot;e&quot;</span>), math, name, class, sex)</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 6
+<pre><code>## # A tibble: 50 × 6
 ##    name   chinese science  math class sex  
 ##    &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
 ##  1 何娜        87      10    92 六1班 女   
@@ -861,11 +863,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 陈欣越      57       9    80 六1班 男   
 ##  9 黄亦婷      77      10    NA 六1班 女   
 ## 10 陈媚        68       9    55 六1班 女   
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 <p>（2）将数值列移到name 列的后面：</p>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="数据操作.html#cb92-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb92-2"><a href="数据操作.html#cb92-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(math,<span class="fu">everything</span>())</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 8
+<pre><code>## # A tibble: 50 × 8
 ##     math class name   sex   chinese english moral science
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
 ##  1    92 六1班 何娜   女         87      79     9      10
@@ -878,12 +880,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8    80 六1班 陈欣越 男         57      60     9       9
 ##  9    NA 六1班 黄亦婷 女         77      54     8      10
 ## 10    55 六1班 陈媚   女         68      66     8       9
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 <p>everything() 返回未被选择的所有列，将某一列移到第一列时很方便：</p>
 <p>（3）将选择的列移到某列之前或之后</p>
 <div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="数据操作.html#cb94-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb94-2"><a href="数据操作.html#cb94-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(<span class="fu">where</span>(is.numeric),<span class="at">.after =</span> name)</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 8
+<pre><code>## # A tibble: 50 × 8
 ##    class name   chinese  math english moral science sex  
 ##    &lt;chr&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;
 ##  1 六1班 何娜        87    92      79     9      10 女   
@@ -896,15 +898,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 六1班 陈欣越      57    80      60     9       9 男   
 ##  9 六1班 黄亦婷      77    NA      54     8      10 女   
 ## 10 六1班 陈媚        68    55      66     8       9 女   
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 </div>
-<div id="重命名列" class="section level3" number="3.2.6">
-<h3><span class="header-section-number">3.2.6</span> 重命名列</h3>
+<div id="重命名列" class="section level3 hasAnchor" number="3.2.6">
+<h3><span class="header-section-number">3.2.6</span> 重命名列<a href="数据操作.html#重命名列" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>（1）为所有列设置新列名set_names()</p>
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="数据操作.html#cb96-1" aria-hidden="true" tabindex="-1"></a> df <span class="sc">%&gt;%</span></span>
 <span id="cb96-2"><a href="数据操作.html#cb96-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">set_names</span>(<span class="st">&quot; 班级&quot;</span>, <span class="st">&quot; 姓名&quot;</span>, <span class="st">&quot; 性别&quot;</span>, <span class="st">&quot; 语文&quot;</span>,</span>
 <span id="cb96-3"><a href="数据操作.html#cb96-3" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot; 数学&quot;</span>, <span class="st">&quot; 英语&quot;</span>, <span class="st">&quot; 品德&quot;</span>, <span class="st">&quot; 科学&quot;</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 8
+<pre><code>## # A tibble: 50 × 8
 ##    ` 班级` ` 姓名` ` 性别` ` 语文` ` 数学` ` 英语` ` 品德` ` 科学`
 ##    &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
 ##  1 六1班   何娜    女           87      92      79       9      10
@@ -917,11 +919,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 六1班   陈欣越  男           57      80      60       9       9
 ##  9 六1班   黄亦婷  女           77      NA      54       8      10
 ## 10 六1班   陈媚    女           68      55      66       8       9
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 <p>（2）只修改部分列名rename()，格式为：新名= 旧名</p>
 <div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="数据操作.html#cb98-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb98-2"><a href="数据操作.html#cb98-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(数学<span class="ot">=</span>math,科学<span class="ot">=</span>science)</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 8
+<pre><code>## # A tibble: 50 × 8
 ##    class name   sex   chinese  数学 english moral  科学
 ##    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 ##  1 六1班 何娜   女         87    92      79     9    10
@@ -934,21 +936,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 六1班 陈欣越 男         57    80      60     9     9
 ##  9 六1班 黄亦婷 女         77    NA      54     8    10
 ## 10 六1班 陈媚   女         68    55      66     8     9
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 <p>（3） rename_with(.data, .fn, .cols)函数</p>
 <p>参数.col 支持用选择列语法选择要重命名的
 列，.fn 是对所选列重命名的函数，将原列名的字符向量变成新列名的字符向量。比如，将包含”m’’ 的列名，都拼接上前缀”new_“:</p>
 </div>
 </div>
-<div id="分组汇总" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> 分组汇总</h2>
-<div id="创建分组" class="section level3" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> 创建分组</h3>
+<div id="分组汇总" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> 分组汇总<a href="数据操作.html#分组汇总" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="创建分组" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> 创建分组<a href="数据操作.html#创建分组" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>用group_by() 创建分组，只是对数据框增加了分组信息（用group_keys() 查看），并不是真的将数据分割为多个数据框。</p>
 <div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="数据操作.html#cb100-1" aria-hidden="true" tabindex="-1"></a>df_grp <span class="ot">=</span> iris <span class="sc">%&gt;%</span></span>
 <span id="cb100-2"><a href="数据操作.html#cb100-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species)</span></code></pre></div>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="数据操作.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">group_keys</span>(df_grp) <span class="co"># 分组键值(唯一识别分组)</span></span></code></pre></div>
-<pre><code>## # A tibble: 3 x 1
+<pre><code>## # A tibble: 3 × 1
 ##   Species   
 ##   &lt;fct&gt;     
 ## 1 setosa    
@@ -977,8 +979,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [39] 139 140 141 142 143 144 145 146 147 148 149 150</code></pre>
 <div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="数据操作.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ungroup</span>(df_grp) <span class="co"># 解除分组</span></span></code></pre></div>
 </div>
-<div id="分组汇总-1" class="section level3" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> 分组汇总</h3>
+<div id="分组汇总-1" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> 分组汇总<a href="数据操作.html#分组汇总-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>对数据框做分组最主要的目的就是做分组汇总，汇总就是以某种方式组合行，用dplyr 包中的summarise() 函数实现，结果只保留分组列唯一值和新创建的汇总列。</p>
 <p><strong>(1) summarise()</strong></p>
 <p>可以与很多自带或自定义的汇总函数连用，常用的汇总函数有：</p>
@@ -994,7 +996,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb108-4"><a href="数据操作.html#cb108-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n=</span><span class="fu">n</span>(),</span>
 <span id="cb108-5"><a href="数据操作.html#cb108-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">math_avg=</span><span class="fu">mean</span>(math,<span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
 <span id="cb108-6"><a href="数据操作.html#cb108-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">math_med=</span><span class="fu">median</span>(math))</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 4
+<pre><code>## # A tibble: 3 × 4
 ##   sex       n math_avg math_med
 ##   &lt;chr&gt; &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt;
 ## 1 男       24     64.6       NA
@@ -1005,7 +1007,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb110-2"><a href="数据操作.html#cb110-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>name) <span class="sc">%&gt;%</span></span>
 <span id="cb110-3"><a href="数据操作.html#cb110-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(class, sex) <span class="sc">%&gt;%</span></span>
 <span id="cb110-4"><a href="数据操作.html#cb110-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(),mean,<span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code></pre></div>
-<pre><code>## # A tibble: 12 x 7
+<pre><code>## # A tibble: 12 × 7
 ## # Groups:   class [6]
 ##    class sex   chinese  math english moral science
 ##    &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
@@ -1026,8 +1028,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="数据操作.html#cb112-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
 <span id="cb112-2"><a href="数据操作.html#cb112-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(class, sex) <span class="sc">%&gt;%</span></span>
 <span id="cb112-3"><a href="数据操作.html#cb112-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">contains</span>(<span class="st">&quot;h&quot;</span>), mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
-<pre><code>## `summarise()` has grouped output by &#39;class&#39;. You can override using the `.groups` argument.</code></pre>
-<pre><code>## # A tibble: 12 x 5
+<pre><code>## `summarise()` has grouped output by &#39;class&#39;. You can override using the
+## `.groups` argument.</code></pre>
+<pre><code>## # A tibble: 12 × 5
 ## # Groups:   class [6]
 ##    class sex   chinese  math english
 ##    &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
@@ -1050,22 +1053,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb115-3"><a href="数据操作.html#cb115-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(class) <span class="sc">%&gt;%</span></span>
 <span id="cb115-4"><a href="数据操作.html#cb115-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">where</span>(is.numeric),</span>
 <span id="cb115-5"><a href="数据操作.html#cb115-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.fns =</span> <span class="fu">list</span>(<span class="at">sum=</span>sum,<span class="at">mean=</span>mean),<span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 11
-##   class chinese_sum chinese_mean math_sum math_mean english_sum english_mean
-##   &lt;chr&gt;       &lt;dbl&gt;        &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;
-## 1 六1班         622         77.8      702      78           666         66.6
-## 2 六2班         746         82.9      570      71.2         468         52  
-## 3 六3班         606         67.3      349      38.8         609         67.7
-## 4 六4班         850         85        771      77.1         525         58.3
-## 5 六5班         726         72.6      720      72           561         62.3
-## 6 &lt;NA&gt;           90         90         86      86            72         72  
-## # ... with 4 more variables: moral_sum &lt;dbl&gt;, moral_mean &lt;dbl&gt;,
-## #   science_sum &lt;dbl&gt;, science_mean &lt;dbl&gt;</code></pre>
+<pre><code>## # A tibble: 6 × 11
+##   class chines…¹ chine…² math_…³ math_…⁴ engli…⁵ engli…⁶ moral…⁷ moral…⁸ scien…⁹
+##   &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 六1班      622    77.8     702    78       666    66.6      76    8.44      95
+## 2 六2班      746    82.9     570    71.2     468    52        69    8.62      73
+## 3 六3班      606    67.3     349    38.8     609    67.7      48    5.33      55
+## 4 六4班      850    85       771    77.1     525    58.3      78    8.67      82
+## 5 六5班      726    72.6     720    72       561    62.3      77    8.56      76
+## 6 &lt;NA&gt;        90    90        86    86        72    72         9    9         10
+## # … with 1 more variable: science_mean &lt;dbl&gt;, and abbreviated variable names
+## #   ¹​chinese_sum, ²​chinese_mean, ³​math_sum, ⁴​math_mean, ⁵​english_sum,
+## #   ⁶​english_mean, ⁷​moral_sum, ⁸​moral_mean, ⁹​science_sum</code></pre>
 <p><strong>分组计数</strong></p>
 <p>用count() 按分类变量class 和sex 分组，并按分组大小排序：</p>
 <div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="数据操作.html#cb117-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb117-2"><a href="数据操作.html#cb117-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(class,sex,<span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 12 x 3
+<pre><code>## # A tibble: 12 × 3
 ##    class sex       n
 ##    &lt;chr&gt; &lt;chr&gt; &lt;int&gt;
 ##  1 六1班 女        7
@@ -1084,7 +1088,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="数据操作.html#cb119-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
 <span id="cb119-2"><a href="数据操作.html#cb119-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="at">math_level =</span> <span class="fu">cut</span>(math, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">60</span>, <span class="dv">75</span>, <span class="dv">80</span>, <span class="dv">100</span>), <span class="at">right =</span> <span class="cn">FALSE</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb119-3"><a href="数据操作.html#cb119-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>()</span></code></pre></div>
-<pre><code>## # A tibble: 5 x 2
+<pre><code>## # A tibble: 5 × 2
 ##   math_level     n
 ##   &lt;fct&gt;      &lt;int&gt;
 ## 1 [0,60)        14
@@ -1096,7 +1100,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>用add_count() 和add_tally() 可为数据集增加一列按分组变量分组的计数：</p>
 <div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="数据操作.html#cb121-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb121-2"><a href="数据操作.html#cb121-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_count</span>(class,sex)</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 9
+<pre><code>## # A tibble: 50 × 9
 ##    class name   sex   chinese  math english moral science     n
 ##    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;
 ##  1 六1班 何娜   女         87    92      79     9      10     7
@@ -1109,10 +1113,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 六1班 陈欣越 男         57    80      60     9       9     3
 ##  9 六1班 黄亦婷 女         77    NA      54     8      10     7
 ## 10 六1班 陈媚   女         68    55      66     8       9     7
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 </div>
-<div id="自己的例子" class="section level3" number="3.3.3">
-<h3><span class="header-section-number">3.3.3</span> 自己的例子</h3>
+<div id="自己的例子" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> 自己的例子<a href="数据操作.html#自己的例子" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
 <caption><span id="tab:unnamed-chunk-30">表3.1: </span>数据形式</caption>
 <thead>
@@ -1151,7 +1155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="数据操作.html#cb123-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
 <span id="cb123-2"><a href="数据操作.html#cb123-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(x) <span class="sc">%&gt;%</span></span>
 <span id="cb123-3"><a href="数据操作.html#cb123-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n=</span><span class="fu">sum</span>(y))</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 2
+<pre><code>## # A tibble: 3 × 2
 ##   x         n
 ##   &lt;chr&gt; &lt;dbl&gt;
 ## 1 A         4
@@ -1159,10 +1163,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3 C         3</code></pre>
 </div>
 </div>
-<div id="其他数据操作" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> 其他数据操作</h2>
-<div id="按行汇总" class="section level3" number="3.4.1">
-<h3><span class="header-section-number">3.4.1</span> 按行汇总</h3>
+<div id="其他数据操作" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> 其他数据操作<a href="数据操作.html#其他数据操作" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="按行汇总" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> 按行汇总<a href="数据操作.html#按行汇总" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>通常的数据操作逻辑都是按列方式(colwise)，这使得按行汇总很困难。</p>
 <p>dplyr 包提供了rowwise() 函数为数据框创建按行方式(rowwise)，使用rowwise() 后并不是真的
 改变数据框，只是创建了按行元信息，改变了数据框的操作逻辑：</p>
@@ -1173,7 +1177,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb125-4"><a href="数据操作.html#cb125-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>()</span>
 <span id="cb125-5"><a href="数据操作.html#cb125-5" aria-hidden="true" tabindex="-1"></a>rf <span class="sc">%&gt;%</span></span>
 <span id="cb125-6"><a href="数据操作.html#cb125-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total=</span><span class="fu">sum</span>(<span class="fu">c</span>(chinese,math,english)))</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 9
+<pre><code>## # A tibble: 50 × 9
 ## # Rowwise: 
 ##    class name   sex   chinese  math english moral science total
 ##    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
@@ -1187,12 +1191,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 六1班 陈欣越 男         57    80      60     9       9   197
 ##  9 六1班 黄亦婷 女         77    NA      54     8      10    NA
 ## 10 六1班 陈媚   女         68    55      66     8       9   189
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 <p>函数c_across() 是为按行方式(rowwise) 在选定的列范围汇总数据而设计的，它没有提供.fns
 参数，只能选择列</p>
 <div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="数据操作.html#cb127-1" aria-hidden="true" tabindex="-1"></a>rf <span class="sc">%&gt;%</span> </span>
 <span id="cb127-2"><a href="数据操作.html#cb127-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total =</span> <span class="fu">sum</span>(<span class="fu">c_across</span>(<span class="fu">where</span>(is.numeric))))</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 9
+<pre><code>## # A tibble: 50 × 9
 ## # Rowwise: 
 ##    class name   sex   chinese  math english moral science total
 ##    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
@@ -1206,12 +1210,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 六1班 陈欣越 男         57    80      60     9       9   215
 ##  9 六1班 黄亦婷 女         77    NA      54     8      10    NA
 ## 10 六1班 陈媚   女         68    55      66     8       9   206
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 <p>若只是做按行求和或均值，直接用rowSums() / rowMeans() 速度更快（不需要分割-汇总-合并），
 这里的rowwise 行化后提供可以做更多的按行汇总的可能。</p>
 <div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="数据操作.html#cb129-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
 <span id="cb129-2"><a href="数据操作.html#cb129-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">total =</span> <span class="fu">rowSums</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric))))</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 9
+<pre><code>## # A tibble: 50 × 9
 ##    class name   sex   chinese  math english moral science total
 ##    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
 ##  1 六1班 何娜   女         87    92      79     9      10   277
@@ -1224,14 +1228,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 六1班 陈欣越 男         57    80      60     9       9   215
 ##  9 六1班 黄亦婷 女         77    NA      54     8      10    NA
 ## 10 六1班 陈媚   女         68    55      66     8       9   206
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 <p>按行方式(rowwise) 可以理解为一种特殊的分组：每一行作为一组。为rowwise() 提供行ID，用
 summarise() 做汇总更能体会这一点。要解除行化模式，用ungroup().</p>
 <div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="数据操作.html#cb131-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb131-2"><a href="数据操作.html#cb131-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>(name) <span class="sc">%&gt;%</span> </span>
 <span id="cb131-3"><a href="数据操作.html#cb131-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total=</span><span class="fu">c_across</span>(<span class="fu">where</span>(is.numeric)))</span></code></pre></div>
-<pre><code>## `summarise()` has grouped output by &#39;name&#39;. You can override using the `.groups` argument.</code></pre>
-<pre><code>## # A tibble: 250 x 2
+<pre><code>## `summarise()` has grouped output by &#39;name&#39;. You can override using the
+## `.groups` argument.</code></pre>
+<pre><code>## # A tibble: 250 × 2
 ## # Groups:   name [50]
 ##    name   total
 ##    &lt;chr&gt;  &lt;dbl&gt;
@@ -1245,11 +1250,11 @@ summarise() 做汇总更能体会这一点。要解除行化模式，用ungroup(
 ##  8 黄才菊    75
 ##  9 黄才菊    NA
 ## 10 黄才菊     9
-## # ... with 240 more rows</code></pre>
+## # … with 240 more rows</code></pre>
 <p>rowwise 行化操作的缺点是速度相对更慢，更建议用XXX 节讲到的pmap() 逐行迭代。</p>
 </div>
-<div id="窗口函数" class="section level3" number="3.4.2">
-<h3><span class="header-section-number">3.4.2</span> 窗口函数</h3>
+<div id="窗口函数" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> 窗口函数<a href="数据操作.html#窗口函数" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>汇总函数如sum() 和mean() 接受n 个输入，返回1 个值。而窗口函数是汇总函数的变体：接受n
 个输入，返回n 个值。</p>
 <p>例如，cumsum()、cummean()、rank()、lead()、lag() 等。</p>
@@ -1259,7 +1264,7 @@ summarise() 做汇总更能体会这一点。要解除行化模式，用ungroup(
 <div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="数据操作.html#cb134-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
 <span id="cb134-2"><a href="数据操作.html#cb134-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ranks =</span> <span class="fu">min_rank</span>(<span class="fu">desc</span>(math))) <span class="sc">%&gt;%</span></span>
 <span id="cb134-3"><a href="数据操作.html#cb134-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(ranks)</span></code></pre></div>
-<pre><code>## # A tibble: 50 x 9
+<pre><code>## # A tibble: 50 × 9
 ##    class name   sex   chinese  math english moral science ranks
 ##    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;
 ##  1 六4班 周婵   女         92    94      77    10       9     1
@@ -1272,15 +1277,15 @@ summarise() 做汇总更能体会这一点。要解除行化模式，用ungroup(
 ##  8 六2班 徐雅琦 女         92    86      72    NA       9     8
 ##  9 &lt;NA&gt;  徐达政 男         90    86      72     9      10     8
 ## 10 六4班 杨昌晟 男         84    85      64     8      10    10
-## # ... with 40 more rows</code></pre>
+## # … with 40 more rows</code></pre>
 </div>
 </div>
-<div id="整洁计算" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> 整洁计算</h2>
+<div id="整洁计算" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> 整洁计算<a href="数据操作.html#整洁计算" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>tidyverse 代码之所以这么“整洁、优雅”，访问列只需要提供列名，不需要加引号，不需要加数据框环境df$, 这是因为它内部采用了一套整洁计算（tidy evaluation）框架。</p>
 <p>如果我们也想自定义这样的“整洁、优雅”函数，即在自定义函数中页这样“整洁、优雅”地传递参数，就需要掌握一点整洁计算的技术。</p>
-<div id="数据屏蔽与整洁选择" class="section level3" number="3.5.1">
-<h3><span class="header-section-number">3.5.1</span> 数据屏蔽与整洁选择</h3>
+<div id="数据屏蔽与整洁选择" class="section level3 hasAnchor" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> 数据屏蔽与整洁选择<a href="数据操作.html#数据屏蔽与整洁选择" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>整洁计算的两种基本形式是</p>
 <ul>
 <li><p>数据屏蔽：使得可以不用带数据框（环境变量）名字，就能使用数据框内的变量（数据变量），便于在数据集内计算值</p></li>
@@ -1295,7 +1300,7 @@ summarise() 做汇总更能体会这一点。要解除行化模式，用ungroup(
 <span id="cb136-6"><a href="数据操作.html#cb136-6" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
 <span id="cb136-7"><a href="数据操作.html#cb136-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
 <span id="cb136-8"><a href="数据操作.html#cb136-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">var_summary</span>(mpg)</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 3
+<pre><code>## # A tibble: 3 × 3
 ##     cyl     n  mean
 ##   &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;
 ## 1     4    11  26.7
@@ -1310,7 +1315,7 @@ summarise() 做汇总更能体会这一点。要解除行化模式，用ungroup(
 <span id="cb138-6"><a href="数据操作.html#cb138-6" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
 <span id="cb138-7"><a href="数据操作.html#cb138-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
 <span id="cb138-8"><a href="数据操作.html#cb138-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">var_summary</span>(<span class="st">&quot;mpg&quot;</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 3
+<pre><code>## # A tibble: 3 × 3
 ##     cyl     n  mean
 ##   &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;
 ## 1     4    11  26.7
@@ -1386,7 +1391,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

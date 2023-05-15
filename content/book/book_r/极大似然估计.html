@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>14 infer包 | R语言编程</title>
+  <title>15 极大似然估计 | R语言编程</title>
   <meta name="description" content="张敬信老师的R语言学习笔记" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="14 infer包 | R语言编程" />
+  <meta property="og:title" content="15 极大似然估计 | R语言编程" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="张敬信老师的R语言学习笔记" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="14 infer包 | R语言编程" />
+  <meta name="twitter:title" content="15 极大似然估计 | R语言编程" />
   
   <meta name="twitter:description" content="张敬信老师的R语言学习笔记" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="附录-1.html"/>
-<link rel="next" href="极大似然估计.html"/>
+<link rel="prev" href="infer包.html"/>
+<link rel="next" href="正则表达式.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -474,68 +474,119 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="infer包" class="section level1 hasAnchor" number="14">
-<h1><span class="header-section-number">14</span> infer包<a href="infer包.html#infer包" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="简介-1" class="section level2 hasAnchor" number="14.1">
-<h2><span class="header-section-number">14.1</span> 简介<a href="infer包.html#简介-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="infer包.html#cb368-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(infer)</span></code></pre></div>
-<ul>
-<li>specify() allows you to specify the variable, or relationship between variables, that you’re interested in.</li>
-<li>hypothesize() allows you to declare the null hypothesis.</li>
-<li>generate() allows you to generate data reflecting the null hypothesis.</li>
-<li>calculate() allows you to calculate a distribution of statistics from the generated data to form the null distribution.</li>
-</ul>
-<p>本文所有vignette都使用gss（General Social Survey）数据集，共包含11个变量。</p>
-<div id="specify指定被解释变量和解释变量" class="section level3 hasAnchor" number="14.1.1">
-<h3><span class="header-section-number">14.1.1</span> SPECIFY()指定被解释变量和解释变量<a href="infer包.html#specify指定被解释变量和解释变量" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><code>specify</code>函数可以用来指定数据集中感兴趣的变量。如果你只对受访者的年龄感兴趣，你可以这样写:</p>
-<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="infer包.html#cb369-1" aria-hidden="true" tabindex="-1"></a>gss <span class="sc">%&gt;%</span></span>
-<span id="cb369-2"><a href="infer包.html#cb369-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> age)</span></code></pre></div>
-<pre><code>## Response: age (numeric)
-## # A tibble: 500 × 1
-##      age
-##    &lt;dbl&gt;
-##  1    36
-##  2    34
-##  3    24
-##  4    42
-##  5    31
-##  6    32
-##  7    48
-##  8    36
-##  9    30
-## 10    33
-## # … with 490 more rows</code></pre>
-<p>如果您正在对一个比例或比例差异进行推理，则需要使用success参数来指定响应变量的哪个级别是成功的。例如，如果你对拥有大学学位的人口比例感兴趣，你可以使用以下代码:</p>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="infer包.html#cb371-1" aria-hidden="true" tabindex="-1"></a><span class="co"># specifying for inference on proportions</span></span>
-<span id="cb371-2"><a href="infer包.html#cb371-2" aria-hidden="true" tabindex="-1"></a>gss <span class="sc">%&gt;%</span></span>
-<span id="cb371-3"><a href="infer包.html#cb371-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> college, <span class="at">success =</span> <span class="st">&quot;degree&quot;</span>)</span></code></pre></div>
-<pre><code>## Response: college (factor)
-## # A tibble: 500 × 1
-##    college  
-##    &lt;fct&gt;    
-##  1 degree   
-##  2 no degree
-##  3 degree   
-##  4 no degree
-##  5 degree   
-##  6 no degree
-##  7 no degree
-##  8 degree   
-##  9 degree   
-## 10 no degree
-## # … with 490 more rows</code></pre>
+<div id="极大似然估计" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">15</span> 极大似然估计<a href="极大似然估计.html#极大似然估计" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="自定义极大似然函数" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> 自定义极大似然函数<a href="极大似然估计.html#自定义极大似然函数" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="正态分布" class="section level3 hasAnchor" number="15.1.1">
+<h3><span class="header-section-number">15.1.1</span> 正态分布<a href="极大似然估计.html#正态分布" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>正态分布的<strong>概率密度函数</strong>：</p>
+<p><span class="math display">\[
+f(x)=\frac{1}{\sqrt{2 \pi}\sigma} e ^{- \frac{(x-\mu)^{2}}{2\sigma^2}}
+\]</span>
+<strong>最大似然函数</strong>：</p>
+<p><span class="math display">\[
+\begin{aligned}
+L(\mu,\sigma)&amp;=\prod_{i=1}^{n} f(x_i,\mu,\sigma) \\
+&amp;=\prod_{i=1}^{n} \frac{1}{\sqrt{2 \pi}\sigma} e ^{- \frac{(x-\mu)^{2}}{2\sigma^2}} \\
+&amp; = (\frac{1}{\sqrt{2 \pi} \sigma})^n - \sum_{i=1}^n \frac{(x_i-\mu)^2}{2\sigma^2}
+\end{aligned}
+\]</span></p>
+<p><strong>对数最大似然函数</strong>：</p>
+<p><span class="math display">\[
+\begin{aligned}
+lnL(\mu,\sigma)&amp;=n ln \frac{1}{\sqrt{2 \pi} \sigma} - \sum_{i=1}^{n} \frac{(x_i-\mu)^2}{2\sigma^2}
+\end{aligned}
+\]</span></p>
+<p>得到对数最大似然函数后，再利用R中的<code>optim</code>函数求解对数最大似然函数取极值时对应的参数值 <span class="math inline">\(\mu\)</span>和<span class="math inline">\(\sigma\)</span>。</p>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="极大似然估计.html#cb373-1" aria-hidden="true" tabindex="-1"></a>norm.fun<span class="ot">&lt;-</span> <span class="cf">function</span>(theta,x) <span class="co"># 创建似然函数</span></span>
+<span id="cb373-2"><a href="极大似然估计.html#cb373-2" aria-hidden="true" tabindex="-1"></a>{  </span>
+<span id="cb373-3"><a href="极大似然估计.html#cb373-3" aria-hidden="true" tabindex="-1"></a>  mu<span class="ot">&lt;-</span> theta[<span class="dv">1</span>]</span>
+<span id="cb373-4"><a href="极大似然估计.html#cb373-4" aria-hidden="true" tabindex="-1"></a>  sigma<span class="ot">&lt;-</span> theta[<span class="dv">2</span>]   </span>
+<span id="cb373-5"><a href="极大似然估计.html#cb373-5" aria-hidden="true" tabindex="-1"></a>  n<span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb373-6"><a href="极大似然估计.html#cb373-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 似然函数，再求其对数</span></span>
+<span id="cb373-7"><a href="极大似然估计.html#cb373-7" aria-hidden="true" tabindex="-1"></a>  logL<span class="ot">&lt;-</span> n<span class="sc">*</span><span class="fu">log</span>( <span class="dv">1</span><span class="sc">/</span>( <span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>pi)<span class="sc">*</span>sigma))  <span class="sc">-</span> <span class="fu">sum</span>((x<span class="sc">-</span>mu)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>sigma<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb373-8"><a href="极大似然估计.html#cb373-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="sc">-</span>logL)  <span class="co"># 因为R中只有最小化函数optim(),我们只需要参数的值，最大化 logL 和最小化 -logL 一致的</span></span>
+<span id="cb373-9"><a href="极大似然估计.html#cb373-9" aria-hidden="true" tabindex="-1"></a>}  </span>
+<span id="cb373-10"><a href="极大似然估计.html#cb373-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb373-11"><a href="极大似然估计.html#cb373-11" aria-hidden="true" tabindex="-1"></a>theta0<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="co">#初始化两个参数作为迭代初始值</span></span>
+<span id="cb373-12"><a href="极大似然估计.html#cb373-12" aria-hidden="true" tabindex="-1"></a>X<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">50</span> <span class="co">#抽出的样本（这里我以1至50作为数据样本）</span></span>
+<span id="cb373-13"><a href="极大似然估计.html#cb373-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb373-14"><a href="极大似然估计.html#cb373-14" aria-hidden="true" tabindex="-1"></a>result<span class="ot">=</span><span class="fu">optim</span>(theta0,norm.fun,<span class="at">x=</span>X)</span>
+<span id="cb373-15"><a href="极大似然估计.html#cb373-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 用R中内置的optim()最小化函数对 似然函数优化，求出最优值的两个参数u、sigma</span></span>
+<span id="cb373-16"><a href="极大似然估计.html#cb373-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 参数的值保存在result$&#39;par&#39; 中，有两个值，第一个是u 第二个是sigma</span></span>
+<span id="cb373-17"><a href="极大似然估计.html#cb373-17" aria-hidden="true" tabindex="-1"></a>result</span></code></pre></div>
+<pre><code>## $par
+## [1] 25.48969 14.43959
+## 
+## $value
+## [1] 204.4154
+## 
+## $counts
+## function gradient 
+##       81       NA 
+## 
+## $convergence
+## [1] 0
+## 
+## $message
+## NULL</code></pre>
+<p>在<span class="math inline">\(lnL\)</span>取得最大值时（即<span class="math inline">\(-lnL\)</span>取得最小值时），解出的<span class="math inline">\(\mu\)</span>的参数值为25.48969，<span class="math inline">\(\sigma\)</span>的参数估计值为14.43959，<span class="math inline">\(-lnL\)</span>为204.4154。</p>
 </div>
-<div id="hypothesize-指定零假设" class="section level3 hasAnchor" number="14.1.2">
-<h3><span class="header-section-number">14.1.2</span> HYPOTHESIZE(): 指定零假设<a href="infer包.html#hypothesize-指定零假设" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-<div id="generate" class="section level3 hasAnchor" number="14.1.3">
-<h3><span class="header-section-number">14.1.3</span> GENERATE():<a href="infer包.html#generate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-</div>
-<div id="卡方检验" class="section level2 hasAnchor" number="14.2">
-<h2><span class="header-section-number">14.2</span> 卡方检验<a href="infer包.html#卡方检验" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="指数分布" class="section level3 hasAnchor" number="15.1.2">
+<h3><span class="header-section-number">15.1.2</span> 指数分布<a href="极大似然估计.html#指数分布" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>指数分布的<strong>概率密度函数</strong>：</p>
+<p><span class="math display">\[
+f(x)=
+\begin{cases}
+\lambda e^{-\lambda x}, &amp; x&gt;0\\
+0,  &amp; x\le0  
+\end{cases}
+\]</span></p>
+<p><strong>最大似然函数</strong>：</p>
+<p><span class="math display">\[
+\begin{aligned}
+L(\lambda)&amp;=\prod_{i=1}^{n} f(x_i,\lambda) \\
+&amp;=\prod_{i=1}^{n}\lambda e^{-\lambda x} \\
+&amp; = \lambda^n - e^{-\lambda \sum_{i=1}^n x_i}
+\end{aligned}
+\]</span></p>
+<p><strong>对数最大似然函数</strong>：</p>
+<p><span class="math display">\[
+\begin{aligned}
+lnL(\lambda)&amp;=nln\lambda -\lambda \sum_{i=1}^n x_i
+\end{aligned}
+\]</span></p>
+<p>得到对数最大似然函数后，再利用R中的<code>optim</code>函数求解对数最大似然函数取极值时对应的参数值 <span class="math inline">\(\lambda\)</span>。</p>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="极大似然估计.html#cb375-1" aria-hidden="true" tabindex="-1"></a>exp.fun <span class="ot">&lt;-</span> <span class="cf">function</span>(theta,x){</span>
+<span id="cb375-2"><a href="极大似然估计.html#cb375-2" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb375-3"><a href="极大似然估计.html#cb375-3" aria-hidden="true" tabindex="-1"></a>  logL <span class="ot">&lt;-</span> n<span class="sc">*</span><span class="fu">log</span>(theta)<span class="sc">-</span>theta<span class="sc">*</span><span class="fu">sum</span>(x)</span>
+<span id="cb375-4"><a href="极大似然估计.html#cb375-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="sc">-</span>logL)</span>
+<span id="cb375-5"><a href="极大似然估计.html#cb375-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb375-6"><a href="极大似然估计.html#cb375-6" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">50</span></span>
+<span id="cb375-7"><a href="极大似然估计.html#cb375-7" aria-hidden="true" tabindex="-1"></a>lamda<span class="ot">=</span><span class="fl">1e-2</span></span>
+<span id="cb375-8"><a href="极大似然估计.html#cb375-8" aria-hidden="true" tabindex="-1"></a>result<span class="ot">=</span><span class="fu">optim</span>(<span class="at">par =</span> lamda,<span class="at">fn =</span> exp.fun,<span class="at">x=</span>X) <span class="co">#运行会有一些警告，说optim（）优化的结果不一定正确，但这里是正确的，不影响</span></span></code></pre></div>
+<pre><code>## Warning in optim(par = lamda, fn = exp.fun, x = X): one-dimensional optimization by Nelder-Mead is unreliable:
+## use &quot;Brent&quot; or optimize() directly</code></pre>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="极大似然估计.html#cb377-1" aria-hidden="true" tabindex="-1"></a>result </span></code></pre></div>
+<pre><code>## $par
+## [1] 0.03921875
+## 
+## $value
+## [1] 211.9339
+## 
+## $counts
+## function gradient 
+##       30       NA 
+## 
+## $convergence
+## [1] 0
+## 
+## $message
+## NULL</code></pre>
+<p>在<span class="math inline">\(lnL\)</span>取得最大值时（即<span class="math inline">\(-lnL\)</span>取得最小值时），解出的<span class="math inline">\(\lambda\)</span>的参数值为 0.03921875，<span class="math inline">\(-lnL\)</span>为211.9339。</p>
 
+</div>
 </div>
 </div>
             </section>
@@ -543,8 +594,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="附录-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="极大似然估计.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="infer包.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="正则表达式.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

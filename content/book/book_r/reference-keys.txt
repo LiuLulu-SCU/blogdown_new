@@ -127,6 +127,8 @@ markdown如何显示数学公式
 数学公式的类别
 上横线
 hat
+换行对齐
+分段函数
 rmarkdown
 rmarkdown简介
 安装
@@ -227,6 +229,10 @@ specify指定被解释变量和解释变量
 hypothesize-指定零假设
 generate
 卡方检验
+极大似然估计
+自定义极大似然函数
+正态分布
+指数分布
 正则表达式
 grep函数
 函数参数
@@ -242,9 +248,4 @@ sci筛选行
 分组排序并排名
 统计相关
 汇总数据t检验
-m1-m2-the-sample-means
-s1-s2-the-sample-standard-deviations
-n1-n2-the-same-sizes
-m0-the-null-value-for-the-difference-in-means-to-be-tested-for.-default-is-0.
-equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false.
 卡方检验-1

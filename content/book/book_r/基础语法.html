@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 基础语法 | R语言编程</title>
   <meta name="description" content="张敬信老师的R语言学习笔记" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 基础语法 | R语言编程" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="张敬信老师的R语言学习笔记" />
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="前言.html"/>
 <link rel="next" href="数据操作.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,22 +48,23 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/plotly-binding-4.10.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX","output/SVG"],
@@ -118,7 +117,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -131,7 +130,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -299,6 +298,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.2</b> 数学公式的类别</a></li>
 <li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.3</b> 上横线</a></li>
 <li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.4</b> hat</a></li>
+<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.5</b> 换行对齐</a></li>
+<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.6</b> 分段函数</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>7</b> RMarkdown</a>
@@ -420,40 +421,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="infer包.html"><a href="infer包.html#卡方检验"><i class="fa fa-check"></i><b>14.2</b> 卡方检验</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>15</b> 正则表达式</a>
+<li class="chapter" data-level="15" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>15</b> 极大似然估计</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>15.1</b> grep函数</a>
+<li class="chapter" data-level="15.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>15.1</b> 自定义极大似然函数</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>15.1.1</b> 函数参数</a></li>
-<li class="chapter" data-level="15.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>15.1.2</b> 模式（pattern）与匹配（match）</a></li>
-</ul></li>
-<li class="chapter" data-level="15.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>15.2</b> 元字符</a></li>
-<li class="chapter" data-level="15.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>15.3</b> 常用文本处理函数</a></li>
-<li class="chapter" data-level="15.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>15.4</b> 案例</a>
-<ul>
-<li class="chapter" data-level="15.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>15.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
-<li class="chapter" data-level="15.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>15.4.2</b> 全宋词</a></li>
-<li class="chapter" data-level="15.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>15.4.3</b> SCI（筛选行）</a></li>
+<li class="chapter" data-level="15.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>15.1.1</b> 正态分布</a></li>
+<li class="chapter" data-level="15.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>15.1.2</b> 指数分布</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>16</b> 一些自定义函数</a>
+<li class="chapter" data-level="16" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>16</b> 正则表达式</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>16.1</b> 数据处理</a>
+<li class="chapter" data-level="16.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>16.1</b> grep函数</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>16.1.1</b> 分组排序并排名</a></li>
+<li class="chapter" data-level="16.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>16.1.1</b> 函数参数</a></li>
+<li class="chapter" data-level="16.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>16.1.2</b> 模式（pattern）与匹配（match）</a></li>
 </ul></li>
-<li class="chapter" data-level="16.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>16.2</b> 统计相关</a>
+<li class="chapter" data-level="16.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>16.2</b> 元字符</a></li>
+<li class="chapter" data-level="16.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>16.3</b> 常用文本处理函数</a></li>
+<li class="chapter" data-level="16.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>16.4</b> 案例</a>
 <ul>
-<li class="chapter" data-level="16.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>16.2.1</b> 汇总数据t检验</a></li>
+<li class="chapter" data-level="16.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>16.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
+<li class="chapter" data-level="16.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>16.4.2</b> 全宋词</a></li>
+<li class="chapter" data-level="16.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>16.4.3</b> SCI（筛选行）</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="m1-m2-the-sample-means.html"><a href="m1-m2-the-sample-means.html"><i class="fa fa-check"></i><b>17</b> m1, m2: the sample means</a></li>
-<li class="chapter" data-level="18" data-path="s1-s2-the-sample-standard-deviations.html"><a href="s1-s2-the-sample-standard-deviations.html"><i class="fa fa-check"></i><b>18</b> s1, s2: the sample standard deviations</a></li>
-<li class="chapter" data-level="19" data-path="n1-n2-the-same-sizes.html"><a href="n1-n2-the-same-sizes.html"><i class="fa fa-check"></i><b>19</b> n1, n2: the same sizes</a></li>
-<li class="chapter" data-level="20" data-path="m0-the-null-value-for-the-difference-in-means-to-be-tested-for.-default-is-0..html"><a href="m0-the-null-value-for-the-difference-in-means-to-be-tested-for.-default-is-0..html"><i class="fa fa-check"></i><b>20</b> m0: the null value for the difference in means to be tested for. Default is 0.</a></li>
-<li class="chapter" data-level="21" data-path="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html"><i class="fa fa-check"></i><b>21</b> equal.variance: whether or not to assume equal variance. Default is FALSE.</a>
+<li class="chapter" data-level="17" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>17</b> 一些自定义函数</a>
 <ul>
-<li class="chapter" data-level="21.0.1" data-path="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#卡方检验-1"><i class="fa fa-check"></i><b>21.0.1</b> 卡方检验</a></li>
+<li class="chapter" data-level="17.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>17.1</b> 数据处理</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>17.1.1</b> 分组排序并排名</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>17.2</b> 统计相关</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>17.2.1</b> 汇总数据t检验</a></li>
+<li class="chapter" data-level="17.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>17.2.2</b> 卡方检验</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -472,32 +474,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="基础语法" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> 基础语法</h1>
-<div id="数据结构" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> 数据结构</h2>
-<div id="向量一维数据" class="section level3" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> 向量（一维数据）</h3>
-<div id="向量的创建方式" class="section level4" number="2.1.1.1">
-<h4><span class="header-section-number">2.1.1.1</span> 向量的创建方式</h4>
-<div id="直接创建" class="section level5" number="2.1.1.1.1">
-<h5><span class="header-section-number">2.1.1.1.1</span> 直接创建</h5>
+<div id="基础语法" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> 基础语法<a href="基础语法.html#基础语法" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="数据结构" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> 数据结构<a href="基础语法.html#数据结构" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="向量一维数据" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> 向量（一维数据）<a href="基础语法.html#向量一维数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="向量的创建方式" class="section level4 hasAnchor" number="2.1.1.1">
+<h4><span class="header-section-number">2.1.1.1</span> 向量的创建方式<a href="基础语法.html#向量的创建方式" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="直接创建" class="section level5 hasAnchor" number="2.1.1.1.1">
+<h5><span class="header-section-number">2.1.1.1.1</span> 直接创建<a href="基础语法.html#直接创建" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="基础语法.html#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">2</span></span>
 <span id="cb1-2"><a href="基础语法.html#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="st">&quot;I love Chnia&quot;</span></span></code></pre></div>
 </div>
-<div id="使用冒号创建连续数值型向量" class="section level5" number="2.1.1.1.2">
-<h5><span class="header-section-number">2.1.1.1.2</span> 使用冒号（:）创建连续数值型向量</h5>
+<div id="使用冒号创建连续数值型向量" class="section level5 hasAnchor" number="2.1.1.1.2">
+<h5><span class="header-section-number">2.1.1.1.2</span> 使用冒号（:）创建连续数值型向量<a href="基础语法.html#使用冒号创建连续数值型向量" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="基础语法.html#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span></code></pre></div>
 </div>
-<div id="使用c函数创建向量" class="section level5" number="2.1.1.1.3">
-<h5><span class="header-section-number">2.1.1.1.3</span> 使用<code>c()</code>函数创建向量</h5>
+<div id="使用c函数创建向量" class="section level5 hasAnchor" number="2.1.1.1.3">
+<h5><span class="header-section-number">2.1.1.1.3</span> 使用<code>c()</code>函数创建向量<a href="基础语法.html#使用c函数创建向量" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="基础语法.html#cb3-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">9</span>,<span class="dv">10</span>)</span>
 <span id="cb3-2"><a href="基础语法.html#cb3-2" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>,<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)</span>
 <span id="cb3-3"><a href="基础语法.html#cb3-3" aria-hidden="true" tabindex="-1"></a>v3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>)</span>
 <span id="cb3-4"><a href="基础语法.html#cb3-4" aria-hidden="true" tabindex="-1"></a>v4 <span class="ot">&lt;-</span> <span class="fu">c</span>() <span class="co">#一个不包含任何值的向量，输出为NULL</span></span></code></pre></div>
 </div>
-<div id="使用seq函数生成等差序列的向量" class="section level5" number="2.1.1.1.4">
-<h5><span class="header-section-number">2.1.1.1.4</span> 使用<code>seq</code>函数生成等差序列的向量</h5>
+<div id="使用seq函数生成等差序列的向量" class="section level5 hasAnchor" number="2.1.1.1.4">
+<h5><span class="header-section-number">2.1.1.1.4</span> 使用<code>seq</code>函数生成等差序列的向量<a href="基础语法.html#使用seq函数生成等差序列的向量" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><code>seq</code>函数的原型是</p>
 <p><code>seq(from=1,to=1,by=((to-from)/(length.out - 1)),length.out = NULL,along.with = NULL,...)</code></p>
 <p>其中，from是首项，默认为1；to是末项，默认为1；by是步长或等差增量，可以为负数；length.out是向量的长度；along.with:用于指明该向量与另外一个向量的长度相同，along.with后应为另外一个向量的名字。</p>
@@ -506,8 +508,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-3"><a href="基础语法.html#cb4-3" aria-hidden="true" tabindex="-1"></a>s3 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">3</span>,<span class="at">by=</span><span class="dv">3</span>,<span class="at">length.out=</span><span class="dv">5</span>) </span>
 <span id="cb4-4"><a href="基础语法.html#cb4-4" aria-hidden="true" tabindex="-1"></a>s4 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">by=</span><span class="dv">3</span>,<span class="at">along.with =</span> s3) <span class="co">#未指定from项时，默认从1开始，长度与向量s3相同</span></span></code></pre></div>
 </div>
-<div id="使用rep函数创建重复序列的向量" class="section level5" number="2.1.1.1.5">
-<h5><span class="header-section-number">2.1.1.1.5</span> 使用<code>rep</code>函数创建重复序列的向量</h5>
+<div id="使用rep函数创建重复序列的向量" class="section level5 hasAnchor" number="2.1.1.1.5">
+<h5><span class="header-section-number">2.1.1.1.5</span> 使用<code>rep</code>函数创建重复序列的向量<a href="基础语法.html#使用rep函数创建重复序列的向量" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><code>rep</code>函数可以将某一向量重复若干次，该函数的原型如下：</p>
 <p><code>rep(x , times = 1, length.out = NA, each = 1)</code></p>
 <p>参数中，x为要重复的序列对象；times为重复的次数，默认为1；length.out为产生的向量长度，默认为NA（未限制）；each为每个元素重复的次数，默认为1。</p>
@@ -522,30 +524,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div id="时间日期" class="section level3" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> 时间日期</h3>
+<div id="时间日期" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> 时间日期<a href="基础语法.html#时间日期" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>日期时间值通常以字符串形式传入R 中，然后转化为以数值形式存储的日期时间变量。</p>
 <p>R 的内部日期是以1970 年1 月1 日至今的天数来存储，内部时间则是以1970 年1 月1 日至今的
 秒数来存储。</p>
 <p>tidyverse 系列的lubridate 包提供了更加方便的函数，生成、转换、管理日期时间数据，足以代替R 自带的日期时间函数。</p>
 </div>
-<div id="识别日期时间" class="section level3" number="2.1.3">
-<h3><span class="header-section-number">2.1.3</span> 识别日期时间</h3>
+<div id="识别日期时间" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> 识别日期时间<a href="基础语法.html#识别日期时间" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="基础语法.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code></pre></div>
-<pre><code>## Warning: 程辑包&#39;lubridate&#39;是用R版本4.1.2 来建造的</code></pre>
+<pre><code>## Loading required package: timechange</code></pre>
 <pre><code>## 
-## 载入程辑包：&#39;lubridate&#39;</code></pre>
+## Attaching package: &#39;lubridate&#39;</code></pre>
 <pre><code>## The following objects are masked from &#39;package:base&#39;:
 ## 
 ##     date, intersect, setdiff, union</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="基础语法.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">today</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;2022-03-10&quot;</code></pre>
+<pre><code>## [1] &quot;2023-05-15&quot;</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="基础语法.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">now</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;2022-03-10 15:11:24 CST&quot;</code></pre>
+<pre><code>## [1] &quot;2023-05-15 10:54:15 CST&quot;</code></pre>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="基础语法.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as_datetime</span>(<span class="fu">today</span>()) <span class="co"># 日期型转日期时间型</span></span></code></pre></div>
-<pre><code>## [1] &quot;2022-03-10 UTC&quot;</code></pre>
+<pre><code>## [1] &quot;2023-05-15 UTC&quot;</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="基础语法.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as_date</span>(<span class="fu">now</span>()) <span class="co"># 日期时间型转日期型</span></span></code></pre></div>
-<pre><code>## [1] &quot;2022-03-10&quot;</code></pre>
+<pre><code>## [1] &quot;2023-05-15&quot;</code></pre>
 <p>无论年月日/时分秒按什么顺序及以什么间隔符分隔，总能正确地识别成日期时间值：</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="基础语法.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ymd</span>(<span class="st">&quot;2020/03~01&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;2020-03-01&quot;</code></pre>
@@ -563,11 +565,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;2020-08-27 21:27:15 UTC&quot;</code></pre>
 </div>
 </div>
-<div id="控制结构" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> 控制结构</h2>
+<div id="控制结构" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> 控制结构<a href="基础语法.html#控制结构" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>编程中的控制结构，是指分支结构和循环结构。</p>
-<div id="分支结构" class="section level3" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> 分支结构</h3>
+<div id="分支结构" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> 分支结构<a href="基础语法.html#分支结构" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>正常程序结构与一步一步解决问题是一致的，即顺序结构，过程中可能需要对不同情形选择走不同的支路，即分支结构，是用条件语句做判断以实现分支：</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
 <img src="fig/3/03-06-01.jpg" alt="分支结构" width="270" />
@@ -615,16 +617,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>函数ifelse() 可简化代码，仍以计算|x| 为例：</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="基础语法.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(x <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="sc">-</span>x, x)</span></code></pre></div>
 </div>
-<div id="循环结构" class="section level3" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> 循环结构</h3>
+<div id="循环结构" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> 循环结构<a href="基础语法.html#循环结构" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-17"></span>
 <img src="fig/3/03-06-02.jpg" alt="循环结构" width="254" />
 <p class="caption">
 图2.2: 循环结构
 </p>
 </div>
-<div id="for循环" class="section level4" number="2.2.2.1">
-<h4><span class="header-section-number">2.2.2.1</span> for循环</h4>
+<div id="for循环" class="section level4 hasAnchor" number="2.2.2.1">
+<h4><span class="header-section-number">2.2.2.1</span> for循环<a href="基础语法.html#for循环" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>例子：计算iris前四列的均值</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="基础语法.html#cb37-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">as_tibble</span>(iris[,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span>
 <span id="cb37-2"><a href="基础语法.html#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -647,11 +649,11 @@ double, character 等) 、向量长度。</p></li>
 </div>
 </div>
 </div>
-<div id="apply函数组" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> apply函数组</h2>
+<div id="apply函数组" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> apply函数组<a href="基础语法.html#apply函数组" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>在 R 的基础包中有一类函数叫 apply, 包括 apply, lapply, sapply, vapply, mapply, replacate 等. 这些函数相同的地方都是接受一个 list, matrix 或者 data.frame 作为参数, 同时接受一个函数作为参数, 然后对数据的每一行或列都使用函数进行处理, 相当于 “把函数应用 (apply) 到每一个单元”.</p>
-<div id="apply" class="section level3" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> apply</h3>
+<div id="apply" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> apply<a href="基础语法.html#apply" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>apply 函数本身的运算速度其实和 for loop 很接近, 但是由于其语句少, 结构简单, 并且在能够调用 vapply 等高效的函数地方进行调用, 在进行大量重复应用相同函数到同一个数据集的时候效率似乎要比 for loop 要高一些. apply 函数有三个主要参数: 一个是data数据集,array, matrix, data.frame, list 都可以; 一个是 MARGIN, MARGIN 为 1 的时候对 matrix的每一行运行函数, MARGIN 为 2 的时候对 matrix 的每一列运行函数, 如果是 array 则可能是更高维; 一个是要对数据集运行的函数.</p>
 <p>apply(x, MARGIN, FUN, …)</p>
 <ul>
@@ -672,8 +674,8 @@ double, character 等) 、向量长度。</p></li>
 <pre><code>## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
 ##     5.843333     3.057333     3.758000     1.199333</code></pre>
 </div>
-<div id="lapply" class="section level3" number="2.3.2">
-<h3><span class="header-section-number">2.3.2</span> lapply</h3>
+<div id="lapply" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> lapply<a href="基础语法.html#lapply" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>lapply() 函数是一个最基础循环操作函数，用来对vector、list、data.frame 逐元、逐成分、逐列分别应用函数FUN，并返回和x 长度相同的<strong>list</strong> 对象。其基本格式为：</p>
 <p>lapply(x, FUN, …)</p>
 <ul>
@@ -693,24 +695,24 @@ double, character 等) 、向量长度。</p></li>
 ## $Petal.Width
 ## [1] 1.199333</code></pre>
 </div>
-<div id="sapply" class="section level3" number="2.3.3">
-<h3><span class="header-section-number">2.3.3</span> sapply</h3>
+<div id="sapply" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> sapply<a href="基础语法.html#sapply" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>sapply() 函数是lapply() 的简化版本，多了一个参数simplify，若simplify=FALSE，则同lapply()，若为TRUE，则将输出的list 简化为向量或矩阵。其基本格式为：</p>
 <p>sapply(x, FUN, simplify = TRUE, …)</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="基础语法.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(df, mean) <span class="co"># 对前文df 计算各列的均值</span></span></code></pre></div>
 <pre><code>## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
 ##     5.843333     3.057333     3.758000     1.199333</code></pre>
 </div>
-<div id="vapply" class="section level3" number="2.3.4">
-<h3><span class="header-section-number">2.3.4</span> vapply</h3>
+<div id="vapply" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> vapply<a href="基础语法.html#vapply" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>sapply()会尝试对apply的结果进行简化，如果无法简化，则不进行简化，返回原始结果。与sapply()类似，vapply()也会对apply结果进行简化，vapply()的不同之处在于，它需要显式地指明所希望简化为的具体格式，如果无法简化为所指定的格式，则会给出Error。使用cls_vect &lt;- sapply(flags, class) 可以得到flags中各列的类型名称，并简化为一个character型的vector，使用vapply()并指明结果格式为character(1) 可以得到相同的结果：</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="基础语法.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vapply</span>(flags, class, <span class="fu">character</span>(<span class="dv">1</span>))</span></code></pre></div>
 <p>而如果希望通过vapplu()得到numeric(1) 的结果，会出现Error：</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="基础语法.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vapply</span>(flags, class, <span class="fu">numeric</span>(<span class="dv">1</span>))</span></code></pre></div>
 </div>
 </div>
-<div id="customized-function" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> 自定义函数</h2>
+<div id="customized-function" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> 自定义函数<a href="基础语法.html#customized-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>例子：百分制数字对应五级制分数</p>
 <ol style="list-style-type: decimal">
 <li>先梳理一般代码段</li>
@@ -777,10 +779,10 @@ double, character 等) 、向量长度。</p></li>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="基础语法.html#cb58-1" aria-hidden="true" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">67</span>, <span class="dv">100</span>)</span>
 <span id="cb58-2"><a href="基础语法.html#cb58-2" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">map_chr</span>(score, Score_Conv)</span></code></pre></div>
 <pre><code>## [1] &quot; 不及格&quot; &quot; 及格&quot;   &quot; 优&quot;</code></pre>
-<div id="函数设置" class="section level3" number="2.4.1">
-<h3><span class="header-section-number">2.4.1</span> 函数设置</h3>
-<div id="default-argument" class="section level4" number="2.4.1.1">
-<h4><span class="header-section-number">2.4.1.1</span> 设定默认参数</h4>
+<div id="函数设置" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> 函数设置<a href="基础语法.html#函数设置" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="default-argument" class="section level4 hasAnchor" number="2.4.1.1">
+<h4><span class="header-section-number">2.4.1.1</span> 设定默认参数<a href="基础语法.html#default-argument" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>分别计算样本标准差和总体标准差。默认计算样本标准差。</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="基础语法.html#cb60-1" aria-hidden="true" tabindex="-1"></a>MeanStd <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">type =</span> <span class="st">&quot;sample&quot;</span>) {</span>
 <span id="cb60-2"><a href="基础语法.html#cb60-2" aria-hidden="true" tabindex="-1"></a>  mu <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
@@ -802,8 +804,8 @@ double, character 等) 、向量长度。</p></li>
 ## $std
 ## [1] 1.581139</code></pre>
 </div>
-<div id="缺省参数" class="section level4" number="2.4.1.2">
-<h4><span class="header-section-number">2.4.1.2</span> 缺省参数</h4>
+<div id="缺省参数" class="section level4 hasAnchor" number="2.4.1.2">
+<h4><span class="header-section-number">2.4.1.2</span> 缺省参数<a href="基础语法.html#缺省参数" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>函数可输入无穷多个参数</p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="基础语法.html#cb62-1" aria-hidden="true" tabindex="-1"></a>dots_sum <span class="ot">=</span> <span class="cf">function</span>(...){</span>
 <span id="cb62-2"><a href="基础语法.html#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(...)</span>
@@ -881,7 +883,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
