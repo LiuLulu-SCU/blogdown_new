@@ -11,7 +11,7 @@ blogdown::serve_site()
 blogdown::stop_server()
 
 #新建post
-blogdown::new_post(title = "streamlit_iris",
+blogdown::new_post(title = "pc_wifi",
                    ext = '.Rmarkdown',
                    subdir = "post")
 
