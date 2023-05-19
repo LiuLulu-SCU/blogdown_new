@@ -112,10 +112,17 @@ $$
 
 基于此，可以使用牛顿迭代法（Newton-Raphson）求目标函数（公式（12））的极小值，也就解出了等式（10），能得出$\beta$，也就得到了IPD试验患者的权重值$w_i$。
 
+<img src="/courses/probability/MAIC_files/figure-html/maic1.jpg" width="672" />
+<img src="/courses/probability/MAIC_files/figure-html/maic2.jpg" width="672" />
+<img src="/courses/probability/MAIC_files/figure-html/maic3.jpg" width="672" />
+
+
 
 理论部分终于完结了，撒花！🌺🌺🌺
 
 接下来是R语言实现。
+
+******
 
 ## R语言实现MAIC 
 
