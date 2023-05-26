@@ -144,6 +144,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 </head>
 
@@ -295,11 +317,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5" data-path="markdown.html"><a href="markdown.html#数学公式"><i class="fa fa-check"></i><b>6.5</b> 数学公式</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="markdown.html"><a href="markdown.html#markdown如何显示数学公式"><i class="fa fa-check"></i><b>6.5.1</b> Markdown如何显示数学公式</a></li>
-<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.2</b> 数学公式的类别</a></li>
-<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.3</b> 上横线</a></li>
-<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.4</b> hat</a></li>
-<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.5</b> 换行对齐</a></li>
-<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.6</b> 分段函数</a></li>
+<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#公式编号"><i class="fa fa-check"></i><b>6.5.2</b> 公式编号</a></li>
+<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.3</b> 数学公式的类别</a></li>
+<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.4</b> 上横线</a></li>
+<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.5</b> hat</a></li>
+<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.6</b> 换行对齐</a></li>
+<li class="chapter" data-level="6.5.7" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.7</b> 分段函数</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>7</b> RMarkdown</a>
@@ -318,6 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.8" data-path="rmarkdown.html"><a href="rmarkdown.html#行内代码"><i class="fa fa-check"></i><b>7.3.8</b> 行内代码</a></li>
 <li class="chapter" data-level="7.3.9" data-path="rmarkdown.html"><a href="rmarkdown.html#在rmarkdown使用其他语言"><i class="fa fa-check"></i><b>7.3.9</b> 在RMarkdown使用其他语言</a></li>
 <li class="chapter" data-level="7.3.10" data-path="rmarkdown.html"><a href="rmarkdown.html#交互式文档"><i class="fa fa-check"></i><b>7.3.10</b> 交互式文档</a></li>
+<li class="chapter" data-level="7.3.11" data-path="rmarkdown.html"><a href="rmarkdown.html#参考文献"><i class="fa fa-check"></i><b>7.3.11</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="rmarkdown.html"><a href="rmarkdown.html#文档格式htmlpdfword"><i class="fa fa-check"></i><b>7.4</b> 文档格式（HTML,PDF,Word…）</a>
 <ul>
@@ -483,16 +507,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="安装" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> 安装<a href="rmarkdown.html#安装" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>你需要有R和RStudio。接下来需要安装<strong>rmarkdown</strong>包：</p>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="rmarkdown.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 从CRAN安装稳定版</span></span>
-<span id="cb258-2"><a href="rmarkdown.html#cb258-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rmarkdown&#39;</span>)</span>
-<span id="cb258-3"><a href="rmarkdown.html#cb258-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb258-4"><a href="rmarkdown.html#cb258-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 从GitHub安装开发版</span></span>
-<span id="cb258-5"><a href="rmarkdown.html#cb258-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">&quot;devtools&quot;</span>))</span>
-<span id="cb258-6"><a href="rmarkdown.html#cb258-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&#39;devtools&#39;</span>)</span>
-<span id="cb258-7"><a href="rmarkdown.html#cb258-7" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;rstudio/rmarkdown&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="rmarkdown.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 从CRAN安装稳定版</span></span>
+<span id="cb1-2"><a href="rmarkdown.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rmarkdown&#39;</span>)</span>
+<span id="cb1-3"><a href="rmarkdown.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="rmarkdown.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 从GitHub安装开发版</span></span>
+<span id="cb1-5"><a href="rmarkdown.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">&quot;devtools&quot;</span>))</span>
+<span id="cb1-6"><a href="rmarkdown.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&#39;devtools&#39;</span>)</span>
+<span id="cb1-7"><a href="rmarkdown.html#cb1-7" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;rstudio/rmarkdown&#39;</span>)</span></code></pre></div>
 <p>如果想生成PDF格式的输出文件，需要安装LaTex。如果你没有安装过的话，可以安装TinyTeX。</p>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="rmarkdown.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
-<span id="cb259-2"><a href="rmarkdown.html#cb259-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># 安装TinyTeX</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="rmarkdown.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
+<span id="cb2-2"><a href="rmarkdown.html#cb2-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># 安装TinyTeX</span></span></code></pre></div>
 <p>有了rmarkdown包、RStudio/Pandoc和LaTeX，就能够编译大多数R Markdown文档。在某些情况下，可能需要其他R包，我们将在用到时候再细说。</p>
 </div>
 <div id="基础" class="section level2 hasAnchor" number="7.3">
@@ -500,24 +524,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="rmarkdown基础" class="section level3 hasAnchor" number="7.3.1">
 <h3><span class="header-section-number">7.3.1</span> RMarkdown基础<a href="rmarkdown.html#rmarkdown基础" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>下面是一个最基础的R Markdown文档，它本身是一个纯文本文件，后缀名为<code>.Rmd</code>：</p>
-<div class="sourceCode" id="cb260"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb260-1"><a href="rmarkdown.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb260-2"><a href="rmarkdown.html#cb260-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Hello R Markdown&quot;</span></span>
-<span id="cb260-3"><a href="rmarkdown.html#cb260-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Awesome Me&quot;</span></span>
-<span id="cb260-4"><a href="rmarkdown.html#cb260-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2018-02-14&quot;</span></span>
-<span id="cb260-5"><a href="rmarkdown.html#cb260-5" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_document</span></span>
-<span id="cb260-6"><a href="rmarkdown.html#cb260-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
-<div class="sourceCode" id="cb261"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb261-1"><a href="rmarkdown.html#cb261-1" aria-hidden="true" tabindex="-1"></a>This is a paragraph in an R Markdown document.</span>
-<span id="cb261-2"><a href="rmarkdown.html#cb261-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb261-3"><a href="rmarkdown.html#cb261-3" aria-hidden="true" tabindex="-1"></a>Below is a code chunk:</span>
-<span id="cb261-4"><a href="rmarkdown.html#cb261-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb261-5"><a href="rmarkdown.html#cb261-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb261-6"><a href="rmarkdown.html#cb261-6" aria-hidden="true" tabindex="-1"></a><span class="in">fit = lm(dist ~ speed, data = cars)</span></span>
-<span id="cb261-7"><a href="rmarkdown.html#cb261-7" aria-hidden="true" tabindex="-1"></a><span class="in">b   = coef(fit)</span></span>
-<span id="cb261-8"><a href="rmarkdown.html#cb261-8" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars)</span></span>
-<span id="cb261-9"><a href="rmarkdown.html#cb261-9" aria-hidden="true" tabindex="-1"></a><span class="in">abline(fit)</span></span>
-<span id="cb261-10"><a href="rmarkdown.html#cb261-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb261-11"><a href="rmarkdown.html#cb261-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb261-12"><a href="rmarkdown.html#cb261-12" aria-hidden="true" tabindex="-1"></a>The slope of the regression is <span class="in">`r b[1]`</span>.</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="rmarkdown.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href="rmarkdown.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Hello R Markdown&quot;</span></span>
+<span id="cb3-3"><a href="rmarkdown.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Awesome Me&quot;</span></span>
+<span id="cb3-4"><a href="rmarkdown.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2018-02-14&quot;</span></span>
+<span id="cb3-5"><a href="rmarkdown.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_document</span></span>
+<span id="cb3-6"><a href="rmarkdown.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="rmarkdown.html#cb4-1" aria-hidden="true" tabindex="-1"></a>This is a paragraph in an R Markdown document.</span>
+<span id="cb4-2"><a href="rmarkdown.html#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="rmarkdown.html#cb4-3" aria-hidden="true" tabindex="-1"></a>Below is a code chunk:</span>
+<span id="cb4-4"><a href="rmarkdown.html#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="rmarkdown.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-6"><a href="rmarkdown.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="in">fit = lm(dist ~ speed, data = cars)</span></span>
+<span id="cb4-7"><a href="rmarkdown.html#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="in">b   = coef(fit)</span></span>
+<span id="cb4-8"><a href="rmarkdown.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars)</span></span>
+<span id="cb4-9"><a href="rmarkdown.html#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="in">abline(fit)</span></span>
+<span id="cb4-10"><a href="rmarkdown.html#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-11"><a href="rmarkdown.html#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="rmarkdown.html#cb4-12" aria-hidden="true" tabindex="-1"></a>The slope of the regression is <span class="in">`r b[1]`</span>.</span></code></pre></div>
 <p>如果你使用RStudio，你可以从菜单栏<code>File -&gt; New File -&gt; R Markdown</code>，创建RMarkdown文档。</p>
 <p>R Markdown文档有三个基本组件:元数据metadata、文本text和代码code。元数据写在这对三个破折号之间<code>---</code>。元数据的语法是YAML (YAML不是标记语言)，因此有时它也被称为YAML元数据或YAML frontmatter。预先警告您缩进在YAML中很重要，所以不要忘记正确地缩进顶部字段top field的子字段sub-field。请参阅Xie(2016)的 <a href="https://bookdown.org/yihui/bookdown/r-markdown.html" target="_blank">附录B.2</a>，以获得一些显示YAML语法的简单示例。
 文档的主体在元数据之后。文本(也称为prose或narratives)的语法是Markdown。有两种类型的计算机代码:</p>
@@ -531,13 +555,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">7.3.2</span> 编写R Markdown文档<a href="rmarkdown.html#compile" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>编译R Markdown文档的通常方法是点击<code>Knit</code>按钮，相应的键盘快捷键是<code>Ctrl + Shift + K</code>(在macOS上是<code>Cmd + Shift + K</code>)。在底层，RStudio<strong>在新的R会话中</strong>调用函数<code>rmarkdown::render()</code>渲染文档。请注意,在新的R会话中渲染Rmd文档意味着当前R会话中的对象(例如，在R控制台中创建的对象)都不会被渲染。可重现性是RStudio使用一个新的R会话来呈现Rmd文档的主要原因：文档在下次打开R或在其他人的计算环境中继续工作。</p>
 <p>如果你必须在当前的R会话中呈现一个文档，你也可以自己调用<code>rmarkdown::render()</code>，并将Rmd文件的路径传递给这个函数。这个函数的第二个参数是输出格式，默认为您在YAML元数据中指定的第一个输出格式(如果缺少该格式，则默认为<code>html_document</code>)。当你在元数据中有多种输出格式，并且不想使用第一种格式时，你可以在第二个参数中指定你想要的格式，例如，对于Rmd文档<code>foo.Rmd</code>与元数据:</p>
-<div class="sourceCode" id="cb262"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb262-1"><a href="rmarkdown.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb262-2"><a href="rmarkdown.html#cb262-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb262-3"><a href="rmarkdown.html#cb262-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb262-4"><a href="rmarkdown.html#cb262-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf_document</span><span class="kw">:</span></span>
-<span id="cb262-5"><a href="rmarkdown.html#cb262-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_tex</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="rmarkdown.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="rmarkdown.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="rmarkdown.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-4"><a href="rmarkdown.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf_document</span><span class="kw">:</span></span>
+<span id="cb5-5"><a href="rmarkdown.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_tex</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
 <p>可以通过一下命令渲染成PDF：</p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="rmarkdown.html#cb263-1" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="st">&#39;foo.Rmd&#39;</span>, <span class="st">&#39;pdf_document&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="rmarkdown.html#cb6-1" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="st">&#39;foo.Rmd&#39;</span>, <span class="st">&#39;pdf_document&#39;</span>)</span></code></pre></div>
 <p>编写Rmd文档的另一种主要方式是R Markdown Notebooks。暂不介绍。</p>
 <p>最后，我想提到一种“非官方”的编译Rmd文档的方法：<code>xaringan::inf_mr()</code>函数，或者类似的，RStudio addin插件“Infinite Moon Reader”。显然，这需要您安装xaringan包(Xie 2021e)。这种方式的主要优势是liverload:一种技术使您可以在保存源文档时实时预览输出，而不需要点击Knit按钮。另一个特点是，<strong>它在当前R会话中编译Rmd文档</strong>，这可能是您所希望的，也可能不是。请注意，此方法只适用于输出到HTML的Rmd文档，包括HTML文档和演示文稿。</p>
 <p>一些R Markdown扩展包，如bookdown和blogdown，有自己的编译文档的方式，我们将在后面介绍它们。</p>
@@ -566,65 +590,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>word_document</code></li>
 </ul>
 <p>对于Rmd文件的YAML元数据中的输出格式名，如果格式来自于扩展包，你需要包含包名，例如:</p>
-<div class="sourceCode" id="cb264"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb264-1"><a href="rmarkdown.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> tufte::tufte_html</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="rmarkdown.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> tufte::tufte_html</span></span></code></pre></div>
 <p>如果格式来自于rmarkdown包，则不需要加<code>rmarkdown::</code>前缀(尽管这不会有什么坏处)。</p>
 <p>当文档中有多种输出格式时，RStudio <code>Knit</code>按钮后面会有一个下拉菜单，列出输出格式的名称。</p>
 <p><img src="fig/23/23-01.png" width="120" style="display: block; margin: auto;" /></p>
 <p>每种输出格式通常都有几个格式选项。所有这些选项都记录在R包帮助页面中。例如，您可以在R中输入<code>?rmarkdown::html_document</code>打开<code>html_document</code>格式的帮助页面。当您想要使用某些选项时，您必须将值从R转换为YAML，例如:</p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="rmarkdown.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="fu">html_document</span>(<span class="at">toc =</span> <span class="cn">TRUE</span>, <span class="at">toc_depth =</span> <span class="dv">2</span>, <span class="at">dev =</span> <span class="st">&#39;svg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="rmarkdown.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">html_document</span>(<span class="at">toc =</span> <span class="cn">TRUE</span>, <span class="at">toc_depth =</span> <span class="dv">2</span>, <span class="at">dev =</span> <span class="st">&#39;svg&#39;</span>)</span></code></pre></div>
 <p>需要被写成：</p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb266-1"><a href="rmarkdown.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb266-2"><a href="rmarkdown.html#cb266-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb266-3"><a href="rmarkdown.html#cb266-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb266-4"><a href="rmarkdown.html#cb266-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc_depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
-<span id="cb266-5"><a href="rmarkdown.html#cb266-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dev</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;svg&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb9-1"><a href="rmarkdown.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb9-2"><a href="rmarkdown.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb9-3"><a href="rmarkdown.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb9-4"><a href="rmarkdown.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc_depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<span id="cb9-5"><a href="rmarkdown.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dev</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;svg&#39;</span></span></code></pre></div>
 <p>注意，R’中的 <code>TRUE</code>, <code>FALSE</code>, 和 <code>NULL</code> 对于YAML的<code>true</code>, <code>false</code>, 和 <code>null</code>。YAML中的字符通常不需要引号括起来(e.g., <code>dev: 'svg'</code> and <code>dev: svg</code>是一样的),除非包含特殊字符, 例如冒号<code>:</code>。可临药 <strong>yaml</strong> 包进行检验是否需要引号, e.g.,</p>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="rmarkdown.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(yaml<span class="sc">::</span><span class="fu">as.yaml</span>(<span class="fu">list</span>(</span>
-<span id="cb267-2"><a href="rmarkdown.html#cb267-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">&#39;A Wonderful Day&#39;</span>,</span>
-<span id="cb267-3"><a href="rmarkdown.html#cb267-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">subtitle =</span> <span class="st">&#39;hygge: a quality of coziness&#39;</span></span>
-<span id="cb267-4"><a href="rmarkdown.html#cb267-4" aria-hidden="true" tabindex="-1"></a>)))</span></code></pre></div>
-<div class="sourceCode" id="cb268"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb268-1"><a href="rmarkdown.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> A Wonderful Day</span></span>
-<span id="cb268-2"><a href="rmarkdown.html#cb268-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;hygge: a quality of coziness&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="rmarkdown.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(yaml<span class="sc">::</span><span class="fu">as.yaml</span>(<span class="fu">list</span>(</span>
+<span id="cb10-2"><a href="rmarkdown.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">&#39;A Wonderful Day&#39;</span>,</span>
+<span id="cb10-3"><a href="rmarkdown.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">subtitle =</span> <span class="st">&#39;hygge: a quality of coziness&#39;</span></span>
+<span id="cb10-4"><a href="rmarkdown.html#cb10-4" aria-hidden="true" tabindex="-1"></a>)))</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb11-1"><a href="rmarkdown.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> A Wonderful Day</span></span>
+<span id="cb11-2"><a href="rmarkdown.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;hygge: a quality of coziness&#39;</span></span></code></pre></div>
 <p>如果您的选项保护R的函数结果，则可以使用!expr，它会告诉yaml包需要解析和计算该选项。下面是一个在HTML输出中使用随机主题的例子</p>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="rmarkdown.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(yaml<span class="sc">::</span><span class="fu">as.yaml</span>(<span class="fu">list</span>(</span>
-<span id="cb269-2"><a href="rmarkdown.html#cb269-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">&#39;A Wonderful Day&#39;</span>,</span>
-<span id="cb269-3"><a href="rmarkdown.html#cb269-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">subtitle =</span> <span class="st">&#39;hygge: a quality of coziness&#39;</span></span>
-<span id="cb269-4"><a href="rmarkdown.html#cb269-4" aria-hidden="true" tabindex="-1"></a>)))</span></code></pre></div>
-<div class="sourceCode" id="cb270"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb270-1"><a href="rmarkdown.html#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> A Wonderful Day</span></span>
-<span id="cb270-2"><a href="rmarkdown.html#cb270-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;hygge: a quality of coziness&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="rmarkdown.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(yaml<span class="sc">::</span><span class="fu">as.yaml</span>(<span class="fu">list</span>(</span>
+<span id="cb12-2"><a href="rmarkdown.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">&#39;A Wonderful Day&#39;</span>,</span>
+<span id="cb12-3"><a href="rmarkdown.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">subtitle =</span> <span class="st">&#39;hygge: a quality of coziness&#39;</span></span>
+<span id="cb12-4"><a href="rmarkdown.html#cb12-4" aria-hidden="true" tabindex="-1"></a>)))</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb13-1"><a href="rmarkdown.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> A Wonderful Day</span></span>
+<span id="cb13-2"><a href="rmarkdown.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;hygge: a quality of coziness&#39;</span></span></code></pre></div>
 <p>如果某个选项有子选项(这意味着这个选项的值是一个R的列表)，子选项需要进一步<strong>缩进</strong>，例如:</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb271-1"><a href="rmarkdown.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb271-2"><a href="rmarkdown.html#cb271-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb271-3"><a href="rmarkdown.html#cb271-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb271-4"><a href="rmarkdown.html#cb271-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">includes</span><span class="kw">:</span></span>
-<span id="cb271-5"><a href="rmarkdown.html#cb271-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">in_header</span><span class="kw">:</span><span class="at"> header.html</span></span>
-<span id="cb271-6"><a href="rmarkdown.html#cb271-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">before_body</span><span class="kw">:</span><span class="at"> before.html</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb14-1"><a href="rmarkdown.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb14-2"><a href="rmarkdown.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb14-3"><a href="rmarkdown.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb14-4"><a href="rmarkdown.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">includes</span><span class="kw">:</span></span>
+<span id="cb14-5"><a href="rmarkdown.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">in_header</span><span class="kw">:</span><span class="at"> header.html</span></span>
+<span id="cb14-6"><a href="rmarkdown.html#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">before_body</span><span class="kw">:</span><span class="at"> before.html</span></span></code></pre></div>
 <p>一些选项被传递给knitr，例如<code>dev</code>、<code>fig_width</code>和<code>fig_height</code>。一些选项被传递给Pandoc，例如<code>toc</code>、<code>toc_depth</code>和<code>number_sections</code>。</p>
-<div class="sourceCode" id="cb272"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb272-1"><a href="rmarkdown.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb272-2"><a href="rmarkdown.html#cb272-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf_document</span><span class="kw">:</span></span>
-<span id="cb272-3"><a href="rmarkdown.html#cb272-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb272-4"><a href="rmarkdown.html#cb272-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">pandoc_args</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;--wrap=none&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;--top-level-division=chapter&quot;</span><span class="kw">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb15-1"><a href="rmarkdown.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb15-2"><a href="rmarkdown.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf_document</span><span class="kw">:</span></span>
+<span id="cb15-3"><a href="rmarkdown.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb15-4"><a href="rmarkdown.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">pandoc_args</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;--wrap=none&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;--top-level-division=chapter&quot;</span><span class="kw">]</span></span></code></pre></div>
 </div>
 <div id="r代码块和r行内代码" class="section level3 hasAnchor" number="7.3.5">
 <h3><span class="header-section-number">7.3.5</span> R代码块和R行内代码<a href="rmarkdown.html#r代码块和r行内代码" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>可以使用RStudio工具栏(<code>Insert</code>按钮)或快捷键<code>Ctrl + Alt + I</code> (<code>Cmd + Option + I</code>)插入R代码块。</p>
 <p>在代码块中可以做很多事情:可以生成文本输出、表格或图形。你可以通过块选项很好地控制所有这些输出，这些选项可以在大括号中设置(在<code>```{r</code> 和 <code>}</code>之间)。例如，你可以通过chunk选项<code>results = 'hide'</code>选择隐藏文本输出，或者通过<code>fig.height = 4</code>. 设置图形高度为4英寸。Chunk选项用逗号分隔，例如：</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb273-1"><a href="rmarkdown.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, chunk-label, results=&#39;hide&#39;, fig.height=4}</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb16-1"><a href="rmarkdown.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, chunk-label, results=&#39;hide&#39;, fig.height=4}</span></span></code></pre></div>
 <p>在谢益辉的blog中<a href="https://yihui.name/knitr/options" class="uri">https://yihui.name/knitr/options</a>有大量的chunk选项。下面我们列出了其中的一个子集:</p>
 <p>除了代码块标签（chunk label）不需要<code>tag</code>，仅需要输入<code>value</code>。其他选项都是通过键值对的形式输入<code>tag=value</code>。当然，代码块标签选项也可以显性采用键值对的形式输入<code>label='自定义标签名'</code>。每个代码块的标签是唯一的，如果没有手动指定其标签值，RMarkdown会自动命名为<code>unnamed-chunk-i</code>，i是增量的正数。</p>
 <div id="全局设置" class="section level4 hasAnchor" number="7.3.5.1">
 <h4><span class="header-section-number">7.3.5.1</span> 全局设置<a href="rmarkdown.html#全局设置" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>如果某个选项需要在多个代码块中频繁地设置为一个值，你可以考虑在文档的第一个代码块（YAML的下方）中全局设置它，你可以使用<code>knitr::opts_chunk$set()</code>来改变文档中chunk选项的默认值。例如，你可以把它放在你文档的第一个代码块:</p>
 <p>例子一：</p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="rmarkdown.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r, setup, include=FALSE}</span></span>
-<span id="cb274-2"><a href="rmarkdown.html#cb274-2" aria-hidden="true" tabindex="-1"></a><span class="at">knitr::opts_chunk$set(fig.width = 8, collapse = TRUE)</span></span>
-<span id="cb274-3"><a href="rmarkdown.html#cb274-3" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="rmarkdown.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r, setup, include=FALSE}</span></span>
+<span id="cb17-2"><a href="rmarkdown.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="at">knitr::opts_chunk$set(fig.width = 8, collapse = TRUE)</span></span>
+<span id="cb17-3"><a href="rmarkdown.html#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span></code></pre></div>
 <p>例子二：</p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="rmarkdown.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r, setup, include=FALSE}</span></span>
-<span id="cb275-2"><a href="rmarkdown.html#cb275-2" aria-hidden="true" tabindex="-1"></a><span class="at">knitr::opts_chunk$set(</span></span>
-<span id="cb275-3"><a href="rmarkdown.html#cb275-3" aria-hidden="true" tabindex="-1"></a><span class="at">  comment = &#39;&#39;, fig.width = 6, fig.height = 6</span></span>
-<span id="cb275-4"><a href="rmarkdown.html#cb275-4" aria-hidden="true" tabindex="-1"></a><span class="at">)</span></span>
-<span id="cb275-5"><a href="rmarkdown.html#cb275-5" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="rmarkdown.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r, setup, include=FALSE}</span></span>
+<span id="cb18-2"><a href="rmarkdown.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="at">knitr::opts_chunk$set(</span></span>
+<span id="cb18-3"><a href="rmarkdown.html#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="at">  comment = &#39;&#39;, fig.width = 6, fig.height = 6</span></span>
+<span id="cb18-4"><a href="rmarkdown.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="at">)</span></span>
+<span id="cb18-5"><a href="rmarkdown.html#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span></code></pre></div>
 </div>
 <div id="代码执行code-evaluation" class="section level4 hasAnchor" number="7.3.5.2">
 <h4><span class="header-section-number">7.3.5.2</span> 代码执行（Code evaluation）<a href="rmarkdown.html#代码执行code-evaluation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -683,12 +707,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>fig.width</code> and <code>fig.height</code>: 指定生成的图形的宽度和高度， 单位是英寸（1英寸等于2.54厘米）。如果同时指定，也可以使用<code>fig.dim = c(6, 4)</code> 等价于 <code>fig.width = 6</code> 且 <code>fig.height = 4</code>。</li>
 </ul>
 <p>下面给出一个长宽都是10厘米的图例。</p>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="rmarkdown.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r fig.width=10/2.54, fig.height=10/2.54}</span></span>
-<span id="cb276-2"><a href="rmarkdown.html#cb276-2" aria-hidden="true" tabindex="-1"></a><span class="at">curve(exp(-0.1*x)*sin(x), 0, 4*pi)</span></span>
-<span id="cb276-3"><a href="rmarkdown.html#cb276-3" aria-hidden="true" tabindex="-1"></a><span class="at">abline(h=0, lty=3)</span></span>
-<span id="cb276-4"><a href="rmarkdown.html#cb276-4" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span></code></pre></div>
-<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="rmarkdown.html#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">exp</span>(<span class="sc">-</span><span class="fl">0.1</span><span class="sc">*</span>x)<span class="sc">*</span><span class="fu">sin</span>(x), <span class="dv">0</span>, <span class="dv">4</span><span class="sc">*</span>pi)</span>
-<span id="cb277-2"><a href="rmarkdown.html#cb277-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>, <span class="at">lty=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="rmarkdown.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r fig.width=10/2.54, fig.height=10/2.54}</span></span>
+<span id="cb19-2"><a href="rmarkdown.html#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="at">curve(exp(-0.1*x)*sin(x), 0, 4*pi)</span></span>
+<span id="cb19-3"><a href="rmarkdown.html#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="at">abline(h=0, lty=3)</span></span>
+<span id="cb19-4"><a href="rmarkdown.html#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="rmarkdown.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">exp</span>(<span class="sc">-</span><span class="fl">0.1</span><span class="sc">*</span>x)<span class="sc">*</span><span class="fu">sin</span>(x), <span class="dv">0</span>, <span class="dv">4</span><span class="sc">*</span>pi)</span>
+<span id="cb20-2"><a href="rmarkdown.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>, <span class="at">lty=</span><span class="dv">3</span>)</span></code></pre></div>
 <p><img src="1023-chapter23-RMarkdown_files/figure-html/unnamed-chunk-6-1.png" width="377.952755905512" /></p>
 <ul>
 <li><code>out.width</code>和<code>out.height</code>控制输出文档中R图片的输出大小，即缩放图像。应百分比，例如<code>out.width = '80%'</code>表示图片为页面宽度的80%。</li>
@@ -702,19 +726,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="插入图片" class="section level3 hasAnchor" number="7.3.6">
 <h3><span class="header-section-number">7.3.6</span> 插入图片<a href="rmarkdown.html#插入图片" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>默认情况下，由R代码生成的图形将立即放置在生成图形的代码块之后。例如</p>
-<div class="sourceCode" id="cb278"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb278-1"><a href="rmarkdown.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb278-2"><a href="rmarkdown.html#cb278-2" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars, pch = 18)</span></span>
-<span id="cb278-3"><a href="rmarkdown.html#cb278-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb21-1"><a href="rmarkdown.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-2"><a href="rmarkdown.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars, pch = 18)</span></span>
+<span id="cb21-3"><a href="rmarkdown.html#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p><img src="1023-chapter23-RMarkdown_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p><strong>(1) 图片标题</strong></p>
 <p>您可以在chunk选项中使用<code>fig.cap</code>选项设置图片标题。如果文档输出格式支持选项<code>fig_caption: true</code>(输出格式<code>rmarkdown::html_document</code>)， R图形将被放置到图形环境中。在PDF输出的情况下，这些数字将被自动编号。</p>
 <p><strong>（2） 图片并排显示</strong></p>
 <p>要将多个图形从相同的代码块并排放置，你可以使用<code>fig.show='hold'</code>选项和<code>out.width</code>的选项。下图示例，有两个图，每个图的宽度为<code>50%</code>。</p>
-<div class="sourceCode" id="cb279"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb279-1"><a href="rmarkdown.html#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r hold-position, fig.cap=&#39;Two plots side-by-side.&#39;, fig.show=&#39;hold&#39;, out.width=&#39;50%&#39;, fig.width=5, fig.height=4}</span></span>
-<span id="cb279-2"><a href="rmarkdown.html#cb279-2" aria-hidden="true" tabindex="-1"></a><span class="in">par(mar = c(4, 4, .2, .1))</span></span>
-<span id="cb279-3"><a href="rmarkdown.html#cb279-3" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars, pch = 19)</span></span>
-<span id="cb279-4"><a href="rmarkdown.html#cb279-4" aria-hidden="true" tabindex="-1"></a><span class="in">plot(pressure, pch = 17)</span></span>
-<span id="cb279-5"><a href="rmarkdown.html#cb279-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb22-1"><a href="rmarkdown.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r hold-position, fig.cap=&#39;Two plots side-by-side.&#39;, fig.show=&#39;hold&#39;, out.width=&#39;50%&#39;, fig.width=5, fig.height=4}</span></span>
+<span id="cb22-2"><a href="rmarkdown.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="in">par(mar = c(4, 4, .2, .1))</span></span>
+<span id="cb22-3"><a href="rmarkdown.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars, pch = 19)</span></span>
+<span id="cb22-4"><a href="rmarkdown.html#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="in">plot(pressure, pch = 17)</span></span>
+<span id="cb22-5"><a href="rmarkdown.html#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:hold-position"></span>
 <img src="1023-chapter23-RMarkdown_files/figure-html/hold-position-1.png" alt="Two plots side-by-side." width="50%" /><img src="1023-chapter23-RMarkdown_files/figure-html/hold-position-2.png" alt="Two plots side-by-side." width="50%" />
 <p class="caption">
@@ -723,9 +747,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p><strong>(3) 非R代码生成的图片</strong></p>
 <p>如果需要显示不是由R代码生成的图形，可以使用<code>knitr::include_graphics()函数</code>，它比的Markdown语法更能控制图像的属性。</p>
-<div class="sourceCode" id="cb280"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb280-1"><a href="rmarkdown.html#cb280-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;...&#39;}</span></span>
-<span id="cb280-2"><a href="rmarkdown.html#cb280-2" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics(&#39;images/hex-rmarkdown.png&#39;)</span></span>
-<span id="cb280-3"><a href="rmarkdown.html#cb280-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb23-1"><a href="rmarkdown.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width=&#39;25%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;...&#39;}</span></span>
+<span id="cb23-2"><a href="rmarkdown.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics(&#39;images/hex-rmarkdown.png&#39;)</span></span>
+<span id="cb23-3"><a href="rmarkdown.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:include-graphics"></span>
 <img src="fig/23/23-02.png" alt="The R Markdown hex logo." width="25%" />
 <p class="caption">
@@ -736,9 +760,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="表格" class="section level3 hasAnchor" number="7.3.7">
 <h3><span class="header-section-number">7.3.7</span> 表格<a href="rmarkdown.html#表格" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>显示表格最简单方法是使用<code>knitr::kable()</code>，它可以创建HTML, PDF和Word输出的表可以通过向设置<code>caption</code>参数来包含表标题，例如:</p>
-<div class="sourceCode" id="cb281"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb281-1"><a href="rmarkdown.html#cb281-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r tables-mtcars}</span></span>
-<span id="cb281-2"><a href="rmarkdown.html#cb281-2" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::kable(iris[1:5, ], caption = &#39;A caption&#39;)</span></span>
-<span id="cb281-3"><a href="rmarkdown.html#cb281-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb24-1"><a href="rmarkdown.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r tables-mtcars}</span></span>
+<span id="cb24-2"><a href="rmarkdown.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::kable(iris[1:5, ], caption = &#39;A caption&#39;)</span></span>
+<span id="cb24-3"><a href="rmarkdown.html#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <table>
 <caption><span id="tab:tables-mtcars">表7.1: </span>A caption</caption>
 <thead>
@@ -793,21 +817,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="行内代码" class="section level3 hasAnchor" number="7.3.8">
 <h3><span class="header-section-number">7.3.8</span> 行内代码<a href="rmarkdown.html#行内代码" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>除了代码块，你也可以在行内文本中插入R对象的值. 例如：</p>
-<div class="sourceCode" id="cb282"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb282-1"><a href="rmarkdown.html#cb282-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb282-2"><a href="rmarkdown.html#cb282-2" aria-hidden="true" tabindex="-1"></a><span class="in">x = 5  # 圆的半径</span></span>
-<span id="cb282-3"><a href="rmarkdown.html#cb282-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb282-4"><a href="rmarkdown.html#cb282-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb282-5"><a href="rmarkdown.html#cb282-5" aria-hidden="true" tabindex="-1"></a>如果一个圆的半径为 <span class="in">`r x`</span>，</span>
-<span id="cb282-6"><a href="rmarkdown.html#cb282-6" aria-hidden="true" tabindex="-1"></a>它的面积等于 <span class="in">`r pi * x^2`</span>。</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb25-1"><a href="rmarkdown.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-2"><a href="rmarkdown.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="in">x = 5  # 圆的半径</span></span>
+<span id="cb25-3"><a href="rmarkdown.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-4"><a href="rmarkdown.html#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="rmarkdown.html#cb25-5" aria-hidden="true" tabindex="-1"></a>如果一个圆的半径为 <span class="in">`r x`</span>，</span>
+<span id="cb25-6"><a href="rmarkdown.html#cb25-6" aria-hidden="true" tabindex="-1"></a>它的面积等于 <span class="in">`r pi * x^2`</span>。</span></code></pre></div>
 <p>显示为</p>
-<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="rmarkdown.html#cb283-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">5</span>  <span class="co"># 圆的半径</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="rmarkdown.html#cb26-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">5</span>  <span class="co"># 圆的半径</span></span></code></pre></div>
 <p>如果一个圆的半径为 5,
 它的面积等于78.5398163。</p>
 </div>
 <div id="在rmarkdown使用其他语言" class="section level3 hasAnchor" number="7.3.9">
 <h3><span class="header-section-number">7.3.9</span> 在RMarkdown使用其他语言<a href="rmarkdown.html#在rmarkdown使用其他语言" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>关于R Markdown的一个鲜为人知的事实是，它还支持许多其他语言，如Python、Julia、c++和SQL。这种支持来自knitr包，它提供了大量的语言引擎，你可以通过以下方式列出所有可用引擎的名称:</p>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="rmarkdown.html#cb284-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(knitr<span class="sc">::</span>knit_engines<span class="sc">$</span><span class="fu">get</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="rmarkdown.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(knitr<span class="sc">::</span>knit_engines<span class="sc">$</span><span class="fu">get</span>())</span></code></pre></div>
 <pre><code>##  [1] &quot;awk&quot;         &quot;bash&quot;        &quot;coffee&quot;      &quot;gawk&quot;        &quot;groovy&quot;     
 ##  [6] &quot;haskell&quot;     &quot;lein&quot;        &quot;mysql&quot;       &quot;node&quot;        &quot;octave&quot;     
 ## [11] &quot;perl&quot;        &quot;php&quot;         &quot;psql&quot;        &quot;Rscript&quot;     &quot;ruby&quot;       
@@ -822,9 +846,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [56] &quot;proposition&quot; &quot;conjecture&quot;  &quot;definition&quot;  &quot;example&quot;     &quot;exercise&quot;   
 ## [61] &quot;hypothesis&quot;  &quot;proof&quot;       &quot;remark&quot;      &quot;solution&quot;    &quot;glue&quot;       
 ## [66] &quot;glue_sql&quot;    &quot;gluesql&quot;</code></pre>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="rmarkdown.html#cb286-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span></code></pre></div>
-<div class="sourceCode" id="cb287"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb287-1"><a href="rmarkdown.html#cb287-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">&#39;hello, python world!&#39;</span></span>
-<span id="cb287-2"><a href="rmarkdown.html#cb287-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.split(<span class="st">&#39; &#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="rmarkdown.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="rmarkdown.html#cb30-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">&#39;hello, python world!&#39;</span></span>
+<span id="cb30-2"><a href="rmarkdown.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.split(<span class="st">&#39; &#39;</span>))</span></code></pre></div>
 <pre><code>## [&#39;hello,&#39;, &#39;python&#39;, &#39;world!&#39;]</code></pre>
 <p>后续待补充。</p>
 </div>
@@ -835,47 +859,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">7.3.10.1</span> HTML widgets（HTML控件）<a href="rmarkdown.html#html-widgetshtml控件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>HTML Widgets框架是在R包<strong>htmlwidgets</strong> 中实现的，它可以连接JavaScript，创建交互式应用程序(如交互式图形和表格)。基于这个框架已经开发了几个widget包，如<strong>DT</strong>，<strong>leaflet</strong>和<strong>dygraphs</strong> 。访问<a href="https://www.htmlwidgets.org" class="uri">https://www.htmlwidgets.org</a>了解有关widget包的更多信息，以及如何自己开发widget包。</p>
 <p>显示了通过<strong>leaflet</strong>创建的交互式地图，下面是源文档</p>
-<div class="sourceCode" id="cb289"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb289-1"><a href="rmarkdown.html#cb289-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r out.width=&#39;100%&#39;, echo=FALSE,warning=FALSE}</span></span>
-<span id="cb289-2"><a href="rmarkdown.html#cb289-2" aria-hidden="true" tabindex="-1"></a><span class="in">library(leaflet)</span></span>
-<span id="cb289-3"><a href="rmarkdown.html#cb289-3" aria-hidden="true" tabindex="-1"></a><span class="in">leaflet() %&gt;% addTiles() %&gt;%</span></span>
-<span id="cb289-4"><a href="rmarkdown.html#cb289-4" aria-hidden="true" tabindex="-1"></a><span class="in">  setView(117.1730089187622, 39.107918850334265, zoom = 17) %&gt;%</span></span>
-<span id="cb289-5"><a href="rmarkdown.html#cb289-5" aria-hidden="true" tabindex="-1"></a><span class="in">  addPopups(</span></span>
-<span id="cb289-6"><a href="rmarkdown.html#cb289-6" aria-hidden="true" tabindex="-1"></a><span class="in">    117.1730089187622, 39.107918850334265,</span></span>
-<span id="cb289-7"><a href="rmarkdown.html#cb289-7" aria-hidden="true" tabindex="-1"></a><span class="in">    &#39;这里是 &lt;b&gt;天津大学&lt;/b&gt;&#39;</span></span>
-<span id="cb289-8"><a href="rmarkdown.html#cb289-8" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
-<span id="cb289-9"><a href="rmarkdown.html#cb289-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<div id="htmlwidget-64cb108c6f24e2e0f18d" style="width:100%;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-64cb108c6f24e2e0f18d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addPopups","args":[39.111,117.165098918762,"这里是 <b>天津大学<\/b>",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"setView":[[39.111,117.165908918762],17,[]],"limits":{"lat":[39.111,39.111],"lng":[117.165098918762,117.165098918762]}},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb32"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb32-1"><a href="rmarkdown.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r out.width=&#39;100%&#39;, echo=FALSE,warning=FALSE}</span></span>
+<span id="cb32-2"><a href="rmarkdown.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="in">library(leaflet)</span></span>
+<span id="cb32-3"><a href="rmarkdown.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="in">leaflet() %&gt;% addTiles() %&gt;%</span></span>
+<span id="cb32-4"><a href="rmarkdown.html#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="in">  setView(117.1730089187622, 39.107918850334265, zoom = 17) %&gt;%</span></span>
+<span id="cb32-5"><a href="rmarkdown.html#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="in">  addPopups(</span></span>
+<span id="cb32-6"><a href="rmarkdown.html#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="in">    117.1730089187622, 39.107918850334265,</span></span>
+<span id="cb32-7"><a href="rmarkdown.html#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="in">    &#39;这里是 &lt;b&gt;天津大学&lt;/b&gt;&#39;</span></span>
+<span id="cb32-8"><a href="rmarkdown.html#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
+<span id="cb32-9"><a href="rmarkdown.html#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div id="htmlwidget-7b61352a704d01cf39ef" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7b61352a704d01cf39ef">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addPopups","args":[39.111,117.165098918762,"这里是 <b>天津大学<\/b>",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"setView":[[39.111,117.165908918762],17,[]],"limits":{"lat":[39.111,39.111],"lng":[117.165098918762,117.165098918762]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="shiny文档" class="section level4 hasAnchor" number="7.3.10.2">
 <h4><span class="header-section-number">7.3.10.2</span> Shiny文档<a href="rmarkdown.html#shiny文档" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><strong>shiny</strong>包构建了由R驱动的交互式web应用程序。要从R Markdown文档中调用shiny代码，需要将<code>runtime: shiny</code>添加到YAML元数据中，就像下面这个文档:</p>
-<div class="sourceCode" id="cb290"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb290-1"><a href="rmarkdown.html#cb290-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb290-2"><a href="rmarkdown.html#cb290-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;A Shiny Document&quot;</span></span>
-<span id="cb290-3"><a href="rmarkdown.html#cb290-3" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
-<span id="cb290-4"><a href="rmarkdown.html#cb290-4" aria-hidden="true" tabindex="-1"></a><span class="an">runtime:</span><span class="co"> shiny</span></span>
-<span id="cb290-5"><a href="rmarkdown.html#cb290-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb290-6"><a href="rmarkdown.html#cb290-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb290-7"><a href="rmarkdown.html#cb290-7" aria-hidden="true" tabindex="-1"></a>A standard R plot can be made interactive by wrapping</span>
-<span id="cb290-8"><a href="rmarkdown.html#cb290-8" aria-hidden="true" tabindex="-1"></a>it in the Shiny <span class="in">`renderPlot()`</span> function. The <span class="in">`selectInput()`</span></span>
-<span id="cb290-9"><a href="rmarkdown.html#cb290-9" aria-hidden="true" tabindex="-1"></a>function creates the input widget to drive the plot.</span>
-<span id="cb290-10"><a href="rmarkdown.html#cb290-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb290-11"><a href="rmarkdown.html#cb290-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eruptions, echo=FALSE}</span></span>
-<span id="cb290-12"><a href="rmarkdown.html#cb290-12" aria-hidden="true" tabindex="-1"></a><span class="in">selectInput(</span></span>
-<span id="cb290-13"><a href="rmarkdown.html#cb290-13" aria-hidden="true" tabindex="-1"></a><span class="in">  &#39;breaks&#39;, label = &#39;Number of bins:&#39;,</span></span>
-<span id="cb290-14"><a href="rmarkdown.html#cb290-14" aria-hidden="true" tabindex="-1"></a><span class="in">  choices = c(10, 20, 35, 50), selected = 20</span></span>
-<span id="cb290-15"><a href="rmarkdown.html#cb290-15" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
-<span id="cb290-16"><a href="rmarkdown.html#cb290-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb290-17"><a href="rmarkdown.html#cb290-17" aria-hidden="true" tabindex="-1"></a><span class="in">renderPlot({</span></span>
-<span id="cb290-18"><a href="rmarkdown.html#cb290-18" aria-hidden="true" tabindex="-1"></a><span class="in">  par(mar = c(4, 4, .1, .5))</span></span>
-<span id="cb290-19"><a href="rmarkdown.html#cb290-19" aria-hidden="true" tabindex="-1"></a><span class="in">  hist(</span></span>
-<span id="cb290-20"><a href="rmarkdown.html#cb290-20" aria-hidden="true" tabindex="-1"></a><span class="in">    faithful$eruptions, as.numeric(input$breaks),</span></span>
-<span id="cb290-21"><a href="rmarkdown.html#cb290-21" aria-hidden="true" tabindex="-1"></a><span class="in">    col = &#39;gray&#39;, border = &#39;white&#39;,</span></span>
-<span id="cb290-22"><a href="rmarkdown.html#cb290-22" aria-hidden="true" tabindex="-1"></a><span class="in">    xlab = &#39;Duration (minutes)&#39;, main = &#39;&#39;</span></span>
-<span id="cb290-23"><a href="rmarkdown.html#cb290-23" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
-<span id="cb290-24"><a href="rmarkdown.html#cb290-24" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
-<span id="cb290-25"><a href="rmarkdown.html#cb290-25" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb33-1"><a href="rmarkdown.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb33-2"><a href="rmarkdown.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;A Shiny Document&quot;</span></span>
+<span id="cb33-3"><a href="rmarkdown.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb33-4"><a href="rmarkdown.html#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="an">runtime:</span><span class="co"> shiny</span></span>
+<span id="cb33-5"><a href="rmarkdown.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb33-6"><a href="rmarkdown.html#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="rmarkdown.html#cb33-7" aria-hidden="true" tabindex="-1"></a>A standard R plot can be made interactive by wrapping</span>
+<span id="cb33-8"><a href="rmarkdown.html#cb33-8" aria-hidden="true" tabindex="-1"></a>it in the Shiny <span class="in">`renderPlot()`</span> function. The <span class="in">`selectInput()`</span></span>
+<span id="cb33-9"><a href="rmarkdown.html#cb33-9" aria-hidden="true" tabindex="-1"></a>function creates the input widget to drive the plot.</span>
+<span id="cb33-10"><a href="rmarkdown.html#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-11"><a href="rmarkdown.html#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eruptions, echo=FALSE}</span></span>
+<span id="cb33-12"><a href="rmarkdown.html#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="in">selectInput(</span></span>
+<span id="cb33-13"><a href="rmarkdown.html#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="in">  &#39;breaks&#39;, label = &#39;Number of bins:&#39;,</span></span>
+<span id="cb33-14"><a href="rmarkdown.html#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="in">  choices = c(10, 20, 35, 50), selected = 20</span></span>
+<span id="cb33-15"><a href="rmarkdown.html#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
+<span id="cb33-16"><a href="rmarkdown.html#cb33-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-17"><a href="rmarkdown.html#cb33-17" aria-hidden="true" tabindex="-1"></a><span class="in">renderPlot({</span></span>
+<span id="cb33-18"><a href="rmarkdown.html#cb33-18" aria-hidden="true" tabindex="-1"></a><span class="in">  par(mar = c(4, 4, .1, .5))</span></span>
+<span id="cb33-19"><a href="rmarkdown.html#cb33-19" aria-hidden="true" tabindex="-1"></a><span class="in">  hist(</span></span>
+<span id="cb33-20"><a href="rmarkdown.html#cb33-20" aria-hidden="true" tabindex="-1"></a><span class="in">    faithful$eruptions, as.numeric(input$breaks),</span></span>
+<span id="cb33-21"><a href="rmarkdown.html#cb33-21" aria-hidden="true" tabindex="-1"></a><span class="in">    col = &#39;gray&#39;, border = &#39;white&#39;,</span></span>
+<span id="cb33-22"><a href="rmarkdown.html#cb33-22" aria-hidden="true" tabindex="-1"></a><span class="in">    xlab = &#39;Duration (minutes)&#39;, main = &#39;&#39;</span></span>
+<span id="cb33-23"><a href="rmarkdown.html#cb33-23" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
+<span id="cb33-24"><a href="rmarkdown.html#cb33-24" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
+<span id="cb33-25"><a href="rmarkdown.html#cb33-25" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 </div>
+</div>
+<div id="参考文献" class="section level3 hasAnchor" number="7.3.11">
+<h3><span class="header-section-number">7.3.11</span> 参考文献<a href="rmarkdown.html#参考文献" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="https://cosname.github.io/rmarkdown-guide/rmarkdown-base.html#bibliography" class="uri">https://cosname.github.io/rmarkdown-guide/rmarkdown-base.html#bibliography</a></p>
+<p>R Markdown 支持在输出文档末尾自动生成参考文献，并提供了很方便的引用格式。这项功能是通过 Pandoc 实现的，它有两种管理引用和参考文献的方式</p>
+<ol style="list-style-type: decimal">
+<li>默认情况下，Pandoc 会使用 <code>[pandoc-citeproc](https://github.com/jgm/pandoc-citeproc)</code> 程序按照 CSL (Citation Style Language) 语言的标准和特定的 CSL 风格文件组织参考文献和引用的格式。</li>
+<li>读者还可以使用 natbib 包 (基于 LaTeX 的 <code>bibtex包</code>) 或 biblatex 包提供的格式。</li>
+</ol>
+<p>作者可以用 YAML 元数据中的 <code>citation_package</code> 选项设置 LaTeX 中的引用包，常见的选择有 <code>natlib</code> 或 <code>biblatex</code>：</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb34-1"><a href="rmarkdown.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb34-2"><a href="rmarkdown.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
+<span id="cb34-3"><a href="rmarkdown.html#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf_document:</span></span>
+<span id="cb34-4"><a href="rmarkdown.html#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co">    citation_package: natbib</span></span>
+<span id="cb34-5"><a href="rmarkdown.html#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co">  bookdown::pdf_book:</span></span>
+<span id="cb34-6"><a href="rmarkdown.html#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="co">    citation_package: biblatex</span></span>
+<span id="cb34-7"><a href="rmarkdown.html#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
+<p><code>citation_package</code> 仅限于 PDF 输出格式。其他输出格式只能依靠 <code>pandoc-citeproc</code>，如果需要保持 PDF 格式和其他格式的一致性，就应该始终使用 <code>pandoc-citeproc</code>。</p>
+<p>设置好引用格式后，还需要知道如何把参考文献的各个条目表达为数据形式。推荐读者用 BibTeX 数据库 (BibTeX Database) 管理 R Markdown 中的参考数据。BibTeX 数据库是一种纯文本文件，一般以 bib 为后缀，其中的每一个条目格式形如：</p>
+<pre><code>@Manual{R-base,
+  title = {R: A Language and Environment for Statistical
+    Computing},
+  author = {{R Core Team}},
+  organization = {R Foundation for Statistical Computing},
+  address = {Vienna, Austria},
+  year = {2016},
+  url = {https://www.R-project.org/},
+}</code></pre>
+<p>一个条目以 <code>@type{</code> 开始，<code>type</code> 表示该条参考的类型，可以识 <code>article</code>, <code>book</code>, <code>manual</code> 等。在类型之后的是引用标签，如 <code>R-base</code>，其他项包含参考的作者，组织，地址，日期和链接等信息。每一个条目都至少包含名称，作者和时间等信息，为了使用 <code>.bib</code> 文件中的条目，需要用 YAML 元数据中的 <code>bibliography</code> 加载一个或多个 <code>.bib</code> 文件：</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb36-1"><a href="rmarkdown.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb36-2"><a href="rmarkdown.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> pdf_document</span></span>
+<span id="cb36-3"><a href="rmarkdown.html#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> [&quot;one.bib&quot;, &quot;another.bib&quot;, &quot;yet-another.bib&quot;]</span></span>
+<span id="cb36-4"><a href="rmarkdown.html#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="an">biblio-style:</span><span class="co"> &quot;apalike&quot;</span></span>
+<span id="cb36-5"><a href="rmarkdown.html#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="an">link-citations:</span><span class="co"> true</span></span>
+<span id="cb36-6"><a href="rmarkdown.html#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
+<p>上面的例子引入了 <code>one.bib</code>，<code>another.bib</code>，<code>yet-another.bib</code> 三个 <code>.bib</code> 文件中的参考数据，<code>biblio-style: 'apalike'</code> 设置参考样式为美国心理学学会期刊样式 (American Psychology Association, APA)，<code>link-cations: true</code> 为引用添加指向参考文献的跳转链接。</p>
+<p>用 bibliography 引入 .bib 后，便可以在文档中引用其中包含的任意条目，语法为 <code>@key</code> 或 <code>[@key]</code>，其中 key 为该参考条目类型之后的标签。如 <code>@R-base</code> 生成为 R Core Team (2022)，而 <code>[@R-base]</code> 生成 (R Core Team 2022)。</p>
+<p>对 PDF 输出，Pandoc 会在最后一个章节后额外生成一节放置参考文献。对其他输出格式，可以在文档的最后用行内代码自动创建一个章节存放参考文献。例如，在源文档的最后插入：</p>
+<p>例子：</p>
+<p>引用了MAIC的第一篇文章<span class="citation"><sup>[<a href="#ref-signorovitch2010comparative" role="doc-biblioref">1</a>]</sup></span> ，以及第二篇文章 <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
 </div>
 </div>
 <div id="文档格式htmlpdfword" class="section level2 hasAnchor" number="7.4">
@@ -885,59 +949,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="html" class="section level3 hasAnchor" number="7.4.1">
 <h3><span class="header-section-number">7.4.1</span> HTML<a href="rmarkdown.html#html" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>要从R Markdown创建HTML文档，你需要在文档的YAML元数据中指定<code>html_document</code>输出格式：</p>
-<div class="sourceCode" id="cb291"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb291-1"><a href="rmarkdown.html#cb291-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb291-2"><a href="rmarkdown.html#cb291-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Habits</span></span>
-<span id="cb291-3"><a href="rmarkdown.html#cb291-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> John Doe</span></span>
-<span id="cb291-4"><a href="rmarkdown.html#cb291-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> March 22, 2005</span></span>
-<span id="cb291-5"><a href="rmarkdown.html#cb291-5" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_document</span></span>
-<span id="cb291-6"><a href="rmarkdown.html#cb291-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb37-1"><a href="rmarkdown.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb37-2"><a href="rmarkdown.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Habits</span></span>
+<span id="cb37-3"><a href="rmarkdown.html#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> John Doe</span></span>
+<span id="cb37-4"><a href="rmarkdown.html#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> March 22, 2005</span></span>
+<span id="cb37-5"><a href="rmarkdown.html#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_document</span></span>
+<span id="cb37-6"><a href="rmarkdown.html#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 </div>
 <div id="目录table-of-contents" class="section level3 hasAnchor" number="7.4.2">
 <h3><span class="header-section-number">7.4.2</span> 目录（Table of contents）<a href="rmarkdown.html#目录table-of-contents" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>您可以使用<code>toc</code>选项添加一个目录(Table of contents，TOC)，并使用<code>toc_depth</code>选项指定它所应用的标题深度。例如:</p>
-<div class="sourceCode" id="cb292"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb292-1"><a href="rmarkdown.html#cb292-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb292-2"><a href="rmarkdown.html#cb292-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb292-3"><a href="rmarkdown.html#cb292-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb292-4"><a href="rmarkdown.html#cb292-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb292-5"><a href="rmarkdown.html#cb292-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb292-6"><a href="rmarkdown.html#cb292-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc_depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
-<span id="cb292-7"><a href="rmarkdown.html#cb292-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb38-1"><a href="rmarkdown.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb38-2"><a href="rmarkdown.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb38-3"><a href="rmarkdown.html#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb38-4"><a href="rmarkdown.html#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb38-5"><a href="rmarkdown.html#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb38-6"><a href="rmarkdown.html#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc_depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<span id="cb38-7"><a href="rmarkdown.html#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>如果没有指定目录深度，默认值为3(目录将展示所有1、2和3级的标题)。</p>
 <div id="浮动目录" class="section level4 hasAnchor" number="7.4.2.1">
 <h4><span class="header-section-number">7.4.2.1</span> 浮动目录<a href="rmarkdown.html#浮动目录" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>可以设定<code>toc_float</code>选项将目录浮动到主文档内容的左侧。即使在滚动文档时，浮动目录也总是可见的。例如:</p>
-<div class="sourceCode" id="cb293"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb293-1"><a href="rmarkdown.html#cb293-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb293-2"><a href="rmarkdown.html#cb293-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb293-3"><a href="rmarkdown.html#cb293-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb293-4"><a href="rmarkdown.html#cb293-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb293-5"><a href="rmarkdown.html#cb293-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb293-6"><a href="rmarkdown.html#cb293-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc_float</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb293-7"><a href="rmarkdown.html#cb293-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb39-1"><a href="rmarkdown.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb39-2"><a href="rmarkdown.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb39-3"><a href="rmarkdown.html#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb39-4"><a href="rmarkdown.html#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb39-5"><a href="rmarkdown.html#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb39-6"><a href="rmarkdown.html#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc_float</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb39-7"><a href="rmarkdown.html#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>你可以为<code>toc_float</code>参数指定一个选项列表来控制它的行为。这些选项包括:</p>
 <p><code>collapsed</code> (默认<code>TRUE</code>) 控制目录是否只显示顶级头部(例如，H2)。如果最初折叠，则在必要时自动内联展开目录。</p>
 <p><code>smooth_scroll</code> (默认<code>TRUE</code>) 控制当点击鼠标导航到TOC项目时页面滚动是否动画。</p>
 <p>例如</p>
-<div class="sourceCode" id="cb294"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb294-1"><a href="rmarkdown.html#cb294-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb294-2"><a href="rmarkdown.html#cb294-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb294-3"><a href="rmarkdown.html#cb294-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb294-4"><a href="rmarkdown.html#cb294-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb294-5"><a href="rmarkdown.html#cb294-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb294-6"><a href="rmarkdown.html#cb294-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc_float</span><span class="kw">:</span></span>
-<span id="cb294-7"><a href="rmarkdown.html#cb294-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">collapsed</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb294-8"><a href="rmarkdown.html#cb294-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">smooth_scroll</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb294-9"><a href="rmarkdown.html#cb294-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb40-1"><a href="rmarkdown.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb40-2"><a href="rmarkdown.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb40-3"><a href="rmarkdown.html#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb40-4"><a href="rmarkdown.html#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb40-5"><a href="rmarkdown.html#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb40-6"><a href="rmarkdown.html#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc_float</span><span class="kw">:</span></span>
+<span id="cb40-7"><a href="rmarkdown.html#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">collapsed</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb40-8"><a href="rmarkdown.html#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">smooth_scroll</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb40-9"><a href="rmarkdown.html#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 </div>
 </div>
 <div id="小节编号section-numbering" class="section level3 hasAnchor" number="7.4.3">
 <h3><span class="header-section-number">7.4.3</span> 小节编号Section numbering<a href="rmarkdown.html#小节编号section-numbering" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>您可以使用<code>number_sections</code>选项为标题添加节编号</p>
-<div class="sourceCode" id="cb295"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb295-1"><a href="rmarkdown.html#cb295-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb295-2"><a href="rmarkdown.html#cb295-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb295-3"><a href="rmarkdown.html#cb295-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb295-4"><a href="rmarkdown.html#cb295-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb295-5"><a href="rmarkdown.html#cb295-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb295-6"><a href="rmarkdown.html#cb295-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number_sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb295-7"><a href="rmarkdown.html#cb295-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb41-1"><a href="rmarkdown.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb41-2"><a href="rmarkdown.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb41-3"><a href="rmarkdown.html#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb41-4"><a href="rmarkdown.html#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb41-5"><a href="rmarkdown.html#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb41-6"><a href="rmarkdown.html#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number_sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb41-7"><a href="rmarkdown.html#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 </div>
 <div id="tabbed-sections" class="section level3 hasAnchor" number="7.4.4">
 <h3><span class="header-section-number">7.4.4</span> Tabbed sections<a href="rmarkdown.html#tabbed-sections" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -951,40 +1015,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>highlight</code>显示指定语法高亮显示样式。支持的风格包括<code>default</code>默认,<code>tango</code>探戈, <code>pygments</code>颜料, <code>kate</code>凯特, <code>monochrome</code>单色, <code>espresso</code>浓缩, <code>zenburn</code>, <code>haddock</code>黑线鳕, <code>breezedark</code>微风方舟, 和 <code>textmate</code>。<code>null</code>不语法高亮显示。</li>
 </ul>
 <p>例子：</p>
-<div class="sourceCode" id="cb296"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb296-1"><a href="rmarkdown.html#cb296-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb296-2"><a href="rmarkdown.html#cb296-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb296-3"><a href="rmarkdown.html#cb296-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb296-4"><a href="rmarkdown.html#cb296-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb296-5"><a href="rmarkdown.html#cb296-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> united</span></span>
-<span id="cb296-6"><a href="rmarkdown.html#cb296-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">highlight</span><span class="kw">:</span><span class="at"> tango</span></span>
-<span id="cb296-7"><a href="rmarkdown.html#cb296-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb42-1"><a href="rmarkdown.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb42-2"><a href="rmarkdown.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb42-3"><a href="rmarkdown.html#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb42-4"><a href="rmarkdown.html#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb42-5"><a href="rmarkdown.html#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> united</span></span>
+<span id="cb42-6"><a href="rmarkdown.html#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">highlight</span><span class="kw">:</span><span class="at"> tango</span></span>
+<span id="cb42-7"><a href="rmarkdown.html#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <div id="自定义css" class="section level4 hasAnchor" number="7.4.5.1">
 <h4><span class="header-section-number">7.4.5.1</span> 自定义CSS<a href="rmarkdown.html#自定义css" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>你可以使用<code>CSS</code>选项将自己的CSS添加到HTML文档中:</p>
-<div class="sourceCode" id="cb297"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb297-1"><a href="rmarkdown.html#cb297-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb297-2"><a href="rmarkdown.html#cb297-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb297-3"><a href="rmarkdown.html#cb297-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb297-4"><a href="rmarkdown.html#cb297-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb297-5"><a href="rmarkdown.html#cb297-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
-<span id="cb297-6"><a href="rmarkdown.html#cb297-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb43-1"><a href="rmarkdown.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb43-2"><a href="rmarkdown.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb43-3"><a href="rmarkdown.html#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb43-4"><a href="rmarkdown.html#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb43-5"><a href="rmarkdown.html#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
+<span id="cb43-6"><a href="rmarkdown.html#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>如果你想从你自己的CSS中提供文档的所有样式，你可以设置<code>theme</code>和<code>highlight</code>为<code>null</code>:</p>
-<div class="sourceCode" id="cb298"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb298-1"><a href="rmarkdown.html#cb298-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb298-2"><a href="rmarkdown.html#cb298-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb298-3"><a href="rmarkdown.html#cb298-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb298-4"><a href="rmarkdown.html#cb298-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb298-5"><a href="rmarkdown.html#cb298-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span><span class="ch">null</span></span>
-<span id="cb298-6"><a href="rmarkdown.html#cb298-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">highlight</span><span class="kw">:</span><span class="at"> </span><span class="ch">null</span></span>
-<span id="cb298-7"><a href="rmarkdown.html#cb298-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
-<span id="cb298-8"><a href="rmarkdown.html#cb298-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb44-1"><a href="rmarkdown.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb44-2"><a href="rmarkdown.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb44-3"><a href="rmarkdown.html#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb44-4"><a href="rmarkdown.html#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb44-5"><a href="rmarkdown.html#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span><span class="ch">null</span></span>
+<span id="cb44-6"><a href="rmarkdown.html#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">highlight</span><span class="kw">:</span><span class="at"> </span><span class="ch">null</span></span>
+<span id="cb44-7"><a href="rmarkdown.html#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
+<span id="cb44-8"><a href="rmarkdown.html#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>你也可以通过在文档的章节标题中添加id或类来使用定制CSS来针对文档的特定章节。例如下面的小节标题:</p>
-<div class="sourceCode" id="cb299"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb299-1"><a href="rmarkdown.html#cb299-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next Steps {#nextsteps .emphasized}</span></span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb45-1"><a href="rmarkdown.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next Steps {#nextsteps .emphasized}</span></span></code></pre></div>
 <p>可以让你使用以下CSS选择器将CSS应用到它的所有内容:</p>
-<div class="sourceCode" id="cb300"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb300-1"><a href="rmarkdown.html#cb300-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#nextsteps</span> {</span>
-<span id="cb300-2"><a href="rmarkdown.html#cb300-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">color</span>: <span class="cn">blue</span><span class="op">;</span></span>
-<span id="cb300-3"><a href="rmarkdown.html#cb300-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb300-4"><a href="rmarkdown.html#cb300-4" aria-hidden="true" tabindex="-1"></a><span class="fu">.emphasized</span> {</span>
-<span id="cb300-5"><a href="rmarkdown.html#cb300-5" aria-hidden="true" tabindex="-1"></a>   <span class="kw">font-size</span>: <span class="dv">1.2</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb300-6"><a href="rmarkdown.html#cb300-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb46-1"><a href="rmarkdown.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#nextsteps</span> {</span>
+<span id="cb46-2"><a href="rmarkdown.html#cb46-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">color</span>: <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb46-3"><a href="rmarkdown.html#cb46-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb46-4"><a href="rmarkdown.html#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="fu">.emphasized</span> {</span>
+<span id="cb46-5"><a href="rmarkdown.html#cb46-5" aria-hidden="true" tabindex="-1"></a>   <span class="kw">font-size</span>: <span class="dv">1.2</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb46-6"><a href="rmarkdown.html#cb46-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </div>
 <div id="图片选项figure-options" class="section level3 hasAnchor" number="7.4.6">
@@ -996,14 +1060,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>dev</code>控制用于渲染图形的图形设备(默认为png)。</p></li>
 </ul>
 <p>例子</p>
-<div class="sourceCode" id="cb301"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb301-1"><a href="rmarkdown.html#cb301-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb301-2"><a href="rmarkdown.html#cb301-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb301-3"><a href="rmarkdown.html#cb301-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb301-4"><a href="rmarkdown.html#cb301-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb301-5"><a href="rmarkdown.html#cb301-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig_width</span><span class="kw">:</span><span class="at"> </span><span class="dv">7</span></span>
-<span id="cb301-6"><a href="rmarkdown.html#cb301-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig_height</span><span class="kw">:</span><span class="at"> </span><span class="dv">6</span></span>
-<span id="cb301-7"><a href="rmarkdown.html#cb301-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig_caption</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb301-8"><a href="rmarkdown.html#cb301-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb47-1"><a href="rmarkdown.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb47-2"><a href="rmarkdown.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb47-3"><a href="rmarkdown.html#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb47-4"><a href="rmarkdown.html#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb47-5"><a href="rmarkdown.html#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig_width</span><span class="kw">:</span><span class="at"> </span><span class="dv">7</span></span>
+<span id="cb47-6"><a href="rmarkdown.html#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig_height</span><span class="kw">:</span><span class="at"> </span><span class="dv">6</span></span>
+<span id="cb47-7"><a href="rmarkdown.html#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig_caption</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb47-8"><a href="rmarkdown.html#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 </div>
 <div id="数据框显示data-frame-printing" class="section level3 hasAnchor" number="7.4.7">
 <h3><span class="header-section-number">7.4.7</span> 数据框显示（Data frame printing）<a href="rmarkdown.html#数据框显示data-frame-printing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1042,16 +1106,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="paged-printing" class="section level4 hasAnchor" number="7.4.7.1">
 <h4><span class="header-section-number">7.4.7.1</span> Paged printing<a href="rmarkdown.html#paged-printing" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>当<code>df_print</code>选项设置为<code>paged</code> 时，表将被打印为支持行和列分页的HTML表。例如(见图 <a href="rmarkdown.html#fig:paged">7.3</a>):</p>
-<div class="sourceCode" id="cb302"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb302-1"><a href="rmarkdown.html#cb302-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb302-2"><a href="rmarkdown.html#cb302-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Motor Trend Car Road Tests&quot;</span></span>
-<span id="cb302-3"><a href="rmarkdown.html#cb302-3" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
-<span id="cb302-4"><a href="rmarkdown.html#cb302-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html_document:</span></span>
-<span id="cb302-5"><a href="rmarkdown.html#cb302-5" aria-hidden="true" tabindex="-1"></a><span class="co">    df_print: paged</span></span>
-<span id="cb302-6"><a href="rmarkdown.html#cb302-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb302-7"><a href="rmarkdown.html#cb302-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb302-8"><a href="rmarkdown.html#cb302-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb302-9"><a href="rmarkdown.html#cb302-9" aria-hidden="true" tabindex="-1"></a><span class="in">mtcars</span></span>
-<span id="cb302-10"><a href="rmarkdown.html#cb302-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb48-1"><a href="rmarkdown.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb48-2"><a href="rmarkdown.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Motor Trend Car Road Tests&quot;</span></span>
+<span id="cb48-3"><a href="rmarkdown.html#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
+<span id="cb48-4"><a href="rmarkdown.html#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html_document:</span></span>
+<span id="cb48-5"><a href="rmarkdown.html#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="co">    df_print: paged</span></span>
+<span id="cb48-6"><a href="rmarkdown.html#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb48-7"><a href="rmarkdown.html#cb48-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-8"><a href="rmarkdown.html#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb48-9"><a href="rmarkdown.html#cb48-9" aria-hidden="true" tabindex="-1"></a><span class="in">mtcars</span></span>
+<span id="cb48-10"><a href="rmarkdown.html#cb48-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:paged"></span>
 <img src="images/paged.png" alt="A paged table in the HTML output document." width="100%" />
 <p class="caption">
@@ -1103,40 +1167,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>这些选项在每个块中的设置如下:</p>
-<div class="sourceCode" id="cb303"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb303-1"><a href="rmarkdown.html#cb303-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r cols.print=3, rows.print=3}</span></span>
-<span id="cb303-2"><a href="rmarkdown.html#cb303-2" aria-hidden="true" tabindex="-1"></a><span class="in">mtcars</span></span>
-<span id="cb303-3"><a href="rmarkdown.html#cb303-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb49-1"><a href="rmarkdown.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r cols.print=3, rows.print=3}</span></span>
+<span id="cb49-2"><a href="rmarkdown.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="in">mtcars</span></span>
+<span id="cb49-3"><a href="rmarkdown.html#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 </div>
 <div id="自定义函数custom-function" class="section level4 hasAnchor" number="7.4.7.2">
 <h4><span class="header-section-number">7.4.7.2</span> 自定义函数（Custom function）<a href="rmarkdown.html#自定义函数custom-function" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><code>df_print</code>选项还可以采用任意函数在输出文档中创建表格。这个函数必须根据使用的输出以正确的格式输出。</p>
 <p>例如</p>
-<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="rmarkdown.html#cb304-1" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">html_document</span>(<span class="at">df_print =</span> knitr<span class="sc">::</span>kable)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="rmarkdown.html#cb50-1" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">html_document</span>(<span class="at">df_print =</span> knitr<span class="sc">::</span>kable)</span></code></pre></div>
 <p>等价于使用<code>"kable"</code>方法</p>
-<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="rmarkdown.html#cb305-1" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">html_document</span>(<span class="at">df_print =</span> <span class="st">&quot;kable&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="rmarkdown.html#cb51-1" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">html_document</span>(<span class="at">df_print =</span> <span class="st">&quot;kable&quot;</span>)</span></code></pre></div>
 <p>要在YAML头文件中使用<code>df_print</code>中的自定义函数，必须使用<code>!expr</code>标签，这样它之后的R表达式才会被求值。详见帮助页面<code>?yaml::yaml.load</code>的<code>eval.expr</code>参数。</p>
-<div class="sourceCode" id="cb306"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb306-1"><a href="rmarkdown.html#cb306-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb306-2"><a href="rmarkdown.html#cb306-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Motor Trend Car Road Tests&quot;</span></span>
-<span id="cb306-3"><a href="rmarkdown.html#cb306-3" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
-<span id="cb306-4"><a href="rmarkdown.html#cb306-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html_document:</span></span>
-<span id="cb306-5"><a href="rmarkdown.html#cb306-5" aria-hidden="true" tabindex="-1"></a><span class="co">    df_print: !expr pander::pander </span></span>
-<span id="cb306-6"><a href="rmarkdown.html#cb306-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb306-7"><a href="rmarkdown.html#cb306-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb306-8"><a href="rmarkdown.html#cb306-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb306-9"><a href="rmarkdown.html#cb306-9" aria-hidden="true" tabindex="-1"></a><span class="in">mtcars</span></span>
-<span id="cb306-10"><a href="rmarkdown.html#cb306-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb52-1"><a href="rmarkdown.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb52-2"><a href="rmarkdown.html#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Motor Trend Car Road Tests&quot;</span></span>
+<span id="cb52-3"><a href="rmarkdown.html#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
+<span id="cb52-4"><a href="rmarkdown.html#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html_document:</span></span>
+<span id="cb52-5"><a href="rmarkdown.html#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="co">    df_print: !expr pander::pander </span></span>
+<span id="cb52-6"><a href="rmarkdown.html#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb52-7"><a href="rmarkdown.html#cb52-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-8"><a href="rmarkdown.html#cb52-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb52-9"><a href="rmarkdown.html#cb52-9" aria-hidden="true" tabindex="-1"></a><span class="in">mtcars</span></span>
+<span id="cb52-10"><a href="rmarkdown.html#cb52-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 </div>
 </div>
 <div id="代码折叠code-folding" class="section level3 hasAnchor" number="7.4.8">
 <h3><span class="header-section-number">7.4.8</span> 代码折叠（Code folding）<a href="rmarkdown.html#代码折叠code-folding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>code_folding</code>属性设置HTML结果中代码折叠选项， 取值<code>hide</code>可以隐藏代码， 但读者通过选项可见。 取值<code>show</code>可以显示代码， 但读者通过选项可隐藏代码显示。</p>
 <p>例子</p>
-<div class="sourceCode" id="cb307"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb307-1"><a href="rmarkdown.html#cb307-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb307-2"><a href="rmarkdown.html#cb307-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Habits&quot;</span></span>
-<span id="cb307-3"><a href="rmarkdown.html#cb307-3" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
-<span id="cb307-4"><a href="rmarkdown.html#cb307-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html_document:</span></span>
-<span id="cb307-5"><a href="rmarkdown.html#cb307-5" aria-hidden="true" tabindex="-1"></a><span class="co">    code_folding: hide</span></span>
-<span id="cb307-6"><a href="rmarkdown.html#cb307-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb53-1"><a href="rmarkdown.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb53-2"><a href="rmarkdown.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Habits&quot;</span></span>
+<span id="cb53-3"><a href="rmarkdown.html#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
+<span id="cb53-4"><a href="rmarkdown.html#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html_document:</span></span>
+<span id="cb53-5"><a href="rmarkdown.html#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="co">    code_folding: hide</span></span>
+<span id="cb53-6"><a href="rmarkdown.html#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
 </div>
 <div id="mathjax数学公式的支持" class="section level3 hasAnchor" number="7.4.9">
 <h3><span class="header-section-number">7.4.9</span> MathJax数学公式的支持<a href="rmarkdown.html#mathjax数学公式的支持" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1144,86 +1208,86 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>以HTML为输出时， 会使用MathJax库显示数学公式。 这是一个用于在浏览器中显示数学公式的Javascript程序库， 显示效果很好， 还支持多种显示实现方式， 支持包括LaTeX在内的多种数学公式输入方法。 R Markdown原来使用MathJax版本2， 现在MathJax已经发布了版本3， 有很大的改动， 我们这里应仍使用版本2。</p>
 <p>MathJax库很大， 所以一般是从其网站按需远程调用的， 但是远程调用MathJax库在网络不畅通时会使得公式显示极为缓慢甚至无法显示， 所以Rmd允许将MathJax本地化。 在.Rmd文件头部YAML元数据的某种HTML输出格式的属性中， 设置属性<code>mathjax: local</code>就可以使得MathJax库被放在生成的HTML的一个下层目录中。 设置如</p>
 <p>For example, to use a local copy of MathJax:</p>
-<div class="sourceCode" id="cb308"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb308-1"><a href="rmarkdown.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb308-2"><a href="rmarkdown.html#cb308-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb308-3"><a href="rmarkdown.html#cb308-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb308-4"><a href="rmarkdown.html#cb308-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb308-5"><a href="rmarkdown.html#cb308-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mathjax</span><span class="kw">:</span><span class="at"> local</span></span>
-<span id="cb308-6"><a href="rmarkdown.html#cb308-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">self_contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb308-7"><a href="rmarkdown.html#cb308-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb54-1"><a href="rmarkdown.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb54-2"><a href="rmarkdown.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb54-3"><a href="rmarkdown.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb54-4"><a href="rmarkdown.html#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb54-5"><a href="rmarkdown.html#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mathjax</span><span class="kw">:</span><span class="at"> local</span></span>
+<span id="cb54-6"><a href="rmarkdown.html#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">self_contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb54-7"><a href="rmarkdown.html#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>注意设置<code>mathjax: local</code>同时必须设置<code>self_contained: false</code>。 在不使用本地MathJax副本时， 可以设置<code>self_contained: true</code>， 这使得图形文件、JavaScript代码等依赖项也打包在生成的单一HTML文件中， 如果设为<code>false</code>， 这些依赖文件会存放在单独文件中。 可以用<code>lib_dir</code>属性指定一个子目录用来存放这些依赖文件， 多个Rmd文件可以共用同一个<code>lib_dir</code>值。</p>
 <p>将MathJax用<code>mathjax: local</code>属性本地化有明显的缺点。 这时，每个Rmd项目都需要一个MathJax库副本， 使得文件备份变得很麻烦。 下面的设置方法可以令多个Rmd项目共享一个共同的本地MathJax库。</p>
 <p>To use a self-hosted copy of MathJax:</p>
-<div class="sourceCode" id="cb309"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb309-1"><a href="rmarkdown.html#cb309-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb309-2"><a href="rmarkdown.html#cb309-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb309-3"><a href="rmarkdown.html#cb309-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb309-4"><a href="rmarkdown.html#cb309-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb309-5"><a href="rmarkdown.html#cb309-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mathjax</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;http://example.com/MathJax.js&quot;</span></span>
-<span id="cb309-6"><a href="rmarkdown.html#cb309-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb55-1"><a href="rmarkdown.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb55-2"><a href="rmarkdown.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb55-3"><a href="rmarkdown.html#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb55-4"><a href="rmarkdown.html#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb55-5"><a href="rmarkdown.html#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mathjax</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;http://example.com/MathJax.js&quot;</span></span>
+<span id="cb55-6"><a href="rmarkdown.html#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>To exclude MathJax entirely:</p>
-<div class="sourceCode" id="cb310"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb310-1"><a href="rmarkdown.html#cb310-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb310-2"><a href="rmarkdown.html#cb310-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb310-3"><a href="rmarkdown.html#cb310-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb310-4"><a href="rmarkdown.html#cb310-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb310-5"><a href="rmarkdown.html#cb310-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mathjax</span><span class="kw">:</span><span class="at"> </span><span class="ch">null</span></span>
-<span id="cb310-6"><a href="rmarkdown.html#cb310-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb56-1"><a href="rmarkdown.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb56-2"><a href="rmarkdown.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb56-3"><a href="rmarkdown.html#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb56-4"><a href="rmarkdown.html#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb56-5"><a href="rmarkdown.html#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">mathjax</span><span class="kw">:</span><span class="at"> </span><span class="ch">null</span></span>
+<span id="cb56-6"><a href="rmarkdown.html#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 </div>
 <div id="文档依赖关系document-dependencies" class="section level3 hasAnchor" number="7.4.10">
 <h3><span class="header-section-number">7.4.10</span> 文档依赖关系（Document dependencies）<a href="rmarkdown.html#文档依赖关系document-dependencies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>默认情况下，R Markdown生成独立的HTML文件，没有外部依赖关系，使用<code>data</code>:URIs合并链接脚本、样式表、图像和视频的内容。这意味着您可以像共享Office文档或pdf一样共享或发布该文件。如果你更愿意将依赖关系保存在外部文件中，你可以指定<code>self_contained: false</code>。例如:</p>
-<div class="sourceCode" id="cb311"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb311-1"><a href="rmarkdown.html#cb311-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb311-2"><a href="rmarkdown.html#cb311-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb311-3"><a href="rmarkdown.html#cb311-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb311-4"><a href="rmarkdown.html#cb311-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb311-5"><a href="rmarkdown.html#cb311-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">self_contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb311-6"><a href="rmarkdown.html#cb311-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb57-1"><a href="rmarkdown.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb57-2"><a href="rmarkdown.html#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb57-3"><a href="rmarkdown.html#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb57-4"><a href="rmarkdown.html#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb57-5"><a href="rmarkdown.html#cb57-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">self_contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb57-6"><a href="rmarkdown.html#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>保留外部依赖项的一个常见原因是为了从网站上提供R Markdown文档(外部依赖项可以被浏览器单独缓存，从而加快页面加载时间)。在提供多个R Markdown文档的情况下，您可能还希望将相关库文件(例如Bootstrap和MathJax等)合并到多个文档共享的单个目录中。您可以使用<code>lib_dir</code>选项来完成此操作。例如:</p>
-<div class="sourceCode" id="cb312"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb312-1"><a href="rmarkdown.html#cb312-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb312-2"><a href="rmarkdown.html#cb312-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb312-3"><a href="rmarkdown.html#cb312-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb312-4"><a href="rmarkdown.html#cb312-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb312-5"><a href="rmarkdown.html#cb312-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">self_contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb312-6"><a href="rmarkdown.html#cb312-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">lib_dir</span><span class="kw">:</span><span class="at"> libs</span></span>
-<span id="cb312-7"><a href="rmarkdown.html#cb312-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb58-1"><a href="rmarkdown.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb58-2"><a href="rmarkdown.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb58-3"><a href="rmarkdown.html#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb58-4"><a href="rmarkdown.html#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb58-5"><a href="rmarkdown.html#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">self_contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb58-6"><a href="rmarkdown.html#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">lib_dir</span><span class="kw">:</span><span class="at"> libs</span></span>
+<span id="cb58-7"><a href="rmarkdown.html#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 </div>
 <div id="保留md文件" class="section level3 hasAnchor" number="7.4.11">
 <h3><span class="header-section-number">7.4.11</span> 保留<code>md</code>文件<a href="rmarkdown.html#保留md文件" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>当<strong>knitr</strong>包处理R Markdown输入文件时，它会创建一个Markdown (<code>*.md</code>)文件，该文件随后被Pandoc转换成HTML。如果你想在渲染后保留Markdown文件的副本，你可以使用<code>keep_md</code>选项:</p>
-<div class="sourceCode" id="cb313"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb313-1"><a href="rmarkdown.html#cb313-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb313-2"><a href="rmarkdown.html#cb313-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb313-3"><a href="rmarkdown.html#cb313-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb313-4"><a href="rmarkdown.html#cb313-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb313-5"><a href="rmarkdown.html#cb313-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_md</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb313-6"><a href="rmarkdown.html#cb313-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb59-1"><a href="rmarkdown.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb59-2"><a href="rmarkdown.html#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb59-3"><a href="rmarkdown.html#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb59-4"><a href="rmarkdown.html#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb59-5"><a href="rmarkdown.html#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_md</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb59-6"><a href="rmarkdown.html#cb59-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 </div>
 <div id="includes" class="section level3 hasAnchor" number="7.4.12">
 <h3><span class="header-section-number">7.4.12</span> Includes<a href="rmarkdown.html#includes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>使用<code>includes</code>选项，在文档头部或文档主体之前/之后包含内容可以在增加HTML内容或替换核心Pandoc模板。</p>
-<div class="sourceCode" id="cb314"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb314-1"><a href="rmarkdown.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb314-2"><a href="rmarkdown.html#cb314-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb314-3"><a href="rmarkdown.html#cb314-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb314-4"><a href="rmarkdown.html#cb314-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb314-5"><a href="rmarkdown.html#cb314-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">includes</span><span class="kw">:</span></span>
-<span id="cb314-6"><a href="rmarkdown.html#cb314-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">in_header</span><span class="kw">:</span><span class="at"> header.html</span></span>
-<span id="cb314-7"><a href="rmarkdown.html#cb314-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">before_body</span><span class="kw">:</span><span class="at"> doc_prefix.html</span></span>
-<span id="cb314-8"><a href="rmarkdown.html#cb314-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">after_body</span><span class="kw">:</span><span class="at"> doc_suffix.html</span></span>
-<span id="cb314-9"><a href="rmarkdown.html#cb314-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb60-1"><a href="rmarkdown.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb60-2"><a href="rmarkdown.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb60-3"><a href="rmarkdown.html#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb60-4"><a href="rmarkdown.html#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb60-5"><a href="rmarkdown.html#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">includes</span><span class="kw">:</span></span>
+<span id="cb60-6"><a href="rmarkdown.html#cb60-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">in_header</span><span class="kw">:</span><span class="at"> header.html</span></span>
+<span id="cb60-7"><a href="rmarkdown.html#cb60-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">before_body</span><span class="kw">:</span><span class="at"> doc_prefix.html</span></span>
+<span id="cb60-8"><a href="rmarkdown.html#cb60-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">after_body</span><span class="kw">:</span><span class="at"> doc_suffix.html</span></span>
+<span id="cb60-9"><a href="rmarkdown.html#cb60-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 </div>
 <div id="自定义模板" class="section level3 hasAnchor" number="7.4.13">
 <h3><span class="header-section-number">7.4.13</span> 自定义模板<a href="rmarkdown.html#自定义模板" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>您也可以使用<code>template</code>选项替换底层的Pandoc模板</p>
-<div class="sourceCode" id="cb315"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb315-1"><a href="rmarkdown.html#cb315-1" aria-hidden="true" tabindex="-1"></a><span class="at">Custom templates</span></span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb61-1"><a href="rmarkdown.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="at">Custom templates</span></span></code></pre></div>
 </div>
 <div id="markdown-extensions" class="section level3 hasAnchor" number="7.4.14">
 <h3><span class="header-section-number">7.4.14</span> Markdown extensions<a href="rmarkdown.html#markdown-extensions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>默认情况下，R Markdown被定义为所有的Pandoc Markdown扩展，并为与旧Markdown包的向后兼容性进行了以下调整</p>
 <p>您可以使用<code>md_extensions</code>选项启用或禁用Markdown扩展(在选项前面加上<code>-</code>禁用和<code>+</code>启用)。例如:</p>
-<div class="sourceCode" id="cb316"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb316-1"><a href="rmarkdown.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb316-2"><a href="rmarkdown.html#cb316-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
-<span id="cb316-3"><a href="rmarkdown.html#cb316-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb316-4"><a href="rmarkdown.html#cb316-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb316-5"><a href="rmarkdown.html#cb316-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">md_extensions</span><span class="kw">:</span><span class="at"> -autolink_bare_uris+hard_line_breaks</span></span>
-<span id="cb316-6"><a href="rmarkdown.html#cb316-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb62-1"><a href="rmarkdown.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb62-2"><a href="rmarkdown.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Habits&quot;</span></span>
+<span id="cb62-3"><a href="rmarkdown.html#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb62-4"><a href="rmarkdown.html#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb62-5"><a href="rmarkdown.html#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">md_extensions</span><span class="kw">:</span><span class="at"> -autolink_bare_uris+hard_line_breaks</span></span>
+<span id="cb62-6"><a href="rmarkdown.html#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>上面的代码将禁用<code>autolink_bare_uri</code>扩展，并启用<code>hard_line_breaks</code>扩展。</p>
 </div>
 <div id="pandoc参数" class="section level3 hasAnchor" number="7.4.15">
@@ -1233,29 +1297,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="共享选项设置shared-options" class="section level3 hasAnchor" number="7.4.16">
 <h3><span class="header-section-number">7.4.16</span> 共享选项设置（Shared options）<a href="rmarkdown.html#共享选项设置shared-options" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>如果希望指定一组默认选项，由一个目录中的多个文档共享，可以包含一个名为<code>_output</code>的文件。目录中的Yml。注意，这个文件中没有使用YAML分隔符(<code>---</code>)或<code>output</code>字段。与<code>_output</code>位于同一目录下的所有文档，yaml将继承它的选项。例如:</p>
-<div class="sourceCode" id="cb317"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb317-1"><a href="rmarkdown.html#cb317-1" aria-hidden="true" tabindex="-1"></a><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb317-2"><a href="rmarkdown.html#cb317-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">self_contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb317-3"><a href="rmarkdown.html#cb317-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> united</span></span>
-<span id="cb317-4"><a href="rmarkdown.html#cb317-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">highlight</span><span class="kw">:</span><span class="at"> textmate</span></span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb63-1"><a href="rmarkdown.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb63-2"><a href="rmarkdown.html#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">self_contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb63-3"><a href="rmarkdown.html#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> united</span></span>
+<span id="cb63-4"><a href="rmarkdown.html#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">highlight</span><span class="kw">:</span><span class="at"> textmate</span></span></code></pre></div>
 <p>而不应该被写成</p>
-<div class="sourceCode" id="cb318"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb318-1"><a href="rmarkdown.html#cb318-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb318-2"><a href="rmarkdown.html#cb318-2" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb318-3"><a href="rmarkdown.html#cb318-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb318-4"><a href="rmarkdown.html#cb318-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">self_contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb318-5"><a href="rmarkdown.html#cb318-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> united</span></span>
-<span id="cb318-6"><a href="rmarkdown.html#cb318-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">highlight</span><span class="kw">:</span><span class="at"> textmate</span></span>
-<span id="cb318-7"><a href="rmarkdown.html#cb318-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb64-1"><a href="rmarkdown.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb64-2"><a href="rmarkdown.html#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb64-3"><a href="rmarkdown.html#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb64-4"><a href="rmarkdown.html#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">self_contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb64-5"><a href="rmarkdown.html#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> united</span></span>
+<span id="cb64-6"><a href="rmarkdown.html#cb64-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">highlight</span><span class="kw">:</span><span class="at"> textmate</span></span>
+<span id="cb64-7"><a href="rmarkdown.html#cb64-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 </div>
 <div id="html-片段-html-fragments" class="section level3 hasAnchor" number="7.4.17">
 <h3><span class="header-section-number">7.4.17</span> HTML 片段（ HTML fragments）<a href="rmarkdown.html#html-片段-html-fragments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>如果要创建HTML片段而不是完整的HTML文档，可以使用<code>html_fragment</code>格式。例如:</p>
-<div class="sourceCode" id="cb319"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb319-1"><a href="rmarkdown.html#cb319-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb319-2"><a href="rmarkdown.html#cb319-2" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_fragment</span></span>
-<span id="cb319-3"><a href="rmarkdown.html#cb319-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb65-1"><a href="rmarkdown.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb65-2"><a href="rmarkdown.html#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_fragment</span></span>
+<span id="cb65-3"><a href="rmarkdown.html#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>注意，HTML片段不是完整的HTML文档。它们不包含HTML文档所包含的标准头部内容(它们只包含<code>&lt;body&gt;</code>标签内的内容)。他们可以被包含在其他网页或内容管理系统(如博客)中。因此，它们不支持像主题或代码突出显示这样的特性(预期它们最终在处理这些事情的环境中发布)。</p>
 
 </div>
 </div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body">
+<div id="ref-signorovitch2010comparative" class="csl-entry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">SIGNOROVITCH J E. WU E Q. YU A P. 等. Comparative effectiveness without head-to-head trials: a method for matching-adjusted indirect comparisons applied to psoriasis treatment with adalimumab or etanercept[J]. Pharmacoeconomics, 2010, 28: 935-945.</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>第二篇文章是XXX。<a href="rmarkdown.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -1317,20 +1393,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

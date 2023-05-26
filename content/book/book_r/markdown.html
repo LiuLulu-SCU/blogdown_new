@@ -295,11 +295,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5" data-path="markdown.html"><a href="markdown.html#数学公式"><i class="fa fa-check"></i><b>6.5</b> 数学公式</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="markdown.html"><a href="markdown.html#markdown如何显示数学公式"><i class="fa fa-check"></i><b>6.5.1</b> Markdown如何显示数学公式</a></li>
-<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.2</b> 数学公式的类别</a></li>
-<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.3</b> 上横线</a></li>
-<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.4</b> hat</a></li>
-<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.5</b> 换行对齐</a></li>
-<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.6</b> 分段函数</a></li>
+<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#公式编号"><i class="fa fa-check"></i><b>6.5.2</b> 公式编号</a></li>
+<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.3</b> 数学公式的类别</a></li>
+<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.4</b> 上横线</a></li>
+<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.5</b> hat</a></li>
+<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.6</b> 换行对齐</a></li>
+<li class="chapter" data-level="6.5.7" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.7</b> 分段函数</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>7</b> RMarkdown</a>
@@ -495,11 +496,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">6.2.2</span> 超链接<a href="markdown.html#超链接" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>(1) 原样显示的可点击的链接</strong></p>
 <p>只要把链接地址用小于号和大于号包在中间。 如果是网页，需要加http://， 如果是邮箱，需要加mailto:。 例如，如下代码:</p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb236-1"><a href="markdown.html#cb236-1" aria-hidden="true" tabindex="-1"></a>刘卢路网页地址是： <span class="ot">&lt;https://www.liululu.net/&gt;</span> 。</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="markdown.html#cb1-1" aria-hidden="true" tabindex="-1"></a>刘卢路网页地址是： <span class="ot">&lt;https://www.liululu.net/&gt;</span> 。</span></code></pre></div>
 <p>显示为：刘卢路的网页地址是： <a href="https://www.liululu.net/" class="uri">https://www.liululu.net/</a> 。</p>
 <p><strong>(2) 行内式</strong></p>
 <p><strong>外部链接：</strong></p>
-<div class="sourceCode" id="cb237"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb237-1"><a href="markdown.html#cb237-1" aria-hidden="true" tabindex="-1"></a>请参考<span class="co">[</span><span class="ot">刘卢路的主页</span><span class="co">](https://www.liululu.net/)</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="markdown.html#cb2-1" aria-hidden="true" tabindex="-1"></a>请参考<span class="co">[</span><span class="ot">刘卢路的主页</span><span class="co">](https://www.liululu.net/)</span></span></code></pre></div>
 <p>显示为：请参考<a href="https://www.liululu.net/">刘卢路的主页</a></p>
 <p><strong>内部链接</strong></p>
 <p>用于文内跳转</p>
@@ -507,7 +508,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>比如，本章第一节“简介”添加了<code>markdown-intro</code>为标签， 就可以用“<code>[回到介绍](#markdown-intro)</code>”产生链接<a href="markdown.html#markdown-intro">回到介绍</a>。</p>
 <p><strong>(3) 引用式</strong></p>
 <p>使用引用式的链接， 有些像论文中把所有参考文献排列在文章末尾， 文中用到某一篇文献只要提及其序号。</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb238-1"><a href="markdown.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="ot">[liululu]: http://liululu.net/ &quot;刘卢路&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="markdown.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ot">[liululu]: http://liululu.net/ &quot;刘卢路&quot;</span></span></code></pre></div>
 <p>此时文章可以使用<code>[刘卢路的网站][liululu]</code>将链接变成<a href="http://liululu.net/" title="刘卢路">刘卢路的网站</a></p>
 </div>
 <div id="插入引用citations" class="section level3 hasAnchor" number="6.2.3">
@@ -518,11 +519,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="换行空格" class="section level3 hasAnchor" number="6.2.4">
 <h3><span class="header-section-number">6.2.4</span> 换行空格<a href="markdown.html#换行空格" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>为了排版诗、词之类的内容， 希望人为控制换行和引导空格， 可以使用<code>|</code></p>
-<div class="sourceCode" id="cb239"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb239-1"><a href="markdown.html#cb239-1" aria-hidden="true" tabindex="-1"></a>| 枯藤老树昏鸦，</span>
-<span id="cb239-2"><a href="markdown.html#cb239-2" aria-hidden="true" tabindex="-1"></a>|   小桥流水人家，</span>
-<span id="cb239-3"><a href="markdown.html#cb239-3" aria-hidden="true" tabindex="-1"></a>|   古道西风瘦马。</span>
-<span id="cb239-4"><a href="markdown.html#cb239-4" aria-hidden="true" tabindex="-1"></a>| 夕阳西下，</span>
-<span id="cb239-5"><a href="markdown.html#cb239-5" aria-hidden="true" tabindex="-1"></a>|   断肠人在天涯。</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="markdown.html#cb4-1" aria-hidden="true" tabindex="-1"></a>| 枯藤老树昏鸦，</span>
+<span id="cb4-2"><a href="markdown.html#cb4-2" aria-hidden="true" tabindex="-1"></a>|   小桥流水人家，</span>
+<span id="cb4-3"><a href="markdown.html#cb4-3" aria-hidden="true" tabindex="-1"></a>|   古道西风瘦马。</span>
+<span id="cb4-4"><a href="markdown.html#cb4-4" aria-hidden="true" tabindex="-1"></a>| 夕阳西下，</span>
+<span id="cb4-5"><a href="markdown.html#cb4-5" aria-hidden="true" tabindex="-1"></a>|   断肠人在天涯。</span></code></pre></div>
 <div class="line-block">枯藤老树昏鸦，<br />
   小桥流水人家，<br />
   古道西风瘦马。<br />
@@ -535,24 +536,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="代码块" class="section level3 hasAnchor" number="6.3.1">
 <h3><span class="header-section-number">6.3.1</span> 代码块<a href="markdown.html#代码块" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>普通代码块可以写在三个或更多的反引号<code>```</code>之后，你也可以将代码块缩进四个空格，例如:</p>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="markdown.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
-<span id="cb240-2"><a href="markdown.html#cb240-2" aria-hidden="true" tabindex="-1"></a><span class="at">x &lt;- rnorm(100)</span></span>
-<span id="cb240-3"><a href="markdown.html#cb240-3" aria-hidden="true" tabindex="-1"></a><span class="at">hist(x)</span></span>
-<span id="cb240-4"><a href="markdown.html#cb240-4" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
-<span id="cb240-5"><a href="markdown.html#cb240-5" aria-hidden="true" tabindex="-1"></a>或者缩进四个空格<span class="sc">:</span></span>
-<span id="cb240-6"><a href="markdown.html#cb240-6" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb240-7"><a href="markdown.html#cb240-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hist</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="markdown.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb5-2"><a href="markdown.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">x &lt;- rnorm(100)</span></span>
+<span id="cb5-3"><a href="markdown.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">hist(x)</span></span>
+<span id="cb5-4"><a href="markdown.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb5-5"><a href="markdown.html#cb5-5" aria-hidden="true" tabindex="-1"></a>或者缩进四个空格<span class="sc">:</span></span>
+<span id="cb5-6"><a href="markdown.html#cb5-6" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb5-7"><a href="markdown.html#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hist</span>(x)</span></code></pre></div>
 </div>
 <div id="标题" class="section level3 hasAnchor" number="6.3.2">
 <h3><span class="header-section-number">6.3.2</span> 标题<a href="markdown.html#标题" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>标题写在井号<code>#</code>之后。</p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb241-1"><a href="markdown.html#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># 一级标题</span></span>
-<span id="cb241-2"><a href="markdown.html#cb241-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb241-3"><a href="markdown.html#cb241-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## 二级标题</span></span>
-<span id="cb241-4"><a href="markdown.html#cb241-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb241-5"><a href="markdown.html#cb241-5" aria-hidden="true" tabindex="-1"></a><span class="fu">### 三级标题</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="markdown.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># 一级标题</span></span>
+<span id="cb6-2"><a href="markdown.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="markdown.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## 二级标题</span></span>
+<span id="cb6-4"><a href="markdown.html#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="markdown.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">### 三级标题</span></span></code></pre></div>
 <p>如果不希望对某个标题进行编号，可以添加<code>{-}</code>或<code>{.unnumbered}</code>，例如。</p>
-<div class="sourceCode" id="cb242"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb242-1"><a href="markdown.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># 不标号的二级标题 {-}</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="markdown.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># 不标号的二级标题 {-}</span></span></code></pre></div>
 </div>
 <div id="分割线" class="section level3 hasAnchor" number="6.3.3">
 <h3><span class="header-section-number">6.3.3</span> 分割线<a href="markdown.html#分割线" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -562,21 +563,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="块级元素引用段落引用" class="section level3 hasAnchor" number="6.3.4">
 <h3><span class="header-section-number">6.3.4</span> 块级元素引用（段落引用）<a href="markdown.html#块级元素引用段落引用" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>可以用类似Email的回复包含原始邮件内容的办法输入引用段落， 即，在段落的每行前面加一个大于号<code>&gt;</code>。</p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb243-1"><a href="markdown.html#cb243-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 白日依山尽，黄河入海流。</span></span>
-<span id="cb243-2"><a href="markdown.html#cb243-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 欲穷千里目，更上一层楼。</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="markdown.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 白日依山尽，黄河入海流。</span></span>
+<span id="cb8-2"><a href="markdown.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 欲穷千里目，更上一层楼。</span></span></code></pre></div>
 <p>注意引用也是段落模式，内容中的换行不起作用，空行导致分段。引用段落也可以仅在段落第一行写大于号， 其它行顶格写，例如下面的两段引用：</p>
-<div class="sourceCode" id="cb244"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb244-1"><a href="markdown.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 白日依山尽，黄河入海流。</span></span>
-<span id="cb244-2"><a href="markdown.html#cb244-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
-<span id="cb244-3"><a href="markdown.html#cb244-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 欲穷千里目，更上一层楼。</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="markdown.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 白日依山尽，黄河入海流。</span></span>
+<span id="cb9-2"><a href="markdown.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb9-3"><a href="markdown.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 欲穷千里目，更上一层楼。</span></span></code></pre></div>
 <blockquote>
 <p>白日依山尽，黄河入海流。</p>
 <p>欲穷千里目，更上一层楼。</p>
 </blockquote>
 <p>引用也可以嵌套，如：</p>
-<div class="sourceCode" id="cb245"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb245-1"><a href="markdown.html#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 张三说：李四这样说过</span></span>
-<span id="cb245-2"><a href="markdown.html#cb245-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
-<span id="cb245-3"><a href="markdown.html#cb245-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;&gt; 不想当将军的木匠不是好厨子。</span></span>
-<span id="cb245-4"><a href="markdown.html#cb245-4" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="markdown.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 张三说：李四这样说过</span></span>
+<span id="cb10-2"><a href="markdown.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb10-3"><a href="markdown.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;&gt; 不想当将军的木匠不是好厨子。</span></span>
+<span id="cb10-4"><a href="markdown.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span></code></pre></div>
 <blockquote>
 <p>张三说：李四这样说过</p>
 <blockquote>
@@ -588,12 +589,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">6.3.5</span> 列表<a href="markdown.html#列表" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>(1) 无序列表</strong></p>
 <p>无序列表以<code>*</code>,<code>-</code>, 或<code>+</code>开始，还通过缩进子列表来嵌套列表。</p>
-<div class="sourceCode" id="cb246"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb246-1"><a href="markdown.html#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>one item</span>
-<span id="cb246-2"><a href="markdown.html#cb246-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>one item</span>
-<span id="cb246-3"><a href="markdown.html#cb246-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>one item</span>
-<span id="cb246-4"><a href="markdown.html#cb246-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>one more item</span>
-<span id="cb246-5"><a href="markdown.html#cb246-5" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>one more item</span>
-<span id="cb246-6"><a href="markdown.html#cb246-6" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>one more item</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="markdown.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>one item</span>
+<span id="cb11-2"><a href="markdown.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>one item</span>
+<span id="cb11-3"><a href="markdown.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>one item</span>
+<span id="cb11-4"><a href="markdown.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>one more item</span>
+<span id="cb11-5"><a href="markdown.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>one more item</span>
+<span id="cb11-6"><a href="markdown.html#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>one more item</span></code></pre></div>
 <p>显示为：</p>
 <ul>
 <li>one item</li>
@@ -607,11 +608,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><strong>(2) 有序列表</strong></p>
 <p>有序列表以数字开头(同样可以在列表中嵌套列表)，例如。</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb247-1"><a href="markdown.html#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>the first item</span>
-<span id="cb247-2"><a href="markdown.html#cb247-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>the second item</span>
-<span id="cb247-3"><a href="markdown.html#cb247-3" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>the third item</span>
-<span id="cb247-4"><a href="markdown.html#cb247-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>one unordered item</span>
-<span id="cb247-5"><a href="markdown.html#cb247-5" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>one unordered item</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="markdown.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>the first item</span>
+<span id="cb12-2"><a href="markdown.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>the second item</span>
+<span id="cb12-3"><a href="markdown.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>the third item</span>
+<span id="cb12-4"><a href="markdown.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>one unordered item</span>
+<span id="cb12-5"><a href="markdown.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>one unordered item</span></code></pre></div>
 <p>显示为：</p>
 <ol style="list-style-type: decimal">
 <li>the first item</li>
@@ -629,27 +630,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="图片" class="section level3 hasAnchor" number="6.4.1">
 <h3><span class="header-section-number">6.4.1</span> 图片<a href="markdown.html#图片" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>基础语法</strong></p>
-<div class="sourceCode" id="cb248"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb248-1"><a href="markdown.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Alt text](图片链接 &quot;optional title&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="markdown.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Alt text](图片链接 &quot;optional title&quot;)</span></span></code></pre></div>
 <blockquote>
 <p>Alt text：图片的Alt标签，用来描述图片的关键词，可以不写。最初的本意是当图片因为某种原因不能被显示时而出现的替代文字，后来又被用于SEO，可以方便搜索引擎根据Alt text里面的关键词搜索到图片。</p>
 <p>图片链接：可以是图片的本地地址或者是网址。</p>
 <p>“optional title”：鼠标悬置于图片上会出现的标题文字，可以不写。</p>
 </blockquote>
 <p><strong>(1) 网页图片</strong></p>
-<div class="sourceCode" id="cb249"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb249-1"><a href="markdown.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](http://www.baidu.com/img/baidu_jgylogo3.gif)</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="markdown.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](http://www.baidu.com/img/baidu_jgylogo3.gif)</span></span></code></pre></div>
 <p>结果为
 <img src="http://www.baidu.com/img/baidu_jgylogo3.gif" /></p>
 <p><strong>(2) 本地图片</strong></p>
 <p>只需要在基础语法的括号中填入图片的位置路径即可，支持绝对路径和相对路径。缺点是不灵活不好分享，本地图片的路径更改或丢失都会造成markdown文件调不出图。</p>
-<div class="sourceCode" id="cb250"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb250-1"><a href="markdown.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="al">![avatar](fig/4/04-02-01.jpg)</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="markdown.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="al">![avatar](fig/4/04-02-01.jpg)</span></span></code></pre></div>
 <div class="figure">
 <img src="fig/4/04-02-01.jpg" alt="" />
 <p class="caption">avatar</p>
 </div>
 <p><strong>(3) 引用式插入</strong></p>
-<div class="sourceCode" id="cb251"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb251-1"><a href="markdown.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="ot">[baidu]: http://www.baidu.com/img/baidu_jgylogo3.gif</span></span>
-<span id="cb251-2"><a href="markdown.html#cb251-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb251-3"><a href="markdown.html#cb251-3" aria-hidden="true" tabindex="-1"></a><span class="al">![百度][baidu]</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb16-1"><a href="markdown.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ot">[baidu]: http://www.baidu.com/img/baidu_jgylogo3.gif</span></span>
+<span id="cb16-2"><a href="markdown.html#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="markdown.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="al">![百度][baidu]</span></span></code></pre></div>
 <div class="figure">
 <img src="http://www.baidu.com/img/baidu_jgylogo3.gif" alt="" />
 <p class="caption">百度</p>
@@ -663,54 +664,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>原始的Markdown格式并不支持数学公式。 Pandoc扩展的markdown格式提供了对数学公式的支持， 可以在Markdown文件中插入LaTeX格式的数学公式。 虽然不能提供所有的LaTeX公式能力， 但是常用的数学公式还是能做得很好， 转换到HTML、docx都可以得到正常显示的公式。</p>
 <p>用RStudio软件编译Markdown文件， 可以在其中插入LaTeX格式的数学公式， 数学公式可以在编辑器内部显示预览， 编译成HTML或者docx格式后都可以正常显示数学公式, HTML结果可以直接利用RStudio内部的浏览器预览， 在另外安装的LaTeX编译器的支持下也可以将.Rmd格式编译LaTeX格式然后再转换为PDF格式， 这种基于LaTeX的方法对数学公式的支持会更完善。</p>
 </div>
-<div id="数学公式的类别" class="section level3 hasAnchor" number="6.5.2">
-<h3><span class="header-section-number">6.5.2</span> 数学公式的类别<a href="markdown.html#数学公式的类别" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="公式编号" class="section level3 hasAnchor" number="6.5.2">
+<h3><span class="header-section-number">6.5.2</span> 公式编号<a href="markdown.html#公式编号" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>利用<code>\tag</code></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb17-1"><a href="markdown.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb17-2"><a href="markdown.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ss">a^2+b^2=c^2 </span><span class="sc">\tag</span><span class="ss">{1.1}</span></span>
+<span id="cb17-3"><a href="markdown.html#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
+<p><span class="math display">\[
+a^2+b^2=c^2 \tag{1.1}
+\]</span></p>
+</div>
+<div id="数学公式的类别" class="section level3 hasAnchor" number="6.5.3">
+<h3><span class="header-section-number">6.5.3</span> 数学公式的类别<a href="markdown.html#数学公式的类别" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>数学公式公式分为行内公式和独立公式。</p>
 <p>行内使用LaTeX语法，写在两个美元符号<code>$</code>中间，或者<code>\(</code>和<code>\)</code>之间。例如<code>$f(x)=\frac{1}{2} \int_0^1 \sin^2 (t x) dt$</code>会变成<span class="math inline">\(f(x)=\frac{1}{2} \int_0^1 \sin^2 (t x) dt\)</span>。开头和结尾的$后面不能在空格后面。</p>
 <p>独立公式写在成对的美元符号中间，或者<code>\[</code>和<code>\]</code>之间。 例如：</p>
-<div class="sourceCode" id="cb252"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb252-1"><a href="markdown.html#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb252-2"><a href="markdown.html#cb252-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  f(x) = </span><span class="sc">\frac</span><span class="ss">{1}{2} </span><span class="sc">\sum</span><span class="ss">_{j=1}^</span><span class="sc">\infty</span><span class="ss"> </span><span class="sc">\int</span><span class="ss">_0^1 </span><span class="sc">\sin</span><span class="ss">^2(j t x) dt .</span></span>
-<span id="cb252-3"><a href="markdown.html#cb252-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb18-1"><a href="markdown.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb18-2"><a href="markdown.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  f(x) = </span><span class="sc">\frac</span><span class="ss">{1}{2} </span><span class="sc">\sum</span><span class="ss">_{j=1}^</span><span class="sc">\infty</span><span class="ss"> </span><span class="sc">\int</span><span class="ss">_0^1 </span><span class="sc">\sin</span><span class="ss">^2(j t x) dt .</span></span>
+<span id="cb18-3"><a href="markdown.html#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
 <p><span class="math display">\[
   f(x) = \frac{1}{2} \sum_{j=1}^\infty \int_0^1 \sin^2(j t x) dt .
 \]</span></p>
 </div>
-<div id="上横线" class="section level3 hasAnchor" number="6.5.3">
-<h3><span class="header-section-number">6.5.3</span> 上横线<a href="markdown.html#上横线" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="上横线" class="section level3 hasAnchor" number="6.5.4">
+<h3><span class="header-section-number">6.5.4</span> 上横线<a href="markdown.html#上横线" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>（1）overline</strong></p>
-<div class="sourceCode" id="cb253"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb253-1"><a href="markdown.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb253-2"><a href="markdown.html#cb253-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\overline</span><span class="ss"> {X} </span></span>
-<span id="cb253-3"><a href="markdown.html#cb253-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb19-1"><a href="markdown.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb19-2"><a href="markdown.html#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\overline</span><span class="ss"> {X} </span></span>
+<span id="cb19-3"><a href="markdown.html#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
 <p><span class="math display">\[
 \overline {X}
 \]</span></p>
 <p><strong>（2）bar</strong></p>
-<div class="sourceCode" id="cb254"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb254-1"><a href="markdown.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb254-2"><a href="markdown.html#cb254-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\bar</span><span class="ss"> {X} </span></span>
-<span id="cb254-3"><a href="markdown.html#cb254-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb20-1"><a href="markdown.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb20-2"><a href="markdown.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\bar</span><span class="ss"> {X} </span></span>
+<span id="cb20-3"><a href="markdown.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
 <p><span class="math display">\[
 \bar {X}
 \]</span></p>
 </div>
-<div id="hat" class="section level3 hasAnchor" number="6.5.4">
-<h3><span class="header-section-number">6.5.4</span> hat<a href="markdown.html#hat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb255"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb255-1"><a href="markdown.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb255-2"><a href="markdown.html#cb255-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\overline</span><span class="ss"> {Y} </span></span>
-<span id="cb255-3"><a href="markdown.html#cb255-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
+<div id="hat" class="section level3 hasAnchor" number="6.5.5">
+<h3><span class="header-section-number">6.5.5</span> hat<a href="markdown.html#hat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb21-1"><a href="markdown.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb21-2"><a href="markdown.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\overline</span><span class="ss"> {Y} </span></span>
+<span id="cb21-3"><a href="markdown.html#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
 <p><span class="math display">\[
 \overline {Y}
 \]</span></p>
 </div>
-<div id="换行对齐" class="section level3 hasAnchor" number="6.5.5">
-<h3><span class="header-section-number">6.5.5</span> 换行对齐<a href="markdown.html#换行对齐" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="换行对齐" class="section level3 hasAnchor" number="6.5.6">
+<h3><span class="header-section-number">6.5.6</span> 换行对齐<a href="markdown.html#换行对齐" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>用<code>\begin{aligned}</code>和<code>\end{aligned}</code></p>
-<div class="sourceCode" id="cb256"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb256-1"><a href="markdown.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb256-2"><a href="markdown.html#cb256-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">aligned</span>}</span>
-<span id="cb256-3"><a href="markdown.html#cb256-3" aria-hidden="true" tabindex="-1"></a><span class="ss">L(</span><span class="sc">\mu</span><span class="ss">,</span><span class="sc">\sigma</span><span class="ss">)&amp;=</span><span class="sc">\prod</span><span class="ss">_{i=1}^{n} f(x_i,</span><span class="sc">\mu</span><span class="ss">,</span><span class="sc">\sigma</span><span class="ss">) </span><span class="sc">\\</span></span>
-<span id="cb256-4"><a href="markdown.html#cb256-4" aria-hidden="true" tabindex="-1"></a><span class="ss">&amp;=</span><span class="sc">\prod</span><span class="ss">_{i=1}^{n} </span><span class="sc">\frac</span><span class="ss">{1}{</span><span class="sc">\sqrt</span><span class="ss">{2 </span><span class="sc">\pi</span><span class="ss">}</span><span class="sc">\sigma</span><span class="ss">} e ^{- </span><span class="sc">\frac</span><span class="ss">{(x-</span><span class="sc">\mu</span><span class="ss">)^{2}}{2</span><span class="sc">\sigma</span><span class="ss">^2}} </span><span class="sc">\\</span></span>
-<span id="cb256-5"><a href="markdown.html#cb256-5" aria-hidden="true" tabindex="-1"></a><span class="ss">&amp; = (</span><span class="sc">\frac</span><span class="ss">{1}{</span><span class="sc">\sqrt</span><span class="ss">{2 </span><span class="sc">\pi</span><span class="ss">} </span><span class="sc">\sigma</span><span class="ss">})^n - </span><span class="sc">\sum</span><span class="ss">_{i=1}^n </span><span class="sc">\frac</span><span class="ss">{(x_i-</span><span class="sc">\mu</span><span class="ss">)^2}{2</span><span class="sc">\sigma</span><span class="ss">^2}</span></span>
-<span id="cb256-6"><a href="markdown.html#cb256-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">aligned</span>}</span>
-<span id="cb256-7"><a href="markdown.html#cb256-7" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb22-1"><a href="markdown.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb22-2"><a href="markdown.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">aligned</span>}</span>
+<span id="cb22-3"><a href="markdown.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="ss">L(</span><span class="sc">\mu</span><span class="ss">,</span><span class="sc">\sigma</span><span class="ss">)&amp;=</span><span class="sc">\prod</span><span class="ss">_{i=1}^{n} f(x_i,</span><span class="sc">\mu</span><span class="ss">,</span><span class="sc">\sigma</span><span class="ss">) </span><span class="sc">\\</span></span>
+<span id="cb22-4"><a href="markdown.html#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="ss">&amp;=</span><span class="sc">\prod</span><span class="ss">_{i=1}^{n} </span><span class="sc">\frac</span><span class="ss">{1}{</span><span class="sc">\sqrt</span><span class="ss">{2 </span><span class="sc">\pi</span><span class="ss">}</span><span class="sc">\sigma</span><span class="ss">} e ^{- </span><span class="sc">\frac</span><span class="ss">{(x-</span><span class="sc">\mu</span><span class="ss">)^{2}}{2</span><span class="sc">\sigma</span><span class="ss">^2}} </span><span class="sc">\\</span></span>
+<span id="cb22-5"><a href="markdown.html#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="ss">&amp; = (</span><span class="sc">\frac</span><span class="ss">{1}{</span><span class="sc">\sqrt</span><span class="ss">{2 </span><span class="sc">\pi</span><span class="ss">} </span><span class="sc">\sigma</span><span class="ss">})^n - </span><span class="sc">\sum</span><span class="ss">_{i=1}^n </span><span class="sc">\frac</span><span class="ss">{(x_i-</span><span class="sc">\mu</span><span class="ss">)^2}{2</span><span class="sc">\sigma</span><span class="ss">^2}</span></span>
+<span id="cb22-6"><a href="markdown.html#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">aligned</span>}</span>
+<span id="cb22-7"><a href="markdown.html#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
 <p><span class="math display">\[
 \begin{aligned}
 L(\mu,\sigma)&amp;=\prod_{i=1}^{n} f(x_i,\mu,\sigma) \\
@@ -719,16 +730,16 @@ L(\mu,\sigma)&amp;=\prod_{i=1}^{n} f(x_i,\mu,\sigma) \\
 \end{aligned}
 \]</span></p>
 </div>
-<div id="分段函数" class="section level3 hasAnchor" number="6.5.6">
-<h3><span class="header-section-number">6.5.6</span> 分段函数<a href="markdown.html#分段函数" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="分段函数" class="section level3 hasAnchor" number="6.5.7">
+<h3><span class="header-section-number">6.5.7</span> 分段函数<a href="markdown.html#分段函数" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>用<code>\begin{cases}</code>和<code>\end{cases}</code></p>
-<div class="sourceCode" id="cb257"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb257-1"><a href="markdown.html#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb257-2"><a href="markdown.html#cb257-2" aria-hidden="true" tabindex="-1"></a><span class="ss">f(x)=</span></span>
-<span id="cb257-3"><a href="markdown.html#cb257-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">cases</span>}</span>
-<span id="cb257-4"><a href="markdown.html#cb257-4" aria-hidden="true" tabindex="-1"></a><span class="sc">\lambda</span><span class="ss"> e^{-</span><span class="sc">\lambda</span><span class="ss"> x}, &amp; x&gt;0</span><span class="sc">\\</span></span>
-<span id="cb257-5"><a href="markdown.html#cb257-5" aria-hidden="true" tabindex="-1"></a><span class="ss">0,  &amp; x</span><span class="sc">\le</span><span class="ss">0  </span></span>
-<span id="cb257-6"><a href="markdown.html#cb257-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">cases</span>}</span>
-<span id="cb257-7"><a href="markdown.html#cb257-7" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb23-1"><a href="markdown.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb23-2"><a href="markdown.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ss">f(x)=</span></span>
+<span id="cb23-3"><a href="markdown.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">cases</span>}</span>
+<span id="cb23-4"><a href="markdown.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="sc">\lambda</span><span class="ss"> e^{-</span><span class="sc">\lambda</span><span class="ss"> x}, &amp; x&gt;0</span><span class="sc">\\</span></span>
+<span id="cb23-5"><a href="markdown.html#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="ss">0,  &amp; x</span><span class="sc">\le</span><span class="ss">0  </span></span>
+<span id="cb23-6"><a href="markdown.html#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">cases</span>}</span>
+<span id="cb23-7"><a href="markdown.html#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
 <p><span class="math display">\[
 f(x)=
 \begin{cases}

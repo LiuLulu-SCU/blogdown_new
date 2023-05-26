@@ -5,7 +5,12 @@ type: book
 weight: 110
 math: true
 mathjax: "book/MathJax/MathJax.js"
+bibliography: article.bib
+csl: chinese-gb7714-2005-numeric.csl
+link-citations: yes
 ---
+
+文章主要参考MAIC（Matching-Adjusted Indirect Comparison）领域的首篇文献[@signorovitch2010comparative]以及NICE DSU Technical Support Doucument 18[@NICE-18]。也感谢甘磊师弟提供的PPT及R语言实现案例。 
 
 ## 理论知识 
 
@@ -51,8 +56,13 @@ $$
 
 $$
 \hat{\theta}=\frac{\sum\limits_{i=1}^{n} y_i w_i} {\sum\limits_{i=1}^nw_i} -\bar{y_1}  =  
-\frac{\sum\limits_{i=1}^{n} y_i e^{\beta_0+\beta X_i}} {\sum\limits_{i=1}^ne^{\beta_0+\beta X_i}} -\bar{y_1} =
-\frac{e^{\beta_0} \sum\limits_{i=1}^{n} y_i e^{\beta X_i}} {e^{\beta_0}\sum\limits_{i=1}^ne^{\beta X_i}} -\bar{y_1}=
+\frac{\sum\limits_{i=1}^{n} y_i e^{\beta_0+\beta X_i}} {\sum\limits_{i=1}^ne^{\beta_0+\beta X_i}} -\bar{y_1} 
+$$
+
+
+
+$$
+=\frac{e^{\beta_0} \sum\limits_{i=1}^{n} y_i e^{\beta X_i}} {e^{\beta_0}\sum\limits_{i=1}^ne^{\beta X_i}} -\bar{y_1}=
 \frac{\sum\limits_{i=1}^{n} y_i e^{\beta X_i}} {\sum\limits_{i=1}^ne^{\beta X_i}} -\bar{y_1}
 \tag{6}
 $$

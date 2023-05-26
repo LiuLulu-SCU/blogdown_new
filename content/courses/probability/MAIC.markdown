@@ -5,9 +5,14 @@ type: book
 weight: 110
 math: true
 mathjax: "book/MathJax/MathJax.js"
+bibliography: article.bib
+csl: chinese-gb7714-2005-numeric.csl
+link-citations: yes
 ---
 
-## 理论知识 
+文章主要参考MAIC（Matching-Adjusted Indirect Comparison）领域的首篇文献<sup>\[[1](#ref-signorovitch2010comparative)\]</sup>以及NICE DSU Technical Support Doucument 18<sup>\[[2](#ref-NICE-18)\]</sup>。也感谢甘磊师弟提供的PPT及R语言实现案例。
+
+## 理论知识
 
 已知干预组患者的个体患者数据（IPD）和对照组患者的汇总数据。
 
@@ -20,7 +25,6 @@ $$
 
 公式（1）中，$w_i$不知道，需待求。
 
-
 根据倾向性评分加权的原理，$w_i$等于第$i$个患者进入汇总数据试验（$T_i=1$）的概率比上进入IPD数据试验组（$T_i=0$）的概率。
 
 $$
@@ -32,11 +36,9 @@ $$
 公式（2）中，$P(T_i=1|X_i)$和$P(T_i=0|X_i)$不知道，需待求。
 假设如果有汇总数据组的个体数据，那么可用logistics回归计算
 
-
 $$
 P(T_i=1|X_i)=\frac{e^{\beta_0 + \beta X_i}} {1+e^{\beta_0 +  \beta X_i}}  \tag{3}
 $$
-
 
 其中，$\beta$代表每个协变量的logistic的回归系数。
 
@@ -51,14 +53,16 @@ $$
 
 $$
 \hat{\theta}=\frac{\sum\limits_{i=1}^{n} y_i w_i} {\sum\limits_{i=1}^nw_i} -\bar{y_1}  =  
-\frac{\sum\limits_{i=1}^{n} y_i e^{\beta_0+\beta X_i}} {\sum\limits_{i=1}^ne^{\beta_0+\beta X_i}} -\bar{y_1} =
-\frac{e^{\beta_0} \sum\limits_{i=1}^{n} y_i e^{\beta X_i}} {e^{\beta_0}\sum\limits_{i=1}^ne^{\beta X_i}} -\bar{y_1}=
+\frac{\sum\limits_{i=1}^{n} y_i e^{\beta_0+\beta X_i}} {\sum\limits_{i=1}^ne^{\beta_0+\beta X_i}} -\bar{y_1} 
+$$
+
+$$
+=\frac{e^{\beta_0} \sum\limits_{i=1}^{n} y_i e^{\beta X_i}} {e^{\beta_0}\sum\limits_{i=1}^ne^{\beta X_i}} -\bar{y_1}=
 \frac{\sum\limits_{i=1}^{n} y_i e^{\beta X_i}} {\sum\limits_{i=1}^ne^{\beta X_i}} -\bar{y_1}
 \tag{6}
 $$
 
 根据公式（6）我们发现，在计算$\hat{\theta}$时，$\beta_0$被消去了，也就是说我们无需估计出$\beta_0$，进一步我们也可以理解为$w_i=e^{\beta X_i}$。
-
 
 至此，根据公式（6），我们得出IPD试验患者的权重等于$e^{\beta X_i} {\tag5}$ ，其中$\beta$未知，待求。
 
@@ -77,7 +81,6 @@ $$
 \frac{\sum\limits_{i=1}^{n} X_i  e^{\beta X_i}} {\sum\limits_{i=1}^n e^{\beta X_i}} -\bar{X_1}=0 \tag{8}
 $$
 
-
 将公式（8）等式两边同乘第一项的分母，然后合并同类项，得到
 
 $$
@@ -88,7 +91,6 @@ $$
 
 假设公式（9）中的$\bar{X_1}=0$，其实也就是对IPD试验组每个患者的基线进行离差变化（$X_i-\bar{X_1}$）即可满足此假设，得到公式（10）。
 
-
 $$
 \sum\limits_{i=1}^{n} X_i e^{\beta X_i} 
 =0  \tag{10}
@@ -96,7 +98,6 @@ $$
 注：公式（10）中的$X_i$是离差变换后的IPD试验组的基线特征。
 
 这里我们引入目标函数$Q(\beta)$来求解$\beta$：
-
 
 $$
 Q(\beta)= \sum\limits_{i;t_i=0}^n  X_i e^{X_i^T \beta} \tag{11}
@@ -116,15 +117,13 @@ $$
 <img src="/courses/probability/MAIC_files/figure-html/maic2.jpg" width="672" />
 <img src="/courses/probability/MAIC_files/figure-html/maic3.jpg" width="672" />
 
-
-
 理论部分终于完结了，撒花！🌺🌺🌺
 
 接下来是R语言实现。
 
-******
+------------------------------------------------------------------------
 
-## R语言实现MAIC 
+## R语言实现MAIC
 
 疾病背景：
 
@@ -138,8 +137,7 @@ $$
 
 第一步，将两组药物的数据输入
 
-
-```r
+``` r
 library(tidyverse)
 mydata1<-tibble(id=1:10, 
                 age=c(49,50,44,43,55,57,49,51,53,59),
@@ -159,8 +157,7 @@ B.AgD<-mydata2
 
 第二步，建立Q（b）及其一阶导数和离差变换
 
-
-```r
+``` r
 #建立Q（b）函数
 objfn<- function(β1,X){
   sum(exp(X %*% β1))
@@ -176,36 +173,31 @@ X.EM.0<- sweep(with(A.IPD, cbind(age, age^2)), 2,
                with(B.AgD, cbind(age.mean, age.mean^2 + age.sd^2)), "-")
 ```
 
-
 第三步，对$Q(\beta)$函数进行最小化来求出$\beta$的唯一解
 
-
-```r
+``` r
 print(opt1<-optim(par=c(0,0), fn=objfn, gr=gradfn, X=X.EM.0, method="BFGS"))
 ```
 
-```
-## $par
-## [1] 36.0887332 -0.3398965
-## 
-## $value
-## [1] 2.764361
-## 
-## $counts
-## function gradient 
-##       91       33 
-## 
-## $convergence
-## [1] 0
-## 
-## $message
-## NULL
-```
+    ## $par
+    ## [1] 36.0887332 -0.3398965
+    ## 
+    ## $value
+    ## [1] 2.764361
+    ## 
+    ## $counts
+    ## function gradient 
+    ##       91       33 
+    ## 
+    ## $convergence
+    ## [1] 0
+    ## 
+    ## $message
+    ## NULL
 
 第四步，计算权重值
 
-
-```r
+``` r
 β1<-opt1$par
 wt<- exp(X.EM.0 %*% β1)
 N.A<-c(10)
@@ -213,20 +205,17 @@ wt.rs<- (wt/sum(wt))* N.A #标准化权重
 summary(wt.rs)
 ```
 
-```
-##        V1          
-##  Min.   :0.000000  
-##  1st Qu.:0.005488  
-##  Median :0.028501  
-##  Mean   :1.000000  
-##  3rd Qu.:1.151896  
-##  Max.   :6.374269
-```
+    ##        V1          
+    ##  Min.   :0.000000  
+    ##  1st Qu.:0.005488  
+    ##  Median :0.028501  
+    ##  Mean   :1.000000  
+    ##  3rd Qu.:1.151896  
+    ##  Max.   :6.374269
 
 第五步，计算有效样本量
 
-
-```r
+``` r
 #画出调整后的权重的分布图
 library(ggplot2)
 qplot(wt.rs,geom="histogram", xlab="Rescaled weight", binwidth=0.25)
@@ -234,21 +223,16 @@ qplot(wt.rs,geom="histogram", xlab="Rescaled weight", binwidth=0.25)
 
 <img src="/courses/probability/MAIC_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
-```r
+``` r
 #计算有效样本量ESS
 sum(wt)^2/sum(wt^2)
 ```
 
-```
-## [1] 2.164168
-```
-
-
+    ## [1] 2.164168
 
 第六步，计算加权后的基线平均值
 
-
-```r
+``` r
 #计算加权后IPD试验的基线平均值和标准差
 library(dplyr)
 A.IPD %>%
@@ -257,28 +241,24 @@ A.IPD %>%
             age.sd=sqrt(sum(wt/sum(wt)*(age-age.mean)^2)))
 ```
 
-```
-## # A tibble: 1 × 2
-##   age.mean age.sd
-##      <dbl>  <dbl>
-## 1     53.0   1.29
-```
+    ## # A tibble: 1 × 2
+    ##   age.mean age.sd
+    ##      <dbl>  <dbl>
+    ## 1     53.0   1.29
 
-```r
+``` r
 #汇总试验的基线平均值和标准差
 B.AgD[, c("age.mean","age.sd")]
 ```
 
-```
-## # A tibble: 1 × 2
-##   age.mean age.sd
-##      <dbl>  <dbl>
-## 1       53   1.29
-```
+    ## # A tibble: 1 × 2
+    ##   age.mean age.sd
+    ##      <dbl>  <dbl>
+    ## 1       53   1.29
 
 第七步，计算加权后的基线平均值及相对疗效
 
-```r
+``` r
 #计算加权后IPD试验的结果
 A.IPD %>%
   summarise(outcome.mean=weighted.mean(outcome,wt),
@@ -286,26 +266,22 @@ A.IPD %>%
   )
 ```
 
-```
-## # A tibble: 1 × 2
-##   outcome.mean outcome.sd
-##          <dbl>      <dbl>
-## 1         7.08      0.335
-```
+    ## # A tibble: 1 × 2
+    ##   outcome.mean outcome.sd
+    ##          <dbl>      <dbl>
+    ## 1         7.08      0.335
 
-```r
+``` r
 #汇总试验的结果
 B.AgD[,c("y.B.bar","varB")]
 ```
 
-```
-## # A tibble: 1 × 2
-##   y.B.bar  varB
-##     <dbl> <dbl>
-## 1     7.4   0.2
-```
+    ## # A tibble: 1 × 2
+    ##   y.B.bar  varB
+    ##     <dbl> <dbl>
+    ## 1     7.4   0.2
 
-```r
+``` r
 #相对疗效
 outcome.mean<-c(7.084148)
 y.B.bar<-c(7.4)
@@ -314,16 +290,26 @@ y.B.sd<-c(0.2)
 print(d.AB.MAIC<-outcome.mean-y.B.bar)     
 ```
 
-```
-## [1] -0.315852
-```
+    ## [1] -0.315852
 
-```r
+``` r
 print(var.d.AB.MAIC<-outcome.sd+y.B.sd)  
 ```
 
-```
-## [1] 0.5350903
-```
+    ## [1] 0.5350903
 
+<div id="refs" class="references csl-bib-body">
 
+<div id="ref-signorovitch2010comparative" class="csl-entry">
+
+<span class="csl-left-margin">\[1\] </span><span class="csl-right-inline">SIGNOROVITCH J E. WU E Q. YU A P. 等. Comparative effectiveness without head-to-head trials: a method for matching-adjusted indirect comparisons applied to psoriasis treatment with adalimumab or etanercept\[J\]. Pharmacoeconomics, 2010, 28: 935-945.</span>
+
+</div>
+
+<div id="ref-NICE-18" class="csl-entry">
+
+<span class="csl-left-margin">\[2\] </span><span class="csl-right-inline">NICE DSU. Population-adjusted indirect comparisons (MAIC and STC)\[M/OL\]. 2016. <https://www.sheffield.ac.uk/nice-dsu/tsds/population-adjusted>.</span>
+
+</div>
+
+</div>
