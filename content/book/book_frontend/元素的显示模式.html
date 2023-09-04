@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>11 元素的显示模式 | Web开发学习笔记</title>
   <meta name="description" content="Web前端学习全纪录" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="11 元素的显示模式 | Web开发学习笔记" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Web前端学习全纪录" />
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="复合选择器.html"/>
 <link rel="next" href="css背景.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX","output/SVG"],
@@ -104,7 +103,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -117,7 +116,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -272,24 +271,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9" data-path="css引入方式.html"><a href="css引入方式.html"><i class="fa fa-check"></i><b>9</b> CSS引入方式</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="css引入方式.html"><a href="css引入方式.html#css的三种样式表"><i class="fa fa-check"></i><b>9.1</b> CSS的三种样式表</a></li>
-<li class="chapter" data-level="9.2" data-path="css引入方式.html"><a href="css引入方式.html#行内样式表"><i class="fa fa-check"></i><b>9.2</b> 行内样式表</a></li>
-<li class="chapter" data-level="9.3" data-path="css引入方式.html"><a href="css引入方式.html#外部样式"><i class="fa fa-check"></i><b>9.3</b> 外部样式</a></li>
-<li class="chapter" data-level="9.4" data-path="css引入方式.html"><a href="css引入方式.html#css引入方式总结"><i class="fa fa-check"></i><b>9.4</b> CSS引入方式总结</a></li>
-<li class="chapter" data-level="9.5" data-path="css引入方式.html"><a href="css引入方式.html#综合案例-1"><i class="fa fa-check"></i><b>9.5</b> 综合案例</a></li>
+<li class="chapter" data-level="9.2" data-path="css引入方式.html"><a href="css引入方式.html#内部样式表"><i class="fa fa-check"></i><b>9.2</b> 内部样式表</a></li>
+<li class="chapter" data-level="9.3" data-path="css引入方式.html"><a href="css引入方式.html#行内样式表"><i class="fa fa-check"></i><b>9.3</b> 行内样式表</a></li>
+<li class="chapter" data-level="9.4" data-path="css引入方式.html"><a href="css引入方式.html#外部样式"><i class="fa fa-check"></i><b>9.4</b> 外部样式</a></li>
+<li class="chapter" data-level="9.5" data-path="css引入方式.html"><a href="css引入方式.html#css引入方式总结"><i class="fa fa-check"></i><b>9.5</b> CSS引入方式总结</a></li>
+<li class="chapter" data-level="9.6" data-path="css引入方式.html"><a href="css引入方式.html#综合案例-1"><i class="fa fa-check"></i><b>9.6</b> 综合案例</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="复合选择器.html"><a href="复合选择器.html"><i class="fa fa-check"></i><b>10</b> 复合选择器</a>
 <ul>
 <li class="chapter" data-level="10.1" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器的定义"><i class="fa fa-check"></i><b>10.1</b> 复合选择器的定义</a></li>
-<li class="chapter" data-level="10.2" data-path="复合选择器.html"><a href="复合选择器.html#后代选择器"><i class="fa fa-check"></i><b>10.2</b> 后代选择器</a></li>
-<li class="chapter" data-level="10.3" data-path="复合选择器.html"><a href="复合选择器.html#子选择器"><i class="fa fa-check"></i><b>10.3</b> 子选择器</a></li>
-<li class="chapter" data-level="10.4" data-path="复合选择器.html"><a href="复合选择器.html#并集选择器"><i class="fa fa-check"></i><b>10.4</b> 并集选择器</a></li>
-<li class="chapter" data-level="10.5" data-path="复合选择器.html"><a href="复合选择器.html#伪类选择器"><i class="fa fa-check"></i><b>10.5</b> 伪类选择器</a>
+<li class="chapter" data-level="10.2" data-path="复合选择器.html"><a href="复合选择器.html#属性选择器"><i class="fa fa-check"></i><b>10.2</b> 属性选择器</a></li>
+<li class="chapter" data-level="10.3" data-path="复合选择器.html"><a href="复合选择器.html#后代选择器"><i class="fa fa-check"></i><b>10.3</b> 后代选择器</a></li>
+<li class="chapter" data-level="10.4" data-path="复合选择器.html"><a href="复合选择器.html#子选择器"><i class="fa fa-check"></i><b>10.4</b> 子选择器</a></li>
+<li class="chapter" data-level="10.5" data-path="复合选择器.html"><a href="复合选择器.html#并集选择器"><i class="fa fa-check"></i><b>10.5</b> 并集选择器</a></li>
+<li class="chapter" data-level="10.6" data-path="复合选择器.html"><a href="复合选择器.html#伪类选择器"><i class="fa fa-check"></i><b>10.6</b> 伪类选择器</a>
 <ul>
-<li class="chapter" data-level="10.5.1" data-path="复合选择器.html"><a href="复合选择器.html#链接伪类"><i class="fa fa-check"></i><b>10.5.1</b> 链接伪类</a></li>
-<li class="chapter" data-level="10.5.2" data-path="复合选择器.html"><a href="复合选择器.html#focus伪类选择器"><i class="fa fa-check"></i><b>10.5.2</b> :focus伪类选择器</a></li>
+<li class="chapter" data-level="10.6.1" data-path="复合选择器.html"><a href="复合选择器.html#链接伪类"><i class="fa fa-check"></i><b>10.6.1</b> 链接伪类</a></li>
+<li class="chapter" data-level="10.6.2" data-path="复合选择器.html"><a href="复合选择器.html#focus伪类选择器"><i class="fa fa-check"></i><b>10.6.2</b> :focus伪类选择器</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器总结"><i class="fa fa-check"></i><b>10.6</b> 复合选择器总结</a></li>
-<li class="chapter" data-level="10.7" data-path="复合选择器.html"><a href="复合选择器.html#课堂练习"><i class="fa fa-check"></i><b>10.7</b> 课堂练习</a></li>
+<li class="chapter" data-level="10.7" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器总结"><i class="fa fa-check"></i><b>10.7</b> 复合选择器总结</a></li>
+<li class="chapter" data-level="10.8" data-path="复合选择器.html"><a href="复合选择器.html#多个选择器的覆盖问题"><i class="fa fa-check"></i><b>10.8</b> 多个选择器的覆盖问题</a></li>
+<li class="chapter" data-level="10.9" data-path="复合选择器.html"><a href="复合选择器.html#课堂练习"><i class="fa fa-check"></i><b>10.9</b> 课堂练习</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="元素的显示模式.html"><a href="元素的显示模式.html"><i class="fa fa-check"></i><b>11</b> 元素的显示模式</a>
 <ul>
@@ -363,23 +365,92 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.18.4" data-path="盒子模型.html"><a href="盒子模型.html#快报模块"><i class="fa fa-check"></i><b>14.18.4</b> 快报模块</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="浮动.html"><a href="浮动.html"><i class="fa fa-check"></i><b>15</b> 浮动</a></li>
+<li class="chapter" data-level="15" data-path="浮动.html"><a href="浮动.html"><i class="fa fa-check"></i><b>15</b> 浮动</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="浮动.html"><a href="浮动.html#传统网页布局的三种方式"><i class="fa fa-check"></i><b>15.1</b> 传统网页布局的三种方式</a></li>
+<li class="chapter" data-level="15.2" data-path="浮动.html"><a href="浮动.html#标准流普通流文档流"><i class="fa fa-check"></i><b>15.2</b> 标准流（普通流/文档流）</a></li>
+<li class="chapter" data-level="15.3" data-path="浮动.html"><a href="浮动.html#为什么需要浮动"><i class="fa fa-check"></i><b>15.3</b> 为什么需要浮动</a></li>
+<li class="chapter" data-level="15.4" data-path="浮动.html"><a href="浮动.html#什么是浮动"><i class="fa fa-check"></i><b>15.4</b> 什么是浮动</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="浮动.html"><a href="浮动.html#脱标"><i class="fa fa-check"></i><b>15.4.1</b> 脱标</a></li>
+<li class="chapter" data-level="15.4.2" data-path="浮动.html"><a href="浮动.html#浮动盒子一行显示"><i class="fa fa-check"></i><b>15.4.2</b> 浮动盒子一行显示</a></li>
+<li class="chapter" data-level="15.4.3" data-path="浮动.html"><a href="浮动.html#浮动元素具有行内块特性"><i class="fa fa-check"></i><b>15.4.3</b> 浮动元素具有行内块特性</a></li>
+</ul></li>
+<li class="chapter" data-level="15.5" data-path="浮动.html"><a href="浮动.html#浮动元素标准流经常和标准流父亲搭配使用"><i class="fa fa-check"></i><b>15.5</b> 浮动元素标准流经常和标准流父亲搭配使用</a></li>
+<li class="chapter" data-level="15.6" data-path="浮动.html"><a href="浮动.html#常见的网页布局"><i class="fa fa-check"></i><b>15.6</b> 常见的网页布局</a></li>
+<li class="chapter" data-level="15.7" data-path="浮动.html"><a href="浮动.html#浮动布局注意点"><i class="fa fa-check"></i><b>15.7</b> 浮动布局注意点</a></li>
+<li class="chapter" data-level="15.8" data-path="浮动.html"><a href="浮动.html#清除浮动"><i class="fa fa-check"></i><b>15.8</b> 清除浮动</a>
+<ul>
+<li class="chapter" data-level="15.8.1" data-path="浮动.html"><a href="浮动.html#为什么要清除浮动"><i class="fa fa-check"></i><b>15.8.1</b> 为什么要清除浮动</a></li>
+<li class="chapter" data-level="15.8.2" data-path="浮动.html"><a href="浮动.html#清除浮动的本质"><i class="fa fa-check"></i><b>15.8.2</b> 清除浮动的本质</a></li>
+<li class="chapter" data-level="15.8.3" data-path="浮动.html"><a href="浮动.html#清除浮动的方法"><i class="fa fa-check"></i><b>15.8.3</b> 清除浮动的方法</a></li>
+<li class="chapter" data-level="15.8.4" data-path="浮动.html"><a href="浮动.html#额外标签法"><i class="fa fa-check"></i><b>15.8.4</b> 额外标签法</a></li>
+<li class="chapter" data-level="15.8.5" data-path="浮动.html"><a href="浮动.html#父元素添加overflow"><i class="fa fa-check"></i><b>15.8.5</b> 父元素添加overflow</a></li>
+<li class="chapter" data-level="15.8.6" data-path="浮动.html"><a href="浮动.html#清除浮动after伪元素法"><i class="fa fa-check"></i><b>15.8.6</b> 清除浮动——:after伪元素法</a></li>
+<li class="chapter" data-level="15.8.7" data-path="浮动.html"><a href="浮动.html#双伪元素清除浮动"><i class="fa fa-check"></i><b>15.8.7</b> 双伪元素清除浮动</a></li>
+</ul></li>
+<li class="chapter" data-level="15.9" data-path="浮动.html"><a href="浮动.html#清除浮动总结"><i class="fa fa-check"></i><b>15.9</b> 清除浮动总结</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="定位.html"><a href="定位.html"><i class="fa fa-check"></i><b>16</b> 定位</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="定位.html"><a href="定位.html#为什么需要定位"><i class="fa fa-check"></i><b>16.1</b> 为什么需要定位</a></li>
+<li class="chapter" data-level="16.2" data-path="定位.html"><a href="定位.html#定位的组成"><i class="fa fa-check"></i><b>16.2</b> 定位的组成</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="定位.html"><a href="定位.html#定位模式"><i class="fa fa-check"></i><b>16.2.1</b> 定位模式</a></li>
+<li class="chapter" data-level="16.2.2" data-path="定位.html"><a href="定位.html#边偏移"><i class="fa fa-check"></i><b>16.2.2</b> 边偏移</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="定位.html"><a href="定位.html#静态定位"><i class="fa fa-check"></i><b>16.3</b> 静态定位</a></li>
+<li class="chapter" data-level="16.4" data-path="定位.html"><a href="定位.html#相对定位"><i class="fa fa-check"></i><b>16.4</b> 相对定位</a></li>
+<li class="chapter" data-level="16.5" data-path="定位.html"><a href="定位.html#绝对定位"><i class="fa fa-check"></i><b>16.5</b> 绝对定位</a></li>
+<li class="chapter" data-level="16.6" data-path="定位.html"><a href="定位.html#子绝父相的由来"><i class="fa fa-check"></i><b>16.6</b> 子绝父相的由来</a></li>
+<li class="chapter" data-level="16.7" data-path="定位.html"><a href="定位.html#固定定位"><i class="fa fa-check"></i><b>16.7</b> 固定定位</a></li>
+<li class="chapter" data-level="16.8" data-path="定位.html"><a href="定位.html#粘性定位"><i class="fa fa-check"></i><b>16.8</b> 粘性定位</a></li>
+<li class="chapter" data-level="16.9" data-path="定位.html"><a href="定位.html#定位的总结"><i class="fa fa-check"></i><b>16.9</b> 定位的总结</a></li>
+<li class="chapter" data-level="16.10" data-path="定位.html"><a href="定位.html#定位叠放次序"><i class="fa fa-check"></i><b>16.10</b> 定位叠放次序</a></li>
+<li class="chapter" data-level="16.11" data-path="定位.html"><a href="定位.html#定位的拓展"><i class="fa fa-check"></i><b>16.11</b> 定位的拓展</a>
+<ul>
+<li class="chapter" data-level="16.11.1" data-path="定位.html"><a href="定位.html#绝对固定定位的盒子居中"><i class="fa fa-check"></i><b>16.11.1</b> 绝对/固定定位的盒子居中</a></li>
+<li class="chapter" data-level="16.11.2" data-path="定位.html"><a href="定位.html#定位特殊性"><i class="fa fa-check"></i><b>16.11.2</b> 定位特殊性</a></li>
+<li class="chapter" data-level="16.11.3" data-path="定位.html"><a href="定位.html#脱标的盒子不会触发外边距塌陷"><i class="fa fa-check"></i><b>16.11.3</b> 脱标的盒子不会触发外边距塌陷</a></li>
+<li class="chapter" data-level="16.11.4" data-path="定位.html"><a href="定位.html#绝对固定定位会完全压住盒子"><i class="fa fa-check"></i><b>16.11.4</b> 绝对/固定定位会完全压住盒子</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="学成在线案例.html"><a href="学成在线案例.html"><i class="fa fa-check"></i><b>17</b> 学成在线案例</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="学成在线案例.html"><a href="学成在线案例.html#准备素材和工具"><i class="fa fa-check"></i><b>17.1</b> 准备素材和工具</a></li>
+<li class="chapter" data-level="17.2" data-path="学成在线案例.html"><a href="学成在线案例.html#案例准备工作"><i class="fa fa-check"></i><b>17.2</b> 案例准备工作</a></li>
+<li class="chapter" data-level="17.3" data-path="学成在线案例.html"><a href="学成在线案例.html#css属性书写顺序"><i class="fa fa-check"></i><b>17.3</b> CSS属性书写顺序</a></li>
+<li class="chapter" data-level="17.4" data-path="学成在线案例.html"><a href="学成在线案例.html#页面布局整体思路"><i class="fa fa-check"></i><b>17.4</b> 页面布局整体思路</a>
+<ul>
+<li class="chapter" data-level="17.4.1" data-path="学成在线案例.html"><a href="学成在线案例.html#确定版心"><i class="fa fa-check"></i><b>17.4.1</b> 确定版心</a></li>
+<li class="chapter" data-level="17.4.2" data-path="学成在线案例.html"><a href="学成在线案例.html#头部制作"><i class="fa fa-check"></i><b>17.4.2</b> 头部制作</a></li>
+<li class="chapter" data-level="17.4.3" data-path="学成在线案例.html"><a href="学成在线案例.html#精品推荐小模块"><i class="fa fa-check"></i><b>17.4.3</b> 精品推荐小模块</a></li>
+<li class="chapter" data-level="17.4.4" data-path="学成在线案例.html"><a href="学成在线案例.html#精品推荐大模块"><i class="fa fa-check"></i><b>17.4.4</b> 精品推荐大模块</a></li>
+<li class="chapter" data-level="17.4.5" data-path="学成在线案例.html"><a href="学成在线案例.html#底部模块"><i class="fa fa-check"></i><b>17.4.5</b> 底部模块</a></li>
+</ul></li>
+</ul></li>
 <li class="part"><span><b>III 附录</b></span></li>
-<li class="chapter" data-level="16" data-path="其他软件.html"><a href="其他软件.html"><i class="fa fa-check"></i><b>16</b> 其他软件</a>
+<li class="chapter" data-level="18" data-path="vscode常用操作.html"><a href="vscode常用操作.html"><i class="fa fa-check"></i><b>18</b> Vscode常用操作</a></li>
+<li class="chapter" data-level="19" data-path="ps.html"><a href="ps.html"><i class="fa fa-check"></i><b>19</b> PS</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="其他软件.html"><a href="其他软件.html#vscode常用操作"><i class="fa fa-check"></i><b>16.1</b> Vscode常用操作</a></li>
-<li class="chapter" data-level="16.2" data-path="其他软件.html"><a href="其他软件.html#ps"><i class="fa fa-check"></i><b>16.2</b> PS</a></li>
+<li class="chapter" data-level="19.1" data-path="ps.html"><a href="ps.html#ps切图"><i class="fa fa-check"></i><b>19.1</b> PS切图</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="ps.html"><a href="ps.html#常见的图片格式"><i class="fa fa-check"></i><b>19.1.1</b> 常见的图片格式</a></li>
+<li class="chapter" data-level="19.1.2" data-path="ps.html"><a href="ps.html#图层切图"><i class="fa fa-check"></i><b>19.1.2</b> 图层切图</a></li>
+<li class="chapter" data-level="19.1.3" data-path="ps.html"><a href="ps.html#切片工具"><i class="fa fa-check"></i><b>19.1.3</b> 切片工具</a></li>
+<li class="chapter" data-level="19.1.4" data-path="ps.html"><a href="ps.html#插件切图"><i class="fa fa-check"></i><b>19.1.4</b> 插件切图</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="chrome调试工具.html"><a href="chrome调试工具.html"><i class="fa fa-check"></i><b>17</b> Chrome调试工具</a>
-<ul>
-<li class="chapter" data-level="17.1" data-path="chrome调试工具.html"><a href="chrome调试工具.html#打开调试工具"><i class="fa fa-check"></i><b>17.1</b> 打开调试工具</a></li>
-<li class="chapter" data-level="17.2" data-path="chrome调试工具.html"><a href="chrome调试工具.html#使用调试工具"><i class="fa fa-check"></i><b>17.2</b> 使用调试工具</a></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="emmet语法.html"><a href="emmet语法.html"><i class="fa fa-check"></i><b>18</b> Emmet语法</a>
+<li class="chapter" data-level="20" data-path="chrome调试工具.html"><a href="chrome调试工具.html"><i class="fa fa-check"></i><b>20</b> Chrome调试工具</a>
 <ul>
-<li class="chapter" data-level="18.1" data-path="emmet语法.html"><a href="emmet语法.html#快速生成html结构语法"><i class="fa fa-check"></i><b>18.1</b> 快速生成HTML结构语法</a></li>
-<li class="chapter" data-level="18.2" data-path="emmet语法.html"><a href="emmet语法.html#快速生成css样式语法"><i class="fa fa-check"></i><b>18.2</b> 快速生成CSS样式语法</a></li>
-<li class="chapter" data-level="18.3" data-path="emmet语法.html"><a href="emmet语法.html#快速格式化代码"><i class="fa fa-check"></i><b>18.3</b> 快速格式化代码</a></li>
+<li class="chapter" data-level="20.1" data-path="chrome调试工具.html"><a href="chrome调试工具.html#打开调试工具"><i class="fa fa-check"></i><b>20.1</b> 打开调试工具</a></li>
+<li class="chapter" data-level="20.2" data-path="chrome调试工具.html"><a href="chrome调试工具.html#使用调试工具"><i class="fa fa-check"></i><b>20.2</b> 使用调试工具</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="emmet语法.html"><a href="emmet语法.html"><i class="fa fa-check"></i><b>21</b> Emmet语法</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="emmet语法.html"><a href="emmet语法.html#快速生成html结构语法"><i class="fa fa-check"></i><b>21.1</b> 快速生成HTML结构语法</a></li>
+<li class="chapter" data-level="21.2" data-path="emmet语法.html"><a href="emmet语法.html#快速生成css样式语法"><i class="fa fa-check"></i><b>21.2</b> 快速生成CSS样式语法</a></li>
+<li class="chapter" data-level="21.3" data-path="emmet语法.html"><a href="emmet语法.html#快速格式化代码"><i class="fa fa-check"></i><b>21.3</b> 快速格式化代码</a></li>
 </ul></li>
 </ul>
 
@@ -398,16 +469,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="元素的显示模式" class="section level1" number="11">
-<h1><span class="header-section-number">11</span> 元素的显示模式</h1>
+<div id="元素的显示模式" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">11</span> 元素的显示模式<a href="元素的显示模式.html#元素的显示模式" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>了解元素的显示模式可以更好的让我们布局页面</p>
-<div id="什么是元素的显示模式" class="section level2" number="11.1">
-<h2><span class="header-section-number">11.1</span> 什么是元素的显示模式</h2>
+<div id="什么是元素的显示模式" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> 什么是元素的显示模式<a href="元素的显示模式.html#什么是元素的显示模式" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>元素显示模式就是<strong>元素(标签)以什么方式进行显示</strong>，比如<code>&lt;div&gt;</code>自己占一行，比如一行可以放多个<code>&lt;span&gt;</code>。</p>
 <p>HTML元素一般分为<strong>块元素</strong>和<strong>行内元素</strong>两种类型</p>
 </div>
-<div id="块元素" class="section level2" number="11.2">
-<h2><span class="header-section-number">11.2</span> 块元素</h2>
+<div id="块元素" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> 块元素<a href="元素的显示模式.html#块元素" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>常见的块元素有<code>&lt;h1&gt;~&lt;h6&gt;</code>、<code>&lt;p&gt;</code>、<code>&lt;div&gt;</code>、<code>&lt;ul&gt;</code>、<code>&lt;ol&gt;</code>、<code>&lt;li&gt;</code>等，其中<code>&lt;div&gt;</code>标签是<strong>最典型的块元素</strong>。</p>
 <p><strong>特点</strong></p>
 <ul>
@@ -425,25 +496,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>同理，<code>&lt;h1&gt;~&lt;h6&gt;</code>等都是文字类块级标签，里面也不能放其他块级元素</p></li>
 </ul>
 <p><strong>例子</strong></p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb101-1"><a href="元素的显示模式.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb101-2"><a href="元素的显示模式.html#cb101-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb101-3"><a href="元素的显示模式.html#cb101-3" aria-hidden="true" tabindex="-1"></a>        div {</span>
-<span id="cb101-4"><a href="元素的显示模式.html#cb101-4" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* width: 200px; */</span></span>
-<span id="cb101-5"><a href="元素的显示模式.html#cb101-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb101-6"><a href="元素的显示模式.html#cb101-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
-<span id="cb101-7"><a href="元素的显示模式.html#cb101-7" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb101-8"><a href="元素的显示模式.html#cb101-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb101-9"><a href="元素的显示模式.html#cb101-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb101-10"><a href="元素的显示模式.html#cb101-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb101-11"><a href="元素的显示模式.html#cb101-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb101-12"><a href="元素的显示模式.html#cb101-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>比较霸道，自己独占一行<span class="kw">&lt;/div&gt;</span> 瑟瑟发抖</span>
-<span id="cb101-13"><a href="元素的显示模式.html#cb101-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
-<span id="cb101-14"><a href="元素的显示模式.html#cb101-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>这里有问题<span class="kw">&lt;/div&gt;</span></span>
-<span id="cb101-15"><a href="元素的显示模式.html#cb101-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
-<span id="cb101-16"><a href="元素的显示模式.html#cb101-16" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb108-1"><a href="元素的显示模式.html#cb108-1" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb108-2"><a href="元素的显示模式.html#cb108-2" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb108-3"><a href="元素的显示模式.html#cb108-3" tabindex="-1"></a>        div {</span>
+<span id="cb108-4"><a href="元素的显示模式.html#cb108-4" tabindex="-1"></a>            <span class="co">/* width: 200px; */</span></span>
+<span id="cb108-5"><a href="元素的显示模式.html#cb108-5" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb108-6"><a href="元素的显示模式.html#cb108-6" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb108-7"><a href="元素的显示模式.html#cb108-7" tabindex="-1"></a>        }</span>
+<span id="cb108-8"><a href="元素的显示模式.html#cb108-8" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb108-9"><a href="元素的显示模式.html#cb108-9" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb108-10"><a href="元素的显示模式.html#cb108-10" tabindex="-1"></a></span>
+<span id="cb108-11"><a href="元素的显示模式.html#cb108-11" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb108-12"><a href="元素的显示模式.html#cb108-12" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>比较霸道，自己独占一行<span class="kw">&lt;/div&gt;</span> 瑟瑟发抖</span>
+<span id="cb108-13"><a href="元素的显示模式.html#cb108-13" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb108-14"><a href="元素的显示模式.html#cb108-14" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>这里有问题<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb108-15"><a href="元素的显示模式.html#cb108-15" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb108-16"><a href="元素的显示模式.html#cb108-16" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 </div>
-<div id="行内元素内联元素" class="section level2" number="11.3">
-<h2><span class="header-section-number">11.3</span> 行内元素（内联元素）</h2>
+<div id="行内元素内联元素" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> 行内元素（内联元素）<a href="元素的显示模式.html#行内元素内联元素" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>行内元素又称为<strong>内联元素</strong>，常见的行内元素有<code>&lt;a&gt;</code>、<code>&lt;strong&gt;</code>、<code>&lt;b&gt;</code>、<code>&lt;em&gt;</code>、<code>&lt;i&gt;</code>、<code>&lt;del&gt;</code>，<code>&lt;s&gt;</code>、<code>&lt;ins&gt;</code>、<code>&lt;u&gt;</code>、<code>&lt;span&gt;</code>等，其中<code>&lt;span&gt;</code>是最典型的行内元素。</p>
 <p><strong>特点</strong></p>
 <ul>
@@ -458,49 +529,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>特殊情况<strong>链接<code>&lt;a&gt;</code>里面可以放块级元素</strong>，但是需要给<code>&lt;a&gt;</code>转换一下模式最安全。</p></li>
 </ul>
 <p><strong>例子</strong></p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb102-1"><a href="元素的显示模式.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb102-2"><a href="元素的显示模式.html#cb102-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb102-3"><a href="元素的显示模式.html#cb102-3" aria-hidden="true" tabindex="-1"></a>        span {</span>
-<span id="cb102-4"><a href="元素的显示模式.html#cb102-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb102-5"><a href="元素的显示模式.html#cb102-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb102-6"><a href="元素的显示模式.html#cb102-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
-<span id="cb102-7"><a href="元素的显示模式.html#cb102-7" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb102-8"><a href="元素的显示模式.html#cb102-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb102-9"><a href="元素的显示模式.html#cb102-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb102-10"><a href="元素的显示模式.html#cb102-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb102-11"><a href="元素的显示模式.html#cb102-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb102-12"><a href="元素的显示模式.html#cb102-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>pink老师你怎么这么宽<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;strong&gt;</span>喜欢粉色<span class="kw">&lt;/strong&gt;</span></span>
-<span id="cb102-13"><a href="元素的显示模式.html#cb102-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>pink老师<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;strong&gt;</span>喜欢粉色<span class="kw">&lt;/strong&gt;</span></span>
-<span id="cb102-14"><a href="元素的显示模式.html#cb102-14" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb109-1"><a href="元素的显示模式.html#cb109-1" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb109-2"><a href="元素的显示模式.html#cb109-2" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb109-3"><a href="元素的显示模式.html#cb109-3" tabindex="-1"></a>        span {</span>
+<span id="cb109-4"><a href="元素的显示模式.html#cb109-4" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb109-5"><a href="元素的显示模式.html#cb109-5" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb109-6"><a href="元素的显示模式.html#cb109-6" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb109-7"><a href="元素的显示模式.html#cb109-7" tabindex="-1"></a>        }</span>
+<span id="cb109-8"><a href="元素的显示模式.html#cb109-8" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb109-9"><a href="元素的显示模式.html#cb109-9" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb109-10"><a href="元素的显示模式.html#cb109-10" tabindex="-1"></a></span>
+<span id="cb109-11"><a href="元素的显示模式.html#cb109-11" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb109-12"><a href="元素的显示模式.html#cb109-12" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>pink老师你怎么这么宽<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;strong&gt;</span>喜欢粉色<span class="kw">&lt;/strong&gt;</span></span>
+<span id="cb109-13"><a href="元素的显示模式.html#cb109-13" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>pink老师<span class="kw">&lt;/span&gt;</span> <span class="kw">&lt;strong&gt;</span>喜欢粉色<span class="kw">&lt;/strong&gt;</span></span>
+<span id="cb109-14"><a href="元素的显示模式.html#cb109-14" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 </div>
-<div id="行内块元素" class="section level2" number="11.4">
-<h2><span class="header-section-number">11.4</span> 行内块元素</h2>
-<p>在行内元素中有几个特殊的标签——<code>&lt;img /&gt;</code>、<code>&lt;input /&gt;</code>、<code>&lt;td&gt;</code>，它们同时具有块元素和行内元素的特点。有些资料称它们为<strong>行内块元素</strong>。
-心
-行内块元素的特点∶</p>
+<div id="行内块元素" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> 行内块元素<a href="元素的显示模式.html#行内块元素" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>在行内元素中有几个特殊的标签——<code>&lt;img /&gt;</code>、<code>&lt;input /&gt;</code>、<code>&lt;td&gt;</code>，它们同时具有块元素和行内元素的特点。有些资料称它们为<strong>行内块元素</strong>。</p>
+<p>行内块元素的特点∶</p>
 <ul>
 <li><p>和相邻行内元素(行内块)在一行上，但是他们之间会有空白缝隙。一行可以显示多个(行内元素特点)。</p></li>
 <li><p>默认宽度就是它本身内容的宽度(行内元素特点)。</p></li>
 <li><p>高度，行高、外边距以及内边距都可以控制(块级元素特点)。</p></li>
 </ul>
 <p><strong>例子</strong></p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb103-1"><a href="元素的显示模式.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb103-2"><a href="元素的显示模式.html#cb103-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb103-3"><a href="元素的显示模式.html#cb103-3" aria-hidden="true" tabindex="-1"></a>        input {</span>
-<span id="cb103-4"><a href="元素的显示模式.html#cb103-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">249</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb103-5"><a href="元素的显示模式.html#cb103-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">35</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb103-6"><a href="元素的显示模式.html#cb103-6" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb103-7"><a href="元素的显示模式.html#cb103-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb103-8"><a href="元素的显示模式.html#cb103-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb103-9"><a href="元素的显示模式.html#cb103-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb103-10"><a href="元素的显示模式.html#cb103-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb103-11"><a href="元素的显示模式.html#cb103-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb103-12"><a href="元素的显示模式.html#cb103-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb110-1"><a href="元素的显示模式.html#cb110-1" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb110-2"><a href="元素的显示模式.html#cb110-2" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb110-3"><a href="元素的显示模式.html#cb110-3" tabindex="-1"></a>        input {</span>
+<span id="cb110-4"><a href="元素的显示模式.html#cb110-4" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">249</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb110-5"><a href="元素的显示模式.html#cb110-5" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">35</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb110-6"><a href="元素的显示模式.html#cb110-6" tabindex="-1"></a>        }</span>
+<span id="cb110-7"><a href="元素的显示模式.html#cb110-7" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb110-8"><a href="元素的显示模式.html#cb110-8" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb110-9"><a href="元素的显示模式.html#cb110-9" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb110-10"><a href="元素的显示模式.html#cb110-10" tabindex="-1"></a>    <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb110-11"><a href="元素的显示模式.html#cb110-11" tabindex="-1"></a>    <span class="kw">&lt;input</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;text&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb110-12"><a href="元素的显示模式.html#cb110-12" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 </div>
-<div id="元素显示模式总结" class="section level2" number="11.5">
-<h2><span class="header-section-number">11.5</span> 元素显示模式总结</h2>
+<div id="元素显示模式总结" class="section level2 hasAnchor" number="11.5">
+<h2><span class="header-section-number">11.5</span> 元素显示模式总结<a href="元素的显示模式.html#元素显示模式总结" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
 <caption><span id="tab:unnamed-chunk-4">表2.1: </span>元素显示模式总结</caption>
+<colgroup>
+<col width="11%" />
+<col width="24%" />
+<col width="20%" />
+<col width="18%" />
+<col width="24%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">元素模式</th>
@@ -535,8 +612,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 </div>
-<div id="元素显示模式转换" class="section level2" number="11.6">
-<h2><span class="header-section-number">11.6</span> 元素显示模式转换</h2>
+<div id="元素显示模式转换" class="section level2 hasAnchor" number="11.6">
+<h2><span class="header-section-number">11.6</span> 元素显示模式转换<a href="元素的显示模式.html#元素显示模式转换" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>特殊情况下，我们需要元素模式的转换，简单理解一个模式的元素需要另外一种模式的特性。</p>
 <p>比如想要增加链接<code>&lt;a&gt;</code>的触发范围。</p>
 <ul>
@@ -545,90 +622,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>转换为行内块元素：<strong>display:inline-block;</strong></p></li>
 </ul>
 <p><strong>例子</strong></p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb104-1"><a href="元素的显示模式.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb104-2"><a href="元素的显示模式.html#cb104-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb104-3"><a href="元素的显示模式.html#cb104-3" aria-hidden="true" tabindex="-1"></a>        a {</span>
-<span id="cb104-4"><a href="元素的显示模式.html#cb104-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb104-5"><a href="元素的显示模式.html#cb104-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">50</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb104-6"><a href="元素的显示模式.html#cb104-6" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 行高等于盒子高度时，垂直居中 */</span></span>
-<span id="cb104-7"><a href="元素的显示模式.html#cb104-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb104-8"><a href="元素的显示模式.html#cb104-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
-<span id="cb104-9"><a href="元素的显示模式.html#cb104-9" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 把行内元素a转换为块元素 */</span></span>
-<span id="cb104-10"><a href="元素的显示模式.html#cb104-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">block</span><span class="op">;</span></span>
-<span id="cb104-11"><a href="元素的显示模式.html#cb104-11" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb104-12"><a href="元素的显示模式.html#cb104-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb104-13"><a href="元素的显示模式.html#cb104-13" aria-hidden="true" tabindex="-1"></a>        div {</span>
-<span id="cb104-14"><a href="元素的显示模式.html#cb104-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb104-15"><a href="元素的显示模式.html#cb104-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb104-16"><a href="元素的显示模式.html#cb104-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">purple</span><span class="op">;</span></span>
-<span id="cb104-17"><a href="元素的显示模式.html#cb104-17" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 把div块级元素转换为行内元素 */</span></span>
-<span id="cb104-18"><a href="元素的显示模式.html#cb104-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">inline</span><span class="op">;</span></span>
-<span id="cb104-19"><a href="元素的显示模式.html#cb104-19" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb104-20"><a href="元素的显示模式.html#cb104-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb104-21"><a href="元素的显示模式.html#cb104-21" aria-hidden="true" tabindex="-1"></a>        span {</span>
-<span id="cb104-22"><a href="元素的显示模式.html#cb104-22" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb104-23"><a href="元素的显示模式.html#cb104-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb104-24"><a href="元素的显示模式.html#cb104-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">skyblue</span><span class="op">;</span></span>
-<span id="cb104-25"><a href="元素的显示模式.html#cb104-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">inline-block</span><span class="op">;</span></span>
-<span id="cb104-26"><a href="元素的显示模式.html#cb104-26" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb104-27"><a href="元素的显示模式.html#cb104-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb104-28"><a href="元素的显示模式.html#cb104-28" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb104-29"><a href="元素的显示模式.html#cb104-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb104-30"><a href="元素的显示模式.html#cb104-30" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb104-31"><a href="元素的显示模式.html#cb104-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>行内a元素转为块元素<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb104-32"><a href="元素的显示模式.html#cb104-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>行内a元素转为块元素<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb104-33"><a href="元素的显示模式.html#cb104-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>我是块元素<span class="kw">&lt;/div&gt;</span></span>
-<span id="cb104-34"><a href="元素的显示模式.html#cb104-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>我是块元素<span class="kw">&lt;/div&gt;</span></span>
-<span id="cb104-35"><a href="元素的显示模式.html#cb104-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>行内元素转换为行内块元素<span class="kw">&lt;/span&gt;</span></span>
-<span id="cb104-36"><a href="元素的显示模式.html#cb104-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>行内元素转换为行内块元素<span class="kw">&lt;/span&gt;</span></span>
-<span id="cb104-37"><a href="元素的显示模式.html#cb104-37" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb111-1"><a href="元素的显示模式.html#cb111-1" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb111-2"><a href="元素的显示模式.html#cb111-2" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb111-3"><a href="元素的显示模式.html#cb111-3" tabindex="-1"></a>        a {</span>
+<span id="cb111-4"><a href="元素的显示模式.html#cb111-4" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb111-5"><a href="元素的显示模式.html#cb111-5" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">50</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb111-6"><a href="元素的显示模式.html#cb111-6" tabindex="-1"></a>            <span class="co">/* 行高等于盒子高度时，垂直居中 */</span></span>
+<span id="cb111-7"><a href="元素的显示模式.html#cb111-7" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb111-8"><a href="元素的显示模式.html#cb111-8" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb111-9"><a href="元素的显示模式.html#cb111-9" tabindex="-1"></a>            <span class="co">/* 把行内元素a转换为块元素 */</span></span>
+<span id="cb111-10"><a href="元素的显示模式.html#cb111-10" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">block</span><span class="op">;</span></span>
+<span id="cb111-11"><a href="元素的显示模式.html#cb111-11" tabindex="-1"></a>        }</span>
+<span id="cb111-12"><a href="元素的显示模式.html#cb111-12" tabindex="-1"></a></span>
+<span id="cb111-13"><a href="元素的显示模式.html#cb111-13" tabindex="-1"></a>        div {</span>
+<span id="cb111-14"><a href="元素的显示模式.html#cb111-14" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb111-15"><a href="元素的显示模式.html#cb111-15" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb111-16"><a href="元素的显示模式.html#cb111-16" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">purple</span><span class="op">;</span></span>
+<span id="cb111-17"><a href="元素的显示模式.html#cb111-17" tabindex="-1"></a>            <span class="co">/* 把div块级元素转换为行内元素 */</span></span>
+<span id="cb111-18"><a href="元素的显示模式.html#cb111-18" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">inline</span><span class="op">;</span></span>
+<span id="cb111-19"><a href="元素的显示模式.html#cb111-19" tabindex="-1"></a>        }</span>
+<span id="cb111-20"><a href="元素的显示模式.html#cb111-20" tabindex="-1"></a></span>
+<span id="cb111-21"><a href="元素的显示模式.html#cb111-21" tabindex="-1"></a>        span {</span>
+<span id="cb111-22"><a href="元素的显示模式.html#cb111-22" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb111-23"><a href="元素的显示模式.html#cb111-23" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb111-24"><a href="元素的显示模式.html#cb111-24" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">skyblue</span><span class="op">;</span></span>
+<span id="cb111-25"><a href="元素的显示模式.html#cb111-25" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">inline-block</span><span class="op">;</span></span>
+<span id="cb111-26"><a href="元素的显示模式.html#cb111-26" tabindex="-1"></a>        }</span>
+<span id="cb111-27"><a href="元素的显示模式.html#cb111-27" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb111-28"><a href="元素的显示模式.html#cb111-28" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb111-29"><a href="元素的显示模式.html#cb111-29" tabindex="-1"></a></span>
+<span id="cb111-30"><a href="元素的显示模式.html#cb111-30" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb111-31"><a href="元素的显示模式.html#cb111-31" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>行内a元素转为块元素<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb111-32"><a href="元素的显示模式.html#cb111-32" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>行内a元素转为块元素<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb111-33"><a href="元素的显示模式.html#cb111-33" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>我是块元素<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb111-34"><a href="元素的显示模式.html#cb111-34" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>我是块元素<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb111-35"><a href="元素的显示模式.html#cb111-35" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>行内元素转换为行内块元素<span class="kw">&lt;/span&gt;</span></span>
+<span id="cb111-36"><a href="元素的显示模式.html#cb111-36" tabindex="-1"></a>    <span class="kw">&lt;span&gt;</span>行内元素转换为行内块元素<span class="kw">&lt;/span&gt;</span></span>
+<span id="cb111-37"><a href="元素的显示模式.html#cb111-37" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 </div>
-<div id="案例" class="section level2" number="11.7">
-<h2><span class="header-section-number">11.7</span> 案例</h2>
+<div id="案例" class="section level2 hasAnchor" number="11.7">
+<h2><span class="header-section-number">11.7</span> 案例<a href="元素的显示模式.html#案例" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>简洁版小米侧边栏</p>
 <p>小技巧，单行文字垂直居中：让文字的行高等于盒子的高度。</p>
 <p>简单理解:行高的上空隙和下空隙把文字挤到中间了.是如果行高小于盒子高度,文字会偏上如果行高大于盒子高度,则文字偏下</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb105-1"><a href="元素的显示模式.html#cb105-1" aria-hidden="true" tabindex="-1"></a>height: 40px;</span>
-<span id="cb105-2"><a href="元素的显示模式.html#cb105-2" aria-hidden="true" tabindex="-1"></a>/* 行高等于盒子高度时，垂直居中 */</span>
-<span id="cb105-3"><a href="元素的显示模式.html#cb105-3" aria-hidden="true" tabindex="-1"></a>line-height: 40px;</span></code></pre></div>
-<div class="sourceCode" id="cb106"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb106-1"><a href="元素的显示模式.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb106-2"><a href="元素的显示模式.html#cb106-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb106-3"><a href="元素的显示模式.html#cb106-3" aria-hidden="true" tabindex="-1"></a>        a {</span>
-<span id="cb106-4"><a href="元素的显示模式.html#cb106-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb106-5"><a href="元素的显示模式.html#cb106-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">230</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb106-6"><a href="元素的显示模式.html#cb106-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb106-7"><a href="元素的显示模式.html#cb106-7" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 行高等于盒子高度时，垂直居中 */</span></span>
-<span id="cb106-8"><a href="元素的显示模式.html#cb106-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb106-9"><a href="元素的显示模式.html#cb106-9" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 块级元素 */</span></span>
-<span id="cb106-10"><a href="元素的显示模式.html#cb106-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">block</span><span class="op">;</span></span>
-<span id="cb106-11"><a href="元素的显示模式.html#cb106-11" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 文字颜色为白色 */</span></span>
-<span id="cb106-12"><a href="元素的显示模式.html#cb106-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">#fff</span><span class="op">;</span></span>
-<span id="cb106-13"><a href="元素的显示模式.html#cb106-13" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 背景颜色变灰色 */</span></span>
-<span id="cb106-14"><a href="元素的显示模式.html#cb106-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">#535758</span><span class="op">;</span></span>
-<span id="cb106-15"><a href="元素的显示模式.html#cb106-15" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 文字大小14px */</span></span>
-<span id="cb106-16"><a href="元素的显示模式.html#cb106-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb106-17"><a href="元素的显示模式.html#cb106-17" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 去除连接下划线 */</span></span>
-<span id="cb106-18"><a href="元素的显示模式.html#cb106-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></span>
-<span id="cb106-19"><a href="元素的显示模式.html#cb106-19" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 首行缩进 */</span></span>
-<span id="cb106-20"><a href="元素的显示模式.html#cb106-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-indent</span>: <span class="dv">2</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb106-21"><a href="元素的显示模式.html#cb106-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb106-22"><a href="元素的显示模式.html#cb106-22" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb106-23"><a href="元素的显示模式.html#cb106-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb106-24"><a href="元素的显示模式.html#cb106-24" aria-hidden="true" tabindex="-1"></a>        a<span class="in">:hover</span> {</span>
-<span id="cb106-25"><a href="元素的显示模式.html#cb106-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">#FE6700</span><span class="op">;</span></span>
-<span id="cb106-26"><a href="元素的显示模式.html#cb106-26" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb106-27"><a href="元素的显示模式.html#cb106-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb106-28"><a href="元素的显示模式.html#cb106-28" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb106-29"><a href="元素的显示模式.html#cb106-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb106-30"><a href="元素的显示模式.html#cb106-30" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb106-31"><a href="元素的显示模式.html#cb106-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>手机 电话卡<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb106-32"><a href="元素的显示模式.html#cb106-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>电视 盒子<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb106-33"><a href="元素的显示模式.html#cb106-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>笔记本 平板<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb106-34"><a href="元素的显示模式.html#cb106-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>出行 穿戴<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb106-35"><a href="元素的显示模式.html#cb106-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>智能 路由器<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb106-36"><a href="元素的显示模式.html#cb106-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>健康 儿童<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb106-37"><a href="元素的显示模式.html#cb106-37" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>耳机 音响<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb106-38"><a href="元素的显示模式.html#cb106-38" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb112-1"><a href="元素的显示模式.html#cb112-1" tabindex="-1"></a>height: 40px;</span>
+<span id="cb112-2"><a href="元素的显示模式.html#cb112-2" tabindex="-1"></a>/* 行高等于盒子高度时，垂直居中 */</span>
+<span id="cb112-3"><a href="元素的显示模式.html#cb112-3" tabindex="-1"></a>line-height: 40px;</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb113-1"><a href="元素的显示模式.html#cb113-1" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb113-2"><a href="元素的显示模式.html#cb113-2" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb113-3"><a href="元素的显示模式.html#cb113-3" tabindex="-1"></a>        a {</span>
+<span id="cb113-4"><a href="元素的显示模式.html#cb113-4" tabindex="-1"></a></span>
+<span id="cb113-5"><a href="元素的显示模式.html#cb113-5" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">230</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb113-6"><a href="元素的显示模式.html#cb113-6" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb113-7"><a href="元素的显示模式.html#cb113-7" tabindex="-1"></a>            <span class="co">/* 行高等于盒子高度时，垂直居中 */</span></span>
+<span id="cb113-8"><a href="元素的显示模式.html#cb113-8" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb113-9"><a href="元素的显示模式.html#cb113-9" tabindex="-1"></a>            <span class="co">/* 块级元素 */</span></span>
+<span id="cb113-10"><a href="元素的显示模式.html#cb113-10" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">block</span><span class="op">;</span></span>
+<span id="cb113-11"><a href="元素的显示模式.html#cb113-11" tabindex="-1"></a>            <span class="co">/* 文字颜色为白色 */</span></span>
+<span id="cb113-12"><a href="元素的显示模式.html#cb113-12" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">#fff</span><span class="op">;</span></span>
+<span id="cb113-13"><a href="元素的显示模式.html#cb113-13" tabindex="-1"></a>            <span class="co">/* 背景颜色变灰色 */</span></span>
+<span id="cb113-14"><a href="元素的显示模式.html#cb113-14" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">#535758</span><span class="op">;</span></span>
+<span id="cb113-15"><a href="元素的显示模式.html#cb113-15" tabindex="-1"></a>            <span class="co">/* 文字大小14px */</span></span>
+<span id="cb113-16"><a href="元素的显示模式.html#cb113-16" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb113-17"><a href="元素的显示模式.html#cb113-17" tabindex="-1"></a>            <span class="co">/* 去除连接下划线 */</span></span>
+<span id="cb113-18"><a href="元素的显示模式.html#cb113-18" tabindex="-1"></a>            <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb113-19"><a href="元素的显示模式.html#cb113-19" tabindex="-1"></a>            <span class="co">/* 首行缩进 */</span></span>
+<span id="cb113-20"><a href="元素的显示模式.html#cb113-20" tabindex="-1"></a>            <span class="kw">text-indent</span>: <span class="dv">2</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb113-21"><a href="元素的显示模式.html#cb113-21" tabindex="-1"></a></span>
+<span id="cb113-22"><a href="元素的显示模式.html#cb113-22" tabindex="-1"></a>        }</span>
+<span id="cb113-23"><a href="元素的显示模式.html#cb113-23" tabindex="-1"></a></span>
+<span id="cb113-24"><a href="元素的显示模式.html#cb113-24" tabindex="-1"></a>        a<span class="in">:hover</span> {</span>
+<span id="cb113-25"><a href="元素的显示模式.html#cb113-25" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">#FE6700</span><span class="op">;</span></span>
+<span id="cb113-26"><a href="元素的显示模式.html#cb113-26" tabindex="-1"></a>        }</span>
+<span id="cb113-27"><a href="元素的显示模式.html#cb113-27" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb113-28"><a href="元素的显示模式.html#cb113-28" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb113-29"><a href="元素的显示模式.html#cb113-29" tabindex="-1"></a></span>
+<span id="cb113-30"><a href="元素的显示模式.html#cb113-30" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb113-31"><a href="元素的显示模式.html#cb113-31" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>手机 电话卡<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb113-32"><a href="元素的显示模式.html#cb113-32" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>电视 盒子<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb113-33"><a href="元素的显示模式.html#cb113-33" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>笔记本 平板<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb113-34"><a href="元素的显示模式.html#cb113-34" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>出行 穿戴<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb113-35"><a href="元素的显示模式.html#cb113-35" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>智能 路由器<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb113-36"><a href="元素的显示模式.html#cb113-36" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>健康 儿童<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb113-37"><a href="元素的显示模式.html#cb113-37" tabindex="-1"></a>    <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>耳机 音响<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb113-38"><a href="元素的显示模式.html#cb113-38" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 
 </div>
 </div>

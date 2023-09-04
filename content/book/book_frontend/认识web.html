@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 认识Web | Web开发学习笔记</title>
   <meta name="description" content="Web前端学习全纪录" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 认识Web | Web开发学习笔记" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Web前端学习全纪录" />
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="html初识.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX","output/SVG"],
@@ -104,7 +103,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -117,7 +116,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -272,24 +271,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9" data-path="css引入方式.html"><a href="css引入方式.html"><i class="fa fa-check"></i><b>9</b> CSS引入方式</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="css引入方式.html"><a href="css引入方式.html#css的三种样式表"><i class="fa fa-check"></i><b>9.1</b> CSS的三种样式表</a></li>
-<li class="chapter" data-level="9.2" data-path="css引入方式.html"><a href="css引入方式.html#行内样式表"><i class="fa fa-check"></i><b>9.2</b> 行内样式表</a></li>
-<li class="chapter" data-level="9.3" data-path="css引入方式.html"><a href="css引入方式.html#外部样式"><i class="fa fa-check"></i><b>9.3</b> 外部样式</a></li>
-<li class="chapter" data-level="9.4" data-path="css引入方式.html"><a href="css引入方式.html#css引入方式总结"><i class="fa fa-check"></i><b>9.4</b> CSS引入方式总结</a></li>
-<li class="chapter" data-level="9.5" data-path="css引入方式.html"><a href="css引入方式.html#综合案例-1"><i class="fa fa-check"></i><b>9.5</b> 综合案例</a></li>
+<li class="chapter" data-level="9.2" data-path="css引入方式.html"><a href="css引入方式.html#内部样式表"><i class="fa fa-check"></i><b>9.2</b> 内部样式表</a></li>
+<li class="chapter" data-level="9.3" data-path="css引入方式.html"><a href="css引入方式.html#行内样式表"><i class="fa fa-check"></i><b>9.3</b> 行内样式表</a></li>
+<li class="chapter" data-level="9.4" data-path="css引入方式.html"><a href="css引入方式.html#外部样式"><i class="fa fa-check"></i><b>9.4</b> 外部样式</a></li>
+<li class="chapter" data-level="9.5" data-path="css引入方式.html"><a href="css引入方式.html#css引入方式总结"><i class="fa fa-check"></i><b>9.5</b> CSS引入方式总结</a></li>
+<li class="chapter" data-level="9.6" data-path="css引入方式.html"><a href="css引入方式.html#综合案例-1"><i class="fa fa-check"></i><b>9.6</b> 综合案例</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="复合选择器.html"><a href="复合选择器.html"><i class="fa fa-check"></i><b>10</b> 复合选择器</a>
 <ul>
 <li class="chapter" data-level="10.1" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器的定义"><i class="fa fa-check"></i><b>10.1</b> 复合选择器的定义</a></li>
-<li class="chapter" data-level="10.2" data-path="复合选择器.html"><a href="复合选择器.html#后代选择器"><i class="fa fa-check"></i><b>10.2</b> 后代选择器</a></li>
-<li class="chapter" data-level="10.3" data-path="复合选择器.html"><a href="复合选择器.html#子选择器"><i class="fa fa-check"></i><b>10.3</b> 子选择器</a></li>
-<li class="chapter" data-level="10.4" data-path="复合选择器.html"><a href="复合选择器.html#并集选择器"><i class="fa fa-check"></i><b>10.4</b> 并集选择器</a></li>
-<li class="chapter" data-level="10.5" data-path="复合选择器.html"><a href="复合选择器.html#伪类选择器"><i class="fa fa-check"></i><b>10.5</b> 伪类选择器</a>
+<li class="chapter" data-level="10.2" data-path="复合选择器.html"><a href="复合选择器.html#属性选择器"><i class="fa fa-check"></i><b>10.2</b> 属性选择器</a></li>
+<li class="chapter" data-level="10.3" data-path="复合选择器.html"><a href="复合选择器.html#后代选择器"><i class="fa fa-check"></i><b>10.3</b> 后代选择器</a></li>
+<li class="chapter" data-level="10.4" data-path="复合选择器.html"><a href="复合选择器.html#子选择器"><i class="fa fa-check"></i><b>10.4</b> 子选择器</a></li>
+<li class="chapter" data-level="10.5" data-path="复合选择器.html"><a href="复合选择器.html#并集选择器"><i class="fa fa-check"></i><b>10.5</b> 并集选择器</a></li>
+<li class="chapter" data-level="10.6" data-path="复合选择器.html"><a href="复合选择器.html#伪类选择器"><i class="fa fa-check"></i><b>10.6</b> 伪类选择器</a>
 <ul>
-<li class="chapter" data-level="10.5.1" data-path="复合选择器.html"><a href="复合选择器.html#链接伪类"><i class="fa fa-check"></i><b>10.5.1</b> 链接伪类</a></li>
-<li class="chapter" data-level="10.5.2" data-path="复合选择器.html"><a href="复合选择器.html#focus伪类选择器"><i class="fa fa-check"></i><b>10.5.2</b> :focus伪类选择器</a></li>
+<li class="chapter" data-level="10.6.1" data-path="复合选择器.html"><a href="复合选择器.html#链接伪类"><i class="fa fa-check"></i><b>10.6.1</b> 链接伪类</a></li>
+<li class="chapter" data-level="10.6.2" data-path="复合选择器.html"><a href="复合选择器.html#focus伪类选择器"><i class="fa fa-check"></i><b>10.6.2</b> :focus伪类选择器</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器总结"><i class="fa fa-check"></i><b>10.6</b> 复合选择器总结</a></li>
-<li class="chapter" data-level="10.7" data-path="复合选择器.html"><a href="复合选择器.html#课堂练习"><i class="fa fa-check"></i><b>10.7</b> 课堂练习</a></li>
+<li class="chapter" data-level="10.7" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器总结"><i class="fa fa-check"></i><b>10.7</b> 复合选择器总结</a></li>
+<li class="chapter" data-level="10.8" data-path="复合选择器.html"><a href="复合选择器.html#多个选择器的覆盖问题"><i class="fa fa-check"></i><b>10.8</b> 多个选择器的覆盖问题</a></li>
+<li class="chapter" data-level="10.9" data-path="复合选择器.html"><a href="复合选择器.html#课堂练习"><i class="fa fa-check"></i><b>10.9</b> 课堂练习</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="元素的显示模式.html"><a href="元素的显示模式.html"><i class="fa fa-check"></i><b>11</b> 元素的显示模式</a>
 <ul>
@@ -363,23 +365,92 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.18.4" data-path="盒子模型.html"><a href="盒子模型.html#快报模块"><i class="fa fa-check"></i><b>14.18.4</b> 快报模块</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="浮动.html"><a href="浮动.html"><i class="fa fa-check"></i><b>15</b> 浮动</a></li>
+<li class="chapter" data-level="15" data-path="浮动.html"><a href="浮动.html"><i class="fa fa-check"></i><b>15</b> 浮动</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="浮动.html"><a href="浮动.html#传统网页布局的三种方式"><i class="fa fa-check"></i><b>15.1</b> 传统网页布局的三种方式</a></li>
+<li class="chapter" data-level="15.2" data-path="浮动.html"><a href="浮动.html#标准流普通流文档流"><i class="fa fa-check"></i><b>15.2</b> 标准流（普通流/文档流）</a></li>
+<li class="chapter" data-level="15.3" data-path="浮动.html"><a href="浮动.html#为什么需要浮动"><i class="fa fa-check"></i><b>15.3</b> 为什么需要浮动</a></li>
+<li class="chapter" data-level="15.4" data-path="浮动.html"><a href="浮动.html#什么是浮动"><i class="fa fa-check"></i><b>15.4</b> 什么是浮动</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="浮动.html"><a href="浮动.html#脱标"><i class="fa fa-check"></i><b>15.4.1</b> 脱标</a></li>
+<li class="chapter" data-level="15.4.2" data-path="浮动.html"><a href="浮动.html#浮动盒子一行显示"><i class="fa fa-check"></i><b>15.4.2</b> 浮动盒子一行显示</a></li>
+<li class="chapter" data-level="15.4.3" data-path="浮动.html"><a href="浮动.html#浮动元素具有行内块特性"><i class="fa fa-check"></i><b>15.4.3</b> 浮动元素具有行内块特性</a></li>
+</ul></li>
+<li class="chapter" data-level="15.5" data-path="浮动.html"><a href="浮动.html#浮动元素标准流经常和标准流父亲搭配使用"><i class="fa fa-check"></i><b>15.5</b> 浮动元素标准流经常和标准流父亲搭配使用</a></li>
+<li class="chapter" data-level="15.6" data-path="浮动.html"><a href="浮动.html#常见的网页布局"><i class="fa fa-check"></i><b>15.6</b> 常见的网页布局</a></li>
+<li class="chapter" data-level="15.7" data-path="浮动.html"><a href="浮动.html#浮动布局注意点"><i class="fa fa-check"></i><b>15.7</b> 浮动布局注意点</a></li>
+<li class="chapter" data-level="15.8" data-path="浮动.html"><a href="浮动.html#清除浮动"><i class="fa fa-check"></i><b>15.8</b> 清除浮动</a>
+<ul>
+<li class="chapter" data-level="15.8.1" data-path="浮动.html"><a href="浮动.html#为什么要清除浮动"><i class="fa fa-check"></i><b>15.8.1</b> 为什么要清除浮动</a></li>
+<li class="chapter" data-level="15.8.2" data-path="浮动.html"><a href="浮动.html#清除浮动的本质"><i class="fa fa-check"></i><b>15.8.2</b> 清除浮动的本质</a></li>
+<li class="chapter" data-level="15.8.3" data-path="浮动.html"><a href="浮动.html#清除浮动的方法"><i class="fa fa-check"></i><b>15.8.3</b> 清除浮动的方法</a></li>
+<li class="chapter" data-level="15.8.4" data-path="浮动.html"><a href="浮动.html#额外标签法"><i class="fa fa-check"></i><b>15.8.4</b> 额外标签法</a></li>
+<li class="chapter" data-level="15.8.5" data-path="浮动.html"><a href="浮动.html#父元素添加overflow"><i class="fa fa-check"></i><b>15.8.5</b> 父元素添加overflow</a></li>
+<li class="chapter" data-level="15.8.6" data-path="浮动.html"><a href="浮动.html#清除浮动after伪元素法"><i class="fa fa-check"></i><b>15.8.6</b> 清除浮动——:after伪元素法</a></li>
+<li class="chapter" data-level="15.8.7" data-path="浮动.html"><a href="浮动.html#双伪元素清除浮动"><i class="fa fa-check"></i><b>15.8.7</b> 双伪元素清除浮动</a></li>
+</ul></li>
+<li class="chapter" data-level="15.9" data-path="浮动.html"><a href="浮动.html#清除浮动总结"><i class="fa fa-check"></i><b>15.9</b> 清除浮动总结</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="定位.html"><a href="定位.html"><i class="fa fa-check"></i><b>16</b> 定位</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="定位.html"><a href="定位.html#为什么需要定位"><i class="fa fa-check"></i><b>16.1</b> 为什么需要定位</a></li>
+<li class="chapter" data-level="16.2" data-path="定位.html"><a href="定位.html#定位的组成"><i class="fa fa-check"></i><b>16.2</b> 定位的组成</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="定位.html"><a href="定位.html#定位模式"><i class="fa fa-check"></i><b>16.2.1</b> 定位模式</a></li>
+<li class="chapter" data-level="16.2.2" data-path="定位.html"><a href="定位.html#边偏移"><i class="fa fa-check"></i><b>16.2.2</b> 边偏移</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="定位.html"><a href="定位.html#静态定位"><i class="fa fa-check"></i><b>16.3</b> 静态定位</a></li>
+<li class="chapter" data-level="16.4" data-path="定位.html"><a href="定位.html#相对定位"><i class="fa fa-check"></i><b>16.4</b> 相对定位</a></li>
+<li class="chapter" data-level="16.5" data-path="定位.html"><a href="定位.html#绝对定位"><i class="fa fa-check"></i><b>16.5</b> 绝对定位</a></li>
+<li class="chapter" data-level="16.6" data-path="定位.html"><a href="定位.html#子绝父相的由来"><i class="fa fa-check"></i><b>16.6</b> 子绝父相的由来</a></li>
+<li class="chapter" data-level="16.7" data-path="定位.html"><a href="定位.html#固定定位"><i class="fa fa-check"></i><b>16.7</b> 固定定位</a></li>
+<li class="chapter" data-level="16.8" data-path="定位.html"><a href="定位.html#粘性定位"><i class="fa fa-check"></i><b>16.8</b> 粘性定位</a></li>
+<li class="chapter" data-level="16.9" data-path="定位.html"><a href="定位.html#定位的总结"><i class="fa fa-check"></i><b>16.9</b> 定位的总结</a></li>
+<li class="chapter" data-level="16.10" data-path="定位.html"><a href="定位.html#定位叠放次序"><i class="fa fa-check"></i><b>16.10</b> 定位叠放次序</a></li>
+<li class="chapter" data-level="16.11" data-path="定位.html"><a href="定位.html#定位的拓展"><i class="fa fa-check"></i><b>16.11</b> 定位的拓展</a>
+<ul>
+<li class="chapter" data-level="16.11.1" data-path="定位.html"><a href="定位.html#绝对固定定位的盒子居中"><i class="fa fa-check"></i><b>16.11.1</b> 绝对/固定定位的盒子居中</a></li>
+<li class="chapter" data-level="16.11.2" data-path="定位.html"><a href="定位.html#定位特殊性"><i class="fa fa-check"></i><b>16.11.2</b> 定位特殊性</a></li>
+<li class="chapter" data-level="16.11.3" data-path="定位.html"><a href="定位.html#脱标的盒子不会触发外边距塌陷"><i class="fa fa-check"></i><b>16.11.3</b> 脱标的盒子不会触发外边距塌陷</a></li>
+<li class="chapter" data-level="16.11.4" data-path="定位.html"><a href="定位.html#绝对固定定位会完全压住盒子"><i class="fa fa-check"></i><b>16.11.4</b> 绝对/固定定位会完全压住盒子</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="学成在线案例.html"><a href="学成在线案例.html"><i class="fa fa-check"></i><b>17</b> 学成在线案例</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="学成在线案例.html"><a href="学成在线案例.html#准备素材和工具"><i class="fa fa-check"></i><b>17.1</b> 准备素材和工具</a></li>
+<li class="chapter" data-level="17.2" data-path="学成在线案例.html"><a href="学成在线案例.html#案例准备工作"><i class="fa fa-check"></i><b>17.2</b> 案例准备工作</a></li>
+<li class="chapter" data-level="17.3" data-path="学成在线案例.html"><a href="学成在线案例.html#css属性书写顺序"><i class="fa fa-check"></i><b>17.3</b> CSS属性书写顺序</a></li>
+<li class="chapter" data-level="17.4" data-path="学成在线案例.html"><a href="学成在线案例.html#页面布局整体思路"><i class="fa fa-check"></i><b>17.4</b> 页面布局整体思路</a>
+<ul>
+<li class="chapter" data-level="17.4.1" data-path="学成在线案例.html"><a href="学成在线案例.html#确定版心"><i class="fa fa-check"></i><b>17.4.1</b> 确定版心</a></li>
+<li class="chapter" data-level="17.4.2" data-path="学成在线案例.html"><a href="学成在线案例.html#头部制作"><i class="fa fa-check"></i><b>17.4.2</b> 头部制作</a></li>
+<li class="chapter" data-level="17.4.3" data-path="学成在线案例.html"><a href="学成在线案例.html#精品推荐小模块"><i class="fa fa-check"></i><b>17.4.3</b> 精品推荐小模块</a></li>
+<li class="chapter" data-level="17.4.4" data-path="学成在线案例.html"><a href="学成在线案例.html#精品推荐大模块"><i class="fa fa-check"></i><b>17.4.4</b> 精品推荐大模块</a></li>
+<li class="chapter" data-level="17.4.5" data-path="学成在线案例.html"><a href="学成在线案例.html#底部模块"><i class="fa fa-check"></i><b>17.4.5</b> 底部模块</a></li>
+</ul></li>
+</ul></li>
 <li class="part"><span><b>III 附录</b></span></li>
-<li class="chapter" data-level="16" data-path="其他软件.html"><a href="其他软件.html"><i class="fa fa-check"></i><b>16</b> 其他软件</a>
+<li class="chapter" data-level="18" data-path="vscode常用操作.html"><a href="vscode常用操作.html"><i class="fa fa-check"></i><b>18</b> Vscode常用操作</a></li>
+<li class="chapter" data-level="19" data-path="ps.html"><a href="ps.html"><i class="fa fa-check"></i><b>19</b> PS</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="其他软件.html"><a href="其他软件.html#vscode常用操作"><i class="fa fa-check"></i><b>16.1</b> Vscode常用操作</a></li>
-<li class="chapter" data-level="16.2" data-path="其他软件.html"><a href="其他软件.html#ps"><i class="fa fa-check"></i><b>16.2</b> PS</a></li>
+<li class="chapter" data-level="19.1" data-path="ps.html"><a href="ps.html#ps切图"><i class="fa fa-check"></i><b>19.1</b> PS切图</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="ps.html"><a href="ps.html#常见的图片格式"><i class="fa fa-check"></i><b>19.1.1</b> 常见的图片格式</a></li>
+<li class="chapter" data-level="19.1.2" data-path="ps.html"><a href="ps.html#图层切图"><i class="fa fa-check"></i><b>19.1.2</b> 图层切图</a></li>
+<li class="chapter" data-level="19.1.3" data-path="ps.html"><a href="ps.html#切片工具"><i class="fa fa-check"></i><b>19.1.3</b> 切片工具</a></li>
+<li class="chapter" data-level="19.1.4" data-path="ps.html"><a href="ps.html#插件切图"><i class="fa fa-check"></i><b>19.1.4</b> 插件切图</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="chrome调试工具.html"><a href="chrome调试工具.html"><i class="fa fa-check"></i><b>17</b> Chrome调试工具</a>
-<ul>
-<li class="chapter" data-level="17.1" data-path="chrome调试工具.html"><a href="chrome调试工具.html#打开调试工具"><i class="fa fa-check"></i><b>17.1</b> 打开调试工具</a></li>
-<li class="chapter" data-level="17.2" data-path="chrome调试工具.html"><a href="chrome调试工具.html#使用调试工具"><i class="fa fa-check"></i><b>17.2</b> 使用调试工具</a></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="emmet语法.html"><a href="emmet语法.html"><i class="fa fa-check"></i><b>18</b> Emmet语法</a>
+<li class="chapter" data-level="20" data-path="chrome调试工具.html"><a href="chrome调试工具.html"><i class="fa fa-check"></i><b>20</b> Chrome调试工具</a>
 <ul>
-<li class="chapter" data-level="18.1" data-path="emmet语法.html"><a href="emmet语法.html#快速生成html结构语法"><i class="fa fa-check"></i><b>18.1</b> 快速生成HTML结构语法</a></li>
-<li class="chapter" data-level="18.2" data-path="emmet语法.html"><a href="emmet语法.html#快速生成css样式语法"><i class="fa fa-check"></i><b>18.2</b> 快速生成CSS样式语法</a></li>
-<li class="chapter" data-level="18.3" data-path="emmet语法.html"><a href="emmet语法.html#快速格式化代码"><i class="fa fa-check"></i><b>18.3</b> 快速格式化代码</a></li>
+<li class="chapter" data-level="20.1" data-path="chrome调试工具.html"><a href="chrome调试工具.html#打开调试工具"><i class="fa fa-check"></i><b>20.1</b> 打开调试工具</a></li>
+<li class="chapter" data-level="20.2" data-path="chrome调试工具.html"><a href="chrome调试工具.html#使用调试工具"><i class="fa fa-check"></i><b>20.2</b> 使用调试工具</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="emmet语法.html"><a href="emmet语法.html"><i class="fa fa-check"></i><b>21</b> Emmet语法</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="emmet语法.html"><a href="emmet语法.html#快速生成html结构语法"><i class="fa fa-check"></i><b>21.1</b> 快速生成HTML结构语法</a></li>
+<li class="chapter" data-level="21.2" data-path="emmet语法.html"><a href="emmet语法.html#快速生成css样式语法"><i class="fa fa-check"></i><b>21.2</b> 快速生成CSS样式语法</a></li>
+<li class="chapter" data-level="21.3" data-path="emmet语法.html"><a href="emmet语法.html#快速格式化代码"><i class="fa fa-check"></i><b>21.3</b> 快速格式化代码</a></li>
 </ul></li>
 </ul>
 
@@ -398,11 +469,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="认识web" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> 认识Web</h1>
+<div id="认识web" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> 认识Web<a href="认识web.html#认识web" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>本篇文章主要由五个章节构成，从WEB标准到初识HTML，接着学习HTML常用标签，最后学习表格列表和表单。💪💪开始充电之旅啦~~~</p>
-<div id="网页" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> 网页</h2>
+<div id="网页" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> 网页<a href="认识web.html#网页" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>网页</strong>是由文字、图像、音频、视频等元素构成。我们通常看到的网页是以.htm或.html后缀结尾的文件，因此将其俗称为HTML文件，它需要通过浏览器来阅读。</p>
 <p><strong>网站</strong>是网页的集合。</p>
 <p><strong>HTML</strong>是超文标记语言（Hyper Text Makeup Language），它是一种用来描述网页的一种语言。
@@ -416,8 +487,8 @@ HTML不是编程语言，而是一种标记语言（Makeup language），标记�
 网页是由网页元素组成的，这些元素是利用html标签描述出来，然后通过浏览器解析出来显示给用户。
 前端人员开发代码→浏览器显示代码（解析、渲染）→生成Web页面</p>
 </div>
-<div id="浏览器" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> 浏览器</h2>
+<div id="浏览器" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> 浏览器<a href="认识web.html#浏览器" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>浏览器</strong>是显示、运行网页的平台。IE、火狐（Firefox）、谷歌（Chrome）、Safari和欧鹏（Opera）被称为五大浏览器。</p>
 <p><strong>浏览器内核</strong>排版引擎、解释引擎、渲染引擎。负责读取网页内容，整理讯息，计算网页的显示方式并显示页面。</p>
 <table>
@@ -463,11 +534,11 @@ HTML不是编程语言，而是一种标记语言（Makeup language），标记�
 </tbody>
 </table>
 </div>
-<div id="web标准" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Web标准</h2>
+<div id="web标准" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Web标准<a href="认识web.html#web标准" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Web标准是由W3C组织和其他标准化组织制定的一系列标准的集合。W3C（万维网联盟）是国际最著名的标准化组织。</p>
-<div id="为什么需要web标准" class="section level3" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> 为什么需要Web标准</h3>
+<div id="为什么需要web标准" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> 为什么需要Web标准<a href="认识web.html#为什么需要web标准" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>浏览器不同，它们显示页面或者排版就有些许差异。
 遵循Web标准除了可以让不同开发人员写出的页面更标准，更统一外，还有以下优点：👇</p>
 <ul>
@@ -478,8 +549,8 @@ HTML不是编程语言，而是一种标记语言（Makeup language），标记�
 <li>搜索引擎：语义化的HTML能更容易被搜索引擎解析，提升排名</li>
 </ul>
 </div>
-<div id="web标准构成" class="section level3" number="1.3.2">
-<h3><span class="header-section-number">1.3.2</span> Web标准构成</h3>
+<div id="web标准构成" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Web标准构成<a href="认识web.html#web标准构成" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>主要包括结构标准（Structure），表现标准（Presentation）和行为标准（Behavior）。</p>
 <ul>
 <li>结构标准用于对网页元素进行整理和分类，现阶段主要学的是HTML</li>
@@ -488,6 +559,10 @@ HTML不是编程语言，而是一种标记语言（Makeup language），标记�
 </ul>
 <table>
 <caption><span id="tab:unnamed-chunk-2">表1.2: </span>Web标准</caption>
+<colgroup>
+<col width="12%" />
+<col width="87%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">标准</th>

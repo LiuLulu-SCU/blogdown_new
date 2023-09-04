@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>20 Chrome调试工具 | Web开发学习笔记</title>
+  <title>19 PS | Web开发学习笔记</title>
   <meta name="description" content="Web前端学习全纪录" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="20 Chrome调试工具 | Web开发学习笔记" />
+  <meta property="og:title" content="19 PS | Web开发学习笔记" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Web前端学习全纪录" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="20 Chrome调试工具 | Web开发学习笔记" />
+  <meta name="twitter:title" content="19 PS | Web开发学习笔记" />
   
   <meta name="twitter:description" content="Web前端学习全纪录" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ps.html"/>
-<link rel="next" href="emmet语法.html"/>
+<link rel="prev" href="vscode常用操作.html"/>
+<link rel="next" href="chrome调试工具.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -469,30 +469,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chrome调试工具" class="section level1 hasAnchor" number="20">
-<h1><span class="header-section-number">20</span> Chrome调试工具<a href="chrome调试工具.html#chrome调试工具" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Chrome浏览器提供了一个非常好用的调试工具，可以用来调试我们的HTML结构和CSS样式。</p>
-<div id="打开调试工具" class="section level2 hasAnchor" number="20.1">
-<h2><span class="header-section-number">20.1</span> 打开调试工具<a href="chrome调试工具.html#打开调试工具" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>打开 Chrome浏览器，按下<strong>F12键</strong>或者<strong>右击页面空白处→检查</strong>，点击elements。再点击调试窗口左上角的“方框鼠标”按键后，点击页面任意位置，即可看到相应的代码。</p>
+<div id="ps" class="section level1 hasAnchor" number="19">
+<h1><span class="header-section-number">19</span> PS<a href="ps.html#ps" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>因为网页美工大部分效果图都是利用<strong>PS ( Photoshop )</strong>来做的，所以以后我们大部分切图工作都是在PS里面完成。</p>
+<p>用“选区”拖动，可以测量大小</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
-<img src="fig/CSS/101-01.jpg" alt="调试工具中会显示HTML和CSS" width="418" />
+<img src="fig/appendix/100-02.jpg" alt="选区工具" width="194" />
 <p class="caption">
-图3.1: 调试工具中会显示HTML和CSS
+图3.1: 选区工具
 </p>
 </div>
-</div>
-<div id="使用调试工具" class="section level2 hasAnchor" number="20.2">
-<h2><span class="header-section-number">20.2</span> 使用调试工具<a href="chrome调试工具.html#使用调试工具" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>快捷键</p>
+<ul>
+<li><p>打开文件：<code>Ctrl</code>+<code>O</code></p></li>
+<li><p>打开标尺：<code>Ctrl</code>+<code>R</code>，然后右击出现的标尺，单位改为“像素”</p></li>
+<li><p>放大视图：<code>Ctrl</code>+<code>+</code></p></li>
+<li><p>缩小视图：<code>Ctrl</code>+<code>-</code></p></li>
+<li><p>鼠标变小手，拖动PS视图 <code>空格</code></p></li>
+<li><p>取消选区：<code>Ctrl</code>+<code>D</code> 或鼠标在空白地方点一下</p></li>
+<li><p>合并图层：<code>Ctrl</code>+<code>E</code></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="fig/appendix/100-03.jpg" alt="PS基本界面" width="528" />
+<p class="caption">
+图6.1: PS基本界面
+</p>
+</div></li>
+</ul>
+<div id="ps切图" class="section level2 hasAnchor" number="19.1">
+<h2><span class="header-section-number">19.1</span> PS切图<a href="ps.html#ps切图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="常见的图片格式" class="section level3 hasAnchor" number="19.1.1">
+<h3><span class="header-section-number">19.1.1</span> 常见的图片格式<a href="ps.html#常见的图片格式" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
-<li><p><strong>Ctrl+滚轮</strong>可以放大开发者工具代码大小。</p></li>
-<li><p>上边是HTML元素结构，下边是CSS样式。</p></li>
-<li><p>下边CSS样式可以改动数值(左右箭头或者直接输入)和查看颜色。</p></li>
-<li><p>Ctrl +0复原浏览器大小。</p></li>
-<li><p>如果点击元素，发现右侧没有样式引入，极有可能是类名或者样式引入错误。</p></li>
-<li><p>如果有样式，但是样式前面有<strong>黄色叹号</strong>提示，则是样式属性书写错误。</p></li>
+<li>jpg图像格式:JPEG ( JPG ）对色彩的信息保留较好，高清，颜色较多，我们<strong>产品类的图片经常用jpg格式的</strong></li>
 </ol>
+<p>2 gif图像格式:GIF格式最多只能储存256色，所以通常用来显示简单图形及字体，但是可以保存透明背景和动画效果,<strong>实际经常用于一些图片小动画效果。</strong></p>
+<ol start="3" style="list-style-type: decimal">
+<li>png图像格式是一种新兴的网络图形格式，结合了GIF和JPEG的优点，具有存储形式丰富的特点，能够保持透明背景.<strong>如果想要切成背景透明的图片,请选择png格式。</strong></li>
+</ol>
+<p>4．PSD图像格式PSD格式是Photoshop的专用格式，里面可以存放图层、通道、遮罩等多种设计稿.对我们前端人员来说,<strong>最大的优点我们可以直接从上面复制文字,获得图片,还可以测量大小和距离。</strong></p>
+</div>
+<div id="图层切图" class="section level3 hasAnchor" number="19.1.2">
+<h3><span class="header-section-number">19.1.2</span> 图层切图<a href="ps.html#图层切图" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>最简单的切图方式：</p>
+<p>点击左上角第一个【移动工具】，单击需要切的图片，PS会自动选中对应的图层，右击涂层，点【快速导出为PNG】。</p>
+<p>但很多情况下，我们需要合并图层再导出。Shift多选需要的图层，合并图层（Ctrl+E），右击合并好的图层，快速导出为PNG。</p>
+</div>
+<div id="切片工具" class="section level3 hasAnchor" number="19.1.3">
+<h3><span class="header-section-number">19.1.3</span> 切片工具<a href="ps.html#切片工具" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>点击左上方第三个【切片工具】。手动选择需要切片的图。文件菜单→导出→存储为web设备所用格式→选择jpg或png格式→存储。</p>
+</div>
+<div id="插件切图" class="section level3 hasAnchor" number="19.1.4">
+<h3><span class="header-section-number">19.1.4</span> 插件切图<a href="ps.html#插件切图" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="http://www.cutterman.cn/zh/cutterman" target="_blank">cuterman</a>是一款运行在Photoshop中的插件，能够自动将你需要的图层进行输出，以替代传统的手工“导出web 所用格式”以及使用切片工具进行挨个切图的繁琐流程。</p>
 
+</div>
 </div>
 </div>
             </section>
@@ -500,8 +530,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="ps.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="emmet语法.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="vscode常用操作.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chrome调试工具.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

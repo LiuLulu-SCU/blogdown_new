@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>20 Chrome调试工具 | Web开发学习笔记</title>
+  <title>17 学成在线案例 | Web开发学习笔记</title>
   <meta name="description" content="Web前端学习全纪录" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="20 Chrome调试工具 | Web开发学习笔记" />
+  <meta property="og:title" content="17 学成在线案例 | Web开发学习笔记" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Web前端学习全纪录" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="20 Chrome调试工具 | Web开发学习笔记" />
+  <meta name="twitter:title" content="17 学成在线案例 | Web开发学习笔记" />
   
   <meta name="twitter:description" content="Web前端学习全纪录" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ps.html"/>
-<link rel="next" href="emmet语法.html"/>
+<link rel="prev" href="定位.html"/>
+<link rel="next" href="vscode常用操作.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -469,39 +469,140 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chrome调试工具" class="section level1 hasAnchor" number="20">
-<h1><span class="header-section-number">20</span> Chrome调试工具<a href="chrome调试工具.html#chrome调试工具" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Chrome浏览器提供了一个非常好用的调试工具，可以用来调试我们的HTML结构和CSS样式。</p>
-<div id="打开调试工具" class="section level2 hasAnchor" number="20.1">
-<h2><span class="header-section-number">20.1</span> 打开调试工具<a href="chrome调试工具.html#打开调试工具" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>打开 Chrome浏览器，按下<strong>F12键</strong>或者<strong>右击页面空白处→检查</strong>，点击elements。再点击调试窗口左上角的“方框鼠标”按键后，点击页面任意位置，即可看到相应的代码。</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
-<img src="fig/CSS/101-01.jpg" alt="调试工具中会显示HTML和CSS" width="418" />
-<p class="caption">
-图3.1: 调试工具中会显示HTML和CSS
-</p>
-</div>
-</div>
-<div id="使用调试工具" class="section level2 hasAnchor" number="20.2">
-<h2><span class="header-section-number">20.2</span> 使用调试工具<a href="chrome调试工具.html#使用调试工具" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="学成在线案例" class="section level1 hasAnchor" number="17">
+<h1><span class="header-section-number">17</span> 学成在线案例<a href="学成在线案例.html#学成在线案例" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>案例目的：</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Ctrl+滚轮</strong>可以放大开发者工具代码大小。</p></li>
-<li><p>上边是HTML元素结构，下边是CSS样式。</p></li>
-<li><p>下边CSS样式可以改动数值(左右箭头或者直接输入)和查看颜色。</p></li>
-<li><p>Ctrl +0复原浏览器大小。</p></li>
-<li><p>如果点击元素，发现右侧没有样式引入，极有可能是类名或者样式引入错误。</p></li>
-<li><p>如果有样式，但是样式前面有<strong>黄色叹号</strong>提示，则是样式属性书写错误。</p></li>
+<li><p>本案例是典型的企业级网站</p></li>
+<li><p>整体感知企业级网站布局流程，复习以前知识。</p></li>
 </ol>
+<p><img src="fig/case/80-01.jpg" width="400" style="display: block; margin: auto;" /></p>
+<div id="准备素材和工具" class="section level2 hasAnchor" number="17.1">
+<h2><span class="header-section-number">17.1</span> 准备素材和工具<a href="学成在线案例.html#准备素材和工具" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>学成在线PSD源文件</p></li>
+<li><p>开发工具=PS（切图）/cutterman插件+vscode（代码）+chrome（测试）</p></li>
+</ol>
+</div>
+<div id="案例准备工作" class="section level2 hasAnchor" number="17.2">
+<h2><span class="header-section-number">17.2</span> 案例准备工作<a href="学成在线案例.html#案例准备工作" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>我们本次采取结构与样式相分离思想：</p>
+<ol style="list-style-type: decimal">
+<li>创建study目录文件夹，用于存放我们这个页面相关内容。</li>
+<li>用vscode打开这个目录文件夹。</li>
+<li>study目录内新建images文件夹，用于保存图片。</li>
+<li>新建首页文件index.html（以后网站首页统一规定为index.html）</li>
+<li>新建style.css样式文件。我们本次采用外链样式表。</li>
+<li>将样式引入至HTML页面中。</li>
+<li>样式表写入清楚内外边距的样式，来检测样式表是否引入成功。</li>
+</ol>
+</div>
+<div id="css属性书写顺序" class="section level2 hasAnchor" number="17.3">
+<h2><span class="header-section-number">17.3</span> CSS属性书写顺序<a href="学成在线案例.html#css属性书写顺序" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>建议遵循以下顺序︰</p>
+<ol style="list-style-type: decimal">
+<li>布局定位属性 : display / position / float / clear / visibility / overflow(建议display第一个写，毕竟关系到模式)</li>
+<li>自身属性: width / height / margin / padding / border / background</li>
+<li>文本属性:color / font / text-decoration / text-align / vertical-align / white-space / break-word</li>
+<li>其他属性(CSS3 ) : content / cursor / border-radius / box-shadow / text-shadow / background:linear-gradient…</li>
+</ol>
+<p><strong>例子</strong></p>
+<div class="sourceCode" id="cb202"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb202-1"><a href="学成在线案例.html#cb202-1" tabindex="-1"></a>.jdc {</span>
+<span id="cb202-2"><a href="学成在线案例.html#cb202-2" tabindex="-1"></a>    display: block;position: relative;float: left;</span>
+<span id="cb202-3"><a href="学成在线案例.html#cb202-3" tabindex="-1"></a>    width: 100px;height: 100px;</span>
+<span id="cb202-4"><a href="学成在线案例.html#cb202-4" tabindex="-1"></a>    margin: o 10px;</span>
+<span id="cb202-5"><a href="学成在线案例.html#cb202-5" tabindex="-1"></a>    padding: 20px o;</span>
+<span id="cb202-6"><a href="学成在线案例.html#cb202-6" tabindex="-1"></a>    font-family: Arial,&#39;Helvetica Neue&#39;, Helvetica,sans-serif;color: #333;</span>
+<span id="cb202-7"><a href="学成在线案例.html#cb202-7" tabindex="-1"></a>    background: rgba (0 ,o ,o,.5);border-radius: 10px;</span>
+<span id="cb202-8"><a href="学成在线案例.html#cb202-8" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="页面布局整体思路" class="section level2 hasAnchor" number="17.4">
+<h2><span class="header-section-number">17.4</span> 页面布局整体思路<a href="学成在线案例.html#页面布局整体思路" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>为了提高网页制作的效率，布局时通常有以下的整体思路</p>
+<ol style="list-style-type: decimal">
+<li>必须确定页面的版心(可视区)，我们测量可得知。</li>
+<li>分析页面中的行模块，以及每个行模块中的列模块。其实页面布局第一准则.</li>
+<li>一行中的列模块经常浮动布局,先确定每个列的大小,之后确定列的位置.页面布局第二准则</li>
+<li>制作HTML结构。我们还是遵循，先有结构，后有样式的原则。结构永远最重要.</li>
+<li>所以,先理清楚布局结构,再写代码尤为重要.这需要我们多写多积累.</li>
+</ol>
+<div id="确定版心" class="section level3 hasAnchor" number="17.4.1">
+<h3><span class="header-section-number">17.4.1</span> 确定版心<a href="学成在线案例.html#确定版心" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>这个页面的版心用PS测得是1200像素，每个版心都要水平居中对齐，可以定义版心为公共类∶</p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb203-1"><a href="学成在线案例.html#cb203-1" tabindex="-1"></a>/* w是width的缩写 */</span>
+<span id="cb203-2"><a href="学成在线案例.html#cb203-2" tabindex="-1"></a>.w{ </span>
+<span id="cb203-3"><a href="学成在线案例.html#cb203-3" tabindex="-1"></a>    width: 1200px;</span>
+<span id="cb203-4"><a href="学成在线案例.html#cb203-4" tabindex="-1"></a>    margin: auto;</span>
+<span id="cb203-5"><a href="学成在线案例.html#cb203-5" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="头部制作" class="section level3 hasAnchor" number="17.4.2">
+<h3><span class="header-section-number">17.4.2</span> 头部制作<a href="学成在线案例.html#头部制作" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="fig/case/80-02.jpg" width="502" style="display: block; margin: auto;" /></p>
+<p>1号是版心盒子header 1200*42的盒子水平居中对齐，上下给一个margin值就可以</p>
+<p>2号盒子logo</p>
+<p>3号盒子nav导航栏</p>
+<p>4号盒子search搜索框</p>
+<p>5号盒子user个人信息</p>
+<p>注意:要求里面的4个盒子必须都是浮动</p>
+<p>导航栏注意点:</p>
+<p>实际开发中，我们不会直接用链接a而是用li 包含链接(li+a)的做法。</p>
+<ol style="list-style-type: decimal">
+<li><p>li+a语义更清晰，一看这就是有条理的列表型内容。</p></li>
+<li><p>如果直接用a，搜索引擎容易辨别为有堆砌关键字嫌疑(故意堆砌关键字容易被搜索引擎有降权的风险），从而影响网站排名</p></li>
+</ol>
+<p>注意</p>
+<ol style="list-style-type: decimal">
+<li><p>让导航栏一行显示,给li加浮动,因为li是块级元素,需要一行显示。</p></li>
+<li><p>这个nav导航栏可以不给宽度,将来可以继续添加其余文字</p></li>
+<li><p>为导航栏里面文字不一样多,所以最好给链接a左右padding撑开盒子,而不是指定宽度。</p></li>
+</ol>
+<p>search搜索框：
+一个search大盒子里面包含2个表单
+<img src="fig/case/80-03.jpg" width="342" style="display: block; margin: auto;" /></p>
+<p>banner:
+<img src="fig/case/80-04.jpg" width="500" style="display: block; margin: auto;" /></p>
+<p>1号盒子是通栏的大盒子banner，不给宽度，给高度，给一个蓝色背景</p>
+<p>2号盒子是版心，要水平居中对齐</p>
+<p>3号盒子版心内，左对齐subnav侧导航栏</p>
+<p>4号盒子版心内，右对齐course课程</p>
+</div>
+<div id="精品推荐小模块" class="section level3 hasAnchor" number="17.4.3">
+<h3><span class="header-section-number">17.4.3</span> 精品推荐小模块<a href="学成在线案例.html#精品推荐小模块" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="fig/case/80-05.jpg" width="476" style="display: block; margin: auto;" /></p>
+<p>大盒子水平居中goods精品，注意此处有个盒子阴影</p>
+<p>1号盒子是标题H3左侧浮动</p>
+<p>2号盒子里面放链接左侧浮动，goods-item距离可以控制链接的左右外边距（注意行内元素只给左右内外边距)</p>
+<p>3号盒子右浮动mod修改</p>
+</div>
+<div id="精品推荐大模块" class="section level3 hasAnchor" number="17.4.4">
+<h3><span class="header-section-number">17.4.4</span> 精品推荐大模块<a href="学成在线案例.html#精品推荐大模块" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="fig/case/80-06.jpg" width="564" style="display: block; margin: auto;" />
+1号盒子为最大的盒子，box版心水平居中对齐</p>
+<p>2号盒子为上面部分，box-hd –里面左侧标题H3左浮动，右侧链接a右浮动</p>
+<p>3号盒子为底下部分，box-bd–里面是无序列表，有10个小li组成
+小li外边距的问题，这里有个小技巧:给box-hd宽度为1215就可以一行装开5个li</p>
+</div>
+<div id="底部模块" class="section level3 hasAnchor" number="17.4.5">
+<h3><span class="header-section-number">17.4.5</span> 底部模块<a href="学成在线案例.html#底部模块" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="fig/case/80-07.jpg" width="477" style="display: block; margin: auto;" /></p>
+<p>1号盒子是通栏大盒子，底部 footer给高度，底色是白色</p>
+<p>2号盒子版心水平居中</p>
+<p>3号盒子版权copyright左对齐</p>
+<p>4号盒子链接组links右对齐</p>
 
 </div>
 </div>
+</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="ps.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="emmet语法.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="定位.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vscode常用操作.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

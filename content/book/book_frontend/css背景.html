@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>12 CSS背景 | Web开发学习笔记</title>
   <meta name="description" content="Web前端学习全纪录" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="12 CSS背景 | Web开发学习笔记" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Web前端学习全纪录" />
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="元素的显示模式.html"/>
 <link rel="next" href="css的三大特性.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX","output/SVG"],
@@ -104,7 +103,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -117,7 +116,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -272,24 +271,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9" data-path="css引入方式.html"><a href="css引入方式.html"><i class="fa fa-check"></i><b>9</b> CSS引入方式</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="css引入方式.html"><a href="css引入方式.html#css的三种样式表"><i class="fa fa-check"></i><b>9.1</b> CSS的三种样式表</a></li>
-<li class="chapter" data-level="9.2" data-path="css引入方式.html"><a href="css引入方式.html#行内样式表"><i class="fa fa-check"></i><b>9.2</b> 行内样式表</a></li>
-<li class="chapter" data-level="9.3" data-path="css引入方式.html"><a href="css引入方式.html#外部样式"><i class="fa fa-check"></i><b>9.3</b> 外部样式</a></li>
-<li class="chapter" data-level="9.4" data-path="css引入方式.html"><a href="css引入方式.html#css引入方式总结"><i class="fa fa-check"></i><b>9.4</b> CSS引入方式总结</a></li>
-<li class="chapter" data-level="9.5" data-path="css引入方式.html"><a href="css引入方式.html#综合案例-1"><i class="fa fa-check"></i><b>9.5</b> 综合案例</a></li>
+<li class="chapter" data-level="9.2" data-path="css引入方式.html"><a href="css引入方式.html#内部样式表"><i class="fa fa-check"></i><b>9.2</b> 内部样式表</a></li>
+<li class="chapter" data-level="9.3" data-path="css引入方式.html"><a href="css引入方式.html#行内样式表"><i class="fa fa-check"></i><b>9.3</b> 行内样式表</a></li>
+<li class="chapter" data-level="9.4" data-path="css引入方式.html"><a href="css引入方式.html#外部样式"><i class="fa fa-check"></i><b>9.4</b> 外部样式</a></li>
+<li class="chapter" data-level="9.5" data-path="css引入方式.html"><a href="css引入方式.html#css引入方式总结"><i class="fa fa-check"></i><b>9.5</b> CSS引入方式总结</a></li>
+<li class="chapter" data-level="9.6" data-path="css引入方式.html"><a href="css引入方式.html#综合案例-1"><i class="fa fa-check"></i><b>9.6</b> 综合案例</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="复合选择器.html"><a href="复合选择器.html"><i class="fa fa-check"></i><b>10</b> 复合选择器</a>
 <ul>
 <li class="chapter" data-level="10.1" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器的定义"><i class="fa fa-check"></i><b>10.1</b> 复合选择器的定义</a></li>
-<li class="chapter" data-level="10.2" data-path="复合选择器.html"><a href="复合选择器.html#后代选择器"><i class="fa fa-check"></i><b>10.2</b> 后代选择器</a></li>
-<li class="chapter" data-level="10.3" data-path="复合选择器.html"><a href="复合选择器.html#子选择器"><i class="fa fa-check"></i><b>10.3</b> 子选择器</a></li>
-<li class="chapter" data-level="10.4" data-path="复合选择器.html"><a href="复合选择器.html#并集选择器"><i class="fa fa-check"></i><b>10.4</b> 并集选择器</a></li>
-<li class="chapter" data-level="10.5" data-path="复合选择器.html"><a href="复合选择器.html#伪类选择器"><i class="fa fa-check"></i><b>10.5</b> 伪类选择器</a>
+<li class="chapter" data-level="10.2" data-path="复合选择器.html"><a href="复合选择器.html#属性选择器"><i class="fa fa-check"></i><b>10.2</b> 属性选择器</a></li>
+<li class="chapter" data-level="10.3" data-path="复合选择器.html"><a href="复合选择器.html#后代选择器"><i class="fa fa-check"></i><b>10.3</b> 后代选择器</a></li>
+<li class="chapter" data-level="10.4" data-path="复合选择器.html"><a href="复合选择器.html#子选择器"><i class="fa fa-check"></i><b>10.4</b> 子选择器</a></li>
+<li class="chapter" data-level="10.5" data-path="复合选择器.html"><a href="复合选择器.html#并集选择器"><i class="fa fa-check"></i><b>10.5</b> 并集选择器</a></li>
+<li class="chapter" data-level="10.6" data-path="复合选择器.html"><a href="复合选择器.html#伪类选择器"><i class="fa fa-check"></i><b>10.6</b> 伪类选择器</a>
 <ul>
-<li class="chapter" data-level="10.5.1" data-path="复合选择器.html"><a href="复合选择器.html#链接伪类"><i class="fa fa-check"></i><b>10.5.1</b> 链接伪类</a></li>
-<li class="chapter" data-level="10.5.2" data-path="复合选择器.html"><a href="复合选择器.html#focus伪类选择器"><i class="fa fa-check"></i><b>10.5.2</b> :focus伪类选择器</a></li>
+<li class="chapter" data-level="10.6.1" data-path="复合选择器.html"><a href="复合选择器.html#链接伪类"><i class="fa fa-check"></i><b>10.6.1</b> 链接伪类</a></li>
+<li class="chapter" data-level="10.6.2" data-path="复合选择器.html"><a href="复合选择器.html#focus伪类选择器"><i class="fa fa-check"></i><b>10.6.2</b> :focus伪类选择器</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器总结"><i class="fa fa-check"></i><b>10.6</b> 复合选择器总结</a></li>
-<li class="chapter" data-level="10.7" data-path="复合选择器.html"><a href="复合选择器.html#课堂练习"><i class="fa fa-check"></i><b>10.7</b> 课堂练习</a></li>
+<li class="chapter" data-level="10.7" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器总结"><i class="fa fa-check"></i><b>10.7</b> 复合选择器总结</a></li>
+<li class="chapter" data-level="10.8" data-path="复合选择器.html"><a href="复合选择器.html#多个选择器的覆盖问题"><i class="fa fa-check"></i><b>10.8</b> 多个选择器的覆盖问题</a></li>
+<li class="chapter" data-level="10.9" data-path="复合选择器.html"><a href="复合选择器.html#课堂练习"><i class="fa fa-check"></i><b>10.9</b> 课堂练习</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="元素的显示模式.html"><a href="元素的显示模式.html"><i class="fa fa-check"></i><b>11</b> 元素的显示模式</a>
 <ul>
@@ -363,23 +365,92 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.18.4" data-path="盒子模型.html"><a href="盒子模型.html#快报模块"><i class="fa fa-check"></i><b>14.18.4</b> 快报模块</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="浮动.html"><a href="浮动.html"><i class="fa fa-check"></i><b>15</b> 浮动</a></li>
+<li class="chapter" data-level="15" data-path="浮动.html"><a href="浮动.html"><i class="fa fa-check"></i><b>15</b> 浮动</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="浮动.html"><a href="浮动.html#传统网页布局的三种方式"><i class="fa fa-check"></i><b>15.1</b> 传统网页布局的三种方式</a></li>
+<li class="chapter" data-level="15.2" data-path="浮动.html"><a href="浮动.html#标准流普通流文档流"><i class="fa fa-check"></i><b>15.2</b> 标准流（普通流/文档流）</a></li>
+<li class="chapter" data-level="15.3" data-path="浮动.html"><a href="浮动.html#为什么需要浮动"><i class="fa fa-check"></i><b>15.3</b> 为什么需要浮动</a></li>
+<li class="chapter" data-level="15.4" data-path="浮动.html"><a href="浮动.html#什么是浮动"><i class="fa fa-check"></i><b>15.4</b> 什么是浮动</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="浮动.html"><a href="浮动.html#脱标"><i class="fa fa-check"></i><b>15.4.1</b> 脱标</a></li>
+<li class="chapter" data-level="15.4.2" data-path="浮动.html"><a href="浮动.html#浮动盒子一行显示"><i class="fa fa-check"></i><b>15.4.2</b> 浮动盒子一行显示</a></li>
+<li class="chapter" data-level="15.4.3" data-path="浮动.html"><a href="浮动.html#浮动元素具有行内块特性"><i class="fa fa-check"></i><b>15.4.3</b> 浮动元素具有行内块特性</a></li>
+</ul></li>
+<li class="chapter" data-level="15.5" data-path="浮动.html"><a href="浮动.html#浮动元素标准流经常和标准流父亲搭配使用"><i class="fa fa-check"></i><b>15.5</b> 浮动元素标准流经常和标准流父亲搭配使用</a></li>
+<li class="chapter" data-level="15.6" data-path="浮动.html"><a href="浮动.html#常见的网页布局"><i class="fa fa-check"></i><b>15.6</b> 常见的网页布局</a></li>
+<li class="chapter" data-level="15.7" data-path="浮动.html"><a href="浮动.html#浮动布局注意点"><i class="fa fa-check"></i><b>15.7</b> 浮动布局注意点</a></li>
+<li class="chapter" data-level="15.8" data-path="浮动.html"><a href="浮动.html#清除浮动"><i class="fa fa-check"></i><b>15.8</b> 清除浮动</a>
+<ul>
+<li class="chapter" data-level="15.8.1" data-path="浮动.html"><a href="浮动.html#为什么要清除浮动"><i class="fa fa-check"></i><b>15.8.1</b> 为什么要清除浮动</a></li>
+<li class="chapter" data-level="15.8.2" data-path="浮动.html"><a href="浮动.html#清除浮动的本质"><i class="fa fa-check"></i><b>15.8.2</b> 清除浮动的本质</a></li>
+<li class="chapter" data-level="15.8.3" data-path="浮动.html"><a href="浮动.html#清除浮动的方法"><i class="fa fa-check"></i><b>15.8.3</b> 清除浮动的方法</a></li>
+<li class="chapter" data-level="15.8.4" data-path="浮动.html"><a href="浮动.html#额外标签法"><i class="fa fa-check"></i><b>15.8.4</b> 额外标签法</a></li>
+<li class="chapter" data-level="15.8.5" data-path="浮动.html"><a href="浮动.html#父元素添加overflow"><i class="fa fa-check"></i><b>15.8.5</b> 父元素添加overflow</a></li>
+<li class="chapter" data-level="15.8.6" data-path="浮动.html"><a href="浮动.html#清除浮动after伪元素法"><i class="fa fa-check"></i><b>15.8.6</b> 清除浮动——:after伪元素法</a></li>
+<li class="chapter" data-level="15.8.7" data-path="浮动.html"><a href="浮动.html#双伪元素清除浮动"><i class="fa fa-check"></i><b>15.8.7</b> 双伪元素清除浮动</a></li>
+</ul></li>
+<li class="chapter" data-level="15.9" data-path="浮动.html"><a href="浮动.html#清除浮动总结"><i class="fa fa-check"></i><b>15.9</b> 清除浮动总结</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="定位.html"><a href="定位.html"><i class="fa fa-check"></i><b>16</b> 定位</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="定位.html"><a href="定位.html#为什么需要定位"><i class="fa fa-check"></i><b>16.1</b> 为什么需要定位</a></li>
+<li class="chapter" data-level="16.2" data-path="定位.html"><a href="定位.html#定位的组成"><i class="fa fa-check"></i><b>16.2</b> 定位的组成</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="定位.html"><a href="定位.html#定位模式"><i class="fa fa-check"></i><b>16.2.1</b> 定位模式</a></li>
+<li class="chapter" data-level="16.2.2" data-path="定位.html"><a href="定位.html#边偏移"><i class="fa fa-check"></i><b>16.2.2</b> 边偏移</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="定位.html"><a href="定位.html#静态定位"><i class="fa fa-check"></i><b>16.3</b> 静态定位</a></li>
+<li class="chapter" data-level="16.4" data-path="定位.html"><a href="定位.html#相对定位"><i class="fa fa-check"></i><b>16.4</b> 相对定位</a></li>
+<li class="chapter" data-level="16.5" data-path="定位.html"><a href="定位.html#绝对定位"><i class="fa fa-check"></i><b>16.5</b> 绝对定位</a></li>
+<li class="chapter" data-level="16.6" data-path="定位.html"><a href="定位.html#子绝父相的由来"><i class="fa fa-check"></i><b>16.6</b> 子绝父相的由来</a></li>
+<li class="chapter" data-level="16.7" data-path="定位.html"><a href="定位.html#固定定位"><i class="fa fa-check"></i><b>16.7</b> 固定定位</a></li>
+<li class="chapter" data-level="16.8" data-path="定位.html"><a href="定位.html#粘性定位"><i class="fa fa-check"></i><b>16.8</b> 粘性定位</a></li>
+<li class="chapter" data-level="16.9" data-path="定位.html"><a href="定位.html#定位的总结"><i class="fa fa-check"></i><b>16.9</b> 定位的总结</a></li>
+<li class="chapter" data-level="16.10" data-path="定位.html"><a href="定位.html#定位叠放次序"><i class="fa fa-check"></i><b>16.10</b> 定位叠放次序</a></li>
+<li class="chapter" data-level="16.11" data-path="定位.html"><a href="定位.html#定位的拓展"><i class="fa fa-check"></i><b>16.11</b> 定位的拓展</a>
+<ul>
+<li class="chapter" data-level="16.11.1" data-path="定位.html"><a href="定位.html#绝对固定定位的盒子居中"><i class="fa fa-check"></i><b>16.11.1</b> 绝对/固定定位的盒子居中</a></li>
+<li class="chapter" data-level="16.11.2" data-path="定位.html"><a href="定位.html#定位特殊性"><i class="fa fa-check"></i><b>16.11.2</b> 定位特殊性</a></li>
+<li class="chapter" data-level="16.11.3" data-path="定位.html"><a href="定位.html#脱标的盒子不会触发外边距塌陷"><i class="fa fa-check"></i><b>16.11.3</b> 脱标的盒子不会触发外边距塌陷</a></li>
+<li class="chapter" data-level="16.11.4" data-path="定位.html"><a href="定位.html#绝对固定定位会完全压住盒子"><i class="fa fa-check"></i><b>16.11.4</b> 绝对/固定定位会完全压住盒子</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="学成在线案例.html"><a href="学成在线案例.html"><i class="fa fa-check"></i><b>17</b> 学成在线案例</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="学成在线案例.html"><a href="学成在线案例.html#准备素材和工具"><i class="fa fa-check"></i><b>17.1</b> 准备素材和工具</a></li>
+<li class="chapter" data-level="17.2" data-path="学成在线案例.html"><a href="学成在线案例.html#案例准备工作"><i class="fa fa-check"></i><b>17.2</b> 案例准备工作</a></li>
+<li class="chapter" data-level="17.3" data-path="学成在线案例.html"><a href="学成在线案例.html#css属性书写顺序"><i class="fa fa-check"></i><b>17.3</b> CSS属性书写顺序</a></li>
+<li class="chapter" data-level="17.4" data-path="学成在线案例.html"><a href="学成在线案例.html#页面布局整体思路"><i class="fa fa-check"></i><b>17.4</b> 页面布局整体思路</a>
+<ul>
+<li class="chapter" data-level="17.4.1" data-path="学成在线案例.html"><a href="学成在线案例.html#确定版心"><i class="fa fa-check"></i><b>17.4.1</b> 确定版心</a></li>
+<li class="chapter" data-level="17.4.2" data-path="学成在线案例.html"><a href="学成在线案例.html#头部制作"><i class="fa fa-check"></i><b>17.4.2</b> 头部制作</a></li>
+<li class="chapter" data-level="17.4.3" data-path="学成在线案例.html"><a href="学成在线案例.html#精品推荐小模块"><i class="fa fa-check"></i><b>17.4.3</b> 精品推荐小模块</a></li>
+<li class="chapter" data-level="17.4.4" data-path="学成在线案例.html"><a href="学成在线案例.html#精品推荐大模块"><i class="fa fa-check"></i><b>17.4.4</b> 精品推荐大模块</a></li>
+<li class="chapter" data-level="17.4.5" data-path="学成在线案例.html"><a href="学成在线案例.html#底部模块"><i class="fa fa-check"></i><b>17.4.5</b> 底部模块</a></li>
+</ul></li>
+</ul></li>
 <li class="part"><span><b>III 附录</b></span></li>
-<li class="chapter" data-level="16" data-path="其他软件.html"><a href="其他软件.html"><i class="fa fa-check"></i><b>16</b> 其他软件</a>
+<li class="chapter" data-level="18" data-path="vscode常用操作.html"><a href="vscode常用操作.html"><i class="fa fa-check"></i><b>18</b> Vscode常用操作</a></li>
+<li class="chapter" data-level="19" data-path="ps.html"><a href="ps.html"><i class="fa fa-check"></i><b>19</b> PS</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="其他软件.html"><a href="其他软件.html#vscode常用操作"><i class="fa fa-check"></i><b>16.1</b> Vscode常用操作</a></li>
-<li class="chapter" data-level="16.2" data-path="其他软件.html"><a href="其他软件.html#ps"><i class="fa fa-check"></i><b>16.2</b> PS</a></li>
+<li class="chapter" data-level="19.1" data-path="ps.html"><a href="ps.html#ps切图"><i class="fa fa-check"></i><b>19.1</b> PS切图</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="ps.html"><a href="ps.html#常见的图片格式"><i class="fa fa-check"></i><b>19.1.1</b> 常见的图片格式</a></li>
+<li class="chapter" data-level="19.1.2" data-path="ps.html"><a href="ps.html#图层切图"><i class="fa fa-check"></i><b>19.1.2</b> 图层切图</a></li>
+<li class="chapter" data-level="19.1.3" data-path="ps.html"><a href="ps.html#切片工具"><i class="fa fa-check"></i><b>19.1.3</b> 切片工具</a></li>
+<li class="chapter" data-level="19.1.4" data-path="ps.html"><a href="ps.html#插件切图"><i class="fa fa-check"></i><b>19.1.4</b> 插件切图</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="chrome调试工具.html"><a href="chrome调试工具.html"><i class="fa fa-check"></i><b>17</b> Chrome调试工具</a>
-<ul>
-<li class="chapter" data-level="17.1" data-path="chrome调试工具.html"><a href="chrome调试工具.html#打开调试工具"><i class="fa fa-check"></i><b>17.1</b> 打开调试工具</a></li>
-<li class="chapter" data-level="17.2" data-path="chrome调试工具.html"><a href="chrome调试工具.html#使用调试工具"><i class="fa fa-check"></i><b>17.2</b> 使用调试工具</a></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="emmet语法.html"><a href="emmet语法.html"><i class="fa fa-check"></i><b>18</b> Emmet语法</a>
+<li class="chapter" data-level="20" data-path="chrome调试工具.html"><a href="chrome调试工具.html"><i class="fa fa-check"></i><b>20</b> Chrome调试工具</a>
 <ul>
-<li class="chapter" data-level="18.1" data-path="emmet语法.html"><a href="emmet语法.html#快速生成html结构语法"><i class="fa fa-check"></i><b>18.1</b> 快速生成HTML结构语法</a></li>
-<li class="chapter" data-level="18.2" data-path="emmet语法.html"><a href="emmet语法.html#快速生成css样式语法"><i class="fa fa-check"></i><b>18.2</b> 快速生成CSS样式语法</a></li>
-<li class="chapter" data-level="18.3" data-path="emmet语法.html"><a href="emmet语法.html#快速格式化代码"><i class="fa fa-check"></i><b>18.3</b> 快速格式化代码</a></li>
+<li class="chapter" data-level="20.1" data-path="chrome调试工具.html"><a href="chrome调试工具.html#打开调试工具"><i class="fa fa-check"></i><b>20.1</b> 打开调试工具</a></li>
+<li class="chapter" data-level="20.2" data-path="chrome调试工具.html"><a href="chrome调试工具.html#使用调试工具"><i class="fa fa-check"></i><b>20.2</b> 使用调试工具</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="emmet语法.html"><a href="emmet语法.html"><i class="fa fa-check"></i><b>21</b> Emmet语法</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="emmet语法.html"><a href="emmet语法.html#快速生成html结构语法"><i class="fa fa-check"></i><b>21.1</b> 快速生成HTML结构语法</a></li>
+<li class="chapter" data-level="21.2" data-path="emmet语法.html"><a href="emmet语法.html#快速生成css样式语法"><i class="fa fa-check"></i><b>21.2</b> 快速生成CSS样式语法</a></li>
+<li class="chapter" data-level="21.3" data-path="emmet语法.html"><a href="emmet语法.html#快速格式化代码"><i class="fa fa-check"></i><b>21.3</b> 快速格式化代码</a></li>
 </ul></li>
 </ul>
 
@@ -398,36 +469,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="css背景" class="section level1" number="12">
-<h1><span class="header-section-number">12</span> CSS背景</h1>
+<div id="css背景" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">12</span> CSS背景<a href="css背景.html#css背景" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>通过CSS背景属性，可以给页面元素添加背景样式。</p>
 <p>背景属性可以设置背景颜色、背景图片、背景平铺、背景图片位置、背景图像固定等。</p>
-<div id="背景颜色" class="section level2" number="12.1">
-<h2><span class="header-section-number">12.1</span> 背景颜色</h2>
+<div id="背景颜色" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> 背景颜色<a href="css背景.html#背景颜色" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>background-color属性定义了元素的背景颜色。</p>
 <p><strong>语法</strong></p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb107-1"><a href="css背景.html#cb107-1" aria-hidden="true" tabindex="-1"></a>background-color:颜色值;</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb114-1"><a href="css背景.html#cb114-1" tabindex="-1"></a>background-color:颜色值;</span></code></pre></div>
 <p>一般情况下元素背景颜色默认值是<strong>transparent（透明）</strong>，我们也可以手动指定背景颜色为透明色。</p>
 <p><strong>例子</strong></p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb108-1"><a href="css背景.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb108-2"><a href="css背景.html#cb108-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb108-3"><a href="css背景.html#cb108-3" aria-hidden="true" tabindex="-1"></a>        div {</span>
-<span id="cb108-4"><a href="css背景.html#cb108-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb108-5"><a href="css背景.html#cb108-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb108-6"><a href="css背景.html#cb108-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
-<span id="cb108-7"><a href="css背景.html#cb108-7" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb108-8"><a href="css背景.html#cb108-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb108-9"><a href="css背景.html#cb108-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb108-10"><a href="css背景.html#cb108-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb108-11"><a href="css背景.html#cb108-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb108-12"><a href="css背景.html#cb108-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;&lt;/div&gt;</span></span>
-<span id="cb108-13"><a href="css背景.html#cb108-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb115-1"><a href="css背景.html#cb115-1" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb115-2"><a href="css背景.html#cb115-2" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb115-3"><a href="css背景.html#cb115-3" tabindex="-1"></a>        div {</span>
+<span id="cb115-4"><a href="css背景.html#cb115-4" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb115-5"><a href="css背景.html#cb115-5" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb115-6"><a href="css背景.html#cb115-6" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb115-7"><a href="css背景.html#cb115-7" tabindex="-1"></a>        }</span>
+<span id="cb115-8"><a href="css背景.html#cb115-8" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb115-9"><a href="css背景.html#cb115-9" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb115-10"><a href="css背景.html#cb115-10" tabindex="-1"></a></span>
+<span id="cb115-11"><a href="css背景.html#cb115-11" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb115-12"><a href="css背景.html#cb115-12" tabindex="-1"></a>    <span class="kw">&lt;div&gt;&lt;/div&gt;</span></span>
+<span id="cb115-13"><a href="css背景.html#cb115-13" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 </div>
-<div id="背景图片" class="section level2" number="12.2">
-<h2><span class="header-section-number">12.2</span> 背景图片</h2>
+<div id="背景图片" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> 背景图片<a href="css背景.html#背景图片" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>background-image属性描述了元素的背景图像。实际开发常见于logo或者一些装饰性的小图片或者是超大的背景图片,优点是非常便于控制位置.(精灵图也是一种运用场景)</p>
 <p><strong>语法</strong></p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb109-1"><a href="css背景.html#cb109-1" aria-hidden="true" tabindex="-1"></a>background-image: none | url(url)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb116-1"><a href="css背景.html#cb116-1" tabindex="-1"></a>background-image: none | url(url)</span></code></pre></div>
 <table>
 <caption><span id="tab:unnamed-chunk-4">表2.1: </span>背景图片</caption>
 <thead>
@@ -448,25 +519,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p><strong>例子</strong></p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb110-1"><a href="css背景.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb110-2"><a href="css背景.html#cb110-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb110-3"><a href="css背景.html#cb110-3" aria-hidden="true" tabindex="-1"></a>        div {</span>
-<span id="cb110-4"><a href="css背景.html#cb110-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">800</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb110-5"><a href="css背景.html#cb110-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">800</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb110-6"><a href="css背景.html#cb110-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../图片/men.jpeg</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb110-7"><a href="css背景.html#cb110-7" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb110-8"><a href="css背景.html#cb110-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb110-9"><a href="css背景.html#cb110-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb110-10"><a href="css背景.html#cb110-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb110-11"><a href="css背景.html#cb110-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb110-12"><a href="css背景.html#cb110-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;&lt;/div&gt;</span></span>
-<span id="cb110-13"><a href="css背景.html#cb110-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb117-1"><a href="css背景.html#cb117-1" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb117-2"><a href="css背景.html#cb117-2" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb117-3"><a href="css背景.html#cb117-3" tabindex="-1"></a>        div {</span>
+<span id="cb117-4"><a href="css背景.html#cb117-4" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">800</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb117-5"><a href="css背景.html#cb117-5" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">800</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb117-6"><a href="css背景.html#cb117-6" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../图片/men.jpeg</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb117-7"><a href="css背景.html#cb117-7" tabindex="-1"></a>        }</span>
+<span id="cb117-8"><a href="css背景.html#cb117-8" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb117-9"><a href="css背景.html#cb117-9" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb117-10"><a href="css背景.html#cb117-10" tabindex="-1"></a></span>
+<span id="cb117-11"><a href="css背景.html#cb117-11" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb117-12"><a href="css背景.html#cb117-12" tabindex="-1"></a>    <span class="kw">&lt;div&gt;&lt;/div&gt;</span></span>
+<span id="cb117-13"><a href="css背景.html#cb117-13" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 </div>
-<div id="背景平铺" class="section level2" number="12.3">
-<h2><span class="header-section-number">12.3</span> 背景平铺</h2>
+<div id="背景平铺" class="section level2 hasAnchor" number="12.3">
+<h2><span class="header-section-number">12.3</span> 背景平铺<a href="css背景.html#背景平铺" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>如果需要在HTML页面上对背景进行平铺，可以使用background-repeat属性</p>
 <p><strong>语法</strong></p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb111-1"><a href="css背景.html#cb111-1" aria-hidden="true" tabindex="-1"></a>background-repeat: repeat | no-repeat | repeat-x | repeat-y</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb118-1"><a href="css背景.html#cb118-1" tabindex="-1"></a>background-repeat: repeat | no-repeat | repeat-x | repeat-y</span></code></pre></div>
 <table>
 <caption><span id="tab:unnamed-chunk-7">表8.2: </span>背景平铺参数值</caption>
 <thead>
@@ -495,36 +566,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p><strong>例子</strong></p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb112-1"><a href="css背景.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb112-2"><a href="css背景.html#cb112-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb112-3"><a href="css背景.html#cb112-3" aria-hidden="true" tabindex="-1"></a>        div {</span>
-<span id="cb112-4"><a href="css背景.html#cb112-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">800</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb112-5"><a href="css背景.html#cb112-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">800</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb112-6"><a href="css背景.html#cb112-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../图片/men.jpeg</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb112-7"><a href="css背景.html#cb112-7" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 默认情况下，背景图片平铺 */</span></span>
-<span id="cb112-8"><a href="css背景.html#cb112-8" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* background-repeat: no-repeat; */</span></span>
-<span id="cb112-9"><a href="css背景.html#cb112-9" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 背景图片不平铺 */</span></span>
-<span id="cb112-10"><a href="css背景.html#cb112-10" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* background-repeat: no-repeat; */</span></span>
-<span id="cb112-11"><a href="css背景.html#cb112-11" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 背景图片沿着x轴平铺  */</span></span>
-<span id="cb112-12"><a href="css背景.html#cb112-12" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* background-repeat: repeat-x; */</span></span>
-<span id="cb112-13"><a href="css背景.html#cb112-13" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 背景图片沿着y轴平铺  */</span></span>
-<span id="cb112-14"><a href="css背景.html#cb112-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-repeat</span>: <span class="dv">repeat-y</span><span class="op">;</span></span>
-<span id="cb112-15"><a href="css背景.html#cb112-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">green</span><span class="op">;</span></span>
-<span id="cb112-16"><a href="css背景.html#cb112-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-17"><a href="css背景.html#cb112-17" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb112-18"><a href="css背景.html#cb112-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb112-19"><a href="css背景.html#cb112-19" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb112-20"><a href="css背景.html#cb112-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-21"><a href="css背景.html#cb112-21" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb112-22"><a href="css背景.html#cb112-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;&lt;/div&gt;</span></span>
-<span id="cb112-23"><a href="css背景.html#cb112-23" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb119-1"><a href="css背景.html#cb119-1" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb119-2"><a href="css背景.html#cb119-2" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb119-3"><a href="css背景.html#cb119-3" tabindex="-1"></a>        div {</span>
+<span id="cb119-4"><a href="css背景.html#cb119-4" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">800</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb119-5"><a href="css背景.html#cb119-5" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">800</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb119-6"><a href="css背景.html#cb119-6" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../图片/men.jpeg</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb119-7"><a href="css背景.html#cb119-7" tabindex="-1"></a>            <span class="co">/* 默认情况下，背景图片平铺 */</span></span>
+<span id="cb119-8"><a href="css背景.html#cb119-8" tabindex="-1"></a>            <span class="co">/* background-repeat: no-repeat; */</span></span>
+<span id="cb119-9"><a href="css背景.html#cb119-9" tabindex="-1"></a>            <span class="co">/* 背景图片不平铺 */</span></span>
+<span id="cb119-10"><a href="css背景.html#cb119-10" tabindex="-1"></a>            <span class="co">/* background-repeat: no-repeat; */</span></span>
+<span id="cb119-11"><a href="css背景.html#cb119-11" tabindex="-1"></a>            <span class="co">/* 背景图片沿着x轴平铺  */</span></span>
+<span id="cb119-12"><a href="css背景.html#cb119-12" tabindex="-1"></a>            <span class="co">/* background-repeat: repeat-x; */</span></span>
+<span id="cb119-13"><a href="css背景.html#cb119-13" tabindex="-1"></a>            <span class="co">/* 背景图片沿着y轴平铺  */</span></span>
+<span id="cb119-14"><a href="css背景.html#cb119-14" tabindex="-1"></a>            <span class="kw">background-repeat</span>: <span class="dv">repeat-y</span><span class="op">;</span></span>
+<span id="cb119-15"><a href="css背景.html#cb119-15" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">green</span><span class="op">;</span></span>
+<span id="cb119-16"><a href="css背景.html#cb119-16" tabindex="-1"></a></span>
+<span id="cb119-17"><a href="css背景.html#cb119-17" tabindex="-1"></a>        }</span>
+<span id="cb119-18"><a href="css背景.html#cb119-18" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb119-19"><a href="css背景.html#cb119-19" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb119-20"><a href="css背景.html#cb119-20" tabindex="-1"></a></span>
+<span id="cb119-21"><a href="css背景.html#cb119-21" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb119-22"><a href="css背景.html#cb119-22" tabindex="-1"></a>    <span class="kw">&lt;div&gt;&lt;/div&gt;</span></span>
+<span id="cb119-23"><a href="css背景.html#cb119-23" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 <p><strong>注意</strong>：页面元素既可以添加背景颜色，也可以添加背景图片，只不过背景图片会压住背景颜色</p>
 </div>
-<div id="背景图片的位置" class="section level2" number="12.4">
-<h2><span class="header-section-number">12.4</span> 背景图片的位置</h2>
+<div id="背景图片的位置" class="section level2 hasAnchor" number="12.4">
+<h2><span class="header-section-number">12.4</span> 背景图片的位置<a href="css背景.html#背景图片的位置" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>利用background-position属性可以改变图片在背景中的位置。</p>
 <p><strong>语法</strong></p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb113-1"><a href="css背景.html#cb113-1" aria-hidden="true" tabindex="-1"></a>background-position: x y;</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb120-1"><a href="css背景.html#cb120-1" tabindex="-1"></a>background-position: x y;</span></code></pre></div>
 <table>
 <caption><span id="tab:unnamed-chunk-10">表4.3: </span>背景图片位置</caption>
 <thead>
@@ -544,101 +615,101 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div id="参数是方位名词" class="section level3" number="12.4.1">
-<h3><span class="header-section-number">12.4.1</span> 参数是方位名词</h3>
+<div id="参数是方位名词" class="section level3 hasAnchor" number="12.4.1">
+<h3><span class="header-section-number">12.4.1</span> 参数是方位名词<a href="css背景.html#参数是方位名词" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>例子:<a href="https://pvp.qq.com/" target="_blank">王者荣耀官网</a></p>
 <ul>
 <li><p>如果指定的两个值都是方位名词，则两个值前后顺序无关，比如left top和top left效果一致</p></li>
 <li><p>如果只指定了一个方位名词，另一个值省略，则第二个值默认居中对齐</p></li>
 </ul>
 <p><strong>例子</strong></p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb114-1"><a href="css背景.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb114-2"><a href="css背景.html#cb114-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Document<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb114-3"><a href="css背景.html#cb114-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb114-4"><a href="css背景.html#cb114-4" aria-hidden="true" tabindex="-1"></a>        div {</span>
-<span id="cb114-5"><a href="css背景.html#cb114-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">800</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb114-6"><a href="css背景.html#cb114-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">800</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb114-7"><a href="css背景.html#cb114-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../图片/men.jpeg</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb114-8"><a href="css背景.html#cb114-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-repeat</span>: <span class="dv">no-repeat</span><span class="op">;</span></span>
-<span id="cb114-9"><a href="css背景.html#cb114-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">green</span><span class="op">;</span></span>
-<span id="cb114-10"><a href="css背景.html#cb114-10" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 水平居中，垂直靠上 */</span></span>
-<span id="cb114-11"><a href="css背景.html#cb114-11" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* background-position: center top; */</span></span>
-<span id="cb114-12"><a href="css背景.html#cb114-12" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 水平靠右，垂直居中 */</span></span>
-<span id="cb114-13"><a href="css背景.html#cb114-13" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* background-position: right center; */</span></span>
-<span id="cb114-14"><a href="css背景.html#cb114-14" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 如果是方位名词，单次顺序可以互换： center和roght */</span></span>
-<span id="cb114-15"><a href="css背景.html#cb114-15" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* background-position: center right; */</span></span>
-<span id="cb114-16"><a href="css背景.html#cb114-16" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 方位名词的第二个参数省略时，默认为center */</span></span>
-<span id="cb114-17"><a href="css背景.html#cb114-17" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-position</span>: <span class="dv">right</span><span class="op">;</span></span>
-<span id="cb114-18"><a href="css背景.html#cb114-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb114-19"><a href="css背景.html#cb114-19" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb114-20"><a href="css背景.html#cb114-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb114-21"><a href="css背景.html#cb114-21" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb114-22"><a href="css背景.html#cb114-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb114-23"><a href="css背景.html#cb114-23" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb114-24"><a href="css背景.html#cb114-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;&lt;/div&gt;</span></span>
-<span id="cb114-25"><a href="css背景.html#cb114-25" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb121-1"><a href="css背景.html#cb121-1" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb121-2"><a href="css背景.html#cb121-2" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Document<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb121-3"><a href="css背景.html#cb121-3" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb121-4"><a href="css背景.html#cb121-4" tabindex="-1"></a>        div {</span>
+<span id="cb121-5"><a href="css背景.html#cb121-5" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">800</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb121-6"><a href="css背景.html#cb121-6" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">800</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb121-7"><a href="css背景.html#cb121-7" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../图片/men.jpeg</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb121-8"><a href="css背景.html#cb121-8" tabindex="-1"></a>            <span class="kw">background-repeat</span>: <span class="dv">no-repeat</span><span class="op">;</span></span>
+<span id="cb121-9"><a href="css背景.html#cb121-9" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">green</span><span class="op">;</span></span>
+<span id="cb121-10"><a href="css背景.html#cb121-10" tabindex="-1"></a>            <span class="co">/* 水平居中，垂直靠上 */</span></span>
+<span id="cb121-11"><a href="css背景.html#cb121-11" tabindex="-1"></a>            <span class="co">/* background-position: center top; */</span></span>
+<span id="cb121-12"><a href="css背景.html#cb121-12" tabindex="-1"></a>            <span class="co">/* 水平靠右，垂直居中 */</span></span>
+<span id="cb121-13"><a href="css背景.html#cb121-13" tabindex="-1"></a>            <span class="co">/* background-position: right center; */</span></span>
+<span id="cb121-14"><a href="css背景.html#cb121-14" tabindex="-1"></a>            <span class="co">/* 如果是方位名词，单次顺序可以互换： center和roght */</span></span>
+<span id="cb121-15"><a href="css背景.html#cb121-15" tabindex="-1"></a>            <span class="co">/* background-position: center right; */</span></span>
+<span id="cb121-16"><a href="css背景.html#cb121-16" tabindex="-1"></a>            <span class="co">/* 方位名词的第二个参数省略时，默认为center */</span></span>
+<span id="cb121-17"><a href="css背景.html#cb121-17" tabindex="-1"></a>            <span class="kw">background-position</span>: <span class="dv">right</span><span class="op">;</span></span>
+<span id="cb121-18"><a href="css背景.html#cb121-18" tabindex="-1"></a></span>
+<span id="cb121-19"><a href="css背景.html#cb121-19" tabindex="-1"></a>        }</span>
+<span id="cb121-20"><a href="css背景.html#cb121-20" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb121-21"><a href="css背景.html#cb121-21" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb121-22"><a href="css背景.html#cb121-22" tabindex="-1"></a></span>
+<span id="cb121-23"><a href="css背景.html#cb121-23" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb121-24"><a href="css背景.html#cb121-24" tabindex="-1"></a>    <span class="kw">&lt;div&gt;&lt;/div&gt;</span></span>
+<span id="cb121-25"><a href="css背景.html#cb121-25" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 </div>
-<div id="参数是精确单位" class="section level3" number="12.4.2">
-<h3><span class="header-section-number">12.4.2</span> 参数是精确单位</h3>
+<div id="参数是精确单位" class="section level3 hasAnchor" number="12.4.2">
+<h3><span class="header-section-number">12.4.2</span> 参数是精确单位<a href="css背景.html#参数是精确单位" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>如果参数是精确单位，那么第一个一定是x坐标，第二个是y坐标。</li>
 <li>如果只指定一个数值，那该数值一定是x坐标，另一个默认垂直居中。</li>
 </ul>
 <p><strong>例子</strong></p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb115-1"><a href="css背景.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb115-2"><a href="css背景.html#cb115-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb115-3"><a href="css背景.html#cb115-3" aria-hidden="true" tabindex="-1"></a>        h3 {</span>
-<span id="cb115-4"><a href="css背景.html#cb115-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">118</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb115-5"><a href="css背景.html#cb115-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb115-6"><a href="css背景.html#cb115-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
-<span id="cb115-7"><a href="css背景.html#cb115-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb115-8"><a href="css背景.html#cb115-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-weight</span>: <span class="dv">400</span><span class="op">;</span></span>
-<span id="cb115-9"><a href="css背景.html#cb115-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb115-10"><a href="css背景.html#cb115-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../图片/title_sprite.png</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb115-11"><a href="css背景.html#cb115-11" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-repeat</span>: <span class="dv">no-repeat</span><span class="op">;</span></span>
-<span id="cb115-12"><a href="css背景.html#cb115-12" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* x轴是20  y轴是50 */</span></span>
-<span id="cb115-13"><a href="css背景.html#cb115-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-position</span>: <span class="dv">20</span><span class="dt">px</span> <span class="dv">50</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb115-14"><a href="css背景.html#cb115-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-indent</span>: <span class="dv">1.5</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb115-15"><a href="css背景.html#cb115-15" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb115-16"><a href="css背景.html#cb115-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb115-17"><a href="css背景.html#cb115-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb115-18"><a href="css背景.html#cb115-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-19"><a href="css背景.html#cb115-19" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb115-20"><a href="css背景.html#cb115-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h3&gt;</span>成长守护平台<span class="kw">&lt;/h3&gt;</span></span>
-<span id="cb115-21"><a href="css背景.html#cb115-21" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb122-1"><a href="css背景.html#cb122-1" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb122-2"><a href="css背景.html#cb122-2" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb122-3"><a href="css背景.html#cb122-3" tabindex="-1"></a>        h3 {</span>
+<span id="cb122-4"><a href="css背景.html#cb122-4" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">118</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb122-5"><a href="css背景.html#cb122-5" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb122-6"><a href="css背景.html#cb122-6" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb122-7"><a href="css背景.html#cb122-7" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb122-8"><a href="css背景.html#cb122-8" tabindex="-1"></a>            <span class="kw">font-weight</span>: <span class="dv">400</span><span class="op">;</span></span>
+<span id="cb122-9"><a href="css背景.html#cb122-9" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb122-10"><a href="css背景.html#cb122-10" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../图片/title_sprite.png</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb122-11"><a href="css背景.html#cb122-11" tabindex="-1"></a>            <span class="kw">background-repeat</span>: <span class="dv">no-repeat</span><span class="op">;</span></span>
+<span id="cb122-12"><a href="css背景.html#cb122-12" tabindex="-1"></a>            <span class="co">/* x轴是20  y轴是50 */</span></span>
+<span id="cb122-13"><a href="css背景.html#cb122-13" tabindex="-1"></a>            <span class="kw">background-position</span>: <span class="dv">20</span><span class="dt">px</span> <span class="dv">50</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb122-14"><a href="css背景.html#cb122-14" tabindex="-1"></a>            <span class="kw">text-indent</span>: <span class="dv">1.5</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb122-15"><a href="css背景.html#cb122-15" tabindex="-1"></a>        }</span>
+<span id="cb122-16"><a href="css背景.html#cb122-16" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb122-17"><a href="css背景.html#cb122-17" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb122-18"><a href="css背景.html#cb122-18" tabindex="-1"></a></span>
+<span id="cb122-19"><a href="css背景.html#cb122-19" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb122-20"><a href="css背景.html#cb122-20" tabindex="-1"></a>    <span class="kw">&lt;h3&gt;</span>成长守护平台<span class="kw">&lt;/h3&gt;</span></span>
+<span id="cb122-21"><a href="css背景.html#cb122-21" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 </div>
-<div id="参数是混合单位" class="section level3" number="12.4.3">
-<h3><span class="header-section-number">12.4.3</span> 参数是混合单位</h3>
+<div id="参数是混合单位" class="section level3 hasAnchor" number="12.4.3">
+<h3><span class="header-section-number">12.4.3</span> 参数是混合单位<a href="css背景.html#参数是混合单位" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>如果指定的两个值是精确单位和方位名词混合使用，则第一个值是x坐标，第二个值是y坐标</li>
 </ul>
 <p><strong>例子</strong></p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb116-1"><a href="css背景.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb116-2"><a href="css背景.html#cb116-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb116-3"><a href="css背景.html#cb116-3" aria-hidden="true" tabindex="-1"></a>        h3 {</span>
-<span id="cb116-4"><a href="css背景.html#cb116-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">118</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb116-5"><a href="css背景.html#cb116-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb116-6"><a href="css背景.html#cb116-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
-<span id="cb116-7"><a href="css背景.html#cb116-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../图片/title_sprite.png</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb116-8"><a href="css背景.html#cb116-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-repeat</span>: <span class="dv">no-repeat</span><span class="op">;</span></span>
-<span id="cb116-9"><a href="css背景.html#cb116-9" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 混合单位 x为20  y是center */</span></span>
-<span id="cb116-10"><a href="css背景.html#cb116-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-position</span>: <span class="dv">20</span><span class="dt">px</span> <span class="dv">center</span><span class="op">;</span></span>
-<span id="cb116-11"><a href="css背景.html#cb116-11" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-indent</span>: <span class="dv">1.5</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb116-12"><a href="css背景.html#cb116-12" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb116-13"><a href="css背景.html#cb116-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb116-14"><a href="css背景.html#cb116-14" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb116-15"><a href="css背景.html#cb116-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb116-16"><a href="css背景.html#cb116-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h3&gt;</span>成长守护平台<span class="kw">&lt;/h3&gt;</span></span>
-<span id="cb116-17"><a href="css背景.html#cb116-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb123-1"><a href="css背景.html#cb123-1" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb123-2"><a href="css背景.html#cb123-2" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb123-3"><a href="css背景.html#cb123-3" tabindex="-1"></a>        h3 {</span>
+<span id="cb123-4"><a href="css背景.html#cb123-4" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">118</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb123-5"><a href="css背景.html#cb123-5" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb123-6"><a href="css背景.html#cb123-6" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb123-7"><a href="css背景.html#cb123-7" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../图片/title_sprite.png</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb123-8"><a href="css背景.html#cb123-8" tabindex="-1"></a>            <span class="kw">background-repeat</span>: <span class="dv">no-repeat</span><span class="op">;</span></span>
+<span id="cb123-9"><a href="css背景.html#cb123-9" tabindex="-1"></a>            <span class="co">/* 混合单位 x为20  y是center */</span></span>
+<span id="cb123-10"><a href="css背景.html#cb123-10" tabindex="-1"></a>            <span class="kw">background-position</span>: <span class="dv">20</span><span class="dt">px</span> <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb123-11"><a href="css背景.html#cb123-11" tabindex="-1"></a>            <span class="kw">text-indent</span>: <span class="dv">1.5</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb123-12"><a href="css背景.html#cb123-12" tabindex="-1"></a>        }</span>
+<span id="cb123-13"><a href="css背景.html#cb123-13" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb123-14"><a href="css背景.html#cb123-14" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb123-15"><a href="css背景.html#cb123-15" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb123-16"><a href="css背景.html#cb123-16" tabindex="-1"></a>    <span class="kw">&lt;h3&gt;</span>成长守护平台<span class="kw">&lt;/h3&gt;</span></span>
+<span id="cb123-17"><a href="css背景.html#cb123-17" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 </div>
 </div>
-<div id="背景图像固定背景附着" class="section level2" number="12.5">
-<h2><span class="header-section-number">12.5</span> 背景图像固定（背景附着）</h2>
+<div id="背景图像固定背景附着" class="section level2 hasAnchor" number="12.5">
+<h2><span class="header-section-number">12.5</span> 背景图像固定（背景附着）<a href="css背景.html#背景图像固定背景附着" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>实例：<a href="https://im.qq.com/" target="_blank">QQ官网</a></p>
 <p>background-attachment属性设置背景图像是否固定或者随着页面的其余部分滚动。
 background-attachment后期可以制作视差滚动的效果。</p>
 <p><strong>语法</strong></p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb117-1"><a href="css背景.html#cb117-1" aria-hidden="true" tabindex="-1"></a>background-attachment: scroll | fixed</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb124-1"><a href="css背景.html#cb124-1" tabindex="-1"></a>background-attachment: scroll | fixed</span></code></pre></div>
 <table>
 <caption><span id="tab:unnamed-chunk-15">表8.3: </span>背景附着</caption>
 <thead>
@@ -659,69 +730,69 @@ background-attachment后期可以制作视差滚动的效果。</p>
 </tbody>
 </table>
 <p><strong>例子</strong></p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb118-1"><a href="css背景.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb118-2"><a href="css背景.html#cb118-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb118-3"><a href="css背景.html#cb118-3" aria-hidden="true" tabindex="-1"></a>        body {</span>
-<span id="cb118-4"><a href="css背景.html#cb118-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-position</span>: <span class="dv">center</span> <span class="dv">top</span><span class="op">;</span></span>
-<span id="cb118-5"><a href="css背景.html#cb118-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-repeat</span>: <span class="dv">no-repeat</span><span class="op">;</span></span>
-<span id="cb118-6"><a href="css背景.html#cb118-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">fig/17-02.jpg</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb118-7"><a href="css背景.html#cb118-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">#fff</span><span class="op">;</span></span>
-<span id="cb118-8"><a href="css背景.html#cb118-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb118-9"><a href="css背景.html#cb118-9" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 把背景图片固定 */</span></span>
-<span id="cb118-10"><a href="css背景.html#cb118-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-attachment</span>: <span class="dv">fixed</span><span class="op">;</span></span>
-<span id="cb118-11"><a href="css背景.html#cb118-11" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb118-12"><a href="css背景.html#cb118-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb118-13"><a href="css背景.html#cb118-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb118-14"><a href="css背景.html#cb118-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb118-15"><a href="css背景.html#cb118-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb118-16"><a href="css背景.html#cb118-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-17"><a href="css背景.html#cb118-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-18"><a href="css背景.html#cb118-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-19"><a href="css背景.html#cb118-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-20"><a href="css背景.html#cb118-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-21"><a href="css背景.html#cb118-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-22"><a href="css背景.html#cb118-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-23"><a href="css背景.html#cb118-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-24"><a href="css背景.html#cb118-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-25"><a href="css背景.html#cb118-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-26"><a href="css背景.html#cb118-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-27"><a href="css背景.html#cb118-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-28"><a href="css背景.html#cb118-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-29"><a href="css背景.html#cb118-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-30"><a href="css背景.html#cb118-30" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-31"><a href="css背景.html#cb118-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-32"><a href="css背景.html#cb118-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-33"><a href="css背景.html#cb118-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-34"><a href="css背景.html#cb118-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-35"><a href="css背景.html#cb118-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-36"><a href="css背景.html#cb118-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-37"><a href="css背景.html#cb118-37" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-38"><a href="css背景.html#cb118-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb118-39"><a href="css背景.html#cb118-39" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb125-1"><a href="css背景.html#cb125-1" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb125-2"><a href="css背景.html#cb125-2" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb125-3"><a href="css背景.html#cb125-3" tabindex="-1"></a>        body {</span>
+<span id="cb125-4"><a href="css背景.html#cb125-4" tabindex="-1"></a>            <span class="kw">background-position</span>: <span class="dv">center</span> <span class="dv">top</span><span class="op">;</span></span>
+<span id="cb125-5"><a href="css背景.html#cb125-5" tabindex="-1"></a>            <span class="kw">background-repeat</span>: <span class="dv">no-repeat</span><span class="op">;</span></span>
+<span id="cb125-6"><a href="css背景.html#cb125-6" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">fig/17-02.jpg</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb125-7"><a href="css背景.html#cb125-7" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">#fff</span><span class="op">;</span></span>
+<span id="cb125-8"><a href="css背景.html#cb125-8" tabindex="-1"></a>            <span class="kw">font-size</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb125-9"><a href="css背景.html#cb125-9" tabindex="-1"></a>            <span class="co">/* 把背景图片固定 */</span></span>
+<span id="cb125-10"><a href="css背景.html#cb125-10" tabindex="-1"></a>            <span class="kw">background-attachment</span>: <span class="dv">fixed</span><span class="op">;</span></span>
+<span id="cb125-11"><a href="css背景.html#cb125-11" tabindex="-1"></a>        }</span>
+<span id="cb125-12"><a href="css背景.html#cb125-12" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb125-13"><a href="css背景.html#cb125-13" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb125-14"><a href="css背景.html#cb125-14" tabindex="-1"></a></span>
+<span id="cb125-15"><a href="css背景.html#cb125-15" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb125-16"><a href="css背景.html#cb125-16" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-17"><a href="css背景.html#cb125-17" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-18"><a href="css背景.html#cb125-18" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-19"><a href="css背景.html#cb125-19" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-20"><a href="css背景.html#cb125-20" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-21"><a href="css背景.html#cb125-21" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-22"><a href="css背景.html#cb125-22" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-23"><a href="css背景.html#cb125-23" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-24"><a href="css背景.html#cb125-24" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-25"><a href="css背景.html#cb125-25" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-26"><a href="css背景.html#cb125-26" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-27"><a href="css背景.html#cb125-27" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-28"><a href="css背景.html#cb125-28" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-29"><a href="css背景.html#cb125-29" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-30"><a href="css背景.html#cb125-30" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-31"><a href="css背景.html#cb125-31" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-32"><a href="css背景.html#cb125-32" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-33"><a href="css背景.html#cb125-33" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-34"><a href="css背景.html#cb125-34" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-35"><a href="css背景.html#cb125-35" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-36"><a href="css背景.html#cb125-36" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-37"><a href="css背景.html#cb125-37" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-38"><a href="css背景.html#cb125-38" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb125-39"><a href="css背景.html#cb125-39" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 </div>
-<div id="背景属性复合写法" class="section level2" number="12.6">
-<h2><span class="header-section-number">12.6</span> 背景属性复合写法</h2>
+<div id="背景属性复合写法" class="section level2 hasAnchor" number="12.6">
+<h2><span class="header-section-number">12.6</span> 背景属性复合写法<a href="css背景.html#背景属性复合写法" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>为了简化背景属性的代码，我们可以将这些属性合并简写在同一个属性background中。从而节约代码量。</p>
 <p>当使用简写属性时，<strong>没有特定的书写顺序</strong>,一般<strong>习惯约定顺序</strong>为:
 background:背景颜色背景图片地址背景平铺背景图像滚动背景图片位置;</p>
 <p><strong>例子</strong></p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb119-1"><a href="css背景.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb119-2"><a href="css背景.html#cb119-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb119-3"><a href="css背景.html#cb119-3" aria-hidden="true" tabindex="-1"></a>        body {</span>
-<span id="cb119-4"><a href="css背景.html#cb119-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background</span>: <span class="cn">#fff</span> <span class="fu">url(</span><span class="st">fig/17-02.jpg</span><span class="fu">)</span> <span class="dv">no-repeat</span> <span class="dv">fixed</span> <span class="dv">center</span> <span class="dv">top</span><span class="op">;</span></span>
-<span id="cb119-5"><a href="css背景.html#cb119-5" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb119-6"><a href="css背景.html#cb119-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb119-7"><a href="css背景.html#cb119-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb119-8"><a href="css背景.html#cb119-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-9"><a href="css背景.html#cb119-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb119-10"><a href="css背景.html#cb119-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb119-11"><a href="css背景.html#cb119-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb126-1"><a href="css背景.html#cb126-1" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb126-2"><a href="css背景.html#cb126-2" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb126-3"><a href="css背景.html#cb126-3" tabindex="-1"></a>        body {</span>
+<span id="cb126-4"><a href="css背景.html#cb126-4" tabindex="-1"></a>            <span class="kw">background</span>: <span class="cn">#fff</span> <span class="fu">url(</span><span class="st">fig/17-02.jpg</span><span class="fu">)</span> <span class="dv">no-repeat</span> <span class="dv">fixed</span> <span class="dv">center</span> <span class="dv">top</span><span class="op">;</span></span>
+<span id="cb126-5"><a href="css背景.html#cb126-5" tabindex="-1"></a>        }</span>
+<span id="cb126-6"><a href="css背景.html#cb126-6" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb126-7"><a href="css背景.html#cb126-7" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb126-8"><a href="css背景.html#cb126-8" tabindex="-1"></a></span>
+<span id="cb126-9"><a href="css背景.html#cb126-9" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb126-10"><a href="css背景.html#cb126-10" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>天王盖地虎，pink老师一米五<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb126-11"><a href="css背景.html#cb126-11" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 </div>
-<div id="背景色半透明" class="section level2" number="12.7">
-<h2><span class="header-section-number">12.7</span> 背景色半透明</h2>
+<div id="背景色半透明" class="section level2 hasAnchor" number="12.7">
+<h2><span class="header-section-number">12.7</span> 背景色半透明<a href="css背景.html#背景色半透明" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>CSS3为我们提供了背景色半透明的效果。</p>
 <p><strong>语法</strong></p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb120-1"><a href="css背景.html#cb120-1" aria-hidden="true" tabindex="-1"></a>background: rgb(0, 0, 0, 0.3);</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb127-1"><a href="css背景.html#cb127-1" tabindex="-1"></a>background: rgb(0, 0, 0, 0.3);</span></code></pre></div>
 <p><strong>注意</strong></p>
 <ul>
 <li><p>最后一个参数是alpha透明度，取值范围在0~1之间</p></li>
@@ -730,24 +801,29 @@ background:背景颜色背景图片地址背景平铺背景图像滚动背景图
 <li><p>但是现在实际开发,我们不太关注兼容性写法了,可以放心使用</p></li>
 </ul>
 <p><strong>例子</strong></p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb121-1"><a href="css背景.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb121-2"><a href="css背景.html#cb121-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb121-3"><a href="css背景.html#cb121-3" aria-hidden="true" tabindex="-1"></a>        div {</span>
-<span id="cb121-4"><a href="css背景.html#cb121-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb121-5"><a href="css背景.html#cb121-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb121-6"><a href="css背景.html#cb121-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background</span>: <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0.3</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb121-7"><a href="css背景.html#cb121-7" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb121-8"><a href="css背景.html#cb121-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb121-9"><a href="css背景.html#cb121-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb121-10"><a href="css背景.html#cb121-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb121-11"><a href="css背景.html#cb121-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb121-12"><a href="css背景.html#cb121-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>隐形的翅膀<span class="kw">&lt;/div&gt;</span></span>
-<span id="cb121-13"><a href="css背景.html#cb121-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb128-1"><a href="css背景.html#cb128-1" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb128-2"><a href="css背景.html#cb128-2" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb128-3"><a href="css背景.html#cb128-3" tabindex="-1"></a>        div {</span>
+<span id="cb128-4"><a href="css背景.html#cb128-4" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb128-5"><a href="css背景.html#cb128-5" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb128-6"><a href="css背景.html#cb128-6" tabindex="-1"></a>            <span class="kw">background</span>: <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0.3</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb128-7"><a href="css背景.html#cb128-7" tabindex="-1"></a>        }</span>
+<span id="cb128-8"><a href="css背景.html#cb128-8" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb128-9"><a href="css背景.html#cb128-9" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb128-10"><a href="css背景.html#cb128-10" tabindex="-1"></a></span>
+<span id="cb128-11"><a href="css背景.html#cb128-11" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb128-12"><a href="css背景.html#cb128-12" tabindex="-1"></a>    <span class="kw">&lt;div&gt;</span>隐形的翅膀<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb128-13"><a href="css背景.html#cb128-13" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 </div>
-<div id="背景总结" class="section level2" number="12.8">
-<h2><span class="header-section-number">12.8</span> 背景总结</h2>
+<div id="背景总结" class="section level2 hasAnchor" number="12.8">
+<h2><span class="header-section-number">12.8</span> 背景总结<a href="css背景.html#背景总结" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
-<caption><span id="tab:unnamed-chunk-20">表12.1: </span>背景总结</caption>
+<caption><span id="tab:unnamed-chunk-20">表10.1: </span>背景总结</caption>
+<colgroup>
+<col width="26%" />
+<col width="15%" />
+<col width="58%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">属性</th>
@@ -795,27 +871,27 @@ background:背景颜色背景图片地址背景平铺背景图像滚动背景图
 </table>
 <p>背景图片:实际开发常见于<strong>logo或者一些装饰性的小图片或者是超大的背景图片</strong>,优点是非常便于控制位置.(精灵图也是一种运用场景)</p>
 </div>
-<div id="案例-1" class="section level2" number="12.9">
-<h2><span class="header-section-number">12.9</span> 案例</h2>
-<div id="背景图片案例方位名词" class="section level3" number="12.9.1">
-<h3><span class="header-section-number">12.9.1</span> 背景图片案例：方位名词</h3>
-<div class="sourceCode" id="cb122"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb122-1"><a href="css背景.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
-<span id="cb122-2"><a href="css背景.html#cb122-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb122-3"><a href="css背景.html#cb122-3" aria-hidden="true" tabindex="-1"></a>        body {</span>
-<span id="cb122-4"><a href="css背景.html#cb122-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-position</span>: <span class="dv">center</span> <span class="dv">top</span><span class="op">;</span></span>
-<span id="cb122-5"><a href="css背景.html#cb122-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-repeat</span>: <span class="dv">no-repeat</span><span class="op">;</span></span>
-<span id="cb122-6"><a href="css背景.html#cb122-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">fig/17-02.jpg</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb122-7"><a href="css背景.html#cb122-7" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb122-8"><a href="css背景.html#cb122-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb122-9"><a href="css背景.html#cb122-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb122-10"><a href="css背景.html#cb122-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-11"><a href="css背景.html#cb122-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb122-12"><a href="css背景.html#cb122-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-13"><a href="css背景.html#cb122-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div id="案例-1" class="section level2 hasAnchor" number="12.9">
+<h2><span class="header-section-number">12.9</span> 案例<a href="css背景.html#案例-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="背景图片案例方位名词" class="section level3 hasAnchor" number="12.9.1">
+<h3><span class="header-section-number">12.9.1</span> 背景图片案例：方位名词<a href="css背景.html#背景图片案例方位名词" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb129"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb129-1"><a href="css背景.html#cb129-1" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb129-2"><a href="css背景.html#cb129-2" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb129-3"><a href="css背景.html#cb129-3" tabindex="-1"></a>        body {</span>
+<span id="cb129-4"><a href="css背景.html#cb129-4" tabindex="-1"></a>            <span class="kw">background-position</span>: <span class="dv">center</span> <span class="dv">top</span><span class="op">;</span></span>
+<span id="cb129-5"><a href="css背景.html#cb129-5" tabindex="-1"></a>            <span class="kw">background-repeat</span>: <span class="dv">no-repeat</span><span class="op">;</span></span>
+<span id="cb129-6"><a href="css背景.html#cb129-6" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">fig/17-02.jpg</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb129-7"><a href="css背景.html#cb129-7" tabindex="-1"></a>        }</span>
+<span id="cb129-8"><a href="css背景.html#cb129-8" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb129-9"><a href="css背景.html#cb129-9" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb129-10"><a href="css背景.html#cb129-10" tabindex="-1"></a></span>
+<span id="cb129-11"><a href="css背景.html#cb129-11" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb129-12"><a href="css背景.html#cb129-12" tabindex="-1"></a></span>
+<span id="cb129-13"><a href="css背景.html#cb129-13" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 </div>
 </div>
-<div id="五彩导航栏" class="section level2" number="12.10">
-<h2><span class="header-section-number">12.10</span> 五彩导航栏</h2>
+<div id="五彩导航栏" class="section level2 hasAnchor" number="12.10">
+<h2><span class="header-section-number">12.10</span> 五彩导航栏<a href="css背景.html#五彩导航栏" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-22"></span>
 <img src="fig/17-11.jpg" alt="五彩导航效果" width="346" />
 <p class="caption">
@@ -828,93 +904,93 @@ background:背景颜色背景图片地址背景平铺背景图像滚动背景图
 <p>3．链接里面需要设置背景图片.因此需要用到背景的相关属性设置.</p>
 <p>4．鼠标经过变化背景图片,因此需要用到链接伪类选择器.</p>
 <p><strong>代码</strong></p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb123-1"><a href="css背景.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;&lt;head&gt;</span></span>
-<span id="cb123-2"><a href="css背景.html#cb123-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb123-3"><a href="css背景.html#cb123-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">http-equiv</span><span class="ot">=</span><span class="st">&quot;X-UA-Compatible&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;IE=edge&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb123-4"><a href="css背景.html#cb123-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;viewport&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb123-5"><a href="css背景.html#cb123-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Document<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb123-6"><a href="css背景.html#cb123-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb123-7"><a href="css背景.html#cb123-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.nav</span> a {</span>
-<span id="cb123-8"><a href="css背景.html#cb123-8" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 行内块元素，可以设置宽和高，又在同一行 */</span></span>
-<span id="cb123-9"><a href="css背景.html#cb123-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">inline-block</span><span class="op">;</span></span>
-<span id="cb123-10"><a href="css背景.html#cb123-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">120</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb123-11"><a href="css背景.html#cb123-11" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">58</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb123-12"><a href="css背景.html#cb123-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
-<span id="cb123-13"><a href="css背景.html#cb123-13" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 水平居中 */</span></span>
-<span id="cb123-14"><a href="css背景.html#cb123-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-align</span>: <span class="dv">center</span><span class="op">;</span></span>
-<span id="cb123-15"><a href="css背景.html#cb123-15" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 垂直居中 */</span></span>
-<span id="cb123-16"><a href="css背景.html#cb123-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">52</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb123-17"><a href="css背景.html#cb123-17" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">white</span><span class="op">;</span></span>
-<span id="cb123-18"><a href="css背景.html#cb123-18" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 取消下划线 */</span></span>
-<span id="cb123-19"><a href="css背景.html#cb123-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></span>
-<span id="cb123-20"><a href="css背景.html#cb123-20" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb123-21"><a href="css背景.html#cb123-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb123-22"><a href="css背景.html#cb123-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg1</span> {</span>
-<span id="cb123-23"><a href="css背景.html#cb123-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg1.png</span><span class="fu">)</span> <span class="dv">no-repeat</span><span class="op">;</span></span>
-<span id="cb123-24"><a href="css背景.html#cb123-24" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb123-25"><a href="css背景.html#cb123-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb123-26"><a href="css背景.html#cb123-26" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg2</span> {</span>
-<span id="cb123-27"><a href="css背景.html#cb123-27" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg2.png</span><span class="fu">)</span> <span class="dv">no-repeat</span><span class="op">;</span></span>
-<span id="cb123-28"><a href="css背景.html#cb123-28" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb123-29"><a href="css背景.html#cb123-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb123-30"><a href="css背景.html#cb123-30" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg1:hover</span> {</span>
-<span id="cb123-31"><a href="css背景.html#cb123-31" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg11.png </span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb123-32"><a href="css背景.html#cb123-32" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb123-33"><a href="css背景.html#cb123-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb123-34"><a href="css背景.html#cb123-34" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg2:hover</span> {</span>
-<span id="cb123-35"><a href="css背景.html#cb123-35" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg22.png </span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb123-36"><a href="css背景.html#cb123-36" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb123-37"><a href="css背景.html#cb123-37" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb123-38"><a href="css背景.html#cb123-38" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb123-39"><a href="css背景.html#cb123-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb123-40"><a href="css背景.html#cb123-40" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb123-41"><a href="css背景.html#cb123-41" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;nav&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb123-42"><a href="css背景.html#cb123-42" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;bg1&quot;</span><span class="kw">&gt;</span>五彩导航<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb123-43"><a href="css背景.html#cb123-43" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;bg2&quot;</span><span class="kw">&gt;</span>五彩导航<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb123-44"><a href="css背景.html#cb123-44" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
-<span id="cb123-45"><a href="css背景.html#cb123-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb123-46"><a href="css背景.html#cb123-46" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
-<span id="cb123-47"><a href="css背景.html#cb123-47" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
-<span id="cb123-48"><a href="css背景.html#cb123-48" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.nav</span> a {</span>
-<span id="cb123-49"><a href="css背景.html#cb123-49" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 行内块元素，可以设置宽和高，又在同一行 */</span></span>
-<span id="cb123-50"><a href="css背景.html#cb123-50" aria-hidden="true" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">inline-block</span><span class="op">;</span></span>
-<span id="cb123-51"><a href="css背景.html#cb123-51" aria-hidden="true" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">120</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb123-52"><a href="css背景.html#cb123-52" aria-hidden="true" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">58</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb123-53"><a href="css背景.html#cb123-53" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
-<span id="cb123-54"><a href="css背景.html#cb123-54" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 水平居中 */</span></span>
-<span id="cb123-55"><a href="css背景.html#cb123-55" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-align</span>: <span class="dv">center</span><span class="op">;</span></span>
-<span id="cb123-56"><a href="css背景.html#cb123-56" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 垂直居中 */</span></span>
-<span id="cb123-57"><a href="css背景.html#cb123-57" aria-hidden="true" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">52</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb123-58"><a href="css背景.html#cb123-58" aria-hidden="true" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">white</span><span class="op">;</span></span>
-<span id="cb123-59"><a href="css背景.html#cb123-59" aria-hidden="true" tabindex="-1"></a>            <span class="co">/* 取消下划线 */</span></span>
-<span id="cb123-60"><a href="css背景.html#cb123-60" aria-hidden="true" tabindex="-1"></a>            <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></span>
-<span id="cb123-61"><a href="css背景.html#cb123-61" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb123-62"><a href="css背景.html#cb123-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb123-63"><a href="css背景.html#cb123-63" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg1</span> {</span>
-<span id="cb123-64"><a href="css背景.html#cb123-64" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg1.png</span><span class="fu">)</span> <span class="dv">no-repeat</span><span class="op">;</span></span>
-<span id="cb123-65"><a href="css背景.html#cb123-65" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb123-66"><a href="css背景.html#cb123-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb123-67"><a href="css背景.html#cb123-67" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg2</span> {</span>
-<span id="cb123-68"><a href="css背景.html#cb123-68" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg2.png</span><span class="fu">)</span> <span class="dv">no-repeat</span><span class="op">;</span></span>
-<span id="cb123-69"><a href="css背景.html#cb123-69" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb123-70"><a href="css背景.html#cb123-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb123-71"><a href="css背景.html#cb123-71" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg1:hover</span> {</span>
-<span id="cb123-72"><a href="css背景.html#cb123-72" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg11.png </span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb123-73"><a href="css背景.html#cb123-73" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb123-74"><a href="css背景.html#cb123-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb123-75"><a href="css背景.html#cb123-75" aria-hidden="true" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg2:hover</span> {</span>
-<span id="cb123-76"><a href="css背景.html#cb123-76" aria-hidden="true" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg22.png </span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb123-77"><a href="css背景.html#cb123-77" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb123-78"><a href="css背景.html#cb123-78" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
-<span id="cb123-79"><a href="css背景.html#cb123-79" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb123-80"><a href="css背景.html#cb123-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb123-81"><a href="css背景.html#cb123-81" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
-<span id="cb123-82"><a href="css背景.html#cb123-82" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;nav&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb123-83"><a href="css背景.html#cb123-83" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;bg1&quot;</span><span class="kw">&gt;</span>五彩导航<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb123-84"><a href="css背景.html#cb123-84" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;bg2&quot;</span><span class="kw">&gt;</span>五彩导航<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb123-85"><a href="css背景.html#cb123-85" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
-<span id="cb123-86"><a href="css背景.html#cb123-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb123-87"><a href="css背景.html#cb123-87" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb130-1"><a href="css背景.html#cb130-1" tabindex="-1"></a><span class="kw">&lt;head&gt;&lt;head&gt;</span></span>
+<span id="cb130-2"><a href="css背景.html#cb130-2" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb130-3"><a href="css背景.html#cb130-3" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">http-equiv</span><span class="ot">=</span><span class="st">&quot;X-UA-Compatible&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;IE=edge&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb130-4"><a href="css背景.html#cb130-4" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;viewport&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb130-5"><a href="css背景.html#cb130-5" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Document<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb130-6"><a href="css背景.html#cb130-6" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb130-7"><a href="css背景.html#cb130-7" tabindex="-1"></a>        <span class="fu">.nav</span> a {</span>
+<span id="cb130-8"><a href="css背景.html#cb130-8" tabindex="-1"></a>            <span class="co">/* 行内块元素，可以设置宽和高，又在同一行 */</span></span>
+<span id="cb130-9"><a href="css背景.html#cb130-9" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">inline-block</span><span class="op">;</span></span>
+<span id="cb130-10"><a href="css背景.html#cb130-10" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">120</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb130-11"><a href="css背景.html#cb130-11" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">58</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb130-12"><a href="css背景.html#cb130-12" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb130-13"><a href="css背景.html#cb130-13" tabindex="-1"></a>            <span class="co">/* 水平居中 */</span></span>
+<span id="cb130-14"><a href="css背景.html#cb130-14" tabindex="-1"></a>            <span class="kw">text-align</span>: <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb130-15"><a href="css背景.html#cb130-15" tabindex="-1"></a>            <span class="co">/* 垂直居中 */</span></span>
+<span id="cb130-16"><a href="css背景.html#cb130-16" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">52</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb130-17"><a href="css背景.html#cb130-17" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb130-18"><a href="css背景.html#cb130-18" tabindex="-1"></a>            <span class="co">/* 取消下划线 */</span></span>
+<span id="cb130-19"><a href="css背景.html#cb130-19" tabindex="-1"></a>            <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb130-20"><a href="css背景.html#cb130-20" tabindex="-1"></a>        }</span>
+<span id="cb130-21"><a href="css背景.html#cb130-21" tabindex="-1"></a></span>
+<span id="cb130-22"><a href="css背景.html#cb130-22" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg1</span> {</span>
+<span id="cb130-23"><a href="css背景.html#cb130-23" tabindex="-1"></a>            <span class="kw">background</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg1.png</span><span class="fu">)</span> <span class="dv">no-repeat</span><span class="op">;</span></span>
+<span id="cb130-24"><a href="css背景.html#cb130-24" tabindex="-1"></a>        }</span>
+<span id="cb130-25"><a href="css背景.html#cb130-25" tabindex="-1"></a></span>
+<span id="cb130-26"><a href="css背景.html#cb130-26" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg2</span> {</span>
+<span id="cb130-27"><a href="css背景.html#cb130-27" tabindex="-1"></a>            <span class="kw">background</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg2.png</span><span class="fu">)</span> <span class="dv">no-repeat</span><span class="op">;</span></span>
+<span id="cb130-28"><a href="css背景.html#cb130-28" tabindex="-1"></a>        }</span>
+<span id="cb130-29"><a href="css背景.html#cb130-29" tabindex="-1"></a></span>
+<span id="cb130-30"><a href="css背景.html#cb130-30" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg1</span><span class="in">:hover</span> {</span>
+<span id="cb130-31"><a href="css背景.html#cb130-31" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg11.png </span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb130-32"><a href="css背景.html#cb130-32" tabindex="-1"></a>        }</span>
+<span id="cb130-33"><a href="css背景.html#cb130-33" tabindex="-1"></a></span>
+<span id="cb130-34"><a href="css背景.html#cb130-34" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg2</span><span class="in">:hover</span> {</span>
+<span id="cb130-35"><a href="css背景.html#cb130-35" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg22.png </span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb130-36"><a href="css背景.html#cb130-36" tabindex="-1"></a>        }</span>
+<span id="cb130-37"><a href="css背景.html#cb130-37" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb130-38"><a href="css背景.html#cb130-38" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb130-39"><a href="css背景.html#cb130-39" tabindex="-1"></a></span>
+<span id="cb130-40"><a href="css背景.html#cb130-40" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb130-41"><a href="css背景.html#cb130-41" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;nav&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb130-42"><a href="css背景.html#cb130-42" tabindex="-1"></a>        <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;bg1&quot;</span><span class="kw">&gt;</span>五彩导航<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb130-43"><a href="css背景.html#cb130-43" tabindex="-1"></a>        <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;bg2&quot;</span><span class="kw">&gt;</span>五彩导航<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb130-44"><a href="css背景.html#cb130-44" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb130-45"><a href="css背景.html#cb130-45" tabindex="-1"></a></span>
+<span id="cb130-46"><a href="css背景.html#cb130-46" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb130-47"><a href="css背景.html#cb130-47" tabindex="-1"></a>    <span class="kw">&lt;style&gt;</span></span>
+<span id="cb130-48"><a href="css背景.html#cb130-48" tabindex="-1"></a>        <span class="fu">.nav</span> a {</span>
+<span id="cb130-49"><a href="css背景.html#cb130-49" tabindex="-1"></a>            <span class="co">/* 行内块元素，可以设置宽和高，又在同一行 */</span></span>
+<span id="cb130-50"><a href="css背景.html#cb130-50" tabindex="-1"></a>            <span class="kw">display</span>: <span class="dv">inline-block</span><span class="op">;</span></span>
+<span id="cb130-51"><a href="css背景.html#cb130-51" tabindex="-1"></a>            <span class="kw">width</span>: <span class="dv">120</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb130-52"><a href="css背景.html#cb130-52" tabindex="-1"></a>            <span class="kw">height</span>: <span class="dv">58</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb130-53"><a href="css背景.html#cb130-53" tabindex="-1"></a>            <span class="kw">background-color</span>: <span class="cn">pink</span><span class="op">;</span></span>
+<span id="cb130-54"><a href="css背景.html#cb130-54" tabindex="-1"></a>            <span class="co">/* 水平居中 */</span></span>
+<span id="cb130-55"><a href="css背景.html#cb130-55" tabindex="-1"></a>            <span class="kw">text-align</span>: <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb130-56"><a href="css背景.html#cb130-56" tabindex="-1"></a>            <span class="co">/* 垂直居中 */</span></span>
+<span id="cb130-57"><a href="css背景.html#cb130-57" tabindex="-1"></a>            <span class="kw">line-height</span>: <span class="dv">52</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb130-58"><a href="css背景.html#cb130-58" tabindex="-1"></a>            <span class="kw">color</span>: <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb130-59"><a href="css背景.html#cb130-59" tabindex="-1"></a>            <span class="co">/* 取消下划线 */</span></span>
+<span id="cb130-60"><a href="css背景.html#cb130-60" tabindex="-1"></a>            <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb130-61"><a href="css背景.html#cb130-61" tabindex="-1"></a>        }</span>
+<span id="cb130-62"><a href="css背景.html#cb130-62" tabindex="-1"></a></span>
+<span id="cb130-63"><a href="css背景.html#cb130-63" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg1</span> {</span>
+<span id="cb130-64"><a href="css背景.html#cb130-64" tabindex="-1"></a>            <span class="kw">background</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg1.png</span><span class="fu">)</span> <span class="dv">no-repeat</span><span class="op">;</span></span>
+<span id="cb130-65"><a href="css背景.html#cb130-65" tabindex="-1"></a>        }</span>
+<span id="cb130-66"><a href="css背景.html#cb130-66" tabindex="-1"></a></span>
+<span id="cb130-67"><a href="css背景.html#cb130-67" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg2</span> {</span>
+<span id="cb130-68"><a href="css背景.html#cb130-68" tabindex="-1"></a>            <span class="kw">background</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg2.png</span><span class="fu">)</span> <span class="dv">no-repeat</span><span class="op">;</span></span>
+<span id="cb130-69"><a href="css背景.html#cb130-69" tabindex="-1"></a>        }</span>
+<span id="cb130-70"><a href="css背景.html#cb130-70" tabindex="-1"></a></span>
+<span id="cb130-71"><a href="css背景.html#cb130-71" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg1</span><span class="in">:hover</span> {</span>
+<span id="cb130-72"><a href="css背景.html#cb130-72" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg11.png </span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb130-73"><a href="css背景.html#cb130-73" tabindex="-1"></a>        }</span>
+<span id="cb130-74"><a href="css背景.html#cb130-74" tabindex="-1"></a></span>
+<span id="cb130-75"><a href="css背景.html#cb130-75" tabindex="-1"></a>        <span class="fu">.nav</span> <span class="fu">.bg2</span><span class="in">:hover</span> {</span>
+<span id="cb130-76"><a href="css背景.html#cb130-76" tabindex="-1"></a>            <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">../../html_css_material-master/第四天/images/bg22.png </span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb130-77"><a href="css背景.html#cb130-77" tabindex="-1"></a>        }</span>
+<span id="cb130-78"><a href="css背景.html#cb130-78" tabindex="-1"></a>    <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb130-79"><a href="css背景.html#cb130-79" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb130-80"><a href="css背景.html#cb130-80" tabindex="-1"></a></span>
+<span id="cb130-81"><a href="css背景.html#cb130-81" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb130-82"><a href="css背景.html#cb130-82" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;nav&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb130-83"><a href="css背景.html#cb130-83" tabindex="-1"></a>        <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;bg1&quot;</span><span class="kw">&gt;</span>五彩导航<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb130-84"><a href="css背景.html#cb130-84" tabindex="-1"></a>        <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;#&quot;</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;bg2&quot;</span><span class="kw">&gt;</span>五彩导航<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb130-85"><a href="css背景.html#cb130-85" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb130-86"><a href="css背景.html#cb130-86" tabindex="-1"></a></span>
+<span id="cb130-87"><a href="css背景.html#cb130-87" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
 
 </div>
 </div>
