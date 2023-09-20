@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = ['pink', 'red', 'green']
+
+        //修改:改变第一个元素
+        arr[0] = 'hotpink'
+        document.write(arr)
+
+        document.write(`<br>--------------------------------------------------<br>`)
+
+        //修改：每个元素末尾加“老师”两个字符
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = arr[i] + '老师'
+        }
+        document.write(arr)
+    </script>
+</body>
+
+</html>

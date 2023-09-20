@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var flag = true;
+        var flag1 = false;
+        console.log(flag);    //true
+        console.log(flag + 1);  //true参与加法运算是等于1
+        console.log(flag1 + 1);  //true参与加法运算是等于1
+
+
+        var str; //如果一个变量声明未赋值，就是undefined
+        console.log(str);
+        var variable = undefined; //如果一个变量也可以直接赋值为undefined
+        console.log(variable);
+        console.log(variable + 'pink'); //字符串和任何数据类型组合仍为字符串
+        console.log(variable + 1); //undefined+数字型，返回NaN
+        //空值null
+        var space = null;
+        console.log(space + 'pink');
+        console.log(space + 1); //空值+数字，返回数字。因为空值就是值为空。
+
+
+
+    </script>
+</body>
+
+</html>

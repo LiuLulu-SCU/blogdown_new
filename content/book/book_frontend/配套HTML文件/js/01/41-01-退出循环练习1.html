@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        for (let i = 1; i <= 5; i++) {
+            if (i === 3) {//假设吃到第三个包子就饱了，第3个及之后的包子都不想吃了
+                break
+            }
+            document.write(`我要吃第${i}个包子。 <br>`)
+        }
+
+        document.write(`------------------------------------------- <br>`)
+
+        for (let j = 1; j <= 5; j++) {
+            if (j === 3) {//假设吃到第三个包子时，发现有个苍蝇，跳过第三个包子
+                continue
+            }
+            document.write(`我要吃第${j}个包子。 <br>`)
+        }
+    </script>
+</body>
+
+</html>

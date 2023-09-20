@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(3 > 5); //false
+        console.log(3 >= 3); //true
+        console.log(2 == 2); //true
+        //比较运算符会隐式转换
+        console.log(2 == '2'); //true
+        //全等。以后判断相等，请用全等
+        console.log(2 === '2'); //false
+
+        console.log(undefined == null); //true
+        console.log(undefined === null); //false
+
+        console.log(NaN === NaN); //NaN不等于任何人，包括自己
+
+        //字符串的比较
+        console.log('a' < 'b');  //true，因为字符串a的acsii码值小
+        console.log('aa' < 'ab');  //true
+        console.log('aaa' < 'aab');  //true
+
+    </script>
+</body>
+
+</html>

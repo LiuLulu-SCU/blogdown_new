@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let i = 1
+        while (i <= 5) {
+            if (i === 3) { //假设吃到第三个包子就饱了，第3个及之后的包子都不想吃了
+                break
+            }
+            console.log(`我要吃第${i}个包子。`)
+            i++
+        }
+
+        console.log('------------------------------')
+
+        let j = 1
+        while (j <= 5) {
+            if (j === 3) { //假设吃到第三个包子时，发现有个苍蝇，跳过第三个包子
+                j++  //j=3时，需要先进行自增，否则continue会跳过后面的之后的自增语句，陷入死循环
+                continue
+            }
+            console.log(`我要吃第${j}个包子。`)
+            j++
+        }
+
+    </script>
+</body>
+
+</html>

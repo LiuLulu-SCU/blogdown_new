@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>22 语句 | Web开发学习笔记</title>
+  <meta name="description" content="Web前端学习全纪录" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="22 语句 | Web开发学习笔记" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Web前端学习全纪录" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="22 语句 | Web开发学习笔记" />
+  
+  <meta name="twitter:description" content="Web前端学习全纪录" />
+  
+
+<meta name="author" content="刘卢路" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="运算符.html"/>
+<link rel="next" href="学成在线案例.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a></li>
+<li class="part"><span><b>I HTML</b></span></li>
+<li class="chapter" data-level="1" data-path="认识web.html"><a href="认识web.html"><i class="fa fa-check"></i><b>1</b> 认识Web</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="认识web.html"><a href="认识web.html#网页"><i class="fa fa-check"></i><b>1.1</b> 网页</a></li>
+<li class="chapter" data-level="1.2" data-path="认识web.html"><a href="认识web.html#浏览器"><i class="fa fa-check"></i><b>1.2</b> 浏览器</a></li>
+<li class="chapter" data-level="1.3" data-path="认识web.html"><a href="认识web.html#web标准"><i class="fa fa-check"></i><b>1.3</b> Web标准</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="认识web.html"><a href="认识web.html#为什么需要web标准"><i class="fa fa-check"></i><b>1.3.1</b> 为什么需要Web标准</a></li>
+<li class="chapter" data-level="1.3.2" data-path="认识web.html"><a href="认识web.html#web标准构成"><i class="fa fa-check"></i><b>1.3.2</b> Web标准构成</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="html初识.html"><a href="html初识.html"><i class="fa fa-check"></i><b>2</b> HTML初识</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="html初识.html"><a href="html初识.html#基本语法规范"><i class="fa fa-check"></i><b>2.1</b> 基本语法规范</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="html初识.html"><a href="html初识.html#基本语法概述"><i class="fa fa-check"></i><b>2.1.1</b> 基本语法概述</a></li>
+<li class="chapter" data-level="2.1.2" data-path="html初识.html"><a href="html初识.html#标签关系"><i class="fa fa-check"></i><b>2.1.2</b> 标签关系</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="html初识.html"><a href="html初识.html#基本结构标签"><i class="fa fa-check"></i><b>2.2</b> 基本结构标签</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="网页开发工具.html"><a href="网页开发工具.html"><i class="fa fa-check"></i><b>3</b> 网页开发工具</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="网页开发工具.html"><a href="网页开发工具.html#配置vscode"><i class="fa fa-check"></i><b>3.1</b> 配置VSCode</a></li>
+<li class="chapter" data-level="3.2" data-path="网页开发工具.html"><a href="网页开发工具.html#vscode工具生成骨架标签新增代码"><i class="fa fa-check"></i><b>3.2</b> VSCode工具生成骨架标签新增代码</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="网页开发工具.html"><a href="网页开发工具.html#文档类型doctype"><i class="fa fa-check"></i><b>3.2.1</b> 文档类型<code>&lt;!DOCTYPE&gt;</code></a></li>
+<li class="chapter" data-level="3.2.2" data-path="网页开发工具.html"><a href="网页开发工具.html#页面语言lang"><i class="fa fa-check"></i><b>3.2.2</b> 页面语言<code>lang</code></a></li>
+<li class="chapter" data-level="3.2.3" data-path="网页开发工具.html"><a href="网页开发工具.html#字符集charset"><i class="fa fa-check"></i><b>3.2.3</b> 字符集<code>charset</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="html常用标签.html"><a href="html常用标签.html"><i class="fa fa-check"></i><b>4</b> HTML常用标签</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="html常用标签.html"><a href="html常用标签.html#语义标签"><i class="fa fa-check"></i><b>4.1</b> 语义标签</a></li>
+<li class="chapter" data-level="4.2" data-path="html常用标签.html"><a href="html常用标签.html#标题标签"><i class="fa fa-check"></i><b>4.2</b> 标题标签</a></li>
+<li class="chapter" data-level="4.3" data-path="html常用标签.html"><a href="html常用标签.html#段落标签"><i class="fa fa-check"></i><b>4.3</b> 段落标签</a></li>
+<li class="chapter" data-level="4.4" data-path="html常用标签.html"><a href="html常用标签.html#换行标签"><i class="fa fa-check"></i><b>4.4</b> 换行标签</a></li>
+<li class="chapter" data-level="4.5" data-path="html常用标签.html"><a href="html常用标签.html#文本格式化标签"><i class="fa fa-check"></i><b>4.5</b> 文本格式化标签</a></li>
+<li class="chapter" data-level="4.6" data-path="html常用标签.html"><a href="html常用标签.html#布局标签"><i class="fa fa-check"></i><b>4.6</b> 布局标签</a></li>
+<li class="chapter" data-level="4.7" data-path="html常用标签.html"><a href="html常用标签.html#图像标签和路径"><i class="fa fa-check"></i><b>4.7</b> 图像标签和路径</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="html常用标签.html"><a href="html常用标签.html#图像标签"><i class="fa fa-check"></i><b>4.7.1</b> 图像标签</a></li>
+<li class="chapter" data-level="4.7.2" data-path="html常用标签.html"><a href="html常用标签.html#路径"><i class="fa fa-check"></i><b>4.7.2</b> 路径</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="html常用标签.html"><a href="html常用标签.html#超链接"><i class="fa fa-check"></i><b>4.8</b> 超链接</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="html常用标签.html"><a href="html常用标签.html#链接的语法格式"><i class="fa fa-check"></i><b>4.8.1</b> 链接的语法格式</a></li>
+<li class="chapter" data-level="4.8.2" data-path="html常用标签.html"><a href="html常用标签.html#链接的分类"><i class="fa fa-check"></i><b>4.8.2</b> 链接的分类</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="html常用标签.html"><a href="html常用标签.html#注释"><i class="fa fa-check"></i><b>4.9</b> 注释</a></li>
+<li class="chapter" data-level="4.10" data-path="html常用标签.html"><a href="html常用标签.html#特殊字符"><i class="fa fa-check"></i><b>4.10</b> 特殊字符</a></li>
+<li class="chapter" data-level="4.11" data-path="html常用标签.html"><a href="html常用标签.html#表格标签"><i class="fa fa-check"></i><b>4.11</b> 表格标签</a>
+<ul>
+<li class="chapter" data-level="4.11.1" data-path="html常用标签.html"><a href="html常用标签.html#表格的基本语法"><i class="fa fa-check"></i><b>4.11.1</b> 表格的基本语法</a></li>
+<li class="chapter" data-level="4.11.2" data-path="html常用标签.html"><a href="html常用标签.html#表头单元格标签"><i class="fa fa-check"></i><b>4.11.2</b> 表头单元格标签</a></li>
+<li class="chapter" data-level="4.11.3" data-path="html常用标签.html"><a href="html常用标签.html#表格属性"><i class="fa fa-check"></i><b>4.11.3</b> 表格属性</a></li>
+<li class="chapter" data-level="4.11.4" data-path="html常用标签.html"><a href="html常用标签.html#表格结构标签"><i class="fa fa-check"></i><b>4.11.4</b> 表格结构标签</a></li>
+<li class="chapter" data-level="4.11.5" data-path="html常用标签.html"><a href="html常用标签.html#合并单元格"><i class="fa fa-check"></i><b>4.11.5</b> 合并单元格</a></li>
+</ul></li>
+<li class="chapter" data-level="4.12" data-path="html常用标签.html"><a href="html常用标签.html#列表标签"><i class="fa fa-check"></i><b>4.12</b> 列表标签</a>
+<ul>
+<li class="chapter" data-level="4.12.1" data-path="html常用标签.html"><a href="html常用标签.html#无序列表-unordered"><i class="fa fa-check"></i><b>4.12.1</b> 无序列表 Unordered</a></li>
+<li class="chapter" data-level="4.12.2" data-path="html常用标签.html"><a href="html常用标签.html#有序列表-ordered"><i class="fa fa-check"></i><b>4.12.2</b> 有序列表 Ordered</a></li>
+<li class="chapter" data-level="4.12.3" data-path="html常用标签.html"><a href="html常用标签.html#自定义列表"><i class="fa fa-check"></i><b>4.12.3</b> 自定义列表</a></li>
+<li class="chapter" data-level="4.12.4" data-path="html常用标签.html"><a href="html常用标签.html#列表总结"><i class="fa fa-check"></i><b>4.12.4</b> 列表总结</a></li>
+</ul></li>
+<li class="chapter" data-level="4.13" data-path="html常用标签.html"><a href="html常用标签.html#表单标签"><i class="fa fa-check"></i><b>4.13</b> 表单标签</a>
+<ul>
+<li class="chapter" data-level="4.13.1" data-path="html常用标签.html"><a href="html常用标签.html#为什么需要表单"><i class="fa fa-check"></i><b>4.13.1</b> 为什么需要表单</a></li>
+<li class="chapter" data-level="4.13.2" data-path="html常用标签.html"><a href="html常用标签.html#表单的组成"><i class="fa fa-check"></i><b>4.13.2</b> 表单的组成</a></li>
+</ul></li>
+<li class="chapter" data-level="4.14" data-path="html常用标签.html"><a href="html常用标签.html#文档查阅"><i class="fa fa-check"></i><b>4.14</b> 文档查阅</a></li>
+<li class="chapter" data-level="4.15" data-path="html常用标签.html"><a href="html常用标签.html#案例学习"><i class="fa fa-check"></i><b>4.15</b> 案例学习</a>
+<ul>
+<li class="chapter" data-level="4.15.1" data-path="html常用标签.html"><a href="html常用标签.html#案例1"><i class="fa fa-check"></i><b>4.15.1</b> 案例1</a></li>
+<li class="chapter" data-level="4.15.2" data-path="html常用标签.html"><a href="html常用标签.html#案例2表单"><i class="fa fa-check"></i><b>4.15.2</b> 案例2：表单</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II CSS</b></span></li>
+<li class="chapter" data-level="5" data-path="css基础.html"><a href="css基础.html"><i class="fa fa-check"></i><b>5</b> CSS基础</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="css基础.html"><a href="css基础.html#css简介"><i class="fa fa-check"></i><b>5.1</b> CSS简介</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="css基础.html"><a href="css基础.html#html的局限性"><i class="fa fa-check"></i><b>5.1.1</b> HTML的局限性</a></li>
+<li class="chapter" data-level="5.1.2" data-path="css基础.html"><a href="css基础.html#css-网页的美容师"><i class="fa fa-check"></i><b>5.1.2</b> CSS-网页的美容师</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="css基础.html"><a href="css基础.html#css语法规范"><i class="fa fa-check"></i><b>5.2</b> CSS语法规范</a></li>
+<li class="chapter" data-level="5.3" data-path="css基础.html"><a href="css基础.html#代码风格"><i class="fa fa-check"></i><b>5.3</b> 代码风格</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="css基础.html"><a href="css基础.html#样式格式书写"><i class="fa fa-check"></i><b>5.3.1</b> 样式格式书写</a></li>
+<li class="chapter" data-level="5.3.2" data-path="css基础.html"><a href="css基础.html#样式大小写"><i class="fa fa-check"></i><b>5.3.2</b> 样式大小写</a></li>
+<li class="chapter" data-level="5.3.3" data-path="css基础.html"><a href="css基础.html#空格规范"><i class="fa fa-check"></i><b>5.3.3</b> 空格规范</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="css基础选择器.html"><a href="css基础选择器.html"><i class="fa fa-check"></i><b>6</b> CSS基础选择器</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="css基础选择器.html"><a href="css基础选择器.html#css选择器的作用"><i class="fa fa-check"></i><b>6.1</b> CSS选择器的作用</a></li>
+<li class="chapter" data-level="6.2" data-path="css基础选择器.html"><a href="css基础选择器.html#选择器的分类"><i class="fa fa-check"></i><b>6.2</b> 选择器的分类</a></li>
+<li class="chapter" data-level="6.3" data-path="css基础选择器.html"><a href="css基础选择器.html#标签选择器"><i class="fa fa-check"></i><b>6.3</b> 标签选择器</a></li>
+<li class="chapter" data-level="6.4" data-path="css基础选择器.html"><a href="css基础选择器.html#类选择器"><i class="fa fa-check"></i><b>6.4</b> 类选择器</a></li>
+<li class="chapter" data-level="6.5" data-path="css基础选择器.html"><a href="css基础选择器.html#id选择器"><i class="fa fa-check"></i><b>6.5</b> id选择器</a></li>
+<li class="chapter" data-level="6.6" data-path="css基础选择器.html"><a href="css基础选择器.html#通配符选择器"><i class="fa fa-check"></i><b>6.6</b> 通配符选择器</a></li>
+<li class="chapter" data-level="6.7" data-path="css基础选择器.html"><a href="css基础选择器.html#基础选择器总结"><i class="fa fa-check"></i><b>6.7</b> 基础选择器总结</a></li>
+<li class="chapter" data-level="6.8" data-path="css基础选择器.html"><a href="css基础选择器.html#综合案例"><i class="fa fa-check"></i><b>6.8</b> 综合案例</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="css基础选择器.html"><a href="css基础选择器.html#用类选择器话盒子"><i class="fa fa-check"></i><b>6.8.1</b> 用类选择器话盒子</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="字体属性.html"><a href="字体属性.html"><i class="fa fa-check"></i><b>7</b> 字体属性</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="字体属性.html"><a href="字体属性.html#字体系列"><i class="fa fa-check"></i><b>7.1</b> 字体系列</a></li>
+<li class="chapter" data-level="7.2" data-path="字体属性.html"><a href="字体属性.html#字体大小"><i class="fa fa-check"></i><b>7.2</b> 字体大小</a></li>
+<li class="chapter" data-level="7.3" data-path="字体属性.html"><a href="字体属性.html#字体粗细"><i class="fa fa-check"></i><b>7.3</b> 字体粗细</a></li>
+<li class="chapter" data-level="7.4" data-path="字体属性.html"><a href="字体属性.html#文字样式"><i class="fa fa-check"></i><b>7.4</b> 文字样式</a></li>
+<li class="chapter" data-level="7.5" data-path="字体属性.html"><a href="字体属性.html#字体复合属性"><i class="fa fa-check"></i><b>7.5</b> 字体复合属性</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="文本属性.html"><a href="文本属性.html"><i class="fa fa-check"></i><b>8</b> 文本属性</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="文本属性.html"><a href="文本属性.html#文本颜色"><i class="fa fa-check"></i><b>8.1</b> 文本颜色</a></li>
+<li class="chapter" data-level="8.2" data-path="文本属性.html"><a href="文本属性.html#对齐文本"><i class="fa fa-check"></i><b>8.2</b> 对齐文本</a></li>
+<li class="chapter" data-level="8.3" data-path="文本属性.html"><a href="文本属性.html#装饰文本"><i class="fa fa-check"></i><b>8.3</b> 装饰文本</a></li>
+<li class="chapter" data-level="8.4" data-path="文本属性.html"><a href="文本属性.html#文本缩进"><i class="fa fa-check"></i><b>8.4</b> 文本缩进</a></li>
+<li class="chapter" data-level="8.5" data-path="文本属性.html"><a href="文本属性.html#行间距"><i class="fa fa-check"></i><b>8.5</b> 行间距</a></li>
+<li class="chapter" data-level="8.6" data-path="文本属性.html"><a href="文本属性.html#文本属性总结"><i class="fa fa-check"></i><b>8.6</b> 文本属性总结</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="css-ref.html"><a href="css-ref.html"><i class="fa fa-check"></i><b>9</b> CSS引入方式</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="css-ref.html"><a href="css-ref.html#css的三种样式表引入方式"><i class="fa fa-check"></i><b>9.1</b> CSS的三种样式表(引入方式)</a></li>
+<li class="chapter" data-level="9.2" data-path="css-ref.html"><a href="css-ref.html#内部样式表"><i class="fa fa-check"></i><b>9.2</b> 内部样式表</a></li>
+<li class="chapter" data-level="9.3" data-path="css-ref.html"><a href="css-ref.html#行内样式表"><i class="fa fa-check"></i><b>9.3</b> 行内样式表</a></li>
+<li class="chapter" data-level="9.4" data-path="css-ref.html"><a href="css-ref.html#外部样式"><i class="fa fa-check"></i><b>9.4</b> 外部样式</a></li>
+<li class="chapter" data-level="9.5" data-path="css-ref.html"><a href="css-ref.html#css引入方式总结"><i class="fa fa-check"></i><b>9.5</b> CSS引入方式总结</a></li>
+<li class="chapter" data-level="9.6" data-path="css-ref.html"><a href="css-ref.html#综合案例-1"><i class="fa fa-check"></i><b>9.6</b> 综合案例</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="复合选择器.html"><a href="复合选择器.html"><i class="fa fa-check"></i><b>10</b> 复合选择器</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器的定义"><i class="fa fa-check"></i><b>10.1</b> 复合选择器的定义</a></li>
+<li class="chapter" data-level="10.2" data-path="复合选择器.html"><a href="复合选择器.html#属性选择器"><i class="fa fa-check"></i><b>10.2</b> 属性选择器</a></li>
+<li class="chapter" data-level="10.3" data-path="复合选择器.html"><a href="复合选择器.html#后代选择器"><i class="fa fa-check"></i><b>10.3</b> 后代选择器</a></li>
+<li class="chapter" data-level="10.4" data-path="复合选择器.html"><a href="复合选择器.html#子选择器"><i class="fa fa-check"></i><b>10.4</b> 子选择器</a></li>
+<li class="chapter" data-level="10.5" data-path="复合选择器.html"><a href="复合选择器.html#并集选择器"><i class="fa fa-check"></i><b>10.5</b> 并集选择器</a></li>
+<li class="chapter" data-level="10.6" data-path="复合选择器.html"><a href="复合选择器.html#伪类选择器"><i class="fa fa-check"></i><b>10.6</b> 伪类选择器</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="复合选择器.html"><a href="复合选择器.html#链接伪类"><i class="fa fa-check"></i><b>10.6.1</b> 链接伪类</a></li>
+<li class="chapter" data-level="10.6.2" data-path="复合选择器.html"><a href="复合选择器.html#hover伪类选择器的应用"><i class="fa fa-check"></i><b>10.6.2</b> :hover伪类选择器的应用</a></li>
+<li class="chapter" data-level="10.6.3" data-path="复合选择器.html"><a href="复合选择器.html#after选择器"><i class="fa fa-check"></i><b>10.6.3</b> :after选择器</a></li>
+<li class="chapter" data-level="10.6.4" data-path="复合选择器.html"><a href="复合选择器.html#focus伪类选择器"><i class="fa fa-check"></i><b>10.6.4</b> :focus伪类选择器</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器总结"><i class="fa fa-check"></i><b>10.7</b> 复合选择器总结</a></li>
+<li class="chapter" data-level="10.8" data-path="复合选择器.html"><a href="复合选择器.html#多个选择器的覆盖问题"><i class="fa fa-check"></i><b>10.8</b> 多个选择器的覆盖问题</a></li>
+<li class="chapter" data-level="10.9" data-path="复合选择器.html"><a href="复合选择器.html#课堂练习"><i class="fa fa-check"></i><b>10.9</b> 课堂练习</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="元素的显示模式.html"><a href="元素的显示模式.html"><i class="fa fa-check"></i><b>11</b> 元素的显示模式</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="元素的显示模式.html"><a href="元素的显示模式.html#什么是元素的显示模式"><i class="fa fa-check"></i><b>11.1</b> 什么是元素的显示模式</a></li>
+<li class="chapter" data-level="11.2" data-path="元素的显示模式.html"><a href="元素的显示模式.html#块元素"><i class="fa fa-check"></i><b>11.2</b> 块元素</a></li>
+<li class="chapter" data-level="11.3" data-path="元素的显示模式.html"><a href="元素的显示模式.html#行内元素内联元素"><i class="fa fa-check"></i><b>11.3</b> 行内元素（内联元素）</a></li>
+<li class="chapter" data-level="11.4" data-path="元素的显示模式.html"><a href="元素的显示模式.html#行内块元素"><i class="fa fa-check"></i><b>11.4</b> 行内块元素</a></li>
+<li class="chapter" data-level="11.5" data-path="元素的显示模式.html"><a href="元素的显示模式.html#元素显示模式总结"><i class="fa fa-check"></i><b>11.5</b> 元素显示模式总结</a></li>
+<li class="chapter" data-level="11.6" data-path="元素的显示模式.html"><a href="元素的显示模式.html#元素显示模式转换"><i class="fa fa-check"></i><b>11.6</b> 元素显示模式转换</a></li>
+<li class="chapter" data-level="11.7" data-path="元素的显示模式.html"><a href="元素的显示模式.html#案例"><i class="fa fa-check"></i><b>11.7</b> 案例</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="css背景.html"><a href="css背景.html"><i class="fa fa-check"></i><b>12</b> CSS背景</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="css背景.html"><a href="css背景.html#背景颜色"><i class="fa fa-check"></i><b>12.1</b> 背景颜色</a></li>
+<li class="chapter" data-level="12.2" data-path="css背景.html"><a href="css背景.html#背景图片"><i class="fa fa-check"></i><b>12.2</b> 背景图片</a></li>
+<li class="chapter" data-level="12.3" data-path="css背景.html"><a href="css背景.html#背景平铺"><i class="fa fa-check"></i><b>12.3</b> 背景平铺</a></li>
+<li class="chapter" data-level="12.4" data-path="css背景.html"><a href="css背景.html#背景图片的位置"><i class="fa fa-check"></i><b>12.4</b> 背景图片的位置</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="css背景.html"><a href="css背景.html#参数是方位名词"><i class="fa fa-check"></i><b>12.4.1</b> 参数是方位名词</a></li>
+<li class="chapter" data-level="12.4.2" data-path="css背景.html"><a href="css背景.html#参数是精确单位"><i class="fa fa-check"></i><b>12.4.2</b> 参数是精确单位</a></li>
+<li class="chapter" data-level="12.4.3" data-path="css背景.html"><a href="css背景.html#参数是混合单位"><i class="fa fa-check"></i><b>12.4.3</b> 参数是混合单位</a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="css背景.html"><a href="css背景.html#背景图像固定背景附着"><i class="fa fa-check"></i><b>12.5</b> 背景图像固定（背景附着）</a></li>
+<li class="chapter" data-level="12.6" data-path="css背景.html"><a href="css背景.html#背景属性复合写法"><i class="fa fa-check"></i><b>12.6</b> 背景属性复合写法</a></li>
+<li class="chapter" data-level="12.7" data-path="css背景.html"><a href="css背景.html#背景色半透明"><i class="fa fa-check"></i><b>12.7</b> 背景色半透明</a></li>
+<li class="chapter" data-level="12.8" data-path="css背景.html"><a href="css背景.html#背景总结"><i class="fa fa-check"></i><b>12.8</b> 背景总结</a></li>
+<li class="chapter" data-level="12.9" data-path="css背景.html"><a href="css背景.html#案例-1"><i class="fa fa-check"></i><b>12.9</b> 案例</a>
+<ul>
+<li class="chapter" data-level="12.9.1" data-path="css背景.html"><a href="css背景.html#背景图片案例方位名词"><i class="fa fa-check"></i><b>12.9.1</b> 背景图片案例：方位名词</a></li>
+</ul></li>
+<li class="chapter" data-level="12.10" data-path="css背景.html"><a href="css背景.html#五彩导航栏"><i class="fa fa-check"></i><b>12.10</b> 五彩导航栏</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="css的三大特性.html"><a href="css的三大特性.html"><i class="fa fa-check"></i><b>13</b> CSS的三大特性</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="css的三大特性.html"><a href="css的三大特性.html#层叠性"><i class="fa fa-check"></i><b>13.1</b> 层叠性</a></li>
+<li class="chapter" data-level="13.2" data-path="css的三大特性.html"><a href="css的三大特性.html#继承性"><i class="fa fa-check"></i><b>13.2</b> 继承性</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="css的三大特性.html"><a href="css的三大特性.html#行高的继承"><i class="fa fa-check"></i><b>13.2.1</b> 行高的继承</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="css的三大特性.html"><a href="css的三大特性.html#优先级"><i class="fa fa-check"></i><b>13.3</b> 优先级</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="css的三大特性.html"><a href="css的三大特性.html#优先级注意"><i class="fa fa-check"></i><b>13.3.1</b> 优先级注意</a></li>
+<li class="chapter" data-level="13.3.2" data-path="css的三大特性.html"><a href="css的三大特性.html#权重叠加"><i class="fa fa-check"></i><b>13.3.2</b> 权重叠加</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="css的三大特性.html"><a href="css的三大特性.html#综合练习"><i class="fa fa-check"></i><b>13.4</b> 综合练习</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="盒子模型.html"><a href="盒子模型.html"><i class="fa fa-check"></i><b>14</b> 盒子模型</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="盒子模型.html"><a href="盒子模型.html#看透网页布局的本质"><i class="fa fa-check"></i><b>14.1</b> 看透网页布局的本质</a></li>
+<li class="chapter" data-level="14.2" data-path="盒子模型.html"><a href="盒子模型.html#盒子模型box-model"><i class="fa fa-check"></i><b>14.2</b> 盒子模型（Box Model）</a></li>
+<li class="chapter" data-level="14.3" data-path="盒子模型.html"><a href="盒子模型.html#盒子边框border"><i class="fa fa-check"></i><b>14.3</b> 盒子边框（border）</a></li>
+<li class="chapter" data-level="14.4" data-path="盒子模型.html"><a href="盒子模型.html#边框的复合写法简写"><i class="fa fa-check"></i><b>14.4</b> 边框的复合写法（简写）</a></li>
+<li class="chapter" data-level="14.5" data-path="盒子模型.html"><a href="盒子模型.html#表格细线边框"><i class="fa fa-check"></i><b>14.5</b> 表格细线边框</a></li>
+<li class="chapter" data-level="14.6" data-path="盒子模型.html"><a href="盒子模型.html#边框会影响盒子的实际大小"><i class="fa fa-check"></i><b>14.6</b> 边框会影响盒子的实际大小</a></li>
+<li class="chapter" data-level="14.7" data-path="盒子模型.html"><a href="盒子模型.html#内边距padding"><i class="fa fa-check"></i><b>14.7</b> 内边距（padding）</a></li>
+<li class="chapter" data-level="14.8" data-path="盒子模型.html"><a href="盒子模型.html#内边距复合写法简写"><i class="fa fa-check"></i><b>14.8</b> 内边距复合写法（简写）</a></li>
+<li class="chapter" data-level="14.9" data-path="盒子模型.html"><a href="盒子模型.html#padding会影响盒子实际大小"><i class="fa fa-check"></i><b>14.9</b> padding会影响盒子实际大小</a></li>
+<li class="chapter" data-level="14.10" data-path="盒子模型.html"><a href="盒子模型.html#padding不撑开盒子的情况"><i class="fa fa-check"></i><b>14.10</b> padding不撑开盒子的情况</a></li>
+<li class="chapter" data-level="14.11" data-path="盒子模型.html"><a href="盒子模型.html#盒子模型外边距margin"><i class="fa fa-check"></i><b>14.11</b> 盒子模型外边距margin</a></li>
+<li class="chapter" data-level="14.12" data-path="盒子模型.html"><a href="盒子模型.html#外边距典型应用块级盒子水平居中"><i class="fa fa-check"></i><b>14.12</b> 外边距典型应用（块级盒子水平居中）</a></li>
+<li class="chapter" data-level="14.13" data-path="盒子模型.html"><a href="盒子模型.html#外边距合并"><i class="fa fa-check"></i><b>14.13</b> 外边距合并</a>
+<ul>
+<li class="chapter" data-level="14.13.1" data-path="盒子模型.html"><a href="盒子模型.html#相邻块级元素垂直外边距的合并"><i class="fa fa-check"></i><b>14.13.1</b> 相邻块级元素垂直外边距的合并</a></li>
+<li class="chapter" data-level="14.13.2" data-path="盒子模型.html"><a href="盒子模型.html#嵌套块元素垂直外边距的塌陷"><i class="fa fa-check"></i><b>14.13.2</b> 嵌套块元素垂直外边距的塌陷</a></li>
+</ul></li>
+<li class="chapter" data-level="14.14" data-path="盒子模型.html"><a href="盒子模型.html#清除内外边距"><i class="fa fa-check"></i><b>14.14</b> 清除内外边距</a></li>
+<li class="chapter" data-level="14.15" data-path="盒子模型.html"><a href="盒子模型.html#圆角边框"><i class="fa fa-check"></i><b>14.15</b> 圆角边框</a></li>
+<li class="chapter" data-level="14.16" data-path="盒子模型.html"><a href="盒子模型.html#盒子阴影"><i class="fa fa-check"></i><b>14.16</b> 盒子阴影</a></li>
+<li class="chapter" data-level="14.17" data-path="盒子模型.html"><a href="盒子模型.html#文字阴影"><i class="fa fa-check"></i><b>14.17</b> 文字阴影</a></li>
+<li class="chapter" data-level="14.18" data-path="盒子模型.html"><a href="盒子模型.html#综合案例-2"><i class="fa fa-check"></i><b>14.18</b> 综合案例</a>
+<ul>
+<li class="chapter" data-level="14.18.1" data-path="盒子模型.html"><a href="盒子模型.html#新浪导航栏"><i class="fa fa-check"></i><b>14.18.1</b> 新浪导航栏</a></li>
+<li class="chapter" data-level="14.18.2" data-path="盒子模型.html"><a href="盒子模型.html#小米侧边栏修改"><i class="fa fa-check"></i><b>14.18.2</b> 小米侧边栏修改</a></li>
+<li class="chapter" data-level="14.18.3" data-path="盒子模型.html"><a href="盒子模型.html#产品布局"><i class="fa fa-check"></i><b>14.18.3</b> 产品布局</a></li>
+<li class="chapter" data-level="14.18.4" data-path="盒子模型.html"><a href="盒子模型.html#快报模块"><i class="fa fa-check"></i><b>14.18.4</b> 快报模块</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="浮动.html"><a href="浮动.html"><i class="fa fa-check"></i><b>15</b> 浮动</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="浮动.html"><a href="浮动.html#传统网页布局的三种方式"><i class="fa fa-check"></i><b>15.1</b> 传统网页布局的三种方式</a></li>
+<li class="chapter" data-level="15.2" data-path="浮动.html"><a href="浮动.html#标准流普通流文档流"><i class="fa fa-check"></i><b>15.2</b> 标准流（普通流/文档流）</a></li>
+<li class="chapter" data-level="15.3" data-path="浮动.html"><a href="浮动.html#为什么需要浮动"><i class="fa fa-check"></i><b>15.3</b> 为什么需要浮动</a></li>
+<li class="chapter" data-level="15.4" data-path="浮动.html"><a href="浮动.html#什么是浮动"><i class="fa fa-check"></i><b>15.4</b> 什么是浮动</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="浮动.html"><a href="浮动.html#脱标"><i class="fa fa-check"></i><b>15.4.1</b> 脱标</a></li>
+<li class="chapter" data-level="15.4.2" data-path="浮动.html"><a href="浮动.html#浮动盒子一行显示"><i class="fa fa-check"></i><b>15.4.2</b> 浮动盒子一行显示</a></li>
+<li class="chapter" data-level="15.4.3" data-path="浮动.html"><a href="浮动.html#浮动元素具有行内块特性"><i class="fa fa-check"></i><b>15.4.3</b> 浮动元素具有行内块特性</a></li>
+</ul></li>
+<li class="chapter" data-level="15.5" data-path="浮动.html"><a href="浮动.html#浮动元素标准流经常和标准流父亲搭配使用"><i class="fa fa-check"></i><b>15.5</b> 浮动元素标准流经常和标准流父亲搭配使用</a></li>
+<li class="chapter" data-level="15.6" data-path="浮动.html"><a href="浮动.html#常见的网页布局"><i class="fa fa-check"></i><b>15.6</b> 常见的网页布局</a></li>
+<li class="chapter" data-level="15.7" data-path="浮动.html"><a href="浮动.html#浮动布局注意点"><i class="fa fa-check"></i><b>15.7</b> 浮动布局注意点</a></li>
+<li class="chapter" data-level="15.8" data-path="浮动.html"><a href="浮动.html#清除浮动"><i class="fa fa-check"></i><b>15.8</b> 清除浮动</a>
+<ul>
+<li class="chapter" data-level="15.8.1" data-path="浮动.html"><a href="浮动.html#为什么要清除浮动"><i class="fa fa-check"></i><b>15.8.1</b> 为什么要清除浮动</a></li>
+<li class="chapter" data-level="15.8.2" data-path="浮动.html"><a href="浮动.html#清除浮动的本质"><i class="fa fa-check"></i><b>15.8.2</b> 清除浮动的本质</a></li>
+<li class="chapter" data-level="15.8.3" data-path="浮动.html"><a href="浮动.html#清除浮动的方法"><i class="fa fa-check"></i><b>15.8.3</b> 清除浮动的方法</a></li>
+<li class="chapter" data-level="15.8.4" data-path="浮动.html"><a href="浮动.html#额外标签法"><i class="fa fa-check"></i><b>15.8.4</b> 额外标签法</a></li>
+<li class="chapter" data-level="15.8.5" data-path="浮动.html"><a href="浮动.html#父元素添加overflow"><i class="fa fa-check"></i><b>15.8.5</b> 父元素添加overflow</a></li>
+<li class="chapter" data-level="15.8.6" data-path="浮动.html"><a href="浮动.html#float-clear-after"><i class="fa fa-check"></i><b>15.8.6</b> 清除浮动——:after伪元素法</a></li>
+<li class="chapter" data-level="15.8.7" data-path="浮动.html"><a href="浮动.html#双伪元素清除浮动"><i class="fa fa-check"></i><b>15.8.7</b> 双伪元素清除浮动</a></li>
+</ul></li>
+<li class="chapter" data-level="15.9" data-path="浮动.html"><a href="浮动.html#清除浮动总结"><i class="fa fa-check"></i><b>15.9</b> 清除浮动总结</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="定位.html"><a href="定位.html"><i class="fa fa-check"></i><b>16</b> 定位</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="定位.html"><a href="定位.html#为什么需要定位"><i class="fa fa-check"></i><b>16.1</b> 为什么需要定位</a></li>
+<li class="chapter" data-level="16.2" data-path="定位.html"><a href="定位.html#定位的组成"><i class="fa fa-check"></i><b>16.2</b> 定位的组成</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="定位.html"><a href="定位.html#定位模式"><i class="fa fa-check"></i><b>16.2.1</b> 定位模式</a></li>
+<li class="chapter" data-level="16.2.2" data-path="定位.html"><a href="定位.html#边偏移"><i class="fa fa-check"></i><b>16.2.2</b> 边偏移</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="定位.html"><a href="定位.html#静态定位"><i class="fa fa-check"></i><b>16.3</b> 静态定位</a></li>
+<li class="chapter" data-level="16.4" data-path="定位.html"><a href="定位.html#相对定位"><i class="fa fa-check"></i><b>16.4</b> 相对定位</a></li>
+<li class="chapter" data-level="16.5" data-path="定位.html"><a href="定位.html#绝对定位"><i class="fa fa-check"></i><b>16.5</b> 绝对定位</a></li>
+<li class="chapter" data-level="16.6" data-path="定位.html"><a href="定位.html#子绝父相的由来"><i class="fa fa-check"></i><b>16.6</b> 子绝父相的由来</a></li>
+<li class="chapter" data-level="16.7" data-path="定位.html"><a href="定位.html#固定定位"><i class="fa fa-check"></i><b>16.7</b> 固定定位</a></li>
+<li class="chapter" data-level="16.8" data-path="定位.html"><a href="定位.html#粘性定位"><i class="fa fa-check"></i><b>16.8</b> 粘性定位</a></li>
+<li class="chapter" data-level="16.9" data-path="定位.html"><a href="定位.html#定位的总结"><i class="fa fa-check"></i><b>16.9</b> 定位的总结</a></li>
+<li class="chapter" data-level="16.10" data-path="定位.html"><a href="定位.html#定位叠放次序"><i class="fa fa-check"></i><b>16.10</b> 定位叠放次序</a></li>
+<li class="chapter" data-level="16.11" data-path="定位.html"><a href="定位.html#定位的拓展"><i class="fa fa-check"></i><b>16.11</b> 定位的拓展</a>
+<ul>
+<li class="chapter" data-level="16.11.1" data-path="定位.html"><a href="定位.html#绝对固定定位的盒子居中"><i class="fa fa-check"></i><b>16.11.1</b> 绝对/固定定位的盒子居中</a></li>
+<li class="chapter" data-level="16.11.2" data-path="定位.html"><a href="定位.html#定位特殊性"><i class="fa fa-check"></i><b>16.11.2</b> 定位特殊性</a></li>
+<li class="chapter" data-level="16.11.3" data-path="定位.html"><a href="定位.html#脱标的盒子不会触发外边距塌陷"><i class="fa fa-check"></i><b>16.11.3</b> 脱标的盒子不会触发外边距塌陷</a></li>
+<li class="chapter" data-level="16.11.4" data-path="定位.html"><a href="定位.html#绝对固定定位会完全压住盒子"><i class="fa fa-check"></i><b>16.11.4</b> 绝对/固定定位会完全压住盒子</a></li>
+</ul></li>
+<li class="chapter" data-level="16.12" data-path="定位.html"><a href="定位.html#页面布局总结"><i class="fa fa-check"></i><b>16.12</b> 页面布局总结</a></li>
+<li class="chapter" data-level="16.13" data-path="定位.html"><a href="定位.html#元素的显示与隐藏"><i class="fa fa-check"></i><b>16.13</b> 元素的显示与隐藏</a>
+<ul>
+<li class="chapter" data-level="16.13.1" data-path="定位.html"><a href="定位.html#display-属性"><i class="fa fa-check"></i><b>16.13.1</b> display 属性</a></li>
+<li class="chapter" data-level="16.13.2" data-path="定位.html"><a href="定位.html#visibility-可见性"><i class="fa fa-check"></i><b>16.13.2</b> visibility 可见性</a></li>
+<li class="chapter" data-level="16.13.3" data-path="定位.html"><a href="定位.html#overfolw溢出"><i class="fa fa-check"></i><b>16.13.3</b> overfolw溢出</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="bootstrap.html"><a href="bootstrap.html"><i class="fa fa-check"></i><b>17</b> Bootstrap</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="bootstrap.html"><a href="bootstrap.html#下载和引入bootstrap"><i class="fa fa-check"></i><b>17.1</b> 下载和引入Bootstrap</a></li>
+<li class="chapter" data-level="17.2" data-path="bootstrap.html"><a href="bootstrap.html#栅格系统"><i class="fa fa-check"></i><b>17.2</b> 栅格系统</a></li>
+</ul></li>
+<li class="part"><span><b>III JavaScript</b></span></li>
+<li class="chapter" data-level="18" data-path="javascripy基础.html"><a href="javascripy基础.html"><i class="fa fa-check"></i><b>18</b> JavaScripy基础</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="javascripy基础.html"><a href="javascripy基础.html#js简介"><i class="fa fa-check"></i><b>18.1</b> JS简介</a></li>
+<li class="chapter" data-level="18.2" data-path="javascripy基础.html"><a href="javascripy基础.html#js的引入书写位置"><i class="fa fa-check"></i><b>18.2</b> JS的引入（书写位置）</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="javascripy基础.html"><a href="javascripy基础.html#行内式-js"><i class="fa fa-check"></i><b>18.2.1</b> 行内式 JS</a></li>
+<li class="chapter" data-level="18.2.2" data-path="javascripy基础.html"><a href="javascripy基础.html#嵌入js"><i class="fa fa-check"></i><b>18.2.2</b> 嵌入JS</a></li>
+<li class="chapter" data-level="18.2.3" data-path="javascripy基础.html"><a href="javascripy基础.html#外部js"><i class="fa fa-check"></i><b>18.2.3</b> 外部JS</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="javascripy基础.html"><a href="javascripy基础.html#javascript注释"><i class="fa fa-check"></i><b>18.3</b> JavaScript注释</a>
+<ul>
+<li class="chapter" data-level="18.3.1" data-path="javascripy基础.html"><a href="javascripy基础.html#单行注释"><i class="fa fa-check"></i><b>18.3.1</b> 单行注释</a></li>
+<li class="chapter" data-level="18.3.2" data-path="javascripy基础.html"><a href="javascripy基础.html#多行注释"><i class="fa fa-check"></i><b>18.3.2</b> 多行注释</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="javascripy基础.html"><a href="javascripy基础.html#javascript-输入输出语句"><i class="fa fa-check"></i><b>18.4</b> JavaScript 输入输出语句</a></li>
+<li class="chapter" data-level="18.5" data-path="javascripy基础.html"><a href="javascripy基础.html#标识符关键字保留字"><i class="fa fa-check"></i><b>18.5</b> 标识符、关键字、保留字</a>
+<ul>
+<li class="chapter" data-level="18.5.1" data-path="javascripy基础.html"><a href="javascripy基础.html#标识符"><i class="fa fa-check"></i><b>18.5.1</b> 标识符</a></li>
+<li class="chapter" data-level="18.5.2" data-path="javascripy基础.html"><a href="javascripy基础.html#关键字"><i class="fa fa-check"></i><b>18.5.2</b> 关键字</a></li>
+<li class="chapter" data-level="18.5.3" data-path="javascripy基础.html"><a href="javascripy基础.html#保留字"><i class="fa fa-check"></i><b>18.5.3</b> 保留字</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="js变量和常量.html"><a href="js变量和常量.html"><i class="fa fa-check"></i><b>19</b> JS变量和常量</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="js变量和常量.html"><a href="js变量和常量.html#变量的定义声明和赋值"><i class="fa fa-check"></i><b>19.1</b> 变量的定义、声明和赋值</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="js变量和常量.html"><a href="js变量和常量.html#声明变量"><i class="fa fa-check"></i><b>19.1.1</b> 声明变量</a></li>
+<li class="chapter" data-level="19.1.2" data-path="js变量和常量.html"><a href="js变量和常量.html#变量赋值"><i class="fa fa-check"></i><b>19.1.2</b> 变量赋值</a></li>
+<li class="chapter" data-level="19.1.3" data-path="js变量和常量.html"><a href="js变量和常量.html#变量初始化"><i class="fa fa-check"></i><b>19.1.3</b> 变量初始化</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="js变量和常量.html"><a href="js变量和常量.html#变量语法扩展"><i class="fa fa-check"></i><b>19.2</b> 变量语法扩展</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="js变量和常量.html"><a href="js变量和常量.html#更新变量"><i class="fa fa-check"></i><b>19.2.1</b> 更新变量</a></li>
+<li class="chapter" data-level="19.2.2" data-path="js变量和常量.html"><a href="js变量和常量.html#同时声明多个变量"><i class="fa fa-check"></i><b>19.2.2</b> 同时声明多个变量</a></li>
+<li class="chapter" data-level="19.2.3" data-path="js变量和常量.html"><a href="js变量和常量.html#声明变量特殊情况"><i class="fa fa-check"></i><b>19.2.3</b> 声明变量特殊情况</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="js变量和常量.html"><a href="js变量和常量.html#变量的命名规范"><i class="fa fa-check"></i><b>19.3</b> 变量的命名规范</a></li>
+<li class="chapter" data-level="19.4" data-path="js变量和常量.html"><a href="js变量和常量.html#常量"><i class="fa fa-check"></i><b>19.4</b> 常量</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="数据类型.html"><a href="数据类型.html"><i class="fa fa-check"></i><b>20</b> 数据类型</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="数据类型.html"><a href="数据类型.html#数据类型简介"><i class="fa fa-check"></i><b>20.1</b> 数据类型简介</a></li>
+<li class="chapter" data-level="20.2" data-path="数据类型.html"><a href="数据类型.html#数据类型的分类"><i class="fa fa-check"></i><b>20.2</b> 数据类型的分类</a></li>
+<li class="chapter" data-level="20.3" data-path="数据类型.html"><a href="数据类型.html#简单数据类型"><i class="fa fa-check"></i><b>20.3</b> 简单数据类型</a>
+<ul>
+<li class="chapter" data-level="20.3.1" data-path="数据类型.html"><a href="数据类型.html#数字型-number"><i class="fa fa-check"></i><b>20.3.1</b> 数字型 Number</a></li>
+<li class="chapter" data-level="20.3.2" data-path="数据类型.html"><a href="数据类型.html#字符串型-string"><i class="fa fa-check"></i><b>20.3.2</b> 字符串型 String</a></li>
+<li class="chapter" data-level="20.3.3" data-path="数据类型.html"><a href="数据类型.html#布尔型-boolean"><i class="fa fa-check"></i><b>20.3.3</b> 布尔型 Boolean</a></li>
+<li class="chapter" data-level="20.3.4" data-path="数据类型.html"><a href="数据类型.html#undefined-和-null"><i class="fa fa-check"></i><b>20.3.4</b> Undefined 和 Null</a></li>
+</ul></li>
+<li class="chapter" data-level="20.4" data-path="数据类型.html"><a href="数据类型.html#复杂数据类型"><i class="fa fa-check"></i><b>20.4</b> 复杂数据类型</a>
+<ul>
+<li class="chapter" data-level="20.4.1" data-path="数据类型.html"><a href="数据类型.html#数组"><i class="fa fa-check"></i><b>20.4.1</b> 数组</a></li>
+</ul></li>
+<li class="chapter" data-level="20.5" data-path="数据类型.html"><a href="数据类型.html#获取变量数据类型"><i class="fa fa-check"></i><b>20.5</b> 获取变量数据类型</a>
+<ul>
+<li class="chapter" data-level="20.5.1" data-path="数据类型.html"><a href="数据类型.html#获取检测变量的数据类型"><i class="fa fa-check"></i><b>20.5.1</b> 获取检测变量的数据类型</a></li>
+<li class="chapter" data-level="20.5.2" data-path="数据类型.html"><a href="数据类型.html#字面量"><i class="fa fa-check"></i><b>20.5.2</b> 字面量</a></li>
+</ul></li>
+<li class="chapter" data-level="20.6" data-path="数据类型.html"><a href="数据类型.html#数据类型转换"><i class="fa fa-check"></i><b>20.6</b> 数据类型转换</a>
+<ul>
+<li class="chapter" data-level="20.6.1" data-path="数据类型.html"><a href="数据类型.html#为什么要进行数据类型转换"><i class="fa fa-check"></i><b>20.6.1</b> 为什么要进行数据类型转换</a></li>
+<li class="chapter" data-level="20.6.2" data-path="数据类型.html"><a href="数据类型.html#转换为字符串"><i class="fa fa-check"></i><b>20.6.2</b> 转换为字符串</a></li>
+<li class="chapter" data-level="20.6.3" data-path="数据类型.html"><a href="数据类型.html#转换为数字型"><i class="fa fa-check"></i><b>20.6.3</b> 转换为数字型</a></li>
+<li class="chapter" data-level="20.6.4" data-path="数据类型.html"><a href="数据类型.html#转换为布尔型"><i class="fa fa-check"></i><b>20.6.4</b> 转换为布尔型</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="运算符.html"><a href="运算符.html"><i class="fa fa-check"></i><b>21</b> 运算符</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="运算符.html"><a href="运算符.html#数学运算符"><i class="fa fa-check"></i><b>21.1</b> 数学运算符</a></li>
+<li class="chapter" data-level="21.2" data-path="运算符.html"><a href="运算符.html#赋值运算符"><i class="fa fa-check"></i><b>21.2</b> 赋值运算符</a></li>
+<li class="chapter" data-level="21.3" data-path="运算符.html"><a href="运算符.html#自增自减运算符"><i class="fa fa-check"></i><b>21.3</b> 自增自减运算符</a>
+<ul>
+<li class="chapter" data-level="21.3.1" data-path="运算符.html"><a href="运算符.html#前置递增运算符"><i class="fa fa-check"></i><b>21.3.1</b> 前置递增运算符</a></li>
+<li class="chapter" data-level="21.3.2" data-path="运算符.html"><a href="运算符.html#后置递增运算符"><i class="fa fa-check"></i><b>21.3.2</b> 后置递增运算符</a></li>
+</ul></li>
+<li class="chapter" data-level="21.4" data-path="运算符.html"><a href="运算符.html#compare-operator"><i class="fa fa-check"></i><b>21.4</b> 比较运算符</a>
+<ul>
+<li class="chapter" data-level="21.4.1" data-path="运算符.html"><a href="运算符.html#数字型的比较"><i class="fa fa-check"></i><b>21.4.1</b> 数字型的比较</a></li>
+<li class="chapter" data-level="21.4.2" data-path="运算符.html"><a href="运算符.html#字符串的比较"><i class="fa fa-check"></i><b>21.4.2</b> 字符串的比较</a></li>
+</ul></li>
+<li class="chapter" data-level="21.5" data-path="运算符.html"><a href="运算符.html#逻辑运算符"><i class="fa fa-check"></i><b>21.5</b> 逻辑运算符</a></li>
+<li class="chapter" data-level="21.6" data-path="运算符.html"><a href="运算符.html#运算符优先级"><i class="fa fa-check"></i><b>21.6</b> 运算符优先级</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="语句.html"><a href="语句.html"><i class="fa fa-check"></i><b>22</b> 语句</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="语句.html"><a href="语句.html#表达式和语句"><i class="fa fa-check"></i><b>22.1</b> 表达式和语句</a>
+<ul>
+<li class="chapter" data-level="22.1.1" data-path="语句.html"><a href="语句.html#表达式"><i class="fa fa-check"></i><b>22.1.1</b> 表达式</a></li>
+<li class="chapter" data-level="22.1.2" data-path="语句.html"><a href="语句.html#语句-1"><i class="fa fa-check"></i><b>22.1.2</b> 语句</a></li>
+<li class="chapter" data-level="22.1.3" data-path="语句.html"><a href="语句.html#流程控制"><i class="fa fa-check"></i><b>22.1.3</b> 流程控制</a></li>
+</ul></li>
+<li class="chapter" data-level="22.2" data-path="语句.html"><a href="语句.html#分支语句"><i class="fa fa-check"></i><b>22.2</b> 分支语句</a>
+<ul>
+<li class="chapter" data-level="22.2.1" data-path="语句.html"><a href="语句.html#if分支语句"><i class="fa fa-check"></i><b>22.2.1</b> if分支语句</a></li>
+<li class="chapter" data-level="22.2.2" data-path="语句.html"><a href="语句.html#多分支if语句"><i class="fa fa-check"></i><b>22.2.2</b> 多分支if语句</a></li>
+<li class="chapter" data-level="22.2.3" data-path="语句.html"><a href="语句.html#三元运算符"><i class="fa fa-check"></i><b>22.2.3</b> 三元运算符</a></li>
+<li class="chapter" data-level="22.2.4" data-path="语句.html"><a href="语句.html#switch分支语句"><i class="fa fa-check"></i><b>22.2.4</b> switch分支语句</a></li>
+</ul></li>
+<li class="chapter" data-level="22.3" data-path="语句.html"><a href="语句.html#循环语句"><i class="fa fa-check"></i><b>22.3</b> 循环语句</a>
+<ul>
+<li class="chapter" data-level="22.3.1" data-path="语句.html"><a href="语句.html#while循环"><i class="fa fa-check"></i><b>22.3.1</b> while循环</a></li>
+<li class="chapter" data-level="22.3.2" data-path="语句.html"><a href="语句.html#for循环"><i class="fa fa-check"></i><b>22.3.2</b> for循环</a></li>
+<li class="chapter" data-level="22.3.3" data-path="语句.html"><a href="语句.html#嵌套for循环"><i class="fa fa-check"></i><b>22.3.3</b> 嵌套for循环</a></li>
+<li class="chapter" data-level="22.3.4" data-path="语句.html"><a href="语句.html#操作数组"><i class="fa fa-check"></i><b>22.3.4</b> 操作数组</a></li>
+<li class="chapter" data-level="22.3.5" data-path="语句.html"><a href="语句.html#数组排序"><i class="fa fa-check"></i><b>22.3.5</b> 数组排序</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="学成在线案例.html"><a href="学成在线案例.html"><i class="fa fa-check"></i><b>23</b> 学成在线案例</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="学成在线案例.html"><a href="学成在线案例.html#准备素材和工具"><i class="fa fa-check"></i><b>23.1</b> 准备素材和工具</a></li>
+<li class="chapter" data-level="23.2" data-path="学成在线案例.html"><a href="学成在线案例.html#案例准备工作"><i class="fa fa-check"></i><b>23.2</b> 案例准备工作</a></li>
+<li class="chapter" data-level="23.3" data-path="学成在线案例.html"><a href="学成在线案例.html#css属性书写顺序"><i class="fa fa-check"></i><b>23.3</b> CSS属性书写顺序</a></li>
+<li class="chapter" data-level="23.4" data-path="学成在线案例.html"><a href="学成在线案例.html#页面布局整体思路"><i class="fa fa-check"></i><b>23.4</b> 页面布局整体思路</a>
+<ul>
+<li class="chapter" data-level="23.4.1" data-path="学成在线案例.html"><a href="学成在线案例.html#确定版心"><i class="fa fa-check"></i><b>23.4.1</b> 确定版心</a></li>
+<li class="chapter" data-level="23.4.2" data-path="学成在线案例.html"><a href="学成在线案例.html#头部制作"><i class="fa fa-check"></i><b>23.4.2</b> 头部制作</a></li>
+<li class="chapter" data-level="23.4.3" data-path="学成在线案例.html"><a href="学成在线案例.html#精品推荐小模块"><i class="fa fa-check"></i><b>23.4.3</b> 精品推荐小模块</a></li>
+<li class="chapter" data-level="23.4.4" data-path="学成在线案例.html"><a href="学成在线案例.html#精品推荐大模块"><i class="fa fa-check"></i><b>23.4.4</b> 精品推荐大模块</a></li>
+<li class="chapter" data-level="23.4.5" data-path="学成在线案例.html"><a href="学成在线案例.html#底部模块"><i class="fa fa-check"></i><b>23.4.5</b> 底部模块</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV 附录</b></span></li>
+<li class="chapter" data-level="24" data-path="vscode常用操作.html"><a href="vscode常用操作.html"><i class="fa fa-check"></i><b>24</b> Vscode常用操作</a>
+<ul>
+<li class="chapter" data-level="24.1" data-path="vscode常用操作.html"><a href="vscode常用操作.html#vscode快捷键"><i class="fa fa-check"></i><b>24.1</b> Vscode快捷键</a></li>
+<li class="chapter" data-level="24.2" data-path="vscode常用操作.html"><a href="vscode常用操作.html#emmet语法"><i class="fa fa-check"></i><b>24.2</b> Emmet语法</a>
+<ul>
+<li class="chapter" data-level="24.2.1" data-path="vscode常用操作.html"><a href="vscode常用操作.html#快速生成html结构语法"><i class="fa fa-check"></i><b>24.2.1</b> 快速生成HTML结构语法</a></li>
+<li class="chapter" data-level="24.2.2" data-path="vscode常用操作.html"><a href="vscode常用操作.html#快速生成css样式语法"><i class="fa fa-check"></i><b>24.2.2</b> 快速生成CSS样式语法</a></li>
+<li class="chapter" data-level="24.2.3" data-path="vscode常用操作.html"><a href="vscode常用操作.html#快速格式化代码"><i class="fa fa-check"></i><b>24.2.3</b> 快速格式化代码</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="ps.html"><a href="ps.html"><i class="fa fa-check"></i><b>25</b> PS</a>
+<ul>
+<li class="chapter" data-level="25.1" data-path="ps.html"><a href="ps.html#图片格式"><i class="fa fa-check"></i><b>25.1</b> 图片格式</a></li>
+<li class="chapter" data-level="25.2" data-path="ps.html"><a href="ps.html#快捷键"><i class="fa fa-check"></i><b>25.2</b> 快捷键</a></li>
+<li class="chapter" data-level="25.3" data-path="ps.html"><a href="ps.html#ps复制文字"><i class="fa fa-check"></i><b>25.3</b> PS复制文字</a></li>
+<li class="chapter" data-level="25.4" data-path="ps.html"><a href="ps.html#ps切图"><i class="fa fa-check"></i><b>25.4</b> PS切图</a>
+<ul>
+<li class="chapter" data-level="25.4.1" data-path="ps.html"><a href="ps.html#图层切图"><i class="fa fa-check"></i><b>25.4.1</b> 图层切图</a></li>
+<li class="chapter" data-level="25.4.2" data-path="ps.html"><a href="ps.html#切片工具"><i class="fa fa-check"></i><b>25.4.2</b> 切片工具</a></li>
+<li class="chapter" data-level="25.4.3" data-path="ps.html"><a href="ps.html#插件切图"><i class="fa fa-check"></i><b>25.4.3</b> 插件切图</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="js断点调试.html"><a href="js断点调试.html"><i class="fa fa-check"></i><b>26</b> JS断点调试</a></li>
+<li class="chapter" data-level="27" data-path="chrome调试工具.html"><a href="chrome调试工具.html"><i class="fa fa-check"></i><b>27</b> Chrome调试工具</a>
+<ul>
+<li class="chapter" data-level="27.1" data-path="chrome调试工具.html"><a href="chrome调试工具.html#打开调试工具"><i class="fa fa-check"></i><b>27.1</b> 打开调试工具</a></li>
+<li class="chapter" data-level="27.2" data-path="chrome调试工具.html"><a href="chrome调试工具.html#使用调试工具"><i class="fa fa-check"></i><b>27.2</b> 使用调试工具</a></li>
+</ul></li>
+<li class="chapter" data-level="28" data-path="js断点调试-1.html"><a href="js断点调试-1.html"><i class="fa fa-check"></i><b>28</b> JS断点调试</a></li>
+<li class="chapter" data-level="29" data-path="javascripy基础-1.html"><a href="javascripy基础-1.html"><i class="fa fa-check"></i><b>29</b> JavaScripy基础</a>
+<ul>
+<li class="chapter" data-level="29.1" data-path="javascripy基础-1.html"><a href="javascripy基础-1.html#下载和引入"><i class="fa fa-check"></i><b>29.1</b> 下载和引入</a></li>
+<li class="chapter" data-level="29.2" data-path="javascripy基础-1.html"><a href="javascripy基础-1.html#简介"><i class="fa fa-check"></i><b>29.2</b> 简介</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Web开发学习笔记</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="语句" class="section level1 hasAnchor" number="22">
+<h1><span class="header-section-number">22</span> 语句<a href="语句.html#语句" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="表达式和语句" class="section level2 hasAnchor" number="22.1">
+<h2><span class="header-section-number">22.1</span> 表达式和语句<a href="语句.html#表达式和语句" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="表达式" class="section level3 hasAnchor" number="22.1.1">
+<h3><span class="header-section-number">22.1.1</span> 表达式<a href="语句.html#表达式" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>表达式是可以被求值的代码，JS引擎会将其计算出一个结果。因为表达式可以被求值，所以它可以写在赋值语句的右侧。</p>
+<div class="sourceCode" id="cb253"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb253-1"><a href="语句.html#cb253-1" tabindex="-1"></a>x <span class="op">=</span><span class="dv">7</span></span>
+<span id="cb253-2"><a href="语句.html#cb253-2" tabindex="-1"></a><span class="dv">3</span> <span class="op">+</span> <span class="dv">4</span></span>
+<span id="cb253-3"><a href="语句.html#cb253-3" tabindex="-1"></a>num<span class="op">++</span></span></code></pre></div>
+</div>
+<div id="语句-1" class="section level3 hasAnchor" number="22.1.2">
+<h3><span class="header-section-number">22.1.2</span> 语句<a href="语句.html#语句-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>语句是一段可以执行的代码。比如：prompt()可以淡出一个输入框，还有if语句，for循环语句等。</p>
+<p>预计不一定有值，如alert() for 和break语句。</p>
+</div>
+<div id="流程控制" class="section level3 hasAnchor" number="22.1.3">
+<h3><span class="header-section-number">22.1.3</span> 流程控制<a href="语句.html#流程控制" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>流程控制主要有三种结构，分别是<strong>顺序结构</strong>、<strong>分支结构</strong>和<strong>循环结构</strong>，代表三种代码执行的顺序</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="fig/JS/01/statement.jpg" alt="流程控制" width="696" />
+<p class="caption">
+图6.1: 流程控制
+</p>
+</div>
+</div>
+</div>
+<div id="分支语句" class="section level2 hasAnchor" number="22.2">
+<h2><span class="header-section-number">22.2</span> 分支语句<a href="语句.html#分支语句" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>分支语句包含</p>
+<ul>
+<li>if分支语句</li>
+<li>三元运算符</li>
+<li>switch语句</li>
+</ul>
+<div id="if分支语句" class="section level3 hasAnchor" number="22.2.1">
+<h3><span class="header-section-number">22.2.1</span> if分支语句<a href="语句.html#if分支语句" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>if语句有三种使用：单分支、双分支和多分支。</p>
+<div id="单分支if语句" class="section level4 hasAnchor" number="22.2.1.1">
+<h4><span class="header-section-number">22.2.1.1</span> 单分支if语句<a href="语句.html#单分支if语句" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb254"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb254-1"><a href="语句.html#cb254-1" tabindex="-1"></a><span class="cf">if</span> (条件) {</span>
+<span id="cb254-2"><a href="语句.html#cb254-2" tabindex="-1"></a>  满足条件要执行的代码</span>
+<span id="cb254-3"><a href="语句.html#cb254-3" tabindex="-1"></a>}</span></code></pre></div>
+<ul>
+<li>括号内的条件为true时，进入大括号里执行代码</li>
+<li>小括号内的结果若不是布尔类型时，会发生隐式转换转为布尔类型</li>
+<li>如果大括号只有一个语句，大括号可以省略，但是不推荐</li>
+</ul>
+<p>详见：<a href="配套HTML文件/js/01/32-if单分支语句.html" target="_blank">示例</a></p>
+</div>
+<div id="双分支if语句" class="section level4 hasAnchor" number="22.2.1.2">
+<h4><span class="header-section-number">22.2.1.2</span> 双分支if语句<a href="语句.html#双分支if语句" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb255"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb255-1"><a href="语句.html#cb255-1" tabindex="-1"></a><span class="cf">if</span> (条件) {</span>
+<span id="cb255-2"><a href="语句.html#cb255-2" tabindex="-1"></a>  满足条件要执行的代码</span>
+<span id="cb255-3"><a href="语句.html#cb255-3" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb255-4"><a href="语句.html#cb255-4" tabindex="-1"></a>  不满足条件执行的代码</span>
+<span id="cb255-5"><a href="语句.html#cb255-5" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>案例1</strong></p>
+<p>需求: 用户输入，用户名: pink，密码: 123456，则提示登录成功，否则提示登录失败</p>
+<p>详见：<a href="配套HTML文件/js/01/33-01-if双分支语句1.html" target="_blank">示例</a></p>
+<p><strong>案例2</strong></p>
+<p>平年闰年：能被4整除但不能被100整除，或者被400整除的年份是闺年，否则都是平年</p>
+<p>详见：<a href="配套HTML文件/js/01/33-02-if双分支语句2.html" target="_blank">示例</a></p>
+</div>
+</div>
+<div id="多分支if语句" class="section level3 hasAnchor" number="22.2.2">
+<h3><span class="header-section-number">22.2.2</span> 多分支if语句<a href="语句.html#多分支if语句" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb256"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb256-1"><a href="语句.html#cb256-1" tabindex="-1"></a><span class="cf">if</span> (条件1) {</span>
+<span id="cb256-2"><a href="语句.html#cb256-2" tabindex="-1"></a>  代码1</span>
+<span id="cb256-3"><a href="语句.html#cb256-3" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (条件2) {</span>
+<span id="cb256-4"><a href="语句.html#cb256-4" tabindex="-1"></a>  代码2</span>
+<span id="cb256-5"><a href="语句.html#cb256-5" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (条件3) {</span>
+<span id="cb256-6"><a href="语句.html#cb256-6" tabindex="-1"></a>  代码3</span>
+<span id="cb256-7"><a href="语句.html#cb256-7" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb256-8"><a href="语句.html#cb256-8" tabindex="-1"></a>  代码n</span>
+<span id="cb256-9"><a href="语句.html#cb256-9" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>案例</strong></p>
+<p>输入成绩案例</p>
+<p>需求:根据输入不同的成绩，反馈不同的评价
+注:成绩90以上是优秀、成绩70~90是 良好、成绩是60~70之间是及格:成绩60分以下是 不及格</p>
+<p>详见：<a href="配套HTML文件/js/01/34-if多分支语句.html" target="_blank">示例</a></p>
+</div>
+<div id="三元运算符" class="section level3 hasAnchor" number="22.2.3">
+<h3><span class="header-section-number">22.2.3</span> 三元运算符<a href="语句.html#三元运算符" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>其实就是双分支if语句，可以使用三元表达式，一般用来与取值。</p>
+<p>语法：</p>
+<div class="sourceCode" id="cb257"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb257-1"><a href="语句.html#cb257-1" tabindex="-1"></a>条件 <span class="op">?</span> 满足条件执行的代码 <span class="op">:</span> 不满足条件执行的代码</span></code></pre></div>
+<p>详见：<a href="配套HTML文件/js/01/35-三元运算符.html" target="_blank">示例</a></p>
+<p><strong>案例</strong></p>
+<p>用户输入2个数，控制台输出最大值</p>
+<p>详见：<a href="配套HTML文件/js/01/35-01-三元运算符案例.html" target="_blank">示例</a></p>
+<p><strong>案例</strong></p>
+<p>数字补0案例</p>
+<p>需求: 用户输入1个数，如果数字小于10，则前面进行补0，比如 09 03 等</p>
+<p>分析:</p>
+<ul>
+<li>为后期页面显示时间做铺垫</li>
+<li>利用三元运算符 补0计算</li>
+</ul>
+<p>详见：<a href="配套HTML文件/js/01/35-02-三元运算符案例2.html" target="_blank">示例</a></p>
+</div>
+<div id="switch分支语句" class="section level3 hasAnchor" number="22.2.4">
+<h3><span class="header-section-number">22.2.4</span> switch分支语句<a href="语句.html#switch分支语句" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb258"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb258-1"><a href="语句.html#cb258-1" tabindex="-1"></a><span class="cf">switch</span> (数据) {</span>
+<span id="cb258-2"><a href="语句.html#cb258-2" tabindex="-1"></a>  <span class="cf">case</span> <span class="dt">值1</span><span class="op">:</span></span>
+<span id="cb258-3"><a href="语句.html#cb258-3" tabindex="-1"></a>  代码1</span>
+<span id="cb258-4"><a href="语句.html#cb258-4" tabindex="-1"></a>  <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb258-5"><a href="语句.html#cb258-5" tabindex="-1"></a>  <span class="cf">case</span> <span class="dt">值2</span><span class="op">:</span></span>
+<span id="cb258-6"><a href="语句.html#cb258-6" tabindex="-1"></a>  代码2</span>
+<span id="cb258-7"><a href="语句.html#cb258-7" tabindex="-1"></a>  <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb258-8"><a href="语句.html#cb258-8" tabindex="-1"></a>  <span class="cf">default</span><span class="op">:</span></span>
+<span id="cb258-9"><a href="语句.html#cb258-9" tabindex="-1"></a>  代码n</span>
+<span id="cb258-10"><a href="语句.html#cb258-10" tabindex="-1"></a>  <span class="cf">break</span></span>
+<span id="cb258-11"><a href="语句.html#cb258-11" tabindex="-1"></a>}</span></code></pre></div>
+<p>找到跟小括号里数据全等（===）的case值，并执行里面对应的代码
+，若没有的则执行default里的代码</p>
+<ul>
+<li>switch case语句一般用于等值判断,不适合于区间判断</li>
+<li>switch case一般需要配合break关键字使用 没有break会造成case<strong>穿透</strong></li>
+</ul>
+<p>详见：<a href="配套HTML文件/js/01/36-switch语句.html" target="_blank">示例</a></p>
+<p><strong>案例</strong></p>
+<p>需求:用户输入2个数字，然后输入 +- * /任何一个，可以计算结果</p>
+<ul>
+<li>用户输入数字</li>
+<li>用户输入不同算术运算符，可以去执行不同的运算(switch)</li>
+</ul>
+<p>详见：<a href="配套HTML文件/js/01/36-01-switch案例.html" target="_blank">示例</a></p>
+</div>
+</div>
+<div id="循环语句" class="section level2 hasAnchor" number="22.3">
+<h2><span class="header-section-number">22.3</span> 循环语句<a href="语句.html#循环语句" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>循环：重复执行一些操作</p>
+<div id="while循环" class="section level3 hasAnchor" number="22.3.1">
+<h3><span class="header-section-number">22.3.1</span> while循环<a href="语句.html#while循环" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>while : 在…期间， 所以 while循环就是在满足条件期间，重复执行某些代码。
+比如我们运行相同的代码输出5次（输出5句 “我学的很棒”）</p>
+<div id="while-循环基本语法" class="section level4 hasAnchor" number="22.3.1.1">
+<h4><span class="header-section-number">22.3.1.1</span> while 循环基本语法：<a href="语句.html#while-循环基本语法" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb259"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb259-1"><a href="语句.html#cb259-1" tabindex="-1"></a><span class="cf">while</span> (循环条件) {</span>
+<span id="cb259-2"><a href="语句.html#cb259-2" tabindex="-1"></a>  要重复执行的代码<span class="op">/</span>循环体</span>
+<span id="cb259-3"><a href="语句.html#cb259-3" tabindex="-1"></a>}</span></code></pre></div>
+<p>释义</p>
+<ul>
+<li>跟if语句很像，都要满足小括号里的条件为true才会进入 循环体 执行代码</li>
+<li>while大括号里代码执行完毕后不会跳出，而是继续回到小括号里判断条件是否满足，若满足又执行大括号里的代码，然后再回到小括号判断条件，直到括号内条件不满足，即跳出</li>
+</ul>
+</div>
+<div id="while-循环三要素" class="section level4 hasAnchor" number="22.3.1.2">
+<h4><span class="header-section-number">22.3.1.2</span> while 循环三要素<a href="语句.html#while-循环三要素" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>循环的本质就是以某个变量为起始值，然后不断产生变化量，慢慢靠近终止条件的过程。
+所以，while循环需要具备三要素：</p>
+<ol style="list-style-type: decimal">
+<li>变量起始值</li>
+<li>终止条件（没有终止条件，循环会一直执行，造成死循环）</li>
+<li>变量变化量（用自增或者自减）</li>
+</ol>
+<p><strong>案例1</strong></p>
+<p>打印三次</p>
+<p>详见：<a href="配套HTML文件/js/01/38-while循环.html" target="_blank">示例</a></p>
+<p><strong>案例2</strong></p>
+<p>页面输出1-100</p>
+<p>详见：<a href="配套HTML文件/js/01/38-while循环.html" target="_blank">示例</a></p>
+<p><strong>案例3</strong></p>
+<p>计算1-100的的和并输出</p>
+<p>详见：<a href="配套HTML文件/js/01/38-03-while案例3.html" target="_blank">示例</a></p>
+<p><strong>案例4</strong></p>
+<p>计算1-100的的偶数和并输出</p>
+<p>详见：<a href="配套HTML文件/js/01/38-04-while案例4.html" target="_blank">示例</a></p>
+</div>
+<div id="while-exit" class="section level4 hasAnchor" number="22.3.1.3">
+<h4><span class="header-section-number">22.3.1.3</span> 循环退出<a href="语句.html#while-exit" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>循环结束：</p>
+<ul>
+<li>break：退出循环。一般用于结果已经得到, 后续的循环不需要的时候可以使用</li>
+<li>continue：结束本次循环，继续下次循环。一般用于排除或者跳过某一个选项的时候</li>
+</ul>
+<div class="sourceCode" id="cb260"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb260-1"><a href="语句.html#cb260-1" tabindex="-1"></a><span class="op">&lt;</span>body<span class="op">&gt;</span></span>
+<span id="cb260-2"><a href="语句.html#cb260-2" tabindex="-1"></a>    <span class="op">&lt;</span>script<span class="op">&gt;</span></span>
+<span id="cb260-3"><a href="语句.html#cb260-3" tabindex="-1"></a>        <span class="kw">let</span> i <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb260-4"><a href="语句.html#cb260-4" tabindex="-1"></a>        <span class="cf">while</span> (i <span class="op">&lt;=</span> <span class="dv">5</span>) {</span>
+<span id="cb260-5"><a href="语句.html#cb260-5" tabindex="-1"></a>            <span class="cf">if</span> (i <span class="op">===</span> <span class="dv">3</span>) { <span class="co">//假设吃到第三个包子就饱了，第3个及之后的包子都不想吃了</span></span>
+<span id="cb260-6"><a href="语句.html#cb260-6" tabindex="-1"></a>                <span class="cf">break</span></span>
+<span id="cb260-7"><a href="语句.html#cb260-7" tabindex="-1"></a>            }</span>
+<span id="cb260-8"><a href="语句.html#cb260-8" tabindex="-1"></a>            <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`我要吃第</span><span class="sc">${</span>i<span class="sc">}</span><span class="vs">个包子。`</span>)</span>
+<span id="cb260-9"><a href="语句.html#cb260-9" tabindex="-1"></a>            i<span class="op">++</span></span>
+<span id="cb260-10"><a href="语句.html#cb260-10" tabindex="-1"></a>        }</span>
+<span id="cb260-11"><a href="语句.html#cb260-11" tabindex="-1"></a></span>
+<span id="cb260-12"><a href="语句.html#cb260-12" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;------------------------------&#39;</span>)</span>
+<span id="cb260-13"><a href="语句.html#cb260-13" tabindex="-1"></a></span>
+<span id="cb260-14"><a href="语句.html#cb260-14" tabindex="-1"></a>        <span class="kw">let</span> j <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb260-15"><a href="语句.html#cb260-15" tabindex="-1"></a>        <span class="cf">while</span> (j <span class="op">&lt;=</span> <span class="dv">5</span>) {</span>
+<span id="cb260-16"><a href="语句.html#cb260-16" tabindex="-1"></a>            <span class="cf">if</span> (j <span class="op">===</span> <span class="dv">3</span>) { <span class="co">//假设吃到第三个包子时，发现有个苍蝇，跳过第三个包子</span></span>
+<span id="cb260-17"><a href="语句.html#cb260-17" tabindex="-1"></a>                j<span class="op">++</span>  <span class="co">//j=3时，需要先进行自增，否则continue会跳过后面的之后的自增语句，陷入死循环</span></span>
+<span id="cb260-18"><a href="语句.html#cb260-18" tabindex="-1"></a>                <span class="cf">continue</span></span>
+<span id="cb260-19"><a href="语句.html#cb260-19" tabindex="-1"></a>            }</span>
+<span id="cb260-20"><a href="语句.html#cb260-20" tabindex="-1"></a>            <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`我要吃第</span><span class="sc">${</span>j<span class="sc">}</span><span class="vs">个包子。`</span>)</span>
+<span id="cb260-21"><a href="语句.html#cb260-21" tabindex="-1"></a>            j<span class="op">++</span></span>
+<span id="cb260-22"><a href="语句.html#cb260-22" tabindex="-1"></a>        }</span>
+<span id="cb260-23"><a href="语句.html#cb260-23" tabindex="-1"></a></span>
+<span id="cb260-24"><a href="语句.html#cb260-24" tabindex="-1"></a>    <span class="op">&lt;/</span>script<span class="op">&gt;</span></span>
+<span id="cb260-25"><a href="语句.html#cb260-25" tabindex="-1"></a><span class="op">&lt;/</span>body<span class="op">&gt;</span></span></code></pre></div>
+<p>详见：<a href="配套HTML文件/js/01/39-01退出循环.html" target="_blank">示例</a></p>
+<p><strong>案例</strong></p>
+<p>需求：页面弹出对话框，‘你爱我吗’，如果输入‘爱’，则结束，否则一直弹出对话框</p>
+<p>详见：<a href="配套HTML文件/js/01/39-02-退出循环案例.html" target="_blank">示例</a></p>
+<p><strong>综合案例</strong></p>
+<p>做一个具有存取款和查询功能。</p>
+<p>详见：<a href="配套HTML文件/js/01/39-03-取款综合案例.html" target="_blank">示例</a></p>
+</div>
+</div>
+<div id="for循环" class="section level3 hasAnchor" number="22.3.2">
+<h3><span class="header-section-number">22.3.2</span> for循环<a href="语句.html#for循环" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>for循环语法：把声明起始值、循环条件、变化值写到一起，让人一目了然，它是最常使用的循环形式</p>
+<div class="sourceCode" id="cb261"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb261-1"><a href="语句.html#cb261-1" tabindex="-1"></a><span class="cf">for</span> (变量起始值<span class="op">;</span> 终止条件<span class="op">;</span> 变量变化量) {</span>
+<span id="cb261-2"><a href="语句.html#cb261-2" tabindex="-1"></a>  <span class="co">// 循环体</span></span>
+<span id="cb261-3"><a href="语句.html#cb261-3" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>练习1</strong></p>
+<p>利用for循环输出1~100岁</p>
+<p>详见：<a href="配套HTML文件/js/01/40-01-练习1.html" target="_blank">示例</a></p>
+<p><strong>练习2</strong></p>
+<p>求1-100之间所有的偶数和</p>
+<p>详见：<a href="配套HTML文件/js/01/40-02-练习2.html" target="_blank">示例</a></p>
+<p><strong>练习3</strong></p>
+<p>页面中打印5个小星星</p>
+<p>详见：<a href="配套HTML文件/js/01/40-03-练习3.html" target="_blank">示例</a></p>
+<p><strong>练习4</strong></p>
+<p>循环数组
+需求： 请将 数组 [‘马超’, ‘赵云’, ‘张飞’, ‘关羽’, ‘黄忠’] 依次打印出来</p>
+<p>详见：<a href="配套HTML文件/js/01/40-04-练习4.html" target="_blank">示例</a></p>
+<div id="退出循环" class="section level4 hasAnchor" number="22.3.2.1">
+<h4><span class="header-section-number">22.3.2.1</span> 退出循环<a href="语句.html#退出循环" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>其用法与while循环中的退出循环基本一致，见第 <a href="语句.html#while-exit">22.3.1.3</a>节</p>
+<ul>
+<li>continue 退出本次循环，一般用于排除或者跳过某一个选项的时候, 可以使用continue</li>
+<li>break 退出整个for循环，一般用于结果已经得到, 后续的循环不需要的时候可以使用</li>
+</ul>
+<div class="sourceCode" id="cb262"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb262-1"><a href="语句.html#cb262-1" tabindex="-1"></a><span class="op">&lt;</span>body<span class="op">&gt;</span></span>
+<span id="cb262-2"><a href="语句.html#cb262-2" tabindex="-1"></a>    <span class="op">&lt;</span>script<span class="op">&gt;</span></span>
+<span id="cb262-3"><a href="语句.html#cb262-3" tabindex="-1"></a></span>
+<span id="cb262-4"><a href="语句.html#cb262-4" tabindex="-1"></a>        <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;=</span> <span class="dv">5</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb262-5"><a href="语句.html#cb262-5" tabindex="-1"></a>            <span class="cf">if</span> (i <span class="op">===</span> <span class="dv">3</span>) {<span class="co">//假设吃到第三个包子就饱了，第3个及之后的包子都不想吃了</span></span>
+<span id="cb262-6"><a href="语句.html#cb262-6" tabindex="-1"></a>                <span class="cf">break</span></span>
+<span id="cb262-7"><a href="语句.html#cb262-7" tabindex="-1"></a>            }</span>
+<span id="cb262-8"><a href="语句.html#cb262-8" tabindex="-1"></a>            <span class="bu">document</span><span class="op">.</span><span class="fu">write</span>(<span class="vs">`我要吃第</span><span class="sc">${</span>i<span class="sc">}</span><span class="vs">个包子。 &lt;br&gt;`</span>)</span>
+<span id="cb262-9"><a href="语句.html#cb262-9" tabindex="-1"></a>        }</span>
+<span id="cb262-10"><a href="语句.html#cb262-10" tabindex="-1"></a></span>
+<span id="cb262-11"><a href="语句.html#cb262-11" tabindex="-1"></a>        <span class="bu">document</span><span class="op">.</span><span class="fu">write</span>(<span class="vs">`------------------------------------------- &lt;br&gt;`</span>)</span>
+<span id="cb262-12"><a href="语句.html#cb262-12" tabindex="-1"></a></span>
+<span id="cb262-13"><a href="语句.html#cb262-13" tabindex="-1"></a>        <span class="cf">for</span> (<span class="kw">let</span> j <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> j <span class="op">&lt;=</span> <span class="dv">5</span><span class="op">;</span> j<span class="op">++</span>) {</span>
+<span id="cb262-14"><a href="语句.html#cb262-14" tabindex="-1"></a>            <span class="cf">if</span> (j <span class="op">===</span> <span class="dv">3</span>) {<span class="co">//假设吃到第三个包子时，发现有个苍蝇，跳过第三个包子</span></span>
+<span id="cb262-15"><a href="语句.html#cb262-15" tabindex="-1"></a>                <span class="cf">continue</span></span>
+<span id="cb262-16"><a href="语句.html#cb262-16" tabindex="-1"></a>            }</span>
+<span id="cb262-17"><a href="语句.html#cb262-17" tabindex="-1"></a>            <span class="bu">document</span><span class="op">.</span><span class="fu">write</span>(<span class="vs">`我要吃第</span><span class="sc">${</span>j<span class="sc">}</span><span class="vs">个包子。 &lt;br&gt;`</span>)</span>
+<span id="cb262-18"><a href="语句.html#cb262-18" tabindex="-1"></a>        }</span>
+<span id="cb262-19"><a href="语句.html#cb262-19" tabindex="-1"></a>    <span class="op">&lt;/</span>script<span class="op">&gt;</span></span>
+<span id="cb262-20"><a href="语句.html#cb262-20" tabindex="-1"></a><span class="op">&lt;/</span>body<span class="op">&gt;</span></span></code></pre></div>
+<p>详见：<a href="配套HTML文件/js/01/41-01-退出循环练习1.html" target="_blank">示例</a></p>
+</div>
+</div>
+<div id="嵌套for循环" class="section level3 hasAnchor" number="22.3.3">
+<h3><span class="header-section-number">22.3.3</span> 嵌套for循环<a href="语句.html#嵌套for循环" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>for 循环嵌套的语法</p>
+<div class="sourceCode" id="cb263"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb263-1"><a href="语句.html#cb263-1" tabindex="-1"></a><span class="cf">for</span> (外层循环的变量<span class="op">;</span> 循环条件<span class="op">;</span> 变化值) {</span>
+<span id="cb263-2"><a href="语句.html#cb263-2" tabindex="-1"></a>  </span>
+<span id="cb263-3"><a href="语句.html#cb263-3" tabindex="-1"></a>  <span class="cf">for</span> (外层循环的变量<span class="op">;</span> 循环条件<span class="op">;</span> 变化值) {</span>
+<span id="cb263-4"><a href="语句.html#cb263-4" tabindex="-1"></a>    循环体</span>
+<span id="cb263-5"><a href="语句.html#cb263-5" tabindex="-1"></a>  }</span>
+<span id="cb263-6"><a href="语句.html#cb263-6" tabindex="-1"></a>  </span>
+<span id="cb263-7"><a href="语句.html#cb263-7" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>练习1</strong></p>
+<p>计算： 假如每天记住5个单词，3天后一共能记住多少单词？</p>
+<p>详见：<a href="配套HTML文件/js/01/42-01-嵌套for循环.html" target="_blank">示例</a></p>
+<p><strong>案例1</strong></p>
+<p>页面中打印出5行5列的星星</p>
+<p>详见：<a href="配套HTML文件/js/01/42-02-嵌套for循环案例1.html" target="_blank">示例</a></p>
+<p>升级版本：用户输入行数和列数，打印对应的星星！</p>
+<p>详见：<a href="配套HTML文件/js/01/42-03-嵌套for循环案例2.html" target="_blank">示例</a></p>
+<p><strong>案例2</strong></p>
+<p>打印倒三角形星星</p>
+<p>详见：<a href="配套HTML文件/js/01/42-04-嵌套for循环案例3.html" target="_blank">示例</a></p>
+<p><strong>案例3</strong></p>
+<p>九九乘法表</p>
+<p>详见：<a href="配套HTML文件/js/01/42-05-嵌套for循环案例4.html" target="_blank">示例</a></p>
+</div>
+<div id="操作数组" class="section level3 hasAnchor" number="22.3.4">
+<h3><span class="header-section-number">22.3.4</span> 操作数组<a href="语句.html#操作数组" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>数组本质是数据集合, 操作数据无非就是 增 删 改 查 语法。</p>
+<div id="operate-array" class="section level4 hasAnchor" number="22.3.4.1">
+<h4><span class="header-section-number">22.3.4.1</span> 遍历数组<a href="语句.html#operate-array" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>语法：</p>
+<div class="sourceCode" id="cb264"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb264-1"><a href="语句.html#cb264-1" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> 数组名<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb264-2"><a href="语句.html#cb264-2" tabindex="-1"></a>  数组名[i]</span>
+<span id="cb264-3"><a href="语句.html#cb264-3" tabindex="-1"></a>}</span>
+<span id="cb264-4"><a href="语句.html#cb264-4" tabindex="-1"></a></span>
+<span id="cb264-5"><a href="语句.html#cb264-5" tabindex="-1"></a><span class="co">//例子：</span></span>
+<span id="cb264-6"><a href="语句.html#cb264-6" tabindex="-1"></a><span class="kw">let</span> nums <span class="op">=</span> [<span class="dv">10</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">30</span><span class="op">,</span> <span class="dv">40</span><span class="op">,</span> <span class="dv">50</span>]</span>
+<span id="cb264-7"><a href="语句.html#cb264-7" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> nums<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb264-8"><a href="语句.html#cb264-8" tabindex="-1"></a>  nums[i]</span>
+<span id="cb264-9"><a href="语句.html#cb264-9" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>练习1</strong></p>
+<p>需求：求数组 [2, 6, 1, 7, 4] 里面所有元素的和以及平均值</p>
+<p>详见：<a href="配套HTML文件/js/01/43-01-遍历数组.html" target="_blank">示例</a></p>
+<p><strong>练习2</strong></p>
+<p>求数组 [2, 6, 1, 7, 4] 求最大值和最小值</p>
+<p>详见：<a href="配套HTML文件/js/01/43-02-遍历数组练习2.html" target="_blank">示例</a></p>
+</div>
+<div id="操作数组-修改" class="section level4 hasAnchor" number="22.3.4.2">
+<h4><span class="header-section-number">22.3.4.2</span> 操作数组-修改<a href="语句.html#操作数组-修改" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>利用索引修改列表中的元素。</p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb265-1"><a href="语句.html#cb265-1" tabindex="-1"></a><span class="kw">let</span> arr <span class="op">=</span> [<span class="st">&#39;pink&#39;</span><span class="op">,</span> <span class="st">&#39;red&#39;</span><span class="op">,</span> <span class="st">&#39;green&#39;</span>]</span>
+<span id="cb265-2"><a href="语句.html#cb265-2" tabindex="-1"></a></span>
+<span id="cb265-3"><a href="语句.html#cb265-3" tabindex="-1"></a><span class="co">//修改:改变第一个元素</span></span>
+<span id="cb265-4"><a href="语句.html#cb265-4" tabindex="-1"></a>arr[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&#39;hotpink&#39;</span></span></code></pre></div>
+<p><strong>练习</strong></p>
+<p>修改列表[‘pink’, ‘red’, ‘green’]中第一个元素为’hotpink’，然后每个元素末尾加“老师”两个字符。</p>
+<p>详见：<a href="配套HTML文件/js/01/44-01-数组修改.html" target="_blank">示例</a></p>
+<p>46-01-数组筛选</p>
+</div>
+<div id="操作数组-新增" class="section level4 hasAnchor" number="22.3.4.3">
+<h4><span class="header-section-number">22.3.4.3</span> 操作数组-新增<a href="语句.html#操作数组-新增" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>数组.push() 方法</li>
+<li>数组.unshift() 方法</li>
+</ul>
+<p>数组.push() 方法将一个或多个元素添加到数组的末尾，并返回该数组的新长度 (重点)</p>
+<div class="sourceCode" id="cb266"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb266-1"><a href="语句.html#cb266-1" tabindex="-1"></a>arr<span class="op">.</span><span class="fu">push</span>(元素1<span class="op">,</span> <span class="op">...,</span> 元素n)</span>
+<span id="cb266-2"><a href="语句.html#cb266-2" tabindex="-1"></a></span>
+<span id="cb266-3"><a href="语句.html#cb266-3" tabindex="-1"></a><span class="co">//例如</span></span>
+<span id="cb266-4"><a href="语句.html#cb266-4" tabindex="-1"></a><span class="kw">let</span> arr <span class="op">=</span> [<span class="st">&#39;red&#39;</span><span class="op">,</span> <span class="st">&#39;green&#39;</span>]</span>
+<span id="cb266-5"><a href="语句.html#cb266-5" tabindex="-1"></a>arr<span class="op">.</span><span class="fu">push</span>(<span class="st">&#39;pink&#39;</span>)</span>
+<span id="cb266-6"><a href="语句.html#cb266-6" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(arr) <span class="co">//[&#39;red&#39;, &#39;green&#39;, &#39;pink&#39;]</span></span>
+<span id="cb266-7"><a href="语句.html#cb266-7" tabindex="-1"></a></span>
+<span id="cb266-8"><a href="语句.html#cb266-8" tabindex="-1"></a>arr <span class="op">=</span> [<span class="st">&#39;red&#39;</span><span class="op">,</span> <span class="st">&#39;green&#39;</span>]</span>
+<span id="cb266-9"><a href="语句.html#cb266-9" tabindex="-1"></a>arr<span class="op">.</span><span class="fu">push</span>(<span class="st">&#39;pink&#39;</span><span class="op">,</span> <span class="st">&#39;hotpink&#39;</span>)</span>
+<span id="cb266-10"><a href="语句.html#cb266-10" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(arr) <span class="co">//[&#39;red&#39;, &#39;green&#39;, &#39;pink&#39;, &#39;hotpink&#39;]</span></span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb267-1"><a href="语句.html#cb267-1" tabindex="-1"></a>arr<span class="op">.</span><span class="fu">push</span>(元素1<span class="op">,</span> <span class="op">...,</span> 元素n)</span>
+<span id="cb267-2"><a href="语句.html#cb267-2" tabindex="-1"></a></span>
+<span id="cb267-3"><a href="语句.html#cb267-3" tabindex="-1"></a><span class="co">//例如</span></span>
+<span id="cb267-4"><a href="语句.html#cb267-4" tabindex="-1"></a><span class="kw">let</span> arr <span class="op">=</span> [<span class="st">&#39;red&#39;</span><span class="op">,</span> <span class="st">&#39;green&#39;</span>]</span>
+<span id="cb267-5"><a href="语句.html#cb267-5" tabindex="-1"></a>arr<span class="op">.</span><span class="fu">unshift</span>(<span class="st">&#39;pink&#39;</span>)</span>
+<span id="cb267-6"><a href="语句.html#cb267-6" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(arr) <span class="co">//[&#39;pink&#39;, &#39;red&#39;, &#39;green&#39;]</span></span>
+<span id="cb267-7"><a href="语句.html#cb267-7" tabindex="-1"></a></span>
+<span id="cb267-8"><a href="语句.html#cb267-8" tabindex="-1"></a>arr <span class="op">=</span> [<span class="st">&#39;red&#39;</span><span class="op">,</span> <span class="st">&#39;green&#39;</span>]</span>
+<span id="cb267-9"><a href="语句.html#cb267-9" tabindex="-1"></a>arr<span class="op">.</span><span class="fu">unshift</span>(<span class="st">&#39;pink&#39;</span><span class="op">,</span> <span class="st">&#39;hotpink&#39;</span>)</span>
+<span id="cb267-10"><a href="语句.html#cb267-10" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(arr) <span class="co">//[ &#39;pink&#39;, &#39;hotpink&#39;, &#39;red&#39;, &#39;green&#39;]</span></span></code></pre></div>
+<p><strong>练习</strong></p>
+<p>在数组[‘pink’, ‘hotpink’]的末尾新增元素’deeppink’，并打印新数组的元素个数。
+然后再在开头也新增元素’deeppink’，并打印新数组的元素个数</p>
+<p>详见：<a href="配套HTML文件/js/01/45-01-数组新增.html" target="_blank">示例</a></p>
+<p><strong>练习2（重点）</strong></p>
+<p>将数组 [2, 0, 6, 1, 77, 0, 52, 0, 25, 7] 中大于等于 10 的元素选出来，放入新数组</p>
+<p>详见：<a href="配套HTML文件/js/01/46-01-数组筛选.html" target="_blank">示例</a></p>
+<p><strong>练习3</strong></p>
+<p>将数组 [2, 0, 6, 1, 77, 0, 52, 0, 25, 7] 中的 0 去掉后，形成一个不包含 0 的新数组。</p>
+<p>详见：<a href="配套HTML文件/js/01/46-02-去0案例" target="_blank">示例</a></p>
+</div>
+<div id="操作数组-删除" class="section level4 hasAnchor" number="22.3.4.4">
+<h4><span class="header-section-number">22.3.4.4</span> 操作数组-删除<a href="语句.html#操作数组-删除" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>arr.pop()</li>
+<li>arr.shift()</li>
+<li>arr.splice(操作的下标,删除的个数)</li>
+</ul>
+<p>pop() 方法从数组中删除最后一个元素，并返回该元素的值</p>
+<p>语法</p>
+<div class="sourceCode" id="cb268"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb268-1"><a href="语句.html#cb268-1" tabindex="-1"></a>arr<span class="op">.</span><span class="fu">pop</span>()</span>
+<span id="cb268-2"><a href="语句.html#cb268-2" tabindex="-1"></a></span>
+<span id="cb268-3"><a href="语句.html#cb268-3" tabindex="-1"></a><span class="kw">let</span> arr <span class="op">=</span> [<span class="st">&#39;red&#39;</span><span class="op">,</span> <span class="st">&#39;green&#39;</span>]</span>
+<span id="cb268-4"><a href="语句.html#cb268-4" tabindex="-1"></a>arr<span class="op">.</span><span class="fu">pop</span>()</span>
+<span id="cb268-5"><a href="语句.html#cb268-5" tabindex="-1"></a>consle<span class="op">.</span><span class="fu">log</span>(arr) <span class="co">//[&#39;red&#39;]</span></span></code></pre></div>
+<p>shift() 方法从数组中删除第一个元素，并返回该元素的值</p>
+<p>语法</p>
+<div class="sourceCode" id="cb269"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb269-1"><a href="语句.html#cb269-1" tabindex="-1"></a>arr<span class="op">.</span><span class="fu">shift</span>()</span>
+<span id="cb269-2"><a href="语句.html#cb269-2" tabindex="-1"></a></span>
+<span id="cb269-3"><a href="语句.html#cb269-3" tabindex="-1"></a><span class="kw">let</span> arr <span class="op">=</span> [<span class="st">&#39;red&#39;</span><span class="op">,</span> <span class="st">&#39;green&#39;</span>]</span>
+<span id="cb269-4"><a href="语句.html#cb269-4" tabindex="-1"></a>arr<span class="op">.</span><span class="fu">pop</span>()</span>
+<span id="cb269-5"><a href="语句.html#cb269-5" tabindex="-1"></a>consle<span class="op">.</span><span class="fu">log</span>(arr) <span class="co">//[&#39;green&#39;]</span></span></code></pre></div>
+<p>splice() 方法 删除指定元素</p>
+<p>参数详解：</p>
+<ul>
+<li>start 起始位置:指定修改的开始位置（从0计数）</li>
+<li>deleteCount:表示要移除的数组元素的个数。如果省略则默认从指定的起始位置删除到最后。</li>
+</ul>
+<div class="sourceCode" id="cb270"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb270-1"><a href="语句.html#cb270-1" tabindex="-1"></a>arr<span class="op">.</span><span class="fu">splice</span>(start<span class="op">,</span> deleteCount)</span>
+<span id="cb270-2"><a href="语句.html#cb270-2" tabindex="-1"></a></span>
+<span id="cb270-3"><a href="语句.html#cb270-3" tabindex="-1"></a><span class="kw">let</span> arr <span class="op">=</span> [<span class="st">&#39;red&#39;</span><span class="op">,</span> <span class="st">&#39;green&#39;</span><span class="op">,</span> <span class="st">&#39;blue&#39;</span>]</span>
+<span id="cb270-4"><a href="语句.html#cb270-4" tabindex="-1"></a>arr<span class="op">.</span><span class="fu">splice</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">1</span>) <span class="co">//从第1个元素开始删除，共计删除1个元素</span></span>
+<span id="cb270-5"><a href="语句.html#cb270-5" tabindex="-1"></a>consle<span class="op">.</span><span class="fu">log</span>(arr) <span class="co">//[&#39;red&#39;, &#39;blue&#39;]</span></span></code></pre></div>
+<p><strong>练习</strong></p>
+<p>详见：<a href="配套HTML文件/js/01/47-01-数组删除" target="_blank">示例</a></p>
+</div>
+</div>
+<div id="数组排序" class="section level3 hasAnchor" number="22.3.5">
+<h3><span class="header-section-number">22.3.5</span> 数组排序<a href="语句.html#数组排序" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>升序排列</li>
+<li>降序排列</li>
+</ul>
+<div class="sourceCode" id="cb271"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb271-1"><a href="语句.html#cb271-1" tabindex="-1"></a><span class="kw">let</span> arr <span class="op">=</span> [<span class="dv">5</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">1</span>]</span>
+<span id="cb271-2"><a href="语句.html#cb271-2" tabindex="-1"></a></span>
+<span id="cb271-3"><a href="语句.html#cb271-3" tabindex="-1"></a><span class="co">//升序排列</span></span>
+<span id="cb271-4"><a href="语句.html#cb271-4" tabindex="-1"></a>arr<span class="op">.</span><span class="fu">sort</span>()</span>
+<span id="cb271-5"><a href="语句.html#cb271-5" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(arr)</span>
+<span id="cb271-6"><a href="语句.html#cb271-6" tabindex="-1"></a></span>
+<span id="cb271-7"><a href="语句.html#cb271-7" tabindex="-1"></a><span class="co">//降序排列</span></span>
+<span id="cb271-8"><a href="语句.html#cb271-8" tabindex="-1"></a>arr<span class="op">.</span><span class="fu">sort</span>(<span class="kw">function</span> (a<span class="op">,</span> b) {</span>
+<span id="cb271-9"><a href="语句.html#cb271-9" tabindex="-1"></a>     <span class="cf">return</span> b <span class="op">-</span> a</span>
+<span id="cb271-10"><a href="语句.html#cb271-10" tabindex="-1"></a>})</span>
+<span id="cb271-11"><a href="语句.html#cb271-11" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(arr)</span></code></pre></div>
+<p><strong>练习1</strong></p>
+<p>利用双重for循环的冒泡算法，手动实现数组[5, 4, 3, 2, 1]的升序排列。</p>
+<p>详见：<a href="配套HTML文件/js/01/48-01-冒泡排序.html" target="_blank">示例</a></p>
+<p><strong>练习2</strong></p>
+<p>利用数组的sort()方法，实现数组[5, 4, 3, 2, 1]的升序和降序排列。</p>
+<p>详见：<a href="配套HTML文件/js/01/48-02-数组排序.html" target="_blank">示例</a></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="运算符.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="学成在线案例.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

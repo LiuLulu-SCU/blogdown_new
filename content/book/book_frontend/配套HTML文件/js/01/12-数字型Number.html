@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = 10;  //数字型
+        var PI = 3.14 //数字型
+
+        //1. 八进制  在数字前面加0表示八进制
+        var num1 = 010; //这里是八进制的数字
+        console.log(num1); //返回八进制数字
+        var num2 = 012; //这里是八进制的数字
+        console.log(num2); //返回八进制数字
+
+        //2. 十六进制  在数字前面加0x表示八进制
+        // 0~0 a~f
+        var num3 = 0xb; //这里是八进制的数字
+        console.log(num3); //返回八进制数字
+
+        //3.数字型的最大值
+        console.log(Number.MAX_VALUE);
+        //4.数字型的最小值
+        console.log(Number.MIN_VALUE);
+
+        //5.无穷大
+        console.log(Number.MAX_VALUE * 2) //最大值乘以2，就是正无穷大
+        //6.无穷小
+        console.log(-Number.MAX_VALUE * 2) //最大值乘以-2，就是负无穷大
+
+        //7.NaN
+        console.log('pink老师' - 10) //因为字符串型变量无法减去一个数字型变量，所有会返回Not a Number
+
+    </script>
+</body>
+
+</html>

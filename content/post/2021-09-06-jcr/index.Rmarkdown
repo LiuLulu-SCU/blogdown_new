@@ -23,11 +23,15 @@ projects: []
 1. 登录官网 https://jcr.clarivate.com/jcr/home
 2. 输入查询的杂志名，如Health Polocy
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/1-1.png" width="672" />
+{{< figure src="index_files/figure-html/1-1.png"  numbered="true" >}}
+
+
 
 3. 查看影响因子（Influence Factor, IF）和分区
-<img src="{{< blogdown/postref >}}index_files/figure-html/1-2.png" width="672" />
-<img src="{{< blogdown/postref >}}index_files/figure-html/1-3.png" width="672" />
+
+{{< figure src="index_files/figure-html/1-2.png"  numbered="true" >}}
+
+
 
 
 

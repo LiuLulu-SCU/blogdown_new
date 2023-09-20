@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>19 PS | Web开发学习笔记</title>
+  <title>25 PS | Web开发学习笔记</title>
   <meta name="description" content="Web前端学习全纪录" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="19 PS | Web开发学习笔记" />
+  <meta property="og:title" content="25 PS | Web开发学习笔记" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Web前端学习全纪录" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="19 PS | Web开发学习笔记" />
+  <meta name="twitter:title" content="25 PS | Web开发学习笔记" />
   
   <meta name="twitter:description" content="Web前端学习全纪录" />
   
@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="vscode常用操作.html"/>
-<link rel="next" href="chrome调试工具.html"/>
+<link rel="next" href="js断点调试.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -268,14 +268,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.5" data-path="文本属性.html"><a href="文本属性.html#行间距"><i class="fa fa-check"></i><b>8.5</b> 行间距</a></li>
 <li class="chapter" data-level="8.6" data-path="文本属性.html"><a href="文本属性.html#文本属性总结"><i class="fa fa-check"></i><b>8.6</b> 文本属性总结</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="css引入方式.html"><a href="css引入方式.html"><i class="fa fa-check"></i><b>9</b> CSS引入方式</a>
+<li class="chapter" data-level="9" data-path="css-ref.html"><a href="css-ref.html"><i class="fa fa-check"></i><b>9</b> CSS引入方式</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="css引入方式.html"><a href="css引入方式.html#css的三种样式表"><i class="fa fa-check"></i><b>9.1</b> CSS的三种样式表</a></li>
-<li class="chapter" data-level="9.2" data-path="css引入方式.html"><a href="css引入方式.html#内部样式表"><i class="fa fa-check"></i><b>9.2</b> 内部样式表</a></li>
-<li class="chapter" data-level="9.3" data-path="css引入方式.html"><a href="css引入方式.html#行内样式表"><i class="fa fa-check"></i><b>9.3</b> 行内样式表</a></li>
-<li class="chapter" data-level="9.4" data-path="css引入方式.html"><a href="css引入方式.html#外部样式"><i class="fa fa-check"></i><b>9.4</b> 外部样式</a></li>
-<li class="chapter" data-level="9.5" data-path="css引入方式.html"><a href="css引入方式.html#css引入方式总结"><i class="fa fa-check"></i><b>9.5</b> CSS引入方式总结</a></li>
-<li class="chapter" data-level="9.6" data-path="css引入方式.html"><a href="css引入方式.html#综合案例-1"><i class="fa fa-check"></i><b>9.6</b> 综合案例</a></li>
+<li class="chapter" data-level="9.1" data-path="css-ref.html"><a href="css-ref.html#css的三种样式表引入方式"><i class="fa fa-check"></i><b>9.1</b> CSS的三种样式表(引入方式)</a></li>
+<li class="chapter" data-level="9.2" data-path="css-ref.html"><a href="css-ref.html#内部样式表"><i class="fa fa-check"></i><b>9.2</b> 内部样式表</a></li>
+<li class="chapter" data-level="9.3" data-path="css-ref.html"><a href="css-ref.html#行内样式表"><i class="fa fa-check"></i><b>9.3</b> 行内样式表</a></li>
+<li class="chapter" data-level="9.4" data-path="css-ref.html"><a href="css-ref.html#外部样式"><i class="fa fa-check"></i><b>9.4</b> 外部样式</a></li>
+<li class="chapter" data-level="9.5" data-path="css-ref.html"><a href="css-ref.html#css引入方式总结"><i class="fa fa-check"></i><b>9.5</b> CSS引入方式总结</a></li>
+<li class="chapter" data-level="9.6" data-path="css-ref.html"><a href="css-ref.html#综合案例-1"><i class="fa fa-check"></i><b>9.6</b> 综合案例</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="复合选择器.html"><a href="复合选择器.html"><i class="fa fa-check"></i><b>10</b> 复合选择器</a>
 <ul>
@@ -287,7 +287,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.6" data-path="复合选择器.html"><a href="复合选择器.html#伪类选择器"><i class="fa fa-check"></i><b>10.6</b> 伪类选择器</a>
 <ul>
 <li class="chapter" data-level="10.6.1" data-path="复合选择器.html"><a href="复合选择器.html#链接伪类"><i class="fa fa-check"></i><b>10.6.1</b> 链接伪类</a></li>
-<li class="chapter" data-level="10.6.2" data-path="复合选择器.html"><a href="复合选择器.html#focus伪类选择器"><i class="fa fa-check"></i><b>10.6.2</b> :focus伪类选择器</a></li>
+<li class="chapter" data-level="10.6.2" data-path="复合选择器.html"><a href="复合选择器.html#hover伪类选择器的应用"><i class="fa fa-check"></i><b>10.6.2</b> :hover伪类选择器的应用</a></li>
+<li class="chapter" data-level="10.6.3" data-path="复合选择器.html"><a href="复合选择器.html#after选择器"><i class="fa fa-check"></i><b>10.6.3</b> :after选择器</a></li>
+<li class="chapter" data-level="10.6.4" data-path="复合选择器.html"><a href="复合选择器.html#focus伪类选择器"><i class="fa fa-check"></i><b>10.6.4</b> :focus伪类选择器</a></li>
 </ul></li>
 <li class="chapter" data-level="10.7" data-path="复合选择器.html"><a href="复合选择器.html#复合选择器总结"><i class="fa fa-check"></i><b>10.7</b> 复合选择器总结</a></li>
 <li class="chapter" data-level="10.8" data-path="复合选择器.html"><a href="复合选择器.html#多个选择器的覆盖问题"><i class="fa fa-check"></i><b>10.8</b> 多个选择器的覆盖问题</a></li>
@@ -352,7 +354,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.10" data-path="盒子模型.html"><a href="盒子模型.html#padding不撑开盒子的情况"><i class="fa fa-check"></i><b>14.10</b> padding不撑开盒子的情况</a></li>
 <li class="chapter" data-level="14.11" data-path="盒子模型.html"><a href="盒子模型.html#盒子模型外边距margin"><i class="fa fa-check"></i><b>14.11</b> 盒子模型外边距margin</a></li>
 <li class="chapter" data-level="14.12" data-path="盒子模型.html"><a href="盒子模型.html#外边距典型应用块级盒子水平居中"><i class="fa fa-check"></i><b>14.12</b> 外边距典型应用（块级盒子水平居中）</a></li>
-<li class="chapter" data-level="14.13" data-path="盒子模型.html"><a href="盒子模型.html#嵌套块元素垂直外边距的塌陷"><i class="fa fa-check"></i><b>14.13</b> 嵌套块元素垂直外边距的塌陷</a></li>
+<li class="chapter" data-level="14.13" data-path="盒子模型.html"><a href="盒子模型.html#外边距合并"><i class="fa fa-check"></i><b>14.13</b> 外边距合并</a>
+<ul>
+<li class="chapter" data-level="14.13.1" data-path="盒子模型.html"><a href="盒子模型.html#相邻块级元素垂直外边距的合并"><i class="fa fa-check"></i><b>14.13.1</b> 相邻块级元素垂直外边距的合并</a></li>
+<li class="chapter" data-level="14.13.2" data-path="盒子模型.html"><a href="盒子模型.html#嵌套块元素垂直外边距的塌陷"><i class="fa fa-check"></i><b>14.13.2</b> 嵌套块元素垂直外边距的塌陷</a></li>
+</ul></li>
 <li class="chapter" data-level="14.14" data-path="盒子模型.html"><a href="盒子模型.html#清除内外边距"><i class="fa fa-check"></i><b>14.14</b> 清除内外边距</a></li>
 <li class="chapter" data-level="14.15" data-path="盒子模型.html"><a href="盒子模型.html#圆角边框"><i class="fa fa-check"></i><b>14.15</b> 圆角边框</a></li>
 <li class="chapter" data-level="14.16" data-path="盒子模型.html"><a href="盒子模型.html#盒子阴影"><i class="fa fa-check"></i><b>14.16</b> 盒子阴影</a></li>
@@ -386,7 +392,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.8.3" data-path="浮动.html"><a href="浮动.html#清除浮动的方法"><i class="fa fa-check"></i><b>15.8.3</b> 清除浮动的方法</a></li>
 <li class="chapter" data-level="15.8.4" data-path="浮动.html"><a href="浮动.html#额外标签法"><i class="fa fa-check"></i><b>15.8.4</b> 额外标签法</a></li>
 <li class="chapter" data-level="15.8.5" data-path="浮动.html"><a href="浮动.html#父元素添加overflow"><i class="fa fa-check"></i><b>15.8.5</b> 父元素添加overflow</a></li>
-<li class="chapter" data-level="15.8.6" data-path="浮动.html"><a href="浮动.html#清除浮动after伪元素法"><i class="fa fa-check"></i><b>15.8.6</b> 清除浮动——:after伪元素法</a></li>
+<li class="chapter" data-level="15.8.6" data-path="浮动.html"><a href="浮动.html#float-clear-after"><i class="fa fa-check"></i><b>15.8.6</b> 清除浮动——:after伪元素法</a></li>
 <li class="chapter" data-level="15.8.7" data-path="浮动.html"><a href="浮动.html#双伪元素清除浮动"><i class="fa fa-check"></i><b>15.8.7</b> 双伪元素清除浮动</a></li>
 </ul></li>
 <li class="chapter" data-level="15.9" data-path="浮动.html"><a href="浮动.html#清除浮动总结"><i class="fa fa-check"></i><b>15.9</b> 清除浮动总结</a></li>
@@ -414,43 +420,176 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.11.3" data-path="定位.html"><a href="定位.html#脱标的盒子不会触发外边距塌陷"><i class="fa fa-check"></i><b>16.11.3</b> 脱标的盒子不会触发外边距塌陷</a></li>
 <li class="chapter" data-level="16.11.4" data-path="定位.html"><a href="定位.html#绝对固定定位会完全压住盒子"><i class="fa fa-check"></i><b>16.11.4</b> 绝对/固定定位会完全压住盒子</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="17" data-path="学成在线案例.html"><a href="学成在线案例.html"><i class="fa fa-check"></i><b>17</b> 学成在线案例</a>
+<li class="chapter" data-level="16.12" data-path="定位.html"><a href="定位.html#页面布局总结"><i class="fa fa-check"></i><b>16.12</b> 页面布局总结</a></li>
+<li class="chapter" data-level="16.13" data-path="定位.html"><a href="定位.html#元素的显示与隐藏"><i class="fa fa-check"></i><b>16.13</b> 元素的显示与隐藏</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="学成在线案例.html"><a href="学成在线案例.html#准备素材和工具"><i class="fa fa-check"></i><b>17.1</b> 准备素材和工具</a></li>
-<li class="chapter" data-level="17.2" data-path="学成在线案例.html"><a href="学成在线案例.html#案例准备工作"><i class="fa fa-check"></i><b>17.2</b> 案例准备工作</a></li>
-<li class="chapter" data-level="17.3" data-path="学成在线案例.html"><a href="学成在线案例.html#css属性书写顺序"><i class="fa fa-check"></i><b>17.3</b> CSS属性书写顺序</a></li>
-<li class="chapter" data-level="17.4" data-path="学成在线案例.html"><a href="学成在线案例.html#页面布局整体思路"><i class="fa fa-check"></i><b>17.4</b> 页面布局整体思路</a>
-<ul>
-<li class="chapter" data-level="17.4.1" data-path="学成在线案例.html"><a href="学成在线案例.html#确定版心"><i class="fa fa-check"></i><b>17.4.1</b> 确定版心</a></li>
-<li class="chapter" data-level="17.4.2" data-path="学成在线案例.html"><a href="学成在线案例.html#头部制作"><i class="fa fa-check"></i><b>17.4.2</b> 头部制作</a></li>
-<li class="chapter" data-level="17.4.3" data-path="学成在线案例.html"><a href="学成在线案例.html#精品推荐小模块"><i class="fa fa-check"></i><b>17.4.3</b> 精品推荐小模块</a></li>
-<li class="chapter" data-level="17.4.4" data-path="学成在线案例.html"><a href="学成在线案例.html#精品推荐大模块"><i class="fa fa-check"></i><b>17.4.4</b> 精品推荐大模块</a></li>
-<li class="chapter" data-level="17.4.5" data-path="学成在线案例.html"><a href="学成在线案例.html#底部模块"><i class="fa fa-check"></i><b>17.4.5</b> 底部模块</a></li>
+<li class="chapter" data-level="16.13.1" data-path="定位.html"><a href="定位.html#display-属性"><i class="fa fa-check"></i><b>16.13.1</b> display 属性</a></li>
+<li class="chapter" data-level="16.13.2" data-path="定位.html"><a href="定位.html#visibility-可见性"><i class="fa fa-check"></i><b>16.13.2</b> visibility 可见性</a></li>
+<li class="chapter" data-level="16.13.3" data-path="定位.html"><a href="定位.html#overfolw溢出"><i class="fa fa-check"></i><b>16.13.3</b> overfolw溢出</a></li>
 </ul></li>
 </ul></li>
-<li class="part"><span><b>III 附录</b></span></li>
-<li class="chapter" data-level="18" data-path="vscode常用操作.html"><a href="vscode常用操作.html"><i class="fa fa-check"></i><b>18</b> Vscode常用操作</a></li>
-<li class="chapter" data-level="19" data-path="ps.html"><a href="ps.html"><i class="fa fa-check"></i><b>19</b> PS</a>
+<li class="chapter" data-level="17" data-path="bootstrap.html"><a href="bootstrap.html"><i class="fa fa-check"></i><b>17</b> Bootstrap</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="ps.html"><a href="ps.html#ps切图"><i class="fa fa-check"></i><b>19.1</b> PS切图</a>
+<li class="chapter" data-level="17.1" data-path="bootstrap.html"><a href="bootstrap.html#下载和引入bootstrap"><i class="fa fa-check"></i><b>17.1</b> 下载和引入Bootstrap</a></li>
+<li class="chapter" data-level="17.2" data-path="bootstrap.html"><a href="bootstrap.html#栅格系统"><i class="fa fa-check"></i><b>17.2</b> 栅格系统</a></li>
+</ul></li>
+<li class="part"><span><b>III JavaScript</b></span></li>
+<li class="chapter" data-level="18" data-path="javascripy基础.html"><a href="javascripy基础.html"><i class="fa fa-check"></i><b>18</b> JavaScripy基础</a>
 <ul>
-<li class="chapter" data-level="19.1.1" data-path="ps.html"><a href="ps.html#常见的图片格式"><i class="fa fa-check"></i><b>19.1.1</b> 常见的图片格式</a></li>
-<li class="chapter" data-level="19.1.2" data-path="ps.html"><a href="ps.html#图层切图"><i class="fa fa-check"></i><b>19.1.2</b> 图层切图</a></li>
-<li class="chapter" data-level="19.1.3" data-path="ps.html"><a href="ps.html#切片工具"><i class="fa fa-check"></i><b>19.1.3</b> 切片工具</a></li>
-<li class="chapter" data-level="19.1.4" data-path="ps.html"><a href="ps.html#插件切图"><i class="fa fa-check"></i><b>19.1.4</b> 插件切图</a></li>
+<li class="chapter" data-level="18.1" data-path="javascripy基础.html"><a href="javascripy基础.html#js简介"><i class="fa fa-check"></i><b>18.1</b> JS简介</a></li>
+<li class="chapter" data-level="18.2" data-path="javascripy基础.html"><a href="javascripy基础.html#js的引入书写位置"><i class="fa fa-check"></i><b>18.2</b> JS的引入（书写位置）</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="javascripy基础.html"><a href="javascripy基础.html#行内式-js"><i class="fa fa-check"></i><b>18.2.1</b> 行内式 JS</a></li>
+<li class="chapter" data-level="18.2.2" data-path="javascripy基础.html"><a href="javascripy基础.html#嵌入js"><i class="fa fa-check"></i><b>18.2.2</b> 嵌入JS</a></li>
+<li class="chapter" data-level="18.2.3" data-path="javascripy基础.html"><a href="javascripy基础.html#外部js"><i class="fa fa-check"></i><b>18.2.3</b> 外部JS</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="javascripy基础.html"><a href="javascripy基础.html#javascript注释"><i class="fa fa-check"></i><b>18.3</b> JavaScript注释</a>
+<ul>
+<li class="chapter" data-level="18.3.1" data-path="javascripy基础.html"><a href="javascripy基础.html#单行注释"><i class="fa fa-check"></i><b>18.3.1</b> 单行注释</a></li>
+<li class="chapter" data-level="18.3.2" data-path="javascripy基础.html"><a href="javascripy基础.html#多行注释"><i class="fa fa-check"></i><b>18.3.2</b> 多行注释</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="javascripy基础.html"><a href="javascripy基础.html#javascript-输入输出语句"><i class="fa fa-check"></i><b>18.4</b> JavaScript 输入输出语句</a></li>
+<li class="chapter" data-level="18.5" data-path="javascripy基础.html"><a href="javascripy基础.html#标识符关键字保留字"><i class="fa fa-check"></i><b>18.5</b> 标识符、关键字、保留字</a>
+<ul>
+<li class="chapter" data-level="18.5.1" data-path="javascripy基础.html"><a href="javascripy基础.html#标识符"><i class="fa fa-check"></i><b>18.5.1</b> 标识符</a></li>
+<li class="chapter" data-level="18.5.2" data-path="javascripy基础.html"><a href="javascripy基础.html#关键字"><i class="fa fa-check"></i><b>18.5.2</b> 关键字</a></li>
+<li class="chapter" data-level="18.5.3" data-path="javascripy基础.html"><a href="javascripy基础.html#保留字"><i class="fa fa-check"></i><b>18.5.3</b> 保留字</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="chrome调试工具.html"><a href="chrome调试工具.html"><i class="fa fa-check"></i><b>20</b> Chrome调试工具</a>
+<li class="chapter" data-level="19" data-path="js变量和常量.html"><a href="js变量和常量.html"><i class="fa fa-check"></i><b>19</b> JS变量和常量</a>
 <ul>
-<li class="chapter" data-level="20.1" data-path="chrome调试工具.html"><a href="chrome调试工具.html#打开调试工具"><i class="fa fa-check"></i><b>20.1</b> 打开调试工具</a></li>
-<li class="chapter" data-level="20.2" data-path="chrome调试工具.html"><a href="chrome调试工具.html#使用调试工具"><i class="fa fa-check"></i><b>20.2</b> 使用调试工具</a></li>
+<li class="chapter" data-level="19.1" data-path="js变量和常量.html"><a href="js变量和常量.html#变量的定义声明和赋值"><i class="fa fa-check"></i><b>19.1</b> 变量的定义、声明和赋值</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="js变量和常量.html"><a href="js变量和常量.html#声明变量"><i class="fa fa-check"></i><b>19.1.1</b> 声明变量</a></li>
+<li class="chapter" data-level="19.1.2" data-path="js变量和常量.html"><a href="js变量和常量.html#变量赋值"><i class="fa fa-check"></i><b>19.1.2</b> 变量赋值</a></li>
+<li class="chapter" data-level="19.1.3" data-path="js变量和常量.html"><a href="js变量和常量.html#变量初始化"><i class="fa fa-check"></i><b>19.1.3</b> 变量初始化</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="emmet语法.html"><a href="emmet语法.html"><i class="fa fa-check"></i><b>21</b> Emmet语法</a>
+<li class="chapter" data-level="19.2" data-path="js变量和常量.html"><a href="js变量和常量.html#变量语法扩展"><i class="fa fa-check"></i><b>19.2</b> 变量语法扩展</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="emmet语法.html"><a href="emmet语法.html#快速生成html结构语法"><i class="fa fa-check"></i><b>21.1</b> 快速生成HTML结构语法</a></li>
-<li class="chapter" data-level="21.2" data-path="emmet语法.html"><a href="emmet语法.html#快速生成css样式语法"><i class="fa fa-check"></i><b>21.2</b> 快速生成CSS样式语法</a></li>
-<li class="chapter" data-level="21.3" data-path="emmet语法.html"><a href="emmet语法.html#快速格式化代码"><i class="fa fa-check"></i><b>21.3</b> 快速格式化代码</a></li>
+<li class="chapter" data-level="19.2.1" data-path="js变量和常量.html"><a href="js变量和常量.html#更新变量"><i class="fa fa-check"></i><b>19.2.1</b> 更新变量</a></li>
+<li class="chapter" data-level="19.2.2" data-path="js变量和常量.html"><a href="js变量和常量.html#同时声明多个变量"><i class="fa fa-check"></i><b>19.2.2</b> 同时声明多个变量</a></li>
+<li class="chapter" data-level="19.2.3" data-path="js变量和常量.html"><a href="js变量和常量.html#声明变量特殊情况"><i class="fa fa-check"></i><b>19.2.3</b> 声明变量特殊情况</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="js变量和常量.html"><a href="js变量和常量.html#变量的命名规范"><i class="fa fa-check"></i><b>19.3</b> 变量的命名规范</a></li>
+<li class="chapter" data-level="19.4" data-path="js变量和常量.html"><a href="js变量和常量.html#常量"><i class="fa fa-check"></i><b>19.4</b> 常量</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="数据类型.html"><a href="数据类型.html"><i class="fa fa-check"></i><b>20</b> 数据类型</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="数据类型.html"><a href="数据类型.html#数据类型简介"><i class="fa fa-check"></i><b>20.1</b> 数据类型简介</a></li>
+<li class="chapter" data-level="20.2" data-path="数据类型.html"><a href="数据类型.html#数据类型的分类"><i class="fa fa-check"></i><b>20.2</b> 数据类型的分类</a></li>
+<li class="chapter" data-level="20.3" data-path="数据类型.html"><a href="数据类型.html#简单数据类型"><i class="fa fa-check"></i><b>20.3</b> 简单数据类型</a>
+<ul>
+<li class="chapter" data-level="20.3.1" data-path="数据类型.html"><a href="数据类型.html#数字型-number"><i class="fa fa-check"></i><b>20.3.1</b> 数字型 Number</a></li>
+<li class="chapter" data-level="20.3.2" data-path="数据类型.html"><a href="数据类型.html#字符串型-string"><i class="fa fa-check"></i><b>20.3.2</b> 字符串型 String</a></li>
+<li class="chapter" data-level="20.3.3" data-path="数据类型.html"><a href="数据类型.html#布尔型-boolean"><i class="fa fa-check"></i><b>20.3.3</b> 布尔型 Boolean</a></li>
+<li class="chapter" data-level="20.3.4" data-path="数据类型.html"><a href="数据类型.html#undefined-和-null"><i class="fa fa-check"></i><b>20.3.4</b> Undefined 和 Null</a></li>
+</ul></li>
+<li class="chapter" data-level="20.4" data-path="数据类型.html"><a href="数据类型.html#复杂数据类型"><i class="fa fa-check"></i><b>20.4</b> 复杂数据类型</a>
+<ul>
+<li class="chapter" data-level="20.4.1" data-path="数据类型.html"><a href="数据类型.html#数组"><i class="fa fa-check"></i><b>20.4.1</b> 数组</a></li>
+</ul></li>
+<li class="chapter" data-level="20.5" data-path="数据类型.html"><a href="数据类型.html#获取变量数据类型"><i class="fa fa-check"></i><b>20.5</b> 获取变量数据类型</a>
+<ul>
+<li class="chapter" data-level="20.5.1" data-path="数据类型.html"><a href="数据类型.html#获取检测变量的数据类型"><i class="fa fa-check"></i><b>20.5.1</b> 获取检测变量的数据类型</a></li>
+<li class="chapter" data-level="20.5.2" data-path="数据类型.html"><a href="数据类型.html#字面量"><i class="fa fa-check"></i><b>20.5.2</b> 字面量</a></li>
+</ul></li>
+<li class="chapter" data-level="20.6" data-path="数据类型.html"><a href="数据类型.html#数据类型转换"><i class="fa fa-check"></i><b>20.6</b> 数据类型转换</a>
+<ul>
+<li class="chapter" data-level="20.6.1" data-path="数据类型.html"><a href="数据类型.html#为什么要进行数据类型转换"><i class="fa fa-check"></i><b>20.6.1</b> 为什么要进行数据类型转换</a></li>
+<li class="chapter" data-level="20.6.2" data-path="数据类型.html"><a href="数据类型.html#转换为字符串"><i class="fa fa-check"></i><b>20.6.2</b> 转换为字符串</a></li>
+<li class="chapter" data-level="20.6.3" data-path="数据类型.html"><a href="数据类型.html#转换为数字型"><i class="fa fa-check"></i><b>20.6.3</b> 转换为数字型</a></li>
+<li class="chapter" data-level="20.6.4" data-path="数据类型.html"><a href="数据类型.html#转换为布尔型"><i class="fa fa-check"></i><b>20.6.4</b> 转换为布尔型</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="运算符.html"><a href="运算符.html"><i class="fa fa-check"></i><b>21</b> 运算符</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="运算符.html"><a href="运算符.html#数学运算符"><i class="fa fa-check"></i><b>21.1</b> 数学运算符</a></li>
+<li class="chapter" data-level="21.2" data-path="运算符.html"><a href="运算符.html#赋值运算符"><i class="fa fa-check"></i><b>21.2</b> 赋值运算符</a></li>
+<li class="chapter" data-level="21.3" data-path="运算符.html"><a href="运算符.html#自增自减运算符"><i class="fa fa-check"></i><b>21.3</b> 自增自减运算符</a>
+<ul>
+<li class="chapter" data-level="21.3.1" data-path="运算符.html"><a href="运算符.html#前置递增运算符"><i class="fa fa-check"></i><b>21.3.1</b> 前置递增运算符</a></li>
+<li class="chapter" data-level="21.3.2" data-path="运算符.html"><a href="运算符.html#后置递增运算符"><i class="fa fa-check"></i><b>21.3.2</b> 后置递增运算符</a></li>
+</ul></li>
+<li class="chapter" data-level="21.4" data-path="运算符.html"><a href="运算符.html#compare-operator"><i class="fa fa-check"></i><b>21.4</b> 比较运算符</a>
+<ul>
+<li class="chapter" data-level="21.4.1" data-path="运算符.html"><a href="运算符.html#数字型的比较"><i class="fa fa-check"></i><b>21.4.1</b> 数字型的比较</a></li>
+<li class="chapter" data-level="21.4.2" data-path="运算符.html"><a href="运算符.html#字符串的比较"><i class="fa fa-check"></i><b>21.4.2</b> 字符串的比较</a></li>
+</ul></li>
+<li class="chapter" data-level="21.5" data-path="运算符.html"><a href="运算符.html#逻辑运算符"><i class="fa fa-check"></i><b>21.5</b> 逻辑运算符</a></li>
+<li class="chapter" data-level="21.6" data-path="运算符.html"><a href="运算符.html#运算符优先级"><i class="fa fa-check"></i><b>21.6</b> 运算符优先级</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="语句.html"><a href="语句.html"><i class="fa fa-check"></i><b>22</b> 语句</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="语句.html"><a href="语句.html#表达式和语句"><i class="fa fa-check"></i><b>22.1</b> 表达式和语句</a>
+<ul>
+<li class="chapter" data-level="22.1.1" data-path="语句.html"><a href="语句.html#表达式"><i class="fa fa-check"></i><b>22.1.1</b> 表达式</a></li>
+<li class="chapter" data-level="22.1.2" data-path="语句.html"><a href="语句.html#语句-1"><i class="fa fa-check"></i><b>22.1.2</b> 语句</a></li>
+<li class="chapter" data-level="22.1.3" data-path="语句.html"><a href="语句.html#流程控制"><i class="fa fa-check"></i><b>22.1.3</b> 流程控制</a></li>
+</ul></li>
+<li class="chapter" data-level="22.2" data-path="语句.html"><a href="语句.html#分支语句"><i class="fa fa-check"></i><b>22.2</b> 分支语句</a>
+<ul>
+<li class="chapter" data-level="22.2.1" data-path="语句.html"><a href="语句.html#if分支语句"><i class="fa fa-check"></i><b>22.2.1</b> if分支语句</a></li>
+<li class="chapter" data-level="22.2.2" data-path="语句.html"><a href="语句.html#多分支if语句"><i class="fa fa-check"></i><b>22.2.2</b> 多分支if语句</a></li>
+<li class="chapter" data-level="22.2.3" data-path="语句.html"><a href="语句.html#三元运算符"><i class="fa fa-check"></i><b>22.2.3</b> 三元运算符</a></li>
+<li class="chapter" data-level="22.2.4" data-path="语句.html"><a href="语句.html#switch分支语句"><i class="fa fa-check"></i><b>22.2.4</b> switch分支语句</a></li>
+</ul></li>
+<li class="chapter" data-level="22.3" data-path="语句.html"><a href="语句.html#循环语句"><i class="fa fa-check"></i><b>22.3</b> 循环语句</a>
+<ul>
+<li class="chapter" data-level="22.3.1" data-path="语句.html"><a href="语句.html#while循环"><i class="fa fa-check"></i><b>22.3.1</b> while循环</a></li>
+<li class="chapter" data-level="22.3.2" data-path="语句.html"><a href="语句.html#for循环"><i class="fa fa-check"></i><b>22.3.2</b> for循环</a></li>
+<li class="chapter" data-level="22.3.3" data-path="语句.html"><a href="语句.html#嵌套for循环"><i class="fa fa-check"></i><b>22.3.3</b> 嵌套for循环</a></li>
+<li class="chapter" data-level="22.3.4" data-path="语句.html"><a href="语句.html#操作数组"><i class="fa fa-check"></i><b>22.3.4</b> 操作数组</a></li>
+<li class="chapter" data-level="22.3.5" data-path="语句.html"><a href="语句.html#数组排序"><i class="fa fa-check"></i><b>22.3.5</b> 数组排序</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="学成在线案例.html"><a href="学成在线案例.html"><i class="fa fa-check"></i><b>23</b> 学成在线案例</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="学成在线案例.html"><a href="学成在线案例.html#准备素材和工具"><i class="fa fa-check"></i><b>23.1</b> 准备素材和工具</a></li>
+<li class="chapter" data-level="23.2" data-path="学成在线案例.html"><a href="学成在线案例.html#案例准备工作"><i class="fa fa-check"></i><b>23.2</b> 案例准备工作</a></li>
+<li class="chapter" data-level="23.3" data-path="学成在线案例.html"><a href="学成在线案例.html#css属性书写顺序"><i class="fa fa-check"></i><b>23.3</b> CSS属性书写顺序</a></li>
+<li class="chapter" data-level="23.4" data-path="学成在线案例.html"><a href="学成在线案例.html#页面布局整体思路"><i class="fa fa-check"></i><b>23.4</b> 页面布局整体思路</a>
+<ul>
+<li class="chapter" data-level="23.4.1" data-path="学成在线案例.html"><a href="学成在线案例.html#确定版心"><i class="fa fa-check"></i><b>23.4.1</b> 确定版心</a></li>
+<li class="chapter" data-level="23.4.2" data-path="学成在线案例.html"><a href="学成在线案例.html#头部制作"><i class="fa fa-check"></i><b>23.4.2</b> 头部制作</a></li>
+<li class="chapter" data-level="23.4.3" data-path="学成在线案例.html"><a href="学成在线案例.html#精品推荐小模块"><i class="fa fa-check"></i><b>23.4.3</b> 精品推荐小模块</a></li>
+<li class="chapter" data-level="23.4.4" data-path="学成在线案例.html"><a href="学成在线案例.html#精品推荐大模块"><i class="fa fa-check"></i><b>23.4.4</b> 精品推荐大模块</a></li>
+<li class="chapter" data-level="23.4.5" data-path="学成在线案例.html"><a href="学成在线案例.html#底部模块"><i class="fa fa-check"></i><b>23.4.5</b> 底部模块</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV 附录</b></span></li>
+<li class="chapter" data-level="24" data-path="vscode常用操作.html"><a href="vscode常用操作.html"><i class="fa fa-check"></i><b>24</b> Vscode常用操作</a>
+<ul>
+<li class="chapter" data-level="24.1" data-path="vscode常用操作.html"><a href="vscode常用操作.html#vscode快捷键"><i class="fa fa-check"></i><b>24.1</b> Vscode快捷键</a></li>
+<li class="chapter" data-level="24.2" data-path="vscode常用操作.html"><a href="vscode常用操作.html#emmet语法"><i class="fa fa-check"></i><b>24.2</b> Emmet语法</a>
+<ul>
+<li class="chapter" data-level="24.2.1" data-path="vscode常用操作.html"><a href="vscode常用操作.html#快速生成html结构语法"><i class="fa fa-check"></i><b>24.2.1</b> 快速生成HTML结构语法</a></li>
+<li class="chapter" data-level="24.2.2" data-path="vscode常用操作.html"><a href="vscode常用操作.html#快速生成css样式语法"><i class="fa fa-check"></i><b>24.2.2</b> 快速生成CSS样式语法</a></li>
+<li class="chapter" data-level="24.2.3" data-path="vscode常用操作.html"><a href="vscode常用操作.html#快速格式化代码"><i class="fa fa-check"></i><b>24.2.3</b> 快速格式化代码</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="ps.html"><a href="ps.html"><i class="fa fa-check"></i><b>25</b> PS</a>
+<ul>
+<li class="chapter" data-level="25.1" data-path="ps.html"><a href="ps.html#图片格式"><i class="fa fa-check"></i><b>25.1</b> 图片格式</a></li>
+<li class="chapter" data-level="25.2" data-path="ps.html"><a href="ps.html#快捷键"><i class="fa fa-check"></i><b>25.2</b> 快捷键</a></li>
+<li class="chapter" data-level="25.3" data-path="ps.html"><a href="ps.html#ps复制文字"><i class="fa fa-check"></i><b>25.3</b> PS复制文字</a></li>
+<li class="chapter" data-level="25.4" data-path="ps.html"><a href="ps.html#ps切图"><i class="fa fa-check"></i><b>25.4</b> PS切图</a>
+<ul>
+<li class="chapter" data-level="25.4.1" data-path="ps.html"><a href="ps.html#图层切图"><i class="fa fa-check"></i><b>25.4.1</b> 图层切图</a></li>
+<li class="chapter" data-level="25.4.2" data-path="ps.html"><a href="ps.html#切片工具"><i class="fa fa-check"></i><b>25.4.2</b> 切片工具</a></li>
+<li class="chapter" data-level="25.4.3" data-path="ps.html"><a href="ps.html#插件切图"><i class="fa fa-check"></i><b>25.4.3</b> 插件切图</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="js断点调试.html"><a href="js断点调试.html"><i class="fa fa-check"></i><b>26</b> JS断点调试</a></li>
+<li class="chapter" data-level="27" data-path="chrome调试工具.html"><a href="chrome调试工具.html"><i class="fa fa-check"></i><b>27</b> Chrome调试工具</a>
+<ul>
+<li class="chapter" data-level="27.1" data-path="chrome调试工具.html"><a href="chrome调试工具.html#打开调试工具"><i class="fa fa-check"></i><b>27.1</b> 打开调试工具</a></li>
+<li class="chapter" data-level="27.2" data-path="chrome调试工具.html"><a href="chrome调试工具.html#使用调试工具"><i class="fa fa-check"></i><b>27.2</b> 使用调试工具</a></li>
+</ul></li>
+<li class="chapter" data-level="28" data-path="js断点调试-1.html"><a href="js断点调试-1.html"><i class="fa fa-check"></i><b>28</b> JS断点调试</a></li>
+<li class="chapter" data-level="29" data-path="javascripy基础-1.html"><a href="javascripy基础-1.html"><i class="fa fa-check"></i><b>29</b> JavaScripy基础</a>
+<ul>
+<li class="chapter" data-level="29.1" data-path="javascripy基础-1.html"><a href="javascripy基础-1.html#下载和引入"><i class="fa fa-check"></i><b>29.1</b> 下载和引入</a></li>
+<li class="chapter" data-level="29.2" data-path="javascripy基础-1.html"><a href="javascripy基础-1.html#简介"><i class="fa fa-check"></i><b>29.2</b> 简介</a></li>
 </ul></li>
 </ul>
 
@@ -469,59 +608,92 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ps" class="section level1 hasAnchor" number="19">
-<h1><span class="header-section-number">19</span> PS<a href="ps.html#ps" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>因为网页美工大部分效果图都是利用<strong>PS ( Photoshop )</strong>来做的，所以以后我们大部分切图工作都是在PS里面完成。</p>
-<p>用“选区”拖动，可以测量大小</p>
+<div id="ps" class="section level1 hasAnchor" number="25">
+<h1><span class="header-section-number">25</span> PS<a href="ps.html#ps" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
-<img src="fig/appendix/100-02.jpg" alt="选区工具" width="194" />
+<img src="fig/appendix/100-03.jpg" alt="PS基本界面" width="528" />
 <p class="caption">
-图3.1: 选区工具
+图3.1: PS基本界面
 </p>
 </div>
-<p>快捷键</p>
+<div id="图片格式" class="section level2 hasAnchor" number="25.1">
+<h2><span class="header-section-number">25.1</span> 图片格式<a href="ps.html#图片格式" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>jpg：高清</li>
+<li>gif：动画</li>
+<li>png：高清，且<strong>透明背景</strong></li>
+<li>psd：PS专用格式。可复制文字、获取图片（便于切图）、测量像素大小。</li>
+</ul>
+<p>因为网页美工大部分效果图都是利用<strong>PS ( Photoshop )</strong>来做的，所以以后我们大部分切图工作都是在PS里面完成。</p>
+<p>用“选区”拖动，可以测量大小</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="fig/appendix/100-02.jpg" alt="选区工具" width="194" />
+<p class="caption">
+图6.1: 选区工具
+</p>
+</div>
+</div>
+<div id="快捷键" class="section level2 hasAnchor" number="25.2">
+<h2><span class="header-section-number">25.2</span> 快捷键<a href="ps.html#快捷键" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>打开文件：<code>Ctrl</code>+<code>O</code></p></li>
 <li><p>打开标尺：<code>Ctrl</code>+<code>R</code>，然后右击出现的标尺，单位改为“像素”</p></li>
-<li><p>放大视图：<code>Ctrl</code>+<code>+</code></p></li>
+<li><p><strong>放大视图</strong>：<code>Ctrl</code>+<code>+</code></p></li>
 <li><p>缩小视图：<code>Ctrl</code>+<code>-</code></p></li>
 <li><p>鼠标变小手，拖动PS视图 <code>空格</code></p></li>
 <li><p>取消选区：<code>Ctrl</code>+<code>D</code> 或鼠标在空白地方点一下</p></li>
-<li><p>合并图层：<code>Ctrl</code>+<code>E</code></p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
-<img src="fig/appendix/100-03.jpg" alt="PS基本界面" width="528" />
-<p class="caption">
-图6.1: PS基本界面
-</p>
-</div></li>
+<li><p>合并图层：<code>Ctrl</code>+<code>E</code></p></li>
 </ul>
-<div id="ps切图" class="section level2 hasAnchor" number="19.1">
-<h2><span class="header-section-number">19.1</span> PS切图<a href="ps.html#ps切图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="常见的图片格式" class="section level3 hasAnchor" number="19.1.1">
-<h3><span class="header-section-number">19.1.1</span> 常见的图片格式<a href="ps.html#常见的图片格式" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="ps复制文字" class="section level2 hasAnchor" number="25.3">
+<h2><span class="header-section-number">25.3</span> PS复制文字<a href="ps.html#ps复制文字" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>打开psd文件后，选择左侧的文字按钮，就可以在图片中负责文字了。</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="fig/appendix/ps-copy.jpg" alt="PS基本界面" width="894" />
+<p class="caption">
+图1.1: PS基本界面
+</p>
+</div>
+</div>
+<div id="ps切图" class="section level2 hasAnchor" number="25.4">
+<h2><span class="header-section-number">25.4</span> PS切图<a href="ps.html#ps切图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>PS有很多切图方式：图层切图、切片切图、PS插件切图等。</p>
+<div id="图层切图" class="section level3 hasAnchor" number="25.4.1">
+<h3><span class="header-section-number">25.4.1</span> 图层切图<a href="ps.html#图层切图" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>图层</strong>：PSD文件中每个部分都是由图层构成的。图层界面在PS的右下角。</p>
+<p><strong>图层选中</strong>：点击左上角第一个【移动工具】，单击需要切的图片，PS会自动选中对应的图层。</p>
+<p><strong>图层的显示与关闭</strong>：图层界面在PS的右下角，点一下每个图层的“小眼镜”按钮，就可以关闭/显示该部分的图层。</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="fig/appendix/%E5%9B%BE%E5%B1%82.jpg" alt="图层显示与关闭" width="1080" />
+<p class="caption">
+图25.1: 图层显示与关闭
+</p>
+</div>
+<p><strong>图层导出</strong>最简单的切图方式：右击图层→快速导出为PNG。</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<img src="fig/appendix/%E5%88%87%E5%9B%BE%E5%AF%BC%E5%87%BA.jpg" alt="图层导出" width="1078" />
+<p class="caption">
+图2.1: 图层导出
+</p>
+</div>
+<p><strong>图层合并</strong>
+但很多情况下，想一次性导出多个图层。我们需要合并图层再导出。Shift多选需要的图层，合并图层（Ctrl+E），右击合并好的图层，快速导出为PNG。</p>
+</div>
+<div id="切片工具" class="section level3 hasAnchor" number="25.4.2">
+<h3><span class="header-section-number">25.4.2</span> 切片工具<a href="ps.html#切片工具" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
-<li>jpg图像格式:JPEG ( JPG ）对色彩的信息保留较好，高清，颜色较多，我们<strong>产品类的图片经常用jpg格式的</strong></li>
+<li>第一步：切片选择要导出的区域。点击左上方第三个【切片工具】，手动选择需要切片的图。</li>
+<li>第二步：导出选中的区域。文件菜单→导出→存储为web设备所用格式→右上角选择jpg或png格式→存储。保存界面下方的切片：【选中的切片】。</li>
 </ol>
-<p>2 gif图像格式:GIF格式最多只能储存256色，所以通常用来显示简单图形及字体，但是可以保存透明背景和动画效果,<strong>实际经常用于一些图片小动画效果。</strong></p>
-<ol start="3" style="list-style-type: decimal">
-<li>png图像格式是一种新兴的网络图形格式，结合了GIF和JPEG的优点，具有存储形式丰富的特点，能够保持透明背景.<strong>如果想要切成背景透明的图片,请选择png格式。</strong></li>
-</ol>
-<p>4．PSD图像格式PSD格式是Photoshop的专用格式，里面可以存放图层、通道、遮罩等多种设计稿.对我们前端人员来说,<strong>最大的优点我们可以直接从上面复制文字,获得图片,还可以测量大小和距离。</strong></p>
+<p>如果要保存透明背景的图片，需要通过“小眼睛”隐藏背景后，切片导出为png格式。</p>
 </div>
-<div id="图层切图" class="section level3 hasAnchor" number="19.1.2">
-<h3><span class="header-section-number">19.1.2</span> 图层切图<a href="ps.html#图层切图" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>最简单的切图方式：</p>
-<p>点击左上角第一个【移动工具】，单击需要切的图片，PS会自动选中对应的图层，右击涂层，点【快速导出为PNG】。</p>
-<p>但很多情况下，我们需要合并图层再导出。Shift多选需要的图层，合并图层（Ctrl+E），右击合并好的图层，快速导出为PNG。</p>
-</div>
-<div id="切片工具" class="section level3 hasAnchor" number="19.1.3">
-<h3><span class="header-section-number">19.1.3</span> 切片工具<a href="ps.html#切片工具" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>点击左上方第三个【切片工具】。手动选择需要切片的图。文件菜单→导出→存储为web设备所用格式→选择jpg或png格式→存储。</p>
-</div>
-<div id="插件切图" class="section level3 hasAnchor" number="19.1.4">
-<h3><span class="header-section-number">19.1.4</span> 插件切图<a href="ps.html#插件切图" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="插件切图" class="section level3 hasAnchor" number="25.4.3">
+<h3><span class="header-section-number">25.4.3</span> 插件切图<a href="ps.html#插件切图" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><a href="http://www.cutterman.cn/zh/cutterman" target="_blank">cuterman</a>是一款运行在Photoshop中的插件，能够自动将你需要的图层进行输出，以替代传统的手工“导出web 所用格式”以及使用切片工具进行挨个切图的繁琐流程。</p>
-
+<p><strong>插件的安装</strong>：详见：<a href="https://www.bilibili.com/video/BV14J4114768?p=193" class="uri">https://www.bilibili.com/video/BV14J4114768?p=193</a></p>
+<p><strong>打开插件</strong>：PS最上方【窗口】→【扩展（旧版）】→【cuterman-切图神器】</p>
+<p><strong>插件的使用</strong>：首先<strong>选中图层</strong>，点一下【导出选中图层】即可。</p>
+<p><strong>导出多个图层</strong>：PS中Shift多选需要的图层→插件中选中【合并导出选中的图层】→【导出选中图层】即可。</p>
 </div>
 </div>
 </div>
@@ -531,7 +703,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="vscode常用操作.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="chrome调试工具.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="js断点调试.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
