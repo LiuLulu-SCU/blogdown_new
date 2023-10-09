@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* 权重：标签选择器+伪元素选择器=1+1=2 */
+        div::before {
+            /* content属性必须写 */
+            content: '我';
+        }
+
+        div::after {
+            /* content属性必须写 */
+            content: '小猪佩奇';
+        }
+    </style>
+</head>
+
+<body>
+    <div>是</div>
+
+</body>
+
+</html>

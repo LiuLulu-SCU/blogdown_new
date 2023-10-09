@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* nth-child会把所有的盒子都排序 */
+        /* 执行的时候先看 :nth-child(1)是第几个， 之后再判断是否为div */
+        section div:nth-child(1) {
+            background-color: red;
+        }
+
+        /* nth-of-type只把div的盒子都排序 */
+        /* 执行的时候先判断是否为div ，再看nth-of-type(2)是第几个 */
+        section div:nth-of-type(2) {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <p>光头强</p>
+        <div>熊大</div>
+        <div>熊二</div>
+    </section>
+</body>
+
+</html>

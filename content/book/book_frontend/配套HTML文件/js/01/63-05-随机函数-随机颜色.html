@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 这里定义盒子的宽高和位置 */
+        div {
+            height: 200px;
+            width: 200px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        function getRandomInt(M, N) {
+            return Math.floor(Math.random() * (N - M + 1)) + M
+        }
+
+        function getRandomColor(flag = true) {
+            let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+            if (flag) {  //如果判断为true使用16进制颜色 如: #ffffff
+                let color = '#'
+                for (let i = 1; i <= 6; i++) {
+                    rand = getRandomInt(0, arr.length - 1)  //确定数组随机索引
+                    rand_color_16 = arr[rand]
+                    color += rand_color_16
+                }
+                return color
+            } else { //如果判断为false使用rgb颜色 如: rgb(255,255,255)
+                r = getRandomInt(0, 255)
+                g = getRandomInt(0, 255)
+                b = getRandomInt(0, 255)
+                return `rgb(${r},${g},${b})`
+            }
+        }
+
+        document.write(`
+        <div></div>
+        `)
+
+        const div = document.querySelector('div')  //dom操作，后面会讲
+        div.style.backgroundColor = getRandomColor()
+    </script>
+</body>
+
+</html>

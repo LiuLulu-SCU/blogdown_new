@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(images/desktop_1.jpg) no-repeat top center/cover;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+        function getRandomInt(M, N) {
+            return Math.floor(Math.random() * (N - M + 1)) + M
+        }
+        const random = getRandomInt(1, 10)
+
+        body = document.querySelector('body')
+        body.style.backgroundImage = `url(images/desktop_${random}.jpg)`
+    </script>
+</body>
+
+</html>

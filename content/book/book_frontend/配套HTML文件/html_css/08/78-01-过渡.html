@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过渡</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            /* 写法一、多个属性用逗号隔开 */
+            transition: width 0.5s, height 0.5s;
+        }
+
+        p {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            /* 写法二：多个属性用all */
+            transition: all 0.5s;
+        }
+
+        div:hover,
+        p:hover {
+            width: 400px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <p></p>
+</body>
+
+</html>

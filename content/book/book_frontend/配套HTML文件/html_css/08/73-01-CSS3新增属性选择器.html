@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选择标签：必须是input标签 且具有value属性名 */
+        input[value] {
+            color: pink;
+        }
+
+        /* 选择标签：必须是input标签 且type属性的值为password */
+        input[type='password'] {
+            color: red;
+        }
+
+        /* 选择标签：必须是div标签 且class属性的值以icon开头 */
+        div[class^='icon'] {
+            color: blue;
+        }
+
+        /* 选择标签：必须是div标签 且class属性的值以icon开头 */
+        section[class$='data'] {
+            color: green;
+        }
+
+        /* 必须加上div，不然权重只有.icon1为10，小于前面的属性选择器1+10=11 */
+        div.icon1 {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 利用属性选择器就可以不用借助于类或者id选择器 -->
+    <input type="text" value="请输入用户名">
+    <input type="text">
+    <!-- 2. 属性选择器还可以选择属性=值的某些元素 重点务必掌握的 -->
+    <input type="text" name="" id="">
+    <input type="password" name="" id="">
+    <!-- 3. 属性选择器可以选择属性值开头的某些元素 -->
+    <div class="icon1">小图标1</div>
+    <div class="icon2">小图标2</div>
+    <div class="icon3">小图标3</div>
+    <div class="icon4">小图标4</div>
+    <!-- 4. 属性选择器可以选择属性值结尾的某些元素 -->
+    <section class="icon1-data">我是安其拉</section>
+    <section class="icon2-data">我是哥斯拉</section>
+    <section class="icon3-ico">哪我是谁</section>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let randInt = Math.floor(Math.random() * (10 - 1 + 1)) + 1
+        console.log(randInt)
+
+
+        //最多猜三次
+        flag = true
+        for (let i = 1; i <= 3; i++) {
+            let guessInt = +prompt('请输入1-10之间的整数')
+            if (guessInt > randInt) {
+                alert('数字猜大了，继续猜')
+            } else if (guessInt < randInt) {
+                alert('数字猜小了，继续猜')
+            } else {
+                flag = false
+                alert('猜对了，程序结束')
+                break
+            }
+        }
+
+        if (flag) {
+            alert('3次数次数已用尽。游戏结束。')
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

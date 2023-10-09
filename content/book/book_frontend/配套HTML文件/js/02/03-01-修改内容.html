@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box1">我是文字的内容1</div>
+    <div class="box2">我是文字的内容2</div>
+
+    <script>
+        // .innerText属性
+        // 1.获取元素
+        const box1 = document.querySelector('.box1')
+        // 2.修改元素内容 对象.innerText属性
+        console.log(box1.innerText) //获取文字内容
+        box1.innerText = '我是一个盒子1'
+
+        //.innerHTML属性
+        // 1.获取元素
+        const box2 = document.querySelector('.box2')
+        // 2.修改元素内容 对象.innerHTML属性
+        console.log(box2.innerHTML) //获取文字内容
+        box2.innerHTML = '<strong>我是一个盒子2</strong>'
+
+    </script>
+</body>
+
+</html>

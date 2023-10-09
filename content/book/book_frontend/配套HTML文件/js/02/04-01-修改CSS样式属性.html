@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        //1.获取元素
+        const div = document.querySelector('div')
+        //2.修改样式属性：对象.style.属性名 = 属性值
+        div.style.width = '300px'
+        div.style.backgroundColor = 'hotpink'  //多组单词采用小驼峰
+        div.style.border = '2px solid blue'
+        div.style.borderTop = '2px solid red'//多组单词采用小驼峰
+    </script>
+</body>
+
+</html>

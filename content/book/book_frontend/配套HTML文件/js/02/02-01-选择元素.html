@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">123</div>
+    <div class="box">abc</div>
+    <p id="nav">xyz</p>
+    <ul>
+        <li>刘</li>
+        <li>卢</li>
+        <li>路</li>
+    </ul>
+    <script>
+        //1.获取匹配的第一个元素
+        const box = document.querySelector('.box') //获取第一个类名为box的标签
+        console.dir(box)
+
+        const nav = document.querySelector('#nav') //获取第一个id为nav的标签
+        console.dir(nav)
+        nav.style.color = 'red' //可以直接操作修改
+
+        const li = document.querySelector('ul li') //获取ul中的第一个li
+        console.dir(li)
+
+        //2.获取匹配的多个元素
+        const lis = document.querySelectorAll('ul li') //获取ul中的所有li标签
+        console.dir(lis)
+        // 不可以直接修改， 只能通过遍历的方式一次给里面的元素做修改
+        for (let i = 0; i < lis.length; i++) {
+            console.dir(lis[i])
+            lis[i].style.color = 'pink' //可以直接操作修改
+
+        }
+
+    </script>
+</body>
+
+</html>
