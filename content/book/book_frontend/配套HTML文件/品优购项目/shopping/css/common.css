@@ -1,0 +1,305 @@
+/* 引入字体图标库 */
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+
+    src: url("../fonts/fontawesome-free-6.4.2/webfonts/fa-solid-900.ttf") format("truetype");
+}
+
+/* 版心 */
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.style_red {
+    color: #c81623;
+}
+
+/* 快捷导航模块 */
+.shortcut {
+    height: 31px;
+    background-color: #f1f1f1;
+    line-height: 31px;
+}
+
+.shortcut ul li {
+    float: left;
+}
+
+.shortcut .fr ul li:nth-child(even) {
+    width: 1px;
+    height: 12px;
+    background-color: #666;
+    margin: 9px 15px 0;
+}
+
+.arrow-icon::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 700;
+    content: '\f078';
+    margin-left: 6px;
+}
+
+/* header 头部模块 */
+.header {
+    position: relative;
+    height: 105px;
+}
+
+.logo {
+    position: absolute;
+    top: 25px;
+    width: 175px;
+    height: 56px;
+}
+
+.logo a {
+    display: block;
+    width: 175px;
+    height: 56px;
+    background: url(../images/logo.png) no-repeat;
+    font-size: 0;
+}
+
+.search {
+    position: relative;
+    left: 346px;
+    top: 25px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid #b1191a;
+}
+
+.search input {
+    /* 行内块元素间（input和button）有间隙，加浮动取消 */
+    width: 454px;
+    float: left;
+    height: 32px;
+    padding-left: 10px;
+}
+
+.search button {
+    /* 行内块元素间（input和button）有间隙，加浮动取消 */
+    float: left;
+    width: 80px;
+    height: 32px;
+    background-color: #b1191a;
+    font-size: 16px;
+    color: #fff;
+}
+
+.hotwords {
+    position: absolute;
+    top: 66px;
+    left: 346px;
+}
+
+.hotwords a {
+    margin: 0 10px;
+}
+
+.shopcar {
+    position: absolute;
+    right: 60px;
+    top: 25px;
+    width: 140px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid #dfdfdd;
+    background-color: #f7f7ff;
+}
+
+.shopcar::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f07a";
+    margin-right: 5px;
+    color: #b1191a;
+}
+
+.shopcar::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f105";
+    margin-left: 10px;
+}
+
+.count {
+    position: absolute;
+    top: -5px;
+    left: 105px;
+    height: 14px;
+    line-height: 14px;
+    color: #fff;
+    background-color: #b1191a;
+    padding: 0 5px;
+    border-radius: 7px 7px 7px 0;
+}
+
+/* nav模块 */
+.nav {
+    height: 47px;
+    border-bottom: 2px solid #b1191a;
+}
+
+.nav .dropdown {
+    float: left;
+    width: 210px;
+    height: 45px;
+    background-color: #b1191a;
+}
+
+.nav .navitems {
+    float: left;
+
+}
+
+.dropdown .dt {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    font-size: 16px;
+}
+
+.dropdown .dd {
+    /* display: none; */
+    width: 210px;
+    height: 465px;
+    background-color: #c81623;
+    margin-top: 2px;
+}
+
+
+.dropdown .dd ul li {
+    height: 31px;
+    line-height: 31px;
+    margin-left: 2px;
+    padding-left: 10px;
+}
+
+.dropdown .dd ul li:hover {
+    background-color: #fff;
+}
+
+.dropdown .dd ul li a {
+    font-size: 14px;
+    color: #fff;
+}
+
+.dropdown .dd ul li:hover a {
+    color: #c81623;
+}
+
+.dropdown .dd ul li::after {
+    float: right;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f105";
+    color: #fff;
+    padding-right: 10px;
+    font-size: 14px;
+}
+
+.navitems ul li {
+    float: left;
+}
+
+.navitems ul li a {
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+    /* 给a标签padding，这样可以扩大链接的点击范围 */
+    padding: 0 25px;
+}
+
+
+/* 底部模块制作 */
+.footer {
+    height: 415px;
+    background-color: #f5f5f5;
+    padding-top: 30px;
+}
+
+.mod_service {
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+}
+
+.mod_service ul li {
+    float: left;
+    width: 300px;
+    height: 50px;
+    padding-left: 35px;
+}
+
+.mod_service ul li h5 {
+    float: left;
+    width: 50px;
+    height: 50px;
+    background: url(../images/icons.png) no-repeat -252px -2px;
+    margin-right: 8px;
+}
+
+.service_tex h4 {
+    padding-top: 5px;
+    font-size: 14px;
+}
+
+.service_tex p {
+    font-size: 12px;
+
+}
+
+.mod_help {
+    height: 185px;
+    border-bottom: 1px solid #ccc;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+
+.mod_help dl {
+    float: left;
+    width: 200px;
+}
+
+.mod_help dl:last-child {
+    width: 90px;
+    text-align: center;
+}
+
+.mod_help dl dt {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.mod_cpyright {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.links {
+    margin-bottom: 15px;
+}
+
+.links a {
+    margin: 0 3px;
+}
+
+.copyright {
+    line-height: 20px;
+}

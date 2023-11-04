@@ -72,7 +72,7 @@ title: 刘卢路
 
 - <a href="/courses/probability/" target="_blank">CEA教程（更新中）</a>
 - <a href="/book/book_r/" target="_blank">R语言编程-基于tidyverse（更新中）</a>
-- <a href="/book/book_frontend/" target="_blank">Web开发教程（暂时不更了）</a>
+- <a href="/book/book_frontend/" target="_blank">Web开发教程（更新中）</a>
 
 
 

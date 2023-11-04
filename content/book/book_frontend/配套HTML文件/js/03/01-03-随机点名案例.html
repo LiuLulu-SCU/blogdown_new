@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 600px;
+            margin: 50px auto;
+            display: flex;
+            font-size: 25px;
+            line-height: 40px;
+        }
+
+        .name {
+
+            width: 450px;
+            height: 40px;
+            color: red;
+
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btns button {
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>随机点名</h2>
+    <div class="box">
+        <span>名字是：</span>
+        <div class="name">这里显示姓名</div>
+    </div>
+    <div class="btns">
+        <button class="start">开始</button>
+        <button class="end">结束</button>
+    </div>
+
+    <script>
+        // 数据数组
+        const arr = ['马超', '黄忠', '赵云', '关羽', '张飞']
+        //提前准备
+        const name = document.querySelector('.name')
+        let timerID = 0 //定时器的全局变量
+        let random = 0 //随机数为全局变量
+        // 1.开始按钮
+        // 1.1获取开始按钮对象
+        const start = document.querySelector('.start')
+        // 1.2添加点击事件
+        start.addEventListener('click', function () {
+            timerID = setInterval(function () {
+                // 随机数
+                random = parseInt(Math.random() * arr.length)
+                name.innerHTML = arr[random]
+            }, 35)
+
+            // 4.如果数组中只剩一个值，需要禁用两个按钮
+
+            if (arr.length === 1) {
+                start.disabled = end.disabled = true
+            }
+        })
+
+        //2.结束按钮
+        // 2.1获取结束按钮对象
+        const end = document.querySelector('.end')
+        // 2.2添加点击事件
+        end.addEventListener('click', function () {
+            clearInterval(timerID)
+            // 3.结束了，删除当前人名
+            arr.splice(random, 1)
+        })
+
+    </script>
+</body>
+
+</html>

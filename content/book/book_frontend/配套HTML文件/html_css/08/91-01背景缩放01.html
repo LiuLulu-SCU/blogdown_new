@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            float: left;
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+            background: url(images/dog.jpg) no-repeat;
+            margin-right: 5px;
+        }
+
+        div:nth-child(1) {
+            /* 1.background-size: 图片的宽度200px 图片的高度100px; */
+            background-size: 200px 100px;
+        }
+
+        div:nth-child(2) {
+            /* 2.只写宽度时，高度会等比例拉伸 */
+            background-size: 200px;
+        }
+
+        div:nth-child(3) {
+            /* 3.单位为百分比%，表示宽/高为父盒子的百分比 */
+            background-size: 50%;
+        }
+
+        div:nth-child(4) {
+            /* 4.cover 宽度和高度全部铺满才停止*/
+            background-size: cover;
+        }
+
+        div:nth-child(5) {
+            /* 5.contain 宽度或高度铺满，任意一个先铺满就停止 */
+            background-size: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

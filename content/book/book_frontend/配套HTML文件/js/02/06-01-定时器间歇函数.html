@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // setInterval(函数,间隔时间ms)
+        //调用匿名函数
+        let time1 = setInterval(function () {
+            console.log('一秒执行一次');
+        }, 1000)
+        console.log(time1); //定时器序号
+
+        //调用一般函数
+        function fn() { //函数名为fn
+            console.log('三秒打印一次');
+        }
+        let time2 = setInterval(fn, 3000)
+        console.log(time2); //定时器序号
+
+    </script>
+</body>
+
+</html>
