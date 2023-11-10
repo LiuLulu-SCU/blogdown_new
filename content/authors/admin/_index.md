@@ -70,15 +70,30 @@ title: 刘卢路
   
 <font color=#ED7D31 face="黑体" size=5>**我的书籍**</font>
 
-- <a href="/courses/probability/" target="_blank">CEA教程（更新中）</a>
-- <a href="/book/book_r/" target="_blank">R语言编程-基于tidyverse（更新中）</a>
-- <a href="/book/book_frontend/" target="_blank">Web开发教程（更新中）</a>
+
+<div style="float: left; width: 400px; height: 200px;">
+    <ul>
+        <li>
+            <a href="/courses/probability/" target="_blank">CEA教程（更新中）</a>
+        </li>
+        <li>
+            <a href="/book/book_r/" target="_blank">R语言编程-基于tidyverse（更新中）</a>
+        </li>
+        <li>
+            <a href="/book/book_frontend/" target="_blank">Web开发教程（更新中）</a>
+        </li>
+        <li>
+            <a href="/book/book_mysql/" target="_blank">MySQL教程（更新中）</a>
+        </li>
+    </ul>
+</div>
+<div style="float: left; width: 300px; height: 200px; margin-left: 10px;">
+    <ul>
+        <li>待补充</li>
+    </ul>
+</div>
 
 
-
-
-
-- 待补充
 
 
 

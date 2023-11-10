@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 第二章 SQL | MySQL笔记</title>
+  <meta name="description" content="2 第二章 SQL | MySQL笔记" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 第二章 SQL | MySQL笔记" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 第二章 SQL | MySQL笔记" />
+  
+  
+  
+
+<meta name="author" content="刘卢路" />
+
+
+<meta name="date" content="2023-11-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="mysql概述.html"/>
+<link rel="next" href="案例答案.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>简介</a></li>
+<li class="part"><span><b>I 基础篇</b></span></li>
+<li class="chapter" data-level="1" data-path="mysql概述.html"><a href="mysql概述.html"><i class="fa fa-check"></i><b>1</b> MySQL概述</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="mysql概述.html"><a href="mysql概述.html#数据库相关概念"><i class="fa fa-check"></i><b>1.1</b> 数据库相关概念</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="mysql概述.html"><a href="mysql概述.html#关系型数据库"><i class="fa fa-check"></i><b>1.1.1</b> 关系型数据库</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="mysql概述.html"><a href="mysql概述.html#mysql数据库"><i class="fa fa-check"></i><b>1.2</b> MySQL数据库</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="mysql概述.html"><a href="mysql概述.html#版本"><i class="fa fa-check"></i><b>1.2.1</b> 版本</a></li>
+<li class="chapter" data-level="1.2.2" data-path="mysql概述.html"><a href="mysql概述.html#下载和安装"><i class="fa fa-check"></i><b>1.2.2</b> 下载和安装</a></li>
+<li class="chapter" data-level="1.2.3" data-path="mysql概述.html"><a href="mysql概述.html#配置"><i class="fa fa-check"></i><b>1.2.3</b> 配置</a></li>
+<li class="chapter" data-level="1.2.4" data-path="mysql概述.html"><a href="mysql概述.html#启动停止"><i class="fa fa-check"></i><b>1.2.4</b> 启动停止</a></li>
+<li class="chapter" data-level="1.2.5" data-path="mysql概述.html"><a href="mysql概述.html#客户端连接"><i class="fa fa-check"></i><b>1.2.5</b> 客户端连接</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="第二章-sql.html"><a href="第二章-sql.html"><i class="fa fa-check"></i><b>2</b> 第二章 SQL</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="第二章-sql.html"><a href="第二章-sql.html#sql的通用语法和分类"><i class="fa fa-check"></i><b>2.1</b> SQL的通用语法和分类</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="第二章-sql.html"><a href="第二章-sql.html#sql的通用语法"><i class="fa fa-check"></i><b>2.1.1</b> SQL的通用语法</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="第二章-sql.html"><a href="第二章-sql.html#sql语句的分类"><i class="fa fa-check"></i><b>2.2</b> SQL语句的分类</a></li>
+<li class="chapter" data-level="2.3" data-path="第二章-sql.html"><a href="第二章-sql.html#数据类型"><i class="fa fa-check"></i><b>2.3</b> 数据类型</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="第二章-sql.html"><a href="第二章-sql.html#数值型"><i class="fa fa-check"></i><b>2.3.1</b> 数值型</a></li>
+<li class="chapter" data-level="2.3.2" data-path="第二章-sql.html"><a href="第二章-sql.html#字符串型"><i class="fa fa-check"></i><b>2.3.2</b> 字符串型</a></li>
+<li class="chapter" data-level="2.3.3" data-path="第二章-sql.html"><a href="第二章-sql.html#日期时间类型"><i class="fa fa-check"></i><b>2.3.3</b> 日期时间类型</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="第二章-sql.html"><a href="第二章-sql.html#数据定义语言-ddl"><i class="fa fa-check"></i><b>2.4</b> 数据定义语言 DDL</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="第二章-sql.html"><a href="第二章-sql.html#数据库操作"><i class="fa fa-check"></i><b>2.4.1</b> 数据库操作</a></li>
+<li class="chapter" data-level="2.4.2" data-path="第二章-sql.html"><a href="第二章-sql.html#表操作"><i class="fa fa-check"></i><b>2.4.2</b> 表操作</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="第二章-sql.html"><a href="第二章-sql.html#数据操作语言-dml"><i class="fa fa-check"></i><b>2.5</b> 数据操作语言 DML</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="第二章-sql.html"><a href="第二章-sql.html#添加数据"><i class="fa fa-check"></i><b>2.5.1</b> 添加数据</a></li>
+<li class="chapter" data-level="2.5.2" data-path="第二章-sql.html"><a href="第二章-sql.html#修改数据"><i class="fa fa-check"></i><b>2.5.2</b> 修改数据</a></li>
+<li class="chapter" data-level="2.5.3" data-path="第二章-sql.html"><a href="第二章-sql.html#删除数据"><i class="fa fa-check"></i><b>2.5.3</b> 删除数据</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="第二章-sql.html"><a href="第二章-sql.html#数据查询语言-dql"><i class="fa fa-check"></i><b>2.6</b> 数据查询语言 DQL</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="第二章-sql.html"><a href="第二章-sql.html#基础查询"><i class="fa fa-check"></i><b>2.6.1</b> 基础查询</a></li>
+<li class="chapter" data-level="2.6.2" data-path="第二章-sql.html"><a href="第二章-sql.html#条件查询"><i class="fa fa-check"></i><b>2.6.2</b> 条件查询</a></li>
+<li class="chapter" data-level="2.6.3" data-path="第二章-sql.html"><a href="第二章-sql.html#聚合函数"><i class="fa fa-check"></i><b>2.6.3</b> 聚合函数</a></li>
+<li class="chapter" data-level="2.6.4" data-path="第二章-sql.html"><a href="第二章-sql.html#分组查询"><i class="fa fa-check"></i><b>2.6.4</b> 分组查询</a></li>
+<li class="chapter" data-level="2.6.5" data-path="第二章-sql.html"><a href="第二章-sql.html#排序查询"><i class="fa fa-check"></i><b>2.6.5</b> 排序查询</a></li>
+<li class="chapter" data-level="2.6.6" data-path="第二章-sql.html"><a href="第二章-sql.html#分页查询"><i class="fa fa-check"></i><b>2.6.6</b> 分页查询</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II 附录</b></span></li>
+<li class="chapter" data-level="3" data-path="案例答案.html"><a href="案例答案.html"><i class="fa fa-check"></i><b>3</b> 案例答案</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="案例答案.html"><a href="案例答案.html#第二章"><i class="fa fa-check"></i><b>3.1</b> 第二章</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="案例答案.html"><a href="案例答案.html#as-2-1"><i class="fa fa-check"></i><b>3.1.1</b> 案例1</a></li>
+<li class="chapter" data-level="3.1.2" data-path="案例答案.html"><a href="案例答案.html#as-2-2"><i class="fa fa-check"></i><b>3.1.2</b> 数据2</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="案例答案.html"><a href="案例答案.html#as-2-3"><i class="fa fa-check"></i><b>3.2</b> 案例3</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="一些操作.html"><a href="一些操作.html"><i class="fa fa-check"></i><b>4</b> 一些操作</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="一些操作.html"><a href="一些操作.html#管理员身份运行cmd"><i class="fa fa-check"></i><b>4.1</b> 管理员身份运行cmd</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MySQL笔记</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="第二章-sql" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> 第二章 SQL<a href="第二章-sql.html#第二章-sql" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>SQL</strong>（Structured Query Language，结构化查询语言）：操作关系型数据库的编程语言，定义了
+一套操作关系型数据库统一标准 。</p>
+<div id="sql的通用语法和分类" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> SQL的通用语法和分类<a href="第二章-sql.html#sql的通用语法和分类" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sql的通用语法" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> SQL的通用语法<a href="第二章-sql.html#sql的通用语法" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>在学习具体的SQL语句之前，先来了解一下SQL语言的同于语法。</p>
+<ol style="list-style-type: decimal">
+<li><p>SQL语句可以单行或多行书写，以分号结尾。</p></li>
+<li><p>SQL语句可以使用空格/缩进来增强语句的可读性。</p></li>
+<li><p>MySQL数据库的SQL语句不区分大小写，关键字建议使用大写。</p></li>
+<li><p>注释：</p>
+<ul>
+<li>单行注释：– 注释内容 或 # 注释内容</li>
+<li>多行注释：/* 注释内容 */</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="sql语句的分类" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> SQL语句的分类<a href="第二章-sql.html#sql语句的分类" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>SQL语句，根据其功能，主要分为四类：DDL、DML、DQL、DCL</p>
+<table>
+<caption><span id="tab:unnamed-chunk-1">表1.1: </span>SQL语句的分类</caption>
+<colgroup>
+<col width="5%" />
+<col width="30%" />
+<col width="63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">分类</th>
+<th align="left">全称</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">DDL</td>
+<td align="left">Data Definition Language</td>
+<td align="left">数据定义语言，用来定义/创建数据库对象(数据库，表，字段)</td>
+</tr>
+<tr class="even">
+<td align="left">DML</td>
+<td align="left">Data Manipulation Language</td>
+<td align="left">数据操作语言，用来对数据库表中的数据进行增删改</td>
+</tr>
+<tr class="odd">
+<td align="left">DQL</td>
+<td align="left">Data Query Language</td>
+<td align="left">数据查询语言，用来查询数据库中表的记录</td>
+</tr>
+<tr class="even">
+<td align="left">DCL</td>
+<td align="left">Data Control Language</td>
+<td align="left">数据控制语言，用来创建数据库用户、控制数据库的访问权限</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="数据类型" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> 数据类型<a href="第二章-sql.html#数据类型" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>MySQL中的数据类型有很多，主要分为三类：数值类型、字符串类型、日期时间类型。</p>
+<div id="数值型" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> 数值型<a href="第二章-sql.html#数值型" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<caption><span id="tab:unnamed-chunk-2">表2.1: </span>数值类型</caption>
+<colgroup>
+<col width="9%" />
+<col width="5%" />
+<col width="41%" />
+<col width="43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">类型</th>
+<th align="left">大小</th>
+<th align="left">有符号SIGNED范围</th>
+<th align="left">无符号范围</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TINYINT</td>
+<td align="left">1byte</td>
+<td align="left">(-128，127)</td>
+<td align="left">(0，255)</td>
+</tr>
+<tr class="even">
+<td align="left">SMALLINT</td>
+<td align="left">2bytes</td>
+<td align="left">(-32768，32767)</td>
+<td align="left">(0，65535)</td>
+</tr>
+<tr class="odd">
+<td align="left">MEDIUMINT</td>
+<td align="left">3bytes</td>
+<td align="left">(-8388608，8388607)</td>
+<td align="left">(0，16777215)</td>
+</tr>
+<tr class="even">
+<td align="left">INT/INTEGER</td>
+<td align="left">4bytes</td>
+<td align="left">(-2147483648，2147483647)</td>
+<td align="left">(0，4294967295)</td>
+</tr>
+<tr class="odd">
+<td align="left">BIGINT</td>
+<td align="left">8bytes</td>
+<td align="left">(-2^63，2^63-1)</td>
+<td align="left">(0，2^64-1)</td>
+</tr>
+<tr class="even">
+<td align="left">FLOAT</td>
+<td align="left">4bytes</td>
+<td align="left">(-3.402823466 E+38，3.402823466351 E+38)</td>
+<td align="left">0和(1.175494351 E-38，3.402823466 E+38)</td>
+</tr>
+<tr class="odd">
+<td align="left">DOUBLE</td>
+<td align="left">8bytes</td>
+<td align="left">(-1.7976931348623157E+308，1.7976931348623157E+308)</td>
+<td align="left">0和(2.2250738585072014E-308，1.7976931348623157E+308)</td>
+</tr>
+<tr class="even">
+<td align="left">DECIMAL</td>
+<td align="left">不定</td>
+<td align="left">依赖于M(精度)和D(标度)的值</td>
+<td align="left">依赖于M(精度)和D(标度)的值</td>
+</tr>
+</tbody>
+</table>
+<pre><code># 例子:
+
+# 年龄字段 -- 不会出现负数, 而且人的年龄不会太大
+age tinyint unsigned
+
+# 分数 -- 总分100分,最长4位（100.0） 最多出现一位小数
+score double(4,1)</code></pre>
+</div>
+<div id="字符串型" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> 字符串型<a href="第二章-sql.html#字符串型" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>char 与 varchar 都可以描述字符串，char是定长字符串，指定长度多长，就占用多少个字符，和
+字段值的长度无关 。而varchar是变长字符串，指定的长度为最大占用长度 。相对来说，char的性
+能会更高些。</p>
+<table>
+<caption><span id="tab:unnamed-chunk-3">表2.2: </span>字符类型</caption>
+<thead>
+<tr class="header">
+<th align="left">类型</th>
+<th align="left">大小</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">CHAR</td>
+<td align="left">0-255 bytes</td>
+<td align="left">定长字符串(需要指定长度)</td>
+</tr>
+<tr class="even">
+<td align="left">VARCHAR</td>
+<td align="left">0-65535 bytes</td>
+<td align="left">变长字符串(需要指定长度)</td>
+</tr>
+<tr class="odd">
+<td align="left">TINYBLOB</td>
+<td align="left">0-255 bytes</td>
+<td align="left">不超过255个字符的二进制数据</td>
+</tr>
+<tr class="even">
+<td align="left">TINYTEXT</td>
+<td align="left">0-255 bytes</td>
+<td align="left">短文本字符串</td>
+</tr>
+<tr class="odd">
+<td align="left">BLOB</td>
+<td align="left">0-65 535 bytes</td>
+<td align="left">二进制形式的长文本数据</td>
+</tr>
+<tr class="even">
+<td align="left">TEXT</td>
+<td align="left">0-65 535 bytes</td>
+<td align="left">长文本数据</td>
+</tr>
+<tr class="odd">
+<td align="left">MEDIUMBLOB</td>
+<td align="left">0-16 777 215 bytes</td>
+<td align="left">二进制形式的中等长度文本数据</td>
+</tr>
+<tr class="even">
+<td align="left">MEDIUMTEXT</td>
+<td align="left">0-16 777 215 bytes</td>
+<td align="left">中等长度文本数据</td>
+</tr>
+<tr class="odd">
+<td align="left">LONGBLOB</td>
+<td align="left">0-4 294 967 295 bytes</td>
+<td align="left">二进制形式的极大文本数据</td>
+</tr>
+<tr class="even">
+<td align="left">LONGTEXT</td>
+<td align="left">0-4 294 967 295 bytes</td>
+<td align="left">极大文本数据</td>
+</tr>
+</tbody>
+</table>
+<pre><code># 例子:
+
+# 用户名 username ------&gt; 长度不定, 最长不会超过50
+username varchar(50)
+
+# 性别 gender ---------&gt; 存储值, 不是男,就是女
+gender char(1)
+
+# 手机号 phone --------&gt; 固定长度为11
+phone char(11)</code></pre>
+</div>
+<div id="日期时间类型" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> 日期时间类型<a href="第二章-sql.html#日期时间类型" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<caption><span id="tab:unnamed-chunk-4">表2.3: </span>日期时间类型</caption>
+<colgroup>
+<col width="12%" />
+<col width="6%" />
+<col width="55%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">类型</th>
+<th align="left">大小</th>
+<th align="left">范围</th>
+<th align="left">格式</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">DATE</td>
+<td align="left">3</td>
+<td align="left">1000-01-01 至 9999-12-31</td>
+<td align="left">YYYY-MM-DD</td>
+</tr>
+<tr class="even">
+<td align="left">TIME</td>
+<td align="left">3</td>
+<td align="left">-838:59:59 至 838:59:59</td>
+<td align="left">HH:MM:SS</td>
+</tr>
+<tr class="odd">
+<td align="left">YEAR</td>
+<td align="left">1</td>
+<td align="left">1901 至 2155</td>
+<td align="left">YYYY</td>
+</tr>
+<tr class="even">
+<td align="left">DATETIME</td>
+<td align="left">8</td>
+<td align="left">1000-01-01 00:00:00 至 9999-12-31 23:59:59</td>
+<td align="left">YYYY-MM-DD HH:MM:SS</td>
+</tr>
+<tr class="odd">
+<td align="left">TIMESTAMP</td>
+<td align="left">4</td>
+<td align="left">1970-01-01 00:00:01 至 2038-01-19 03:14:07</td>
+<td align="left">YYYY-MM-DD HH:MM:SS</td>
+</tr>
+</tbody>
+</table>
+<pre><code># 例子
+# 生日字段 birthday
+birthday date
+
+# 创建时间 createtime
+createtime datetime</code></pre>
+</div>
+</div>
+<div id="数据定义语言-ddl" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> 数据定义语言 DDL<a href="第二章-sql.html#数据定义语言-ddl" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>DDL（Data Definition Language，数据定义语言）：用来定义数据库对象(数据库，表，字段) 。</p>
+<div id="数据库操作" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> 数据库操作<a href="第二章-sql.html#数据库操作" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>#查询所有数据库
+show databases;
+
+#查询当前数据库
+select database();
+
+#创建数据库
+create database [if not exists] 数据库名 [default charset 字符集] [collate 排序规则] ;
+create database itcast; #创建一个名为itcast的数据库
+create database if not exists itcast;  #如果itcast不存在，创建数据库，否则不创建
+create database itheima default charset utf8mb4; #使用utf8mb4字符集，一个字符占四个字节
+
+#删除数据库
+drop database [if exists] 数据库名;
+drop database test;
+drop database if exists test;
+
+#使用数据库
+use 数据库名;
+use itcast;</code></pre>
+</div>
+<div id="表操作" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> 表操作<a href="第二章-sql.html#表操作" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="表的创建" class="section level4 hasAnchor" number="2.4.2.1">
+<h4><span class="header-section-number">2.4.2.1</span> 表的创建<a href="第二章-sql.html#表的创建" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<pre><code>creat table 表名(
+    字段1 字段1类型 [COMMENT 字段1注释],
+    字段2 字段2类型 [COMMENT 字段2注释],
+    字段3 字段3类型 [COMMENT 字段3注释],
+    ......
+    字段n 字段n类型 [COMMENT 字段n注释]
+) [COMMENT 表注释];   #[...] 内为可选参数
+
+create table tb_user(
+    id int comment &#39;编号&#39;,
+    name varchar(50) comment &#39;姓名&#39;,
+    age int comment &#39;年龄&#39;,
+    gender varchar(1) comment &#39;性别&#39;
+) comment &#39;用户表&#39;;</code></pre>
+<p><strong>案例</strong></p>
+<p>设计一张员工信息表，要求如下：
+1. 编号（纯数字）2. 员工工号 (字符串类型，长度不超过10位)
+3. 员工姓名（字符串类型，长度不超过10位）
+4. 性别（男/女，存储一个汉字）
+5. 年龄（正常人年龄，不可能存储负数）
+6. 身份证号（二代身份证号均为18位，身份证中有X这样的字符）
+7. 入职时间（取值年月日即可）</p>
+<p>对应的建表语句详见 <a href="案例答案.html#as-2-1">3.1.1</a> 节。</p>
+</div>
+<div id="表的查询" class="section level4 hasAnchor" number="2.4.2.2">
+<h4><span class="header-section-number">2.4.2.2</span> 表的查询<a href="第二章-sql.html#表的查询" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<pre><code># 查询当前数据库所有表
+show tables;
+show tb_user;
+
+# 查询表结构
+desc 表名;
+desc tb_user;
+
+# 查询指定表的建表语句
+show creat table 表名;</code></pre>
+</div>
+<div id="表的修改" class="section level4 hasAnchor" number="2.4.2.3">
+<h4><span class="header-section-number">2.4.2.3</span> 表的修改<a href="第二章-sql.html#表的修改" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<pre><code># 添加字段
+alter table 表名 add 字段名 类型(长度) [comment 注释] [约束];
+alter table emp add nickname varchar(20) comment &#39;昵称&#39;;
+
+# 修改数据类型
+alter table 表名 modify 字段名 新数据类型(长度);
+
+# 修改字段名和字段类型
+alter table 表名 change 旧字段名 新字段名 类型(长度) [comment 注释] [约束];
+alter table emp change nickname username varchar(30) comment &#39;用户名&#39;;
+
+# 删除字段
+alter table 表名 drop 字段名;
+alter table emp drop username;
+
+# 修改表名
+alter table 表名 rename to 新表名;
+alter table emp rename to employee;</code></pre>
+</div>
+<div id="表的删除" class="section level4 hasAnchor" number="2.4.2.4">
+<h4><span class="header-section-number">2.4.2.4</span> 表的删除<a href="第二章-sql.html#表的删除" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<pre><code># 删除表
+drop table [if exists] 表名;
+
+# 删除指定表数据，但保留表结构
+truncate table 表名;
+truncate table employee;
+</code></pre>
+</div>
+</div>
+</div>
+<div id="数据操作语言-dml" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> 数据操作语言 DML<a href="第二章-sql.html#数据操作语言-dml" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>DML英文全称是Data Manipulation Language(数据操作语言)，用来对数据库中表的数据记录进
+行增、删、改操作。</p>
+<div id="添加数据" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> 添加数据<a href="第二章-sql.html#添加数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code># 给指定字段添加数据
+insert into 表名 (字段1, 字段2, ...) values(值1, 值2, ...);
+INSERT INTO employee(id, workno, `name`, gender,age,idcard,entrydate) VALUES(1, &#39;1&#39;, &#39;Itcast&#39;, &#39;男&#39;, 10, &#39;123456789012345678&#39;, &#39;2020-01-01&#39;);
+
+# 给全部字段添加数据
+insert into 表名 values(值1, 值2, ...);
+INSERT INTO employee VALUES(2,&#39;2&#39;,&#39;张无忌&#39;,&#39;男&#39;,18,&#39;123456789012345670&#39;,&#39;2005-01-01&#39;);
+
+# 批量添加数据
+insert into 表名 (字段名1, 字段名2, ...) values (值1, 值2, ...), (值1, 值2, ...), (值1, 值2, ...);
+insert into 表名 values (值1, 值2, ...), (值1, 值2, ...), (值1, 值2, ...) ;
+INSERT INTO employee VALUES(3,&#39;3&#39;,&#39;韦一笑&#39;,&#39;男&#39;,38,&#39;123456789712345670&#39;,&#39;2005-01-01&#39;),(4,&#39;4&#39;,&#39;赵敏&#39;,&#39;女&#39;,18,&#39;123456789712345670&#39;,&#39;2005-01-01&#39;);</code></pre>
+<p>注意事项:</p>
+<ul>
+<li>插入数据时，指定的字段顺序需要与值的顺序是一一对应的。</li>
+<li>字符串和日期型数据应该包含在引号中。</li>
+<li>插入的数据大小，应该在字段的规定范围内。</li>
+</ul>
+</div>
+<div id="修改数据" class="section level3 hasAnchor" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> 修改数据<a href="第二章-sql.html#修改数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>UPDATE 表名 SET 字段名1 = 值1 , 字段名2 = 值2 , .... 1 [WHERE 条件];
+
+# 例子
+# 修改id为1的数据，将name修改为itheima
+UPDATE employee SET name = &#39;ithema&#39; WHERE id=1;
+# 修改id为1的数据, 将name修改为小昭, gender修改为 女
+UPDATE employee SET name = &#39;小昭&#39;, gender = &#39;女&#39; WHERE id=1;
+# 将所有的员工入职日期修改为 2008-01-01
+UPDATE employee SET entrydate = &#39;2008-01-01&#39;;</code></pre>
+<p>注意：修改语句的条件可以有，也可以没有，如果没有条件，则会修改整张表的所有数据。</p>
+</div>
+<div id="删除数据" class="section level3 hasAnchor" number="2.5.3">
+<h3><span class="header-section-number">2.5.3</span> 删除数据<a href="第二章-sql.html#删除数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>DELETE FROM 表名 [ WHERE 条件 ] ;
+
+# 例子
+# 删除gender为女的员工
+DELETE FROM employee WHERE gender = &#39;女&#39;;
+# 删除所有员工
+DELETE FROM employee;</code></pre>
+</div>
+</div>
+<div id="数据查询语言-dql" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> 数据查询语言 DQL<a href="第二章-sql.html#数据查询语言-dql" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>DQL（Data Query Language，数据查询语言）：用来查询数据库中表的记录。</p>
+<p>我们先来完成如下数据准备工作，数据表的建表语句详见 <a href="案例答案.html#as-2-2">3.1.2</a> 节。</p>
+<p>DQL 查询语句，语法结构如下：</p>
+<pre><code>SELECT
+  字段列表
+FROM
+  表名列表
+WHERE
+  条件列表
+GROUP BY
+  分组字段列表
+HAVING
+  分组后条件列表
+ORDER BY
+  排序字段列表
+LIMIT
+  分页参数</code></pre>
+<p>我们在讲解这部分内容的时候，会将上面的完整语法进行拆分，分为以下几个部分：基本查询（不带任何条件）、条件查询（WHERE）、聚合函数（count、max、min、avg、sum）、分组查询（group by）、排序查询（order by）和分页查询（limit）。</p>
+<div id="基础查询" class="section level3 hasAnchor" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> 基础查询<a href="第二章-sql.html#基础查询" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>在基本查询的DQL语句中，不带任何的查询条件，查询的语法如下：</p>
+<pre><code># 查询多个字段
+SELECT 字段1, 字段2, 字1 段3 ... FROM 表名;
+SELECT `name`,workno,age FROM emp; # 查询指定字段 name, workno, age并返回
+
+# 查询返回所有字段
+SELECT * FROM 表名;
+SELECT * FROM emp; # 查询返回emp表中的所有字段
+
+# 字段设置别名
+SELECT 字段1 [ AS 别名1 ] , 字段2 [ AS 别名2 1 ] ... FROM 表名;
+SELECT 字段1 [ 别名1 ] , 字段2 [ 别名2 ] ... FROM 表名;
+SELECT workaddress AS &#39;工作地址&#39; FROM emp; # 查询所有员工的工作地址,起别名
+SELECT workaddress &#39;工作地址&#39; FROM emp; # 查询所有员工的工作地址,起别名
+
+# 去除重复记录
+SELECT DISTINCT 字段列表 FROM 表名;
+SELECT DISTINCT workaddress AS &#39;工作地址&#39; FROM emp; # 查询公司员工的上班地址有哪些(不要重复)</code></pre>
+</div>
+<div id="条件查询" class="section level3 hasAnchor" number="2.6.2">
+<h3><span class="header-section-number">2.6.2</span> 条件查询<a href="第二章-sql.html#条件查询" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>SELECT 字段列表 FROM 表1 名 WHERE 条件列表 ;
+
+# 查询年龄等于 88 的员工
+SELECT * FROM emp WHERE age=88;
+# 查询年龄小于 20 的员工信息
+SELECT * FROM emp WHERE age&lt;20;
+# 查询年龄小于等于 20 的员工信息
+SELECT * FROM emp WHERE age&lt;=20;
+# 查询没有身份证号的员工信息
+SELECT * FROM emp WHERE idcard IS NULL;
+# 查询有身份证号的员工信息
+SELECT * FROM emp WHERE idcard IS NOT NULL;
+# 查询年龄不等于 88 的员工信息
+SELECT * FROM emp WHERE age!=88;
+SELECT * FROM emp WHERE age&lt;&gt;88;
+# 查询年龄在15岁(包含) 到 20岁(包含)之间的员工信息
+SELECT * FROM emp WHERE age &gt;= 15 &amp;&amp; age &lt;= 20;
+SELECTt * FROM emp WHERE age &gt;= 15 AND age &lt;= 20;
+SELECT * FROM emp WHERE age BETWEEN 15 AND 20;
+# 查询性别为 女 且年龄小于 25岁的员工信息
+SELECT * FROM emp WHERE gender = &#39;女&#39; AND age&lt;=25;
+# 查询年龄等于18 或 20 或 40 的员工信息
+SELECT * FROM emp WHERE age IN (18,20,40);
+SELECT * FROM emp WHERE age=18 OR AGE=20 OR AGE=40;
+# 查询姓名为两个字的员工信息 _ %
+SELECT * FROM emp WHERE `name` LIKE &#39;__&#39;;
+# 查询身份证号最后一位是X的员工信息
+SELECT * FROM emp WHERE idcard LIKE &#39;%X&#39;;</code></pre>
+<p><strong>条件</strong></p>
+<table>
+<caption><span id="tab:unnamed-chunk-5">表2.4: </span>比较运算符</caption>
+<thead>
+<tr class="header">
+<th align="left">比较运算符</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">&gt;</td>
+<td align="left">大于</td>
+</tr>
+<tr class="even">
+<td align="left">&gt;=</td>
+<td align="left">大于等于</td>
+</tr>
+<tr class="odd">
+<td align="left">&lt;</td>
+<td align="left">小于</td>
+</tr>
+<tr class="even">
+<td align="left">&lt;=</td>
+<td align="left">小于等于</td>
+</tr>
+<tr class="odd">
+<td align="left">=</td>
+<td align="left">等于</td>
+</tr>
+<tr class="even">
+<td align="left">!=或&lt;&gt;</td>
+<td align="left">不等于</td>
+</tr>
+<tr class="odd">
+<td align="left">BETWEEN … AND …</td>
+<td align="left">在某个范围之内（含最小最大值）</td>
+</tr>
+<tr class="even">
+<td align="left">IN(…)</td>
+<td align="left">在in之后的列表中的值，多选一</td>
+</tr>
+<tr class="odd">
+<td align="left">LIKE 占位符</td>
+<td align="left">模糊匹配(_匹配单个字符, %匹配任意个字符)</td>
+</tr>
+<tr class="even">
+<td align="left">IS NULL</td>
+<td align="left">判断是否为NULL值</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:unnamed-chunk-6">表2.5: </span>逻辑运算符</caption>
+<thead>
+<tr class="header">
+<th align="left">逻辑运算符</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">AND 或 &amp;&amp;</td>
+<td align="left">并且 (多个条件同时成立)</td>
+</tr>
+<tr class="even">
+<td align="left">OR 或 ||</td>
+<td align="left">或者 (多个条件任意一个成立)</td>
+</tr>
+<tr class="odd">
+<td align="left">NOT 或 !</td>
+<td align="left">非 , 不是</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="聚合函数" class="section level3 hasAnchor" number="2.6.3">
+<h3><span class="header-section-number">2.6.3</span> 聚合函数<a href="第二章-sql.html#聚合函数" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>将一列数据作为一个整体，进行纵向计算。</p>
+<p>常见的聚合函数如下：</p>
+<table>
+<caption><span id="tab:unnamed-chunk-7">表2.6: </span>逻辑运算符</caption>
+<thead>
+<tr class="header">
+<th align="left">函数</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">count</td>
+<td align="left">计数</td>
+</tr>
+<tr class="even">
+<td align="left">max</td>
+<td align="left">最大值</td>
+</tr>
+<tr class="odd">
+<td align="left">min</td>
+<td align="left">最小值</td>
+</tr>
+<tr class="even">
+<td align="left">avg</td>
+<td align="left">平均值</td>
+</tr>
+<tr class="odd">
+<td align="left">sum</td>
+<td align="left">求和</td>
+</tr>
+</tbody>
+</table>
+<p>NULL值是不参与所有聚合函数运算的。</p>
+<pre><code>SELECT 聚合函数(字段列表) FROM 表名;
+
+# 统计该企业员工数量
+SELECT COUNT(*) FROM emp;
+# 统计该企业员工的平均年龄
+SELECT AVG(age) FROM emp;
+# 统计该企业员工的最大年龄
+SELECT MAX(age) FROM emp;
+# 统计该企业员工的最小年龄
+SELECT MIN(age) FROM emp;
+# 统计西安地区员工的年龄之和
+SELECT SUM(age) FROM emp WHERE workaddress = &#39;西安&#39;;</code></pre>
+</div>
+<div id="分组查询" class="section level3 hasAnchor" number="2.6.4">
+<h3><span class="header-section-number">2.6.4</span> 分组查询<a href="第二章-sql.html#分组查询" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>SELECT 字段列表 FROM 表名 [WHERE 条件] GROUP BY 分组字段名 [HAVING 分组后过滤条件];
+
+# 根据性别分组 , 统计男性员工 和 女性员工的数量
+SELECT gender, COUNT(*) FROM emp GROUP BY gender;
+# 根据性别分组 , 统计男性员工 和 女性员工的平均年龄
+SELECT gender, AVG(age) FROM emp GROUP BY gender;
+# 查询年龄小于45的员工 , 并根据工作地址分组 , 获取员工数量大于等于3的工作地址
+SELECT workaddress, COUNT(*) AS address_count FROM emp WHERE age&lt;45 GROUP BY workaddress having address_count&gt;=3;
+# 统计各个工作地址上班的男性及女性员工的数量
+SELECT workaddress, gender, COUNT(*) &#39;数量&#39; FROM emp GROUP BY gender, workaddress;</code></pre>
+<p><strong>where与having区别</strong></p>
+<ul>
+<li>执行时机不同：where是分组之前进行过滤，不满足where条件，不参与分组；而having是分组之后对结果进行过滤。</li>
+<li>判断条件不同：where不能对聚合函数进行判断，而having可以。</li>
+</ul>
+<p>注意事项:</p>
+<ul>
+<li>分组之后，查询的字段一般为聚合函数和分组字段，查询其他字段无任何意义。</li>
+<li>执行顺序: where &gt; 聚合函数 &gt; having 。</li>
+<li>支持多字段分组, 具体语法为 : group by columnA,columnB</li>
+</ul>
+</div>
+<div id="排序查询" class="section level3 hasAnchor" number="2.6.5">
+<h3><span class="header-section-number">2.6.5</span> 排序查询<a href="第二章-sql.html#排序查询" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>SELECT 字段列表 FROM 表名 ORDER BY 字段1 排1 序方式1 , 字段2 排序方式2;
+
+# 根据年龄对公司的员工进行升序排序
+SELECT * FROM emp ORDER BY age ASC;
+# 根据入职时间, 对员工进行降序排序
+SELECT * FROM emp ORDER BY entrydate DESC;
+# 根据年龄对公司的员工进行升序排序 , 年龄相同 , 再按照入职时间进行降序排序
+SELECT * FROM emp ORDER BY age ASC, entrydate DESC;</code></pre>
+<p>排序方式</p>
+<ul>
+<li>ASC : 升序(默认值)。如果是升序, 可以不指定排序方式ASC ;</li>
+<li>DESC: 降序</li>
+</ul>
+<p>注意事项：如果是多字段排序，当第一个字段值相同时，才会根据第二个字段进行排序；</p>
+</div>
+<div id="分页查询" class="section level3 hasAnchor" number="2.6.6">
+<h3><span class="header-section-number">2.6.6</span> 分页查询<a href="第二章-sql.html#分页查询" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>SELECT 字段列表 FROM 表名 LIMIT 起始索引, 查询记录数;
+
+# 查询第1页员工数据, 每页展示10条记录
+SELECT * FROM emp LIMIT 0,10; 
+select * from emp limit 10;
+# 查询第2页员工数据, 每页展示10条记录 --------&gt; (页码-1)*页展示记录数
+SELECT * FROM emp LIMIT 10,10; </code></pre>
+<p>注意事项</p>
+<ul>
+<li>起始索引从0开始，起始索引 = （查询页码 - 1）* 每页显示记录数。</li>
+<li>分页查询是数据库的方言，不同的数据库有不同的实现，MySQL中是LIMIT。</li>
+<li>如果查询的是第一页数据，起始索引可以省略，直接简写为 limit 10。</li>
+</ul>
+<p><strong>案例</strong></p>
+<p>详见 <a href="案例答案.html#as-2-3">3.2</a> 节。</p>
+
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="mysql概述.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="案例答案.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

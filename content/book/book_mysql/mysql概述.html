@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 MySQL概述 | MySQL笔记</title>
+  <meta name="description" content="1 MySQL概述 | MySQL笔记" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 MySQL概述 | MySQL笔记" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 MySQL概述 | MySQL笔记" />
+  
+  
+  
+
+<meta name="author" content="刘卢路" />
+
+
+<meta name="date" content="2023-11-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="第二章-sql.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>简介</a></li>
+<li class="part"><span><b>I 基础篇</b></span></li>
+<li class="chapter" data-level="1" data-path="mysql概述.html"><a href="mysql概述.html"><i class="fa fa-check"></i><b>1</b> MySQL概述</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="mysql概述.html"><a href="mysql概述.html#数据库相关概念"><i class="fa fa-check"></i><b>1.1</b> 数据库相关概念</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="mysql概述.html"><a href="mysql概述.html#关系型数据库"><i class="fa fa-check"></i><b>1.1.1</b> 关系型数据库</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="mysql概述.html"><a href="mysql概述.html#mysql数据库"><i class="fa fa-check"></i><b>1.2</b> MySQL数据库</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="mysql概述.html"><a href="mysql概述.html#版本"><i class="fa fa-check"></i><b>1.2.1</b> 版本</a></li>
+<li class="chapter" data-level="1.2.2" data-path="mysql概述.html"><a href="mysql概述.html#下载和安装"><i class="fa fa-check"></i><b>1.2.2</b> 下载和安装</a></li>
+<li class="chapter" data-level="1.2.3" data-path="mysql概述.html"><a href="mysql概述.html#配置"><i class="fa fa-check"></i><b>1.2.3</b> 配置</a></li>
+<li class="chapter" data-level="1.2.4" data-path="mysql概述.html"><a href="mysql概述.html#启动停止"><i class="fa fa-check"></i><b>1.2.4</b> 启动停止</a></li>
+<li class="chapter" data-level="1.2.5" data-path="mysql概述.html"><a href="mysql概述.html#客户端连接"><i class="fa fa-check"></i><b>1.2.5</b> 客户端连接</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="第二章-sql.html"><a href="第二章-sql.html"><i class="fa fa-check"></i><b>2</b> 第二章 SQL</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="第二章-sql.html"><a href="第二章-sql.html#sql的通用语法和分类"><i class="fa fa-check"></i><b>2.1</b> SQL的通用语法和分类</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="第二章-sql.html"><a href="第二章-sql.html#sql的通用语法"><i class="fa fa-check"></i><b>2.1.1</b> SQL的通用语法</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="第二章-sql.html"><a href="第二章-sql.html#sql语句的分类"><i class="fa fa-check"></i><b>2.2</b> SQL语句的分类</a></li>
+<li class="chapter" data-level="2.3" data-path="第二章-sql.html"><a href="第二章-sql.html#数据类型"><i class="fa fa-check"></i><b>2.3</b> 数据类型</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="第二章-sql.html"><a href="第二章-sql.html#数值型"><i class="fa fa-check"></i><b>2.3.1</b> 数值型</a></li>
+<li class="chapter" data-level="2.3.2" data-path="第二章-sql.html"><a href="第二章-sql.html#字符串型"><i class="fa fa-check"></i><b>2.3.2</b> 字符串型</a></li>
+<li class="chapter" data-level="2.3.3" data-path="第二章-sql.html"><a href="第二章-sql.html#日期时间类型"><i class="fa fa-check"></i><b>2.3.3</b> 日期时间类型</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="第二章-sql.html"><a href="第二章-sql.html#数据定义语言-ddl"><i class="fa fa-check"></i><b>2.4</b> 数据定义语言 DDL</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="第二章-sql.html"><a href="第二章-sql.html#数据库操作"><i class="fa fa-check"></i><b>2.4.1</b> 数据库操作</a></li>
+<li class="chapter" data-level="2.4.2" data-path="第二章-sql.html"><a href="第二章-sql.html#表操作"><i class="fa fa-check"></i><b>2.4.2</b> 表操作</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="第二章-sql.html"><a href="第二章-sql.html#数据操作语言-dml"><i class="fa fa-check"></i><b>2.5</b> 数据操作语言 DML</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="第二章-sql.html"><a href="第二章-sql.html#添加数据"><i class="fa fa-check"></i><b>2.5.1</b> 添加数据</a></li>
+<li class="chapter" data-level="2.5.2" data-path="第二章-sql.html"><a href="第二章-sql.html#修改数据"><i class="fa fa-check"></i><b>2.5.2</b> 修改数据</a></li>
+<li class="chapter" data-level="2.5.3" data-path="第二章-sql.html"><a href="第二章-sql.html#删除数据"><i class="fa fa-check"></i><b>2.5.3</b> 删除数据</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="第二章-sql.html"><a href="第二章-sql.html#数据查询语言-dql"><i class="fa fa-check"></i><b>2.6</b> 数据查询语言 DQL</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="第二章-sql.html"><a href="第二章-sql.html#基础查询"><i class="fa fa-check"></i><b>2.6.1</b> 基础查询</a></li>
+<li class="chapter" data-level="2.6.2" data-path="第二章-sql.html"><a href="第二章-sql.html#条件查询"><i class="fa fa-check"></i><b>2.6.2</b> 条件查询</a></li>
+<li class="chapter" data-level="2.6.3" data-path="第二章-sql.html"><a href="第二章-sql.html#聚合函数"><i class="fa fa-check"></i><b>2.6.3</b> 聚合函数</a></li>
+<li class="chapter" data-level="2.6.4" data-path="第二章-sql.html"><a href="第二章-sql.html#分组查询"><i class="fa fa-check"></i><b>2.6.4</b> 分组查询</a></li>
+<li class="chapter" data-level="2.6.5" data-path="第二章-sql.html"><a href="第二章-sql.html#排序查询"><i class="fa fa-check"></i><b>2.6.5</b> 排序查询</a></li>
+<li class="chapter" data-level="2.6.6" data-path="第二章-sql.html"><a href="第二章-sql.html#分页查询"><i class="fa fa-check"></i><b>2.6.6</b> 分页查询</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II 附录</b></span></li>
+<li class="chapter" data-level="3" data-path="案例答案.html"><a href="案例答案.html"><i class="fa fa-check"></i><b>3</b> 案例答案</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="案例答案.html"><a href="案例答案.html#第二章"><i class="fa fa-check"></i><b>3.1</b> 第二章</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="案例答案.html"><a href="案例答案.html#as-2-1"><i class="fa fa-check"></i><b>3.1.1</b> 案例1</a></li>
+<li class="chapter" data-level="3.1.2" data-path="案例答案.html"><a href="案例答案.html#as-2-2"><i class="fa fa-check"></i><b>3.1.2</b> 数据2</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="案例答案.html"><a href="案例答案.html#as-2-3"><i class="fa fa-check"></i><b>3.2</b> 案例3</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="一些操作.html"><a href="一些操作.html"><i class="fa fa-check"></i><b>4</b> 一些操作</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="一些操作.html"><a href="一些操作.html#管理员身份运行cmd"><i class="fa fa-check"></i><b>4.1</b> 管理员身份运行cmd</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MySQL笔记</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="mysql概述" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> MySQL概述<a href="mysql概述.html#mysql概述" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="数据库相关概念" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> 数据库相关概念<a href="mysql概述.html#数据库相关概念" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>在这一部分，我们先来讲解三个概念：数据库、数据库管理系统、SQL。</p>
+<table>
+<caption><span id="tab:unnamed-chunk-1">表1.1: </span>基本结构标签</caption>
+<colgroup>
+<col width="13%" />
+<col width="56%" />
+<col width="29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">名称</th>
+<th align="left">含义</th>
+<th align="left">简称</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">数据库</td>
+<td align="left">存储数据的仓库，数据是有组织的进行存储</td>
+<td align="left">DataBase（DB）</td>
+</tr>
+<tr class="even">
+<td align="left">数据库管理系统</td>
+<td align="left">操纵和管理数据库的大型软件</td>
+<td align="left">DataBase ManagementSystem (DBMS)</td>
+</tr>
+<tr class="odd">
+<td align="left">SQL</td>
+<td align="left">操作关系型数据库的编程语言，定义了一套操作关系型数据库统一标准</td>
+<td align="left">Structured Query Language (SQL)</td>
+</tr>
+</tbody>
+</table>
+<p>目前主流的关系型数据库管理系统</p>
+<ul>
+<li>Oracle：大型的收费数据库，Oracle公司产品，价格昂贵。</li>
+<li>MySQL：开源免费的中小型数据库，后来Sun公司收购了MySQL，而Oracle又收购了Sun公司。
+目前Oracle推出了收费版本的MySQL，也提供了免费的社区版本。</li>
+<li>SQL Server：Microsoft 公司推出的收费的中型数据库，C#、.net等语言常用。</li>
+<li>PostgreSQL：开源免费的中小型数据库。</li>
+<li>DB2：IBM公司的大型收费数据库产品。</li>
+<li>SQLLite：嵌入式的微型数据库。Android内置的数据库采用的就是该数据库。</li>
+<li>MariaDB：开源免费的中小型数据库。是MySQL数据库的另外一个分支、另外一个衍生产品，与
+MySQL数据库有很好的兼容性。</li>
+</ul>
+<p>而不论我们使用的是上面的哪一个关系型数据库，最终在操作时，都是使用SQL语言来进行统一操作，
+因为我们前面讲到SQL语言，是操作关系型数据库的<strong>统一标准</strong>。所以即使我们现在学习的是MySQL，
+假如我们以后到了公司，使用的是别的关系型数据库，如：Oracle、DB2、SQLServer，也完全不用
+担心，因为操作的方式都是一致的。</p>
+<div id="关系型数据库" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> 关系型数据库<a href="mysql概述.html#关系型数据库" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>关系型数据库</strong>（RDBMS）：建立在关系模型基础上，由多张相互连接的<strong>二维表组成的数据库</strong>。</p>
+<p>而所谓二维表，指的是由行和列组成的表，如下图（就类似于Excel表格数据，有表头、有列、有行，
+还可以通过一列关联另外一个表格中的某一列数据）。我们之前提到的MySQL、Oracle、DB2、
+SQLServer这些都是属于关系型数据库，里面都是基于二维表存储数据的。简单说，基于二维表存储
+数据的数据库就成为关系型数据库，不是基于二维表存储数据的数据库，就是<strong>非关系型数据库</strong>。</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="figure/01-01-%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93.jpg" alt="关系型数据库" width="742" />
+<p class="caption">
+图1.1: 关系型数据库
+</p>
+</div>
+<p>特点：</p>
+<ul>
+<li>使用表存储数据，格式统一，便于维护。</li>
+<li>使用SQL语言操作，标准统一，使用方便。</li>
+</ul>
+</div>
+</div>
+<div id="mysql数据库" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> MySQL数据库<a href="mysql概述.html#mysql数据库" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>官方： <a href="https://www.mysql.com/" class="uri">https://www.mysql.com/</a></p>
+<div id="版本" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> 版本<a href="mysql概述.html#版本" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>MySQL官方提供了两种不同的版本：</p>
+<ul>
+<li>社区版本（MySQL Community Server）：免费， MySQL不提供任何技术支持</li>
+<li>商业版本（MySQL Enterprise Edition）：收费，可以使用30天，官方提供技术支持</li>
+</ul>
+<p>本课程采用的是MySQL当时的最新社区版-MySQL Community Server 8.0。</p>
+</div>
+<div id="下载和安装" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> 下载和安装<a href="mysql概述.html#下载和安装" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>下载地址：<a href="https://downloads.mysql.com/archives/installer/" class="uri">https://downloads.mysql.com/archives/installer/</a></p>
+<p>安装过程详见：<a href="https://www.bilibili.com/video/BV1Kr4y1i7ru?p=3&vd_source=fdb9ace8b5e70cb293f98e8e2b82dfae" target="_blank">B站视频</a> 或 PDF文档。</p>
+</div>
+<div id="配置" class="section level3 hasAnchor" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> 配置<a href="mysql概述.html#配置" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>安装好MySQL之后，还需要配置环境变量，这样才可以在任何目录下连接MySQL。</p>
+<p>步骤：</p>
+<ol style="list-style-type: decimal">
+<li>在此电脑上，右键选择属性</li>
+<li>点击左侧的 “高级系统设置”，选择环境变量</li>
+<li>找到 Path 系统变量, 点击 “编辑”</li>
+<li>选择 “新建” , 将MySQL Server的安装目录下的bin目录添加到环境变量。</li>
+</ol>
+<p>我的环境变量路径为：C:FilesServer 8.0</p>
+<p>详见：<a href="https://www.bilibili.com/video/BV1Kr4y1i7ru?p=3&vd_source=fdb9ace8b5e70cb293f98e8e2b82dfae" target="_blank">B站视频</a> 或 PDF文档。</p>
+</div>
+<div id="启动停止" class="section level3 hasAnchor" number="1.2.4">
+<h3><span class="header-section-number">1.2.4</span> 启动停止<a href="mysql概述.html#启动停止" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>MySQL安装完成之后，在系统启动时，会自动启动MySQL服务，我们无需手动启动了。当然，也可以手动的通过指令启动停止，以<strong>管理员身份运行cmd</strong>，进入命令行执行如下指令：</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="mysql概述.html#cb1-1" tabindex="-1"></a>$ net start mysql80</span>
+<span id="cb1-2"><a href="mysql概述.html#cb1-2" tabindex="-1"></a>$ net stop mysql80</span></code></pre></div>
+<p>注意 ： 上述的 mysql80 是我们在安装MySQL时，默认指定的mysql的系统服务名，不是固
+定的，如果未改动，默认就是mysql80。</p>
+</div>
+<div id="客户端连接" class="section level3 hasAnchor" number="1.2.5">
+<h3><span class="header-section-number">1.2.5</span> 客户端连接<a href="mysql概述.html#客户端连接" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>方式一：使用MySQL提供的客户端命令行工具：MySQL8.0 Command Line Client。直接输入密码即可</p>
+<p>方式二：使用系统自带的命令行工具执行指令。使用这种方式进行连接时，需要安装完毕后配置PATH环境变量。</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="mysql概述.html#cb2-1" tabindex="-1"></a>$ mysql -u root -p</span>
+<span id="cb2-2"><a href="mysql概述.html#cb2-2" tabindex="-1"></a>$ mysql [-h 127.0.0.1] [-P 3306] -u root -p</span>
+<span id="cb2-3"><a href="mysql概述.html#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="mysql概述.html#cb2-4" tabindex="-1"></a>参数：</span>
+<span id="cb2-5"><a href="mysql概述.html#cb2-5" tabindex="-1"></a>-h : MySQL服务所在的主机IP</span>
+<span id="cb2-6"><a href="mysql概述.html#cb2-6" tabindex="-1"></a>-P : MySQL服务端口号， 默认3306</span>
+<span id="cb2-7"><a href="mysql概述.html#cb2-7" tabindex="-1"></a>-u : MySQL数据库用户名</span>
+<span id="cb2-8"><a href="mysql概述.html#cb2-8" tabindex="-1"></a>-p ： MySQL数据库用户名对应的密码</span></code></pre></div>
+<p>[]内为可选参数，如果需要连接远程的MySQL，需要加上这两个参数来指定远程主机IP、端口，如果
+连接本地的MySQL，则无需指定这两个参数。</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="第二章-sql.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

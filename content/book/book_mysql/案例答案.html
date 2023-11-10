@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 案例答案 | MySQL笔记</title>
+  <meta name="description" content="3 案例答案 | MySQL笔记" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 案例答案 | MySQL笔记" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 案例答案 | MySQL笔记" />
+  
+  
+  
+
+<meta name="author" content="刘卢路" />
+
+
+<meta name="date" content="2023-11-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="第二章-sql.html"/>
+<link rel="next" href="一些操作.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>简介</a></li>
+<li class="part"><span><b>I 基础篇</b></span></li>
+<li class="chapter" data-level="1" data-path="mysql概述.html"><a href="mysql概述.html"><i class="fa fa-check"></i><b>1</b> MySQL概述</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="mysql概述.html"><a href="mysql概述.html#数据库相关概念"><i class="fa fa-check"></i><b>1.1</b> 数据库相关概念</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="mysql概述.html"><a href="mysql概述.html#关系型数据库"><i class="fa fa-check"></i><b>1.1.1</b> 关系型数据库</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="mysql概述.html"><a href="mysql概述.html#mysql数据库"><i class="fa fa-check"></i><b>1.2</b> MySQL数据库</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="mysql概述.html"><a href="mysql概述.html#版本"><i class="fa fa-check"></i><b>1.2.1</b> 版本</a></li>
+<li class="chapter" data-level="1.2.2" data-path="mysql概述.html"><a href="mysql概述.html#下载和安装"><i class="fa fa-check"></i><b>1.2.2</b> 下载和安装</a></li>
+<li class="chapter" data-level="1.2.3" data-path="mysql概述.html"><a href="mysql概述.html#配置"><i class="fa fa-check"></i><b>1.2.3</b> 配置</a></li>
+<li class="chapter" data-level="1.2.4" data-path="mysql概述.html"><a href="mysql概述.html#启动停止"><i class="fa fa-check"></i><b>1.2.4</b> 启动停止</a></li>
+<li class="chapter" data-level="1.2.5" data-path="mysql概述.html"><a href="mysql概述.html#客户端连接"><i class="fa fa-check"></i><b>1.2.5</b> 客户端连接</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="第二章-sql.html"><a href="第二章-sql.html"><i class="fa fa-check"></i><b>2</b> 第二章 SQL</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="第二章-sql.html"><a href="第二章-sql.html#sql的通用语法和分类"><i class="fa fa-check"></i><b>2.1</b> SQL的通用语法和分类</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="第二章-sql.html"><a href="第二章-sql.html#sql的通用语法"><i class="fa fa-check"></i><b>2.1.1</b> SQL的通用语法</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="第二章-sql.html"><a href="第二章-sql.html#sql语句的分类"><i class="fa fa-check"></i><b>2.2</b> SQL语句的分类</a></li>
+<li class="chapter" data-level="2.3" data-path="第二章-sql.html"><a href="第二章-sql.html#数据类型"><i class="fa fa-check"></i><b>2.3</b> 数据类型</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="第二章-sql.html"><a href="第二章-sql.html#数值型"><i class="fa fa-check"></i><b>2.3.1</b> 数值型</a></li>
+<li class="chapter" data-level="2.3.2" data-path="第二章-sql.html"><a href="第二章-sql.html#字符串型"><i class="fa fa-check"></i><b>2.3.2</b> 字符串型</a></li>
+<li class="chapter" data-level="2.3.3" data-path="第二章-sql.html"><a href="第二章-sql.html#日期时间类型"><i class="fa fa-check"></i><b>2.3.3</b> 日期时间类型</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="第二章-sql.html"><a href="第二章-sql.html#数据定义语言-ddl"><i class="fa fa-check"></i><b>2.4</b> 数据定义语言 DDL</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="第二章-sql.html"><a href="第二章-sql.html#数据库操作"><i class="fa fa-check"></i><b>2.4.1</b> 数据库操作</a></li>
+<li class="chapter" data-level="2.4.2" data-path="第二章-sql.html"><a href="第二章-sql.html#表操作"><i class="fa fa-check"></i><b>2.4.2</b> 表操作</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="第二章-sql.html"><a href="第二章-sql.html#数据操作语言-dml"><i class="fa fa-check"></i><b>2.5</b> 数据操作语言 DML</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="第二章-sql.html"><a href="第二章-sql.html#添加数据"><i class="fa fa-check"></i><b>2.5.1</b> 添加数据</a></li>
+<li class="chapter" data-level="2.5.2" data-path="第二章-sql.html"><a href="第二章-sql.html#修改数据"><i class="fa fa-check"></i><b>2.5.2</b> 修改数据</a></li>
+<li class="chapter" data-level="2.5.3" data-path="第二章-sql.html"><a href="第二章-sql.html#删除数据"><i class="fa fa-check"></i><b>2.5.3</b> 删除数据</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="第二章-sql.html"><a href="第二章-sql.html#数据查询语言-dql"><i class="fa fa-check"></i><b>2.6</b> 数据查询语言 DQL</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="第二章-sql.html"><a href="第二章-sql.html#基础查询"><i class="fa fa-check"></i><b>2.6.1</b> 基础查询</a></li>
+<li class="chapter" data-level="2.6.2" data-path="第二章-sql.html"><a href="第二章-sql.html#条件查询"><i class="fa fa-check"></i><b>2.6.2</b> 条件查询</a></li>
+<li class="chapter" data-level="2.6.3" data-path="第二章-sql.html"><a href="第二章-sql.html#聚合函数"><i class="fa fa-check"></i><b>2.6.3</b> 聚合函数</a></li>
+<li class="chapter" data-level="2.6.4" data-path="第二章-sql.html"><a href="第二章-sql.html#分组查询"><i class="fa fa-check"></i><b>2.6.4</b> 分组查询</a></li>
+<li class="chapter" data-level="2.6.5" data-path="第二章-sql.html"><a href="第二章-sql.html#排序查询"><i class="fa fa-check"></i><b>2.6.5</b> 排序查询</a></li>
+<li class="chapter" data-level="2.6.6" data-path="第二章-sql.html"><a href="第二章-sql.html#分页查询"><i class="fa fa-check"></i><b>2.6.6</b> 分页查询</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II 附录</b></span></li>
+<li class="chapter" data-level="3" data-path="案例答案.html"><a href="案例答案.html"><i class="fa fa-check"></i><b>3</b> 案例答案</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="案例答案.html"><a href="案例答案.html#第二章"><i class="fa fa-check"></i><b>3.1</b> 第二章</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="案例答案.html"><a href="案例答案.html#as-2-1"><i class="fa fa-check"></i><b>3.1.1</b> 案例1</a></li>
+<li class="chapter" data-level="3.1.2" data-path="案例答案.html"><a href="案例答案.html#as-2-2"><i class="fa fa-check"></i><b>3.1.2</b> 数据2</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="案例答案.html"><a href="案例答案.html#as-2-3"><i class="fa fa-check"></i><b>3.2</b> 案例3</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="一些操作.html"><a href="一些操作.html"><i class="fa fa-check"></i><b>4</b> 一些操作</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="一些操作.html"><a href="一些操作.html#管理员身份运行cmd"><i class="fa fa-check"></i><b>4.1</b> 管理员身份运行cmd</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MySQL笔记</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="案例答案" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> 案例答案<a href="案例答案.html#案例答案" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="第二章" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> 第二章<a href="案例答案.html#第二章" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="as-2-1" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> 案例1<a href="案例答案.html#as-2-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>案例</strong></p>
+<p>设计一张员工信息表，要求如下：
+1. 编号（纯数字）2. 员工工号 (字符串类型，长度不超过10位)
+3. 员工姓名（字符串类型，长度不超过10位）
+4. 性别（男/女，存储一个汉字）
+5. 年龄（正常人年龄，不可能存储负数）
+6. 身份证号（二代身份证号均为18位，身份证中有X这样的字符）
+7. 入职时间（取值年月日即可）</p>
+<p>对应的建表语句如下:</p>
+<pre><code>create table emp(
+    id int comment &#39;编号&#39;,
+    workno varchar(10)  comment &#39;工号&#39;,
+    name varchar(10) comment &#39;姓名&#39;,
+    gender char(1) comment &#39;性别&#39;,
+    age tinyint unsigned comment &#39;年龄&#39;,
+    idcard char(18) comment &#39;身份证号&#39;,
+    entrydate date comment &#39;入职时间&#39;
+) comment &#39;员工表&#39;;
+
+desc emp</code></pre>
+</div>
+<div id="as-2-2" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> 数据2<a href="案例答案.html#as-2-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>drop table if exists employee;
+
+create table emp(
+    id int comment &#39;编号&#39;,
+    workno varchar(10) comment &#39;工号&#39;,
+    name varchar(10) comment &#39;姓名&#39;,
+    gender char(1) comment &#39;性别&#39;,
+    age tinyint unsigned comment &#39;年龄&#39;,
+    idcard char(18) comment &#39;身份证号&#39;,
+    workaddress varchar(50) comment &#39;工作地址&#39;,
+    entrydate date comment &#39;入职时间&#39;
+)comment &#39;员工表&#39;;
+
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (1, &#39;00001&#39;, &#39;柳岩666&#39;, &#39;女&#39;, 20, &#39;123456789012345678&#39;, &#39;北京&#39;, &#39;2000-01-01&#39;);
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (2, &#39;00002&#39;, &#39;张无忌&#39;, &#39;男&#39;, 18, &#39;123456789012345670&#39;, &#39;北京&#39;, &#39;2005-09-01&#39;);
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (3, &#39;00003&#39;, &#39;韦一笑&#39;, &#39;男&#39;, 38, &#39;123456789712345670&#39;, &#39;上海&#39;, &#39;2005-08-01&#39;);
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (4, &#39;00004&#39;, &#39;赵敏&#39;, &#39;女&#39;, 18, &#39;123456757123845670&#39;, &#39;北京&#39;, &#39;2009-12-01&#39;);
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (5, &#39;00005&#39;, &#39;小昭&#39;, &#39;女&#39;, 16, &#39;123456769012345678&#39;, &#39;上海&#39;, &#39;2007-07-01&#39;);
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (6, &#39;00006&#39;, &#39;杨逍&#39;, &#39;男&#39;, 28, &#39;12345678931234567X&#39;, &#39;北京&#39;, &#39;2006-01-01&#39;);
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (7, &#39;00007&#39;, &#39;范瑶&#39;, &#39;男&#39;, 40, &#39;123456789212345670&#39;, &#39;北京&#39;, &#39;2005-05-01&#39;);
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (8, &#39;00008&#39;, &#39;黛绮丝&#39;, &#39;女&#39;, 38, &#39;123456157123645670&#39;, &#39;天津&#39;, &#39;2015-05-01&#39;);
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (9, &#39;00009&#39;, &#39;范凉凉&#39;, &#39;女&#39;, 45, &#39;123156789012345678&#39;, &#39;北京&#39;, &#39;2010-04-01&#39;);
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (10, &#39;00010&#39;, &#39;陈友谅&#39;, &#39;男&#39;, 53, &#39;123456789012345670&#39;, &#39;上海&#39;, &#39;2011-01-01&#39;);
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (11, &#39;00011&#39;, &#39;张士诚&#39;, &#39;男&#39;, 55, &#39;123567897123465670&#39;, &#39;江苏&#39;, &#39;2015-05-01&#39;);
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (12, &#39;00012&#39;, &#39;常遇春&#39;, &#39;男&#39;, 32, &#39;123446757152345670&#39;, &#39;北京&#39;, &#39;2004-02-01&#39;);
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (13, &#39;00013&#39;, &#39;张三丰&#39;, &#39;男&#39;, 88, &#39;123656789012345678&#39;, &#39;江苏&#39;, &#39;2020-11-01&#39;);
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (14, &#39;00014&#39;, &#39;灭绝&#39;, &#39;女&#39;, 65, &#39;123456719012345670&#39;, &#39;西安&#39;, &#39;2019-05-01&#39;);
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (15, &#39;00015&#39;, &#39;胡青牛&#39;, &#39;男&#39;, 70, &#39;12345674971234567X&#39;, &#39;西安&#39;, &#39;2018-04-01&#39;);
+INSERT INTO emp (id, workno, name, gender, age, idcard, workaddress, entrydate) VALUES (16, &#39;00016&#39;, &#39;周芷若&#39;, &#39;女&#39;, 18, null, &#39;北京&#39;, &#39;2012-06-01&#39;);</code></pre>
+</div>
+</div>
+<div id="as-2-3" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> 案例3<a href="案例答案.html#as-2-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>在emp数据表中：</p>
+<pre><code>-- 1. 查询年龄为20,21,22,23岁的员工信息。
+SELECT * FROM emp WHERE age IN(20,21,22,23);
+SELECT * FROM emp WHERE age BETWEEN 20 AND 23;
+-- 2. 查询性别为 男 ，并且年龄在 20-40 岁(含)以内的姓名为三个字的员工。
+SELECT * FROM emp WHERE gender = &#39;男&#39; AND age BETWEEN 20 AND 40 AND `name` LIKE &#39;___&#39;;
+-- 3. 统计员工表中, 年龄小于60岁的 , 男性员工和女性员工的人数。
+SELECT gender, COUNT(*) FROM emp WHERE age&lt;60 GROUP BY gender; 
+-- 4. 查询所有年龄小于等于35岁员工的姓名和年龄，并对查询结果按年龄升序排序，如果年龄相同按入职时间降序排序。
+SELECT `name`, age FROM emp WHERE age&lt;=35 ORDER BY age ASC, entrydate DESC;
+-- 5. 查询性别为男，且年龄在20-40 岁(含)以内的前5个员工信息，对查询的结果按年龄升序排序，年龄相同按入职时间升序排序。
+SELECT * FROM emp WHERE gender=&#39;男&#39; AND age BETWEEN 20 AND 40 ORDER BY age ASC, entrydate ASC LIMIT 5;</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="第二章-sql.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="一些操作.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
