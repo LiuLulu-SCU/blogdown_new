@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>11 附录 | R语言编程</title>
   <meta name="description" content="张敬信老师的R语言学习笔记" />
-  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="11 附录 | R语言编程" />
   <meta property="og:type" content="book" />
@@ -51,7 +51,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.10.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
@@ -144,6 +144,32 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 </head>
 
@@ -189,35 +215,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="数据操作.html"><a href="数据操作.html"><i class="fa fa-check"></i><b>3</b> 数据操作</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="数据操作.html"><a href="数据操作.html#数据连接"><i class="fa fa-check"></i><b>3.1</b> 数据连接</a>
+<li class="chapter" data-level="3.1" data-path="数据操作.html"><a href="数据操作.html#数据读写"><i class="fa fa-check"></i><b>3.1</b> 数据读写</a></li>
+<li class="chapter" data-level="3.2" data-path="数据操作.html"><a href="数据操作.html#数据连接"><i class="fa fa-check"></i><b>3.2</b> 数据连接</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="数据操作.html"><a href="数据操作.html#合并行与和并列"><i class="fa fa-check"></i><b>3.1.1</b> 合并行与和并列</a></li>
-<li class="chapter" data-level="3.1.2" data-path="数据操作.html"><a href="数据操作.html#根据值匹配合并数据框"><i class="fa fa-check"></i><b>3.1.2</b> 根据值匹配合并数据框</a></li>
-<li class="chapter" data-level="3.1.3" data-path="数据操作.html"><a href="数据操作.html#实现r中实现stata的merge命令"><i class="fa fa-check"></i><b>3.1.3</b> 实现R中实现stata的merge命令</a></li>
+<li class="chapter" data-level="3.2.1" data-path="数据操作.html"><a href="数据操作.html#合并行与和并列"><i class="fa fa-check"></i><b>3.2.1</b> 合并行与和并列</a></li>
+<li class="chapter" data-level="3.2.2" data-path="数据操作.html"><a href="数据操作.html#根据值匹配合并数据框"><i class="fa fa-check"></i><b>3.2.2</b> 根据值匹配合并数据框</a></li>
+<li class="chapter" data-level="3.2.3" data-path="数据操作.html"><a href="数据操作.html#实现r中实现stata的merge命令"><i class="fa fa-check"></i><b>3.2.3</b> 实现R中实现stata的merge命令</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="数据操作.html"><a href="数据操作.html#数据操作-1"><i class="fa fa-check"></i><b>3.2</b> 数据操作</a>
+<li class="chapter" data-level="3.3" data-path="数据操作.html"><a href="数据操作.html#数据操作-1"><i class="fa fa-check"></i><b>3.3</b> 数据操作</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="数据操作.html"><a href="数据操作.html#选择列select"><i class="fa fa-check"></i><b>3.2.1</b> 选择列（select）</a></li>
-<li class="chapter" data-level="3.2.2" data-path="数据操作.html"><a href="数据操作.html#选择列语法"><i class="fa fa-check"></i><b>3.2.2</b> 选择列语法</a></li>
-<li class="chapter" data-level="3.2.3" data-path="数据操作.html"><a href="数据操作.html#选择列的例子"><i class="fa fa-check"></i><b>3.2.3</b> 选择列的例子</a></li>
-<li class="chapter" data-level="3.2.4" data-path="数据操作.html"><a href="数据操作.html#用--删除列"><i class="fa fa-check"></i><b>3.2.4</b> 用“-” 删除列</a></li>
-<li class="chapter" data-level="3.2.5" data-path="数据操作.html"><a href="数据操作.html#调整列的顺序"><i class="fa fa-check"></i><b>3.2.5</b> 调整列的顺序</a></li>
-<li class="chapter" data-level="3.2.6" data-path="数据操作.html"><a href="数据操作.html#重命名列"><i class="fa fa-check"></i><b>3.2.6</b> 重命名列</a></li>
+<li class="chapter" data-level="3.3.1" data-path="数据操作.html"><a href="数据操作.html#选择列select"><i class="fa fa-check"></i><b>3.3.1</b> 选择列（select）</a></li>
+<li class="chapter" data-level="3.3.2" data-path="数据操作.html"><a href="数据操作.html#选择列语法"><i class="fa fa-check"></i><b>3.3.2</b> 选择列语法</a></li>
+<li class="chapter" data-level="3.3.3" data-path="数据操作.html"><a href="数据操作.html#选择列的例子"><i class="fa fa-check"></i><b>3.3.3</b> 选择列的例子</a></li>
+<li class="chapter" data-level="3.3.4" data-path="数据操作.html"><a href="数据操作.html#用--删除列"><i class="fa fa-check"></i><b>3.3.4</b> 用“-” 删除列</a></li>
+<li class="chapter" data-level="3.3.5" data-path="数据操作.html"><a href="数据操作.html#调整列的顺序"><i class="fa fa-check"></i><b>3.3.5</b> 调整列的顺序</a></li>
+<li class="chapter" data-level="3.3.6" data-path="数据操作.html"><a href="数据操作.html#重命名列"><i class="fa fa-check"></i><b>3.3.6</b> 重命名列</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="数据操作.html"><a href="数据操作.html#分组汇总"><i class="fa fa-check"></i><b>3.3</b> 分组汇总</a>
+<li class="chapter" data-level="3.4" data-path="数据操作.html"><a href="数据操作.html#分组汇总"><i class="fa fa-check"></i><b>3.4</b> 分组汇总</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="数据操作.html"><a href="数据操作.html#创建分组"><i class="fa fa-check"></i><b>3.3.1</b> 创建分组</a></li>
-<li class="chapter" data-level="3.3.2" data-path="数据操作.html"><a href="数据操作.html#分组汇总-1"><i class="fa fa-check"></i><b>3.3.2</b> 分组汇总</a></li>
-<li class="chapter" data-level="3.3.3" data-path="数据操作.html"><a href="数据操作.html#自己的例子"><i class="fa fa-check"></i><b>3.3.3</b> 自己的例子</a></li>
+<li class="chapter" data-level="3.4.1" data-path="数据操作.html"><a href="数据操作.html#创建分组"><i class="fa fa-check"></i><b>3.4.1</b> 创建分组</a></li>
+<li class="chapter" data-level="3.4.2" data-path="数据操作.html"><a href="数据操作.html#分组汇总-1"><i class="fa fa-check"></i><b>3.4.2</b> 分组汇总</a></li>
+<li class="chapter" data-level="3.4.3" data-path="数据操作.html"><a href="数据操作.html#自己的例子"><i class="fa fa-check"></i><b>3.4.3</b> 自己的例子</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="数据操作.html"><a href="数据操作.html#其他数据操作"><i class="fa fa-check"></i><b>3.4</b> 其他数据操作</a>
+<li class="chapter" data-level="3.5" data-path="数据操作.html"><a href="数据操作.html#其他数据操作"><i class="fa fa-check"></i><b>3.5</b> 其他数据操作</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="数据操作.html"><a href="数据操作.html#按行汇总"><i class="fa fa-check"></i><b>3.4.1</b> 按行汇总</a></li>
-<li class="chapter" data-level="3.4.2" data-path="数据操作.html"><a href="数据操作.html#窗口函数"><i class="fa fa-check"></i><b>3.4.2</b> 窗口函数</a></li>
+<li class="chapter" data-level="3.5.1" data-path="数据操作.html"><a href="数据操作.html#按行汇总"><i class="fa fa-check"></i><b>3.5.1</b> 按行汇总</a></li>
+<li class="chapter" data-level="3.5.2" data-path="数据操作.html"><a href="数据操作.html#窗口函数"><i class="fa fa-check"></i><b>3.5.2</b> 窗口函数</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="数据操作.html"><a href="数据操作.html#整洁计算"><i class="fa fa-check"></i><b>3.5</b> 整洁计算</a>
+<li class="chapter" data-level="3.6" data-path="数据操作.html"><a href="数据操作.html#整洁计算"><i class="fa fa-check"></i><b>3.6</b> 整洁计算</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="数据操作.html"><a href="数据操作.html#数据屏蔽与整洁选择"><i class="fa fa-check"></i><b>3.5.1</b> 数据屏蔽与整洁选择</a></li>
+<li class="chapter" data-level="3.6.1" data-path="数据操作.html"><a href="数据操作.html#数据屏蔽与整洁选择"><i class="fa fa-check"></i><b>3.6.1</b> 数据屏蔽与整洁选择</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="可视化与建模.html"><a href="可视化与建模.html"><i class="fa fa-check"></i><b>4</b> 可视化与建模</a>
@@ -295,11 +322,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5" data-path="markdown.html"><a href="markdown.html#数学公式"><i class="fa fa-check"></i><b>6.5</b> 数学公式</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="markdown.html"><a href="markdown.html#markdown如何显示数学公式"><i class="fa fa-check"></i><b>6.5.1</b> Markdown如何显示数学公式</a></li>
-<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.2</b> 数学公式的类别</a></li>
-<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.3</b> 上横线</a></li>
-<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.4</b> hat</a></li>
-<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.5</b> 换行对齐</a></li>
-<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.6</b> 分段函数</a></li>
+<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#公式编号"><i class="fa fa-check"></i><b>6.5.2</b> 公式编号</a></li>
+<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.3</b> 数学公式的类别</a></li>
+<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.4</b> 上横线</a></li>
+<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.5</b> hat</a></li>
+<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.6</b> 换行对齐</a></li>
+<li class="chapter" data-level="6.5.7" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.7</b> 分段函数</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>7</b> RMarkdown</a>
@@ -318,6 +346,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.8" data-path="rmarkdown.html"><a href="rmarkdown.html#行内代码"><i class="fa fa-check"></i><b>7.3.8</b> 行内代码</a></li>
 <li class="chapter" data-level="7.3.9" data-path="rmarkdown.html"><a href="rmarkdown.html#在rmarkdown使用其他语言"><i class="fa fa-check"></i><b>7.3.9</b> 在RMarkdown使用其他语言</a></li>
 <li class="chapter" data-level="7.3.10" data-path="rmarkdown.html"><a href="rmarkdown.html#交互式文档"><i class="fa fa-check"></i><b>7.3.10</b> 交互式文档</a></li>
+<li class="chapter" data-level="7.3.11" data-path="rmarkdown.html"><a href="rmarkdown.html#参考文献"><i class="fa fa-check"></i><b>7.3.11</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="rmarkdown.html"><a href="rmarkdown.html#文档格式htmlpdfword"><i class="fa fa-check"></i><b>7.4</b> 文档格式（HTML,PDF,Word…）</a>
 <ul>
@@ -421,41 +450,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="infer包.html"><a href="infer包.html#卡方检验"><i class="fa fa-check"></i><b>14.2</b> 卡方检验</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>15</b> 极大似然估计</a>
+<li class="chapter" data-level="15" data-path="gamma函数.html"><a href="gamma函数.html"><i class="fa fa-check"></i><b>15</b> Gamma函数</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>15.1</b> 自定义极大似然函数</a>
+<li class="chapter" data-level="15.1" data-path="gamma函数.html"><a href="gamma函数.html#简史"><i class="fa fa-check"></i><b>15.1</b> 简史</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>15.1.1</b> 正态分布</a></li>
-<li class="chapter" data-level="15.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>15.1.2</b> 指数分布</a></li>
+<li class="chapter" data-level="15.1.1" data-path="gamma函数.html"><a href="gamma函数.html#动机"><i class="fa fa-check"></i><b>15.1.1</b> 动机</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="gamma函数.html"><a href="gamma函数.html#定义"><i class="fa fa-check"></i><b>15.2</b> 定义</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="gamma函数.html"><a href="gamma函数.html#euler定义"><i class="fa fa-check"></i><b>15.2.1</b> Euler定义</a></li>
+<li class="chapter" data-level="15.2.2" data-path="gamma函数.html"><a href="gamma函数.html#gauss定义"><i class="fa fa-check"></i><b>15.2.2</b> Gauss定义</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>16</b> 正则表达式</a>
+<li class="chapter" data-level="16" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>16</b> 极大似然估计</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>16.1</b> grep函数</a>
+<li class="chapter" data-level="16.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>16.1</b> 自定义极大似然函数</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>16.1.1</b> 函数参数</a></li>
-<li class="chapter" data-level="16.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>16.1.2</b> 模式（pattern）与匹配（match）</a></li>
-</ul></li>
-<li class="chapter" data-level="16.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>16.2</b> 元字符</a></li>
-<li class="chapter" data-level="16.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>16.3</b> 常用文本处理函数</a></li>
-<li class="chapter" data-level="16.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>16.4</b> 案例</a>
-<ul>
-<li class="chapter" data-level="16.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>16.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
-<li class="chapter" data-level="16.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>16.4.2</b> 全宋词</a></li>
-<li class="chapter" data-level="16.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>16.4.3</b> SCI（筛选行）</a></li>
+<li class="chapter" data-level="16.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>16.1.1</b> 正态分布</a></li>
+<li class="chapter" data-level="16.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>16.1.2</b> 指数分布</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>17</b> 一些自定义函数</a>
+<li class="chapter" data-level="17" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>17</b> 正则表达式</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>17.1</b> 数据处理</a>
+<li class="chapter" data-level="17.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>17.1</b> grep函数</a>
 <ul>
-<li class="chapter" data-level="17.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>17.1.1</b> 分组排序并排名</a></li>
+<li class="chapter" data-level="17.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>17.1.1</b> 函数参数</a></li>
+<li class="chapter" data-level="17.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>17.1.2</b> 模式（pattern）与匹配（match）</a></li>
 </ul></li>
-<li class="chapter" data-level="17.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>17.2</b> 统计相关</a>
+<li class="chapter" data-level="17.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>17.2</b> 元字符</a></li>
+<li class="chapter" data-level="17.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>17.3</b> 常用文本处理函数</a></li>
+<li class="chapter" data-level="17.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>17.4</b> 案例</a>
 <ul>
-<li class="chapter" data-level="17.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>17.2.1</b> 汇总数据t检验</a></li>
-<li class="chapter" data-level="17.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>17.2.2</b> 卡方检验</a></li>
+<li class="chapter" data-level="17.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>17.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
+<li class="chapter" data-level="17.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>17.4.2</b> 全宋词</a></li>
+<li class="chapter" data-level="17.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>17.4.3</b> SCI（筛选行）</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>18</b> 一些自定义函数</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>18.1</b> 数据处理</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>18.1.1</b> 分组排序并排名</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>18.2</b> 统计相关</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>18.2.1</b> 汇总数据t检验</a></li>
+<li class="chapter" data-level="18.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>18.2.2</b> 卡方检验</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="一些自定义函数-1.html"><a href="一些自定义函数-1.html"><i class="fa fa-check"></i><b>19</b> 一些自定义函数</a></li>
+<li class="chapter" data-level="20" data-path="随机抽样.html"><a href="随机抽样.html"><i class="fa fa-check"></i><b>20</b> 随机抽样</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="随机抽样.html"><a href="随机抽样.html#inverse-cdf-transformation逆cdf变化法"><i class="fa fa-check"></i><b>20.1</b> Inverse CDF Transformation（逆CDF变化法）</a></li>
+<li class="chapter" data-level="20.2" data-path="随机抽样.html"><a href="随机抽样.html#accept-reject-sampling-method接受-拒绝抽样"><i class="fa fa-check"></i><b>20.2</b> accept-reject sampling method（接受-拒绝抽样）</a></li>
 </ul></li>
 </ul>
 
@@ -479,8 +526,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="颜色" class="section level2 hasAnchor" number="11.1">
 <h2><span class="header-section-number">11.1</span> 颜色<a href="附录.html#颜色" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>二元配色</p>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="附录.html#cb365-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
-<span id="cb365-2"><a href="附录.html#cb365-2" aria-hidden="true" tabindex="-1"></a><span class="fu">show_col</span>(<span class="fu">c</span>(<span class="st">&quot;#B47846&quot;</span>,<span class="st">&quot;#4682B4&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="附录.html#cb374-1" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb374-2"><a href="附录.html#cb374-2" tabindex="-1"></a><span class="fu">show_col</span>(<span class="fu">c</span>(<span class="st">&quot;#B47846&quot;</span>,<span class="st">&quot;#4682B4&quot;</span>))</span></code></pre></div>
 <p><img src="1100-chapter100-%E9%99%84%E5%BD%95_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>可用于KM曲线</p>
 

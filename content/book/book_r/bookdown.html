@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Bookdown | R语言编程</title>
   <meta name="description" content="张敬信老师的R语言学习笔记" />
-  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Bookdown | R语言编程" />
   <meta property="og:type" content="book" />
@@ -51,7 +51,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.10.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
@@ -144,6 +144,32 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 </head>
 
@@ -189,35 +215,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="数据操作.html"><a href="数据操作.html"><i class="fa fa-check"></i><b>3</b> 数据操作</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="数据操作.html"><a href="数据操作.html#数据连接"><i class="fa fa-check"></i><b>3.1</b> 数据连接</a>
+<li class="chapter" data-level="3.1" data-path="数据操作.html"><a href="数据操作.html#数据读写"><i class="fa fa-check"></i><b>3.1</b> 数据读写</a></li>
+<li class="chapter" data-level="3.2" data-path="数据操作.html"><a href="数据操作.html#数据连接"><i class="fa fa-check"></i><b>3.2</b> 数据连接</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="数据操作.html"><a href="数据操作.html#合并行与和并列"><i class="fa fa-check"></i><b>3.1.1</b> 合并行与和并列</a></li>
-<li class="chapter" data-level="3.1.2" data-path="数据操作.html"><a href="数据操作.html#根据值匹配合并数据框"><i class="fa fa-check"></i><b>3.1.2</b> 根据值匹配合并数据框</a></li>
-<li class="chapter" data-level="3.1.3" data-path="数据操作.html"><a href="数据操作.html#实现r中实现stata的merge命令"><i class="fa fa-check"></i><b>3.1.3</b> 实现R中实现stata的merge命令</a></li>
+<li class="chapter" data-level="3.2.1" data-path="数据操作.html"><a href="数据操作.html#合并行与和并列"><i class="fa fa-check"></i><b>3.2.1</b> 合并行与和并列</a></li>
+<li class="chapter" data-level="3.2.2" data-path="数据操作.html"><a href="数据操作.html#根据值匹配合并数据框"><i class="fa fa-check"></i><b>3.2.2</b> 根据值匹配合并数据框</a></li>
+<li class="chapter" data-level="3.2.3" data-path="数据操作.html"><a href="数据操作.html#实现r中实现stata的merge命令"><i class="fa fa-check"></i><b>3.2.3</b> 实现R中实现stata的merge命令</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="数据操作.html"><a href="数据操作.html#数据操作-1"><i class="fa fa-check"></i><b>3.2</b> 数据操作</a>
+<li class="chapter" data-level="3.3" data-path="数据操作.html"><a href="数据操作.html#数据操作-1"><i class="fa fa-check"></i><b>3.3</b> 数据操作</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="数据操作.html"><a href="数据操作.html#选择列select"><i class="fa fa-check"></i><b>3.2.1</b> 选择列（select）</a></li>
-<li class="chapter" data-level="3.2.2" data-path="数据操作.html"><a href="数据操作.html#选择列语法"><i class="fa fa-check"></i><b>3.2.2</b> 选择列语法</a></li>
-<li class="chapter" data-level="3.2.3" data-path="数据操作.html"><a href="数据操作.html#选择列的例子"><i class="fa fa-check"></i><b>3.2.3</b> 选择列的例子</a></li>
-<li class="chapter" data-level="3.2.4" data-path="数据操作.html"><a href="数据操作.html#用--删除列"><i class="fa fa-check"></i><b>3.2.4</b> 用“-” 删除列</a></li>
-<li class="chapter" data-level="3.2.5" data-path="数据操作.html"><a href="数据操作.html#调整列的顺序"><i class="fa fa-check"></i><b>3.2.5</b> 调整列的顺序</a></li>
-<li class="chapter" data-level="3.2.6" data-path="数据操作.html"><a href="数据操作.html#重命名列"><i class="fa fa-check"></i><b>3.2.6</b> 重命名列</a></li>
+<li class="chapter" data-level="3.3.1" data-path="数据操作.html"><a href="数据操作.html#选择列select"><i class="fa fa-check"></i><b>3.3.1</b> 选择列（select）</a></li>
+<li class="chapter" data-level="3.3.2" data-path="数据操作.html"><a href="数据操作.html#选择列语法"><i class="fa fa-check"></i><b>3.3.2</b> 选择列语法</a></li>
+<li class="chapter" data-level="3.3.3" data-path="数据操作.html"><a href="数据操作.html#选择列的例子"><i class="fa fa-check"></i><b>3.3.3</b> 选择列的例子</a></li>
+<li class="chapter" data-level="3.3.4" data-path="数据操作.html"><a href="数据操作.html#用--删除列"><i class="fa fa-check"></i><b>3.3.4</b> 用“-” 删除列</a></li>
+<li class="chapter" data-level="3.3.5" data-path="数据操作.html"><a href="数据操作.html#调整列的顺序"><i class="fa fa-check"></i><b>3.3.5</b> 调整列的顺序</a></li>
+<li class="chapter" data-level="3.3.6" data-path="数据操作.html"><a href="数据操作.html#重命名列"><i class="fa fa-check"></i><b>3.3.6</b> 重命名列</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="数据操作.html"><a href="数据操作.html#分组汇总"><i class="fa fa-check"></i><b>3.3</b> 分组汇总</a>
+<li class="chapter" data-level="3.4" data-path="数据操作.html"><a href="数据操作.html#分组汇总"><i class="fa fa-check"></i><b>3.4</b> 分组汇总</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="数据操作.html"><a href="数据操作.html#创建分组"><i class="fa fa-check"></i><b>3.3.1</b> 创建分组</a></li>
-<li class="chapter" data-level="3.3.2" data-path="数据操作.html"><a href="数据操作.html#分组汇总-1"><i class="fa fa-check"></i><b>3.3.2</b> 分组汇总</a></li>
-<li class="chapter" data-level="3.3.3" data-path="数据操作.html"><a href="数据操作.html#自己的例子"><i class="fa fa-check"></i><b>3.3.3</b> 自己的例子</a></li>
+<li class="chapter" data-level="3.4.1" data-path="数据操作.html"><a href="数据操作.html#创建分组"><i class="fa fa-check"></i><b>3.4.1</b> 创建分组</a></li>
+<li class="chapter" data-level="3.4.2" data-path="数据操作.html"><a href="数据操作.html#分组汇总-1"><i class="fa fa-check"></i><b>3.4.2</b> 分组汇总</a></li>
+<li class="chapter" data-level="3.4.3" data-path="数据操作.html"><a href="数据操作.html#自己的例子"><i class="fa fa-check"></i><b>3.4.3</b> 自己的例子</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="数据操作.html"><a href="数据操作.html#其他数据操作"><i class="fa fa-check"></i><b>3.4</b> 其他数据操作</a>
+<li class="chapter" data-level="3.5" data-path="数据操作.html"><a href="数据操作.html#其他数据操作"><i class="fa fa-check"></i><b>3.5</b> 其他数据操作</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="数据操作.html"><a href="数据操作.html#按行汇总"><i class="fa fa-check"></i><b>3.4.1</b> 按行汇总</a></li>
-<li class="chapter" data-level="3.4.2" data-path="数据操作.html"><a href="数据操作.html#窗口函数"><i class="fa fa-check"></i><b>3.4.2</b> 窗口函数</a></li>
+<li class="chapter" data-level="3.5.1" data-path="数据操作.html"><a href="数据操作.html#按行汇总"><i class="fa fa-check"></i><b>3.5.1</b> 按行汇总</a></li>
+<li class="chapter" data-level="3.5.2" data-path="数据操作.html"><a href="数据操作.html#窗口函数"><i class="fa fa-check"></i><b>3.5.2</b> 窗口函数</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="数据操作.html"><a href="数据操作.html#整洁计算"><i class="fa fa-check"></i><b>3.5</b> 整洁计算</a>
+<li class="chapter" data-level="3.6" data-path="数据操作.html"><a href="数据操作.html#整洁计算"><i class="fa fa-check"></i><b>3.6</b> 整洁计算</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="数据操作.html"><a href="数据操作.html#数据屏蔽与整洁选择"><i class="fa fa-check"></i><b>3.5.1</b> 数据屏蔽与整洁选择</a></li>
+<li class="chapter" data-level="3.6.1" data-path="数据操作.html"><a href="数据操作.html#数据屏蔽与整洁选择"><i class="fa fa-check"></i><b>3.6.1</b> 数据屏蔽与整洁选择</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="可视化与建模.html"><a href="可视化与建模.html"><i class="fa fa-check"></i><b>4</b> 可视化与建模</a>
@@ -295,11 +322,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5" data-path="markdown.html"><a href="markdown.html#数学公式"><i class="fa fa-check"></i><b>6.5</b> 数学公式</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="markdown.html"><a href="markdown.html#markdown如何显示数学公式"><i class="fa fa-check"></i><b>6.5.1</b> Markdown如何显示数学公式</a></li>
-<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.2</b> 数学公式的类别</a></li>
-<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.3</b> 上横线</a></li>
-<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.4</b> hat</a></li>
-<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.5</b> 换行对齐</a></li>
-<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.6</b> 分段函数</a></li>
+<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#公式编号"><i class="fa fa-check"></i><b>6.5.2</b> 公式编号</a></li>
+<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.3</b> 数学公式的类别</a></li>
+<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.4</b> 上横线</a></li>
+<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.5</b> hat</a></li>
+<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.6</b> 换行对齐</a></li>
+<li class="chapter" data-level="6.5.7" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.7</b> 分段函数</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>7</b> RMarkdown</a>
@@ -318,6 +346,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.8" data-path="rmarkdown.html"><a href="rmarkdown.html#行内代码"><i class="fa fa-check"></i><b>7.3.8</b> 行内代码</a></li>
 <li class="chapter" data-level="7.3.9" data-path="rmarkdown.html"><a href="rmarkdown.html#在rmarkdown使用其他语言"><i class="fa fa-check"></i><b>7.3.9</b> 在RMarkdown使用其他语言</a></li>
 <li class="chapter" data-level="7.3.10" data-path="rmarkdown.html"><a href="rmarkdown.html#交互式文档"><i class="fa fa-check"></i><b>7.3.10</b> 交互式文档</a></li>
+<li class="chapter" data-level="7.3.11" data-path="rmarkdown.html"><a href="rmarkdown.html#参考文献"><i class="fa fa-check"></i><b>7.3.11</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="rmarkdown.html"><a href="rmarkdown.html#文档格式htmlpdfword"><i class="fa fa-check"></i><b>7.4</b> 文档格式（HTML,PDF,Word…）</a>
 <ul>
@@ -421,41 +450,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="infer包.html"><a href="infer包.html#卡方检验"><i class="fa fa-check"></i><b>14.2</b> 卡方检验</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>15</b> 极大似然估计</a>
+<li class="chapter" data-level="15" data-path="gamma函数.html"><a href="gamma函数.html"><i class="fa fa-check"></i><b>15</b> Gamma函数</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>15.1</b> 自定义极大似然函数</a>
+<li class="chapter" data-level="15.1" data-path="gamma函数.html"><a href="gamma函数.html#简史"><i class="fa fa-check"></i><b>15.1</b> 简史</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>15.1.1</b> 正态分布</a></li>
-<li class="chapter" data-level="15.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>15.1.2</b> 指数分布</a></li>
+<li class="chapter" data-level="15.1.1" data-path="gamma函数.html"><a href="gamma函数.html#动机"><i class="fa fa-check"></i><b>15.1.1</b> 动机</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="gamma函数.html"><a href="gamma函数.html#定义"><i class="fa fa-check"></i><b>15.2</b> 定义</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="gamma函数.html"><a href="gamma函数.html#euler定义"><i class="fa fa-check"></i><b>15.2.1</b> Euler定义</a></li>
+<li class="chapter" data-level="15.2.2" data-path="gamma函数.html"><a href="gamma函数.html#gauss定义"><i class="fa fa-check"></i><b>15.2.2</b> Gauss定义</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>16</b> 正则表达式</a>
+<li class="chapter" data-level="16" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>16</b> 极大似然估计</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>16.1</b> grep函数</a>
+<li class="chapter" data-level="16.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>16.1</b> 自定义极大似然函数</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>16.1.1</b> 函数参数</a></li>
-<li class="chapter" data-level="16.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>16.1.2</b> 模式（pattern）与匹配（match）</a></li>
-</ul></li>
-<li class="chapter" data-level="16.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>16.2</b> 元字符</a></li>
-<li class="chapter" data-level="16.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>16.3</b> 常用文本处理函数</a></li>
-<li class="chapter" data-level="16.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>16.4</b> 案例</a>
-<ul>
-<li class="chapter" data-level="16.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>16.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
-<li class="chapter" data-level="16.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>16.4.2</b> 全宋词</a></li>
-<li class="chapter" data-level="16.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>16.4.3</b> SCI（筛选行）</a></li>
+<li class="chapter" data-level="16.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>16.1.1</b> 正态分布</a></li>
+<li class="chapter" data-level="16.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>16.1.2</b> 指数分布</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>17</b> 一些自定义函数</a>
+<li class="chapter" data-level="17" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>17</b> 正则表达式</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>17.1</b> 数据处理</a>
+<li class="chapter" data-level="17.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>17.1</b> grep函数</a>
 <ul>
-<li class="chapter" data-level="17.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>17.1.1</b> 分组排序并排名</a></li>
+<li class="chapter" data-level="17.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>17.1.1</b> 函数参数</a></li>
+<li class="chapter" data-level="17.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>17.1.2</b> 模式（pattern）与匹配（match）</a></li>
 </ul></li>
-<li class="chapter" data-level="17.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>17.2</b> 统计相关</a>
+<li class="chapter" data-level="17.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>17.2</b> 元字符</a></li>
+<li class="chapter" data-level="17.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>17.3</b> 常用文本处理函数</a></li>
+<li class="chapter" data-level="17.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>17.4</b> 案例</a>
 <ul>
-<li class="chapter" data-level="17.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>17.2.1</b> 汇总数据t检验</a></li>
-<li class="chapter" data-level="17.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>17.2.2</b> 卡方检验</a></li>
+<li class="chapter" data-level="17.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>17.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
+<li class="chapter" data-level="17.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>17.4.2</b> 全宋词</a></li>
+<li class="chapter" data-level="17.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>17.4.3</b> SCI（筛选行）</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>18</b> 一些自定义函数</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>18.1</b> 数据处理</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>18.1.1</b> 分组排序并排名</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>18.2</b> 统计相关</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>18.2.1</b> 汇总数据t检验</a></li>
+<li class="chapter" data-level="18.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>18.2.2</b> 卡方检验</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="一些自定义函数-1.html"><a href="一些自定义函数-1.html"><i class="fa fa-check"></i><b>19</b> 一些自定义函数</a></li>
+<li class="chapter" data-level="20" data-path="随机抽样.html"><a href="随机抽样.html"><i class="fa fa-check"></i><b>20</b> 随机抽样</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="随机抽样.html"><a href="随机抽样.html#inverse-cdf-transformation逆cdf变化法"><i class="fa fa-check"></i><b>20.1</b> Inverse CDF Transformation（逆CDF变化法）</a></li>
+<li class="chapter" data-level="20.2" data-path="随机抽样.html"><a href="随机抽样.html#accept-reject-sampling-method接受-拒绝抽样"><i class="fa fa-check"></i><b>20.2</b> accept-reject sampling method（接受-拒绝抽样）</a></li>
 </ul></li>
 </ul>
 
@@ -487,10 +534,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="创建图书" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> 创建图书<a href="bookdown.html#创建图书" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>可以安装CRAN版或GitHub development版</p>
-<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="bookdown.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install from CRAN</span></span>
-<span id="cb320-2"><a href="bookdown.html#cb320-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;bookdown&#39;</span>)</span>
-<span id="cb320-3"><a href="bookdown.html#cb320-3" aria-hidden="true" tabindex="-1"></a><span class="co"># or GitHub</span></span>
-<span id="cb320-4"><a href="bookdown.html#cb320-4" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;rstudio/bookdown&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="bookdown.html#cb329-1" tabindex="-1"></a><span class="co"># install from CRAN</span></span>
+<span id="cb329-2"><a href="bookdown.html#cb329-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;bookdown&#39;</span>)</span>
+<span id="cb329-3"><a href="bookdown.html#cb329-3" tabindex="-1"></a><span class="co"># or GitHub</span></span>
+<span id="cb329-4"><a href="bookdown.html#cb329-4" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;rstudio/bookdown&#39;</span>)</span></code></pre></div>
 <p>在RStudio中，可以在菜单栏中点击
 <code>File -&gt; New Project -&gt; New Directory -&gt; Book Project using bookdown</code>，即可创建bookdown，然后在RStudio中点击<code>build</code>按钮，将编译图书并在RStudio Viewer中显示HTML版本。图 <a href="bookdown.html#fig:bookdown-template">8.1</a>.</p>
 <div class="figure"><span style="display:block;" id="fig:bookdown-template"></span>
@@ -532,20 +579,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="项目结构" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> 项目结构<a href="bookdown.html#项目结构" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>下面是一个默认的<strong>bookdown</strong>项目的基本结构:</p>
-<div class="sourceCode" id="cb321"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb321-1"><a href="bookdown.html#cb321-1" aria-hidden="true" tabindex="-1"></a>directory/</span>
-<span id="cb321-2"><a href="bookdown.html#cb321-2" aria-hidden="true" tabindex="-1"></a>├──  index.Rmd</span>
-<span id="cb321-3"><a href="bookdown.html#cb321-3" aria-hidden="true" tabindex="-1"></a>├── 01-intro.Rmd</span>
-<span id="cb321-4"><a href="bookdown.html#cb321-4" aria-hidden="true" tabindex="-1"></a>├── 02-literature.Rmd</span>
-<span id="cb321-5"><a href="bookdown.html#cb321-5" aria-hidden="true" tabindex="-1"></a>├── 03-method.Rmd</span>
-<span id="cb321-6"><a href="bookdown.html#cb321-6" aria-hidden="true" tabindex="-1"></a>├── 04-application.Rmd</span>
-<span id="cb321-7"><a href="bookdown.html#cb321-7" aria-hidden="true" tabindex="-1"></a>├── 05-summary.Rmd</span>
-<span id="cb321-8"><a href="bookdown.html#cb321-8" aria-hidden="true" tabindex="-1"></a>├── 06-references.Rmd</span>
-<span id="cb321-9"><a href="bookdown.html#cb321-9" aria-hidden="true" tabindex="-1"></a>├── _bookdown.yml</span>
-<span id="cb321-10"><a href="bookdown.html#cb321-10" aria-hidden="true" tabindex="-1"></a>├── _output.yml</span>
-<span id="cb321-11"><a href="bookdown.html#cb321-11" aria-hidden="true" tabindex="-1"></a>├──  book.bib</span>
-<span id="cb321-12"><a href="bookdown.html#cb321-12" aria-hidden="true" tabindex="-1"></a>├──  preamble.tex</span>
-<span id="cb321-13"><a href="bookdown.html#cb321-13" aria-hidden="true" tabindex="-1"></a>├──  README.md</span>
-<span id="cb321-14"><a href="bookdown.html#cb321-14" aria-hidden="true" tabindex="-1"></a>└──  style.css</span></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb330-1"><a href="bookdown.html#cb330-1" tabindex="-1"></a>directory/</span>
+<span id="cb330-2"><a href="bookdown.html#cb330-2" tabindex="-1"></a>├──  index.Rmd</span>
+<span id="cb330-3"><a href="bookdown.html#cb330-3" tabindex="-1"></a>├── 01-intro.Rmd</span>
+<span id="cb330-4"><a href="bookdown.html#cb330-4" tabindex="-1"></a>├── 02-literature.Rmd</span>
+<span id="cb330-5"><a href="bookdown.html#cb330-5" tabindex="-1"></a>├── 03-method.Rmd</span>
+<span id="cb330-6"><a href="bookdown.html#cb330-6" tabindex="-1"></a>├── 04-application.Rmd</span>
+<span id="cb330-7"><a href="bookdown.html#cb330-7" tabindex="-1"></a>├── 05-summary.Rmd</span>
+<span id="cb330-8"><a href="bookdown.html#cb330-8" tabindex="-1"></a>├── 06-references.Rmd</span>
+<span id="cb330-9"><a href="bookdown.html#cb330-9" tabindex="-1"></a>├── _bookdown.yml</span>
+<span id="cb330-10"><a href="bookdown.html#cb330-10" tabindex="-1"></a>├── _output.yml</span>
+<span id="cb330-11"><a href="bookdown.html#cb330-11" tabindex="-1"></a>├──  book.bib</span>
+<span id="cb330-12"><a href="bookdown.html#cb330-12" tabindex="-1"></a>├──  preamble.tex</span>
+<span id="cb330-13"><a href="bookdown.html#cb330-13" tabindex="-1"></a>├──  README.md</span>
+<span id="cb330-14"><a href="bookdown.html#cb330-14" tabindex="-1"></a>└──  style.css</span></code></pre></div>
 <ul>
 <li><p><code>index.Rmd</code>: 这是唯一包含YAML frontmatter的Rmd文档</p></li>
 <li><p>Rmd files: 一个典型的<strong>bookdown</strong> 图书包含多个章节，每个章节都存在于一个单独的Rmd文件中。</p></li>
@@ -557,18 +604,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="首页文件index-file" class="section level3 hasAnchor" number="8.4.1">
 <h3><span class="header-section-number">8.4.1</span> 首页文件（Index file）<a href="bookdown.html#首页文件index-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>index.Rmd</code>文件包含第一章和YAML元数据，例如:</p>
-<div class="sourceCode" id="cb322"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb322-1"><a href="bookdown.html#cb322-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb322-2"><a href="bookdown.html#cb322-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;A Minimal Book Example&quot;</span></span>
-<span id="cb322-3"><a href="bookdown.html#cb322-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Yihui Xie&quot;</span></span>
-<span id="cb322-4"><a href="bookdown.html#cb322-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;`r Sys.Date()`&quot;</span></span>
-<span id="cb322-5"><a href="bookdown.html#cb322-5" aria-hidden="true" tabindex="-1"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> bookdown::bookdown_site</span></span>
-<span id="cb322-6"><a href="bookdown.html#cb322-6" aria-hidden="true" tabindex="-1"></a><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> book</span></span>
-<span id="cb322-7"><a href="bookdown.html#cb322-7" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">book.bib</span><span class="kw">,</span><span class="at"> packages.bib</span><span class="kw">]</span></span>
-<span id="cb322-8"><a href="bookdown.html#cb322-8" aria-hidden="true" tabindex="-1"></a><span class="fu">biblio-style</span><span class="kw">:</span><span class="at"> apalike</span></span>
-<span id="cb322-9"><a href="bookdown.html#cb322-9" aria-hidden="true" tabindex="-1"></a><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
-<span id="cb322-10"><a href="bookdown.html#cb322-10" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;This is a minimal example of using</span></span>
-<span id="cb322-11"><a href="bookdown.html#cb322-11" aria-hidden="true" tabindex="-1"></a><span class="st">  the bookdown package to write a book.&quot;</span></span>
-<span id="cb322-12"><a href="bookdown.html#cb322-12" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb331-1"><a href="bookdown.html#cb331-1" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb331-2"><a href="bookdown.html#cb331-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;A Minimal Book Example&quot;</span></span>
+<span id="cb331-3"><a href="bookdown.html#cb331-3" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Yihui Xie&quot;</span></span>
+<span id="cb331-4"><a href="bookdown.html#cb331-4" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;`r Sys.Date()`&quot;</span></span>
+<span id="cb331-5"><a href="bookdown.html#cb331-5" tabindex="-1"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> bookdown::bookdown_site</span></span>
+<span id="cb331-6"><a href="bookdown.html#cb331-6" tabindex="-1"></a><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> book</span></span>
+<span id="cb331-7"><a href="bookdown.html#cb331-7" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">book.bib</span><span class="kw">,</span><span class="at"> packages.bib</span><span class="kw">]</span></span>
+<span id="cb331-8"><a href="bookdown.html#cb331-8" tabindex="-1"></a><span class="fu">biblio-style</span><span class="kw">:</span><span class="at"> apalike</span></span>
+<span id="cb331-9"><a href="bookdown.html#cb331-9" tabindex="-1"></a><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb331-10"><a href="bookdown.html#cb331-10" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;This is a minimal example of using</span></span>
+<span id="cb331-11"><a href="bookdown.html#cb331-11" tabindex="-1"></a><span class="st">  the bookdown package to write a book.&quot;</span></span>
+<span id="cb331-12"><a href="bookdown.html#cb331-12" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>其中在三个减号组成的两行之间的内容叫做YAML元数据， 是一本书的设置， 上例中有书的标题、作者名、日期（用R程序自动生成）、描述。 其中的<code>site</code>选项很重要， 一定要有这个选项， <code>site: bookdown::bookdown_site</code>使得RStudio软件能辨认这是一个bookdown图书项目， 从而为其提供一键编译快捷方式。 元数据中<code>output</code>项指定默认的输出格式。 <code>documentclass</code>项为借助LaTeX编译PDF格式指定LaTeX的模板， 现在还不能支持ctexbook模板所以使用了book模板。 <code>bibliography</code>项指定一个或者几个.bib格式的文献数据库。</p>
 </div>
 <div id="rmd文件-rmd-files" class="section level3 hasAnchor" number="8.4.2">
@@ -577,34 +624,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>默认情况下，bookdown按文件名的顺序合并所有Rmd文件，例如<code>01-intro</code>，将出现在<code>02-literature.Rmd</code>之前。以下划线<code>_</code>开头的文件名将被跳过。</p>
 <ul>
 <li><p>01-intro.Rmd</p>
-<div class="sourceCode" id="cb323"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb323-1"><a href="bookdown.html#cb323-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction</span></span>
-<span id="cb323-2"><a href="bookdown.html#cb323-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb323-3"><a href="bookdown.html#cb323-3" aria-hidden="true" tabindex="-1"></a>This chapter is an overview of the methods that</span>
-<span id="cb323-4"><a href="bookdown.html#cb323-4" aria-hidden="true" tabindex="-1"></a>we propose to solve an **important problem**.</span></code></pre></div></li>
+<div class="sourceCode" id="cb332"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb332-1"><a href="bookdown.html#cb332-1" tabindex="-1"></a><span class="fu"># Introduction</span></span>
+<span id="cb332-2"><a href="bookdown.html#cb332-2" tabindex="-1"></a></span>
+<span id="cb332-3"><a href="bookdown.html#cb332-3" tabindex="-1"></a>This chapter is an overview of the methods that</span>
+<span id="cb332-4"><a href="bookdown.html#cb332-4" tabindex="-1"></a>we propose to solve an **important problem**.</span></code></pre></div></li>
 <li><p>02-literature.Rmd</p>
-<div class="sourceCode" id="cb324"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb324-1"><a href="bookdown.html#cb324-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Literature</span></span>
-<span id="cb324-2"><a href="bookdown.html#cb324-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb324-3"><a href="bookdown.html#cb324-3" aria-hidden="true" tabindex="-1"></a>Here is a review of existing methods.</span></code></pre></div></li>
+<div class="sourceCode" id="cb333"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb333-1"><a href="bookdown.html#cb333-1" tabindex="-1"></a><span class="fu"># Literature</span></span>
+<span id="cb333-2"><a href="bookdown.html#cb333-2" tabindex="-1"></a></span>
+<span id="cb333-3"><a href="bookdown.html#cb333-3" tabindex="-1"></a>Here is a review of existing methods.</span></code></pre></div></li>
 </ul>
 </div>
 <div id="bookdown.yml" class="section level3 hasAnchor" number="8.4.3">
 <h3><span class="header-section-number">8.4.3</span> <code>_bookdown.yml</code><a href="bookdown.html#bookdown.yml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>_bookdown.yml</code>文件允许你指定可选的设置来构建这本书。例如，你可能想通过包含<code>rmd_files</code>字段来覆盖文件合并的顺序:</p>
-<div class="sourceCode" id="cb325"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb325-1"><a href="bookdown.html#cb325-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rmd_files</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;index.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;02-literature.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;01-intro.Rmd&quot;</span><span class="kw">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb334-1"><a href="bookdown.html#cb334-1" tabindex="-1"></a><span class="fu">rmd_files</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;index.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;02-literature.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;01-intro.Rmd&quot;</span><span class="kw">]</span></span></code></pre></div>
 </div>
 <div id="output.yml" class="section level3 hasAnchor" number="8.4.4">
 <h3><span class="header-section-number">8.4.4</span> <code>_output.yml</code><a href="bookdown.html#output.yml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>_output.yml</code>文件用于指定图书输出格式(参 <a href="bookdown.html#bookdown-output">8.6</a>)。下面是一个简单的例子:</p>
-<div class="sourceCode" id="cb326"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb326-1"><a href="bookdown.html#cb326-1" aria-hidden="true" tabindex="-1"></a><span class="at">bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
-<span id="cb326-2"><a href="bookdown.html#cb326-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">lib_dir</span><span class="kw">:</span><span class="at"> assets</span></span>
-<span id="cb326-3"><a href="bookdown.html#cb326-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">split_by</span><span class="kw">:</span><span class="at"> section</span></span>
-<span id="cb326-4"><a href="bookdown.html#cb326-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">config</span><span class="kw">:</span></span>
-<span id="cb326-5"><a href="bookdown.html#cb326-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toolbar</span><span class="kw">:</span></span>
-<span id="cb326-6"><a href="bookdown.html#cb326-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">position</span><span class="kw">:</span><span class="at"> static</span></span>
-<span id="cb326-7"><a href="bookdown.html#cb326-7" aria-hidden="true" tabindex="-1"></a><span class="at">bookdown:</span><span class="fu">:pdf_book</span><span class="kw">:</span></span>
-<span id="cb326-8"><a href="bookdown.html#cb326-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">keep_tex</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
-<span id="cb326-9"><a href="bookdown.html#cb326-9" aria-hidden="true" tabindex="-1"></a><span class="at">bookdown:</span><span class="fu">:html_book</span><span class="kw">:</span></span>
-<span id="cb326-10"><a href="bookdown.html#cb326-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">css</span><span class="kw">:</span><span class="at"> toc.css</span></span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb335-1"><a href="bookdown.html#cb335-1" tabindex="-1"></a><span class="at">bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
+<span id="cb335-2"><a href="bookdown.html#cb335-2" tabindex="-1"></a><span class="at">  </span><span class="fu">lib_dir</span><span class="kw">:</span><span class="at"> assets</span></span>
+<span id="cb335-3"><a href="bookdown.html#cb335-3" tabindex="-1"></a><span class="at">  </span><span class="fu">split_by</span><span class="kw">:</span><span class="at"> section</span></span>
+<span id="cb335-4"><a href="bookdown.html#cb335-4" tabindex="-1"></a><span class="at">  </span><span class="fu">config</span><span class="kw">:</span></span>
+<span id="cb335-5"><a href="bookdown.html#cb335-5" tabindex="-1"></a><span class="at">    </span><span class="fu">toolbar</span><span class="kw">:</span></span>
+<span id="cb335-6"><a href="bookdown.html#cb335-6" tabindex="-1"></a><span class="at">      </span><span class="fu">position</span><span class="kw">:</span><span class="at"> static</span></span>
+<span id="cb335-7"><a href="bookdown.html#cb335-7" tabindex="-1"></a><span class="at">bookdown:</span><span class="fu">:pdf_book</span><span class="kw">:</span></span>
+<span id="cb335-8"><a href="bookdown.html#cb335-8" tabindex="-1"></a><span class="at">  </span><span class="fu">keep_tex</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb335-9"><a href="bookdown.html#cb335-9" tabindex="-1"></a><span class="at">bookdown:</span><span class="fu">:html_book</span><span class="kw">:</span></span>
+<span id="cb335-10"><a href="bookdown.html#cb335-10" tabindex="-1"></a><span class="at">  </span><span class="fu">css</span><span class="kw">:</span><span class="at"> toc.css</span></span></code></pre></div>
 </div>
 </div>
 <div id="bookdown-markdown" class="section level2 hasAnchor" number="8.5">
@@ -614,28 +661,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">8.5.1</span> 公式编号<a href="bookdown.html#equations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>（1） 自动编号</strong></p>
 <p>首先把公式放在<code>equation</code>或<code>align</code>环境，其次使用语法<code>(\#eq:label)</code>给label命名。 其中<code>label</code>是自己给公式的文字标签，在<strong>bookdown</strong>中，公式标签必须以<code>eq:</code>开头。例如</p>
-<div class="sourceCode" id="cb327"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb327-1"><a href="bookdown.html#cb327-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}</span>
-<span id="cb327-2"><a href="bookdown.html#cb327-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  E=mc^2</span></span>
-<span id="cb327-3"><a href="bookdown.html#cb327-3" aria-hidden="true" tabindex="-1"></a><span class="ss">  (</span><span class="sc">\#</span><span class="ss">eq:emc)</span></span>
-<span id="cb327-4"><a href="bookdown.html#cb327-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb336-1"><a href="bookdown.html#cb336-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}</span>
+<span id="cb336-2"><a href="bookdown.html#cb336-2" tabindex="-1"></a><span class="ss">  E=mc^2</span></span>
+<span id="cb336-3"><a href="bookdown.html#cb336-3" tabindex="-1"></a><span class="ss">  (</span><span class="sc">\#</span><span class="ss">eq:emc)</span></span>
+<span id="cb336-4"><a href="bookdown.html#cb336-4" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span></code></pre></div>
 <p><span class="math display" id="eq:emc">\[\begin{equation}
   E=mc^2
   \tag{8.1}
 \end{equation}\]</span></p>
-<div class="sourceCode" id="cb328"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb328-1"><a href="bookdown.html#cb328-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
-<span id="cb328-2"><a href="bookdown.html#cb328-2" aria-hidden="true" tabindex="-1"></a><span class="ss">f(x) =&amp; </span><span class="sc">\sum</span><span class="ss">_{k=0}^</span><span class="sc">\infty</span><span class="ss"> </span><span class="sc">\frac</span><span class="ss">{1}{k!} x^k (</span><span class="sc">\#</span><span class="ss">eq:efunc-sum) </span><span class="sc">\\</span></span>
-<span id="cb328-3"><a href="bookdown.html#cb328-3" aria-hidden="true" tabindex="-1"></a><span class="ss">  = e^x (</span><span class="sc">\#</span><span class="ss">eq:efunc-ex)</span></span>
-<span id="cb328-4"><a href="bookdown.html#cb328-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb337-1"><a href="bookdown.html#cb337-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
+<span id="cb337-2"><a href="bookdown.html#cb337-2" tabindex="-1"></a><span class="ss">f(x) =&amp; </span><span class="sc">\sum</span><span class="ss">_{k=0}^</span><span class="sc">\infty</span><span class="ss"> </span><span class="sc">\frac</span><span class="ss">{1}{k!} x^k (</span><span class="sc">\#</span><span class="ss">eq:efunc-sum) </span><span class="sc">\\</span></span>
+<span id="cb337-3"><a href="bookdown.html#cb337-3" tabindex="-1"></a><span class="ss">  = e^x (</span><span class="sc">\#</span><span class="ss">eq:efunc-ex)</span></span>
+<span id="cb337-4"><a href="bookdown.html#cb337-4" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span></code></pre></div>
 <p><span class="math display" id="eq:efunc-ex" id="eq:efunc-sum">\[\begin{align}
 f(x) =&amp; \sum_{k=0}^\infty \frac{1}{k!} x^k \tag{8.2} \\
   = e^x \tag{8.3}
 \end{align}\]</span></p>
 <p><strong>（2） 手动编号</strong></p>
 <p>在用$$符号在两端界定的公式后面， 可以用命令增加人为的公式编号，如</p>
-<div class="sourceCode" id="cb329"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb329-1"><a href="bookdown.html#cb329-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb329-2"><a href="bookdown.html#cb329-2" aria-hidden="true" tabindex="-1"></a>y = f(x)</span>
-<span id="cb329-3"><a href="bookdown.html#cb329-3" aria-hidden="true" tabindex="-1"></a>\tag{*}</span>
-<span id="cb329-4"><a href="bookdown.html#cb329-4" aria-hidden="true" tabindex="-1"></a>$$</span></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb338-1"><a href="bookdown.html#cb338-1" tabindex="-1"></a>$$</span>
+<span id="cb338-2"><a href="bookdown.html#cb338-2" tabindex="-1"></a>y = f(x)</span>
+<span id="cb338-3"><a href="bookdown.html#cb338-3" tabindex="-1"></a>\tag{*}</span>
+<span id="cb338-4"><a href="bookdown.html#cb338-4" tabindex="-1"></a>$$</span></code></pre></div>
 <p><span class="math display">\[
 y = f(x)
 \tag{*}
@@ -645,11 +692,11 @@ y = f(x)
 <h3><span class="header-section-number">8.5.2</span> 定理和证明（Theorems and proofs）<a href="bookdown.html#theorems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>感觉不是很好用。</p>
 <p>要写一个定理，你可以使用下面的语法:</p>
-<div class="sourceCode" id="cb330"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb330-1"><a href="bookdown.html#cb330-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{theorem, pyth, name=&quot;Pythagorean theorem&quot;}</span></span>
-<span id="cb330-2"><a href="bookdown.html#cb330-2" aria-hidden="true" tabindex="-1"></a><span class="in">对于直角三角形, 如果 $c$ 表示斜边的长度</span></span>
-<span id="cb330-3"><a href="bookdown.html#cb330-3" aria-hidden="true" tabindex="-1"></a><span class="in">，$a$ 和 $b$ 表示另外两条边的长度，则</span></span>
-<span id="cb330-4"><a href="bookdown.html#cb330-4" aria-hidden="true" tabindex="-1"></a><span class="in">$$a^2 + b^2 = c^2$$</span></span>
-<span id="cb330-5"><a href="bookdown.html#cb330-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb339-1"><a href="bookdown.html#cb339-1" tabindex="-1"></a><span class="in">```{theorem, pyth, name=&quot;Pythagorean theorem&quot;}</span></span>
+<span id="cb339-2"><a href="bookdown.html#cb339-2" tabindex="-1"></a><span class="in">对于直角三角形, 如果 $c$ 表示斜边的长度</span></span>
+<span id="cb339-3"><a href="bookdown.html#cb339-3" tabindex="-1"></a><span class="in">，$a$ 和 $b$ 表示另外两条边的长度，则</span></span>
+<span id="cb339-4"><a href="bookdown.html#cb339-4" tabindex="-1"></a><span class="in">$$a^2 + b^2 = c^2$$</span></span>
+<span id="cb339-5"><a href="bookdown.html#cb339-5" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <div class="theorem">
 <p><span id="thm:pyth" class="theorem"><strong>定理8.1  (勾股定理) </strong></span>对于直角三角形, 如果 <span class="math inline">\(c\)</span> 表示斜边的长度
 ，<span class="math inline">\(a\)</span> 和 <span class="math inline">\(b\)</span> 表示另外两条边的长度，则
@@ -661,21 +708,22 @@ y = f(x)
 <h3><span class="header-section-number">8.5.3</span> 特殊标题（Special headers）<a href="bookdown.html#特殊标题special-headers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>在<strong>bookdown</strong>中可以使用两种特殊类型的一级标题:</p>
 <p>内容相近的章节可以作为一个“部分”。在一个部分的第一个章节文件的章标题前面增加一行， 以<code># (PART)开头</code>， 以<code>{-}</code>结尾，中间是部分的名称。<code># (PART) Part Title {-}</code>。</p>
-<div class="sourceCode" id="cb331"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb331-1"><a href="bookdown.html#cb331-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># (PART) 随机数和随机模拟 {-}</span></span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb340-1"><a href="bookdown.html#cb340-1" tabindex="-1"></a><span class="fu"># (PART) 随机数和随机模拟 {-}</span></span></code></pre></div>
 <p>书的最后可以有附录， 附录的章节将显示为<code>A.1</code>, <code>B.1</code>这样的格式。 为此， 在附录章节的第一个文件开头加如下的第一行标题行：</p>
-<div class="sourceCode" id="cb332"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb332-1"><a href="bookdown.html#cb332-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># (APPENDIX) 附录 {-}</span></span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb341-1"><a href="bookdown.html#cb341-1" tabindex="-1"></a><span class="fu"># (APPENDIX) 附录 {-}</span></span></code></pre></div>
 </div>
 <div id="文本引用text-references" class="section level3 hasAnchor" number="8.5.4">
 <h3><span class="header-section-number">8.5.4</span> 文本引用（Text references）<a href="bookdown.html#文本引用text-references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>[链接文本](#label)</code>其中label是某个标题对应的标签。 结果产生一个链接，显示为链接文本，点击时跳到label对应的章节。</p>
 <p>文本引用是带有标签label的段落。语法是<code>(ref:label)text</code>，其中<code>label</code>是唯一的标识符，而<code>text</code>是Markdown段落。例如:</p>
-<div class="sourceCode" id="cb333"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb333-1"><a href="bookdown.html#cb333-1" aria-hidden="true" tabindex="-1"></a>(ref:foo)  **此处**定义一个文本引用</span></code></pre></div>
+<div class="sourceCode" id="cb342"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb342-1"><a href="bookdown.html#cb342-1" tabindex="-1"></a>(ref:foo)  **此处**定义一个文本引用</span></code></pre></div>
 <p>然后你可以使用<code>(ref:foo)</code>来引用全文。文本引用可以在文档的任何地方使用，在为图片指定长标题或在标题中包含Markdown格式时特别有用。例如:</p>
-<div class="sourceCode" id="cb334"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb334-1"><a href="bookdown.html#cb334-1" aria-hidden="true" tabindex="-1"></a>一些文字</span>
-<span id="cb334-2"><a href="bookdown.html#cb334-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb334-3"><a href="bookdown.html#cb334-3" aria-hidden="true" tabindex="-1"></a>(ref:cool-plot)  **base** R中<span class="in">`iris`</span>数据的箱线图</span>
-<span id="cb334-4"><a href="bookdown.html#cb334-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb334-5"><a href="bookdown.html#cb334-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{r cool-plot, fig.cap=&#39;(ref:cool-plot)&#39;}</span></span>
-<span id="cb334-6"><a href="bookdown.html#cb334-6" aria-hidden="true" tabindex="-1"></a><span class="in">boxplot(Sepal.Length ~ Species, data = iris)</span></span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb343-1"><a href="bookdown.html#cb343-1" tabindex="-1"></a>一些文字</span>
+<span id="cb343-2"><a href="bookdown.html#cb343-2" tabindex="-1"></a></span>
+<span id="cb343-3"><a href="bookdown.html#cb343-3" tabindex="-1"></a>(ref:cool-plot)  **base** R中<span class="in">`iris`</span>数据的箱线图</span>
+<span id="cb343-4"><a href="bookdown.html#cb343-4" tabindex="-1"></a></span>
+<span id="cb343-5"><a href="bookdown.html#cb343-5" tabindex="-1"></a><span class="in">```{r cool-plot, fig.cap=&#39;(ref:cool-plot)&#39;}</span></span>
+<span id="cb343-6"><a href="bookdown.html#cb343-6" tabindex="-1"></a><span class="in">boxplot(Sepal.Length ~ Species, data = iris)</span></span></code></pre></div>
 <p>````</p>
 </div>
 <div id="交叉引用" class="section level3 hasAnchor" number="8.5.5">
@@ -683,33 +731,33 @@ y = f(x)
 <p><strong>bookdown</strong>包扩展了R Markdown文档中的交叉引用，允许自动交叉引用节标题、表格、图形、方程和定理。这只适用于编号的环境，因此需要为图形和表格分配标签。交叉引用的格式是<code>\@ref(type:label)</code>，其中<code>label</code>是块标签，<code>type</code>是被引用的环境。为例:</p>
 <ul>
 <li><p>标题Headers:</p>
-<div class="sourceCode" id="cb335"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb335-1"><a href="bookdown.html#cb335-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># 简介 {#intro}</span></span>
-<span id="cb335-2"><a href="bookdown.html#cb335-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb335-3"><a href="bookdown.html#cb335-3" aria-hidden="true" tabindex="-1"></a>参考见第 \@ref(intro) 章</span></code></pre></div></li>
+<div class="sourceCode" id="cb344"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb344-1"><a href="bookdown.html#cb344-1" tabindex="-1"></a><span class="fu"># 简介 {#intro}</span></span>
+<span id="cb344-2"><a href="bookdown.html#cb344-2" tabindex="-1"></a></span>
+<span id="cb344-3"><a href="bookdown.html#cb344-3" tabindex="-1"></a>参考见第 \@ref(intro) 章</span></code></pre></div></li>
 <li><p>图:</p>
-<div class="sourceCode" id="cb336"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb336-1"><a href="bookdown.html#cb336-1" aria-hidden="true" tabindex="-1"></a>见图 \@ref(fig:cars-plot)</span>
-<span id="cb336-2"><a href="bookdown.html#cb336-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb336-3"><a href="bookdown.html#cb336-3" aria-hidden="true" tabindex="-1"></a><span class="in">```{r cars-plot, fig.cap=&quot;随便起的图名&quot;}</span></span>
-<span id="cb336-4"><a href="bookdown.html#cb336-4" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars)  # 一个散点图</span></span>
-<span id="cb336-5"><a href="bookdown.html#cb336-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb345"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb345-1"><a href="bookdown.html#cb345-1" tabindex="-1"></a>见图 \@ref(fig:cars-plot)</span>
+<span id="cb345-2"><a href="bookdown.html#cb345-2" tabindex="-1"></a></span>
+<span id="cb345-3"><a href="bookdown.html#cb345-3" tabindex="-1"></a><span class="in">```{r cars-plot, fig.cap=&quot;随便起的图名&quot;}</span></span>
+<span id="cb345-4"><a href="bookdown.html#cb345-4" tabindex="-1"></a><span class="in">plot(cars)  # 一个散点图</span></span>
+<span id="cb345-5"><a href="bookdown.html#cb345-5" tabindex="-1"></a><span class="in">```</span></span></code></pre></div></li>
 <li><p>表格:</p>
-<div class="sourceCode" id="cb337"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb337-1"><a href="bookdown.html#cb337-1" aria-hidden="true" tabindex="-1"></a>见表 \@ref(tab:mtcars)</span>
-<span id="cb337-2"><a href="bookdown.html#cb337-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb337-3"><a href="bookdown.html#cb337-3" aria-hidden="true" tabindex="-1"></a><span class="in">```{r mtcars}</span></span>
-<span id="cb337-4"><a href="bookdown.html#cb337-4" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::kable(mtcars[1:5, 1:5], caption = &quot;随便起的表名&quot;)</span></span>
-<span id="cb337-5"><a href="bookdown.html#cb337-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb346"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb346-1"><a href="bookdown.html#cb346-1" tabindex="-1"></a>见表 \@ref(tab:mtcars)</span>
+<span id="cb346-2"><a href="bookdown.html#cb346-2" tabindex="-1"></a></span>
+<span id="cb346-3"><a href="bookdown.html#cb346-3" tabindex="-1"></a><span class="in">```{r mtcars}</span></span>
+<span id="cb346-4"><a href="bookdown.html#cb346-4" tabindex="-1"></a><span class="in">knitr::kable(mtcars[1:5, 1:5], caption = &quot;随便起的表名&quot;)</span></span>
+<span id="cb346-5"><a href="bookdown.html#cb346-5" tabindex="-1"></a><span class="in">```</span></span></code></pre></div></li>
 <li><p>定理</p>
-<div class="sourceCode" id="cb338"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb338-1"><a href="bookdown.html#cb338-1" aria-hidden="true" tabindex="-1"></a>See Theorem \@ref(thm:boring)</span>
-<span id="cb338-2"><a href="bookdown.html#cb338-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb338-3"><a href="bookdown.html#cb338-3" aria-hidden="true" tabindex="-1"></a><span class="in">```{theorem, boring}</span></span>
-<span id="cb338-4"><a href="bookdown.html#cb338-4" aria-hidden="true" tabindex="-1"></a><span class="in">Here is my theorem.</span></span>
-<span id="cb338-5"><a href="bookdown.html#cb338-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb347"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb347-1"><a href="bookdown.html#cb347-1" tabindex="-1"></a>See Theorem \@ref(thm:boring)</span>
+<span id="cb347-2"><a href="bookdown.html#cb347-2" tabindex="-1"></a></span>
+<span id="cb347-3"><a href="bookdown.html#cb347-3" tabindex="-1"></a><span class="in">```{theorem, boring}</span></span>
+<span id="cb347-4"><a href="bookdown.html#cb347-4" tabindex="-1"></a><span class="in">Here is my theorem.</span></span>
+<span id="cb347-5"><a href="bookdown.html#cb347-5" tabindex="-1"></a><span class="in">```</span></span></code></pre></div></li>
 <li><p>公式</p>
-<div class="sourceCode" id="cb339"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb339-1"><a href="bookdown.html#cb339-1" aria-hidden="true" tabindex="-1"></a>见公式 \@ref(eq:linear)</span>
-<span id="cb339-2"><a href="bookdown.html#cb339-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb339-3"><a href="bookdown.html#cb339-3" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
-<span id="cb339-4"><a href="bookdown.html#cb339-4" aria-hidden="true" tabindex="-1"></a>a + bx = c  (<span class="sc">\#</span>eq:linear)</span>
-<span id="cb339-5"><a href="bookdown.html#cb339-5" aria-hidden="true" tabindex="-1"></a>\end{equation}</span></code></pre></div></li>
+<div class="sourceCode" id="cb348"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb348-1"><a href="bookdown.html#cb348-1" tabindex="-1"></a>见公式 \@ref(eq:linear)</span>
+<span id="cb348-2"><a href="bookdown.html#cb348-2" tabindex="-1"></a></span>
+<span id="cb348-3"><a href="bookdown.html#cb348-3" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb348-4"><a href="bookdown.html#cb348-4" tabindex="-1"></a>a + bx = c  (<span class="sc">\#</span>eq:linear)</span>
+<span id="cb348-5"><a href="bookdown.html#cb348-5" tabindex="-1"></a>\end{equation}</span></code></pre></div></li>
 </ul>
 <p>labels名只允许 (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>), <code>-</code>, <code>/</code>,和 <code>:</code></p>
 </div>
@@ -746,8 +794,8 @@ y = f(x)
 <h4><span class="header-section-number">8.6.0.1</span> HTML<a href="bookdown.html#html-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>对gitbook格式， 即HTML网页格式， 编译完成后会弹出一个预览窗口， 其中的“Open in Browser”按钮可以将内容在操作系统默认的网络浏览器中打开。</p>
 <p>另一种办法是在命令窗口用如下命令编译（以输出gitbook为例）， 我个人认为这种办法更好用：</p>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="bookdown.html#cb340-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, </span>
-<span id="cb340-2"><a href="bookdown.html#cb340-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::gitbook&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="bookdown.html#cb349-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, </span>
+<span id="cb349-2"><a href="bookdown.html#cb349-2" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::gitbook&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>

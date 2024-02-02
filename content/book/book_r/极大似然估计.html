@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>15 极大似然估计 | R语言编程</title>
+  <title>16 极大似然估计 | R语言编程</title>
   <meta name="description" content="张敬信老师的R语言学习笔记" />
-  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="15 极大似然估计 | R语言编程" />
+  <meta property="og:title" content="16 极大似然估计 | R语言编程" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="张敬信老师的R语言学习笔记" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="15 极大似然估计 | R语言编程" />
+  <meta name="twitter:title" content="16 极大似然估计 | R语言编程" />
   
   <meta name="twitter:description" content="张敬信老师的R语言学习笔记" />
   
@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="infer包.html"/>
+<link rel="prev" href="gamma函数.html"/>
 <link rel="next" href="正则表达式.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -51,7 +51,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.10.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
@@ -144,6 +144,32 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 </head>
 
@@ -189,35 +215,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="数据操作.html"><a href="数据操作.html"><i class="fa fa-check"></i><b>3</b> 数据操作</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="数据操作.html"><a href="数据操作.html#数据连接"><i class="fa fa-check"></i><b>3.1</b> 数据连接</a>
+<li class="chapter" data-level="3.1" data-path="数据操作.html"><a href="数据操作.html#数据读写"><i class="fa fa-check"></i><b>3.1</b> 数据读写</a></li>
+<li class="chapter" data-level="3.2" data-path="数据操作.html"><a href="数据操作.html#数据连接"><i class="fa fa-check"></i><b>3.2</b> 数据连接</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="数据操作.html"><a href="数据操作.html#合并行与和并列"><i class="fa fa-check"></i><b>3.1.1</b> 合并行与和并列</a></li>
-<li class="chapter" data-level="3.1.2" data-path="数据操作.html"><a href="数据操作.html#根据值匹配合并数据框"><i class="fa fa-check"></i><b>3.1.2</b> 根据值匹配合并数据框</a></li>
-<li class="chapter" data-level="3.1.3" data-path="数据操作.html"><a href="数据操作.html#实现r中实现stata的merge命令"><i class="fa fa-check"></i><b>3.1.3</b> 实现R中实现stata的merge命令</a></li>
+<li class="chapter" data-level="3.2.1" data-path="数据操作.html"><a href="数据操作.html#合并行与和并列"><i class="fa fa-check"></i><b>3.2.1</b> 合并行与和并列</a></li>
+<li class="chapter" data-level="3.2.2" data-path="数据操作.html"><a href="数据操作.html#根据值匹配合并数据框"><i class="fa fa-check"></i><b>3.2.2</b> 根据值匹配合并数据框</a></li>
+<li class="chapter" data-level="3.2.3" data-path="数据操作.html"><a href="数据操作.html#实现r中实现stata的merge命令"><i class="fa fa-check"></i><b>3.2.3</b> 实现R中实现stata的merge命令</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="数据操作.html"><a href="数据操作.html#数据操作-1"><i class="fa fa-check"></i><b>3.2</b> 数据操作</a>
+<li class="chapter" data-level="3.3" data-path="数据操作.html"><a href="数据操作.html#数据操作-1"><i class="fa fa-check"></i><b>3.3</b> 数据操作</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="数据操作.html"><a href="数据操作.html#选择列select"><i class="fa fa-check"></i><b>3.2.1</b> 选择列（select）</a></li>
-<li class="chapter" data-level="3.2.2" data-path="数据操作.html"><a href="数据操作.html#选择列语法"><i class="fa fa-check"></i><b>3.2.2</b> 选择列语法</a></li>
-<li class="chapter" data-level="3.2.3" data-path="数据操作.html"><a href="数据操作.html#选择列的例子"><i class="fa fa-check"></i><b>3.2.3</b> 选择列的例子</a></li>
-<li class="chapter" data-level="3.2.4" data-path="数据操作.html"><a href="数据操作.html#用--删除列"><i class="fa fa-check"></i><b>3.2.4</b> 用“-” 删除列</a></li>
-<li class="chapter" data-level="3.2.5" data-path="数据操作.html"><a href="数据操作.html#调整列的顺序"><i class="fa fa-check"></i><b>3.2.5</b> 调整列的顺序</a></li>
-<li class="chapter" data-level="3.2.6" data-path="数据操作.html"><a href="数据操作.html#重命名列"><i class="fa fa-check"></i><b>3.2.6</b> 重命名列</a></li>
+<li class="chapter" data-level="3.3.1" data-path="数据操作.html"><a href="数据操作.html#选择列select"><i class="fa fa-check"></i><b>3.3.1</b> 选择列（select）</a></li>
+<li class="chapter" data-level="3.3.2" data-path="数据操作.html"><a href="数据操作.html#选择列语法"><i class="fa fa-check"></i><b>3.3.2</b> 选择列语法</a></li>
+<li class="chapter" data-level="3.3.3" data-path="数据操作.html"><a href="数据操作.html#选择列的例子"><i class="fa fa-check"></i><b>3.3.3</b> 选择列的例子</a></li>
+<li class="chapter" data-level="3.3.4" data-path="数据操作.html"><a href="数据操作.html#用--删除列"><i class="fa fa-check"></i><b>3.3.4</b> 用“-” 删除列</a></li>
+<li class="chapter" data-level="3.3.5" data-path="数据操作.html"><a href="数据操作.html#调整列的顺序"><i class="fa fa-check"></i><b>3.3.5</b> 调整列的顺序</a></li>
+<li class="chapter" data-level="3.3.6" data-path="数据操作.html"><a href="数据操作.html#重命名列"><i class="fa fa-check"></i><b>3.3.6</b> 重命名列</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="数据操作.html"><a href="数据操作.html#分组汇总"><i class="fa fa-check"></i><b>3.3</b> 分组汇总</a>
+<li class="chapter" data-level="3.4" data-path="数据操作.html"><a href="数据操作.html#分组汇总"><i class="fa fa-check"></i><b>3.4</b> 分组汇总</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="数据操作.html"><a href="数据操作.html#创建分组"><i class="fa fa-check"></i><b>3.3.1</b> 创建分组</a></li>
-<li class="chapter" data-level="3.3.2" data-path="数据操作.html"><a href="数据操作.html#分组汇总-1"><i class="fa fa-check"></i><b>3.3.2</b> 分组汇总</a></li>
-<li class="chapter" data-level="3.3.3" data-path="数据操作.html"><a href="数据操作.html#自己的例子"><i class="fa fa-check"></i><b>3.3.3</b> 自己的例子</a></li>
+<li class="chapter" data-level="3.4.1" data-path="数据操作.html"><a href="数据操作.html#创建分组"><i class="fa fa-check"></i><b>3.4.1</b> 创建分组</a></li>
+<li class="chapter" data-level="3.4.2" data-path="数据操作.html"><a href="数据操作.html#分组汇总-1"><i class="fa fa-check"></i><b>3.4.2</b> 分组汇总</a></li>
+<li class="chapter" data-level="3.4.3" data-path="数据操作.html"><a href="数据操作.html#自己的例子"><i class="fa fa-check"></i><b>3.4.3</b> 自己的例子</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="数据操作.html"><a href="数据操作.html#其他数据操作"><i class="fa fa-check"></i><b>3.4</b> 其他数据操作</a>
+<li class="chapter" data-level="3.5" data-path="数据操作.html"><a href="数据操作.html#其他数据操作"><i class="fa fa-check"></i><b>3.5</b> 其他数据操作</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="数据操作.html"><a href="数据操作.html#按行汇总"><i class="fa fa-check"></i><b>3.4.1</b> 按行汇总</a></li>
-<li class="chapter" data-level="3.4.2" data-path="数据操作.html"><a href="数据操作.html#窗口函数"><i class="fa fa-check"></i><b>3.4.2</b> 窗口函数</a></li>
+<li class="chapter" data-level="3.5.1" data-path="数据操作.html"><a href="数据操作.html#按行汇总"><i class="fa fa-check"></i><b>3.5.1</b> 按行汇总</a></li>
+<li class="chapter" data-level="3.5.2" data-path="数据操作.html"><a href="数据操作.html#窗口函数"><i class="fa fa-check"></i><b>3.5.2</b> 窗口函数</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="数据操作.html"><a href="数据操作.html#整洁计算"><i class="fa fa-check"></i><b>3.5</b> 整洁计算</a>
+<li class="chapter" data-level="3.6" data-path="数据操作.html"><a href="数据操作.html#整洁计算"><i class="fa fa-check"></i><b>3.6</b> 整洁计算</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="数据操作.html"><a href="数据操作.html#数据屏蔽与整洁选择"><i class="fa fa-check"></i><b>3.5.1</b> 数据屏蔽与整洁选择</a></li>
+<li class="chapter" data-level="3.6.1" data-path="数据操作.html"><a href="数据操作.html#数据屏蔽与整洁选择"><i class="fa fa-check"></i><b>3.6.1</b> 数据屏蔽与整洁选择</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="可视化与建模.html"><a href="可视化与建模.html"><i class="fa fa-check"></i><b>4</b> 可视化与建模</a>
@@ -295,11 +322,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5" data-path="markdown.html"><a href="markdown.html#数学公式"><i class="fa fa-check"></i><b>6.5</b> 数学公式</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="markdown.html"><a href="markdown.html#markdown如何显示数学公式"><i class="fa fa-check"></i><b>6.5.1</b> Markdown如何显示数学公式</a></li>
-<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.2</b> 数学公式的类别</a></li>
-<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.3</b> 上横线</a></li>
-<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.4</b> hat</a></li>
-<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.5</b> 换行对齐</a></li>
-<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.6</b> 分段函数</a></li>
+<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#公式编号"><i class="fa fa-check"></i><b>6.5.2</b> 公式编号</a></li>
+<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.3</b> 数学公式的类别</a></li>
+<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.4</b> 上横线</a></li>
+<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.5</b> hat</a></li>
+<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.6</b> 换行对齐</a></li>
+<li class="chapter" data-level="6.5.7" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.7</b> 分段函数</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>7</b> RMarkdown</a>
@@ -318,6 +346,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.8" data-path="rmarkdown.html"><a href="rmarkdown.html#行内代码"><i class="fa fa-check"></i><b>7.3.8</b> 行内代码</a></li>
 <li class="chapter" data-level="7.3.9" data-path="rmarkdown.html"><a href="rmarkdown.html#在rmarkdown使用其他语言"><i class="fa fa-check"></i><b>7.3.9</b> 在RMarkdown使用其他语言</a></li>
 <li class="chapter" data-level="7.3.10" data-path="rmarkdown.html"><a href="rmarkdown.html#交互式文档"><i class="fa fa-check"></i><b>7.3.10</b> 交互式文档</a></li>
+<li class="chapter" data-level="7.3.11" data-path="rmarkdown.html"><a href="rmarkdown.html#参考文献"><i class="fa fa-check"></i><b>7.3.11</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="rmarkdown.html"><a href="rmarkdown.html#文档格式htmlpdfword"><i class="fa fa-check"></i><b>7.4</b> 文档格式（HTML,PDF,Word…）</a>
 <ul>
@@ -421,41 +450,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="infer包.html"><a href="infer包.html#卡方检验"><i class="fa fa-check"></i><b>14.2</b> 卡方检验</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>15</b> 极大似然估计</a>
+<li class="chapter" data-level="15" data-path="gamma函数.html"><a href="gamma函数.html"><i class="fa fa-check"></i><b>15</b> Gamma函数</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>15.1</b> 自定义极大似然函数</a>
+<li class="chapter" data-level="15.1" data-path="gamma函数.html"><a href="gamma函数.html#简史"><i class="fa fa-check"></i><b>15.1</b> 简史</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>15.1.1</b> 正态分布</a></li>
-<li class="chapter" data-level="15.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>15.1.2</b> 指数分布</a></li>
+<li class="chapter" data-level="15.1.1" data-path="gamma函数.html"><a href="gamma函数.html#动机"><i class="fa fa-check"></i><b>15.1.1</b> 动机</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="gamma函数.html"><a href="gamma函数.html#定义"><i class="fa fa-check"></i><b>15.2</b> 定义</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="gamma函数.html"><a href="gamma函数.html#euler定义"><i class="fa fa-check"></i><b>15.2.1</b> Euler定义</a></li>
+<li class="chapter" data-level="15.2.2" data-path="gamma函数.html"><a href="gamma函数.html#gauss定义"><i class="fa fa-check"></i><b>15.2.2</b> Gauss定义</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>16</b> 正则表达式</a>
+<li class="chapter" data-level="16" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>16</b> 极大似然估计</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>16.1</b> grep函数</a>
+<li class="chapter" data-level="16.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>16.1</b> 自定义极大似然函数</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>16.1.1</b> 函数参数</a></li>
-<li class="chapter" data-level="16.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>16.1.2</b> 模式（pattern）与匹配（match）</a></li>
-</ul></li>
-<li class="chapter" data-level="16.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>16.2</b> 元字符</a></li>
-<li class="chapter" data-level="16.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>16.3</b> 常用文本处理函数</a></li>
-<li class="chapter" data-level="16.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>16.4</b> 案例</a>
-<ul>
-<li class="chapter" data-level="16.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>16.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
-<li class="chapter" data-level="16.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>16.4.2</b> 全宋词</a></li>
-<li class="chapter" data-level="16.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>16.4.3</b> SCI（筛选行）</a></li>
+<li class="chapter" data-level="16.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>16.1.1</b> 正态分布</a></li>
+<li class="chapter" data-level="16.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>16.1.2</b> 指数分布</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>17</b> 一些自定义函数</a>
+<li class="chapter" data-level="17" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>17</b> 正则表达式</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>17.1</b> 数据处理</a>
+<li class="chapter" data-level="17.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>17.1</b> grep函数</a>
 <ul>
-<li class="chapter" data-level="17.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>17.1.1</b> 分组排序并排名</a></li>
+<li class="chapter" data-level="17.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>17.1.1</b> 函数参数</a></li>
+<li class="chapter" data-level="17.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>17.1.2</b> 模式（pattern）与匹配（match）</a></li>
 </ul></li>
-<li class="chapter" data-level="17.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>17.2</b> 统计相关</a>
+<li class="chapter" data-level="17.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>17.2</b> 元字符</a></li>
+<li class="chapter" data-level="17.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>17.3</b> 常用文本处理函数</a></li>
+<li class="chapter" data-level="17.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>17.4</b> 案例</a>
 <ul>
-<li class="chapter" data-level="17.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>17.2.1</b> 汇总数据t检验</a></li>
-<li class="chapter" data-level="17.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>17.2.2</b> 卡方检验</a></li>
+<li class="chapter" data-level="17.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>17.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
+<li class="chapter" data-level="17.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>17.4.2</b> 全宋词</a></li>
+<li class="chapter" data-level="17.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>17.4.3</b> SCI（筛选行）</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>18</b> 一些自定义函数</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>18.1</b> 数据处理</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>18.1.1</b> 分组排序并排名</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>18.2</b> 统计相关</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>18.2.1</b> 汇总数据t检验</a></li>
+<li class="chapter" data-level="18.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>18.2.2</b> 卡方检验</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="一些自定义函数-1.html"><a href="一些自定义函数-1.html"><i class="fa fa-check"></i><b>19</b> 一些自定义函数</a></li>
+<li class="chapter" data-level="20" data-path="随机抽样.html"><a href="随机抽样.html"><i class="fa fa-check"></i><b>20</b> 随机抽样</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="随机抽样.html"><a href="随机抽样.html#inverse-cdf-transformation逆cdf变化法"><i class="fa fa-check"></i><b>20.1</b> Inverse CDF Transformation（逆CDF变化法）</a></li>
+<li class="chapter" data-level="20.2" data-path="随机抽样.html"><a href="随机抽样.html#accept-reject-sampling-method接受-拒绝抽样"><i class="fa fa-check"></i><b>20.2</b> accept-reject sampling method（接受-拒绝抽样）</a></li>
 </ul></li>
 </ul>
 
@@ -474,12 +521,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="极大似然估计" class="section level1 hasAnchor" number="15">
-<h1><span class="header-section-number">15</span> 极大似然估计<a href="极大似然估计.html#极大似然估计" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="自定义极大似然函数" class="section level2 hasAnchor" number="15.1">
-<h2><span class="header-section-number">15.1</span> 自定义极大似然函数<a href="极大似然估计.html#自定义极大似然函数" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="正态分布" class="section level3 hasAnchor" number="15.1.1">
-<h3><span class="header-section-number">15.1.1</span> 正态分布<a href="极大似然估计.html#正态分布" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="极大似然估计" class="section level1 hasAnchor" number="16">
+<h1><span class="header-section-number">16</span> 极大似然估计<a href="极大似然估计.html#极大似然估计" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="自定义极大似然函数" class="section level2 hasAnchor" number="16.1">
+<h2><span class="header-section-number">16.1</span> 自定义极大似然函数<a href="极大似然估计.html#自定义极大似然函数" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="正态分布" class="section level3 hasAnchor" number="16.1.1">
+<h3><span class="header-section-number">16.1.1</span> 正态分布<a href="极大似然估计.html#正态分布" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>正态分布的<strong>概率密度函数</strong>：</p>
 <p><span class="math display">\[
 f(x)=\frac{1}{\sqrt{2 \pi}\sigma} e ^{- \frac{(x-\mu)^{2}}{2\sigma^2}}
@@ -499,23 +546,23 @@ lnL(\mu,\sigma)&amp;=n ln \frac{1}{\sqrt{2 \pi} \sigma} - \sum_{i=1}^{n} \frac{(
 \end{aligned}
 \]</span></p>
 <p>得到对数最大似然函数后，再利用R中的<code>optim</code>函数求解对数最大似然函数取极值时对应的参数值 <span class="math inline">\(\mu\)</span>和<span class="math inline">\(\sigma\)</span>。</p>
-<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="极大似然估计.html#cb373-1" aria-hidden="true" tabindex="-1"></a>norm.fun<span class="ot">&lt;-</span> <span class="cf">function</span>(theta,x) <span class="co"># 创建似然函数</span></span>
-<span id="cb373-2"><a href="极大似然估计.html#cb373-2" aria-hidden="true" tabindex="-1"></a>{  </span>
-<span id="cb373-3"><a href="极大似然估计.html#cb373-3" aria-hidden="true" tabindex="-1"></a>  mu<span class="ot">&lt;-</span> theta[<span class="dv">1</span>]</span>
-<span id="cb373-4"><a href="极大似然估计.html#cb373-4" aria-hidden="true" tabindex="-1"></a>  sigma<span class="ot">&lt;-</span> theta[<span class="dv">2</span>]   </span>
-<span id="cb373-5"><a href="极大似然估计.html#cb373-5" aria-hidden="true" tabindex="-1"></a>  n<span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
-<span id="cb373-6"><a href="极大似然估计.html#cb373-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 似然函数，再求其对数</span></span>
-<span id="cb373-7"><a href="极大似然估计.html#cb373-7" aria-hidden="true" tabindex="-1"></a>  logL<span class="ot">&lt;-</span> n<span class="sc">*</span><span class="fu">log</span>( <span class="dv">1</span><span class="sc">/</span>( <span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>pi)<span class="sc">*</span>sigma))  <span class="sc">-</span> <span class="fu">sum</span>((x<span class="sc">-</span>mu)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>sigma<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb373-8"><a href="极大似然估计.html#cb373-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="sc">-</span>logL)  <span class="co"># 因为R中只有最小化函数optim(),我们只需要参数的值，最大化 logL 和最小化 -logL 一致的</span></span>
-<span id="cb373-9"><a href="极大似然估计.html#cb373-9" aria-hidden="true" tabindex="-1"></a>}  </span>
-<span id="cb373-10"><a href="极大似然估计.html#cb373-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb373-11"><a href="极大似然估计.html#cb373-11" aria-hidden="true" tabindex="-1"></a>theta0<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="co">#初始化两个参数作为迭代初始值</span></span>
-<span id="cb373-12"><a href="极大似然估计.html#cb373-12" aria-hidden="true" tabindex="-1"></a>X<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">50</span> <span class="co">#抽出的样本（这里我以1至50作为数据样本）</span></span>
-<span id="cb373-13"><a href="极大似然估计.html#cb373-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb373-14"><a href="极大似然估计.html#cb373-14" aria-hidden="true" tabindex="-1"></a>result<span class="ot">=</span><span class="fu">optim</span>(theta0,norm.fun,<span class="at">x=</span>X)</span>
-<span id="cb373-15"><a href="极大似然估计.html#cb373-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 用R中内置的optim()最小化函数对 似然函数优化，求出最优值的两个参数u、sigma</span></span>
-<span id="cb373-16"><a href="极大似然估计.html#cb373-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 参数的值保存在result$&#39;par&#39; 中，有两个值，第一个是u 第二个是sigma</span></span>
-<span id="cb373-17"><a href="极大似然估计.html#cb373-17" aria-hidden="true" tabindex="-1"></a>result</span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="极大似然估计.html#cb382-1" tabindex="-1"></a>norm.fun<span class="ot">&lt;-</span> <span class="cf">function</span>(theta,x) <span class="co"># 创建似然函数</span></span>
+<span id="cb382-2"><a href="极大似然估计.html#cb382-2" tabindex="-1"></a>{  </span>
+<span id="cb382-3"><a href="极大似然估计.html#cb382-3" tabindex="-1"></a>  mu<span class="ot">&lt;-</span> theta[<span class="dv">1</span>]</span>
+<span id="cb382-4"><a href="极大似然估计.html#cb382-4" tabindex="-1"></a>  sigma<span class="ot">&lt;-</span> theta[<span class="dv">2</span>]   </span>
+<span id="cb382-5"><a href="极大似然估计.html#cb382-5" tabindex="-1"></a>  n<span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb382-6"><a href="极大似然估计.html#cb382-6" tabindex="-1"></a>  <span class="co"># 似然函数，再求其对数</span></span>
+<span id="cb382-7"><a href="极大似然估计.html#cb382-7" tabindex="-1"></a>  logL<span class="ot">&lt;-</span> n<span class="sc">*</span><span class="fu">log</span>( <span class="dv">1</span><span class="sc">/</span>( <span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>pi)<span class="sc">*</span>sigma))  <span class="sc">-</span> <span class="fu">sum</span>((x<span class="sc">-</span>mu)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>sigma<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb382-8"><a href="极大似然估计.html#cb382-8" tabindex="-1"></a>  <span class="fu">return</span>(<span class="sc">-</span>logL)  <span class="co"># 因为R中只有最小化函数optim(),我们只需要参数的值，最大化 logL 和最小化 -logL 一致的</span></span>
+<span id="cb382-9"><a href="极大似然估计.html#cb382-9" tabindex="-1"></a>}  </span>
+<span id="cb382-10"><a href="极大似然估计.html#cb382-10" tabindex="-1"></a></span>
+<span id="cb382-11"><a href="极大似然估计.html#cb382-11" tabindex="-1"></a>theta0<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="co">#初始化两个参数作为迭代初始值</span></span>
+<span id="cb382-12"><a href="极大似然估计.html#cb382-12" tabindex="-1"></a>X<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">50</span> <span class="co">#抽出的样本（这里我以1至50作为数据样本）</span></span>
+<span id="cb382-13"><a href="极大似然估计.html#cb382-13" tabindex="-1"></a></span>
+<span id="cb382-14"><a href="极大似然估计.html#cb382-14" tabindex="-1"></a>result<span class="ot">=</span><span class="fu">optim</span>(theta0,norm.fun,<span class="at">x=</span>X)</span>
+<span id="cb382-15"><a href="极大似然估计.html#cb382-15" tabindex="-1"></a><span class="co"># 用R中内置的optim()最小化函数对 似然函数优化，求出最优值的两个参数u、sigma</span></span>
+<span id="cb382-16"><a href="极大似然估计.html#cb382-16" tabindex="-1"></a><span class="co"># 参数的值保存在result$&#39;par&#39; 中，有两个值，第一个是u 第二个是sigma</span></span>
+<span id="cb382-17"><a href="极大似然估计.html#cb382-17" tabindex="-1"></a>result</span></code></pre></div>
 <pre><code>## $par
 ## [1] 25.48969 14.43959
 ## 
@@ -533,8 +580,8 @@ lnL(\mu,\sigma)&amp;=n ln \frac{1}{\sqrt{2 \pi} \sigma} - \sum_{i=1}^{n} \frac{(
 ## NULL</code></pre>
 <p>在<span class="math inline">\(lnL\)</span>取得最大值时（即<span class="math inline">\(-lnL\)</span>取得最小值时），解出的<span class="math inline">\(\mu\)</span>的参数值为25.48969，<span class="math inline">\(\sigma\)</span>的参数估计值为14.43959，<span class="math inline">\(-lnL\)</span>为204.4154。</p>
 </div>
-<div id="指数分布" class="section level3 hasAnchor" number="15.1.2">
-<h3><span class="header-section-number">15.1.2</span> 指数分布<a href="极大似然估计.html#指数分布" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="指数分布" class="section level3 hasAnchor" number="16.1.2">
+<h3><span class="header-section-number">16.1.2</span> 指数分布<a href="极大似然估计.html#指数分布" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>指数分布的<strong>概率密度函数</strong>：</p>
 <p><span class="math display">\[
 f(x)=
@@ -558,17 +605,17 @@ lnL(\lambda)&amp;=nln\lambda -\lambda \sum_{i=1}^n x_i
 \end{aligned}
 \]</span></p>
 <p>得到对数最大似然函数后，再利用R中的<code>optim</code>函数求解对数最大似然函数取极值时对应的参数值 <span class="math inline">\(\lambda\)</span>。</p>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="极大似然估计.html#cb375-1" aria-hidden="true" tabindex="-1"></a>exp.fun <span class="ot">&lt;-</span> <span class="cf">function</span>(theta,x){</span>
-<span id="cb375-2"><a href="极大似然估计.html#cb375-2" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
-<span id="cb375-3"><a href="极大似然估计.html#cb375-3" aria-hidden="true" tabindex="-1"></a>  logL <span class="ot">&lt;-</span> n<span class="sc">*</span><span class="fu">log</span>(theta)<span class="sc">-</span>theta<span class="sc">*</span><span class="fu">sum</span>(x)</span>
-<span id="cb375-4"><a href="极大似然估计.html#cb375-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="sc">-</span>logL)</span>
-<span id="cb375-5"><a href="极大似然估计.html#cb375-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb375-6"><a href="极大似然估计.html#cb375-6" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">50</span></span>
-<span id="cb375-7"><a href="极大似然估计.html#cb375-7" aria-hidden="true" tabindex="-1"></a>lamda<span class="ot">=</span><span class="fl">1e-2</span></span>
-<span id="cb375-8"><a href="极大似然估计.html#cb375-8" aria-hidden="true" tabindex="-1"></a>result<span class="ot">=</span><span class="fu">optim</span>(<span class="at">par =</span> lamda,<span class="at">fn =</span> exp.fun,<span class="at">x=</span>X) <span class="co">#运行会有一些警告，说optim（）优化的结果不一定正确，但这里是正确的，不影响</span></span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="极大似然估计.html#cb384-1" tabindex="-1"></a>exp.fun <span class="ot">&lt;-</span> <span class="cf">function</span>(theta,x){</span>
+<span id="cb384-2"><a href="极大似然估计.html#cb384-2" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb384-3"><a href="极大似然估计.html#cb384-3" tabindex="-1"></a>  logL <span class="ot">&lt;-</span> n<span class="sc">*</span><span class="fu">log</span>(theta)<span class="sc">-</span>theta<span class="sc">*</span><span class="fu">sum</span>(x)</span>
+<span id="cb384-4"><a href="极大似然估计.html#cb384-4" tabindex="-1"></a>  <span class="fu">return</span>(<span class="sc">-</span>logL)</span>
+<span id="cb384-5"><a href="极大似然估计.html#cb384-5" tabindex="-1"></a>}</span>
+<span id="cb384-6"><a href="极大似然估计.html#cb384-6" tabindex="-1"></a>x<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">50</span></span>
+<span id="cb384-7"><a href="极大似然估计.html#cb384-7" tabindex="-1"></a>lamda<span class="ot">=</span><span class="fl">1e-2</span></span>
+<span id="cb384-8"><a href="极大似然估计.html#cb384-8" tabindex="-1"></a>result<span class="ot">=</span><span class="fu">optim</span>(<span class="at">par =</span> lamda,<span class="at">fn =</span> exp.fun,<span class="at">x=</span>X) <span class="co">#运行会有一些警告，说optim（）优化的结果不一定正确，但这里是正确的，不影响</span></span></code></pre></div>
 <pre><code>## Warning in optim(par = lamda, fn = exp.fun, x = X): one-dimensional optimization by Nelder-Mead is unreliable:
 ## use &quot;Brent&quot; or optimize() directly</code></pre>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="极大似然估计.html#cb377-1" aria-hidden="true" tabindex="-1"></a>result </span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="极大似然估计.html#cb386-1" tabindex="-1"></a>result </span></code></pre></div>
 <pre><code>## $par
 ## [1] 0.03921875
 ## 
@@ -594,7 +641,7 @@ lnL(\lambda)&amp;=nln\lambda -\lambda \sum_{i=1}^n x_i
           </div>
         </div>
       </div>
-<a href="infer包.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gamma函数.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="正则表达式.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

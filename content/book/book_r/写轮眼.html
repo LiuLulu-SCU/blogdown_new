@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 写轮眼 | R语言编程</title>
   <meta name="description" content="张敬信老师的R语言学习笔记" />
-  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 写轮眼 | R语言编程" />
   <meta property="og:type" content="book" />
@@ -51,7 +51,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.10.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
@@ -144,6 +144,32 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 </head>
 
@@ -189,35 +215,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="数据操作.html"><a href="数据操作.html"><i class="fa fa-check"></i><b>3</b> 数据操作</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="数据操作.html"><a href="数据操作.html#数据连接"><i class="fa fa-check"></i><b>3.1</b> 数据连接</a>
+<li class="chapter" data-level="3.1" data-path="数据操作.html"><a href="数据操作.html#数据读写"><i class="fa fa-check"></i><b>3.1</b> 数据读写</a></li>
+<li class="chapter" data-level="3.2" data-path="数据操作.html"><a href="数据操作.html#数据连接"><i class="fa fa-check"></i><b>3.2</b> 数据连接</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="数据操作.html"><a href="数据操作.html#合并行与和并列"><i class="fa fa-check"></i><b>3.1.1</b> 合并行与和并列</a></li>
-<li class="chapter" data-level="3.1.2" data-path="数据操作.html"><a href="数据操作.html#根据值匹配合并数据框"><i class="fa fa-check"></i><b>3.1.2</b> 根据值匹配合并数据框</a></li>
-<li class="chapter" data-level="3.1.3" data-path="数据操作.html"><a href="数据操作.html#实现r中实现stata的merge命令"><i class="fa fa-check"></i><b>3.1.3</b> 实现R中实现stata的merge命令</a></li>
+<li class="chapter" data-level="3.2.1" data-path="数据操作.html"><a href="数据操作.html#合并行与和并列"><i class="fa fa-check"></i><b>3.2.1</b> 合并行与和并列</a></li>
+<li class="chapter" data-level="3.2.2" data-path="数据操作.html"><a href="数据操作.html#根据值匹配合并数据框"><i class="fa fa-check"></i><b>3.2.2</b> 根据值匹配合并数据框</a></li>
+<li class="chapter" data-level="3.2.3" data-path="数据操作.html"><a href="数据操作.html#实现r中实现stata的merge命令"><i class="fa fa-check"></i><b>3.2.3</b> 实现R中实现stata的merge命令</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="数据操作.html"><a href="数据操作.html#数据操作-1"><i class="fa fa-check"></i><b>3.2</b> 数据操作</a>
+<li class="chapter" data-level="3.3" data-path="数据操作.html"><a href="数据操作.html#数据操作-1"><i class="fa fa-check"></i><b>3.3</b> 数据操作</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="数据操作.html"><a href="数据操作.html#选择列select"><i class="fa fa-check"></i><b>3.2.1</b> 选择列（select）</a></li>
-<li class="chapter" data-level="3.2.2" data-path="数据操作.html"><a href="数据操作.html#选择列语法"><i class="fa fa-check"></i><b>3.2.2</b> 选择列语法</a></li>
-<li class="chapter" data-level="3.2.3" data-path="数据操作.html"><a href="数据操作.html#选择列的例子"><i class="fa fa-check"></i><b>3.2.3</b> 选择列的例子</a></li>
-<li class="chapter" data-level="3.2.4" data-path="数据操作.html"><a href="数据操作.html#用--删除列"><i class="fa fa-check"></i><b>3.2.4</b> 用“-” 删除列</a></li>
-<li class="chapter" data-level="3.2.5" data-path="数据操作.html"><a href="数据操作.html#调整列的顺序"><i class="fa fa-check"></i><b>3.2.5</b> 调整列的顺序</a></li>
-<li class="chapter" data-level="3.2.6" data-path="数据操作.html"><a href="数据操作.html#重命名列"><i class="fa fa-check"></i><b>3.2.6</b> 重命名列</a></li>
+<li class="chapter" data-level="3.3.1" data-path="数据操作.html"><a href="数据操作.html#选择列select"><i class="fa fa-check"></i><b>3.3.1</b> 选择列（select）</a></li>
+<li class="chapter" data-level="3.3.2" data-path="数据操作.html"><a href="数据操作.html#选择列语法"><i class="fa fa-check"></i><b>3.3.2</b> 选择列语法</a></li>
+<li class="chapter" data-level="3.3.3" data-path="数据操作.html"><a href="数据操作.html#选择列的例子"><i class="fa fa-check"></i><b>3.3.3</b> 选择列的例子</a></li>
+<li class="chapter" data-level="3.3.4" data-path="数据操作.html"><a href="数据操作.html#用--删除列"><i class="fa fa-check"></i><b>3.3.4</b> 用“-” 删除列</a></li>
+<li class="chapter" data-level="3.3.5" data-path="数据操作.html"><a href="数据操作.html#调整列的顺序"><i class="fa fa-check"></i><b>3.3.5</b> 调整列的顺序</a></li>
+<li class="chapter" data-level="3.3.6" data-path="数据操作.html"><a href="数据操作.html#重命名列"><i class="fa fa-check"></i><b>3.3.6</b> 重命名列</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="数据操作.html"><a href="数据操作.html#分组汇总"><i class="fa fa-check"></i><b>3.3</b> 分组汇总</a>
+<li class="chapter" data-level="3.4" data-path="数据操作.html"><a href="数据操作.html#分组汇总"><i class="fa fa-check"></i><b>3.4</b> 分组汇总</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="数据操作.html"><a href="数据操作.html#创建分组"><i class="fa fa-check"></i><b>3.3.1</b> 创建分组</a></li>
-<li class="chapter" data-level="3.3.2" data-path="数据操作.html"><a href="数据操作.html#分组汇总-1"><i class="fa fa-check"></i><b>3.3.2</b> 分组汇总</a></li>
-<li class="chapter" data-level="3.3.3" data-path="数据操作.html"><a href="数据操作.html#自己的例子"><i class="fa fa-check"></i><b>3.3.3</b> 自己的例子</a></li>
+<li class="chapter" data-level="3.4.1" data-path="数据操作.html"><a href="数据操作.html#创建分组"><i class="fa fa-check"></i><b>3.4.1</b> 创建分组</a></li>
+<li class="chapter" data-level="3.4.2" data-path="数据操作.html"><a href="数据操作.html#分组汇总-1"><i class="fa fa-check"></i><b>3.4.2</b> 分组汇总</a></li>
+<li class="chapter" data-level="3.4.3" data-path="数据操作.html"><a href="数据操作.html#自己的例子"><i class="fa fa-check"></i><b>3.4.3</b> 自己的例子</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="数据操作.html"><a href="数据操作.html#其他数据操作"><i class="fa fa-check"></i><b>3.4</b> 其他数据操作</a>
+<li class="chapter" data-level="3.5" data-path="数据操作.html"><a href="数据操作.html#其他数据操作"><i class="fa fa-check"></i><b>3.5</b> 其他数据操作</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="数据操作.html"><a href="数据操作.html#按行汇总"><i class="fa fa-check"></i><b>3.4.1</b> 按行汇总</a></li>
-<li class="chapter" data-level="3.4.2" data-path="数据操作.html"><a href="数据操作.html#窗口函数"><i class="fa fa-check"></i><b>3.4.2</b> 窗口函数</a></li>
+<li class="chapter" data-level="3.5.1" data-path="数据操作.html"><a href="数据操作.html#按行汇总"><i class="fa fa-check"></i><b>3.5.1</b> 按行汇总</a></li>
+<li class="chapter" data-level="3.5.2" data-path="数据操作.html"><a href="数据操作.html#窗口函数"><i class="fa fa-check"></i><b>3.5.2</b> 窗口函数</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="数据操作.html"><a href="数据操作.html#整洁计算"><i class="fa fa-check"></i><b>3.5</b> 整洁计算</a>
+<li class="chapter" data-level="3.6" data-path="数据操作.html"><a href="数据操作.html#整洁计算"><i class="fa fa-check"></i><b>3.6</b> 整洁计算</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="数据操作.html"><a href="数据操作.html#数据屏蔽与整洁选择"><i class="fa fa-check"></i><b>3.5.1</b> 数据屏蔽与整洁选择</a></li>
+<li class="chapter" data-level="3.6.1" data-path="数据操作.html"><a href="数据操作.html#数据屏蔽与整洁选择"><i class="fa fa-check"></i><b>3.6.1</b> 数据屏蔽与整洁选择</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="可视化与建模.html"><a href="可视化与建模.html"><i class="fa fa-check"></i><b>4</b> 可视化与建模</a>
@@ -295,11 +322,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5" data-path="markdown.html"><a href="markdown.html#数学公式"><i class="fa fa-check"></i><b>6.5</b> 数学公式</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="markdown.html"><a href="markdown.html#markdown如何显示数学公式"><i class="fa fa-check"></i><b>6.5.1</b> Markdown如何显示数学公式</a></li>
-<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.2</b> 数学公式的类别</a></li>
-<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.3</b> 上横线</a></li>
-<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.4</b> hat</a></li>
-<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.5</b> 换行对齐</a></li>
-<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.6</b> 分段函数</a></li>
+<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#公式编号"><i class="fa fa-check"></i><b>6.5.2</b> 公式编号</a></li>
+<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.3</b> 数学公式的类别</a></li>
+<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.4</b> 上横线</a></li>
+<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.5</b> hat</a></li>
+<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.6</b> 换行对齐</a></li>
+<li class="chapter" data-level="6.5.7" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.7</b> 分段函数</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>7</b> RMarkdown</a>
@@ -318,6 +346,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.8" data-path="rmarkdown.html"><a href="rmarkdown.html#行内代码"><i class="fa fa-check"></i><b>7.3.8</b> 行内代码</a></li>
 <li class="chapter" data-level="7.3.9" data-path="rmarkdown.html"><a href="rmarkdown.html#在rmarkdown使用其他语言"><i class="fa fa-check"></i><b>7.3.9</b> 在RMarkdown使用其他语言</a></li>
 <li class="chapter" data-level="7.3.10" data-path="rmarkdown.html"><a href="rmarkdown.html#交互式文档"><i class="fa fa-check"></i><b>7.3.10</b> 交互式文档</a></li>
+<li class="chapter" data-level="7.3.11" data-path="rmarkdown.html"><a href="rmarkdown.html#参考文献"><i class="fa fa-check"></i><b>7.3.11</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="rmarkdown.html"><a href="rmarkdown.html#文档格式htmlpdfword"><i class="fa fa-check"></i><b>7.4</b> 文档格式（HTML,PDF,Word…）</a>
 <ul>
@@ -421,41 +450,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="infer包.html"><a href="infer包.html#卡方检验"><i class="fa fa-check"></i><b>14.2</b> 卡方检验</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>15</b> 极大似然估计</a>
+<li class="chapter" data-level="15" data-path="gamma函数.html"><a href="gamma函数.html"><i class="fa fa-check"></i><b>15</b> Gamma函数</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>15.1</b> 自定义极大似然函数</a>
+<li class="chapter" data-level="15.1" data-path="gamma函数.html"><a href="gamma函数.html#简史"><i class="fa fa-check"></i><b>15.1</b> 简史</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>15.1.1</b> 正态分布</a></li>
-<li class="chapter" data-level="15.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>15.1.2</b> 指数分布</a></li>
+<li class="chapter" data-level="15.1.1" data-path="gamma函数.html"><a href="gamma函数.html#动机"><i class="fa fa-check"></i><b>15.1.1</b> 动机</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="gamma函数.html"><a href="gamma函数.html#定义"><i class="fa fa-check"></i><b>15.2</b> 定义</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="gamma函数.html"><a href="gamma函数.html#euler定义"><i class="fa fa-check"></i><b>15.2.1</b> Euler定义</a></li>
+<li class="chapter" data-level="15.2.2" data-path="gamma函数.html"><a href="gamma函数.html#gauss定义"><i class="fa fa-check"></i><b>15.2.2</b> Gauss定义</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>16</b> 正则表达式</a>
+<li class="chapter" data-level="16" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>16</b> 极大似然估计</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>16.1</b> grep函数</a>
+<li class="chapter" data-level="16.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>16.1</b> 自定义极大似然函数</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>16.1.1</b> 函数参数</a></li>
-<li class="chapter" data-level="16.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>16.1.2</b> 模式（pattern）与匹配（match）</a></li>
-</ul></li>
-<li class="chapter" data-level="16.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>16.2</b> 元字符</a></li>
-<li class="chapter" data-level="16.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>16.3</b> 常用文本处理函数</a></li>
-<li class="chapter" data-level="16.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>16.4</b> 案例</a>
-<ul>
-<li class="chapter" data-level="16.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>16.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
-<li class="chapter" data-level="16.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>16.4.2</b> 全宋词</a></li>
-<li class="chapter" data-level="16.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>16.4.3</b> SCI（筛选行）</a></li>
+<li class="chapter" data-level="16.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>16.1.1</b> 正态分布</a></li>
+<li class="chapter" data-level="16.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>16.1.2</b> 指数分布</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>17</b> 一些自定义函数</a>
+<li class="chapter" data-level="17" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>17</b> 正则表达式</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>17.1</b> 数据处理</a>
+<li class="chapter" data-level="17.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>17.1</b> grep函数</a>
 <ul>
-<li class="chapter" data-level="17.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>17.1.1</b> 分组排序并排名</a></li>
+<li class="chapter" data-level="17.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>17.1.1</b> 函数参数</a></li>
+<li class="chapter" data-level="17.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>17.1.2</b> 模式（pattern）与匹配（match）</a></li>
 </ul></li>
-<li class="chapter" data-level="17.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>17.2</b> 统计相关</a>
+<li class="chapter" data-level="17.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>17.2</b> 元字符</a></li>
+<li class="chapter" data-level="17.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>17.3</b> 常用文本处理函数</a></li>
+<li class="chapter" data-level="17.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>17.4</b> 案例</a>
 <ul>
-<li class="chapter" data-level="17.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>17.2.1</b> 汇总数据t检验</a></li>
-<li class="chapter" data-level="17.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>17.2.2</b> 卡方检验</a></li>
+<li class="chapter" data-level="17.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>17.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
+<li class="chapter" data-level="17.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>17.4.2</b> 全宋词</a></li>
+<li class="chapter" data-level="17.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>17.4.3</b> SCI（筛选行）</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>18</b> 一些自定义函数</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>18.1</b> 数据处理</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>18.1.1</b> 分组排序并排名</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>18.2</b> 统计相关</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>18.2.1</b> 汇总数据t检验</a></li>
+<li class="chapter" data-level="18.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>18.2.2</b> 卡方检验</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="一些自定义函数-1.html"><a href="一些自定义函数-1.html"><i class="fa fa-check"></i><b>19</b> 一些自定义函数</a></li>
+<li class="chapter" data-level="20" data-path="随机抽样.html"><a href="随机抽样.html"><i class="fa fa-check"></i><b>20</b> 随机抽样</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="随机抽样.html"><a href="随机抽样.html#inverse-cdf-transformation逆cdf变化法"><i class="fa fa-check"></i><b>20.1</b> Inverse CDF Transformation（逆CDF变化法）</a></li>
+<li class="chapter" data-level="20.2" data-path="随机抽样.html"><a href="随机抽样.html#accept-reject-sampling-method接受-拒绝抽样"><i class="fa fa-check"></i><b>20.2</b> accept-reject sampling method（接受-拒绝抽样）</a></li>
 </ul></li>
 </ul>
 
@@ -479,7 +526,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="前期配置" class="section level2 hasAnchor" number="9.1">
 <h2><span class="header-section-number">9.1</span> 前期配置<a href="写轮眼.html#前期配置" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>（1）安装R包</p>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="写轮眼.html#cb341-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;xaringan&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="写轮眼.html#cb350-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;xaringan&quot;</span>)</span></code></pre></div>
 <p>（2）创建R Markdown文档</p>
 <p>打开RStudio，从菜单栏点击<code>File -&gt; New File -&gt; R Markdown -&gt; From Template -&gt; Ninja Presentation(Simplified Chinese)</code></p>
 <p>（3） 点击 Knit 按钮编译文档</p>
@@ -489,27 +536,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <p>（4） 查看输出</p>
 <p>xaringan 包提供了一个 R Markdown 输出格式 <code>xaringan::moon_reader</code>，你可以在 R Markdown 文档的元数据中使用它，例：</p>
-<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="写轮眼.html#cb342-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb342-2"><a href="写轮眼.html#cb342-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">&quot;啧啧啧，厉害啊&quot;</span></span>
-<span id="cb342-3"><a href="写轮眼.html#cb342-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">&quot;张三&quot;</span></span>
-<span id="cb342-4"><a href="写轮眼.html#cb342-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">&quot;2016年12月12日&quot;</span></span>
-<span id="cb342-5"><a href="写轮眼.html#cb342-5" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span></span>
-<span id="cb342-6"><a href="写轮眼.html#cb342-6" aria-hidden="true" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader</span>
-<span id="cb342-7"><a href="写轮眼.html#cb342-7" aria-hidden="true" tabindex="-1"></a>    nature<span class="sc">:</span></span>
-<span id="cb342-8"><a href="写轮眼.html#cb342-8" aria-hidden="true" tabindex="-1"></a>      autoplay<span class="sc">:</span> <span class="dv">30000</span></span>
-<span id="cb342-9"><a href="写轮眼.html#cb342-9" aria-hidden="true" tabindex="-1"></a>      highlightStyle<span class="sc">:</span> github</span>
-<span id="cb342-10"><a href="写轮眼.html#cb342-10" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="写轮眼.html#cb351-1" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb351-2"><a href="写轮眼.html#cb351-2" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">&quot;啧啧啧，厉害啊&quot;</span></span>
+<span id="cb351-3"><a href="写轮眼.html#cb351-3" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">&quot;张三&quot;</span></span>
+<span id="cb351-4"><a href="写轮眼.html#cb351-4" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">&quot;2016年12月12日&quot;</span></span>
+<span id="cb351-5"><a href="写轮眼.html#cb351-5" tabindex="-1"></a>output<span class="sc">:</span></span>
+<span id="cb351-6"><a href="写轮眼.html#cb351-6" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader</span>
+<span id="cb351-7"><a href="写轮眼.html#cb351-7" tabindex="-1"></a>    nature<span class="sc">:</span></span>
+<span id="cb351-8"><a href="写轮眼.html#cb351-8" tabindex="-1"></a>      autoplay<span class="sc">:</span> <span class="dv">30000</span></span>
+<span id="cb351-9"><a href="写轮眼.html#cb351-9" tabindex="-1"></a>      highlightStyle<span class="sc">:</span> github</span>
+<span id="cb351-10"><a href="写轮眼.html#cb351-10" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
 <p>nature 下面的 autoplay 选项可以用来自动播放幻灯片，它的取值是毫秒，例如每 30 秒播放一张片子</p>
 <p>nature 下面的 countdown 选项可以为每一页幻灯片添加一个（倒数）计时器，取值同样为毫秒，例如每一页片子都用 60 秒倒计时：</p>
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="写轮眼.html#cb343-1" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span></span>
-<span id="cb343-2"><a href="写轮眼.html#cb343-2" aria-hidden="true" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
-<span id="cb343-3"><a href="写轮眼.html#cb343-3" aria-hidden="true" tabindex="-1"></a>    nature<span class="sc">:</span></span>
-<span id="cb343-4"><a href="写轮眼.html#cb343-4" aria-hidden="true" tabindex="-1"></a>      countdown<span class="sc">:</span> <span class="dv">60000</span></span></code></pre></div>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="写轮眼.html#cb352-1" tabindex="-1"></a>output<span class="sc">:</span></span>
+<span id="cb352-2"><a href="写轮眼.html#cb352-2" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
+<span id="cb352-3"><a href="写轮眼.html#cb352-3" tabindex="-1"></a>    nature<span class="sc">:</span></span>
+<span id="cb352-4"><a href="写轮眼.html#cb352-4" tabindex="-1"></a>      countdown<span class="sc">:</span> <span class="dv">60000</span></span></code></pre></div>
 <p>选项 highlightLines: true 可以让以 * 开头或者双重大括号 {{ }} 里面的代码被高亮出来；</p>
-<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="写轮眼.html#cb344-1" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span></span>
-<span id="cb344-2"><a href="写轮眼.html#cb344-2" aria-hidden="true" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
-<span id="cb344-3"><a href="写轮眼.html#cb344-3" aria-hidden="true" tabindex="-1"></a>    nature<span class="sc">:</span></span>
-<span id="cb344-4"><a href="写轮眼.html#cb344-4" aria-hidden="true" tabindex="-1"></a>      highlightLines<span class="sc">:</span> true</span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="写轮眼.html#cb353-1" tabindex="-1"></a>output<span class="sc">:</span></span>
+<span id="cb353-2"><a href="写轮眼.html#cb353-2" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
+<span id="cb353-3"><a href="写轮眼.html#cb353-3" tabindex="-1"></a>    nature<span class="sc">:</span></span>
+<span id="cb353-4"><a href="写轮眼.html#cb353-4" tabindex="-1"></a>      highlightLines<span class="sc">:</span> true</span></code></pre></div>
 <p>我们举两个栗子
 <img src="fig/26/26-03.jpg" width="692" style="display: block; margin: auto;" /></p>
 </div>
@@ -528,136 +575,136 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>每个新幻灯片都是在三个破折号（dashes）(—)下创建的。破折号后面必须直接跟一个换行符（line break），并且在破折号后面不能有任何其他字符(甚至空格space)。当您看到新幻灯片出现在前一张幻灯片的水平线之后时，可能在三个破折号之后有空格(如果有，您必须删除空格)。</p>
 <p>幻灯片的内容可以是任意的，它不一定有幻灯片标题，如果有，标题可以是任何级别(#，##，或###)。</p>
 <p>一个幻灯片可以有一些CSS属性，包括<code>class</code>类和<code>background-image</code>背景图像等。属性写在幻灯片的开头，例如。</p>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="写轮眼.html#cb345-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb345-2"><a href="写轮眼.html#cb345-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb345-3"><a href="写轮眼.html#cb345-3" aria-hidden="true" tabindex="-1"></a>class<span class="sc">:</span> center, inverse</span>
-<span id="cb345-4"><a href="写轮眼.html#cb345-4" aria-hidden="true" tabindex="-1"></a>background<span class="sc">-</span>image<span class="sc">:</span> <span class="fu">url</span>(<span class="st">&quot;images/cool.png&quot;</span>)</span>
-<span id="cb345-5"><a href="写轮眼.html#cb345-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb345-6"><a href="写轮眼.html#cb345-6" aria-hidden="true" tabindex="-1"></a><span class="co"># A new slide</span></span>
-<span id="cb345-7"><a href="写轮眼.html#cb345-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb345-8"><a href="写轮眼.html#cb345-8" aria-hidden="true" tabindex="-1"></a>Content.</span></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="写轮眼.html#cb354-1" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb354-2"><a href="写轮眼.html#cb354-2" tabindex="-1"></a></span>
+<span id="cb354-3"><a href="写轮眼.html#cb354-3" tabindex="-1"></a>class<span class="sc">:</span> center, inverse</span>
+<span id="cb354-4"><a href="写轮眼.html#cb354-4" tabindex="-1"></a>background<span class="sc">-</span>image<span class="sc">:</span> <span class="fu">url</span>(<span class="st">&quot;images/cool.png&quot;</span>)</span>
+<span id="cb354-5"><a href="写轮眼.html#cb354-5" tabindex="-1"></a></span>
+<span id="cb354-6"><a href="写轮眼.html#cb354-6" tabindex="-1"></a><span class="co"># A new slide</span></span>
+<span id="cb354-7"><a href="写轮眼.html#cb354-7" tabindex="-1"></a></span>
+<span id="cb354-8"><a href="写轮眼.html#cb354-8" tabindex="-1"></a>Content.</span></code></pre></div>
 <p><code>class</code>属性将给幻灯片的HTML标签定义类名，这样就可以使用CSS为特定的幻灯片设置样式。例如，设置类名为<code>inverse</code>的幻灯片，可以定义CSS规则(在黑色背景上以白色呈现文本):</p>
-<div class="sourceCode" id="cb346"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb346-1"><a href="写轮眼.html#cb346-1" aria-hidden="true" tabindex="-1"></a>.inverse {</span>
-<span id="cb346-2"><a href="写轮眼.html#cb346-2" aria-hidden="true" tabindex="-1"></a>  background-color: #272822;</span>
-<span id="cb346-3"><a href="写轮眼.html#cb346-3" aria-hidden="true" tabindex="-1"></a>  color: #d6d6d6;</span>
-<span id="cb346-4"><a href="写轮眼.html#cb346-4" aria-hidden="true" tabindex="-1"></a>  text-shadow: 0 0 20px #333;</span>
-<span id="cb346-5"><a href="写轮眼.html#cb346-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb355-1"><a href="写轮眼.html#cb355-1" tabindex="-1"></a>.inverse {</span>
+<span id="cb355-2"><a href="写轮眼.html#cb355-2" tabindex="-1"></a>  background-color: #272822;</span>
+<span id="cb355-3"><a href="写轮眼.html#cb355-3" tabindex="-1"></a>  color: #d6d6d6;</span>
+<span id="cb355-4"><a href="写轮眼.html#cb355-4" tabindex="-1"></a>  text-shadow: 0 0 20px #333;</span>
+<span id="cb355-5"><a href="写轮眼.html#cb355-5" tabindex="-1"></a>}</span></code></pre></div>
 <p>然后调用CSS文件，本例是通过月读<code>xaringan::moon_reader:</code>来调用<code>my-style.css</code></p>
-<div class="sourceCode" id="cb347"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb347-1"><a href="写轮眼.html#cb347-1" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb347-2"><a href="写轮眼.html#cb347-2" aria-hidden="true" tabindex="-1"></a>output:</span>
-<span id="cb347-3"><a href="写轮眼.html#cb347-3" aria-hidden="true" tabindex="-1"></a>  xaringan::moon_reader:</span>
-<span id="cb347-4"><a href="写轮眼.html#cb347-4" aria-hidden="true" tabindex="-1"></a>    css: &quot;my-style.css&quot;</span>
-<span id="cb347-5"><a href="写轮眼.html#cb347-5" aria-hidden="true" tabindex="-1"></a>---</span></code></pre></div>
+<div class="sourceCode" id="cb356"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb356-1"><a href="写轮眼.html#cb356-1" tabindex="-1"></a>---</span>
+<span id="cb356-2"><a href="写轮眼.html#cb356-2" tabindex="-1"></a>output:</span>
+<span id="cb356-3"><a href="写轮眼.html#cb356-3" tabindex="-1"></a>  xaringan::moon_reader:</span>
+<span id="cb356-4"><a href="写轮眼.html#cb356-4" tabindex="-1"></a>    css: &quot;my-style.css&quot;</span>
+<span id="cb356-5"><a href="写轮眼.html#cb356-5" tabindex="-1"></a>---</span></code></pre></div>
 <p>实际上，<code>inverse</code>的样式已经在xaringan的默认主题中定义，所以实际上不需要再次定义它，除非想重新定义并覆盖它。</p>
 <p>其他的可用类名包括幻灯片所有元素的水平对齐，<code>left</code>，<code>center</code>和<code>right</code>，以及垂直对齐，<code>top</code>，<code>middle</code>和<code>bottom</code>。</p>
 <p>背景图片可通过<code>background-image</code>属性设置。路径应该放在<code>url()</code>中，这是CSS语法。你也可以设置背景图像的大小size和位置position，例如:</p>
-<div class="sourceCode" id="cb348"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb348-1"><a href="写轮眼.html#cb348-1" aria-hidden="true" tabindex="-1"></a>background-image: url(&quot;`r xaringan:::karl`&quot;)</span>
-<span id="cb348-2"><a href="写轮眼.html#cb348-2" aria-hidden="true" tabindex="-1"></a>background-position: center</span>
-<span id="cb348-3"><a href="写轮眼.html#cb348-3" aria-hidden="true" tabindex="-1"></a>background-size: contain</span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb357-1"><a href="写轮眼.html#cb357-1" tabindex="-1"></a>background-image: url(&quot;`r xaringan:::karl`&quot;)</span>
+<span id="cb357-2"><a href="写轮眼.html#cb357-2" tabindex="-1"></a>background-position: center</span>
+<span id="cb357-3"><a href="写轮眼.html#cb357-3" tabindex="-1"></a>background-size: contain</span></code></pre></div>
 <p>所有这些属性都要求略懂CSS。在上面的示例中，我们实际上使用了一个行内表达式<code>xaringan::karl</code>来返回karl Broman 图像的URL，这是xaringan包的亮点之一。</p>
 </div>
 <div id="首页标题幻灯片" class="section level3 hasAnchor" number="9.3.2">
 <h3><span class="header-section-number">9.3.2</span> 首页标题幻灯片<a href="写轮眼.html#首页标题幻灯片" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>标题幻灯片（即首页幻灯片），它是从Rmd文档的YAML元数据自动生成的。它包含标题title、副标题subtotal、作者author和日期date(都是可选的)。该幻灯片默认有inverse、center、middle和title-slide类，类似于图7.1中的左侧图像。如果你不喜欢默认样式，你可以自定义。title-slide类，或者通过<code>nature</code>选项下的<code>titleSlideClass</code>选项提供自定义的类向量，例如，</p>
-<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="写轮眼.html#cb349-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb349-2"><a href="写轮眼.html#cb349-2" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span></span>
-<span id="cb349-3"><a href="写轮眼.html#cb349-3" aria-hidden="true" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
-<span id="cb349-4"><a href="写轮眼.html#cb349-4" aria-hidden="true" tabindex="-1"></a>    nature<span class="sc">:</span></span>
-<span id="cb349-5"><a href="写轮眼.html#cb349-5" aria-hidden="true" tabindex="-1"></a>      titleSlideClass<span class="sc">:</span> [<span class="st">&quot;right&quot;</span>, <span class="st">&quot;top&quot;</span>, <span class="st">&quot;my-title&quot;</span>]</span>
-<span id="cb349-6"><a href="写轮眼.html#cb349-6" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="写轮眼.html#cb358-1" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb358-2"><a href="写轮眼.html#cb358-2" tabindex="-1"></a>output<span class="sc">:</span></span>
+<span id="cb358-3"><a href="写轮眼.html#cb358-3" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
+<span id="cb358-4"><a href="写轮眼.html#cb358-4" tabindex="-1"></a>    nature<span class="sc">:</span></span>
+<span id="cb358-5"><a href="写轮眼.html#cb358-5" tabindex="-1"></a>      titleSlideClass<span class="sc">:</span> [<span class="st">&quot;right&quot;</span>, <span class="st">&quot;top&quot;</span>, <span class="st">&quot;my-title&quot;</span>]</span>
+<span id="cb358-6"><a href="写轮眼.html#cb358-6" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
 <p>你也可以通过<code>seal</code>选项禁止自动标题，然后手动输入：</p>
-<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="写轮眼.html#cb350-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb350-2"><a href="写轮眼.html#cb350-2" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span></span>
-<span id="cb350-3"><a href="写轮眼.html#cb350-3" aria-hidden="true" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
-<span id="cb350-4"><a href="写轮眼.html#cb350-4" aria-hidden="true" tabindex="-1"></a>    seal<span class="sc">:</span> false</span>
-<span id="cb350-5"><a href="写轮眼.html#cb350-5" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb350-6"><a href="写轮眼.html#cb350-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb350-7"><a href="写轮眼.html#cb350-7" aria-hidden="true" tabindex="-1"></a><span class="co"># My Own Title</span></span>
-<span id="cb350-8"><a href="写轮眼.html#cb350-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb350-9"><a href="写轮眼.html#cb350-9" aria-hidden="true" tabindex="-1"></a><span class="do">### Author</span></span>
-<span id="cb350-10"><a href="写轮眼.html#cb350-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb350-11"><a href="写轮眼.html#cb350-11" aria-hidden="true" tabindex="-1"></a>Whatever you want to put on the title slide.</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="写轮眼.html#cb359-1" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb359-2"><a href="写轮眼.html#cb359-2" tabindex="-1"></a>output<span class="sc">:</span></span>
+<span id="cb359-3"><a href="写轮眼.html#cb359-3" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
+<span id="cb359-4"><a href="写轮眼.html#cb359-4" tabindex="-1"></a>    seal<span class="sc">:</span> false</span>
+<span id="cb359-5"><a href="写轮眼.html#cb359-5" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb359-6"><a href="写轮眼.html#cb359-6" tabindex="-1"></a></span>
+<span id="cb359-7"><a href="写轮眼.html#cb359-7" tabindex="-1"></a><span class="co"># My Own Title</span></span>
+<span id="cb359-8"><a href="写轮眼.html#cb359-8" tabindex="-1"></a></span>
+<span id="cb359-9"><a href="写轮眼.html#cb359-9" tabindex="-1"></a><span class="do">### Author</span></span>
+<span id="cb359-10"><a href="写轮眼.html#cb359-10" tabindex="-1"></a></span>
+<span id="cb359-11"><a href="写轮眼.html#cb359-11" tabindex="-1"></a>Whatever you want to put on the title slide.</span></code></pre></div>
 </div>
 <div id="内容类" class="section level3 hasAnchor" number="9.3.3">
 <h3><span class="header-section-number">9.3.3</span> 内容类<a href="写轮眼.html#内容类" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>您也可以为幻灯片上的任何元素分配类。语法是<code>.classname [content]</code>。这是remark.js的一个非常强大的特性，也是Pandoc中为数不多的不可用的特性之一。它可以通过CSS为幻灯片上的任何元素设置样式。有一些是内置的内容类，<code>.left[]， .center[]</code>和<code>.right[]</code>来水平对齐幻灯片上的元素，例如，你可以将图像居中:</p>
-<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="写轮眼.html#cb351-1" aria-hidden="true" tabindex="-1"></a>.center[<span class="sc">!</span>[description of the image](images<span class="sc">/</span>foo.png)]</span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="写轮眼.html#cb360-1" tabindex="-1"></a>.center[<span class="sc">!</span>[description of the image](images<span class="sc">/</span>foo.png)]</span></code></pre></div>
 <p><code>[]</code>内部的内容可以是任何内容，比如几个段落或列表。xaringan的默认主题提供了另外四个内容类</p>
 <ul>
 <li><p><code>.left-column[]</code>和<code>.right-column[]</code>提供侧栏sidebar布局。左边的侧边栏很窄(幻灯片宽度的20%)，右边的栏是主栏(幻灯片宽度的75%)。如果你在左栏中有多个2级(##)或3级(###)标题，最后一个标题将被突出显示，而之前的标题将被灰色化。</p></li>
 <li><p><code>.pull-left[]</code>和<code>.pull-right[]</code>提供两列two-column布局，两列宽度相同。下面是一个例子:</p></li>
 </ul>
-<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="写轮眼.html#cb352-1" aria-hidden="true" tabindex="-1"></a>.pull<span class="sc">-</span>left[</span>
-<span id="cb352-2"><a href="写轮眼.html#cb352-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> One bullet.</span>
-<span id="cb352-3"><a href="写轮眼.html#cb352-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb352-4"><a href="写轮眼.html#cb352-4" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Another bullet.</span>
-<span id="cb352-5"><a href="写轮眼.html#cb352-5" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb352-6"><a href="写轮眼.html#cb352-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb352-7"><a href="写轮眼.html#cb352-7" aria-hidden="true" tabindex="-1"></a>.pull<span class="sc">-</span>right[</span>
-<span id="cb352-8"><a href="写轮眼.html#cb352-8" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[an image](foo.png)</span>
-<span id="cb352-9"><a href="写轮眼.html#cb352-9" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="写轮眼.html#cb361-1" tabindex="-1"></a>.pull<span class="sc">-</span>left[</span>
+<span id="cb361-2"><a href="写轮眼.html#cb361-2" tabindex="-1"></a><span class="sc">-</span> One bullet.</span>
+<span id="cb361-3"><a href="写轮眼.html#cb361-3" tabindex="-1"></a></span>
+<span id="cb361-4"><a href="写轮眼.html#cb361-4" tabindex="-1"></a><span class="sc">-</span> Another bullet.</span>
+<span id="cb361-5"><a href="写轮眼.html#cb361-5" tabindex="-1"></a>]</span>
+<span id="cb361-6"><a href="写轮眼.html#cb361-6" tabindex="-1"></a></span>
+<span id="cb361-7"><a href="写轮眼.html#cb361-7" tabindex="-1"></a>.pull<span class="sc">-</span>right[</span>
+<span id="cb361-8"><a href="写轮眼.html#cb361-8" tabindex="-1"></a><span class="sc">!</span>[an image](foo.png)</span>
+<span id="cb361-9"><a href="写轮眼.html#cb361-9" tabindex="-1"></a>]</span></code></pre></div>
 <p>如果你知道CSS，你可以设计自己的内容类，例如，如果你想通过<code>.red[]</code>使文本为红色，你可以在CSS中定义:</p>
-<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="写轮眼.html#cb353-1" aria-hidden="true" tabindex="-1"></a>.red { color<span class="sc">:</span> red; }</span></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="写轮眼.html#cb362-1" tabindex="-1"></a>.red { color<span class="sc">:</span> red; }</span></code></pre></div>
 </div>
 <div id="出现动画" class="section level3 hasAnchor" number="9.3.4">
 <h3><span class="header-section-number">9.3.4</span> 出现动画<a href="写轮眼.html#出现动画" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>您可以使用两个破折号来分隔内容。这两个破折号可以出现在除了内容类内部的任何地方，所以你基本上可以以任何你喜欢的方式分割你的内容，例如，</p>
-<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="写轮眼.html#cb354-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb354-2"><a href="写轮眼.html#cb354-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb354-3"><a href="写轮眼.html#cb354-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Two dashes</span></span>
-<span id="cb354-4"><a href="写轮眼.html#cb354-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb354-5"><a href="写轮眼.html#cb354-5" aria-hidden="true" tabindex="-1"></a>The easiest way to build incremental slides is...</span>
-<span id="cb354-6"><a href="写轮眼.html#cb354-6" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span></span>
-<span id="cb354-7"><a href="写轮眼.html#cb354-7" aria-hidden="true" tabindex="-1"></a> to use two dashes <span class="st">`</span><span class="at">--</span><span class="st">`</span> to separate content on a slide.</span>
-<span id="cb354-8"><a href="写轮眼.html#cb354-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb354-9"><a href="写轮眼.html#cb354-9" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span></span>
-<span id="cb354-10"><a href="写轮眼.html#cb354-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb354-11"><a href="写轮眼.html#cb354-11" aria-hidden="true" tabindex="-1"></a>You can divide a slide <span class="cf">in</span> _any way you want_.</span>
-<span id="cb354-12"><a href="写轮眼.html#cb354-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb354-13"><a href="写轮眼.html#cb354-13" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span></span>
-<span id="cb354-14"><a href="写轮眼.html#cb354-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb354-15"><a href="写轮眼.html#cb354-15" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> One bullet</span>
-<span id="cb354-16"><a href="写轮眼.html#cb354-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb354-17"><a href="写轮眼.html#cb354-17" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Another bullet</span>
-<span id="cb354-18"><a href="写轮眼.html#cb354-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb354-19"><a href="写轮眼.html#cb354-19" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span></span>
-<span id="cb354-20"><a href="写轮眼.html#cb354-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb354-21"><a href="写轮眼.html#cb354-21" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> And one more</span>
-<span id="cb354-22"><a href="写轮眼.html#cb354-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb354-23"><a href="写轮眼.html#cb354-23" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span></span>
-<span id="cb354-24"><a href="写轮眼.html#cb354-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb354-25"><a href="写轮眼.html#cb354-25" aria-hidden="true" tabindex="-1"></a>.center[</span>
-<span id="cb354-26"><a href="写轮眼.html#cb354-26" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[Saw](https<span class="sc">:</span><span class="er">//</span>slides.yihui.name<span class="sc">/</span>gif<span class="sc">/</span>saw<span class="sc">-</span>branch.gif)</span>
-<span id="cb354-27"><a href="写轮眼.html#cb354-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb354-28"><a href="写轮眼.html#cb354-28" aria-hidden="true" tabindex="-1"></a>Don<span class="st">&#39;t saw your slides too hard.</span></span>
-<span id="cb354-29"><a href="写轮眼.html#cb354-29" aria-hidden="true" tabindex="-1"></a><span class="st">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="写轮眼.html#cb363-1" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb363-2"><a href="写轮眼.html#cb363-2" tabindex="-1"></a></span>
+<span id="cb363-3"><a href="写轮眼.html#cb363-3" tabindex="-1"></a><span class="co"># Two dashes</span></span>
+<span id="cb363-4"><a href="写轮眼.html#cb363-4" tabindex="-1"></a></span>
+<span id="cb363-5"><a href="写轮眼.html#cb363-5" tabindex="-1"></a>The easiest way to build incremental slides is...</span>
+<span id="cb363-6"><a href="写轮眼.html#cb363-6" tabindex="-1"></a><span class="sc">--</span></span>
+<span id="cb363-7"><a href="写轮眼.html#cb363-7" tabindex="-1"></a> to use two dashes <span class="st">`</span><span class="at">--</span><span class="st">`</span> to separate content on a slide.</span>
+<span id="cb363-8"><a href="写轮眼.html#cb363-8" tabindex="-1"></a></span>
+<span id="cb363-9"><a href="写轮眼.html#cb363-9" tabindex="-1"></a><span class="sc">--</span></span>
+<span id="cb363-10"><a href="写轮眼.html#cb363-10" tabindex="-1"></a></span>
+<span id="cb363-11"><a href="写轮眼.html#cb363-11" tabindex="-1"></a>You can divide a slide <span class="cf">in</span> _any way you want_.</span>
+<span id="cb363-12"><a href="写轮眼.html#cb363-12" tabindex="-1"></a></span>
+<span id="cb363-13"><a href="写轮眼.html#cb363-13" tabindex="-1"></a><span class="sc">--</span></span>
+<span id="cb363-14"><a href="写轮眼.html#cb363-14" tabindex="-1"></a></span>
+<span id="cb363-15"><a href="写轮眼.html#cb363-15" tabindex="-1"></a><span class="sc">-</span> One bullet</span>
+<span id="cb363-16"><a href="写轮眼.html#cb363-16" tabindex="-1"></a></span>
+<span id="cb363-17"><a href="写轮眼.html#cb363-17" tabindex="-1"></a><span class="sc">-</span> Another bullet</span>
+<span id="cb363-18"><a href="写轮眼.html#cb363-18" tabindex="-1"></a></span>
+<span id="cb363-19"><a href="写轮眼.html#cb363-19" tabindex="-1"></a><span class="sc">--</span></span>
+<span id="cb363-20"><a href="写轮眼.html#cb363-20" tabindex="-1"></a></span>
+<span id="cb363-21"><a href="写轮眼.html#cb363-21" tabindex="-1"></a><span class="sc">-</span> And one more</span>
+<span id="cb363-22"><a href="写轮眼.html#cb363-22" tabindex="-1"></a></span>
+<span id="cb363-23"><a href="写轮眼.html#cb363-23" tabindex="-1"></a><span class="sc">--</span></span>
+<span id="cb363-24"><a href="写轮眼.html#cb363-24" tabindex="-1"></a></span>
+<span id="cb363-25"><a href="写轮眼.html#cb363-25" tabindex="-1"></a>.center[</span>
+<span id="cb363-26"><a href="写轮眼.html#cb363-26" tabindex="-1"></a><span class="sc">!</span>[Saw](https<span class="sc">:</span><span class="er">//</span>slides.yihui.name<span class="sc">/</span>gif<span class="sc">/</span>saw<span class="sc">-</span>branch.gif)</span>
+<span id="cb363-27"><a href="写轮眼.html#cb363-27" tabindex="-1"></a></span>
+<span id="cb363-28"><a href="写轮眼.html#cb363-28" tabindex="-1"></a>Don<span class="st">&#39;t saw your slides too hard.</span></span>
+<span id="cb363-29"><a href="写轮眼.html#cb363-29" tabindex="-1"></a><span class="st">]</span></span></code></pre></div>
 </div>
 <div id="演讲者注释" class="section level3 hasAnchor" number="9.3.5">
 <h3><span class="header-section-number">9.3.5</span> 演讲者注释<a href="写轮眼.html#演讲者注释" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>在主讲人模式下(按键盘快捷键<code>p</code>)，你可以自己写笔记，笔记下面有三个问号<code>???</code>语法也是Markdown，这意味着您可以编写Markdown支持的任何元素，比如段落、列表、图像等等。例如:</p>
-<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="写轮眼.html#cb355-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb355-2"><a href="写轮眼.html#cb355-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb355-3"><a href="写轮眼.html#cb355-3" aria-hidden="true" tabindex="-1"></a>The holy passion of Friendship is of so sweet and steady</span>
-<span id="cb355-4"><a href="写轮眼.html#cb355-4" aria-hidden="true" tabindex="-1"></a>and loyal and enduring a nature that it will last through</span>
-<span id="cb355-5"><a href="写轮眼.html#cb355-5" aria-hidden="true" tabindex="-1"></a>a whole lifetime...</span>
-<span id="cb355-6"><a href="写轮眼.html#cb355-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb355-7"><a href="写轮眼.html#cb355-7" aria-hidden="true" tabindex="-1"></a>???</span>
-<span id="cb355-8"><a href="写轮眼.html#cb355-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb355-9"><a href="写轮眼.html#cb355-9" aria-hidden="true" tabindex="-1"></a>_if not asked to lend money_.</span>
-<span id="cb355-10"><a href="写轮眼.html#cb355-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb355-11"><a href="写轮眼.html#cb355-11" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span> Mark Twain</span></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="写轮眼.html#cb364-1" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb364-2"><a href="写轮眼.html#cb364-2" tabindex="-1"></a></span>
+<span id="cb364-3"><a href="写轮眼.html#cb364-3" tabindex="-1"></a>The holy passion of Friendship is of so sweet and steady</span>
+<span id="cb364-4"><a href="写轮眼.html#cb364-4" tabindex="-1"></a>and loyal and enduring a nature that it will last through</span>
+<span id="cb364-5"><a href="写轮眼.html#cb364-5" tabindex="-1"></a>a whole lifetime...</span>
+<span id="cb364-6"><a href="写轮眼.html#cb364-6" tabindex="-1"></a></span>
+<span id="cb364-7"><a href="写轮眼.html#cb364-7" tabindex="-1"></a>???</span>
+<span id="cb364-8"><a href="写轮眼.html#cb364-8" tabindex="-1"></a></span>
+<span id="cb364-9"><a href="写轮眼.html#cb364-9" tabindex="-1"></a>_if not asked to lend money_.</span>
+<span id="cb364-10"><a href="写轮眼.html#cb364-10" tabindex="-1"></a></span>
+<span id="cb364-11"><a href="写轮眼.html#cb364-11" tabindex="-1"></a><span class="sc">---</span> Mark Twain</span></code></pre></div>
 <p>演讲中一个常见的错误，尤其是对于没有太多经验的演讲者来说，就是在幻灯片中塞进太多的内容。结果要么是演讲者上气不接下气，大声读出这么多单词，要么是观众开始自己静静地读幻灯片，而不去听。幻灯片不是论文或书籍，所以你应该尽量在幻灯片的视觉内容上简洁，而在口头叙述上变长。如果你对一张幻灯片有很多要说的，但不能记住所有的内容，你可以考虑使用演示笔记。</p>
 </div>
 <div id="yoloyou-only-live-once" class="section level3 hasAnchor" number="9.3.6">
 <h3><span class="header-section-number">9.3.6</span> yolo(you only live once)<a href="写轮眼.html#yoloyou-only-live-once" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>可随机在幻灯片中插入一张图片，不常用。</p>
-<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="写轮眼.html#cb356-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb356-2"><a href="写轮眼.html#cb356-2" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span></span>
-<span id="cb356-3"><a href="写轮眼.html#cb356-3" aria-hidden="true" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
-<span id="cb356-4"><a href="写轮眼.html#cb356-4" aria-hidden="true" tabindex="-1"></a>    yolo<span class="sc">:</span></span>
-<span id="cb356-5"><a href="写轮眼.html#cb356-5" aria-hidden="true" tabindex="-1"></a>      img<span class="sc">:</span> kangaroo.jpg</span>
-<span id="cb356-6"><a href="写轮眼.html#cb356-6" aria-hidden="true" tabindex="-1"></a>      times<span class="sc">:</span> <span class="dv">5</span></span>
-<span id="cb356-7"><a href="写轮眼.html#cb356-7" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="写轮眼.html#cb365-1" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb365-2"><a href="写轮眼.html#cb365-2" tabindex="-1"></a>output<span class="sc">:</span></span>
+<span id="cb365-3"><a href="写轮眼.html#cb365-3" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
+<span id="cb365-4"><a href="写轮眼.html#cb365-4" tabindex="-1"></a>    yolo<span class="sc">:</span></span>
+<span id="cb365-5"><a href="写轮眼.html#cb365-5" tabindex="-1"></a>      img<span class="sc">:</span> kangaroo.jpg</span>
+<span id="cb365-6"><a href="写轮眼.html#cb365-6" tabindex="-1"></a>      times<span class="sc">:</span> <span class="dv">5</span></span>
+<span id="cb365-7"><a href="写轮眼.html#cb365-7" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
 <p>在幻灯片中随机插入kangaroo.jpg5次。</p>
 </div>
 </div>
@@ -671,7 +718,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="独立html输出设置" class="section level2 hasAnchor" number="9.5">
 <h2><span class="header-section-number">9.5</span> 独立HTML输出设置<a href="写轮眼.html#独立html输出设置" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>与其他R Markdown输出格式相比，<code>xaringan::moon_reader</code>的一个区别是，默认情况下它不会生成独立的HTML文档。这意味着在默认情况下，外部依赖项(如图像或JavaScript库)不会嵌入到HTML输出文件中。您可以通过将独立自包含模式打开</p>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="写轮眼.html#cb357-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">xaringan::moon_reader</span><span class="st">`</span></span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="写轮眼.html#cb366-1" tabindex="-1"></a><span class="st">`</span><span class="at">xaringan::moon_reader</span><span class="st">`</span></span></code></pre></div>
 <p>由于技术上的困难（remark.js并不是用Pandoc而是使用Markdown在浏览器中渲染），就算设置了独立自包含模式，有时候也不一定完全弄好。</p>
 <p>目前如果想独立自包含图片的话，仅仅可以使用 <code>![](PATH)</code>(Markdown syntax), <code>&lt;img src="PATH" /&gt;</code> (HTML syntax), 和<code>background-image: url(PATH)</code>(remark.js syntax for background images)这几种方式，其他方式嵌入图片不会被独立自包含模式识别。</p>
 </div>
@@ -679,21 +726,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">9.6</span> CSS和主题<a href="写轮眼.html#css和主题" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>在format的<code>xaringan::moon_reader</code>中有一个<code>css</code>选项，可以向该选项传递一个css文件路径向量.</p>
 <p>举个栗子。比如你想将一段文字的颜色改为红色，你可以定义一个 CSS 类，如：</p>
-<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="写轮眼.html#cb358-1" aria-hidden="true" tabindex="-1"></a>.red {</span>
-<span id="cb358-2"><a href="写轮眼.html#cb358-2" aria-hidden="true" tabindex="-1"></a>  color<span class="sc">:</span> <span class="co">#FF0000;</span></span>
-<span id="cb358-3"><a href="写轮眼.html#cb358-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="写轮眼.html#cb367-1" tabindex="-1"></a>.red {</span>
+<span id="cb367-2"><a href="写轮眼.html#cb367-2" tabindex="-1"></a>  color<span class="sc">:</span> <span class="co">#FF0000;</span></span>
+<span id="cb367-3"><a href="写轮眼.html#cb367-3" tabindex="-1"></a>}</span></code></pre></div>
 <p>我们把这段代码保存在一个 CSS 文件中，如 extra.css（假设它跟你的 R Markdown 文件在同一文件夹下），然后通过 css 选项将它引入：</p>
-<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="写轮眼.html#cb359-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb359-2"><a href="写轮眼.html#cb359-2" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span></span>
-<span id="cb359-3"><a href="写轮眼.html#cb359-3" aria-hidden="true" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
-<span id="cb359-4"><a href="写轮眼.html#cb359-4" aria-hidden="true" tabindex="-1"></a>    css<span class="sc">:</span> [<span class="st">&quot;default&quot;</span>, <span class="st">&quot;extra.css&quot;</span>]</span>
-<span id="cb359-5"><a href="写轮眼.html#cb359-5" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="写轮眼.html#cb368-1" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb368-2"><a href="写轮眼.html#cb368-2" tabindex="-1"></a>output<span class="sc">:</span></span>
+<span id="cb368-3"><a href="写轮眼.html#cb368-3" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
+<span id="cb368-4"><a href="写轮眼.html#cb368-4" tabindex="-1"></a>    css<span class="sc">:</span> [<span class="st">&quot;default&quot;</span>, <span class="st">&quot;extra.css&quot;</span>]</span>
+<span id="cb368-5"><a href="写轮眼.html#cb368-5" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
 <p>现在在 R Markdown 中你就可以用 .red[] 来标记一段文字为红色，如 .red[我是红色的]。</p>
 <p>理论上，文件路径应该包含扩展名.css。如果路径不包含文件名扩展名，则假定它是xaringan包中的内置CSS文件。例如，上面示例中的default表示包中路径<code>xaringan:::pkg_resource()</code>下的default.css。要查看所有内置的CSS文件，调用R中的<code>xaringan:::list_css()</code>。</p>
 <p>当你只想覆盖默认主题中的一些CSS规则时，你不需要复制整个文件default. CSS;相反，创建一个新的(更小)CSS文件，只提供新的CSS规则。</p>
 <p>用户已经为xaringan贡献了一些主题。例如，您可以使用<a href="https://github.com/pat-s/xaringan-metropolis" target="_blank">metropolis</a>主题。</p>
 <p>查看所有可能的主题</p>
-<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="写轮眼.html#cb360-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(xaringan<span class="sc">:::</span><span class="fu">list_css</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="写轮眼.html#cb369-1" tabindex="-1"></a><span class="fu">names</span>(xaringan<span class="sc">:::</span><span class="fu">list_css</span>())</span></code></pre></div>
 <pre><code>##  [1] &quot;chocolate-fonts&quot;  &quot;chocolate&quot;        &quot;default-fonts&quot;    &quot;default&quot;         
 ##  [5] &quot;duke-blue&quot;        &quot;fc-fonts&quot;         &quot;fc&quot;               &quot;glasgow_template&quot;
 ##  [9] &quot;hygge-duke&quot;       &quot;hygge&quot;            &quot;ki-fonts&quot;         &quot;ki&quot;              
@@ -715,23 +762,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="倒计时计时器" class="section level3 hasAnchor" number="9.7.2">
 <h3><span class="header-section-number">9.7.2</span> 倒计时计时器<a href="写轮眼.html#倒计时计时器" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>一个倒计时计时器可以添加到每一页的幻灯片使用倒计时选项下的自然。例如，如果你想在演讲时花一分钟在每一页上，你可以设置:</p>
-<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="写轮眼.html#cb362-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb362-2"><a href="写轮眼.html#cb362-2" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span></span>
-<span id="cb362-3"><a href="写轮眼.html#cb362-3" aria-hidden="true" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
-<span id="cb362-4"><a href="写轮眼.html#cb362-4" aria-hidden="true" tabindex="-1"></a>    nature<span class="sc">:</span></span>
-<span id="cb362-5"><a href="写轮眼.html#cb362-5" aria-hidden="true" tabindex="-1"></a>      countdown<span class="sc">:</span> <span class="dv">60000</span></span>
-<span id="cb362-6"><a href="写轮眼.html#cb362-6" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="写轮眼.html#cb371-1" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb371-2"><a href="写轮眼.html#cb371-2" tabindex="-1"></a>output<span class="sc">:</span></span>
+<span id="cb371-3"><a href="写轮眼.html#cb371-3" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
+<span id="cb371-4"><a href="写轮眼.html#cb371-4" tabindex="-1"></a>    nature<span class="sc">:</span></span>
+<span id="cb371-5"><a href="写轮眼.html#cb371-5" tabindex="-1"></a>      countdown<span class="sc">:</span> <span class="dv">60000</span></span>
+<span id="cb371-6"><a href="写轮眼.html#cb371-6" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
 <p>然后你会看到一个计时器从01:00，到00:59,00:58，…当时间结束时，计时器将继续，但时间变成红色。</p>
 </div>
 <div id="高亮代码行" class="section level3 hasAnchor" number="9.7.3">
 <h3><span class="header-section-number">9.7.3</span> 高亮代码行<a href="写轮眼.html#高亮代码行" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>选项<code>highlightLines: true of nature</code>将突出显示以<code>*</code>开头的代码行，或者<code>{{}}</code>括起来的代码行，或者末尾有<code>#&lt;&lt;</code></p>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="写轮眼.html#cb363-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb363-2"><a href="写轮眼.html#cb363-2" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span></span>
-<span id="cb363-3"><a href="写轮眼.html#cb363-3" aria-hidden="true" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
-<span id="cb363-4"><a href="写轮眼.html#cb363-4" aria-hidden="true" tabindex="-1"></a>    nature<span class="sc">:</span></span>
-<span id="cb363-5"><a href="写轮眼.html#cb363-5" aria-hidden="true" tabindex="-1"></a>      highlightLines<span class="sc">:</span> true</span>
-<span id="cb363-6"><a href="写轮眼.html#cb363-6" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="写轮眼.html#cb372-1" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb372-2"><a href="写轮眼.html#cb372-2" tabindex="-1"></a>output<span class="sc">:</span></span>
+<span id="cb372-3"><a href="写轮眼.html#cb372-3" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
+<span id="cb372-4"><a href="写轮眼.html#cb372-4" tabindex="-1"></a>    nature<span class="sc">:</span></span>
+<span id="cb372-5"><a href="写轮眼.html#cb372-5" tabindex="-1"></a>      highlightLines<span class="sc">:</span> true</span>
+<span id="cb372-6"><a href="写轮眼.html#cb372-6" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
 <p>下面是几个小栗子</p>
 <p><a href="https://bookdown.org/yihui/rmarkdown/some-tips.html#highlight-code-lines" class="uri">https://bookdown.org/yihui/rmarkdown/some-tips.html#highlight-code-lines</a></p>
 <p>注意，第一种方法不能在源文档中提供有效的R代码，但是后两种方法提供语法上有效的R代码，并且在输出幻灯片中，您不会看到标记{{}}或#&lt;&lt;。默认情况下，这些行将以黄色背景突出显示。</p>
@@ -740,9 +787,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">9.7.4</span> 离线模式<a href="写轮眼.html#离线模式" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>要让幻灯片离线工作，你需要提前下载一个remark.js的副本，因为xaringan默认使用在线版本。你可以使用<code>xaringan::summon_remark()</code>来下载最新的或指定版本的remark.js。默认情况下，它被下载到libs/remark-latest.min.js。也就是当前项目相对的lib文件夹中。
 然后更改YAML元数据中的<code>chakra</code>选项以指向该文件，例如，</p>
-<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="写轮眼.html#cb364-1" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span></span>
-<span id="cb364-2"><a href="写轮眼.html#cb364-2" aria-hidden="true" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
-<span id="cb364-3"><a href="写轮眼.html#cb364-3" aria-hidden="true" tabindex="-1"></a>    chakra<span class="sc">:</span> libs<span class="sc">/</span>remark<span class="sc">-</span>latest.min.js</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="写轮眼.html#cb373-1" tabindex="-1"></a>output<span class="sc">:</span></span>
+<span id="cb373-2"><a href="写轮眼.html#cb373-2" tabindex="-1"></a>  xaringan<span class="sc">::</span>moon_reader<span class="sc">:</span></span>
+<span id="cb373-3"><a href="写轮眼.html#cb373-3" tabindex="-1"></a>    chakra<span class="sc">:</span> libs<span class="sc">/</span>remark<span class="sc">-</span>latest.min.js</span></code></pre></div>
 </div>
 <div id="宏指令macros" class="section level3 hasAnchor" number="9.7.5">
 <h3><span class="header-section-number">9.7.5</span> 宏指令Macros<a href="写轮眼.html#宏指令macros" class="anchor-section" aria-label="Anchor link to header"></a></h3>

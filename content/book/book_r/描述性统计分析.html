@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 描述性统计分析 | R语言编程</title>
   <meta name="description" content="张敬信老师的R语言学习笔记" />
-  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 描述性统计分析 | R语言编程" />
   <meta property="og:type" content="book" />
@@ -51,7 +51,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.10.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
@@ -144,6 +144,32 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 </head>
 
@@ -189,35 +215,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="数据操作.html"><a href="数据操作.html"><i class="fa fa-check"></i><b>3</b> 数据操作</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="数据操作.html"><a href="数据操作.html#数据连接"><i class="fa fa-check"></i><b>3.1</b> 数据连接</a>
+<li class="chapter" data-level="3.1" data-path="数据操作.html"><a href="数据操作.html#数据读写"><i class="fa fa-check"></i><b>3.1</b> 数据读写</a></li>
+<li class="chapter" data-level="3.2" data-path="数据操作.html"><a href="数据操作.html#数据连接"><i class="fa fa-check"></i><b>3.2</b> 数据连接</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="数据操作.html"><a href="数据操作.html#合并行与和并列"><i class="fa fa-check"></i><b>3.1.1</b> 合并行与和并列</a></li>
-<li class="chapter" data-level="3.1.2" data-path="数据操作.html"><a href="数据操作.html#根据值匹配合并数据框"><i class="fa fa-check"></i><b>3.1.2</b> 根据值匹配合并数据框</a></li>
-<li class="chapter" data-level="3.1.3" data-path="数据操作.html"><a href="数据操作.html#实现r中实现stata的merge命令"><i class="fa fa-check"></i><b>3.1.3</b> 实现R中实现stata的merge命令</a></li>
+<li class="chapter" data-level="3.2.1" data-path="数据操作.html"><a href="数据操作.html#合并行与和并列"><i class="fa fa-check"></i><b>3.2.1</b> 合并行与和并列</a></li>
+<li class="chapter" data-level="3.2.2" data-path="数据操作.html"><a href="数据操作.html#根据值匹配合并数据框"><i class="fa fa-check"></i><b>3.2.2</b> 根据值匹配合并数据框</a></li>
+<li class="chapter" data-level="3.2.3" data-path="数据操作.html"><a href="数据操作.html#实现r中实现stata的merge命令"><i class="fa fa-check"></i><b>3.2.3</b> 实现R中实现stata的merge命令</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="数据操作.html"><a href="数据操作.html#数据操作-1"><i class="fa fa-check"></i><b>3.2</b> 数据操作</a>
+<li class="chapter" data-level="3.3" data-path="数据操作.html"><a href="数据操作.html#数据操作-1"><i class="fa fa-check"></i><b>3.3</b> 数据操作</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="数据操作.html"><a href="数据操作.html#选择列select"><i class="fa fa-check"></i><b>3.2.1</b> 选择列（select）</a></li>
-<li class="chapter" data-level="3.2.2" data-path="数据操作.html"><a href="数据操作.html#选择列语法"><i class="fa fa-check"></i><b>3.2.2</b> 选择列语法</a></li>
-<li class="chapter" data-level="3.2.3" data-path="数据操作.html"><a href="数据操作.html#选择列的例子"><i class="fa fa-check"></i><b>3.2.3</b> 选择列的例子</a></li>
-<li class="chapter" data-level="3.2.4" data-path="数据操作.html"><a href="数据操作.html#用--删除列"><i class="fa fa-check"></i><b>3.2.4</b> 用“-” 删除列</a></li>
-<li class="chapter" data-level="3.2.5" data-path="数据操作.html"><a href="数据操作.html#调整列的顺序"><i class="fa fa-check"></i><b>3.2.5</b> 调整列的顺序</a></li>
-<li class="chapter" data-level="3.2.6" data-path="数据操作.html"><a href="数据操作.html#重命名列"><i class="fa fa-check"></i><b>3.2.6</b> 重命名列</a></li>
+<li class="chapter" data-level="3.3.1" data-path="数据操作.html"><a href="数据操作.html#选择列select"><i class="fa fa-check"></i><b>3.3.1</b> 选择列（select）</a></li>
+<li class="chapter" data-level="3.3.2" data-path="数据操作.html"><a href="数据操作.html#选择列语法"><i class="fa fa-check"></i><b>3.3.2</b> 选择列语法</a></li>
+<li class="chapter" data-level="3.3.3" data-path="数据操作.html"><a href="数据操作.html#选择列的例子"><i class="fa fa-check"></i><b>3.3.3</b> 选择列的例子</a></li>
+<li class="chapter" data-level="3.3.4" data-path="数据操作.html"><a href="数据操作.html#用--删除列"><i class="fa fa-check"></i><b>3.3.4</b> 用“-” 删除列</a></li>
+<li class="chapter" data-level="3.3.5" data-path="数据操作.html"><a href="数据操作.html#调整列的顺序"><i class="fa fa-check"></i><b>3.3.5</b> 调整列的顺序</a></li>
+<li class="chapter" data-level="3.3.6" data-path="数据操作.html"><a href="数据操作.html#重命名列"><i class="fa fa-check"></i><b>3.3.6</b> 重命名列</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="数据操作.html"><a href="数据操作.html#分组汇总"><i class="fa fa-check"></i><b>3.3</b> 分组汇总</a>
+<li class="chapter" data-level="3.4" data-path="数据操作.html"><a href="数据操作.html#分组汇总"><i class="fa fa-check"></i><b>3.4</b> 分组汇总</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="数据操作.html"><a href="数据操作.html#创建分组"><i class="fa fa-check"></i><b>3.3.1</b> 创建分组</a></li>
-<li class="chapter" data-level="3.3.2" data-path="数据操作.html"><a href="数据操作.html#分组汇总-1"><i class="fa fa-check"></i><b>3.3.2</b> 分组汇总</a></li>
-<li class="chapter" data-level="3.3.3" data-path="数据操作.html"><a href="数据操作.html#自己的例子"><i class="fa fa-check"></i><b>3.3.3</b> 自己的例子</a></li>
+<li class="chapter" data-level="3.4.1" data-path="数据操作.html"><a href="数据操作.html#创建分组"><i class="fa fa-check"></i><b>3.4.1</b> 创建分组</a></li>
+<li class="chapter" data-level="3.4.2" data-path="数据操作.html"><a href="数据操作.html#分组汇总-1"><i class="fa fa-check"></i><b>3.4.2</b> 分组汇总</a></li>
+<li class="chapter" data-level="3.4.3" data-path="数据操作.html"><a href="数据操作.html#自己的例子"><i class="fa fa-check"></i><b>3.4.3</b> 自己的例子</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="数据操作.html"><a href="数据操作.html#其他数据操作"><i class="fa fa-check"></i><b>3.4</b> 其他数据操作</a>
+<li class="chapter" data-level="3.5" data-path="数据操作.html"><a href="数据操作.html#其他数据操作"><i class="fa fa-check"></i><b>3.5</b> 其他数据操作</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="数据操作.html"><a href="数据操作.html#按行汇总"><i class="fa fa-check"></i><b>3.4.1</b> 按行汇总</a></li>
-<li class="chapter" data-level="3.4.2" data-path="数据操作.html"><a href="数据操作.html#窗口函数"><i class="fa fa-check"></i><b>3.4.2</b> 窗口函数</a></li>
+<li class="chapter" data-level="3.5.1" data-path="数据操作.html"><a href="数据操作.html#按行汇总"><i class="fa fa-check"></i><b>3.5.1</b> 按行汇总</a></li>
+<li class="chapter" data-level="3.5.2" data-path="数据操作.html"><a href="数据操作.html#窗口函数"><i class="fa fa-check"></i><b>3.5.2</b> 窗口函数</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="数据操作.html"><a href="数据操作.html#整洁计算"><i class="fa fa-check"></i><b>3.5</b> 整洁计算</a>
+<li class="chapter" data-level="3.6" data-path="数据操作.html"><a href="数据操作.html#整洁计算"><i class="fa fa-check"></i><b>3.6</b> 整洁计算</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="数据操作.html"><a href="数据操作.html#数据屏蔽与整洁选择"><i class="fa fa-check"></i><b>3.5.1</b> 数据屏蔽与整洁选择</a></li>
+<li class="chapter" data-level="3.6.1" data-path="数据操作.html"><a href="数据操作.html#数据屏蔽与整洁选择"><i class="fa fa-check"></i><b>3.6.1</b> 数据屏蔽与整洁选择</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="可视化与建模.html"><a href="可视化与建模.html"><i class="fa fa-check"></i><b>4</b> 可视化与建模</a>
@@ -295,11 +322,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5" data-path="markdown.html"><a href="markdown.html#数学公式"><i class="fa fa-check"></i><b>6.5</b> 数学公式</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="markdown.html"><a href="markdown.html#markdown如何显示数学公式"><i class="fa fa-check"></i><b>6.5.1</b> Markdown如何显示数学公式</a></li>
-<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.2</b> 数学公式的类别</a></li>
-<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.3</b> 上横线</a></li>
-<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.4</b> hat</a></li>
-<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.5</b> 换行对齐</a></li>
-<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.6</b> 分段函数</a></li>
+<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#公式编号"><i class="fa fa-check"></i><b>6.5.2</b> 公式编号</a></li>
+<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.3</b> 数学公式的类别</a></li>
+<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.4</b> 上横线</a></li>
+<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.5</b> hat</a></li>
+<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.6</b> 换行对齐</a></li>
+<li class="chapter" data-level="6.5.7" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.7</b> 分段函数</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>7</b> RMarkdown</a>
@@ -318,6 +346,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.8" data-path="rmarkdown.html"><a href="rmarkdown.html#行内代码"><i class="fa fa-check"></i><b>7.3.8</b> 行内代码</a></li>
 <li class="chapter" data-level="7.3.9" data-path="rmarkdown.html"><a href="rmarkdown.html#在rmarkdown使用其他语言"><i class="fa fa-check"></i><b>7.3.9</b> 在RMarkdown使用其他语言</a></li>
 <li class="chapter" data-level="7.3.10" data-path="rmarkdown.html"><a href="rmarkdown.html#交互式文档"><i class="fa fa-check"></i><b>7.3.10</b> 交互式文档</a></li>
+<li class="chapter" data-level="7.3.11" data-path="rmarkdown.html"><a href="rmarkdown.html#参考文献"><i class="fa fa-check"></i><b>7.3.11</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="rmarkdown.html"><a href="rmarkdown.html#文档格式htmlpdfword"><i class="fa fa-check"></i><b>7.4</b> 文档格式（HTML,PDF,Word…）</a>
 <ul>
@@ -421,41 +450,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="infer包.html"><a href="infer包.html#卡方检验"><i class="fa fa-check"></i><b>14.2</b> 卡方检验</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>15</b> 极大似然估计</a>
+<li class="chapter" data-level="15" data-path="gamma函数.html"><a href="gamma函数.html"><i class="fa fa-check"></i><b>15</b> Gamma函数</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>15.1</b> 自定义极大似然函数</a>
+<li class="chapter" data-level="15.1" data-path="gamma函数.html"><a href="gamma函数.html#简史"><i class="fa fa-check"></i><b>15.1</b> 简史</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>15.1.1</b> 正态分布</a></li>
-<li class="chapter" data-level="15.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>15.1.2</b> 指数分布</a></li>
+<li class="chapter" data-level="15.1.1" data-path="gamma函数.html"><a href="gamma函数.html#动机"><i class="fa fa-check"></i><b>15.1.1</b> 动机</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="gamma函数.html"><a href="gamma函数.html#定义"><i class="fa fa-check"></i><b>15.2</b> 定义</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="gamma函数.html"><a href="gamma函数.html#euler定义"><i class="fa fa-check"></i><b>15.2.1</b> Euler定义</a></li>
+<li class="chapter" data-level="15.2.2" data-path="gamma函数.html"><a href="gamma函数.html#gauss定义"><i class="fa fa-check"></i><b>15.2.2</b> Gauss定义</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>16</b> 正则表达式</a>
+<li class="chapter" data-level="16" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>16</b> 极大似然估计</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>16.1</b> grep函数</a>
+<li class="chapter" data-level="16.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>16.1</b> 自定义极大似然函数</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>16.1.1</b> 函数参数</a></li>
-<li class="chapter" data-level="16.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>16.1.2</b> 模式（pattern）与匹配（match）</a></li>
-</ul></li>
-<li class="chapter" data-level="16.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>16.2</b> 元字符</a></li>
-<li class="chapter" data-level="16.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>16.3</b> 常用文本处理函数</a></li>
-<li class="chapter" data-level="16.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>16.4</b> 案例</a>
-<ul>
-<li class="chapter" data-level="16.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>16.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
-<li class="chapter" data-level="16.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>16.4.2</b> 全宋词</a></li>
-<li class="chapter" data-level="16.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>16.4.3</b> SCI（筛选行）</a></li>
+<li class="chapter" data-level="16.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>16.1.1</b> 正态分布</a></li>
+<li class="chapter" data-level="16.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>16.1.2</b> 指数分布</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>17</b> 一些自定义函数</a>
+<li class="chapter" data-level="17" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>17</b> 正则表达式</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>17.1</b> 数据处理</a>
+<li class="chapter" data-level="17.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>17.1</b> grep函数</a>
 <ul>
-<li class="chapter" data-level="17.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>17.1.1</b> 分组排序并排名</a></li>
+<li class="chapter" data-level="17.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>17.1.1</b> 函数参数</a></li>
+<li class="chapter" data-level="17.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>17.1.2</b> 模式（pattern）与匹配（match）</a></li>
 </ul></li>
-<li class="chapter" data-level="17.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>17.2</b> 统计相关</a>
+<li class="chapter" data-level="17.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>17.2</b> 元字符</a></li>
+<li class="chapter" data-level="17.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>17.3</b> 常用文本处理函数</a></li>
+<li class="chapter" data-level="17.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>17.4</b> 案例</a>
 <ul>
-<li class="chapter" data-level="17.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>17.2.1</b> 汇总数据t检验</a></li>
-<li class="chapter" data-level="17.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>17.2.2</b> 卡方检验</a></li>
+<li class="chapter" data-level="17.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>17.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
+<li class="chapter" data-level="17.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>17.4.2</b> 全宋词</a></li>
+<li class="chapter" data-level="17.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>17.4.3</b> SCI（筛选行）</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>18</b> 一些自定义函数</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>18.1</b> 数据处理</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>18.1.1</b> 分组排序并排名</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>18.2</b> 统计相关</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>18.2.1</b> 汇总数据t检验</a></li>
+<li class="chapter" data-level="18.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>18.2.2</b> 卡方检验</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="一些自定义函数-1.html"><a href="一些自定义函数-1.html"><i class="fa fa-check"></i><b>19</b> 一些自定义函数</a></li>
+<li class="chapter" data-level="20" data-path="随机抽样.html"><a href="随机抽样.html"><i class="fa fa-check"></i><b>20</b> 随机抽样</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="随机抽样.html"><a href="随机抽样.html#inverse-cdf-transformation逆cdf变化法"><i class="fa fa-check"></i><b>20.1</b> Inverse CDF Transformation（逆CDF变化法）</a></li>
+<li class="chapter" data-level="20.2" data-path="随机抽样.html"><a href="随机抽样.html#accept-reject-sampling-method接受-拒绝抽样"><i class="fa fa-check"></i><b>20.2</b> accept-reject sampling method（接受-拒绝抽样）</a></li>
 </ul></li>
 </ul>
 
@@ -596,27 +643,26 @@ c_v=\frac{s}{\bar x} × 100\%
 <p>很多包提供了同时对多个变量进行（分组）描述汇总所有常见统计量的
 函数，其中tidy 风格的是rstatix::get_summary_stats() 和
 dlookr::describe().</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="描述性统计分析.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstatix)</span>
-<span id="cb217-2"><a href="描述性统计分析.html#cb217-2" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span></span>
-<span id="cb217-3"><a href="描述性统计分析.html#cb217-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
-<span id="cb217-4"><a href="描述性统计分析.html#cb217-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_summary_stats</span>(<span class="at">type =</span> <span class="st">&quot;full&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="描述性统计分析.html#cb221-1" tabindex="-1"></a><span class="fu">library</span>(rstatix)</span>
+<span id="cb221-2"><a href="描述性统计分析.html#cb221-2" tabindex="-1"></a>iris <span class="sc">%&gt;%</span></span>
+<span id="cb221-3"><a href="描述性统计分析.html#cb221-3" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
+<span id="cb221-4"><a href="描述性统计分析.html#cb221-4" tabindex="-1"></a>  <span class="fu">get_summary_stats</span>(<span class="at">type =</span> <span class="st">&quot;full&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 12 × 14
-##    Species  varia…¹     n   min   max median    q1    q3   iqr   mad  mean    sd
-##    &lt;fct&gt;    &lt;fct&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-##  1 setosa   Sepal.…    50   4.3   5.8   5     4.8   5.2  0.4   0.297 5.01  0.352
-##  2 setosa   Sepal.…    50   2.3   4.4   3.4   3.2   3.68 0.475 0.371 3.43  0.379
-##  3 setosa   Petal.…    50   1     1.9   1.5   1.4   1.58 0.175 0.148 1.46  0.174
-##  4 setosa   Petal.…    50   0.1   0.6   0.2   0.2   0.3  0.1   0     0.246 0.105
-##  5 versico… Sepal.…    50   4.9   7     5.9   5.6   6.3  0.7   0.519 5.94  0.516
-##  6 versico… Sepal.…    50   2     3.4   2.8   2.52  3    0.475 0.297 2.77  0.314
-##  7 versico… Petal.…    50   3     5.1   4.35  4     4.6  0.6   0.519 4.26  0.47 
-##  8 versico… Petal.…    50   1     1.8   1.3   1.2   1.5  0.3   0.222 1.33  0.198
-##  9 virgini… Sepal.…    50   4.9   7.9   6.5   6.22  6.9  0.675 0.593 6.59  0.636
-## 10 virgini… Sepal.…    50   2.2   3.8   3     2.8   3.18 0.375 0.297 2.97  0.322
-## 11 virgini… Petal.…    50   4.5   6.9   5.55  5.1   5.88 0.775 0.667 5.55  0.552
-## 12 virgini… Petal.…    50   1.4   2.5   2     1.8   2.3  0.5   0.297 2.03  0.275
-## # … with 2 more variables: se &lt;dbl&gt;, ci &lt;dbl&gt;, and abbreviated variable name
-## #   ¹​variable</code></pre>
+##    Species variable     n   min   max median    q1    q3   iqr   mad  mean    sd
+##    &lt;fct&gt;   &lt;fct&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 setosa  Sepal.L…    50   4.3   5.8   5     4.8   5.2  0.4   0.297 5.01  0.352
+##  2 setosa  Sepal.W…    50   2.3   4.4   3.4   3.2   3.68 0.475 0.371 3.43  0.379
+##  3 setosa  Petal.L…    50   1     1.9   1.5   1.4   1.58 0.175 0.148 1.46  0.174
+##  4 setosa  Petal.W…    50   0.1   0.6   0.2   0.2   0.3  0.1   0     0.246 0.105
+##  5 versic… Sepal.L…    50   4.9   7     5.9   5.6   6.3  0.7   0.519 5.94  0.516
+##  6 versic… Sepal.W…    50   2     3.4   2.8   2.52  3    0.475 0.297 2.77  0.314
+##  7 versic… Petal.L…    50   3     5.1   4.35  4     4.6  0.6   0.519 4.26  0.47 
+##  8 versic… Petal.W…    50   1     1.8   1.3   1.2   1.5  0.3   0.222 1.33  0.198
+##  9 virgin… Sepal.L…    50   4.9   7.9   6.5   6.22  6.9  0.675 0.593 6.59  0.636
+## 10 virgin… Sepal.W…    50   2.2   3.8   3     2.8   3.18 0.375 0.297 2.97  0.322
+## 11 virgin… Petal.L…    50   4.5   6.9   5.55  5.1   5.88 0.775 0.667 5.55  0.552
+## 12 virgin… Petal.W…    50   1.4   2.5   2     1.8   2.3  0.5   0.297 2.03  0.275
+## # ℹ 2 more variables: se &lt;dbl&gt;, ci &lt;dbl&gt;</code></pre>
 </div>
 </div>
 <div id="统计图" class="section level2 hasAnchor" number="5.3">
@@ -640,11 +686,11 @@ dlookr::describe().</p>
 <li>在条形旁边增加文字注释，标记该条形所占百分比</li>
 <li>翻转坐标轴，变成水平条形图</li>
 </ul>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="描述性统计分析.html#cb219-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span></span>
-<span id="cb219-2"><a href="描述性统计分析.html#cb219-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">skin_color =</span> <span class="fu">fct_lump</span>(skin_color, <span class="at">n =</span> <span class="dv">5</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb219-3"><a href="描述性统计分析.html#cb219-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(skin_color, <span class="at">sort =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb219-4"><a href="描述性统计分析.html#cb219-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span>
-<span id="cb219-5"><a href="描述性统计分析.html#cb219-5" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="描述性统计分析.html#cb223-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span></span>
+<span id="cb223-2"><a href="描述性统计分析.html#cb223-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">skin_color =</span> <span class="fu">fct_lump</span>(skin_color, <span class="at">n =</span> <span class="dv">5</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb223-3"><a href="描述性统计分析.html#cb223-3" tabindex="-1"></a>  <span class="fu">count</span>(skin_color, <span class="at">sort =</span> T) <span class="sc">%&gt;%</span></span>
+<span id="cb223-4"><a href="描述性统计分析.html#cb223-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span>
+<span id="cb223-5"><a href="描述性统计分析.html#cb223-5" tabindex="-1"></a>df</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 3
 ##   skin_color     n      p
 ##   &lt;fct&gt;      &lt;int&gt;  &lt;dbl&gt;
@@ -654,17 +700,17 @@ dlookr::describe().</p>
 ## 4 dark           6 0.0690
 ## 5 green          6 0.0690
 ## 6 grey           6 0.0690</code></pre>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="描述性统计分析.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="fu">fct_reorder</span>(skin_color, p), p)) <span class="sc">+</span></span>
-<span id="cb221-2"><a href="描述性统计分析.html#cb221-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span> <span class="co"># 汇总数据制作条形图</span></span>
-<span id="cb221-3"><a href="描述性统计分析.html#cb221-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span> <span class="do">## 坐标轴标签由小数变成百分比形式</span></span>
-<span id="cb221-4"><a href="描述性统计分析.html#cb221-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;皮肤颜色&quot;</span>, <span class="at">y =</span> <span class="st">&quot;占比&quot;</span>) <span class="sc">+</span></span>
-<span id="cb221-5"><a href="描述性统计分析.html#cb221-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(</span>
-<span id="cb221-6"><a href="描述性统计分析.html#cb221-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> p <span class="sc">+</span> <span class="fl">0.04</span>, <span class="do">## y的偏移量</span></span>
-<span id="cb221-7"><a href="描述性统计分析.html#cb221-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">str_c</span>(<span class="fu">round</span>(p <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%&quot;</span>)</span>
-<span id="cb221-8"><a href="描述性统计分析.html#cb221-8" aria-hidden="true" tabindex="-1"></a>  ), <span class="do">## 将多个字符串合并成一个字符串</span></span>
-<span id="cb221-9"><a href="描述性统计分析.html#cb221-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">5</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span></span>
-<span id="cb221-10"><a href="描述性统计分析.html#cb221-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb221-11"><a href="描述性统计分析.html#cb221-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="do">## 翻转xy坐标轴</span></span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="描述性统计分析.html#cb225-1" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="fu">fct_reorder</span>(skin_color, p), p)) <span class="sc">+</span></span>
+<span id="cb225-2"><a href="描述性统计分析.html#cb225-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span> <span class="co"># 汇总数据制作条形图</span></span>
+<span id="cb225-3"><a href="描述性统计分析.html#cb225-3" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span> <span class="do">## 坐标轴标签由小数变成百分比形式</span></span>
+<span id="cb225-4"><a href="描述性统计分析.html#cb225-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;皮肤颜色&quot;</span>, <span class="at">y =</span> <span class="st">&quot;占比&quot;</span>) <span class="sc">+</span></span>
+<span id="cb225-5"><a href="描述性统计分析.html#cb225-5" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(</span>
+<span id="cb225-6"><a href="描述性统计分析.html#cb225-6" tabindex="-1"></a>    <span class="at">y =</span> p <span class="sc">+</span> <span class="fl">0.04</span>, <span class="do">## y的偏移量</span></span>
+<span id="cb225-7"><a href="描述性统计分析.html#cb225-7" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">str_c</span>(<span class="fu">round</span>(p <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%&quot;</span>)</span>
+<span id="cb225-8"><a href="描述性统计分析.html#cb225-8" tabindex="-1"></a>  ), <span class="do">## 将多个字符串合并成一个字符串</span></span>
+<span id="cb225-9"><a href="描述性统计分析.html#cb225-9" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">5</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span></span>
+<span id="cb225-10"><a href="描述性统计分析.html#cb225-10" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb225-11"><a href="描述性统计分析.html#cb225-11" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="do">## 翻转xy坐标轴</span></span></code></pre></div>
 <p><img src="1004-chapter04-DescribeStatistis_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p><strong>2. 饼图</strong></p>
 <p>待补充</p>
@@ -683,17 +729,17 @@ dlookr::describe().</p>
 因为频率直方图的条形宽度趋于0，就是概率密度曲线。</p>
 <p>若想绘制频数直方图+ 概率密度曲线，就需要对密度做一个放大：条形宽度
 * 样本数倍。</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="描述性统计分析.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb222-2"><a href="描述性统计分析.html#cb222-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">heights =</span> <span class="fu">rnorm</span>(<span class="dv">10000</span>, <span class="dv">170</span>, <span class="fl">2.5</span>))</span>
-<span id="cb222-3"><a href="描述性统计分析.html#cb222-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> heights)) <span class="sc">+</span></span>
-<span id="cb222-4"><a href="描述性统计分析.html#cb222-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
-<span id="cb222-5"><a href="描述性统计分析.html#cb222-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
-<span id="cb222-6"><a href="描述性统计分析.html#cb222-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">binwidth =</span> <span class="fl">0.5</span></span>
-<span id="cb222-7"><a href="描述性统计分析.html#cb222-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb222-8"><a href="描述性统计分析.html#cb222-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(</span>
-<span id="cb222-9"><a href="描述性统计分析.html#cb222-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">fun =</span> <span class="sc">~</span> <span class="fu">dnorm</span>(.x, <span class="at">mean =</span> <span class="dv">170</span>, <span class="at">sd =</span> <span class="fl">2.5</span>) <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">*</span> <span class="dv">10000</span>,</span>
-<span id="cb222-10"><a href="描述性统计分析.html#cb222-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;red&quot;</span></span>
-<span id="cb222-11"><a href="描述性统计分析.html#cb222-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="描述性统计分析.html#cb226-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb226-2"><a href="描述性统计分析.html#cb226-2" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">heights =</span> <span class="fu">rnorm</span>(<span class="dv">10000</span>, <span class="dv">170</span>, <span class="fl">2.5</span>))</span>
+<span id="cb226-3"><a href="描述性统计分析.html#cb226-3" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> heights)) <span class="sc">+</span></span>
+<span id="cb226-4"><a href="描述性统计分析.html#cb226-4" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb226-5"><a href="描述性统计分析.html#cb226-5" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb226-6"><a href="描述性统计分析.html#cb226-6" tabindex="-1"></a>    <span class="at">binwidth =</span> <span class="fl">0.5</span></span>
+<span id="cb226-7"><a href="描述性统计分析.html#cb226-7" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb226-8"><a href="描述性统计分析.html#cb226-8" tabindex="-1"></a>  <span class="fu">stat_function</span>(</span>
+<span id="cb226-9"><a href="描述性统计分析.html#cb226-9" tabindex="-1"></a>    <span class="at">fun =</span> <span class="sc">~</span> <span class="fu">dnorm</span>(.x, <span class="at">mean =</span> <span class="dv">170</span>, <span class="at">sd =</span> <span class="fl">2.5</span>) <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">*</span> <span class="dv">10000</span>,</span>
+<span id="cb226-10"><a href="描述性统计分析.html#cb226-10" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;red&quot;</span></span>
+<span id="cb226-11"><a href="描述性统计分析.html#cb226-11" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="1004-chapter04-DescribeStatistis_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p><strong>2. 箱线图</strong></p>
 <p>箱线图，是在一条数轴上：</p>
@@ -706,24 +752,24 @@ dlookr::describe().</p>
 <p>箱线图的主要应用就是，剔除数据的异常值、判断数据的偏态和尾重、可视化
 组间差异。</p>
 <p>用geom_boxplot() 绘制箱线图，例如比较不同drv 下，hwy 的组间差异</p>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="描述性统计分析.html#cb223-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> drv, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
-<span id="cb223-2"><a href="描述性统计分析.html#cb223-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="描述性统计分析.html#cb227-1" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> drv, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
+<span id="cb227-2"><a href="描述性统计分析.html#cb227-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <p><img src="1004-chapter04-DescribeStatistis_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p><strong>均值线与误差棒图</strong></p>
 <p>以ToothGrowth 数据集为例，先自定义分组汇总函数计算分组均值和标准
 误：</p>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="描述性统计分析.html#cb224-1" aria-hidden="true" tabindex="-1"></a>my_summary <span class="ot">&lt;-</span> <span class="cf">function</span>(data, .summary_var, ...) {</span>
-<span id="cb224-2"><a href="描述性统计分析.html#cb224-2" aria-hidden="true" tabindex="-1"></a>  summary_var <span class="ot">&lt;-</span> <span class="fu">enquo</span>(.summary_var)</span>
-<span id="cb224-3"><a href="描述性统计分析.html#cb224-3" aria-hidden="true" tabindex="-1"></a>  data <span class="sc">%&gt;%</span></span>
-<span id="cb224-4"><a href="描述性统计分析.html#cb224-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(...) <span class="sc">%&gt;%</span></span>
-<span id="cb224-5"><a href="描述性统计分析.html#cb224-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
-<span id="cb224-6"><a href="描述性统计分析.html#cb224-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean =</span> <span class="fu">mean</span>(<span class="sc">!!</span>summary_var, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb224-7"><a href="描述性统计分析.html#cb224-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">sd =</span> <span class="fu">sd</span>(<span class="sc">!!</span>summary_var, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb224-8"><a href="描述性统计分析.html#cb224-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb224-9"><a href="描述性统计分析.html#cb224-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">se =</span> sd <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">n</span>()))</span>
-<span id="cb224-10"><a href="描述性统计分析.html#cb224-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb224-11"><a href="描述性统计分析.html#cb224-11" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">my_summary</span>(ToothGrowth, len, supp, dose)</span>
-<span id="cb224-12"><a href="描述性统计分析.html#cb224-12" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="描述性统计分析.html#cb228-1" tabindex="-1"></a>my_summary <span class="ot">&lt;-</span> <span class="cf">function</span>(data, .summary_var, ...) {</span>
+<span id="cb228-2"><a href="描述性统计分析.html#cb228-2" tabindex="-1"></a>  summary_var <span class="ot">&lt;-</span> <span class="fu">enquo</span>(.summary_var)</span>
+<span id="cb228-3"><a href="描述性统计分析.html#cb228-3" tabindex="-1"></a>  data <span class="sc">%&gt;%</span></span>
+<span id="cb228-4"><a href="描述性统计分析.html#cb228-4" tabindex="-1"></a>    <span class="fu">group_by</span>(...) <span class="sc">%&gt;%</span></span>
+<span id="cb228-5"><a href="描述性统计分析.html#cb228-5" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb228-6"><a href="描述性统计分析.html#cb228-6" tabindex="-1"></a>      <span class="at">mean =</span> <span class="fu">mean</span>(<span class="sc">!!</span>summary_var, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb228-7"><a href="描述性统计分析.html#cb228-7" tabindex="-1"></a>      <span class="at">sd =</span> <span class="fu">sd</span>(<span class="sc">!!</span>summary_var, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb228-8"><a href="描述性统计分析.html#cb228-8" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb228-9"><a href="描述性统计分析.html#cb228-9" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">se =</span> sd <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">n</span>()))</span>
+<span id="cb228-10"><a href="描述性统计分析.html#cb228-10" tabindex="-1"></a>}</span>
+<span id="cb228-11"><a href="描述性统计分析.html#cb228-11" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">my_summary</span>(ToothGrowth, len, supp, dose)</span>
+<span id="cb228-12"><a href="描述性统计分析.html#cb228-12" tabindex="-1"></a>df</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 5
 ## # Groups:   supp [2]
 ##   supp   dose  mean    sd    se
@@ -734,20 +780,20 @@ dlookr::describe().</p>
 ## 4 VC      0.5  7.98  2.75  1.59
 ## 5 VC      1   16.8   2.52  1.45
 ## 6 VC      2   26.1   4.80  2.77</code></pre>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="描述性统计分析.html#cb226-1" aria-hidden="true" tabindex="-1"></a>pd <span class="ot">&lt;-</span> <span class="fu">position_dodge</span>((<span class="fl">0.05</span>))</span>
-<span id="cb226-2"><a href="描述性统计分析.html#cb226-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(dose, mean, <span class="at">color =</span> supp, <span class="at">group =</span> supp)) <span class="sc">+</span></span>
-<span id="cb226-3"><a href="描述性统计分析.html#cb226-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean <span class="sc">-</span> se, <span class="at">ymax =</span> mean <span class="sc">+</span> se),</span>
-<span id="cb226-4"><a href="描述性统计分析.html#cb226-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">position =</span> pd</span>
-<span id="cb226-5"><a href="描述性统计分析.html#cb226-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb226-6"><a href="描述性统计分析.html#cb226-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">position =</span> pd) <span class="sc">+</span></span>
-<span id="cb226-7"><a href="描述性统计分析.html#cb226-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> pd, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
-<span id="cb226-8"><a href="描述性统计分析.html#cb226-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot; 剂量(mg)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb226-9"><a href="描述性统计分析.html#cb226-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot; 牙齿生长&quot;</span>) <span class="sc">+</span></span>
-<span id="cb226-10"><a href="描述性统计分析.html#cb226-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_hue</span>(</span>
-<span id="cb226-11"><a href="描述性统计分析.html#cb226-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot; 喂养类型&quot;</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="st">&quot;OJ&quot;</span>, <span class="st">&quot;VC&quot;</span>),</span>
-<span id="cb226-12"><a href="描述性统计分析.html#cb226-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot; 橘子汁&quot;</span>, <span class="st">&quot; 维生素C&quot;</span>), <span class="at">l =</span> <span class="dv">40</span></span>
-<span id="cb226-13"><a href="描述性统计分析.html#cb226-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb226-14"><a href="描述性统计分析.html#cb226-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">*</span> <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="描述性统计分析.html#cb230-1" tabindex="-1"></a>pd <span class="ot">&lt;-</span> <span class="fu">position_dodge</span>((<span class="fl">0.05</span>))</span>
+<span id="cb230-2"><a href="描述性统计分析.html#cb230-2" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(dose, mean, <span class="at">color =</span> supp, <span class="at">group =</span> supp)) <span class="sc">+</span></span>
+<span id="cb230-3"><a href="描述性统计分析.html#cb230-3" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean <span class="sc">-</span> se, <span class="at">ymax =</span> mean <span class="sc">+</span> se),</span>
+<span id="cb230-4"><a href="描述性统计分析.html#cb230-4" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">position =</span> pd</span>
+<span id="cb230-5"><a href="描述性统计分析.html#cb230-5" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb230-6"><a href="描述性统计分析.html#cb230-6" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">position =</span> pd) <span class="sc">+</span></span>
+<span id="cb230-7"><a href="描述性统计分析.html#cb230-7" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> pd, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb230-8"><a href="描述性统计分析.html#cb230-8" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot; 剂量(mg)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb230-9"><a href="描述性统计分析.html#cb230-9" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot; 牙齿生长&quot;</span>) <span class="sc">+</span></span>
+<span id="cb230-10"><a href="描述性统计分析.html#cb230-10" tabindex="-1"></a>  <span class="fu">scale_color_hue</span>(</span>
+<span id="cb230-11"><a href="描述性统计分析.html#cb230-11" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot; 喂养类型&quot;</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="st">&quot;OJ&quot;</span>, <span class="st">&quot;VC&quot;</span>),</span>
+<span id="cb230-12"><a href="描述性统计分析.html#cb230-12" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot; 橘子汁&quot;</span>, <span class="st">&quot; 维生素C&quot;</span>), <span class="at">l =</span> <span class="dv">40</span></span>
+<span id="cb230-13"><a href="描述性统计分析.html#cb230-13" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb230-14"><a href="描述性统计分析.html#cb230-14" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">*</span> <span class="dv">5</span>)</span></code></pre></div>
 <p><img src="1004-chapter04-DescribeStatistis_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="列联表" class="section level3 hasAnchor" number="5.3.3">
@@ -758,7 +804,7 @@ janitor 包提供了更强大的tabyl() 函数，可以生成一个、两个、�
 量的列联表，再结合adorn_*() 函数，可以很方便地按想要的格式添加行
 列合计、占比等。</p>
 <p>一维列联表，添加合计行：</p>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="描述性统计分析.html#cb227-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="描述性统计分析.html#cb231-1" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code></pre></div>
 <pre><code>## Warning: package &#39;janitor&#39; was built under R version 4.2.3</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;janitor&#39;</code></pre>
@@ -768,22 +814,22 @@ janitor 包提供了更强大的tabyl() 函数，可以生成一个、两个、�
 <pre><code>## The following objects are masked from &#39;package:stats&#39;:
 ## 
 ##     chisq.test, fisher.test</code></pre>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="描述性统计分析.html#cb232-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span></span>
-<span id="cb232-2"><a href="描述性统计分析.html#cb232-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabyl</span>(drv) <span class="sc">%&gt;%</span></span>
-<span id="cb232-3"><a href="描述性统计分析.html#cb232-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_totals</span>(<span class="st">&quot;row&quot;</span>) <span class="sc">%&gt;%</span> <span class="co"># 添加合计行</span></span>
-<span id="cb232-4"><a href="描述性统计分析.html#cb232-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_pct_formatting</span>() <span class="co"># 设置百分比格式</span></span></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="描述性统计分析.html#cb236-1" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span></span>
+<span id="cb236-2"><a href="描述性统计分析.html#cb236-2" tabindex="-1"></a>  <span class="fu">tabyl</span>(drv) <span class="sc">%&gt;%</span></span>
+<span id="cb236-3"><a href="描述性统计分析.html#cb236-3" tabindex="-1"></a>  <span class="fu">adorn_totals</span>(<span class="st">&quot;row&quot;</span>) <span class="sc">%&gt;%</span> <span class="co"># 添加合计行</span></span>
+<span id="cb236-4"><a href="描述性统计分析.html#cb236-4" tabindex="-1"></a>  <span class="fu">adorn_pct_formatting</span>() <span class="co"># 设置百分比格式</span></span></code></pre></div>
 <pre><code>##    drv   n percent
 ##      4 103   44.0%
 ##      f 106   45.3%
 ##      r  25   10.7%
 ##  Total 234  100.0%</code></pre>
 <p>二维列联表，添加列占比和频数</p>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="描述性统计分析.html#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
-<span id="cb234-2"><a href="描述性统计分析.html#cb234-2" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span></span>
-<span id="cb234-3"><a href="描述性统计分析.html#cb234-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabyl</span>(drv, cyl) <span class="sc">%&gt;%</span></span>
-<span id="cb234-4"><a href="描述性统计分析.html#cb234-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_percentages</span>(<span class="st">&quot;col&quot;</span>) <span class="sc">%&gt;%</span> <span class="co"># 添加列占比</span></span>
-<span id="cb234-5"><a href="描述性统计分析.html#cb234-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_pct_formatting</span>(<span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="co"># 设置百分比格式</span></span>
-<span id="cb234-6"><a href="描述性统计分析.html#cb234-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">adorn_ns</span>() <span class="co"># 添加频数</span></span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="描述性统计分析.html#cb238-1" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb238-2"><a href="描述性统计分析.html#cb238-2" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span></span>
+<span id="cb238-3"><a href="描述性统计分析.html#cb238-3" tabindex="-1"></a>  <span class="fu">tabyl</span>(drv, cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb238-4"><a href="描述性统计分析.html#cb238-4" tabindex="-1"></a>  <span class="fu">adorn_percentages</span>(<span class="st">&quot;col&quot;</span>) <span class="sc">%&gt;%</span> <span class="co"># 添加列占比</span></span>
+<span id="cb238-5"><a href="描述性统计分析.html#cb238-5" tabindex="-1"></a>  <span class="fu">adorn_pct_formatting</span>(<span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="co"># 设置百分比格式</span></span>
+<span id="cb238-6"><a href="描述性统计分析.html#cb238-6" tabindex="-1"></a>  <span class="fu">adorn_ns</span>() <span class="co"># 添加频数</span></span></code></pre></div>
 <pre><code>##  drv           4           5           6           8
 ##    4 28.40% (23)   0.00% (0) 40.51% (32) 68.57% (48)
 ##    f 71.60% (58) 100.00% (4) 54.43% (43)  1.43%  (1)

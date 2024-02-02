@@ -249,6 +249,36 @@ GAMMA.INV(RAND(),alpha,beta)  ##注意，excel中alpha对应r中的shape，beta�
 
 ### 2.7 广义gamma分布
 
+补充知识：
+
+
+$$ 
+gamma \ function: \Gamma (z) =  \int_0^{\infty} x^{z-1}e^{-x} dx
+$$
+
+$$
+lower \ incomplete \ gamma \ function: \gamma (s,x)=\int_0^xt^{s-1}e^{-t} dt  
+$$
+
+$$
+upper \ incomplete \ gamma \ function: \Gamma_x (s,x)=\int_x^{\infty} t^{s-1}e^{-t} dt  
+$$
+
+excel求gamma函数值
+
+
+```
+Γ(-z) = -PI()/(z*EXP(GAMMALN(z))*SIN(PI()*z)
+
+γ(s, x) = EXP(GAMALN(s)) * GAMMA.DIST(x, s, 1,TRUE)
+
+Γ(s, x) = EXP(GAMMALN(s)) * (1 – GAMMA.DIST(x, s, 1,TRUE))
+```
+
+
+
+
+
 
 广义gamma分布的CDF的反函数没有解析解，不能使用逆变换法。
 **软件实现**：
@@ -272,3 +302,12 @@ R直接掉包:
 ```r
 rand_fun = flexsurv::rsurvspline(n = 100,gamma = c(-12.17714,1.947243,0.3495745),knots = c(log(59),log(359),log(638)))
 ```
+
+
+参考：
+
+
+1. 生存函数：https://devinincerti.com/2019/06/18/parametric_survival.html
+
+2. Gamma函数： https://real-statistics.com/other-key-distributions/gamma-function/gamma-function-advanced/
+

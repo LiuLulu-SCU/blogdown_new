@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 基础语法 | R语言编程</title>
   <meta name="description" content="张敬信老师的R语言学习笔记" />
-  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 基础语法 | R语言编程" />
   <meta property="og:type" content="book" />
@@ -51,7 +51,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.10.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
@@ -144,6 +144,32 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 </head>
 
@@ -189,35 +215,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="数据操作.html"><a href="数据操作.html"><i class="fa fa-check"></i><b>3</b> 数据操作</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="数据操作.html"><a href="数据操作.html#数据连接"><i class="fa fa-check"></i><b>3.1</b> 数据连接</a>
+<li class="chapter" data-level="3.1" data-path="数据操作.html"><a href="数据操作.html#数据读写"><i class="fa fa-check"></i><b>3.1</b> 数据读写</a></li>
+<li class="chapter" data-level="3.2" data-path="数据操作.html"><a href="数据操作.html#数据连接"><i class="fa fa-check"></i><b>3.2</b> 数据连接</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="数据操作.html"><a href="数据操作.html#合并行与和并列"><i class="fa fa-check"></i><b>3.1.1</b> 合并行与和并列</a></li>
-<li class="chapter" data-level="3.1.2" data-path="数据操作.html"><a href="数据操作.html#根据值匹配合并数据框"><i class="fa fa-check"></i><b>3.1.2</b> 根据值匹配合并数据框</a></li>
-<li class="chapter" data-level="3.1.3" data-path="数据操作.html"><a href="数据操作.html#实现r中实现stata的merge命令"><i class="fa fa-check"></i><b>3.1.3</b> 实现R中实现stata的merge命令</a></li>
+<li class="chapter" data-level="3.2.1" data-path="数据操作.html"><a href="数据操作.html#合并行与和并列"><i class="fa fa-check"></i><b>3.2.1</b> 合并行与和并列</a></li>
+<li class="chapter" data-level="3.2.2" data-path="数据操作.html"><a href="数据操作.html#根据值匹配合并数据框"><i class="fa fa-check"></i><b>3.2.2</b> 根据值匹配合并数据框</a></li>
+<li class="chapter" data-level="3.2.3" data-path="数据操作.html"><a href="数据操作.html#实现r中实现stata的merge命令"><i class="fa fa-check"></i><b>3.2.3</b> 实现R中实现stata的merge命令</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="数据操作.html"><a href="数据操作.html#数据操作-1"><i class="fa fa-check"></i><b>3.2</b> 数据操作</a>
+<li class="chapter" data-level="3.3" data-path="数据操作.html"><a href="数据操作.html#数据操作-1"><i class="fa fa-check"></i><b>3.3</b> 数据操作</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="数据操作.html"><a href="数据操作.html#选择列select"><i class="fa fa-check"></i><b>3.2.1</b> 选择列（select）</a></li>
-<li class="chapter" data-level="3.2.2" data-path="数据操作.html"><a href="数据操作.html#选择列语法"><i class="fa fa-check"></i><b>3.2.2</b> 选择列语法</a></li>
-<li class="chapter" data-level="3.2.3" data-path="数据操作.html"><a href="数据操作.html#选择列的例子"><i class="fa fa-check"></i><b>3.2.3</b> 选择列的例子</a></li>
-<li class="chapter" data-level="3.2.4" data-path="数据操作.html"><a href="数据操作.html#用--删除列"><i class="fa fa-check"></i><b>3.2.4</b> 用“-” 删除列</a></li>
-<li class="chapter" data-level="3.2.5" data-path="数据操作.html"><a href="数据操作.html#调整列的顺序"><i class="fa fa-check"></i><b>3.2.5</b> 调整列的顺序</a></li>
-<li class="chapter" data-level="3.2.6" data-path="数据操作.html"><a href="数据操作.html#重命名列"><i class="fa fa-check"></i><b>3.2.6</b> 重命名列</a></li>
+<li class="chapter" data-level="3.3.1" data-path="数据操作.html"><a href="数据操作.html#选择列select"><i class="fa fa-check"></i><b>3.3.1</b> 选择列（select）</a></li>
+<li class="chapter" data-level="3.3.2" data-path="数据操作.html"><a href="数据操作.html#选择列语法"><i class="fa fa-check"></i><b>3.3.2</b> 选择列语法</a></li>
+<li class="chapter" data-level="3.3.3" data-path="数据操作.html"><a href="数据操作.html#选择列的例子"><i class="fa fa-check"></i><b>3.3.3</b> 选择列的例子</a></li>
+<li class="chapter" data-level="3.3.4" data-path="数据操作.html"><a href="数据操作.html#用--删除列"><i class="fa fa-check"></i><b>3.3.4</b> 用“-” 删除列</a></li>
+<li class="chapter" data-level="3.3.5" data-path="数据操作.html"><a href="数据操作.html#调整列的顺序"><i class="fa fa-check"></i><b>3.3.5</b> 调整列的顺序</a></li>
+<li class="chapter" data-level="3.3.6" data-path="数据操作.html"><a href="数据操作.html#重命名列"><i class="fa fa-check"></i><b>3.3.6</b> 重命名列</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="数据操作.html"><a href="数据操作.html#分组汇总"><i class="fa fa-check"></i><b>3.3</b> 分组汇总</a>
+<li class="chapter" data-level="3.4" data-path="数据操作.html"><a href="数据操作.html#分组汇总"><i class="fa fa-check"></i><b>3.4</b> 分组汇总</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="数据操作.html"><a href="数据操作.html#创建分组"><i class="fa fa-check"></i><b>3.3.1</b> 创建分组</a></li>
-<li class="chapter" data-level="3.3.2" data-path="数据操作.html"><a href="数据操作.html#分组汇总-1"><i class="fa fa-check"></i><b>3.3.2</b> 分组汇总</a></li>
-<li class="chapter" data-level="3.3.3" data-path="数据操作.html"><a href="数据操作.html#自己的例子"><i class="fa fa-check"></i><b>3.3.3</b> 自己的例子</a></li>
+<li class="chapter" data-level="3.4.1" data-path="数据操作.html"><a href="数据操作.html#创建分组"><i class="fa fa-check"></i><b>3.4.1</b> 创建分组</a></li>
+<li class="chapter" data-level="3.4.2" data-path="数据操作.html"><a href="数据操作.html#分组汇总-1"><i class="fa fa-check"></i><b>3.4.2</b> 分组汇总</a></li>
+<li class="chapter" data-level="3.4.3" data-path="数据操作.html"><a href="数据操作.html#自己的例子"><i class="fa fa-check"></i><b>3.4.3</b> 自己的例子</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="数据操作.html"><a href="数据操作.html#其他数据操作"><i class="fa fa-check"></i><b>3.4</b> 其他数据操作</a>
+<li class="chapter" data-level="3.5" data-path="数据操作.html"><a href="数据操作.html#其他数据操作"><i class="fa fa-check"></i><b>3.5</b> 其他数据操作</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="数据操作.html"><a href="数据操作.html#按行汇总"><i class="fa fa-check"></i><b>3.4.1</b> 按行汇总</a></li>
-<li class="chapter" data-level="3.4.2" data-path="数据操作.html"><a href="数据操作.html#窗口函数"><i class="fa fa-check"></i><b>3.4.2</b> 窗口函数</a></li>
+<li class="chapter" data-level="3.5.1" data-path="数据操作.html"><a href="数据操作.html#按行汇总"><i class="fa fa-check"></i><b>3.5.1</b> 按行汇总</a></li>
+<li class="chapter" data-level="3.5.2" data-path="数据操作.html"><a href="数据操作.html#窗口函数"><i class="fa fa-check"></i><b>3.5.2</b> 窗口函数</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="数据操作.html"><a href="数据操作.html#整洁计算"><i class="fa fa-check"></i><b>3.5</b> 整洁计算</a>
+<li class="chapter" data-level="3.6" data-path="数据操作.html"><a href="数据操作.html#整洁计算"><i class="fa fa-check"></i><b>3.6</b> 整洁计算</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="数据操作.html"><a href="数据操作.html#数据屏蔽与整洁选择"><i class="fa fa-check"></i><b>3.5.1</b> 数据屏蔽与整洁选择</a></li>
+<li class="chapter" data-level="3.6.1" data-path="数据操作.html"><a href="数据操作.html#数据屏蔽与整洁选择"><i class="fa fa-check"></i><b>3.6.1</b> 数据屏蔽与整洁选择</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="可视化与建模.html"><a href="可视化与建模.html"><i class="fa fa-check"></i><b>4</b> 可视化与建模</a>
@@ -295,11 +322,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5" data-path="markdown.html"><a href="markdown.html#数学公式"><i class="fa fa-check"></i><b>6.5</b> 数学公式</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="markdown.html"><a href="markdown.html#markdown如何显示数学公式"><i class="fa fa-check"></i><b>6.5.1</b> Markdown如何显示数学公式</a></li>
-<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.2</b> 数学公式的类别</a></li>
-<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.3</b> 上横线</a></li>
-<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.4</b> hat</a></li>
-<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.5</b> 换行对齐</a></li>
-<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.6</b> 分段函数</a></li>
+<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#公式编号"><i class="fa fa-check"></i><b>6.5.2</b> 公式编号</a></li>
+<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.3</b> 数学公式的类别</a></li>
+<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.4</b> 上横线</a></li>
+<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.5</b> hat</a></li>
+<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.6</b> 换行对齐</a></li>
+<li class="chapter" data-level="6.5.7" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.7</b> 分段函数</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>7</b> RMarkdown</a>
@@ -318,6 +346,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.8" data-path="rmarkdown.html"><a href="rmarkdown.html#行内代码"><i class="fa fa-check"></i><b>7.3.8</b> 行内代码</a></li>
 <li class="chapter" data-level="7.3.9" data-path="rmarkdown.html"><a href="rmarkdown.html#在rmarkdown使用其他语言"><i class="fa fa-check"></i><b>7.3.9</b> 在RMarkdown使用其他语言</a></li>
 <li class="chapter" data-level="7.3.10" data-path="rmarkdown.html"><a href="rmarkdown.html#交互式文档"><i class="fa fa-check"></i><b>7.3.10</b> 交互式文档</a></li>
+<li class="chapter" data-level="7.3.11" data-path="rmarkdown.html"><a href="rmarkdown.html#参考文献"><i class="fa fa-check"></i><b>7.3.11</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="rmarkdown.html"><a href="rmarkdown.html#文档格式htmlpdfword"><i class="fa fa-check"></i><b>7.4</b> 文档格式（HTML,PDF,Word…）</a>
 <ul>
@@ -421,41 +450,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="infer包.html"><a href="infer包.html#卡方检验"><i class="fa fa-check"></i><b>14.2</b> 卡方检验</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>15</b> 极大似然估计</a>
+<li class="chapter" data-level="15" data-path="gamma函数.html"><a href="gamma函数.html"><i class="fa fa-check"></i><b>15</b> Gamma函数</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>15.1</b> 自定义极大似然函数</a>
+<li class="chapter" data-level="15.1" data-path="gamma函数.html"><a href="gamma函数.html#简史"><i class="fa fa-check"></i><b>15.1</b> 简史</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>15.1.1</b> 正态分布</a></li>
-<li class="chapter" data-level="15.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>15.1.2</b> 指数分布</a></li>
+<li class="chapter" data-level="15.1.1" data-path="gamma函数.html"><a href="gamma函数.html#动机"><i class="fa fa-check"></i><b>15.1.1</b> 动机</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="gamma函数.html"><a href="gamma函数.html#定义"><i class="fa fa-check"></i><b>15.2</b> 定义</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="gamma函数.html"><a href="gamma函数.html#euler定义"><i class="fa fa-check"></i><b>15.2.1</b> Euler定义</a></li>
+<li class="chapter" data-level="15.2.2" data-path="gamma函数.html"><a href="gamma函数.html#gauss定义"><i class="fa fa-check"></i><b>15.2.2</b> Gauss定义</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>16</b> 正则表达式</a>
+<li class="chapter" data-level="16" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>16</b> 极大似然估计</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>16.1</b> grep函数</a>
+<li class="chapter" data-level="16.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>16.1</b> 自定义极大似然函数</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>16.1.1</b> 函数参数</a></li>
-<li class="chapter" data-level="16.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>16.1.2</b> 模式（pattern）与匹配（match）</a></li>
-</ul></li>
-<li class="chapter" data-level="16.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>16.2</b> 元字符</a></li>
-<li class="chapter" data-level="16.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>16.3</b> 常用文本处理函数</a></li>
-<li class="chapter" data-level="16.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>16.4</b> 案例</a>
-<ul>
-<li class="chapter" data-level="16.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>16.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
-<li class="chapter" data-level="16.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>16.4.2</b> 全宋词</a></li>
-<li class="chapter" data-level="16.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>16.4.3</b> SCI（筛选行）</a></li>
+<li class="chapter" data-level="16.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>16.1.1</b> 正态分布</a></li>
+<li class="chapter" data-level="16.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>16.1.2</b> 指数分布</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>17</b> 一些自定义函数</a>
+<li class="chapter" data-level="17" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>17</b> 正则表达式</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>17.1</b> 数据处理</a>
+<li class="chapter" data-level="17.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>17.1</b> grep函数</a>
 <ul>
-<li class="chapter" data-level="17.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>17.1.1</b> 分组排序并排名</a></li>
+<li class="chapter" data-level="17.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>17.1.1</b> 函数参数</a></li>
+<li class="chapter" data-level="17.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>17.1.2</b> 模式（pattern）与匹配（match）</a></li>
 </ul></li>
-<li class="chapter" data-level="17.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>17.2</b> 统计相关</a>
+<li class="chapter" data-level="17.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>17.2</b> 元字符</a></li>
+<li class="chapter" data-level="17.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>17.3</b> 常用文本处理函数</a></li>
+<li class="chapter" data-level="17.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>17.4</b> 案例</a>
 <ul>
-<li class="chapter" data-level="17.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>17.2.1</b> 汇总数据t检验</a></li>
-<li class="chapter" data-level="17.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>17.2.2</b> 卡方检验</a></li>
+<li class="chapter" data-level="17.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>17.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
+<li class="chapter" data-level="17.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>17.4.2</b> 全宋词</a></li>
+<li class="chapter" data-level="17.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>17.4.3</b> SCI（筛选行）</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>18</b> 一些自定义函数</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>18.1</b> 数据处理</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>18.1.1</b> 分组排序并排名</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>18.2</b> 统计相关</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>18.2.1</b> 汇总数据t检验</a></li>
+<li class="chapter" data-level="18.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>18.2.2</b> 卡方检验</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="一些自定义函数-1.html"><a href="一些自定义函数-1.html"><i class="fa fa-check"></i><b>19</b> 一些自定义函数</a></li>
+<li class="chapter" data-level="20" data-path="随机抽样.html"><a href="随机抽样.html"><i class="fa fa-check"></i><b>20</b> 随机抽样</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="随机抽样.html"><a href="随机抽样.html#inverse-cdf-transformation逆cdf变化法"><i class="fa fa-check"></i><b>20.1</b> Inverse CDF Transformation（逆CDF变化法）</a></li>
+<li class="chapter" data-level="20.2" data-path="随机抽样.html"><a href="随机抽样.html#accept-reject-sampling-method接受-拒绝抽样"><i class="fa fa-check"></i><b>20.2</b> accept-reject sampling method（接受-拒绝抽样）</a></li>
 </ul></li>
 </ul>
 
@@ -484,39 +531,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">2.1.1.1</span> 向量的创建方式<a href="基础语法.html#向量的创建方式" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div id="直接创建" class="section level5 hasAnchor" number="2.1.1.1.1">
 <h5><span class="header-section-number">2.1.1.1.1</span> 直接创建<a href="基础语法.html#直接创建" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="基础语法.html#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">2</span></span>
-<span id="cb1-2"><a href="基础语法.html#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="st">&quot;I love Chnia&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="基础语法.html#cb1-1" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb1-2"><a href="基础语法.html#cb1-2" tabindex="-1"></a>y <span class="ot">=</span> <span class="st">&quot;I love Chnia&quot;</span></span></code></pre></div>
 </div>
 <div id="使用冒号创建连续数值型向量" class="section level5 hasAnchor" number="2.1.1.1.2">
 <h5><span class="header-section-number">2.1.1.1.2</span> 使用冒号（:）创建连续数值型向量<a href="基础语法.html#使用冒号创建连续数值型向量" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="基础语法.html#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="基础语法.html#cb2-1" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span></code></pre></div>
 </div>
 <div id="使用c函数创建向量" class="section level5 hasAnchor" number="2.1.1.1.3">
 <h5><span class="header-section-number">2.1.1.1.3</span> 使用<code>c()</code>函数创建向量<a href="基础语法.html#使用c函数创建向量" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="基础语法.html#cb3-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">9</span>,<span class="dv">10</span>)</span>
-<span id="cb3-2"><a href="基础语法.html#cb3-2" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>,<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)</span>
-<span id="cb3-3"><a href="基础语法.html#cb3-3" aria-hidden="true" tabindex="-1"></a>v3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>)</span>
-<span id="cb3-4"><a href="基础语法.html#cb3-4" aria-hidden="true" tabindex="-1"></a>v4 <span class="ot">&lt;-</span> <span class="fu">c</span>() <span class="co">#一个不包含任何值的向量，输出为NULL</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="基础语法.html#cb3-1" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">9</span>,<span class="dv">10</span>)</span>
+<span id="cb3-2"><a href="基础语法.html#cb3-2" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>,<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)</span>
+<span id="cb3-3"><a href="基础语法.html#cb3-3" tabindex="-1"></a>v3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>)</span>
+<span id="cb3-4"><a href="基础语法.html#cb3-4" tabindex="-1"></a>v4 <span class="ot">&lt;-</span> <span class="fu">c</span>() <span class="co">#一个不包含任何值的向量，输出为NULL</span></span></code></pre></div>
 </div>
 <div id="使用seq函数生成等差序列的向量" class="section level5 hasAnchor" number="2.1.1.1.4">
 <h5><span class="header-section-number">2.1.1.1.4</span> 使用<code>seq</code>函数生成等差序列的向量<a href="基础语法.html#使用seq函数生成等差序列的向量" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><code>seq</code>函数的原型是</p>
 <p><code>seq(from=1,to=1,by=((to-from)/(length.out - 1)),length.out = NULL,along.with = NULL,...)</code></p>
 <p>其中，from是首项，默认为1；to是末项，默认为1；by是步长或等差增量，可以为负数；length.out是向量的长度；along.with:用于指明该向量与另外一个向量的长度相同，along.with后应为另外一个向量的名字。</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="基础语法.html#cb4-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">2</span>) <span class="co">#向量从1开始，最大不超过10，步长为2</span></span>
-<span id="cb4-2"><a href="基础语法.html#cb4-2" aria-hidden="true" tabindex="-1"></a>s2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="at">length.out =</span> <span class="dv">5</span>) <span class="co">#步长是根据(9 - 1)/(5-1)计算出来</span></span>
-<span id="cb4-3"><a href="基础语法.html#cb4-3" aria-hidden="true" tabindex="-1"></a>s3 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">3</span>,<span class="at">by=</span><span class="dv">3</span>,<span class="at">length.out=</span><span class="dv">5</span>) </span>
-<span id="cb4-4"><a href="基础语法.html#cb4-4" aria-hidden="true" tabindex="-1"></a>s4 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">by=</span><span class="dv">3</span>,<span class="at">along.with =</span> s3) <span class="co">#未指定from项时，默认从1开始，长度与向量s3相同</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="基础语法.html#cb4-1" tabindex="-1"></a>s1 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">2</span>) <span class="co">#向量从1开始，最大不超过10，步长为2</span></span>
+<span id="cb4-2"><a href="基础语法.html#cb4-2" tabindex="-1"></a>s2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="at">length.out =</span> <span class="dv">5</span>) <span class="co">#步长是根据(9 - 1)/(5-1)计算出来</span></span>
+<span id="cb4-3"><a href="基础语法.html#cb4-3" tabindex="-1"></a>s3 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">3</span>,<span class="at">by=</span><span class="dv">3</span>,<span class="at">length.out=</span><span class="dv">5</span>) </span>
+<span id="cb4-4"><a href="基础语法.html#cb4-4" tabindex="-1"></a>s4 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">by=</span><span class="dv">3</span>,<span class="at">along.with =</span> s3) <span class="co">#未指定from项时，默认从1开始，长度与向量s3相同</span></span></code></pre></div>
 </div>
 <div id="使用rep函数创建重复序列的向量" class="section level5 hasAnchor" number="2.1.1.1.5">
 <h5><span class="header-section-number">2.1.1.1.5</span> 使用<code>rep</code>函数创建重复序列的向量<a href="基础语法.html#使用rep函数创建重复序列的向量" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><code>rep</code>函数可以将某一向量重复若干次，该函数的原型如下：</p>
 <p><code>rep(x , times = 1, length.out = NA, each = 1)</code></p>
 <p>参数中，x为要重复的序列对象；times为重复的次数，默认为1；length.out为产生的向量长度，默认为NA（未限制）；each为每个元素重复的次数，默认为1。</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="基础语法.html#cb5-1" aria-hidden="true" tabindex="-1"></a>r1 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">2</span>)</span>
-<span id="cb5-2"><a href="基础语法.html#cb5-2" aria-hidden="true" tabindex="-1"></a>r2 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">each =</span><span class="dv">2</span>)</span>
-<span id="cb5-3"><a href="基础语法.html#cb5-3" aria-hidden="true" tabindex="-1"></a>r3 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>),<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>)) <span class="co">#输出2 2 2 5 5 5 5 5将向量c(2, 5)按照后面给出的次数向量依次重复3次和4次</span></span>
-<span id="cb5-4"><a href="基础语法.html#cb5-4" aria-hidden="true" tabindex="-1"></a>r4 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>),<span class="at">each=</span><span class="dv">2</span> ,<span class="at">length.out =</span> <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="基础语法.html#cb5-1" tabindex="-1"></a>r1 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">2</span>)</span>
+<span id="cb5-2"><a href="基础语法.html#cb5-2" tabindex="-1"></a>r2 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">each =</span><span class="dv">2</span>)</span>
+<span id="cb5-3"><a href="基础语法.html#cb5-3" tabindex="-1"></a>r3 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>),<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>)) <span class="co">#输出2 2 2 5 5 5 5 5将向量c(2, 5)按照后面给出的次数向量依次重复3次和4次</span></span>
+<span id="cb5-4"><a href="基础语法.html#cb5-4" tabindex="-1"></a>r4 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>),<span class="at">each=</span><span class="dv">2</span> ,<span class="at">length.out =</span> <span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] 1 2 3 1 2 3
 ## [1] 1 1 2 2 3 3
 ## [1] 2 2 2 5 5 5 5
@@ -533,35 +580,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="识别日期时间" class="section level3 hasAnchor" number="2.1.3">
 <h3><span class="header-section-number">2.1.3</span> 识别日期时间<a href="基础语法.html#识别日期时间" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="基础语法.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="基础语法.html#cb7-1" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code></pre></div>
 <pre><code>## Loading required package: timechange</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;lubridate&#39;</code></pre>
 <pre><code>## The following objects are masked from &#39;package:base&#39;:
 ## 
 ##     date, intersect, setdiff, union</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="基础语法.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">today</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;2023-05-15&quot;</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="基础语法.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">now</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;2023-05-15 10:54:15 CST&quot;</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="基础语法.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as_datetime</span>(<span class="fu">today</span>()) <span class="co"># 日期型转日期时间型</span></span></code></pre></div>
-<pre><code>## [1] &quot;2023-05-15 UTC&quot;</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="基础语法.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as_date</span>(<span class="fu">now</span>()) <span class="co"># 日期时间型转日期型</span></span></code></pre></div>
-<pre><code>## [1] &quot;2023-05-15&quot;</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="基础语法.html#cb11-1" tabindex="-1"></a><span class="fu">today</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;2023-11-27&quot;</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="基础语法.html#cb13-1" tabindex="-1"></a><span class="fu">now</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;2023-11-27 15:58:13 CST&quot;</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="基础语法.html#cb15-1" tabindex="-1"></a><span class="fu">as_datetime</span>(<span class="fu">today</span>()) <span class="co"># 日期型转日期时间型</span></span></code></pre></div>
+<pre><code>## [1] &quot;2023-11-27 UTC&quot;</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="基础语法.html#cb17-1" tabindex="-1"></a><span class="fu">as_date</span>(<span class="fu">now</span>()) <span class="co"># 日期时间型转日期型</span></span></code></pre></div>
+<pre><code>## [1] &quot;2023-11-27&quot;</code></pre>
 <p>无论年月日/时分秒按什么顺序及以什么间隔符分隔，总能正确地识别成日期时间值：</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="基础语法.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ymd</span>(<span class="st">&quot;2020/03~01&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="基础语法.html#cb19-1" tabindex="-1"></a><span class="fu">ymd</span>(<span class="st">&quot;2020/03~01&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;2020-03-01&quot;</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="基础语法.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myd</span>(<span class="st">&quot;03202001&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="基础语法.html#cb21-1" tabindex="-1"></a><span class="fu">myd</span>(<span class="st">&quot;03202001&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;2020-03-01&quot;</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="基础语法.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dmy</span>(<span class="st">&quot;03012020&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="基础语法.html#cb23-1" tabindex="-1"></a><span class="fu">dmy</span>(<span class="st">&quot;03012020&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;2020-01-03&quot;</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="基础语法.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ymd_hm</span>(<span class="st">&quot;2020/03~011213&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="基础语法.html#cb25-1" tabindex="-1"></a><span class="fu">ymd_hm</span>(<span class="st">&quot;2020/03~011213&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;2020-03-01 12:13:00 UTC&quot;</code></pre>
 <p>注：根据需要可以ymd_h/myd_hm/dmy_hms 任意组合；可以用参数tz =“…” 指定时区。</p>
 <p>也可以用make_date() 和make_datetime() 从日期时间组件创建日期时间：</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="基础语法.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make_date</span>(<span class="dv">2020</span>, <span class="dv">8</span>, <span class="dv">27</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="基础语法.html#cb27-1" tabindex="-1"></a><span class="fu">make_date</span>(<span class="dv">2020</span>, <span class="dv">8</span>, <span class="dv">27</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;2020-08-27&quot;</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="基础语法.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make_datetime</span>(<span class="dv">2020</span>, <span class="dv">8</span>, <span class="dv">27</span>, <span class="dv">21</span>, <span class="dv">27</span>, <span class="dv">15</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="基础语法.html#cb29-1" tabindex="-1"></a><span class="fu">make_datetime</span>(<span class="dv">2020</span>, <span class="dv">8</span>, <span class="dv">27</span>, <span class="dv">21</span>, <span class="dv">27</span>, <span class="dv">15</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;2020-08-27 21:27:15 UTC&quot;</code></pre>
 </div>
 </div>
@@ -578,44 +625,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 <p><strong>1.一个分支</strong></p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="基础语法.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(条件) {</span>
-<span id="cb31-2"><a href="基础语法.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  执行体</span>
-<span id="cb31-3"><a href="基础语法.html#cb31-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="基础语法.html#cb31-1" tabindex="-1"></a><span class="cf">if</span>(条件) {</span>
+<span id="cb31-2"><a href="基础语法.html#cb31-2" tabindex="-1"></a>  执行体</span>
+<span id="cb31-3"><a href="基础语法.html#cb31-3" tabindex="-1"></a>}</span></code></pre></div>
 <p><strong>2.两个分支</strong></p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="基础语法.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(条件) {</span>
-<span id="cb32-2"><a href="基础语法.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  执行体1</span>
-<span id="cb32-3"><a href="基础语法.html#cb32-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb32-4"><a href="基础语法.html#cb32-4" aria-hidden="true" tabindex="-1"></a>  执行体2</span>
-<span id="cb32-5"><a href="基础语法.html#cb32-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="基础语法.html#cb32-1" tabindex="-1"></a><span class="cf">if</span>(条件) {</span>
+<span id="cb32-2"><a href="基础语法.html#cb32-2" tabindex="-1"></a>  执行体1</span>
+<span id="cb32-3"><a href="基础语法.html#cb32-3" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb32-4"><a href="基础语法.html#cb32-4" tabindex="-1"></a>  执行体2</span>
+<span id="cb32-5"><a href="基础语法.html#cb32-5" tabindex="-1"></a>}</span></code></pre></div>
 <p>例如，实现计算|x|:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="基础语法.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&lt;</span><span class="dv">0</span>) {</span>
-<span id="cb33-2"><a href="基础语法.html#cb33-2" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">=</span> <span class="sc">-</span>x</span>
-<span id="cb33-3"><a href="基础语法.html#cb33-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb33-4"><a href="基础语法.html#cb33-4" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">=</span> x</span>
-<span id="cb33-5"><a href="基础语法.html#cb33-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="基础语法.html#cb33-1" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&lt;</span><span class="dv">0</span>) {</span>
+<span id="cb33-2"><a href="基础语法.html#cb33-2" tabindex="-1"></a>  y <span class="ot">=</span> <span class="sc">-</span>x</span>
+<span id="cb33-3"><a href="基础语法.html#cb33-3" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb33-4"><a href="基础语法.html#cb33-4" tabindex="-1"></a>  y <span class="ot">=</span> x</span>
+<span id="cb33-5"><a href="基础语法.html#cb33-5" tabindex="-1"></a>}</span></code></pre></div>
 <p><strong>3.多个分支</strong></p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="基础语法.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(条件) {</span>
-<span id="cb34-2"><a href="基础语法.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  执行体1</span>
-<span id="cb34-3"><a href="基础语法.html#cb34-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span>(条件2) {</span>
-<span id="cb34-4"><a href="基础语法.html#cb34-4" aria-hidden="true" tabindex="-1"></a>  执行体2</span>
-<span id="cb34-5"><a href="基础语法.html#cb34-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb34-6"><a href="基础语法.html#cb34-6" aria-hidden="true" tabindex="-1"></a>  执行体n</span>
-<span id="cb34-7"><a href="基础语法.html#cb34-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="基础语法.html#cb34-1" tabindex="-1"></a><span class="cf">if</span>(条件) {</span>
+<span id="cb34-2"><a href="基础语法.html#cb34-2" tabindex="-1"></a>  执行体1</span>
+<span id="cb34-3"><a href="基础语法.html#cb34-3" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span>(条件2) {</span>
+<span id="cb34-4"><a href="基础语法.html#cb34-4" tabindex="-1"></a>  执行体2</span>
+<span id="cb34-5"><a href="基础语法.html#cb34-5" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb34-6"><a href="基础语法.html#cb34-6" tabindex="-1"></a>  执行体n</span>
+<span id="cb34-7"><a href="基础语法.html#cb34-7" tabindex="-1"></a>}</span></code></pre></div>
 <p>例子：实现将百分制分数转化为五级制分数</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="基础语法.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(score <span class="sc">&gt;=</span> <span class="dv">90</span>) {</span>
-<span id="cb35-2"><a href="基础语法.html#cb35-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="st">&quot; 优&quot;</span></span>
-<span id="cb35-3"><a href="基础语法.html#cb35-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span>(score <span class="sc">&gt;=</span> <span class="dv">80</span>) {</span>
-<span id="cb35-4"><a href="基础语法.html#cb35-4" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="st">&quot; 良&quot;</span></span>
-<span id="cb35-5"><a href="基础语法.html#cb35-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span>(score <span class="sc">&gt;=</span> <span class="dv">70</span>) {</span>
-<span id="cb35-6"><a href="基础语法.html#cb35-6" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="st">&quot; 中&quot;</span></span>
-<span id="cb35-7"><a href="基础语法.html#cb35-7" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span>(score <span class="sc">&gt;=</span> <span class="dv">60</span>) {</span>
-<span id="cb35-8"><a href="基础语法.html#cb35-8" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="st">&quot; 及格&quot;</span></span>
-<span id="cb35-9"><a href="基础语法.html#cb35-9" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb35-10"><a href="基础语法.html#cb35-10" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="st">&quot; 不及格&quot;</span></span>
-<span id="cb35-11"><a href="基础语法.html#cb35-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="基础语法.html#cb35-1" tabindex="-1"></a><span class="cf">if</span>(score <span class="sc">&gt;=</span> <span class="dv">90</span>) {</span>
+<span id="cb35-2"><a href="基础语法.html#cb35-2" tabindex="-1"></a>res <span class="ot">=</span> <span class="st">&quot; 优&quot;</span></span>
+<span id="cb35-3"><a href="基础语法.html#cb35-3" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span>(score <span class="sc">&gt;=</span> <span class="dv">80</span>) {</span>
+<span id="cb35-4"><a href="基础语法.html#cb35-4" tabindex="-1"></a>res <span class="ot">=</span> <span class="st">&quot; 良&quot;</span></span>
+<span id="cb35-5"><a href="基础语法.html#cb35-5" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span>(score <span class="sc">&gt;=</span> <span class="dv">70</span>) {</span>
+<span id="cb35-6"><a href="基础语法.html#cb35-6" tabindex="-1"></a>res <span class="ot">=</span> <span class="st">&quot; 中&quot;</span></span>
+<span id="cb35-7"><a href="基础语法.html#cb35-7" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span>(score <span class="sc">&gt;=</span> <span class="dv">60</span>) {</span>
+<span id="cb35-8"><a href="基础语法.html#cb35-8" tabindex="-1"></a>res <span class="ot">=</span> <span class="st">&quot; 及格&quot;</span></span>
+<span id="cb35-9"><a href="基础语法.html#cb35-9" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb35-10"><a href="基础语法.html#cb35-10" tabindex="-1"></a>res <span class="ot">=</span> <span class="st">&quot; 不及格&quot;</span></span>
+<span id="cb35-11"><a href="基础语法.html#cb35-11" tabindex="-1"></a>}</span></code></pre></div>
 <p>另一种多分支的写法是用switch()，不推荐。一般用于自定义函数时，若需要根据参数不同指示值执行不同代码块，见：§<a href="基础语法.html#default-argument">2.4.1.1</a>节。</p>
 <p>函数ifelse() 可简化代码，仍以计算|x| 为例：</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="基础语法.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(x <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="sc">-</span>x, x)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="基础语法.html#cb36-1" tabindex="-1"></a><span class="fu">ifelse</span>(x <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="sc">-</span>x, x)</span></code></pre></div>
 </div>
 <div id="循环结构" class="section level3 hasAnchor" number="2.2.2">
 <h3><span class="header-section-number">2.2.2</span> 循环结构<a href="基础语法.html#循环结构" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -628,13 +675,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="for循环" class="section level4 hasAnchor" number="2.2.2.1">
 <h4><span class="header-section-number">2.2.2.1</span> for循环<a href="基础语法.html#for循环" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>例子：计算iris前四列的均值</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="基础语法.html#cb37-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">as_tibble</span>(iris[,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span>
-<span id="cb37-2"><a href="基础语法.html#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-3"><a href="基础语法.html#cb37-3" aria-hidden="true" tabindex="-1"></a>output <span class="ot">=</span> <span class="fu">vector</span>(<span class="st">&quot;double&quot;</span>, <span class="dv">4</span>) <span class="co"># 1. 输出</span></span>
-<span id="cb37-4"><a href="基础语法.html#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) { <span class="co"># 2. 迭代器</span></span>
-<span id="cb37-5"><a href="基础语法.html#cb37-5" aria-hidden="true" tabindex="-1"></a>  output[i] <span class="ot">=</span> <span class="fu">mean</span>(df[[i]]) <span class="co"># 3. 循环体</span></span>
-<span id="cb37-6"><a href="基础语法.html#cb37-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb37-7"><a href="基础语法.html#cb37-7" aria-hidden="true" tabindex="-1"></a>output</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="基础语法.html#cb37-1" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">as_tibble</span>(iris[,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span>
+<span id="cb37-2"><a href="基础语法.html#cb37-2" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="基础语法.html#cb37-3" tabindex="-1"></a>output <span class="ot">=</span> <span class="fu">vector</span>(<span class="st">&quot;double&quot;</span>, <span class="dv">4</span>) <span class="co"># 1. 输出</span></span>
+<span id="cb37-4"><a href="基础语法.html#cb37-4" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) { <span class="co"># 2. 迭代器</span></span>
+<span id="cb37-5"><a href="基础语法.html#cb37-5" tabindex="-1"></a>  output[i] <span class="ot">=</span> <span class="fu">mean</span>(df[[i]]) <span class="co"># 3. 循环体</span></span>
+<span id="cb37-6"><a href="基础语法.html#cb37-6" tabindex="-1"></a>}</span>
+<span id="cb37-7"><a href="基础语法.html#cb37-7" tabindex="-1"></a>output</span></code></pre></div>
 <pre><code>## [1] 5.843333 3.057333 3.758000 1.199333</code></pre>
 <p>for 循环有三个组件：</p>
 <ol style="list-style-type: lower-roman">
@@ -661,16 +708,16 @@ double, character 等) 、向量长度。</p></li>
 <li>MARGIN：1 表示按行，2 表示按列；</li>
 <li>FUN：表示要作用的函数</li>
 </ul>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="基础语法.html#cb39-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
-<span id="cb39-2"><a href="基础语法.html#cb39-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="基础语法.html#cb39-1" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb39-2"><a href="基础语法.html#cb39-2" tabindex="-1"></a>x</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    3    5
 ## [2,]    2    4    6</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="基础语法.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(x, <span class="dv">1</span>, mean) <span class="co"># 按行求均值</span></span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="基础语法.html#cb41-1" tabindex="-1"></a><span class="fu">apply</span>(x, <span class="dv">1</span>, mean) <span class="co"># 按行求均值</span></span></code></pre></div>
 <pre><code>## [1] 3 4</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="基础语法.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(x, <span class="dv">2</span>, mean) <span class="co"># 按列求均值</span></span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="基础语法.html#cb43-1" tabindex="-1"></a><span class="fu">apply</span>(x, <span class="dv">2</span>, mean) <span class="co"># 按列求均值</span></span></code></pre></div>
 <pre><code>## [1] 1.5 3.5 5.5</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="基础语法.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(df, <span class="dv">2</span>, mean) <span class="co"># 对前文df 计算各列的均值</span></span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="基础语法.html#cb45-1" tabindex="-1"></a><span class="fu">apply</span>(df, <span class="dv">2</span>, mean) <span class="co"># 对前文df 计算各列的均值</span></span></code></pre></div>
 <pre><code>## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
 ##     5.843333     3.057333     3.758000     1.199333</code></pre>
 </div>
@@ -682,7 +729,7 @@ double, character 等) 、向量长度。</p></li>
 <li>x：为数据对象(列表、数据框、向量) ；</li>
 <li>FUN：表示要作用的函数。</li>
 </ul>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="基础语法.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(df, mean) <span class="co"># 对前文df 计算各列的均值</span></span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="基础语法.html#cb47-1" tabindex="-1"></a><span class="fu">lapply</span>(df, mean) <span class="co"># 对前文df 计算各列的均值</span></span></code></pre></div>
 <pre><code>## $Sepal.Length
 ## [1] 5.843333
 ## 
@@ -699,16 +746,16 @@ double, character 等) 、向量长度。</p></li>
 <h3><span class="header-section-number">2.3.3</span> sapply<a href="基础语法.html#sapply" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>sapply() 函数是lapply() 的简化版本，多了一个参数simplify，若simplify=FALSE，则同lapply()，若为TRUE，则将输出的list 简化为向量或矩阵。其基本格式为：</p>
 <p>sapply(x, FUN, simplify = TRUE, …)</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="基础语法.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(df, mean) <span class="co"># 对前文df 计算各列的均值</span></span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="基础语法.html#cb49-1" tabindex="-1"></a><span class="fu">sapply</span>(df, mean) <span class="co"># 对前文df 计算各列的均值</span></span></code></pre></div>
 <pre><code>## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
 ##     5.843333     3.057333     3.758000     1.199333</code></pre>
 </div>
 <div id="vapply" class="section level3 hasAnchor" number="2.3.4">
 <h3><span class="header-section-number">2.3.4</span> vapply<a href="基础语法.html#vapply" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>sapply()会尝试对apply的结果进行简化，如果无法简化，则不进行简化，返回原始结果。与sapply()类似，vapply()也会对apply结果进行简化，vapply()的不同之处在于，它需要显式地指明所希望简化为的具体格式，如果无法简化为所指定的格式，则会给出Error。使用cls_vect &lt;- sapply(flags, class) 可以得到flags中各列的类型名称，并简化为一个character型的vector，使用vapply()并指明结果格式为character(1) 可以得到相同的结果：</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="基础语法.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vapply</span>(flags, class, <span class="fu">character</span>(<span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="基础语法.html#cb51-1" tabindex="-1"></a><span class="fu">vapply</span>(flags, class, <span class="fu">character</span>(<span class="dv">1</span>))</span></code></pre></div>
 <p>而如果希望通过vapplu()得到numeric(1) 的结果，会出现Error：</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="基础语法.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vapply</span>(flags, class, <span class="fu">numeric</span>(<span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="基础语法.html#cb52-1" tabindex="-1"></a><span class="fu">vapply</span>(flags, class, <span class="fu">numeric</span>(<span class="dv">1</span>))</span></code></pre></div>
 </div>
 </div>
 <div id="customized-function" class="section level2 hasAnchor" number="2.4">
@@ -717,87 +764,87 @@ double, character 等) 、向量长度。</p></li>
 <ol style="list-style-type: decimal">
 <li>先梳理一般代码段</li>
 </ol>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="基础语法.html#cb53-1" aria-hidden="true" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="dv">76</span></span>
-<span id="cb53-2"><a href="基础语法.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">90</span>) {</span>
-<span id="cb53-3"><a href="基础语法.html#cb53-3" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="st">&quot; 优&quot;</span></span>
-<span id="cb53-4"><a href="基础语法.html#cb53-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">80</span>) {</span>
-<span id="cb53-5"><a href="基础语法.html#cb53-5" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="st">&quot; 良&quot;</span></span>
-<span id="cb53-6"><a href="基础语法.html#cb53-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">70</span>) {</span>
-<span id="cb53-7"><a href="基础语法.html#cb53-7" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="st">&quot; 中&quot;</span></span>
-<span id="cb53-8"><a href="基础语法.html#cb53-8" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">60</span>) {</span>
-<span id="cb53-9"><a href="基础语法.html#cb53-9" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="st">&quot; 及格&quot;</span></span>
-<span id="cb53-10"><a href="基础语法.html#cb53-10" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb53-11"><a href="基础语法.html#cb53-11" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="st">&quot; 不及格&quot;</span></span>
-<span id="cb53-12"><a href="基础语法.html#cb53-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb53-13"><a href="基础语法.html#cb53-13" aria-hidden="true" tabindex="-1"></a>res</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="基础语法.html#cb53-1" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="dv">76</span></span>
+<span id="cb53-2"><a href="基础语法.html#cb53-2" tabindex="-1"></a><span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">90</span>) {</span>
+<span id="cb53-3"><a href="基础语法.html#cb53-3" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="st">&quot; 优&quot;</span></span>
+<span id="cb53-4"><a href="基础语法.html#cb53-4" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">80</span>) {</span>
+<span id="cb53-5"><a href="基础语法.html#cb53-5" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="st">&quot; 良&quot;</span></span>
+<span id="cb53-6"><a href="基础语法.html#cb53-6" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">70</span>) {</span>
+<span id="cb53-7"><a href="基础语法.html#cb53-7" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="st">&quot; 中&quot;</span></span>
+<span id="cb53-8"><a href="基础语法.html#cb53-8" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">60</span>) {</span>
+<span id="cb53-9"><a href="基础语法.html#cb53-9" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="st">&quot; 及格&quot;</span></span>
+<span id="cb53-10"><a href="基础语法.html#cb53-10" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb53-11"><a href="基础语法.html#cb53-11" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="st">&quot; 不及格&quot;</span></span>
+<span id="cb53-12"><a href="基础语法.html#cb53-12" tabindex="-1"></a>}</span>
+<span id="cb53-13"><a href="基础语法.html#cb53-13" tabindex="-1"></a>res</span></code></pre></div>
 <pre><code>## [1] &quot; 中&quot;</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>一般函数</li>
 </ol>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="基础语法.html#cb55-1" aria-hidden="true" tabindex="-1"></a>Score_Conv <span class="ot">&lt;-</span> <span class="cf">function</span>(score) {</span>
-<span id="cb55-2"><a href="基础语法.html#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">90</span>) {</span>
-<span id="cb55-3"><a href="基础语法.html#cb55-3" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="st">&quot; 优&quot;</span></span>
-<span id="cb55-4"><a href="基础语法.html#cb55-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">80</span>) {</span>
-<span id="cb55-5"><a href="基础语法.html#cb55-5" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="st">&quot; 良&quot;</span></span>
-<span id="cb55-6"><a href="基础语法.html#cb55-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">70</span>) {</span>
-<span id="cb55-7"><a href="基础语法.html#cb55-7" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="st">&quot; 中&quot;</span></span>
-<span id="cb55-8"><a href="基础语法.html#cb55-8" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">60</span>) {</span>
-<span id="cb55-9"><a href="基础语法.html#cb55-9" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="st">&quot; 及格&quot;</span></span>
-<span id="cb55-10"><a href="基础语法.html#cb55-10" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb55-11"><a href="基础语法.html#cb55-11" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="st">&quot; 不及格&quot;</span></span>
-<span id="cb55-12"><a href="基础语法.html#cb55-12" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb55-13"><a href="基础语法.html#cb55-13" aria-hidden="true" tabindex="-1"></a>  res</span>
-<span id="cb55-14"><a href="基础语法.html#cb55-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="基础语法.html#cb55-1" tabindex="-1"></a>Score_Conv <span class="ot">&lt;-</span> <span class="cf">function</span>(score) {</span>
+<span id="cb55-2"><a href="基础语法.html#cb55-2" tabindex="-1"></a>  <span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">90</span>) {</span>
+<span id="cb55-3"><a href="基础语法.html#cb55-3" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="st">&quot; 优&quot;</span></span>
+<span id="cb55-4"><a href="基础语法.html#cb55-4" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">80</span>) {</span>
+<span id="cb55-5"><a href="基础语法.html#cb55-5" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="st">&quot; 良&quot;</span></span>
+<span id="cb55-6"><a href="基础语法.html#cb55-6" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">70</span>) {</span>
+<span id="cb55-7"><a href="基础语法.html#cb55-7" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="st">&quot; 中&quot;</span></span>
+<span id="cb55-8"><a href="基础语法.html#cb55-8" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (score <span class="sc">&gt;=</span> <span class="dv">60</span>) {</span>
+<span id="cb55-9"><a href="基础语法.html#cb55-9" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="st">&quot; 及格&quot;</span></span>
+<span id="cb55-10"><a href="基础语法.html#cb55-10" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb55-11"><a href="基础语法.html#cb55-11" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="st">&quot; 不及格&quot;</span></span>
+<span id="cb55-12"><a href="基础语法.html#cb55-12" tabindex="-1"></a>  }</span>
+<span id="cb55-13"><a href="基础语法.html#cb55-13" tabindex="-1"></a>  res</span>
+<span id="cb55-14"><a href="基础语法.html#cb55-14" tabindex="-1"></a>}</span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>向量化改进</li>
 </ol>
 <p>法一：for循环</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="基础语法.html#cb56-1" aria-hidden="true" tabindex="-1"></a>Score_Conv2 <span class="ot">&lt;-</span> <span class="cf">function</span>(score) {</span>
-<span id="cb56-2"><a href="基础语法.html#cb56-2" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(score)</span>
-<span id="cb56-3"><a href="基础语法.html#cb56-3" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">&quot;character&quot;</span>, n)</span>
-<span id="cb56-4"><a href="基础语法.html#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
-<span id="cb56-5"><a href="基础语法.html#cb56-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (score[i] <span class="sc">&gt;=</span> <span class="dv">90</span>) {</span>
-<span id="cb56-6"><a href="基础语法.html#cb56-6" aria-hidden="true" tabindex="-1"></a>      res[i] <span class="ot">&lt;-</span> <span class="st">&quot; 优&quot;</span></span>
-<span id="cb56-7"><a href="基础语法.html#cb56-7" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (score[i] <span class="sc">&gt;=</span> <span class="dv">80</span>) {</span>
-<span id="cb56-8"><a href="基础语法.html#cb56-8" aria-hidden="true" tabindex="-1"></a>      res[i] <span class="ot">&lt;-</span> <span class="st">&quot; 良&quot;</span></span>
-<span id="cb56-9"><a href="基础语法.html#cb56-9" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (score[i] <span class="sc">&gt;=</span> <span class="dv">70</span>) {</span>
-<span id="cb56-10"><a href="基础语法.html#cb56-10" aria-hidden="true" tabindex="-1"></a>      res[i] <span class="ot">&lt;-</span> <span class="st">&quot; 中&quot;</span></span>
-<span id="cb56-11"><a href="基础语法.html#cb56-11" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (score[i] <span class="sc">&gt;=</span> <span class="dv">60</span>) {</span>
-<span id="cb56-12"><a href="基础语法.html#cb56-12" aria-hidden="true" tabindex="-1"></a>      res[i] <span class="ot">&lt;-</span> <span class="st">&quot; 及格&quot;</span></span>
-<span id="cb56-13"><a href="基础语法.html#cb56-13" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb56-14"><a href="基础语法.html#cb56-14" aria-hidden="true" tabindex="-1"></a>      res[i] <span class="ot">&lt;-</span> <span class="st">&quot; 不及格&quot;</span></span>
-<span id="cb56-15"><a href="基础语法.html#cb56-15" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb56-16"><a href="基础语法.html#cb56-16" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb56-17"><a href="基础语法.html#cb56-17" aria-hidden="true" tabindex="-1"></a>  res</span>
-<span id="cb56-18"><a href="基础语法.html#cb56-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-19"><a href="基础语法.html#cb56-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-20"><a href="基础语法.html#cb56-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 结果测试</span></span>
-<span id="cb56-21"><a href="基础语法.html#cb56-21" aria-hidden="true" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">10</span>)</span>
-<span id="cb56-22"><a href="基础语法.html#cb56-22" aria-hidden="true" tabindex="-1"></a><span class="fu">Score_Conv2</span>(<span class="at">score =</span> score)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="基础语法.html#cb56-1" tabindex="-1"></a>Score_Conv2 <span class="ot">&lt;-</span> <span class="cf">function</span>(score) {</span>
+<span id="cb56-2"><a href="基础语法.html#cb56-2" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(score)</span>
+<span id="cb56-3"><a href="基础语法.html#cb56-3" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">&quot;character&quot;</span>, n)</span>
+<span id="cb56-4"><a href="基础语法.html#cb56-4" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
+<span id="cb56-5"><a href="基础语法.html#cb56-5" tabindex="-1"></a>    <span class="cf">if</span> (score[i] <span class="sc">&gt;=</span> <span class="dv">90</span>) {</span>
+<span id="cb56-6"><a href="基础语法.html#cb56-6" tabindex="-1"></a>      res[i] <span class="ot">&lt;-</span> <span class="st">&quot; 优&quot;</span></span>
+<span id="cb56-7"><a href="基础语法.html#cb56-7" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (score[i] <span class="sc">&gt;=</span> <span class="dv">80</span>) {</span>
+<span id="cb56-8"><a href="基础语法.html#cb56-8" tabindex="-1"></a>      res[i] <span class="ot">&lt;-</span> <span class="st">&quot; 良&quot;</span></span>
+<span id="cb56-9"><a href="基础语法.html#cb56-9" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (score[i] <span class="sc">&gt;=</span> <span class="dv">70</span>) {</span>
+<span id="cb56-10"><a href="基础语法.html#cb56-10" tabindex="-1"></a>      res[i] <span class="ot">&lt;-</span> <span class="st">&quot; 中&quot;</span></span>
+<span id="cb56-11"><a href="基础语法.html#cb56-11" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (score[i] <span class="sc">&gt;=</span> <span class="dv">60</span>) {</span>
+<span id="cb56-12"><a href="基础语法.html#cb56-12" tabindex="-1"></a>      res[i] <span class="ot">&lt;-</span> <span class="st">&quot; 及格&quot;</span></span>
+<span id="cb56-13"><a href="基础语法.html#cb56-13" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb56-14"><a href="基础语法.html#cb56-14" tabindex="-1"></a>      res[i] <span class="ot">&lt;-</span> <span class="st">&quot; 不及格&quot;</span></span>
+<span id="cb56-15"><a href="基础语法.html#cb56-15" tabindex="-1"></a>    }</span>
+<span id="cb56-16"><a href="基础语法.html#cb56-16" tabindex="-1"></a>  }</span>
+<span id="cb56-17"><a href="基础语法.html#cb56-17" tabindex="-1"></a>  res</span>
+<span id="cb56-18"><a href="基础语法.html#cb56-18" tabindex="-1"></a>}</span>
+<span id="cb56-19"><a href="基础语法.html#cb56-19" tabindex="-1"></a></span>
+<span id="cb56-20"><a href="基础语法.html#cb56-20" tabindex="-1"></a><span class="co"># 结果测试</span></span>
+<span id="cb56-21"><a href="基础语法.html#cb56-21" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">10</span>)</span>
+<span id="cb56-22"><a href="基础语法.html#cb56-22" tabindex="-1"></a><span class="fu">Score_Conv2</span>(<span class="at">score =</span> score)</span></code></pre></div>
 <pre><code>## [1] &quot; 不及格&quot; &quot; 及格&quot;   &quot; 中&quot;     &quot; 良&quot;     &quot; 优&quot;     &quot; 优&quot;</code></pre>
 <p>法二：利用map 系列函数</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="基础语法.html#cb58-1" aria-hidden="true" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">67</span>, <span class="dv">100</span>)</span>
-<span id="cb58-2"><a href="基础语法.html#cb58-2" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">map_chr</span>(score, Score_Conv)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="基础语法.html#cb58-1" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">67</span>, <span class="dv">100</span>)</span>
+<span id="cb58-2"><a href="基础语法.html#cb58-2" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">map_chr</span>(score, Score_Conv)</span></code></pre></div>
 <pre><code>## [1] &quot; 不及格&quot; &quot; 及格&quot;   &quot; 优&quot;</code></pre>
 <div id="函数设置" class="section level3 hasAnchor" number="2.4.1">
 <h3><span class="header-section-number">2.4.1</span> 函数设置<a href="基础语法.html#函数设置" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="default-argument" class="section level4 hasAnchor" number="2.4.1.1">
 <h4><span class="header-section-number">2.4.1.1</span> 设定默认参数<a href="基础语法.html#default-argument" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>分别计算样本标准差和总体标准差。默认计算样本标准差。</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="基础语法.html#cb60-1" aria-hidden="true" tabindex="-1"></a>MeanStd <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">type =</span> <span class="st">&quot;sample&quot;</span>) {</span>
-<span id="cb60-2"><a href="基础语法.html#cb60-2" aria-hidden="true" tabindex="-1"></a>  mu <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
-<span id="cb60-3"><a href="基础语法.html#cb60-3" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
-<span id="cb60-4"><a href="基础语法.html#cb60-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">switch</span>(type,</span>
-<span id="cb60-5"><a href="基础语法.html#cb60-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;sample&quot;</span> <span class="ot">=</span> {</span>
-<span id="cb60-6"><a href="基础语法.html#cb60-6" aria-hidden="true" tabindex="-1"></a>      std <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>((x <span class="sc">-</span> mu)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>))</span>
-<span id="cb60-7"><a href="基础语法.html#cb60-7" aria-hidden="true" tabindex="-1"></a>    },</span>
-<span id="cb60-8"><a href="基础语法.html#cb60-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;population&quot;</span> <span class="ot">=</span> {</span>
-<span id="cb60-9"><a href="基础语法.html#cb60-9" aria-hidden="true" tabindex="-1"></a>      std <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>((x <span class="sc">-</span> mu)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> n)</span>
-<span id="cb60-10"><a href="基础语法.html#cb60-10" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb60-11"><a href="基础语法.html#cb60-11" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb60-12"><a href="基础语法.html#cb60-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">mu =</span> mu, <span class="at">std =</span> std)</span>
-<span id="cb60-13"><a href="基础语法.html#cb60-13" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb60-14"><a href="基础语法.html#cb60-14" aria-hidden="true" tabindex="-1"></a><span class="fu">MeanStd</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="基础语法.html#cb60-1" tabindex="-1"></a>MeanStd <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">type =</span> <span class="st">&quot;sample&quot;</span>) {</span>
+<span id="cb60-2"><a href="基础语法.html#cb60-2" tabindex="-1"></a>  mu <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb60-3"><a href="基础语法.html#cb60-3" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb60-4"><a href="基础语法.html#cb60-4" tabindex="-1"></a>  <span class="cf">switch</span>(type,</span>
+<span id="cb60-5"><a href="基础语法.html#cb60-5" tabindex="-1"></a>    <span class="st">&quot;sample&quot;</span> <span class="ot">=</span> {</span>
+<span id="cb60-6"><a href="基础语法.html#cb60-6" tabindex="-1"></a>      std <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>((x <span class="sc">-</span> mu)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>))</span>
+<span id="cb60-7"><a href="基础语法.html#cb60-7" tabindex="-1"></a>    },</span>
+<span id="cb60-8"><a href="基础语法.html#cb60-8" tabindex="-1"></a>    <span class="st">&quot;population&quot;</span> <span class="ot">=</span> {</span>
+<span id="cb60-9"><a href="基础语法.html#cb60-9" tabindex="-1"></a>      std <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>((x <span class="sc">-</span> mu)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> n)</span>
+<span id="cb60-10"><a href="基础语法.html#cb60-10" tabindex="-1"></a>    }</span>
+<span id="cb60-11"><a href="基础语法.html#cb60-11" tabindex="-1"></a>  )</span>
+<span id="cb60-12"><a href="基础语法.html#cb60-12" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">mu =</span> mu, <span class="at">std =</span> std)</span>
+<span id="cb60-13"><a href="基础语法.html#cb60-13" tabindex="-1"></a>}</span>
+<span id="cb60-14"><a href="基础语法.html#cb60-14" tabindex="-1"></a><span class="fu">MeanStd</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## $mu
 ## [1] 3
 ## 
@@ -807,10 +854,10 @@ double, character 等) 、向量长度。</p></li>
 <div id="缺省参数" class="section level4 hasAnchor" number="2.4.1.2">
 <h4><span class="header-section-number">2.4.1.2</span> 缺省参数<a href="基础语法.html#缺省参数" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>函数可输入无穷多个参数</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="基础语法.html#cb62-1" aria-hidden="true" tabindex="-1"></a>dots_sum <span class="ot">=</span> <span class="cf">function</span>(...){</span>
-<span id="cb62-2"><a href="基础语法.html#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(...)</span>
-<span id="cb62-3"><a href="基础语法.html#cb62-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb62-4"><a href="基础语法.html#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dots_sum</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="基础语法.html#cb62-1" tabindex="-1"></a>dots_sum <span class="ot">=</span> <span class="cf">function</span>(...){</span>
+<span id="cb62-2"><a href="基础语法.html#cb62-2" tabindex="-1"></a>  <span class="fu">sum</span>(...)</span>
+<span id="cb62-3"><a href="基础语法.html#cb62-3" tabindex="-1"></a>}</span>
+<span id="cb62-4"><a href="基础语法.html#cb62-4" tabindex="-1"></a><span class="fu">dots_sum</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] 15</code></pre>
 
 </div>

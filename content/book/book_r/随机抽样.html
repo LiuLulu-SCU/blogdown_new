@@ -4,19 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>21 equal.variance: whether or not to assume equal variance. Default is FALSE. | R语言编程</title>
+  <title>20 随机抽样 | R语言编程</title>
   <meta name="description" content="张敬信老师的R语言学习笔记" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="21 equal.variance: whether or not to assume equal variance. Default is FALSE. | R语言编程" />
+  <meta property="og:title" content="20 随机抽样 | R语言编程" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="张敬信老师的R语言学习笔记" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="21 equal.variance: whether or not to assume equal variance. Default is FALSE. | R语言编程" />
+  <meta name="twitter:title" content="20 随机抽样 | R语言编程" />
   
   <meta name="twitter:description" content="张敬信老师的R语言学习笔记" />
   
@@ -30,9 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="m0-the-null-value-for-the-difference-in-means-to-be-tested-for.-default-is-0..html"/>
+<link rel="prev" href="一些自定义函数-1.html"/>
 
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,22 +48,23 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX","output/SVG"],
@@ -118,7 +117,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -131,7 +130,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -145,6 +144,32 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 </head>
 
@@ -190,35 +215,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="数据操作.html"><a href="数据操作.html"><i class="fa fa-check"></i><b>3</b> 数据操作</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="数据操作.html"><a href="数据操作.html#数据连接"><i class="fa fa-check"></i><b>3.1</b> 数据连接</a>
+<li class="chapter" data-level="3.1" data-path="数据操作.html"><a href="数据操作.html#数据读写"><i class="fa fa-check"></i><b>3.1</b> 数据读写</a></li>
+<li class="chapter" data-level="3.2" data-path="数据操作.html"><a href="数据操作.html#数据连接"><i class="fa fa-check"></i><b>3.2</b> 数据连接</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="数据操作.html"><a href="数据操作.html#合并行与和并列"><i class="fa fa-check"></i><b>3.1.1</b> 合并行与和并列</a></li>
-<li class="chapter" data-level="3.1.2" data-path="数据操作.html"><a href="数据操作.html#根据值匹配合并数据框"><i class="fa fa-check"></i><b>3.1.2</b> 根据值匹配合并数据框</a></li>
-<li class="chapter" data-level="3.1.3" data-path="数据操作.html"><a href="数据操作.html#实现r中实现stata的merge命令"><i class="fa fa-check"></i><b>3.1.3</b> 实现R中实现stata的merge命令</a></li>
+<li class="chapter" data-level="3.2.1" data-path="数据操作.html"><a href="数据操作.html#合并行与和并列"><i class="fa fa-check"></i><b>3.2.1</b> 合并行与和并列</a></li>
+<li class="chapter" data-level="3.2.2" data-path="数据操作.html"><a href="数据操作.html#根据值匹配合并数据框"><i class="fa fa-check"></i><b>3.2.2</b> 根据值匹配合并数据框</a></li>
+<li class="chapter" data-level="3.2.3" data-path="数据操作.html"><a href="数据操作.html#实现r中实现stata的merge命令"><i class="fa fa-check"></i><b>3.2.3</b> 实现R中实现stata的merge命令</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="数据操作.html"><a href="数据操作.html#数据操作-1"><i class="fa fa-check"></i><b>3.2</b> 数据操作</a>
+<li class="chapter" data-level="3.3" data-path="数据操作.html"><a href="数据操作.html#数据操作-1"><i class="fa fa-check"></i><b>3.3</b> 数据操作</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="数据操作.html"><a href="数据操作.html#选择列select"><i class="fa fa-check"></i><b>3.2.1</b> 选择列（select）</a></li>
-<li class="chapter" data-level="3.2.2" data-path="数据操作.html"><a href="数据操作.html#选择列语法"><i class="fa fa-check"></i><b>3.2.2</b> 选择列语法</a></li>
-<li class="chapter" data-level="3.2.3" data-path="数据操作.html"><a href="数据操作.html#选择列的例子"><i class="fa fa-check"></i><b>3.2.3</b> 选择列的例子</a></li>
-<li class="chapter" data-level="3.2.4" data-path="数据操作.html"><a href="数据操作.html#用--删除列"><i class="fa fa-check"></i><b>3.2.4</b> 用“-” 删除列</a></li>
-<li class="chapter" data-level="3.2.5" data-path="数据操作.html"><a href="数据操作.html#调整列的顺序"><i class="fa fa-check"></i><b>3.2.5</b> 调整列的顺序</a></li>
-<li class="chapter" data-level="3.2.6" data-path="数据操作.html"><a href="数据操作.html#重命名列"><i class="fa fa-check"></i><b>3.2.6</b> 重命名列</a></li>
+<li class="chapter" data-level="3.3.1" data-path="数据操作.html"><a href="数据操作.html#选择列select"><i class="fa fa-check"></i><b>3.3.1</b> 选择列（select）</a></li>
+<li class="chapter" data-level="3.3.2" data-path="数据操作.html"><a href="数据操作.html#选择列语法"><i class="fa fa-check"></i><b>3.3.2</b> 选择列语法</a></li>
+<li class="chapter" data-level="3.3.3" data-path="数据操作.html"><a href="数据操作.html#选择列的例子"><i class="fa fa-check"></i><b>3.3.3</b> 选择列的例子</a></li>
+<li class="chapter" data-level="3.3.4" data-path="数据操作.html"><a href="数据操作.html#用--删除列"><i class="fa fa-check"></i><b>3.3.4</b> 用“-” 删除列</a></li>
+<li class="chapter" data-level="3.3.5" data-path="数据操作.html"><a href="数据操作.html#调整列的顺序"><i class="fa fa-check"></i><b>3.3.5</b> 调整列的顺序</a></li>
+<li class="chapter" data-level="3.3.6" data-path="数据操作.html"><a href="数据操作.html#重命名列"><i class="fa fa-check"></i><b>3.3.6</b> 重命名列</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="数据操作.html"><a href="数据操作.html#分组汇总"><i class="fa fa-check"></i><b>3.3</b> 分组汇总</a>
+<li class="chapter" data-level="3.4" data-path="数据操作.html"><a href="数据操作.html#分组汇总"><i class="fa fa-check"></i><b>3.4</b> 分组汇总</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="数据操作.html"><a href="数据操作.html#创建分组"><i class="fa fa-check"></i><b>3.3.1</b> 创建分组</a></li>
-<li class="chapter" data-level="3.3.2" data-path="数据操作.html"><a href="数据操作.html#分组汇总-1"><i class="fa fa-check"></i><b>3.3.2</b> 分组汇总</a></li>
-<li class="chapter" data-level="3.3.3" data-path="数据操作.html"><a href="数据操作.html#自己的例子"><i class="fa fa-check"></i><b>3.3.3</b> 自己的例子</a></li>
+<li class="chapter" data-level="3.4.1" data-path="数据操作.html"><a href="数据操作.html#创建分组"><i class="fa fa-check"></i><b>3.4.1</b> 创建分组</a></li>
+<li class="chapter" data-level="3.4.2" data-path="数据操作.html"><a href="数据操作.html#分组汇总-1"><i class="fa fa-check"></i><b>3.4.2</b> 分组汇总</a></li>
+<li class="chapter" data-level="3.4.3" data-path="数据操作.html"><a href="数据操作.html#自己的例子"><i class="fa fa-check"></i><b>3.4.3</b> 自己的例子</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="数据操作.html"><a href="数据操作.html#其他数据操作"><i class="fa fa-check"></i><b>3.4</b> 其他数据操作</a>
+<li class="chapter" data-level="3.5" data-path="数据操作.html"><a href="数据操作.html#其他数据操作"><i class="fa fa-check"></i><b>3.5</b> 其他数据操作</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="数据操作.html"><a href="数据操作.html#按行汇总"><i class="fa fa-check"></i><b>3.4.1</b> 按行汇总</a></li>
-<li class="chapter" data-level="3.4.2" data-path="数据操作.html"><a href="数据操作.html#窗口函数"><i class="fa fa-check"></i><b>3.4.2</b> 窗口函数</a></li>
+<li class="chapter" data-level="3.5.1" data-path="数据操作.html"><a href="数据操作.html#按行汇总"><i class="fa fa-check"></i><b>3.5.1</b> 按行汇总</a></li>
+<li class="chapter" data-level="3.5.2" data-path="数据操作.html"><a href="数据操作.html#窗口函数"><i class="fa fa-check"></i><b>3.5.2</b> 窗口函数</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="数据操作.html"><a href="数据操作.html#整洁计算"><i class="fa fa-check"></i><b>3.5</b> 整洁计算</a>
+<li class="chapter" data-level="3.6" data-path="数据操作.html"><a href="数据操作.html#整洁计算"><i class="fa fa-check"></i><b>3.6</b> 整洁计算</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="数据操作.html"><a href="数据操作.html#数据屏蔽与整洁选择"><i class="fa fa-check"></i><b>3.5.1</b> 数据屏蔽与整洁选择</a></li>
+<li class="chapter" data-level="3.6.1" data-path="数据操作.html"><a href="数据操作.html#数据屏蔽与整洁选择"><i class="fa fa-check"></i><b>3.6.1</b> 数据屏蔽与整洁选择</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="可视化与建模.html"><a href="可视化与建模.html"><i class="fa fa-check"></i><b>4</b> 可视化与建模</a>
@@ -296,9 +322,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5" data-path="markdown.html"><a href="markdown.html#数学公式"><i class="fa fa-check"></i><b>6.5</b> 数学公式</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="markdown.html"><a href="markdown.html#markdown如何显示数学公式"><i class="fa fa-check"></i><b>6.5.1</b> Markdown如何显示数学公式</a></li>
-<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.2</b> 数学公式的类别</a></li>
-<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.3</b> 上横线</a></li>
-<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.4</b> hat</a></li>
+<li class="chapter" data-level="6.5.2" data-path="markdown.html"><a href="markdown.html#公式编号"><i class="fa fa-check"></i><b>6.5.2</b> 公式编号</a></li>
+<li class="chapter" data-level="6.5.3" data-path="markdown.html"><a href="markdown.html#数学公式的类别"><i class="fa fa-check"></i><b>6.5.3</b> 数学公式的类别</a></li>
+<li class="chapter" data-level="6.5.4" data-path="markdown.html"><a href="markdown.html#上横线"><i class="fa fa-check"></i><b>6.5.4</b> 上横线</a></li>
+<li class="chapter" data-level="6.5.5" data-path="markdown.html"><a href="markdown.html#hat"><i class="fa fa-check"></i><b>6.5.5</b> hat</a></li>
+<li class="chapter" data-level="6.5.6" data-path="markdown.html"><a href="markdown.html#换行对齐"><i class="fa fa-check"></i><b>6.5.6</b> 换行对齐</a></li>
+<li class="chapter" data-level="6.5.7" data-path="markdown.html"><a href="markdown.html#分段函数"><i class="fa fa-check"></i><b>6.5.7</b> 分段函数</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>7</b> RMarkdown</a>
@@ -317,6 +346,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.8" data-path="rmarkdown.html"><a href="rmarkdown.html#行内代码"><i class="fa fa-check"></i><b>7.3.8</b> 行内代码</a></li>
 <li class="chapter" data-level="7.3.9" data-path="rmarkdown.html"><a href="rmarkdown.html#在rmarkdown使用其他语言"><i class="fa fa-check"></i><b>7.3.9</b> 在RMarkdown使用其他语言</a></li>
 <li class="chapter" data-level="7.3.10" data-path="rmarkdown.html"><a href="rmarkdown.html#交互式文档"><i class="fa fa-check"></i><b>7.3.10</b> 交互式文档</a></li>
+<li class="chapter" data-level="7.3.11" data-path="rmarkdown.html"><a href="rmarkdown.html#参考文献"><i class="fa fa-check"></i><b>7.3.11</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="rmarkdown.html"><a href="rmarkdown.html#文档格式htmlpdfword"><i class="fa fa-check"></i><b>7.4</b> 文档格式（HTML,PDF,Word…）</a>
 <ul>
@@ -420,40 +450,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="infer包.html"><a href="infer包.html#卡方检验"><i class="fa fa-check"></i><b>14.2</b> 卡方检验</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>15</b> 正则表达式</a>
+<li class="chapter" data-level="15" data-path="gamma函数.html"><a href="gamma函数.html"><i class="fa fa-check"></i><b>15</b> Gamma函数</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>15.1</b> grep函数</a>
+<li class="chapter" data-level="15.1" data-path="gamma函数.html"><a href="gamma函数.html#简史"><i class="fa fa-check"></i><b>15.1</b> 简史</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>15.1.1</b> 函数参数</a></li>
-<li class="chapter" data-level="15.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>15.1.2</b> 模式（pattern）与匹配（match）</a></li>
+<li class="chapter" data-level="15.1.1" data-path="gamma函数.html"><a href="gamma函数.html#动机"><i class="fa fa-check"></i><b>15.1.1</b> 动机</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>15.2</b> 元字符</a></li>
-<li class="chapter" data-level="15.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>15.3</b> 常用文本处理函数</a></li>
-<li class="chapter" data-level="15.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>15.4</b> 案例</a>
+<li class="chapter" data-level="15.2" data-path="gamma函数.html"><a href="gamma函数.html#定义"><i class="fa fa-check"></i><b>15.2</b> 定义</a>
 <ul>
-<li class="chapter" data-level="15.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>15.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
-<li class="chapter" data-level="15.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>15.4.2</b> 全宋词</a></li>
-<li class="chapter" data-level="15.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>15.4.3</b> SCI（筛选行）</a></li>
+<li class="chapter" data-level="15.2.1" data-path="gamma函数.html"><a href="gamma函数.html#euler定义"><i class="fa fa-check"></i><b>15.2.1</b> Euler定义</a></li>
+<li class="chapter" data-level="15.2.2" data-path="gamma函数.html"><a href="gamma函数.html#gauss定义"><i class="fa fa-check"></i><b>15.2.2</b> Gauss定义</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>16</b> 一些自定义函数</a>
+<li class="chapter" data-level="16" data-path="极大似然估计.html"><a href="极大似然估计.html"><i class="fa fa-check"></i><b>16</b> 极大似然估计</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>16.1</b> 数据处理</a>
+<li class="chapter" data-level="16.1" data-path="极大似然估计.html"><a href="极大似然估计.html#自定义极大似然函数"><i class="fa fa-check"></i><b>16.1</b> 自定义极大似然函数</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>16.1.1</b> 分组排序并排名</a></li>
-</ul></li>
-<li class="chapter" data-level="16.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>16.2</b> 统计相关</a>
-<ul>
-<li class="chapter" data-level="16.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>16.2.1</b> 汇总数据t检验</a></li>
+<li class="chapter" data-level="16.1.1" data-path="极大似然估计.html"><a href="极大似然估计.html#正态分布"><i class="fa fa-check"></i><b>16.1.1</b> 正态分布</a></li>
+<li class="chapter" data-level="16.1.2" data-path="极大似然估计.html"><a href="极大似然估计.html#指数分布"><i class="fa fa-check"></i><b>16.1.2</b> 指数分布</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="m1-m2-the-sample-means.html"><a href="m1-m2-the-sample-means.html"><i class="fa fa-check"></i><b>17</b> m1, m2: the sample means</a></li>
-<li class="chapter" data-level="18" data-path="s1-s2-the-sample-standard-deviations.html"><a href="s1-s2-the-sample-standard-deviations.html"><i class="fa fa-check"></i><b>18</b> s1, s2: the sample standard deviations</a></li>
-<li class="chapter" data-level="19" data-path="n1-n2-the-same-sizes.html"><a href="n1-n2-the-same-sizes.html"><i class="fa fa-check"></i><b>19</b> n1, n2: the same sizes</a></li>
-<li class="chapter" data-level="20" data-path="m0-the-null-value-for-the-difference-in-means-to-be-tested-for.-default-is-0..html"><a href="m0-the-null-value-for-the-difference-in-means-to-be-tested-for.-default-is-0..html"><i class="fa fa-check"></i><b>20</b> m0: the null value for the difference in means to be tested for. Default is 0.</a></li>
-<li class="chapter" data-level="21" data-path="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html"><i class="fa fa-check"></i><b>21</b> equal.variance: whether or not to assume equal variance. Default is FALSE.</a>
+<li class="chapter" data-level="17" data-path="正则表达式.html"><a href="正则表达式.html"><i class="fa fa-check"></i><b>17</b> 正则表达式</a>
 <ul>
-<li class="chapter" data-level="21.0.1" data-path="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#卡方检验-1"><i class="fa fa-check"></i><b>21.0.1</b> 卡方检验</a></li>
+<li class="chapter" data-level="17.1" data-path="正则表达式.html"><a href="正则表达式.html#grep函数"><i class="fa fa-check"></i><b>17.1</b> grep函数</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="正则表达式.html"><a href="正则表达式.html#函数参数"><i class="fa fa-check"></i><b>17.1.1</b> 函数参数</a></li>
+<li class="chapter" data-level="17.1.2" data-path="正则表达式.html"><a href="正则表达式.html#模式pattern与匹配match"><i class="fa fa-check"></i><b>17.1.2</b> 模式（pattern）与匹配（match）</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="正则表达式.html"><a href="正则表达式.html#元字符"><i class="fa fa-check"></i><b>17.2</b> 元字符</a></li>
+<li class="chapter" data-level="17.3" data-path="正则表达式.html"><a href="正则表达式.html#常用文本处理函数"><i class="fa fa-check"></i><b>17.3</b> 常用文本处理函数</a></li>
+<li class="chapter" data-level="17.4" data-path="正则表达式.html"><a href="正则表达式.html#案例"><i class="fa fa-check"></i><b>17.4</b> 案例</a>
+<ul>
+<li class="chapter" data-level="17.4.1" data-path="正则表达式.html"><a href="正则表达式.html#查找指定目录下的jpg图像文件list.files函数"><i class="fa fa-check"></i><b>17.4.1</b> 查找指定目录下的jpg图像文件（list.files函数）</a></li>
+<li class="chapter" data-level="17.4.2" data-path="正则表达式.html"><a href="正则表达式.html#全宋词"><i class="fa fa-check"></i><b>17.4.2</b> 全宋词</a></li>
+<li class="chapter" data-level="17.4.3" data-path="正则表达式.html"><a href="正则表达式.html#sci筛选行"><i class="fa fa-check"></i><b>17.4.3</b> SCI（筛选行）</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="一些自定义函数.html"><a href="一些自定义函数.html"><i class="fa fa-check"></i><b>18</b> 一些自定义函数</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#数据处理"><i class="fa fa-check"></i><b>18.1</b> 数据处理</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#分组排序并排名"><i class="fa fa-check"></i><b>18.1.1</b> 分组排序并排名</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#统计相关"><i class="fa fa-check"></i><b>18.2</b> 统计相关</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="一些自定义函数.html"><a href="一些自定义函数.html#汇总数据t检验"><i class="fa fa-check"></i><b>18.2.1</b> 汇总数据t检验</a></li>
+<li class="chapter" data-level="18.2.2" data-path="一些自定义函数.html"><a href="一些自定义函数.html#卡方检验-1"><i class="fa fa-check"></i><b>18.2.2</b> 卡方检验</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="一些自定义函数-1.html"><a href="一些自定义函数-1.html"><i class="fa fa-check"></i><b>19</b> 一些自定义函数</a></li>
+<li class="chapter" data-level="20" data-path="随机抽样.html"><a href="随机抽样.html"><i class="fa fa-check"></i><b>20</b> 随机抽样</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="随机抽样.html"><a href="随机抽样.html#inverse-cdf-transformation逆cdf变化法"><i class="fa fa-check"></i><b>20.1</b> Inverse CDF Transformation（逆CDF变化法）</a></li>
+<li class="chapter" data-level="20.2" data-path="随机抽样.html"><a href="随机抽样.html#accept-reject-sampling-method接受-拒绝抽样"><i class="fa fa-check"></i><b>20.2</b> accept-reject sampling method（接受-拒绝抽样）</a></li>
 </ul></li>
 </ul>
 
@@ -472,58 +521,182 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false." class="section level1" number="21">
-<h1><span class="header-section-number">21</span> equal.variance: whether or not to assume equal variance. Default is FALSE.</h1>
-<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-1" aria-hidden="true" tabindex="-1"></a>t.test2 <span class="ot">&lt;-</span> <span class="cf">function</span>(m1,m2,s1,s2,n1,n2,<span class="at">m0=</span><span class="dv">0</span>,<span class="at">equal.variance=</span><span class="cn">FALSE</span>)</span>
-<span id="cb410-2"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-2" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb410-3"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>( equal.variance<span class="sc">==</span><span class="cn">FALSE</span> ) </span>
-<span id="cb410-4"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-4" aria-hidden="true" tabindex="-1"></a>    {</span>
-<span id="cb410-5"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-5" aria-hidden="true" tabindex="-1"></a>        se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>( (s1<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n1) <span class="sc">+</span> (s2<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n2) )</span>
-<span id="cb410-6"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-6" aria-hidden="true" tabindex="-1"></a>        <span class="co"># welch-satterthwaite df</span></span>
-<span id="cb410-7"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-7" aria-hidden="true" tabindex="-1"></a>        df <span class="ot">&lt;-</span> ( (s1<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n1 <span class="sc">+</span> s2<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n2)<span class="sc">^</span><span class="dv">2</span> )<span class="sc">/</span>( (s1<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n1)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(n1<span class="dv">-1</span>) <span class="sc">+</span> (s2<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n2)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>(n2<span class="dv">-1</span>) )</span>
-<span id="cb410-8"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-8" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span></span>
-<span id="cb410-9"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-9" aria-hidden="true" tabindex="-1"></a>    {</span>
-<span id="cb410-10"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># pooled standard deviation, scaled by the sample sizes</span></span>
-<span id="cb410-11"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-11" aria-hidden="true" tabindex="-1"></a>        se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>( (<span class="dv">1</span><span class="sc">/</span>n1 <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span>n2) <span class="sc">*</span> ((n1<span class="dv">-1</span>)<span class="sc">*</span>s1<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (n2<span class="dv">-1</span>)<span class="sc">*</span>s2<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(n1<span class="sc">+</span>n2<span class="dv">-2</span>) ) </span>
-<span id="cb410-12"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-12" aria-hidden="true" tabindex="-1"></a>        df <span class="ot">&lt;-</span> n1<span class="sc">+</span>n2<span class="dv">-2</span></span>
-<span id="cb410-13"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-13" aria-hidden="true" tabindex="-1"></a>    }      </span>
-<span id="cb410-14"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-14" aria-hidden="true" tabindex="-1"></a>    t <span class="ot">&lt;-</span> (m1<span class="sc">-</span>m2<span class="sc">-</span>m0)<span class="sc">/</span>se </span>
-<span id="cb410-15"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-15" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> <span class="fu">c</span>(m1<span class="sc">-</span>m2, se, t, <span class="dv">2</span><span class="sc">*</span><span class="fu">pt</span>(<span class="sc">-</span><span class="fu">abs</span>(t),df))     <span class="do">##pt函数可以打印p值</span></span>
-<span id="cb410-16"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">names</span>(dat) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Difference of means&quot;</span>, <span class="st">&quot;Std Error&quot;</span>, <span class="st">&quot;t&quot;</span>, <span class="st">&quot;p-value&quot;</span>)</span>
-<span id="cb410-17"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat) </span>
-<span id="cb410-18"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb410-18" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>usage:</p>
-<pre><code>## Difference of means           Std Error                   t             p-value 
-##          0.01183358          0.11348530          0.10427416          0.91704542</code></pre>
-<div id="卡方检验-1" class="section level3" number="21.0.1">
-<h3><span class="header-section-number">21.0.1</span> 卡方检验</h3>
-<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-1" aria-hidden="true" tabindex="-1"></a>chisq_test <span class="ot">&lt;-</span> <span class="cf">function</span>(data,x1,x2,<span class="at">correct=</span><span class="cn">FALSE</span>,<span class="at">fisher=</span><span class="cn">FALSE</span>){</span>
-<span id="cb412-2"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(dplyr)</span>
-<span id="cb412-3"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-3" aria-hidden="true" tabindex="-1"></a>  X<span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span>   <span class="do">##先将原始数据变换为列联表形式</span></span>
-<span id="cb412-4"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(x1,x2) <span class="sc">%&gt;%</span> </span>
-<span id="cb412-5"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">table</span>()</span>
-<span id="cb412-6"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb412-7"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(fisher<span class="sc">==</span><span class="cn">FALSE</span>){ </span>
-<span id="cb412-8"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-8" aria-hidden="true" tabindex="-1"></a>    <span class="do">## 如果fisher参数是F，进行卡方检验</span></span>
-<span id="cb412-9"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-9" aria-hidden="true" tabindex="-1"></a>    result <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(<span class="at">x =</span> X,<span class="at">correct =</span> correct)</span>
-<span id="cb412-10"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-10" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span>{   </span>
-<span id="cb412-11"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-11" aria-hidden="true" tabindex="-1"></a>    <span class="do">## 如果fisher参数是T，进行fisher精确检验</span></span>
-<span id="cb412-12"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-12" aria-hidden="true" tabindex="-1"></a>    result <span class="ot">&lt;-</span> <span class="fu">fisher.test</span>(<span class="at">x =</span> X)</span>
-<span id="cb412-13"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-13" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb412-14"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-14" aria-hidden="true" tabindex="-1"></a>  <span class="do">## 报告卡方值和p值</span></span>
-<span id="cb412-15"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">squared.value=</span>result<span class="sc">$</span>statistic,</span>
-<span id="cb412-16"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">p.value=</span>result<span class="sc">$</span>p.value</span>
-<span id="cb412-17"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-17" aria-hidden="true" tabindex="-1"></a>       )</span>
-<span id="cb412-18"><a href="equal.variance-whether-or-not-to-assume-equal-variance.-default-is-false..html#cb412-18" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div id="随机抽样" class="section level1 hasAnchor" number="20">
+<h1><span class="header-section-number">20</span> 随机抽样<a href="随机抽样.html#随机抽样" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="inverse-cdf-transformation逆cdf变化法" class="section level2 hasAnchor" number="20.1">
+<h2><span class="header-section-number">20.1</span> Inverse CDF Transformation（逆CDF变化法）<a href="随机抽样.html#inverse-cdf-transformation逆cdf变化法" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>假设x的概率密度函数为f(x)，累计分布函数CDF为F(x)。我们可以通过如下步骤得到非均匀分布的随机样本。</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="fig/%E9%9A%8F%E6%9C%BA%E6%8A%BD%E6%A0%B7/inverse_CDF.jpg" alt="..." width="75%" />
+<p class="caption">
+图4.1: …
+</p>
+</div>
+</div>
+<div id="accept-reject-sampling-method接受-拒绝抽样" class="section level2 hasAnchor" number="20.2">
+<h2><span class="header-section-number">20.2</span> accept-reject sampling method（接受-拒绝抽样）<a href="随机抽样.html#accept-reject-sampling-method接受-拒绝抽样" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>基本思想：假设p(x)不可以直接抽样，那么找一个可以直接抽样的分布，称为建议分布（proposal distribution）
+。假设q(x)是建议分布的概率密度函数，并且有 kq(x)，k&gt;0总在p(x)的上方。如图：</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="fig/%E9%9A%8F%E6%9C%BA%E6%8A%BD%E6%A0%B7/accept_reject.jpg" alt="..." width="75%" />
+<p class="caption">
+图20.1: …
+</p>
+</div>
+<p>具体算法如下：</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="fig/%E9%9A%8F%E6%9C%BA%E6%8A%BD%E6%A0%B7/accept_%E7%AE%97%E6%B3%95.jpg" alt="..." width="100%" />
+<p class="caption">
+图20.2: …
+</p>
+</div>
+<div class="sourceCode" id="cb428"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb428-1"><a href="随机抽样.html#cb428-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb428-2"><a href="随机抽样.html#cb428-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb428-3"><a href="随机抽样.html#cb428-3" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb428-4"><a href="随机抽样.html#cb428-4" tabindex="-1"></a></span>
+<span id="cb428-5"><a href="随机抽样.html#cb428-5" tabindex="-1"></a>plt.rcParams[<span class="st">&#39;font.sans-serif&#39;</span>] <span class="op">=</span> [<span class="st">&#39;FangSong&#39;</span>]</span>
+<span id="cb428-6"><a href="随机抽样.html#cb428-6" tabindex="-1"></a>plt.rcParams[<span class="st">&#39;axes.unicode_minus&#39;</span>] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb428-7"><a href="随机抽样.html#cb428-7" tabindex="-1"></a></span>
+<span id="cb428-8"><a href="随机抽样.html#cb428-8" tabindex="-1"></a></span>
+<span id="cb428-9"><a href="随机抽样.html#cb428-9" tabindex="-1"></a><span class="kw">def</span> p(x):  <span class="co"># 假设f1为我们想要进行抽样的分布</span></span>
+<span id="cb428-10"><a href="随机抽样.html#cb428-10" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">0.3</span><span class="op">/</span>np.sqrt(np.pi<span class="op">*</span><span class="dv">2</span>)<span class="op">*</span>np.exp(<span class="op">-</span>(x<span class="op">+</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>) <span class="op">+</span> <span class="fl">0.7</span><span class="op">/</span>np.sqrt(np.pi<span class="op">*</span><span class="dv">2</span>)<span class="op">*</span>np.exp(<span class="op">-</span>(x<span class="op">-</span><span class="dv">4</span>)<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb428-11"><a href="随机抽样.html#cb428-11" tabindex="-1"></a>  </span>
+<span id="cb428-12"><a href="随机抽样.html#cb428-12" tabindex="-1"></a><span class="kw">def</span> q(x,a,b): <span class="co">#定义建议分布q(x)</span></span>
+<span id="cb428-13"><a href="随机抽样.html#cb428-13" tabindex="-1"></a>   <span class="cf">return</span> <span class="dv">1</span><span class="op">/</span>(b<span class="op">-</span>a)</span>
+<span id="cb428-14"><a href="随机抽样.html#cb428-14" tabindex="-1"></a> </span>
+<span id="cb428-15"><a href="随机抽样.html#cb428-15" tabindex="-1"></a><span class="co">#初始设置</span></span>
+<span id="cb428-16"><a href="随机抽样.html#cb428-16" tabindex="-1"></a>n<span class="op">=</span><span class="bu">int</span>(<span class="fl">1e+6</span>)</span>
+<span id="cb428-17"><a href="随机抽样.html#cb428-17" tabindex="-1"></a>k<span class="op">=</span><span class="dv">6</span></span>
+<span id="cb428-18"><a href="随机抽样.html#cb428-18" tabindex="-1"></a>u <span class="op">=</span> np.random.uniform(<span class="dv">0</span>,<span class="dv">1</span>,n)</span>
+<span id="cb428-19"><a href="随机抽样.html#cb428-19" tabindex="-1"></a>z <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>,n)</span>
+<span id="cb428-20"><a href="随机抽样.html#cb428-20" tabindex="-1"></a></span>
+<span id="cb428-21"><a href="随机抽样.html#cb428-21" tabindex="-1"></a><span class="co">#数据准备</span></span>
+<span id="cb428-22"><a href="随机抽样.html#cb428-22" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb428-23"><a href="随机抽样.html#cb428-23" tabindex="-1"></a>    <span class="st">&#39;u&#39;</span>:u,</span>
+<span id="cb428-24"><a href="随机抽样.html#cb428-24" tabindex="-1"></a>    <span class="st">&#39;z&#39;</span>:z,</span>
+<span id="cb428-25"><a href="随机抽样.html#cb428-25" tabindex="-1"></a>    <span class="st">&#39;pz&#39;</span>:p(z),</span>
+<span id="cb428-26"><a href="随机抽样.html#cb428-26" tabindex="-1"></a>    <span class="st">&quot;kqz&quot;</span>:k<span class="op">*</span>q(z,<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>)</span>
+<span id="cb428-27"><a href="随机抽样.html#cb428-27" tabindex="-1"></a>}</span>
+<span id="cb428-28"><a href="随机抽样.html#cb428-28" tabindex="-1"></a>df<span class="op">=</span>pd.DataFrame(data)</span>
+<span id="cb428-29"><a href="随机抽样.html#cb428-29" tabindex="-1"></a>df <span class="op">=</span> df[df.u <span class="op">&lt;</span> df.pz<span class="op">/</span>df.kqz]</span>
+<span id="cb428-30"><a href="随机抽样.html#cb428-30" tabindex="-1"></a></span>
+<span id="cb428-31"><a href="随机抽样.html#cb428-31" tabindex="-1"></a>z <span class="op">=</span> df.loc[:,<span class="st">&#39;z&#39;</span>]</span>
+<span id="cb428-32"><a href="随机抽样.html#cb428-32" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>,<span class="fl">0.1</span>)</span>
+<span id="cb428-33"><a href="随机抽样.html#cb428-33" tabindex="-1"></a>y <span class="op">=</span> p(x)</span>
+<span id="cb428-34"><a href="随机抽样.html#cb428-34" tabindex="-1"></a></span>
+<span id="cb428-35"><a href="随机抽样.html#cb428-35" tabindex="-1"></a>plt.plot([<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>], [k<span class="op">*</span><span class="dv">1</span><span class="op">/</span><span class="dv">10</span>,k<span class="op">*</span><span class="dv">1</span><span class="op">/</span><span class="dv">10</span>], label<span class="op">=</span><span class="st">&#39;建议分布&#39;</span>)  <span class="co"># 画出建议分布的图像</span></span>
+<span id="cb428-36"><a href="随机抽样.html#cb428-36" tabindex="-1"></a>plt.plot(x,y,<span class="st">&quot;b-&quot;</span>)</span>
+<span id="cb428-37"><a href="随机抽样.html#cb428-37" tabindex="-1"></a>plt.hist(z, bins<span class="op">=</span><span class="dv">200</span>, density<span class="op">=</span><span class="va">True</span>,label<span class="op">=</span><span class="st">&#39;抽样数据&#39;</span>, color<span class="op">=</span><span class="st">&#39;green&#39;</span>)</span></code></pre></div>
+<pre><code>## (array([8.17626069e-05, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
+##        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 8.17626069e-05,
+##        1.63525214e-04, 8.17626069e-05, 1.63525214e-04, 0.00000000e+00,
+##        0.00000000e+00, 3.27050428e-04, 1.63525214e-04, 4.90575642e-04,
+##        1.06291389e-03, 9.81151283e-04, 1.14467650e-03, 1.38996432e-03,
+##        1.55348953e-03, 1.47172693e-03, 2.69816603e-03, 3.51579210e-03,
+##        4.08813035e-03, 3.18874167e-03, 4.82399381e-03, 6.54100856e-03,
+##        6.29572073e-03, 9.56622501e-03, 1.12014772e-02, 1.08744267e-02,
+##        1.38178806e-02, 1.73336727e-02, 1.85601118e-02, 2.29752926e-02,
+##        2.44470195e-02, 2.46923073e-02, 3.24597550e-02, 3.58937845e-02,
+##        3.68749357e-02, 4.56235347e-02, 5.48627093e-02, 5.44538962e-02,
+##        6.14854804e-02, 6.40201212e-02, 6.64729994e-02, 7.26051950e-02,
+##        8.15990817e-02, 9.07564937e-02, 9.08382563e-02, 9.13288320e-02,
+##        1.00731532e-01, 1.04329086e-01, 1.06373152e-01, 1.16593478e-01,
+##        1.13895311e-01, 1.21662759e-01, 1.16593478e-01, 1.14549412e-01,
+##        1.18392255e-01, 1.19455169e-01, 1.25423839e-01, 1.15694089e-01,
+##        1.07844879e-01, 1.15530564e-01, 1.10461282e-01, 1.03347935e-01,
+##        1.01303870e-01, 9.90145170e-02, 8.91212416e-02, 8.55236869e-02,
+##        8.49513486e-02, 7.29322454e-02, 7.10517054e-02, 6.28754447e-02,
+##        6.09949048e-02, 5.51079971e-02, 5.14286798e-02, 4.76675999e-02,
+##        4.07995409e-02, 3.84284253e-02, 3.47491080e-02, 2.91892507e-02,
+##        2.81263368e-02, 2.19123787e-02, 1.92142126e-02, 1.76607231e-02,
+##        1.43902188e-02, 1.35725928e-02, 9.81151283e-03, 9.32093719e-03,
+##        6.94982159e-03, 6.13219552e-03, 6.37748334e-03, 5.06928163e-03,
+##        4.98751902e-03, 3.02521646e-03, 5.39633206e-03, 3.51579210e-03,
+##        3.76107992e-03, 4.25165556e-03, 5.64161988e-03, 6.21395813e-03,
+##        7.84921027e-03, 8.42154852e-03, 9.97503805e-03, 1.32455423e-02,
+##        1.30002545e-02, 1.58619457e-02, 1.83148240e-02, 2.07677022e-02,
+##        2.35476308e-02, 3.13150785e-02, 3.50761584e-02, 4.31706565e-02,
+##        4.63593981e-02, 5.41268458e-02, 6.26301569e-02, 6.74541507e-02,
+##        8.15173191e-02, 9.15741198e-02, 1.03184410e-01, 1.10788332e-01,
+##        1.15939377e-01, 1.32864236e-01, 1.42348699e-01, 1.54694852e-01,
+##        1.68839783e-01, 1.79468922e-01, 2.00481912e-01, 2.11683389e-01,
+##        2.15689757e-01, 2.26237133e-01, 2.31306415e-01, 2.44143144e-01,
+##        2.57715737e-01, 2.55589909e-01, 2.70879517e-01, 2.68917214e-01,
+##        2.82980383e-01, 2.78483439e-01, 2.77093475e-01, 2.78892252e-01,
+##        2.76766425e-01, 2.79628116e-01, 2.67200200e-01, 2.50684153e-01,
+##        2.49703002e-01, 2.33023430e-01, 2.40218539e-01, 2.23048392e-01,
+##        2.05796482e-01, 1.98764897e-01, 1.81267700e-01, 1.72519101e-01,
+##        1.64506365e-01, 1.43902188e-01, 1.37933518e-01, 1.25260314e-01,
+##        1.15530564e-01, 1.03020885e-01, 9.30458467e-02, 8.02908800e-02,
+##        7.62845123e-02, 6.29572073e-02, 5.73155875e-02, 5.06110537e-02,
+##        4.40700451e-02, 3.66296479e-02, 2.96798263e-02, 2.68998977e-02,
+##        2.55099334e-02, 1.83148240e-02, 1.61889962e-02, 1.48807945e-02,
+##        1.21826284e-02, 1.06291389e-02, 7.35863463e-03, 6.54100856e-03,
+##        6.29572073e-03, 4.33341817e-03, 3.51579210e-03, 3.51579210e-03,
+##        2.45287821e-03, 2.20759039e-03, 1.47172693e-03, 4.90575642e-04,
+##        8.99388676e-04, 5.72338249e-04, 5.72338249e-04, 1.63525214e-04,
+##        3.27050428e-04, 3.27050428e-04, 2.45287821e-04, 2.45287821e-04,
+##        8.17626069e-05, 2.45287821e-04, 0.00000000e+00, 8.17626069e-05]), array([-6.44277106, -6.369366  , -6.29596095, -6.2225559 , -6.14915084,
+##        -6.07574579, -6.00234074, -5.92893568, -5.85553063, -5.78212558,
+##        -5.70872052, -5.63531547, -5.56191042, -5.48850536, -5.41510031,
+##        -5.34169526, -5.2682902 , -5.19488515, -5.1214801 , -5.04807504,
+##        -4.97466999, -4.90126494, -4.82785988, -4.75445483, -4.68104978,
+##        -4.60764472, -4.53423967, -4.46083461, -4.38742956, -4.31402451,
+##        -4.24061945, -4.1672144 , -4.09380935, -4.02040429, -3.94699924,
+##        -3.87359419, -3.80018913, -3.72678408, -3.65337903, -3.57997397,
+##        -3.50656892, -3.43316387, -3.35975881, -3.28635376, -3.21294871,
+##        -3.13954365, -3.0661386 , -2.99273355, -2.91932849, -2.84592344,
+##        -2.77251839, -2.69911333, -2.62570828, -2.55230323, -2.47889817,
+##        -2.40549312, -2.33208806, -2.25868301, -2.18527796, -2.1118729 ,
+##        -2.03846785, -1.9650628 , -1.89165774, -1.81825269, -1.74484764,
+##        -1.67144258, -1.59803753, -1.52463248, -1.45122742, -1.37782237,
+##        -1.30441732, -1.23101226, -1.15760721, -1.08420216, -1.0107971 ,
+##        -0.93739205, -0.863987  , -0.79058194, -0.71717689, -0.64377184,
+##        -0.57036678, -0.49696173, -0.42355668, -0.35015162, -0.27674657,
+##        -0.20334151, -0.12993646, -0.05653141,  0.01687365,  0.0902787 ,
+##         0.16368375,  0.23708881,  0.31049386,  0.38389891,  0.45730397,
+##         0.53070902,  0.60411407,  0.67751913,  0.75092418,  0.82432923,
+##         0.89773429,  0.97113934,  1.04454439,  1.11794945,  1.1913545 ,
+##         1.26475955,  1.33816461,  1.41156966,  1.48497471,  1.55837977,
+##         1.63178482,  1.70518987,  1.77859493,  1.85199998,  1.92540504,
+##         1.99881009,  2.07221514,  2.1456202 ,  2.21902525,  2.2924303 ,
+##         2.36583536,  2.43924041,  2.51264546,  2.58605052,  2.65945557,
+##         2.73286062,  2.80626568,  2.87967073,  2.95307578,  3.02648084,
+##         3.09988589,  3.17329094,  3.246696  ,  3.32010105,  3.3935061 ,
+##         3.46691116,  3.54031621,  3.61372126,  3.68712632,  3.76053137,
+##         3.83393642,  3.90734148,  3.98074653,  4.05415159,  4.12755664,
+##         4.20096169,  4.27436675,  4.3477718 ,  4.42117685,  4.49458191,
+##         4.56798696,  4.64139201,  4.71479707,  4.78820212,  4.86160717,
+##         4.93501223,  5.00841728,  5.08182233,  5.15522739,  5.22863244,
+##         5.30203749,  5.37544255,  5.4488476 ,  5.52225265,  5.59565771,
+##         5.66906276,  5.74246781,  5.81587287,  5.88927792,  5.96268297,
+##         6.03608803,  6.10949308,  6.18289814,  6.25630319,  6.32970824,
+##         6.4031133 ,  6.47651835,  6.5499234 ,  6.62332846,  6.69673351,
+##         6.77013856,  6.84354362,  6.91694867,  6.99035372,  7.06375878,
+##         7.13716383,  7.21056888,  7.28397394,  7.35737899,  7.43078404,
+##         7.5041891 ,  7.57759415,  7.6509992 ,  7.72440426,  7.79780931,
+##         7.87121436,  7.94461942,  8.01802447,  8.09142952,  8.16483458,
+##         8.23823963]), &lt;BarContainer object of 200 artists&gt;)</code></pre>
 
+<div id="refs" class="references csl-bib-body">
+<div class="csl-entry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">SIGNOROVITCH J E. WU E Q. YU A P. 等. Comparative effectiveness without head-to-head trials: a method for matching-adjusted indirect comparisons applied to psoriasis treatment with adalimumab or etanercept[J]. Pharmacoeconomics, 2010, 28: 935-945.</div>
 </div>
 </div>
+</div>
+</div>
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="m0-the-null-value-for-the-difference-in-means-to-be-tested-for.-default-is-0..html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="一些自定义函数-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -584,7 +757,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

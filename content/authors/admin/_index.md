@@ -27,7 +27,7 @@ interests:
 
 ## Organizations/Affiliations to show in About widget
 organizations:
-- name: 陆军军医大学
+- name: 陆军军医大学第二附属医院
   url: https://www.xqhospital.com.cn/
 
 # Role/position/tagline  
@@ -71,7 +71,7 @@ title: 刘卢路
 <font color=#ED7D31 face="黑体" size=5>**我的书籍**</font>
 
 
-<div style="float: left; width: 50%; height: 150px;">
+<div style="float: left; width: 50%; height: 200px;">
     <ul>
         <li>
             <a href="/courses/probability/" target="_blank">CEA教程（更新中）</a>
@@ -87,7 +87,7 @@ title: 刘卢路
         </li>
     </ul>
 </div>
-<div style="float: left; width: 45%; height: 150px; margin-left: 10px;">
+<div style="float: left; width: 45%; height: 200px; margin-left: 10px;">
     <ul>
         <li>待补充</li>
     </ul>
