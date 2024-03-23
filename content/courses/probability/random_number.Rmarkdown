@@ -258,15 +258,14 @@ excel求gamma函数值
 
 
 ```
-Γ(-z) = -PI()/(z*EXP(GAMMALN(z))*SIN(PI()*z)
+Γ(z) = GAMMA(z)
 
-γ(s, x) = EXP(GAMALN(s)) * GAMMA.DIST(x, s, 1,TRUE)
+γ(s, x) = EXP(GAMMALN(s)) * GAMMA.DIST(x, s, 1,TRUE)
 
 Γ(s, x) = EXP(GAMMALN(s)) * (1 – GAMMA.DIST(x, s, 1,TRUE))
+
+Gamma分布的生存函数= 1-EXP(GAMMALN(a))*GAMMA.DIST(b*t,a,1,TRUE)/GAMMA(a)
 ```
-
-
-
 
 
 

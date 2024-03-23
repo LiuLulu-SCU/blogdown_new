@@ -18,12 +18,17 @@ projects: []
 ---
 
 
-转自： <https://baijiahao.baidu.com/s?id=1754872717480480346&wfr=spider&for=pc&searchword=%E7%94%B5%E8%84%91%E8%BF%9E%E4%B8%8D%E4%B8%8Awifi/> 
+
+**法一：重设代理服务器设置**
+
+打开Windows设置  -->  网络和Internet  -->  代理  -->  关闭自动代理设置和手动代理设置。
+
+
 
 
 **查看是否自动获取IP**
 
-
+转自： <https://baijiahao.baidu.com/s?id=1754872717480480346&wfr=spider&for=pc&searchword=%E7%94%B5%E8%84%91%E8%BF%9E%E4%B8%8D%E4%B8%8Awifi/> 
 
 1、按下【Win+i】，单击【网络和Internet】，然后单击【更改适配器选项】。鼠标双击【WLAN】，在打开的窗口点击【属性】；
 
