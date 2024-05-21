@@ -37,6 +37,15 @@ $$
 $$
 se=\sqrt{ \frac{p(1-p)}{n}}
 $$
+
+### 三角分布（triangular distribution）
+
+三角分布有三个参数：最小值（a）、最大值（b）、众数（c）
+
+Excel抽随机数：```TRIANG_INV(p, a, b, c)```
+
+
+
 ### 2.狄利克雷分布（Dirichlet distribution）/多元Beta分布（multivariate Beta distribution）：
 - 适用于：多项式数据（multinomial data）  
 

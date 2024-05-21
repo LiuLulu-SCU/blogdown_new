@@ -24,6 +24,44 @@ XXX。待补充
 
 接下来我们看一下具体如何抽取随机数，以及在R和Excel中的实现。
 
+### 单变量正态分布
+
+R直接调用函数: 
+
+```
+rnorm(n = 1,mean = 1,sd = 1)  #分别为随机数个数，均值和标准差
+```
+
+
+Excel直接调用函数:
+
+```
+NORM.INV(RAND(),mean,SD)  #分别为概率，均值和标准差
+```
+### 多元正态分布
+
+
+
+
+Python直接调用函数: 
+
+```
+np.random.multivariate_normal(mean=mu,cov=sigma,size=num) #均值，协方差矩阵，样本个数
+```
+
+R直接调用函数: 
+
+```
+vcov(model)  #先利用vcov函数得到协方差矩阵
+t(chol(vcov(model))) #利用chol函数进行Cholesky分解
+随机数向量 = 均值向量 + Cholesky分解矩阵 × 标准正态分布向量
+```
+Excel
+
+```
+先利用R得到Cholesky分解矩阵，再利用如下公式
+随机数向量 = 均值向量 + Cholesky分解矩阵 × 标准正态分布向量
+```
 ### 2.1 Weibull分布
 
 Weilbull分布的CDF为

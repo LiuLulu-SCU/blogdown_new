@@ -5,7 +5,7 @@ new_site(theme = "wowchemy/starter-academic")
 
 
 #preview your site.预览你的网站
-options(blogdown.server.timeout = 600)
+options(blogdown.server.timeout = 1000)
 blogdown::serve_site()
 #关闭
 blogdown::stop_server()
